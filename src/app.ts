@@ -15,7 +15,7 @@ const app = new App({
 });
 
 const chat = new ChatOpenAI({
-  openAIApiKey: process.env.OPENAI_API_KEY, // Replace with your API key
+  openAIApiKey: process.env.OPENAI_API_KEY,
   temperature: 0.7,
 });
 
