@@ -1,7 +1,15 @@
 import { App } from '@slack/bolt';
 import { ChatOpenAI } from "@langchain/openai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { PrometheusDriver }from 'prometheus-query';
 import * as dotenv from 'dotenv';
+
+// Initiatilize vector store
+
+
+// https://demo.promlabs.com/api/v1/metadata
+
+
 
 // Load environment variables from .env
 dotenv.config();
@@ -19,6 +27,8 @@ const chat = new ChatOpenAI({
   temperature: 0.7,
 });
 
+const prometheus = new PrometheusDriver({ endpoint: process.env.PROMETHEUS_URL || 'http://localhost:9090' });
+
 const prompt = ChatPromptTemplate.fromMessages([
   {
     role: 'system',
@@ -26,7 +36,7 @@ const prompt = ChatPromptTemplate.fromMessages([
   },
   {
     role: 'user',
-    content: `Given the following input message, generate a valid PromQL query that represents its intent:
+    content: `Given the following input message, generate a valid PromQL query that represents its intent. Return only the PromQL query and nothing else:
 Message: {messageText}
 PromQL Query:`,
   },
@@ -44,7 +54,26 @@ app.message(async ({ message, say }) => {
     const promQLQuery = (await chat.invoke([{ role: 'user', content: promptText }])).content as string;
 
     // Send the PromQL query back
-    await say(`Here is a PromQL query based on your input: \`${promQLQuery.trim()}\``);
+    await say(`Querying Prometheus with the Query: \`${promQLQuery}\``);
+    
+    try {
+      // Perform the query
+    let resultText = '';
+    const result = await prometheus.instantQuery(promQLQuery).then((res) => {
+      const series = res.result;
+      series.forEach((serie) => {
+          resultText += `Serie: \`${serie.metric.toString()}\` Time: \`${serie.value.time}\` Value: \`${serie.value.value}\``;
+      });
+      console.log('Result:', resultText);
+      say(`Result: \`${resultText}\``);
+    })
+
+    } catch (error) {
+      console.error('Error querying Prometheus:', error);
+      await say(`Error querying Prometheus: \`${error}\``);
+
+    }
+
   } catch (error: unknown) {
     console.error('An error occurred:', error);
 
