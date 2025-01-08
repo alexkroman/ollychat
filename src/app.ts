@@ -1,18 +1,89 @@
-import { App } from '@slack/bolt';
-import { ChatOpenAI } from "@langchain/openai";
+import slack from '@slack/bolt';
+const { App } = slack;
+import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import { PrometheusDriver }from 'prometheus-query';
+import { z } from "zod";
+import { FewShotPromptTemplate, PromptTemplate } from "@langchain/core/prompts";
+import { MemoryVectorStore } from "langchain/vectorstores/memory";
+import { SemanticSimilarityExampleSelector } from "@langchain/core/example_selectors";
+import { examples } from "./training.js";
+import { Annotation } from "@langchain/langgraph";
+import { createQueryExecutor,createMetadataFetcher } from './prometheus.js';
+
 import * as dotenv from 'dotenv';
-
-// Initiatilize vector store
-
-
-// https://demo.promlabs.com/api/v1/metadata
-
-
-
-// Load environment variables from .env
 dotenv.config();
+
+const PROMETHEUS_URL = process.env.PROMETHEUS_URL || 'http://localhost:9090';
+const getPromMetadata = createMetadataFetcher(PROMETHEUS_URL);
+
+const InputStateAnnotation = Annotation.Root({
+  question: Annotation<string>,
+});
+
+const StateAnnotation = Annotation.Root({
+  question: Annotation<string>,
+  query: Annotation<string>,
+  result: Annotation<string>,
+  answer: Annotation<string>,
+});
+
+const exampleSelector = await SemanticSimilarityExampleSelector.fromExamples<typeof MemoryVectorStore>(examples, new OpenAIEmbeddings(), MemoryVectorStore, {
+  k: 5,
+  inputKeys: ["question"],
+});
+
+const examplePrompt = PromptTemplate.fromTemplate(
+  `Question: {input}\nPromQLQuery: {query}`
+);
+
+const prompt = new FewShotPromptTemplate({
+  exampleSelector,
+  examplePrompt,
+  prefix: `
+  You are a PromQL expert. 
+  Given an input question, first create a syntactically correct PromQL query to run, 
+  then look at the results of the query and return the answer to the input question.
+  You must query only the metadata that are needed to answer the question. 
+  Pay attention to use only the metadata you can see in the metadata below. 
+  Be careful to not query for metadata that do not exist.
+
+  Use the following format:
+
+  Question: "Question here"
+  PromQLQuery: "PromQL Query to run"
+  PromQLResult: "Result of the PromQLQuery"
+  Answer: "Final answer here"
+
+  Only use the following metadata:
+  {metadata}
+
+  Question: {input}
+  
+  Below are a number of examples of questions and their corresponding PromQL queries.`,
+  suffix: "Question: {input}\nPromQL query: ",
+  inputVariables: ["input", "metadata"],
+});
+
+const queryOutput = z.object({
+  query: z.string().describe("Syntactically valid PromQL query."),
+});
+
+const model = new ChatOpenAI({
+  openAIApiKey: process.env.OPENAI_API_KEY,
+  model: "gpt-4o-mini",
+  temperature: 0,
+});
+
+const structuredModel = model.withStructuredOutput(queryOutput);
+
+const writeQuery = async (state: typeof InputStateAnnotation.State) => {
+  const promptValue = await prompt.invoke({
+    metadata: await getPromMetadata(),
+    input: state.question,
+  });
+  const result = await structuredModel.invoke(promptValue);
+  return { query: result.query };
+};
 
 // Initialize Bolt app
 const app = new App({
@@ -22,62 +93,15 @@ const app = new App({
   socketMode: true,
 });
 
-const chat = new ChatOpenAI({
-  openAIApiKey: process.env.OPENAI_API_KEY,
-  temperature: 0.7,
-});
-
-const prometheus = new PrometheusDriver({ endpoint: process.env.PROMETHEUS_URL || 'http://localhost:9090' });
-
-const prompt = ChatPromptTemplate.fromMessages([
-  {
-    role: 'system',
-    content: 'You are an expert in PromQL. Generate valid PromQL queries based on user input.',
-  },
-  {
-    role: 'user',
-    content: `Given the following input message, generate a valid PromQL query that represents its intent. Return only the PromQL query and nothing else:
-Message: {messageText}
-PromQL Query:`,
-  },
-]);
-
-app.message(async ({ message, say }) => {
+app.event('app_mention', async ({ event, say }) => {
   try {
-    const messageText = (message as { text: string }).text;
-    console.log('Received a message event:', messageText);
-
-    // Format the prompt
-    const promptText = await prompt.format({ messageText });
-
-    // Generate the PromQL query
-    const promQLQuery = (await chat.invoke([{ role: 'user', content: promptText }])).content as string;
-
-    // Send the PromQL query back
-    await say(`Querying Prometheus with the Query: \`${promQLQuery}\``);
-    
-    try {
-      // Perform the query
-    let resultText = '';
-    const result = await prometheus.instantQuery(promQLQuery).then((res) => {
-      const series = res.result;
-      series.forEach((serie) => {
-          resultText += `Serie: \`${serie.metric.toString()}\` Time: \`${serie.value.time}\` Value: \`${serie.value.value}\``;
-      });
-      console.log('Result:', resultText);
-      say(`Result: \`${resultText}\``);
-    })
-
-    } catch (error) {
-      console.error('Error querying Prometheus:', error);
-      await say(`Error querying Prometheus: \`${error}\``);
-
-    }
+    const messageText = (event as { text: string }).text;
+    console.log('Received a message event:', messageText); 
+    const results = await writeQuery({ question: messageText });
+    await say(results.query);
 
   } catch (error: unknown) {
     console.error('An error occurred:', error);
-
-    // Inform the user of the error
     await say('Sorry, I encountered an error while generating the PromQL query. Please try again later.');
   }
 });

@@ -1,10 +1,6 @@
 {
   "name": "ollychat",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexkroman/ollychat.git"
@@ -18,17 +14,21 @@
   "homepage": "https://github.com/alexkroman/ollychat#readme",
   "description": "",
   "dependencies": {
+    "@langchain/langgraph": "^0.2.39",
     "@slack/bolt": "^4.2.0",
-    "chromadb": "^1.10.0",
-    "chromadb-default-embed": "^2.13.2",
     "dotenv": "^16.4.7",
     "langchain": "^0.3.10",
     "openai": "^4.77.3",
-    "prometheus-query": "^3.4.1"
+    "zod": "^3.24.1"
   },
+  "type": "module",
   "devDependencies": {
     "@types/node": "^22.10.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "dev": "node --watch --loader ts-node/esm src/app.ts",
+    "start": "node --loader ts-node/esm src/app.ts"
   }
 }

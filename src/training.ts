@@ -1,4 +1,4 @@
-[
+export const examples = [
     {
       "question": "What is the rate of CPU pressure on the node?",
       "answer": "irate(node_pressure_cpu_waiting_seconds_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])"
@@ -1003,4 +1003,4 @@
         "question": "Are there any errors in the textfile collector on a specific node?",
         "answer": "node_textfile_scrape_error{instance=\"$node\",job=\"$job\"}"
       }
-]
+];
