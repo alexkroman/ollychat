@@ -1,5 +1,7 @@
 Create a JSON file that looks like the following based on a list of Prometheus queries.  For each Question create a question that you think the Prometheus query best answers.  Do not make any modifications at all to the prometheus queries
 
+Replace all { with {{ and all } with }}
+
 Template:  
   {
       "question": "",

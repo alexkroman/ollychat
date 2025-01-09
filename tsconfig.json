@@ -4,7 +4,7 @@
     "target": "ES2022",
     
     // Search under node_modules for non-relative imports
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     
     // Enable strictest settings like strictNullChecks & noImplicitAny
     "strict": true,
@@ -22,7 +22,7 @@
     "isolatedModules": true,
     
     // Specify module code generation
-    "module": "ESNext",
+    "module": "NodeNext",
     
     // Include sourcemap files inside the emitted JavaScript
     "sourceMap": true,
