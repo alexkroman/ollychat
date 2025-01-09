@@ -27,7 +27,7 @@ interface QueryConfig {
   timeout?: number;
 }
 
-type QueryExecutor = () => Promise<string>;
+type QueryExecutor = (query: string) => Promise<string>;
 
 class PrometheusError extends Error {
   constructor(
@@ -40,11 +40,10 @@ class PrometheusError extends Error {
   }
 }
 
-export function createQueryExecutor(config: QueryConfig): QueryExecutor {
+export function createQueryExecutor(prometheusUrl: string, timeout: number = 5000): QueryExecutor {
   let cachedResult: Promise<string> | null = null;
-  const { query, prometheusUrl, timeout = 5000 } = config;
 
-  return async function executeQuery(): Promise<string> {
+  return async function executeQuery(query: string): Promise<string> {
     if (!cachedResult) {
       cachedResult = axios
         .get<PrometheusQueryResponse>(`${prometheusUrl}/api/v1/query`, {
@@ -58,24 +57,18 @@ export function createQueryExecutor(config: QueryConfig): QueryExecutor {
               response.data.status
             );
           }
-
-          return response.data.data.result
-            .map((item) => Object.keys(item.metric))
-            .flat()
-            .filter((value, index, self) => self.indexOf(value) === index)
-            .join(', ');
+          return JSON.stringify(response.data.data.result);
         })
         .catch((error: AxiosError) => {
-          console.error('Failed to fetch Prometheus metadata:', error);
           cachedResult = null;
+          console.error('Failed to execute Prometheus query:', query);
           throw new PrometheusError(
-            'Failed to fetch Prometheus metadata',
+            'Failed to execute Prometheus query',
             undefined,
             error
           );
         });
     }
-
     return cachedResult;
   };
 }
@@ -110,43 +103,5 @@ export function createMetadataFetcher(prometheusUrl: string, timeout: number = 5
     }
 
     return cachedResult;
-  };
-}
-
-export function createUncachedQueryExecutor(config: QueryConfig): QueryExecutor {
-  const { query, prometheusUrl, timeout = 5000 } = config;
-
-  return async function executeQuery(): Promise<string> {
-    try {
-      const response = await axios.get<PrometheusQueryResponse>(
-        `${prometheusUrl}/api/v1/query`,
-        {
-          params: { query },
-          timeout,
-        }
-      );
-
-      if (response.data.status !== 'success') {
-        throw new PrometheusError(
-          'Query failed',
-          response.data.status
-        );
-      }
-
-      return response.data.data.result
-        .map((item) => Object.keys(item.metric))
-        .flat()
-        .filter((value, index, self) => self.indexOf(value) === index)
-        .join(', ');
-    } catch (error) {
-      if (error instanceof Error) {
-        throw new PrometheusError(
-          'Failed to fetch Prometheus metadata',
-          undefined,
-          error instanceof AxiosError ? error : undefined
-        );
-      }
-      throw error;
-    }
   };
 }

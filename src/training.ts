@@ -1,19 +1,19 @@
 export const examples = [
   {
     question: "What is the rate of CPU pressure on the node?",
-    query: "irate(node_pressure_cpu_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_pressure_cpu_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of memory pressure on the node?",
-    query: "irate(node_pressure_memory_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_pressure_memory_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of IO pressure on the node?",
-    query: "irate(node_pressure_io_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_pressure_io_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the CPU usage percentage on the node?",
-    query: "100 * (1 - avg(rate(node_cpu_seconds_total{{mode=\"idle\", instance=\"$node\"}}[$__rate_interval])))"
+    query: "100 * (1 - avg(rate(node_cpu_seconds_total{{mode=\"idle\", instance=\"$node\"}}[5m])))"
   },
   {
     question: "What is the 1-minute load average percentage on the node?",
@@ -57,27 +57,27 @@ export const examples = [
   },
   {
     question: "What is the average system CPU usage across all cores?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"system\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"system\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the average user CPU usage across all cores?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"user\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"user\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the average IO wait CPU usage across all cores?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"iowait\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"iowait\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the average IRQ and softIRQ CPU usage across all cores?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=~\".*irq\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=~\".*irq\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the average CPU usage across all cores for other modes?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\",  mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\",  mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the average idle CPU usage across all cores?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"idle\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"idle\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "How much memory is actively in use (excluding cached and buffered)?",
@@ -97,11 +97,11 @@ export const examples = [
   },
   {
     question: "What is the current network receive rate in bits per second for a specific node and job?",
-    query: "irate(node_network_receive_bytes_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])*8"
+    query: "irate(node_network_receive_bytes_total{{instance=\"$node\",job=\"$job\"}}[5m])*8"
   },
   {
     question: "What is the current network transmit rate in bits per second for a specific node and job?",
-    query: "irate(node_network_transmit_bytes_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])*8"
+    query: "irate(node_network_transmit_bytes_total{{instance=\"$node\",job=\"$job\"}}[5m])*8"
   },
   {
     question: "What percentage of filesystem space is used on non-root filesystems for a specific node and job?",
@@ -109,35 +109,35 @@ export const examples = [
   },
   {
     question: "What is the system CPU usage rate for a specific node and job?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"system\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"system\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the user CPU usage rate for a specific node and job?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"user\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"user\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the nice CPU usage rate for a specific node and job?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"nice\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"nice\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the iowait CPU usage rate for a specific node and job?",
-    query: "sum by(instance) (irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"iowait\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum by(instance) (irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"iowait\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the irq CPU usage rate for a specific node and job?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"irq\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"irq\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the softirq CPU usage rate for a specific node and job?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"softirq\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"softirq\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the steal CPU usage rate for a specific node and job?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"steal\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"steal\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the idle CPU usage rate for a specific node and job?",
-    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"idle\"}}[$__rate_interval])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
+    query: "sum(irate(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\", mode=\"idle\"}}[5m])) / scalar(count(count(node_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}) by (cpu)))"
   },
   {
     question: "What is the total used memory in bytes for a specific node and job?",
@@ -181,23 +181,23 @@ export const examples = [
   },
   {
     question: "What is the rate of disk reads completed per second for specific disk devices and a specific node and job?",
-    query: "irate(node_disk_reads_completed_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}}[$__rate_interval])"
+    query: "irate(node_disk_reads_completed_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}}[5m])"
   },
   {
     question: "What is the rate of disk writes completed per second for specific disk devices and a specific node and job?",
-    query: "irate(node_disk_writes_completed_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}}[$__rate_interval])"
+    query: "irate(node_disk_writes_completed_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}}[5m])"
   },
   {
     question: "What is the rate of disk read bytes per second for specific disk devices and a specific node and job?",
-    query: "irate(node_disk_read_bytes_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}}[$__rate_interval])"
+    query: "irate(node_disk_read_bytes_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}}[5m])"
   },
   {
     question: "What is the rate of disk write bytes per second for specific disk devices and a specific node and job?",
-    query: "irate(node_disk_written_bytes_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}}[$__rate_interval])"
+    query: "irate(node_disk_written_bytes_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}}[5m])"
   },
   {
     question: "What is the disk IO time rate in seconds per second for specific disk devices and a specific node and job?",
-    query: "irate(node_disk_io_time_seconds_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}} [$__rate_interval])"
+    query: "irate(node_disk_io_time_seconds_total{{instance=\"$node\",job=\"$job\",device=~\"$diskdevices\"}} [5m])"
   },
   {
     question: "What is the percentage of user mode guest CPU usage for a specific node and job?",
@@ -361,35 +361,35 @@ export const examples = [
   },
   {
     question: "What is the rate of memory pages read into memory on a specific node?",
-    query: "irate(node_vmstat_pgpgin{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_vmstat_pgpgin{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of memory pages written out of memory on a specific node?",
-    query: "irate(node_vmstat_pgpgout{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_vmstat_pgpgout{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of swap pages read into memory on a specific node?",
-    query: "irate(node_vmstat_pswpin{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_vmstat_pswpin{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of swap pages written out of memory on a specific node?",
-    query: "irate(node_vmstat_pswpout{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_vmstat_pswpout{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of minor page faults on a specific node?",
-    query: "irate(node_vmstat_pgfault{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_vmstat_pgfault{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of major page faults on a specific node?",
-    query: "irate(node_vmstat_pgmajfault{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_vmstat_pgmajfault{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of minor page faults minus major page faults on a specific node?",
-    query: "irate(node_vmstat_pgfault{{instance=\"$node\",job=\"$job\"}}[$__rate_interval]) - irate(node_vmstat_pgmajfault{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_vmstat_pgfault{{instance=\"$node\",job=\"$job\"}}[5m]) - irate(node_vmstat_pgmajfault{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of out-of-memory kills on a specific node?",
-    query: "irate(node_vmstat_oom_kill{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_vmstat_oom_kill{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the estimated clock error in seconds on a specific node?",
@@ -437,11 +437,11 @@ export const examples = [
   },
   {
     question: "What is the rate of forks on a specific node?",
-    query: "irate(node_forks_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_forks_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of virtual memory usage on a specific node?",
-    query: "irate(process_virtual_memory_bytes{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(process_virtual_memory_bytes{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the maximum resident memory usage on a specific node?",
@@ -449,7 +449,7 @@ export const examples = [
   },
   {
     question: "What is the rate of maximum virtual memory usage on a specific node?",
-    query: "irate(process_virtual_memory_max_bytes{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(process_virtual_memory_max_bytes{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the current number of PIDs on a specific node?",
@@ -461,11 +461,11 @@ export const examples = [
   },
   {
     question: "What is the rate of CPU running time on a specific node?",
-    query: "irate(node_schedstat_running_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_schedstat_running_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of CPU waiting time on a specific node?",
-    query: "irate(node_schedstat_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_schedstat_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the current number of threads on a specific node?",
@@ -477,11 +477,11 @@ export const examples = [
   },
   {
     question: "What is the rate of context switches on the node?",
-    query: "irate(node_context_switches_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_context_switches_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of interrupts on the node?",
-    query: "irate(node_intr_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_intr_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the 1-minute load average on the node?",
@@ -509,31 +509,31 @@ export const examples = [
   },
   {
     question: "What is the rate of CPU waiting pressure on the node?",
-    query: "rate(node_pressure_cpu_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "rate(node_pressure_cpu_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of memory waiting pressure on the node?",
-    query: "rate(node_pressure_memory_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "rate(node_pressure_memory_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of memory stalled pressure on the node?",
-    query: "rate(node_pressure_memory_stalled_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "rate(node_pressure_memory_stalled_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of IO waiting pressure on the node?",
-    query: "rate(node_pressure_io_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "rate(node_pressure_io_waiting_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of IO stalled pressure on the node?",
-    query: "rate(node_pressure_io_stalled_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "rate(node_pressure_io_stalled_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of interrupts on the node?",
-    query: "irate(node_interrupts_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_interrupts_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of scheduler timeslices on the node?",
-    query: "irate(node_schedstat_timeslices_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_schedstat_timeslices_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the available entropy in bits on the node?",
@@ -541,7 +541,7 @@ export const examples = [
   },
   {
     question: "What is the rate of CPU seconds consumed by processes on the node?",
-    query: "irate(process_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(process_cpu_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the maximum number of file descriptors for a process on the node?",
@@ -585,7 +585,7 @@ export const examples = [
   },
   {
     question: "What is the rate of accepted connections by systemd sockets on the node?",
-    query: "irate(node_systemd_socket_accepted_connections_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_systemd_socket_accepted_connections_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the number of systemd units in an activating state on the node?",
@@ -609,47 +609,47 @@ export const examples = [
   },
   {
     question: "What is the rate of completed disk read operations on the specified node and job?",
-    query: "irate(node_disk_reads_completed_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_reads_completed_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of completed disk write operations on the specified node and job?",
-    query: "irate(node_disk_writes_completed_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_writes_completed_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of bytes read from disk on the specified node and job?",
-    query: "irate(node_disk_read_bytes_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_read_bytes_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of bytes written to disk on the specified node and job?",
-    query: "irate(node_disk_written_bytes_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_written_bytes_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the average time spent reading from disk per operation on the specified node and job?",
-    query: "irate(node_disk_read_time_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval]) / irate(node_disk_reads_completed_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_read_time_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m]) / irate(node_disk_reads_completed_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the average time spent writing to disk per operation on the specified node and job?",
-    query: "irate(node_disk_write_time_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval]) / irate(node_disk_writes_completed_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_write_time_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m]) / irate(node_disk_writes_completed_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of weighted I/O time on the specified node and job?",
-    query: "irate(node_disk_io_time_weighted_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_io_time_weighted_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of merged disk reads on the specified node and job?",
-    query: "irate(node_disk_reads_merged_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_reads_merged_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of merged disk writes on the specified node and job?",
-    query: "irate(node_disk_writes_merged_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_writes_merged_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of I/O time on the specified node and job?",
-    query: "irate(node_disk_io_time_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_io_time_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of discarded I/O time on the specified node and job?",
-    query: "irate(node_disk_discard_time_seconds_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_discard_time_seconds_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "How many I/O operations are currently being processed on the specified node and job?",
@@ -657,11 +657,11 @@ export const examples = [
   },
   {
     question: "What is the rate of completed discard operations on the specified node and job?",
-    query: "irate(node_disk_discards_completed_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_discards_completed_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of merged discard operations on the specified node and job?",
-    query: "irate(node_disk_discards_merged_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_disk_discards_merged_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "How many bytes are available in the filesystem on the specified node and job (excluding rootfs)?",
@@ -701,59 +701,59 @@ export const examples = [
   },
   {
     question: "What is the rate of packets received on the network interface for a specific node and job?",
-    query: "irate(node_network_receive_packets_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_receive_packets_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of packets transmitted on the network interface for a specific node and job?",
-    query: "irate(node_network_transmit_packets_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_transmit_packets_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of network receive errors for a specific node and job?",
-    query: "irate(node_network_receive_errs_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_receive_errs_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of network transmit errors for a specific node and job?",
-    query: "irate(node_network_transmit_errs_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_transmit_errs_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of dropped packets on receive for a specific node and job?",
-    query: "irate(node_network_receive_drop_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_receive_drop_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of dropped packets on transmit for a specific node and job?",
-    query: "irate(node_network_transmit_drop_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_transmit_drop_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of compressed packets received on the network for a specific node and job?",
-    query: "irate(node_network_receive_compressed_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_receive_compressed_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of compressed packets transmitted on the network for a specific node and job?",
-    query: "irate(node_network_transmit_compressed_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_transmit_compressed_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of multicast packets received on the network for a specific node and job?",
-    query: "irate(node_network_receive_multicast_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_receive_multicast_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of FIFO errors on receive for a specific node and job?",
-    query: "irate(node_network_receive_fifo_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_receive_fifo_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of FIFO errors on transmit for a specific node and job?",
-    query: "irate(node_network_transmit_fifo_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_transmit_fifo_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of frame errors on receive for a specific node and job?",
-    query: "irate(node_network_receive_frame_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_receive_frame_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of carrier errors on transmit for a specific node and job?",
-    query: "irate(node_network_transmit_carrier_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_transmit_carrier_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of collisions on transmit for a specific node and job?",
-    query: "irate(node_network_transmit_colls_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_network_transmit_colls_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "How many active network connections are being tracked for a specific node and job?",
@@ -781,15 +781,15 @@ export const examples = [
   },
   {
     question: "What is the rate of processed soft network interrupts on a specific node?",
-    query: "irate(node_softnet_processed_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_softnet_processed_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of dropped soft network interrupts on a specific node?",
-    query: "irate(node_softnet_dropped_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_softnet_dropped_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "How often is the softnet buffer squeezed on a specific node?",
-    query: "irate(node_softnet_times_squeezed_total{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_softnet_times_squeezed_total{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "Is the network interface up on a specific node?",
@@ -857,95 +857,95 @@ export const examples = [
   },
   {
     question: "What is the rate of inbound octets on a specific node?",
-    query: "irate(node_netstat_IpExt_InOctets{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_IpExt_InOctets{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of outbound octets on a specific node?",
-    query: "irate(node_netstat_IpExt_OutOctets{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_IpExt_OutOctets{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of IP packet forwarding on a specific node?",
-    query: "irate(node_netstat_Ip_Forwarding{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Ip_Forwarding{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of ICMP messages received on a specific node?",
-    query: "irate(node_netstat_Icmp_InMsgs{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Icmp_InMsgs{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of outgoing ICMP messages on a specific node?",
-    query: "irate(node_netstat_Icmp_OutMsgs{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Icmp_OutMsgs{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of incoming ICMP errors on a specific node?",
-    query: "irate(node_netstat_Icmp_InErrors{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Icmp_InErrors{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of incoming UDP datagrams on a specific node?",
-    query: "irate(node_netstat_Udp_InDatagrams{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Udp_InDatagrams{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of outgoing UDP datagrams on a specific node?",
-    query: "irate(node_netstat_Udp_OutDatagrams{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Udp_OutDatagrams{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of UDP input errors on a specific node?",
-    query: "irate(node_netstat_Udp_InErrors{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Udp_InErrors{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of UDP packets dropped due to no available ports on a specific node?",
-    query: "irate(node_netstat_Udp_NoPorts{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Udp_NoPorts{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of UDP-Lite input errors on a specific node?",
-    query: "irate(node_netstat_UdpLite_InErrors{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_UdpLite_InErrors{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of UDP receive buffer errors on a specific node?",
-    query: "irate(node_netstat_Udp_RcvbufErrors{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Udp_RcvbufErrors{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of UDP send buffer errors on a specific node?",
-    query: "irate(node_netstat_Udp_SndbufErrors{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Udp_SndbufErrors{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of incoming TCP segments on a specific node?",
-    query: "irate(node_netstat_Tcp_InSegs{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Tcp_InSegs{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of outgoing TCP segments on a specific node?",
-    query: "irate(node_netstat_Tcp_OutSegs{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Tcp_OutSegs{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of TCP listen overflows on a specific node?",
-    query: "irate(node_netstat_TcpExt_ListenOverflows{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_TcpExt_ListenOverflows{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of TCP listen drops on a specific node?",
-    query: "irate(node_netstat_TcpExt_ListenDrops{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_TcpExt_ListenDrops{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of TCP SYN retransmissions on a specific node?",
-    query: "irate(node_netstat_TcpExt_TCPSynRetrans{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_TcpExt_TCPSynRetrans{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of TCP retransmitted segments on a specific node?",
-    query: "irate(node_netstat_Tcp_RetransSegs{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Tcp_RetransSegs{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of TCP input errors on a specific node?",
-    query: "irate(node_netstat_Tcp_InErrs{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Tcp_InErrs{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of TCP outgoing resets on a specific node?",
-    query: "irate(node_netstat_Tcp_OutRsts{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Tcp_OutRsts{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of TCP receive queue drops on a specific node?",
-    query: "irate(node_netstat_TcpExt_TCPRcvQDrop{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_TcpExt_TCPRcvQDrop{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of TCP out-of-order queue packets on a specific node?",
-    query: "irate(node_netstat_TcpExt_TCPOFOQueue{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_TcpExt_TCPOFOQueue{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the current number of established TCP connections on a specific node?",
@@ -957,23 +957,23 @@ export const examples = [
   },
   {
     question: "What is the rate of failed TCP SYN cookies on a specific node?",
-    query: "irate(node_netstat_TcpExt_SyncookiesFailed{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_TcpExt_SyncookiesFailed{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of received TCP SYN cookies on a specific node?",
-    query: "irate(node_netstat_TcpExt_SyncookiesRecv{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_TcpExt_SyncookiesRecv{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of sent TCP SYN cookies on a specific node?",
-    query: "irate(node_netstat_TcpExt_SyncookiesSent{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_TcpExt_SyncookiesSent{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of active TCP opens on a specific node?",
-    query: "irate(node_netstat_Tcp_ActiveOpens{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Tcp_ActiveOpens{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "What is the rate of passive TCP opens on a specific node?",
-    query: "irate(node_netstat_Tcp_PassiveOpens{{instance=\"$node\",job=\"$job\"}}[$__rate_interval])"
+    query: "irate(node_netstat_Tcp_PassiveOpens{{instance=\"$node\",job=\"$job\"}}[5m])"
   },
   {
     question: "How many TCP connections are in the 'established' state on a specific node?",

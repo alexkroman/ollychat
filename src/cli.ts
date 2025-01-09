@@ -1,6 +1,6 @@
 import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
-import { writeQuery } from "./ollychat.js";
+import { answerQuestion } from "./ollychat.js";
 
 
 interface Command {
@@ -29,9 +29,8 @@ export class CLI {
             // Since we're using the entire input as a query
             const messageText = input.trim();
             if (!messageText) return;
-            const results = await writeQuery({ question: messageText });
-            console.log(results.explanation);
-            console.log(results.query);
+            const result = await answerQuestion({ question: messageText });           
+            console.log(result.answer);
         } catch (error) {
             console.error('Error processing input:', error);
         }
