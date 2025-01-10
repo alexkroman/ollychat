@@ -2,7 +2,6 @@ import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
 import { answerQuestion } from "./ollychat.js";
 
-
 interface Command {
     name: string;
     description: string;
