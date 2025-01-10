@@ -1,15 +1,7 @@
-Create a Typescriptfile that looks like the following based on a list of Prometheus queries.  
-For each Question create a question that you think the Prometheus query best answers.  
-Do not make any modifications at all to the prometheus queries
+Attached is an exported Grafana dashboard. 
 
-Replace all { with {{ and all } with }}
+I am creating a RAG LLM app that takes a user question and converts it into a PromQL query.  
 
-Template:  
-  {
-      question: "",
-      answer: ""
-    }
+Please create a Typescript program that takes this JSON file and converts it into another JSON file that can be imported into a Vector database.
 
-Queries:
-
-
+The only data I am looking to save is data that will help a user create a PromQL query.

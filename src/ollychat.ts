@@ -55,15 +55,9 @@ const queryPromptTemplate = PromptTemplate.fromTemplate(
 Use the following format:
 
 Question: "Question here"
-PromQLQuery: "PromQL Queryto run"
+PromQLQuery: "PromQL Query to run"
 PromQLResult: "Result of the PromQLQuery"
 Answer: "Final answer here"
-
-List of available nodes:
-{nodes}
-
-List of available jobs:
-{jobs}
 
 List of available metrics:
 {metrics}
@@ -97,30 +91,10 @@ const prometheusQueryTool = new DynamicStructuredTool({
   },
 });
 
-const getPrometheusNodesTool = new DynamicStructuredTool({
-  name: "get_prometheus_nodes",
-  description: "Query Prometheus and return a list of nodes",
-  schema: z.object({}),
-  func: async () => {
-    return await prometheusQueryTool.invoke({ query: 'count by (nodename) (node_uname_info)' });
-  },
-});
-
-const getPrometheusJobsTool = new DynamicStructuredTool({
-  name: "get_prometheus_jobs",
-  description: "Query Prometheus and return a list of jobs",
-  schema: z.object({}),
-  func: async () => {
-    return await prometheusQueryTool.invoke({ query: 'count by (job) (up)' });
-  },
-});
-
 const StateAnnotation = Annotation.Root({
   question: Annotation<string>,
   examples: Annotation<string>,
   metrics: Annotation<string>,
-  nodes: Annotation<string>,
-  jobs: Annotation<string>,
   query_explanation: Annotation<string>,
   query: Annotation<string>,
   result: Annotation<string>,
@@ -172,24 +146,11 @@ Description: {description}`);
   return { metrics: combinedMetrics };
 };
 
-const getPrometheusNodes = async (state: typeof StateAnnotation.State) => {
-  const nodes: {
-    metric: any; nodename: string 
-}[] = await getPrometheusNodesTool.invoke({});
-  return { nodes: nodes };  
-};
-
-const getPrometheusJobs = async (state: typeof StateAnnotation.State) => {
-  return { jobs: await getPrometheusJobsTool.invoke({}) };
-};
-
 const writeQueryTemplate = async (state: typeof StateAnnotation.State) => {
   const promptValue = await queryPromptTemplate.invoke({
     question: state.question,
     examples: state.examples, 
-    metrics: state.metrics,
-    jobs: state.jobs, 
-    nodes: state.nodes
+    metrics: state.metrics
   });
   console.log(promptValue);
   const result = await structuredModel.invoke(promptValue);
@@ -204,9 +165,6 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
   const promptValue =
     `You are a helpful site reliability engineer analyzing Prometheus Queries. 
     
-    The user asked this question: 
-    ${state.question}
-
     We ran the following PromQL query:
     ${state.query}
     
@@ -216,7 +174,11 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
     The query returned the following data:
      ${state.result}
 
-    Using only the data above answer the user's question. 
+    Using the data above and your knowledge of Prometheus, give a brief answer to the user's question being as specific as possible:
+    ${state.question}
+
+    Do not ask for more information.
+    If you respond with any numbers please give the units based on the above.
     If the query returned "[]" you can say "No data found". 
     `;
   console.log(promptValue);
@@ -233,16 +195,12 @@ const graphBuilder = new StateGraph({
 })
   .addNode("getMetrics", getMetrics)
   .addNode("getExamples", getExamples)
-  .addNode("getPrometheusNodes", getPrometheusNodes)
-  .addNode("getPrometheusJobs", getPrometheusJobs)
   .addNode("writeQueryTemplate", writeQueryTemplate)
   .addNode("executeQuery", executeQuery)
   .addNode("generateAnswer", generateAnswer)
   .addEdge("__start__", "getMetrics")
   .addEdge("getMetrics", "getExamples")
-  .addEdge("getExamples", "getPrometheusNodes")
-  .addEdge("getPrometheusNodes", "getPrometheusJobs")
-  .addEdge("getPrometheusJobs", "writeQueryTemplate")
+  .addEdge("getExamples", "writeQueryTemplate")
   .addEdge("writeQueryTemplate", "executeQuery")
   .addEdge("executeQuery", "generateAnswer")
   .addEdge("generateAnswer", "__end__");

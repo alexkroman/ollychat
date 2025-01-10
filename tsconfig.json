@@ -54,7 +54,9 @@
   // Files to include in compilation
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx"
+    "src/**/*.tsx",
+    "scripts/**/*.ts",
+    "scripts/**/*.tsx",
   ],
   // Files to exclude from compilation
   "exclude": [

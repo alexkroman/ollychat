@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Pressure",
+    "description": "Resource pressure via PSI",
+    "query": "irate(node_pressure_cpu_waiting_seconds_total{}[30m])"
+  },
+  {
+    "name": "Pressure",
+    "description": "Resource pressure via PSI",
+    "query": "irate(node_pressure_memory_waiting_seconds_total{}[30m])"
+  },
+  {
+    "name": "Pressure",
+    "description": "Resource pressure via PSI",
+    "query": "irate(node_pressure_io_waiting_seconds_total{}[30m])"
+  },
+  {
+    "name": "CPU Busy",
+    "description": "Busy state of all CPU cores together",
+    "query": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\"}[30m])))"
+  },
+  {
+    "name": "Sys Load",
+    "description": "System load  over all CPU cores together",
+    "query": "scalar(node_load1{}) * 100 / count(count(node_cpu_seconds_total{}) by (cpu))"
+  },
+  {
+    "name": "RAM Used",
+    "description": "Non available RAM memory",
+    "query": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100"
+  },
+  {
+    "name": "RAM Used",
+    "description": "Non available RAM memory",
+    "query": "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100"
+  },
+  {
+    "name": "SWAP Used",
+    "description": "Used Swap",
+    "query": "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100"
+  },
+  {
+    "name": "Root FS Used",
+    "description": "Used Root FS",
+    "query": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})"
+  },
+  {
+    "name": "CPU Cores",
+    "description": "Total number of CPU cores",
+    "query": "count(count(node_cpu_seconds_total{}) by (cpu))"
+  },
+  {
+    "name": "Uptime",
+    "description": "System uptime",
+    "query": "node_time_seconds{} - node_boot_time_seconds{}"
+  },
+  {
+    "name": "RootFS Total",
+    "description": "Total RootFS",
+    "query": "node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"}"
+  },
+  {
+    "name": "RAM Total",
+    "description": "Total RAM",
+    "query": "node_memory_MemTotal_bytes{}"
+  },
+  {
+    "name": "SWAP Total",
+    "description": "Total SWAP",
+    "query": "node_memory_SwapTotal_bytes{}"
+  },
+  {
+    "name": "CPU Basic",
+    "description": "Basic CPU info",
+    "query": "sum(irate(node_cpu_seconds_total{mode=\"system\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))"
+  },
+  {
+    "name": "CPU Basic",
+    "description": "Basic CPU info",
+    "query": "sum(irate(node_cpu_seconds_total{mode=\"user\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))"
+  },
+  {
+    "name": "CPU Basic",
+    "description": "Basic CPU info",
+    "query": "sum(irate(node_cpu_seconds_total{mode=\"iowait\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))"
+  },
+  {
+    "name": "CPU Basic",
+    "description": "Basic CPU info",
+    "query": "sum(irate(node_cpu_seconds_total{mode=~\".*irq\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))"
+  },
+  {
+    "name": "CPU Basic",
+    "description": "Basic CPU info",
+    "query": "sum(irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))"
+  },
+  {
+    "name": "CPU Basic",
+    "description": "Basic CPU info",
+    "query": "sum(irate(node_cpu_seconds_total{mode=\"idle\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))"
+  },
+  {
+    "name": "Memory Basic",
+    "description": "Basic memory usage",
+    "query": "node_memory_MemTotal_bytes{}"
+  },
+  {
+    "name": "Memory Basic",
+    "description": "Basic memory usage",
+    "query": "node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{} - (node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{})"
+  },
+  {
+    "name": "Memory Basic",
+    "description": "Basic memory usage",
+    "query": "node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{}"
+  },
+  {
+    "name": "Memory Basic",
+    "description": "Basic memory usage",
+    "query": "node_memory_MemFree_bytes{}"
+  },
+  {
+    "name": "Memory Basic",
+    "description": "Basic memory usage",
+    "query": "(node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{})"
+  },
+  {
+    "name": "Network Traffic Basic",
+    "description": "Basic network info per interface",
+    "query": "irate(node_network_receive_bytes_total{}[30m])*8"
+  },
+  {
+    "name": "Network Traffic Basic",
+    "description": "Basic network info per interface",
+    "query": "irate(node_network_transmit_bytes_total{}[30m])*8"
+  },
+  {
+    "name": "Disk Space Used Basic",
+    "description": "Disk space used of all filesystems mounted",
+    "query": "100 - ((node_filesystem_avail_bytes{device!~'rootfs'} * 100) / node_filesystem_size_bytes{device!~'rootfs'})"
+  }
+]
