@@ -163,13 +163,13 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
     We ran the following PromQL query:
     ${state.query}
     
-    What the purpose of the PromQL query was:
+    This was the explanation of the PromQL query:
     ${state.query_explanation}
 
     The query returned the following data:
      ${state.result}
 
-    Based on these results, briefly answer the user's question and include relevent numbers without adding extra explanation. 
+    Based on these results, briefly answer the user's question without adding extra explanation. 
     `;
   console.log(promptValue);
   const response = await model.invoke(promptValue);
