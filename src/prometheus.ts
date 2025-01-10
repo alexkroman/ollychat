@@ -43,11 +43,11 @@ export function createQueryExecutor(
   };
 }
 
-export function createMetadataFetcher(
+export function createMetricsFetcher(
   prometheusUrl: string,
   timeout: number = 5000
 ): () => Promise<string> {
-  return async function getMetadata(): Promise<string> {
+  return async function getMetrics(): Promise<string> {
     const response = await axios.get<PrometheusMetadataResponse>(
       `${prometheusUrl}/api/v1/metadata`,
       {
