@@ -33,7 +33,7 @@ const embeddings = new OpenAIEmbeddings({
 });
 
 const vectorStore = new Chroma(embeddings, {
-  collectionName: "prometheus_examples",
+  collectionName: "prometheus_examples-2",
   url: process.env.CHROMA_URL || "http://localhost:8000",
 });
 
@@ -41,7 +41,7 @@ const vectorStore = new Chroma(embeddings, {
 (async () => {
   try {
     console.log(transformedData);
-    //await vectorStore.addDocuments(transformedData);
+    await vectorStore.addDocuments(transformedData);
     console.log("Documents successfully added to the vector store.");
   } catch (error) {
     console.error("Error adding documents to the vector store:", error);
