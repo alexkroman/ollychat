@@ -14,8 +14,10 @@
   "homepage": "https://github.com/alexkroman/ollychat#readme",
   "description": "",
   "dependencies": {
+    "@langchain/community": "^0.3.24",
     "@langchain/langgraph": "^0.2.39",
     "@slack/bolt": "^4.2.0",
+    "chromadb": "^1.10.0",
     "dotenv": "^16.4.7",
     "fs": "^0.0.1-security",
     "langchain": "^0.3.10",
@@ -37,6 +39,8 @@
     "slack-dev": "node --watch --loader ts-node/esm src/slack.ts",
     "slack-start": "node --loader ts-node/esm src/slack.ts",
     "import-dashboards": "node --loader ts-node/esm scripts/import_dashboards.ts",
-    "refine-data": "node --loader ts-node/esm scripts/refine_data.ts"
+    "refine-data": "node --loader ts-node/esm scripts/refine_data.ts",
+    "import-metrics": "node --loader ts-node/esm scripts/import_metrics.ts",
+    "load-examples": "node --loader ts-node/esm scripts/load_examples.ts"
   }
 }

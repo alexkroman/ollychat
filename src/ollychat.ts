@@ -4,15 +4,43 @@ import { FewShotPromptTemplate, PromptTemplate } from "@langchain/core/prompts";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { SemanticSimilarityExampleSelector } from "@langchain/core/example_selectors";
 import { examples } from "./training.js";
-import { metrics} from "./training-metric.js";
 import { Annotation } from "@langchain/langgraph";
 import { createQueryExecutor, createMetricsFetcher } from './prometheus.js';
 import { DynamicStructuredTool } from "@langchain/core/tools";
 import { StateGraph } from "@langchain/langgraph";
+import { Chroma } from "@langchain/community/vectorstores/chroma";
+
+import fs from 'fs';
 
 import * as dotenv from 'dotenv';
 
 dotenv.config();
+
+// Load metrics
+
+const rawData = fs.readFileSync('./training_data/metrics/metrics.json', 'utf-8');
+const metrics = JSON.parse(rawData);
+
+const embeddings = new OpenAIEmbeddings({
+  model: "text-embedding-3-small",
+});
+
+const vectorStore = new Chroma(embeddings, {
+  collectionName: "prometheus_examples",
+  url: process.env.CHROMA_URL || "http://localhost:8000", // Optional, will default to this value
+});
+
+const exampleSelector = vectorStore.asRetriever({
+  k: 5
+});
+
+console.log(await exampleSelector.invoke('cpu'));
+
+// Map the JSON data to an array with the desired structure
+const metricsArray: Array<{ name: string; description: string }> = metrics.map((metric: { name: string; description: string }) => ({
+  name: metric.name,
+  description: metric.description || ``,
+}));
 
 const model = new ChatOpenAI({
   openAIApiKey: process.env.OPENAI_API_KEY,
@@ -33,21 +61,6 @@ const queryPrometheus = createQueryExecutor(prometheusUrl);
 
 
 
-const exampleSelector = await SemanticSimilarityExampleSelector.fromExamples<typeof MemoryVectorStore>(
-  examples,
-  new OpenAIEmbeddings(),
-  MemoryVectorStore, {
-  k: 5,
-  inputKeys: ['question']
-});
-
-const metricSelector = await SemanticSimilarityExampleSelector.fromExamples<typeof MemoryVectorStore>(
-  metrics,
-  new OpenAIEmbeddings(),
-  MemoryVectorStore, {
-  k: 5,
-  inputKeys: ['description']
-});
 
 const queryPromptTemplate = PromptTemplate.fromTemplate(
 `Given an input question, first create a syntactically correct PromQL query to run, then look at the results of the query and return the answer.
@@ -102,7 +115,7 @@ const StateAnnotation = Annotation.Root({
 });
 
 const getExamples = async (state: typeof StateAnnotation.State) => {
-  const examples = await exampleSelector.selectExamples({ question: state.question });
+  const examples = await exampleSelector.invoke(state.question);
 
   const examplePrompt = PromptTemplate.fromTemplate(`
 Example Question: {question}
@@ -112,8 +125,8 @@ Example PromQL: {query}`
   const formattedExamples = await Promise.all(
     examples.map(example => 
       examplePrompt.format({
-        question: example.question,
-        query: example.query
+        question: example.metadata.question,
+        query: example.metadata.query
       })
     )
   );
@@ -121,29 +134,6 @@ Example PromQL: {query}`
   const combinedExamples = formattedExamples.join('\n\n');
 
   return { examples: combinedExamples };
-};
-
-
-
-const getMetrics = async (state: typeof StateAnnotation.State) => {
-  const metrics = await metricSelector.selectExamples({ question: state.question });
-
-  const metricPrompt = PromptTemplate.fromTemplate(`
-Metric: {metric}
-Description: {description}`);
-
-  const formattedMetrics = await Promise.all(
-    metrics.map(metric => 
-      metricPrompt.format({
-        metric: metric.metric,
-        description: metric.description
-      })
-    )
-  );
-  
-  const combinedMetrics = formattedMetrics.join('\n');
-
-  return { metrics: combinedMetrics };
 };
 
 const writeQueryTemplate = async (state: typeof StateAnnotation.State) => {
@@ -193,13 +183,11 @@ const InputStateAnnotation = Annotation.Root({
 const graphBuilder = new StateGraph({
   stateSchema: StateAnnotation,
 })
-  .addNode("getMetrics", getMetrics)
   .addNode("getExamples", getExamples)
   .addNode("writeQueryTemplate", writeQueryTemplate)
   .addNode("executeQuery", executeQuery)
   .addNode("generateAnswer", generateAnswer)
-  .addEdge("__start__", "getMetrics")
-  .addEdge("getMetrics", "getExamples")
+  .addEdge("__start__", "getExamples")
   .addEdge("getExamples", "writeQueryTemplate")
   .addEdge("writeQueryTemplate", "executeQuery")
   .addEdge("executeQuery", "generateAnswer")

@@ -1,0 +1,3782 @@
+[
+  {
+    "name": "alertmanager_alerts",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_alerts_invalid_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_alerts_received_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_build_info",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_cluster_enabled",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_config_hash",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_config_last_reload_success_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_config_last_reload_successful",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_dispatcher_aggregation_groups",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_dispatcher_alert_processing_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_http_concurrency_limit_exceeded_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_http_request_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_http_requests_in_flight",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_http_response_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_inhibition_rules",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_integrations",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_marked_alerts",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_nflog_gc_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_nflog_gossip_messages_propagated_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_nflog_maintenance_errors_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_nflog_maintenance_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_nflog_queries_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_nflog_query_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_nflog_query_errors_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_nflog_snapshot_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_nflog_snapshot_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_notification_latency_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_notification_requests_failed_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_notification_requests_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_notifications_failed_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_notifications_suppressed_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_notifications_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_receivers",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences_gc_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences_gossip_messages_propagated_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences_maintenance_errors_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences_maintenance_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences_queries_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences_query_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences_query_errors_total",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences_snapshot_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "alertmanager_silences_snapshot_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "caddy_admin_http_requests_total",
+    "description": ""
+  },
+  {
+    "name": "caddy_config_last_reload_success_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "caddy_config_last_reload_successful",
+    "description": ""
+  },
+  {
+    "name": "caddy_http_request_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "caddy_http_request_errors_total",
+    "description": ""
+  },
+  {
+    "name": "caddy_http_request_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "caddy_http_requests_in_flight",
+    "description": ""
+  },
+  {
+    "name": "caddy_http_requests_total",
+    "description": ""
+  },
+  {
+    "name": "caddy_http_response_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "caddy_http_response_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "cadvisor_version_info",
+    "description": ""
+  },
+  {
+    "name": "container_blkio_device_usage_total",
+    "description": ""
+  },
+  {
+    "name": "container_cpu_load_average_10s",
+    "description": ""
+  },
+  {
+    "name": "container_cpu_system_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "container_cpu_usage_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "container_cpu_user_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_inodes_free",
+    "description": ""
+  },
+  {
+    "name": "container_fs_inodes_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_io_current",
+    "description": ""
+  },
+  {
+    "name": "container_fs_io_time_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_io_time_weighted_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_limit_bytes",
+    "description": ""
+  },
+  {
+    "name": "container_fs_read_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_reads_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_reads_merged_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_reads_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_sector_reads_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_sector_writes_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_usage_bytes",
+    "description": ""
+  },
+  {
+    "name": "container_fs_write_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_writes_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_writes_merged_total",
+    "description": ""
+  },
+  {
+    "name": "container_fs_writes_total",
+    "description": ""
+  },
+  {
+    "name": "container_last_seen",
+    "description": ""
+  },
+  {
+    "name": "container_memory_cache",
+    "description": ""
+  },
+  {
+    "name": "container_memory_failcnt",
+    "description": ""
+  },
+  {
+    "name": "container_memory_failures_total",
+    "description": ""
+  },
+  {
+    "name": "container_memory_kernel_usage",
+    "description": ""
+  },
+  {
+    "name": "container_memory_mapped_file",
+    "description": ""
+  },
+  {
+    "name": "container_memory_max_usage_bytes",
+    "description": ""
+  },
+  {
+    "name": "container_memory_rss",
+    "description": ""
+  },
+  {
+    "name": "container_memory_swap",
+    "description": ""
+  },
+  {
+    "name": "container_memory_usage_bytes",
+    "description": ""
+  },
+  {
+    "name": "container_memory_working_set_bytes",
+    "description": ""
+  },
+  {
+    "name": "container_network_receive_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "container_network_receive_errors_total",
+    "description": ""
+  },
+  {
+    "name": "container_network_receive_packets_dropped_total",
+    "description": ""
+  },
+  {
+    "name": "container_network_receive_packets_total",
+    "description": ""
+  },
+  {
+    "name": "container_network_transmit_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "container_network_transmit_errors_total",
+    "description": ""
+  },
+  {
+    "name": "container_network_transmit_packets_dropped_total",
+    "description": ""
+  },
+  {
+    "name": "container_network_transmit_packets_total",
+    "description": ""
+  },
+  {
+    "name": "container_oom_events_total",
+    "description": ""
+  },
+  {
+    "name": "container_scrape_error",
+    "description": ""
+  },
+  {
+    "name": "container_spec_cpu_period",
+    "description": ""
+  },
+  {
+    "name": "container_spec_cpu_shares",
+    "description": ""
+  },
+  {
+    "name": "container_spec_memory_limit_bytes",
+    "description": ""
+  },
+  {
+    "name": "container_spec_memory_reservation_limit_bytes",
+    "description": ""
+  },
+  {
+    "name": "container_spec_memory_swap_limit_bytes",
+    "description": ""
+  },
+  {
+    "name": "container_start_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "container_tasks_state",
+    "description": ""
+  },
+  {
+    "name": "deprecated_flags_inuse",
+    "description": ""
+  },
+  {
+    "name": "go_build_info",
+    "description": ""
+  },
+  {
+    "name": "go_cgo_go_to_c_calls_calls",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_gc_mark_assist_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_gc_mark_dedicated_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_gc_mark_idle_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_gc_pause_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_gc_total_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_idle_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_scavenge_assist_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_scavenge_background_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_scavenge_total_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_total_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_cpu_classes_user_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_gc_cycles_automatic_gc_cycles",
+    "description": ""
+  },
+  {
+    "name": "go_gc_cycles_automatic_gc_cycles_total",
+    "description": ""
+  },
+  {
+    "name": "go_gc_cycles_forced_gc_cycles",
+    "description": ""
+  },
+  {
+    "name": "go_gc_cycles_forced_gc_cycles_total",
+    "description": ""
+  },
+  {
+    "name": "go_gc_cycles_total_gc_cycles",
+    "description": ""
+  },
+  {
+    "name": "go_gc_cycles_total_gc_cycles_total",
+    "description": ""
+  },
+  {
+    "name": "go_gc_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_gc_gogc_percent",
+    "description": ""
+  },
+  {
+    "name": "go_gc_gomemlimit_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_allocs_by_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_allocs_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_allocs_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_allocs_objects",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_allocs_objects_total",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_frees_by_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_frees_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_frees_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_frees_objects",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_frees_objects_total",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_goal_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_live_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_objects_objects",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_tiny_allocs_objects",
+    "description": ""
+  },
+  {
+    "name": "go_gc_heap_tiny_allocs_objects_total",
+    "description": ""
+  },
+  {
+    "name": "go_gc_limiter_last_enabled_gc_cycle",
+    "description": ""
+  },
+  {
+    "name": "go_gc_pauses_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_gc_scan_globals_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_scan_heap_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_scan_stack_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_scan_total_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_gc_stack_starting_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_asynctimerchan_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_execerrdot_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_gocachehash_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_gocachetest_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_gocacheverify_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_gotypesalias_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_http2client_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_http2server_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_httplaxcontentlength_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_httpmuxgo121_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_httpservecontentkeepheaders_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_installgoroot_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_multipartmaxheaders_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_multipartmaxparts_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_multipathtcp_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_netedns0_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_panicnil_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_randautoseed_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_tarinsecurepath_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_tls10server_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_tls3des_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_tlsmaxrsasize_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_tlsrsakex_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_tlsunsafeekm_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_winreadlinkvolume_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_winsymlink_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_x509keypairleaf_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_x509negativeserial_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_x509sha1_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_x509usefallbackroots_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_x509usepolicies_events",
+    "description": ""
+  },
+  {
+    "name": "go_godebug_non_default_behavior_zipinsecurepath_events",
+    "description": ""
+  },
+  {
+    "name": "go_goroutines",
+    "description": ""
+  },
+  {
+    "name": "go_info",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_heap_free_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_heap_objects_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_heap_released_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_heap_stacks_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_heap_unused_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_metadata_mcache_free_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_metadata_mcache_inuse_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_metadata_mspan_free_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_metadata_mspan_inuse_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_metadata_other_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_os_stacks_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_other_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_profiling_buckets_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memory_classes_total_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_alloc_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_alloc_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_buck_hash_sys_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_frees",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_frees_total",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_gc_sys_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_heap_alloc_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_heap_idle_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_heap_inuse_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_heap_objects",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_heap_released_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_heap_sys_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_last_gc_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_lookups_total",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_mallocs",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_mallocs_total",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_mcache_inuse_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_mcache_sys_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_mspan_inuse_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_mspan_sys_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_next_gc_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_other_sys_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_stack_inuse_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_stack_sys_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_memstats_sys_bytes",
+    "description": ""
+  },
+  {
+    "name": "go_sched_gomaxprocs_threads",
+    "description": ""
+  },
+  {
+    "name": "go_sched_goroutines_goroutines",
+    "description": ""
+  },
+  {
+    "name": "go_sched_latencies_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_sched_pauses_stopping_gc_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_sched_pauses_stopping_other_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_sched_pauses_total_gc_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_sched_pauses_total_other_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_sql_stats_connections_blocked_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_sql_stats_connections_closed_max_idle",
+    "description": ""
+  },
+  {
+    "name": "go_sql_stats_connections_closed_max_idle_time",
+    "description": ""
+  },
+  {
+    "name": "go_sql_stats_connections_closed_max_lifetime",
+    "description": ""
+  },
+  {
+    "name": "go_sql_stats_connections_idle",
+    "description": ""
+  },
+  {
+    "name": "go_sql_stats_connections_in_use",
+    "description": ""
+  },
+  {
+    "name": "go_sql_stats_connections_max_open",
+    "description": ""
+  },
+  {
+    "name": "go_sql_stats_connections_open",
+    "description": ""
+  },
+  {
+    "name": "go_sql_stats_connections_waited_for",
+    "description": ""
+  },
+  {
+    "name": "go_sync_mutex_wait_total_seconds",
+    "description": ""
+  },
+  {
+    "name": "go_threads",
+    "description": ""
+  },
+  {
+    "name": "grafana_access_evaluation_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_access_evaluation_duration",
+    "description": ""
+  },
+  {
+    "name": "grafana_access_permissions_cache_usage",
+    "description": ""
+  },
+  {
+    "name": "grafana_access_permissions_duration",
+    "description": ""
+  },
+  {
+    "name": "grafana_access_search_permissions_duration",
+    "description": ""
+  },
+  {
+    "name": "grafana_access_search_user_permissions_cache_usage",
+    "description": ""
+  },
+  {
+    "name": "grafana_aggregator_discovery_aggregation_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_active_alerts",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_active_configurations",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_alerts",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_config_hash",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_config_match",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_config_match_re",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_config_matchers",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_config_object_matchers",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_config_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_inhibition_rules",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_integrations",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alertmanager_receivers",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alerts",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alerts_invalid",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_alerts_received",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_discovered_configurations",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_dispatcher_aggregation_groups",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_dispatcher_alert_processing_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_execution_time_milliseconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_nflog_gc_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_nflog_gossip_messages_propagated",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_nflog_queries",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_nflog_query_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_nflog_query_errors",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_nflog_snapshot_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_nflog_snapshot_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_notification_latency_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_remote_alertmanager_configuration_sync_failures",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_remote_alertmanager_configuration_syncs",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_remote_alertmanager_last_configuration_sync_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_remote_alertmanager_last_readiness_check_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_remote_alertmanager_last_state_sync_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_remote_alertmanager_state_sync_failures",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_remote_alertmanager_state_syncs",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_request_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_schedule_alert_rules",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_schedule_alert_rules_hash",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_schedule_periodic_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_schedule_query_alert_rules_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_scheduler_behind_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_silences",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_silences_gc_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_silences_gossip_messages_propagated",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_silences_queries",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_silences_query_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_silences_query_errors",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_silences_snapshot_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_silences_snapshot_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_state_calculation_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_state_full_sync_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_state_history_info",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_state_history_writes_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_ticker_interval_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_ticker_last_consumed_tick_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_alerting_ticker_next_tick_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_admin_user_created",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_dashboard_get_milliseconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_dashboard_save_milliseconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_dashboard_search_milliseconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_dashboard_snapshot_create",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_dashboard_snapshot_external",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_dashboard_snapshot_get",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_dataproxy_request_all_milliseconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_login_oauth",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_login_post",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_login_saml",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_models_dashboard_insert",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_org_create",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_response_status",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_user_signup_completed",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_user_signup_invite",
+    "description": ""
+  },
+  {
+    "name": "grafana_api_user_signup_started",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_audit_event",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_audit_requests_rejected",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_client_certificate_expiration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_current_inflight_requests",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_envelope_encryption_dek_cache_fill_percent",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_flowcontrol_read_vs_write_current_requests",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_flowcontrol_seat_fair_frac",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_kube_aggregator_x509_insecure_sha1",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_kube_aggregator_x509_missing_san",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_request",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_request_aborts",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_request_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_request_filter_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_request_post_timeout",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_request_sli_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_request_slo_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_request_terminations",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_response_sizes",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_storage_data_key_generation_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_storage_data_key_generation_failures",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_storage_envelope_transformation_cache_misses",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_tls_handshake_errors",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_webhooks_x509_insecure_sha1",
+    "description": ""
+  },
+  {
+    "name": "grafana_apiserver_webhooks_x509_missing_san",
+    "description": ""
+  },
+  {
+    "name": "grafana_authenticated_user_requests",
+    "description": ""
+  },
+  {
+    "name": "grafana_authentication_attempts",
+    "description": ""
+  },
+  {
+    "name": "grafana_authentication_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_authn_authn_failed_authentication",
+    "description": ""
+  },
+  {
+    "name": "grafana_authn_authn_failed_login",
+    "description": ""
+  },
+  {
+    "name": "grafana_authn_authn_successful_authentication",
+    "description": ""
+  },
+  {
+    "name": "grafana_authorization_attempts",
+    "description": ""
+  },
+  {
+    "name": "grafana_authorization_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_build_info",
+    "description": ""
+  },
+  {
+    "name": "grafana_build_timestamp",
+    "description": ""
+  },
+  {
+    "name": "grafana_cardinality_enforcement_unexpected_categorizations",
+    "description": ""
+  },
+  {
+    "name": "grafana_database_conn_idle",
+    "description": ""
+  },
+  {
+    "name": "grafana_database_conn_in_use",
+    "description": ""
+  },
+  {
+    "name": "grafana_database_conn_max_idle_closed",
+    "description": ""
+  },
+  {
+    "name": "grafana_database_conn_max_idle_closed_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_database_conn_max_lifetime_closed",
+    "description": ""
+  },
+  {
+    "name": "grafana_database_conn_max_open",
+    "description": ""
+  },
+  {
+    "name": "grafana_database_conn_open",
+    "description": ""
+  },
+  {
+    "name": "grafana_database_conn_wait_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_database_conn_wait_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_datasource_request",
+    "description": ""
+  },
+  {
+    "name": "grafana_datasource_request_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_datasource_request_in_flight",
+    "description": ""
+  },
+  {
+    "name": "grafana_datasource_response_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_db_datasource_query_by_id",
+    "description": ""
+  },
+  {
+    "name": "grafana_disabled_metrics",
+    "description": ""
+  },
+  {
+    "name": "grafana_emails_sent",
+    "description": ""
+  },
+  {
+    "name": "grafana_emails_sent_failed",
+    "description": ""
+  },
+  {
+    "name": "grafana_encryption_cache_reads",
+    "description": ""
+  },
+  {
+    "name": "grafana_encryption_ops",
+    "description": ""
+  },
+  {
+    "name": "grafana_environment_info",
+    "description": ""
+  },
+  {
+    "name": "grafana_feature_toggles_info",
+    "description": ""
+  },
+  {
+    "name": "grafana_field_validation_request_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_folder_id_api_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_folder_id_service_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_folders_get_children_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_folders_sharedwithme_fetch_folders_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_frontend_boot_css_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_frontend_boot_first_contentful_paint_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_frontend_boot_first_paint_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_frontend_boot_js_done_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_frontend_boot_load_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_frontend_plugins_preload_ms",
+    "description": ""
+  },
+  {
+    "name": "grafana_hidden_metrics",
+    "description": ""
+  },
+  {
+    "name": "grafana_http_request_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_http_request_in_flight",
+    "description": ""
+  },
+  {
+    "name": "grafana_idforwarding_idforwarding_failed_token_signing",
+    "description": ""
+  },
+  {
+    "name": "grafana_idforwarding_idforwarding_token_signing",
+    "description": ""
+  },
+  {
+    "name": "grafana_idforwarding_idforwarding_token_signing_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_idforwarding_idforwarding_token_signing_from_cache",
+    "description": ""
+  },
+  {
+    "name": "grafana_instance_start",
+    "description": ""
+  },
+  {
+    "name": "grafana_ldap_users_sync_execution_time",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_client_command_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_client_num_reply_errors",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_client_num_server_disconnects",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_client_ping_pong_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_client_recover",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_action_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_broadcast_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_build",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_messages_received_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_messages_sent_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_num_channels",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_num_clients",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_num_nodes",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_num_subscriptions",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_num_users",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_node_pub_sub_lag_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_transport_connect_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_transport_messages_received",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_transport_messages_received_size",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_transport_messages_sent",
+    "description": ""
+  },
+  {
+    "name": "grafana_live_transport_messages_sent_size",
+    "description": ""
+  },
+  {
+    "name": "grafana_page_response_status",
+    "description": ""
+  },
+  {
+    "name": "grafana_plugin_build_info",
+    "description": ""
+  },
+  {
+    "name": "grafana_plugin_request",
+    "description": ""
+  },
+  {
+    "name": "grafana_plugin_request_duration_milliseconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_plugin_request_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_plugin_request_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_process_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_process_max_fds",
+    "description": ""
+  },
+  {
+    "name": "grafana_process_network_receive_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_process_network_transmit_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_process_open_fds",
+    "description": ""
+  },
+  {
+    "name": "grafana_process_resident_memory_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_process_start_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_process_virtual_memory_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_process_virtual_memory_max_bytes",
+    "description": ""
+  },
+  {
+    "name": "grafana_prometheus_plugin_backend_request_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_proxy_response_status",
+    "description": ""
+  },
+  {
+    "name": "grafana_public_dashboard_request_count",
+    "description": ""
+  },
+  {
+    "name": "grafana_registered_metrics",
+    "description": ""
+  },
+  {
+    "name": "grafana_rendering_queue_size",
+    "description": ""
+  },
+  {
+    "name": "grafana_search_dashboard_search_failures_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_search_dashboard_search_successes_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "grafana_sse_ds_queries",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_active_users",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_total_orgs",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_total_playlists",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_total_service_account_tokens",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_total_service_accounts",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_total_service_accounts_role_none",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_total_teams",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_total_users",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_active_admins",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_active_editors",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_active_viewers",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_admins",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_alert_rules",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_annotations",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_correlations",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_dashboard",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_dashboard_versions",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_data_keys",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_datasource",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_editors",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_folder",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_library_panels",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_library_variables",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_public_dashboard",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_rule_groups",
+    "description": ""
+  },
+  {
+    "name": "grafana_stat_totals_viewers",
+    "description": ""
+  },
+  {
+    "name": "machine_cpu_cores",
+    "description": ""
+  },
+  {
+    "name": "machine_cpu_physical_cores",
+    "description": ""
+  },
+  {
+    "name": "machine_cpu_sockets",
+    "description": ""
+  },
+  {
+    "name": "machine_memory_bytes",
+    "description": ""
+  },
+  {
+    "name": "machine_nvm_avg_power_budget_watts",
+    "description": ""
+  },
+  {
+    "name": "machine_nvm_capacity",
+    "description": ""
+  },
+  {
+    "name": "machine_scrape_error",
+    "description": ""
+  },
+  {
+    "name": "machine_swap_bytes",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_dialer_conn_attempted",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_dialer_conn_attempted_total",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_dialer_conn_closed",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_dialer_conn_closed_total",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_dialer_conn_established",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_dialer_conn_established_total",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_dialer_conn_failed",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_dialer_conn_failed_total",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_listener_conn_accepted_total",
+    "description": ""
+  },
+  {
+    "name": "net_conntrack_listener_conn_closed_total",
+    "description": ""
+  },
+  {
+    "name": "node_arp_entries",
+    "description": ""
+  },
+  {
+    "name": "node_boot_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_context_switches_total",
+    "description": ""
+  },
+  {
+    "name": "node_cooling_device_cur_state",
+    "description": ""
+  },
+  {
+    "name": "node_cooling_device_max_state",
+    "description": ""
+  },
+  {
+    "name": "node_cpu_guest_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_cpu_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_cpu_utilization_percent_threshold",
+    "description": ""
+  },
+  {
+    "name": "node_disk_discard_time_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_discarded_sectors_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_discards_completed_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_discards_merged_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_flush_requests_time_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_flush_requests_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_info",
+    "description": ""
+  },
+  {
+    "name": "node_disk_io_now",
+    "description": ""
+  },
+  {
+    "name": "node_disk_io_time_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_io_time_weighted_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_read_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_read_time_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_reads_completed_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_reads_merged_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_write_time_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_writes_completed_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_writes_merged_total",
+    "description": ""
+  },
+  {
+    "name": "node_disk_written_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "node_dmi_info",
+    "description": ""
+  },
+  {
+    "name": "node_entropy_available_bits",
+    "description": ""
+  },
+  {
+    "name": "node_entropy_pool_size_bits",
+    "description": ""
+  },
+  {
+    "name": "node_exporter_build_info",
+    "description": ""
+  },
+  {
+    "name": "node_filefd_allocated",
+    "description": ""
+  },
+  {
+    "name": "node_filefd_maximum",
+    "description": ""
+  },
+  {
+    "name": "node_filesystem_avail_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_filesystem_device_error",
+    "description": ""
+  },
+  {
+    "name": "node_filesystem_files",
+    "description": ""
+  },
+  {
+    "name": "node_filesystem_files_free",
+    "description": ""
+  },
+  {
+    "name": "node_filesystem_free_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_filesystem_readonly",
+    "description": ""
+  },
+  {
+    "name": "node_filesystem_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_forks_total",
+    "description": ""
+  },
+  {
+    "name": "node_intr_total",
+    "description": ""
+  },
+  {
+    "name": "node_load1",
+    "description": ""
+  },
+  {
+    "name": "node_load15",
+    "description": ""
+  },
+  {
+    "name": "node_load5",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Active_anon_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Active_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Active_file_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_AnonHugePages_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_AnonPages_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Bounce_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Buffers_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Cached_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_CommitLimit_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Committed_AS_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_DirectMap1G_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_DirectMap2M_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_DirectMap4k_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Dirty_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_FileHugePages_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_FilePmdMapped_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_HardwareCorrupted_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_HugePages_Free",
+    "description": ""
+  },
+  {
+    "name": "node_memory_HugePages_Rsvd",
+    "description": ""
+  },
+  {
+    "name": "node_memory_HugePages_Surp",
+    "description": ""
+  },
+  {
+    "name": "node_memory_HugePages_Total",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Hugepagesize_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Hugetlb_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Inactive_anon_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Inactive_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Inactive_file_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_KReclaimable_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_KernelStack_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Mapped_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_MemAvailable_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_MemFree_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_MemTotal_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Mlocked_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_NFS_Unstable_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_PageTables_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Percpu_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_SReclaimable_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_SUnreclaim_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_ShmemHugePages_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_ShmemPmdMapped_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Shmem_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Slab_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_SwapCached_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_SwapFree_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_SwapTotal_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Unevictable_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_VmallocChunk_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_VmallocTotal_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_VmallocUsed_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_WritebackTmp_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_memory_Writeback_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Icmp6_InErrors",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Icmp6_InMsgs",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Icmp6_OutMsgs",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Icmp_InErrors",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Icmp_InMsgs",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Icmp_OutMsgs",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Ip6_InOctets",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Ip6_OutOctets",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_IpExt_InOctets",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_IpExt_OutOctets",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Ip_Forwarding",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_TcpExt_ListenDrops",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_TcpExt_ListenOverflows",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_TcpExt_SyncookiesFailed",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_TcpExt_SyncookiesRecv",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_TcpExt_SyncookiesSent",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_TcpExt_TCPOFOQueue",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_TcpExt_TCPSynRetrans",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_TcpExt_TCPTimeouts",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Tcp_ActiveOpens",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Tcp_CurrEstab",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Tcp_InErrs",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Tcp_InSegs",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Tcp_OutRsts",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Tcp_OutSegs",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Tcp_PassiveOpens",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Tcp_RetransSegs",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp6_InDatagrams",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp6_InErrors",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp6_NoPorts",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp6_OutDatagrams",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp6_RcvbufErrors",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp6_SndbufErrors",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_UdpLite6_InErrors",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_UdpLite_InErrors",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp_InDatagrams",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp_InErrors",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp_NoPorts",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp_OutDatagrams",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp_RcvbufErrors",
+    "description": ""
+  },
+  {
+    "name": "node_netstat_Udp_SndbufErrors",
+    "description": ""
+  },
+  {
+    "name": "node_network_address_assign_type",
+    "description": ""
+  },
+  {
+    "name": "node_network_carrier",
+    "description": ""
+  },
+  {
+    "name": "node_network_carrier_changes_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_carrier_down_changes_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_carrier_up_changes_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_device_id",
+    "description": ""
+  },
+  {
+    "name": "node_network_dormant",
+    "description": ""
+  },
+  {
+    "name": "node_network_flags",
+    "description": ""
+  },
+  {
+    "name": "node_network_iface_id",
+    "description": ""
+  },
+  {
+    "name": "node_network_iface_link",
+    "description": ""
+  },
+  {
+    "name": "node_network_iface_link_mode",
+    "description": ""
+  },
+  {
+    "name": "node_network_info",
+    "description": ""
+  },
+  {
+    "name": "node_network_mtu_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_network_name_assign_type",
+    "description": ""
+  },
+  {
+    "name": "node_network_net_dev_group",
+    "description": ""
+  },
+  {
+    "name": "node_network_protocol_type",
+    "description": ""
+  },
+  {
+    "name": "node_network_receive_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_receive_compressed_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_receive_drop_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_receive_errs_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_receive_fifo_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_receive_frame_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_receive_multicast_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_receive_nohandler_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_receive_packets_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_speed_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_network_transmit_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_transmit_carrier_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_transmit_colls_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_transmit_compressed_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_transmit_drop_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_transmit_errs_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_transmit_fifo_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_transmit_packets_total",
+    "description": ""
+  },
+  {
+    "name": "node_network_transmit_queue_length",
+    "description": ""
+  },
+  {
+    "name": "node_network_up",
+    "description": ""
+  },
+  {
+    "name": "node_nf_conntrack_entries",
+    "description": ""
+  },
+  {
+    "name": "node_nf_conntrack_entries_limit",
+    "description": ""
+  },
+  {
+    "name": "node_os_info",
+    "description": ""
+  },
+  {
+    "name": "node_os_version",
+    "description": ""
+  },
+  {
+    "name": "node_pressure_cpu_waiting_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_pressure_io_stalled_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_pressure_io_waiting_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_pressure_memory_stalled_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_pressure_memory_waiting_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_procs_blocked",
+    "description": ""
+  },
+  {
+    "name": "node_procs_running",
+    "description": ""
+  },
+  {
+    "name": "node_schedstat_running_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_schedstat_timeslices_total",
+    "description": ""
+  },
+  {
+    "name": "node_schedstat_waiting_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "node_scrape_collector_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_scrape_collector_success",
+    "description": ""
+  },
+  {
+    "name": "node_selinux_enabled",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_FRAG6_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_FRAG6_memory",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_FRAG_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_FRAG_memory",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_RAW6_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_RAW_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_TCP6_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_TCP_alloc",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_TCP_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_TCP_mem",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_TCP_mem_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_TCP_orphan",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_TCP_tw",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_UDP6_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_UDPLITE6_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_UDPLITE_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_UDP_inuse",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_UDP_mem",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_UDP_mem_bytes",
+    "description": ""
+  },
+  {
+    "name": "node_sockstat_sockets_used",
+    "description": ""
+  },
+  {
+    "name": "node_softnet_backlog_len",
+    "description": ""
+  },
+  {
+    "name": "node_softnet_cpu_collision_total",
+    "description": ""
+  },
+  {
+    "name": "node_softnet_dropped_total",
+    "description": ""
+  },
+  {
+    "name": "node_softnet_flow_limit_count_total",
+    "description": ""
+  },
+  {
+    "name": "node_softnet_processed_total",
+    "description": ""
+  },
+  {
+    "name": "node_softnet_received_rps_total",
+    "description": ""
+  },
+  {
+    "name": "node_softnet_times_squeezed_total",
+    "description": ""
+  },
+  {
+    "name": "node_systemd_socket_accepted_connections_total",
+    "description": ""
+  },
+  {
+    "name": "node_systemd_socket_current_connections",
+    "description": ""
+  },
+  {
+    "name": "node_systemd_socket_refused_connections_total",
+    "description": ""
+  },
+  {
+    "name": "node_systemd_system_running",
+    "description": ""
+  },
+  {
+    "name": "node_systemd_timer_last_trigger_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_systemd_unit_state",
+    "description": ""
+  },
+  {
+    "name": "node_systemd_units",
+    "description": ""
+  },
+  {
+    "name": "node_systemd_version",
+    "description": ""
+  },
+  {
+    "name": "node_textfile_mtime_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_textfile_scrape_error",
+    "description": ""
+  },
+  {
+    "name": "node_time_clocksource_available_info",
+    "description": ""
+  },
+  {
+    "name": "node_time_clocksource_current_info",
+    "description": ""
+  },
+  {
+    "name": "node_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_time_zone_offset_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_timex_estimated_error_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_timex_frequency_adjustment_ratio",
+    "description": ""
+  },
+  {
+    "name": "node_timex_loop_time_constant",
+    "description": ""
+  },
+  {
+    "name": "node_timex_maxerror_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_timex_offset_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_timex_pps_calibration_total",
+    "description": ""
+  },
+  {
+    "name": "node_timex_pps_error_total",
+    "description": ""
+  },
+  {
+    "name": "node_timex_pps_frequency_hertz",
+    "description": ""
+  },
+  {
+    "name": "node_timex_pps_jitter_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_timex_pps_jitter_total",
+    "description": ""
+  },
+  {
+    "name": "node_timex_pps_shift_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_timex_pps_stability_exceeded_total",
+    "description": ""
+  },
+  {
+    "name": "node_timex_pps_stability_hertz",
+    "description": ""
+  },
+  {
+    "name": "node_timex_status",
+    "description": ""
+  },
+  {
+    "name": "node_timex_sync_status",
+    "description": ""
+  },
+  {
+    "name": "node_timex_tai_offset_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_timex_tick_seconds",
+    "description": ""
+  },
+  {
+    "name": "node_udp_queues",
+    "description": ""
+  },
+  {
+    "name": "node_uname_info",
+    "description": ""
+  },
+  {
+    "name": "node_vmstat_oom_kill",
+    "description": ""
+  },
+  {
+    "name": "node_vmstat_pgfault",
+    "description": ""
+  },
+  {
+    "name": "node_vmstat_pgmajfault",
+    "description": ""
+  },
+  {
+    "name": "node_vmstat_pgpgin",
+    "description": ""
+  },
+  {
+    "name": "node_vmstat_pgpgout",
+    "description": ""
+  },
+  {
+    "name": "node_vmstat_pswpin",
+    "description": ""
+  },
+  {
+    "name": "node_vmstat_pswpout",
+    "description": ""
+  },
+  {
+    "name": "openfga_check_cache_hit_count",
+    "description": ""
+  },
+  {
+    "name": "openfga_check_cache_total_count",
+    "description": ""
+  },
+  {
+    "name": "openfga_condition_compilation_duration_ms",
+    "description": ""
+  },
+  {
+    "name": "openfga_condition_evaluation_cost",
+    "description": ""
+  },
+  {
+    "name": "openfga_condition_evaluation_duration_ms",
+    "description": ""
+  },
+  {
+    "name": "openfga_list_objects_further_eval_required_count",
+    "description": ""
+  },
+  {
+    "name": "openfga_list_objects_no_further_eval_required_count",
+    "description": ""
+  },
+  {
+    "name": "plugins_active_instances",
+    "description": ""
+  },
+  {
+    "name": "plugins_datasource_instances",
+    "description": ""
+  },
+  {
+    "name": "probe_dns_lookup_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "probe_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "probe_failed_due_to_regex",
+    "description": ""
+  },
+  {
+    "name": "probe_http_content_length",
+    "description": ""
+  },
+  {
+    "name": "probe_http_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "probe_http_redirects",
+    "description": ""
+  },
+  {
+    "name": "probe_http_ssl",
+    "description": ""
+  },
+  {
+    "name": "probe_http_status_code",
+    "description": ""
+  },
+  {
+    "name": "probe_http_uncompressed_body_length",
+    "description": ""
+  },
+  {
+    "name": "probe_http_version",
+    "description": ""
+  },
+  {
+    "name": "probe_ip_addr_hash",
+    "description": ""
+  },
+  {
+    "name": "probe_ip_protocol",
+    "description": ""
+  },
+  {
+    "name": "probe_success",
+    "description": ""
+  },
+  {
+    "name": "process_cpu_seconds",
+    "description": ""
+  },
+  {
+    "name": "process_cpu_seconds_total",
+    "description": ""
+  },
+  {
+    "name": "process_max_fds",
+    "description": ""
+  },
+  {
+    "name": "process_network_receive_bytes",
+    "description": ""
+  },
+  {
+    "name": "process_network_receive_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "process_network_transmit_bytes",
+    "description": ""
+  },
+  {
+    "name": "process_network_transmit_bytes_total",
+    "description": ""
+  },
+  {
+    "name": "process_open_fds",
+    "description": ""
+  },
+  {
+    "name": "process_resident_memory_bytes",
+    "description": ""
+  },
+  {
+    "name": "process_start_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "process_virtual_memory_bytes",
+    "description": ""
+  },
+  {
+    "name": "process_virtual_memory_max_bytes",
+    "description": ""
+  },
+  {
+    "name": "prometheus_api_notification_active_subscribers",
+    "description": ""
+  },
+  {
+    "name": "prometheus_api_notification_updates_dropped_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_api_notification_updates_sent_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_api_remote_read_queries",
+    "description": ""
+  },
+  {
+    "name": "prometheus_build_info",
+    "description": ""
+  },
+  {
+    "name": "prometheus_config_last_reload_success_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_config_last_reload_successful",
+    "description": ""
+  },
+  {
+    "name": "prometheus_engine_queries",
+    "description": ""
+  },
+  {
+    "name": "prometheus_engine_queries_concurrent_max",
+    "description": ""
+  },
+  {
+    "name": "prometheus_engine_query_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_engine_query_log_enabled",
+    "description": ""
+  },
+  {
+    "name": "prometheus_engine_query_log_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_engine_query_samples_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_http_request_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_http_requests_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_http_response_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "prometheus_notifications_alertmanagers_discovered",
+    "description": ""
+  },
+  {
+    "name": "prometheus_notifications_dropped_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_notifications_errors_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_notifications_latency_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_notifications_queue_capacity",
+    "description": ""
+  },
+  {
+    "name": "prometheus_notifications_queue_length",
+    "description": ""
+  },
+  {
+    "name": "prometheus_notifications_sent_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_ready",
+    "description": ""
+  },
+  {
+    "name": "prometheus_remote_storage_exemplars_in_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_remote_storage_highest_timestamp_in_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_remote_storage_histograms_in_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_remote_storage_samples_in_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_remote_storage_string_interner_zero_reference_releases_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_evaluation_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_evaluation_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_evaluations_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_group_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_group_interval_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_group_iterations_missed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_group_iterations_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_group_last_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_group_last_evaluation_samples",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_group_last_evaluation_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_group_last_restore_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_rule_group_rules",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_azure_cache_hit_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_azure_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_consul_rpc_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_consul_rpc_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_discovered_targets",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_dns_lookup_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_dns_lookups_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_failed_configs",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_file_mtime_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_file_read_errors_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_file_scan_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_file_watcher_errors_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_http_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_kubernetes_events_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_kubernetes_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_kuma_fetch_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_kuma_fetch_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_kuma_fetch_skipped_updates_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_linode_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_nomad_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_received_updates_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_updates_delayed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_sd_updates_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_interval_length_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_metadata_cache_bytes",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_metadata_cache_entries",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pool_exceeded_label_limits_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pool_exceeded_target_limit_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pool_reloads_failed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pool_reloads_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pool_symboltable_items",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pool_sync_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pool_target_limit",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pool_targets",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pools_failed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrape_pools_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrapes_cache_flush_forced_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrapes_exceeded_body_size_limit_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrapes_exceeded_native_histogram_bucket_limit_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrapes_exceeded_sample_limit_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrapes_exemplar_out_of_order_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrapes_sample_duplicate_timestamp_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrapes_sample_out_of_bounds_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_scrapes_sample_out_of_order_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_sync_failed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_target_sync_length_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_template_text_expansion_failures",
+    "description": ""
+  },
+  {
+    "name": "prometheus_template_text_expansion_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_template_text_expansions",
+    "description": ""
+  },
+  {
+    "name": "prometheus_template_text_expansions_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_treecache_watcher_goroutines",
+    "description": ""
+  },
+  {
+    "name": "prometheus_treecache_zookeeper_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_blocks_loaded",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_checkpoint_creations_failed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_checkpoint_creations_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_checkpoint_deletions_failed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_checkpoint_deletions_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_clean_start",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_compaction_chunk_range_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_compaction_chunk_samples",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_compaction_chunk_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_compaction_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_compaction_populating_block",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_compactions_failed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_compactions_skipped_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_compactions_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_compactions_triggered_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_data_replay_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_exemplar_exemplars_appended_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_exemplar_exemplars_in_storage",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_exemplar_last_exemplars_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_exemplar_max_exemplars",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_exemplar_out_of_order_exemplars_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_exemplar_series_with_exemplars_in_storage",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_active_appenders",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_chunks",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_chunks_created_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_chunks_removed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_chunks_storage_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_gc_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_max_time",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_max_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_min_time",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_min_time_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_out_of_order_samples_appended_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_samples_appended_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_series",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_series_created_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_series_not_found_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_series_removed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_truncations_failed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_head_truncations_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_isolation_high_watermark",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_isolation_low_watermark",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_lowest_timestamp",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_lowest_timestamp_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_mmap_chunk_corruptions_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_mmap_chunks_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_out_of_bound_samples_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_out_of_order_samples_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_reloads_failures_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_reloads_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_retention_limit_bytes",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_retention_limit_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_size_retentions_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_snapshot_replay_error_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_storage_blocks_bytes",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_symbol_table_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_time_retentions_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_tombstone_cleanup_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_too_old_samples_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_vertical_compactions_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_completed_pages_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_corruptions_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_fsync_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_page_flushes_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_segment_current",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_storage_size_bytes",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_truncate_duration_seconds",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_truncations_failed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_truncations_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_tsdb_wal_writes_failed_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_web_federation_errors_total",
+    "description": ""
+  },
+  {
+    "name": "prometheus_web_federation_warnings_total",
+    "description": ""
+  },
+  {
+    "name": "promhttp_metric_handler_errors",
+    "description": ""
+  },
+  {
+    "name": "promhttp_metric_handler_errors_total",
+    "description": ""
+  },
+  {
+    "name": "promhttp_metric_handler_requests",
+    "description": ""
+  },
+  {
+    "name": "promhttp_metric_handler_requests_in_flight",
+    "description": ""
+  },
+  {
+    "name": "promhttp_metric_handler_requests_total",
+    "description": ""
+  },
+  {
+    "name": "rpc_durations_histogram_seconds",
+    "description": ""
+  },
+  {
+    "name": "rpc_durations_seconds",
+    "description": ""
+  }
+]
