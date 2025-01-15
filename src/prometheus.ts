@@ -28,8 +28,7 @@ export type QueryExecutor = (query: string) => Promise<string>;
 
 export function createQueryExecutor(
   prometheusUrl: string,
-  timeout: number = 5000
-): QueryExecutor {
+  timeout: number = 5000): QueryExecutor {
   return async function executeQuery(query: string): Promise<string> {
     const response = await axios.get<PrometheusQueryResponse>(
       `${prometheusUrl}/api/v1/query`,
@@ -45,8 +44,7 @@ export function createQueryExecutor(
 
 export function createMetricsFetcher(
   prometheusUrl: string,
-  timeout: number = 5000
-): () => Promise<string> {
+  timeout: number = 5000): () => Promise<string> {
   return async function getMetrics(): Promise<string> {
     const response = await axios.get<PrometheusMetadataResponse>(
       `${prometheusUrl}/api/v1/metadata`,
@@ -54,7 +52,6 @@ export function createMetricsFetcher(
         timeout,
       }
     );
-    // Return a simple comma-separated list of all metric names
-    return Object.keys(response.data.data).join(', ');
+    return JSON.stringify(response.data.data);
   };
 }

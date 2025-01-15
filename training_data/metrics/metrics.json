@@ -1,3782 +1,3874 @@
 [
   {
     "name": "alertmanager_alerts",
-    "description": ""
+    "help": "How many alerts by state."
   },
   {
     "name": "alertmanager_alerts_invalid_total",
-    "description": ""
+    "help": "The total number of received alerts that were invalid."
   },
   {
     "name": "alertmanager_alerts_received_total",
-    "description": ""
+    "help": "The total number of received alerts."
   },
   {
     "name": "alertmanager_build_info",
-    "description": ""
+    "help": "A metric with a constant '1' value labeled by version, revision, branch, goversion from which alertmanager was built, and the goos and goarch for the build."
   },
   {
     "name": "alertmanager_cluster_enabled",
-    "description": ""
+    "help": "Indicates whether the clustering is enabled or not."
   },
   {
     "name": "alertmanager_config_hash",
-    "description": ""
+    "help": "Hash of the currently loaded alertmanager configuration."
   },
   {
     "name": "alertmanager_config_last_reload_success_timestamp_seconds",
-    "description": ""
+    "help": "Timestamp of the last successful configuration reload."
   },
   {
     "name": "alertmanager_config_last_reload_successful",
-    "description": ""
+    "help": "Whether the last configuration reload attempt was successful."
   },
   {
     "name": "alertmanager_dispatcher_aggregation_groups",
-    "description": ""
+    "help": "Number of active aggregation groups"
   },
   {
     "name": "alertmanager_dispatcher_alert_processing_duration_seconds",
-    "description": ""
+    "help": "Summary of latencies for the processing of alerts."
   },
   {
     "name": "alertmanager_http_concurrency_limit_exceeded_total",
-    "description": ""
+    "help": "Total number of times an HTTP request failed because the concurrency limit was reached."
   },
   {
     "name": "alertmanager_http_request_duration_seconds",
-    "description": ""
+    "help": "Histogram of latencies for HTTP requests."
   },
   {
     "name": "alertmanager_http_requests_in_flight",
-    "description": ""
+    "help": "Current number of HTTP requests being processed."
   },
   {
     "name": "alertmanager_http_response_size_bytes",
-    "description": ""
+    "help": "Histogram of response size for HTTP requests."
   },
   {
     "name": "alertmanager_inhibition_rules",
-    "description": ""
+    "help": "Number of configured inhibition rules."
   },
   {
     "name": "alertmanager_integrations",
-    "description": ""
+    "help": "Number of configured integrations."
   },
   {
     "name": "alertmanager_marked_alerts",
-    "description": ""
+    "help": "How many alerts by state are currently marked in the Alertmanager regardless of their expiry."
   },
   {
     "name": "alertmanager_nflog_gc_duration_seconds",
-    "description": ""
+    "help": "Duration of the last notification log garbage collection cycle."
   },
   {
     "name": "alertmanager_nflog_gossip_messages_propagated_total",
-    "description": ""
+    "help": "Number of received gossip messages that have been further gossiped."
   },
   {
     "name": "alertmanager_nflog_maintenance_errors_total",
-    "description": ""
+    "help": "How many maintenances were executed for the notification log that failed."
   },
   {
     "name": "alertmanager_nflog_maintenance_total",
-    "description": ""
+    "help": "How many maintenances were executed for the notification log."
   },
   {
     "name": "alertmanager_nflog_queries_total",
-    "description": ""
+    "help": "Number of notification log queries were received."
   },
   {
     "name": "alertmanager_nflog_query_duration_seconds",
-    "description": ""
+    "help": "Duration of notification log query evaluation."
   },
   {
     "name": "alertmanager_nflog_query_errors_total",
-    "description": ""
+    "help": "Number notification log received queries that failed."
   },
   {
     "name": "alertmanager_nflog_snapshot_duration_seconds",
-    "description": ""
+    "help": "Duration of the last notification log snapshot."
   },
   {
     "name": "alertmanager_nflog_snapshot_size_bytes",
-    "description": ""
+    "help": "Size of the last notification log snapshot in bytes."
   },
   {
     "name": "alertmanager_notification_latency_seconds",
-    "description": ""
+    "help": "The latency of notifications in seconds."
   },
   {
     "name": "alertmanager_notification_requests_failed_total",
-    "description": ""
+    "help": "The total number of failed notification requests."
   },
   {
     "name": "alertmanager_notification_requests_total",
-    "description": ""
+    "help": "The total number of attempted notification requests."
   },
   {
     "name": "alertmanager_notifications_failed_total",
-    "description": ""
+    "help": "The total number of failed notifications."
   },
   {
     "name": "alertmanager_notifications_suppressed_total",
-    "description": ""
+    "help": "The total number of notifications suppressed for being outside of active time intervals or within muted time intervals."
   },
   {
     "name": "alertmanager_notifications_total",
-    "description": ""
+    "help": "The total number of attempted notifications."
   },
   {
     "name": "alertmanager_receivers",
-    "description": ""
+    "help": "Number of configured receivers."
   },
   {
     "name": "alertmanager_silences",
-    "description": ""
+    "help": "How many silences by state."
   },
   {
     "name": "alertmanager_silences_gc_duration_seconds",
-    "description": ""
+    "help": "Duration of the last silence garbage collection cycle."
   },
   {
     "name": "alertmanager_silences_gossip_messages_propagated_total",
-    "description": ""
+    "help": "Number of received gossip messages that have been further gossiped."
   },
   {
     "name": "alertmanager_silences_maintenance_errors_total",
-    "description": ""
+    "help": "How many maintenances were executed for silences that failed."
   },
   {
     "name": "alertmanager_silences_maintenance_total",
-    "description": ""
+    "help": "How many maintenances were executed for silences."
   },
   {
     "name": "alertmanager_silences_queries_total",
-    "description": ""
+    "help": "How many silence queries were received."
   },
   {
     "name": "alertmanager_silences_query_duration_seconds",
-    "description": ""
+    "help": "Duration of silence query evaluation."
   },
   {
     "name": "alertmanager_silences_query_errors_total",
-    "description": ""
+    "help": "How many silence received queries did not succeed."
   },
   {
     "name": "alertmanager_silences_snapshot_duration_seconds",
-    "description": ""
+    "help": "Duration of the last silence snapshot."
   },
   {
     "name": "alertmanager_silences_snapshot_size_bytes",
-    "description": ""
+    "help": "Size of the last silence snapshot in bytes."
   },
   {
     "name": "caddy_admin_http_requests_total",
-    "description": ""
+    "help": "Counter of requests made to the Admin API's HTTP endpoints."
   },
   {
     "name": "caddy_config_last_reload_success_timestamp_seconds",
-    "description": ""
+    "help": "Timestamp of the last successful configuration reload."
   },
   {
     "name": "caddy_config_last_reload_successful",
-    "description": ""
+    "help": "Whether the last configuration reload attempt was successful."
   },
   {
     "name": "caddy_http_request_duration_seconds",
-    "description": ""
+    "help": "Histogram of round-trip request durations."
   },
   {
     "name": "caddy_http_request_errors_total",
-    "description": ""
+    "help": "Number of requests resulting in middleware errors."
   },
   {
     "name": "caddy_http_request_size_bytes",
-    "description": ""
+    "help": "Total size of the request. Includes body"
   },
   {
     "name": "caddy_http_requests_in_flight",
-    "description": ""
+    "help": "Number of requests currently handled by this server."
   },
   {
     "name": "caddy_http_requests_total",
-    "description": ""
+    "help": "Counter of HTTP(S) requests made."
   },
   {
     "name": "caddy_http_response_duration_seconds",
-    "description": ""
+    "help": "Histogram of times to first byte in response bodies."
   },
   {
     "name": "caddy_http_response_size_bytes",
-    "description": ""
+    "help": "Size of the returned response."
   },
   {
     "name": "cadvisor_version_info",
-    "description": ""
+    "help": "A metric with a constant '1' value labeled by kernel version, OS version, docker version, cadvisor version & cadvisor revision."
   },
   {
     "name": "container_blkio_device_usage_total",
-    "description": ""
+    "help": "Blkio Device bytes usage"
   },
   {
     "name": "container_cpu_load_average_10s",
-    "description": ""
+    "help": "Value of container cpu load average over the last 10 seconds."
   },
   {
     "name": "container_cpu_system_seconds_total",
-    "description": ""
+    "help": "Cumulative system cpu time consumed in seconds."
   },
   {
     "name": "container_cpu_usage_seconds_total",
-    "description": ""
+    "help": "Cumulative cpu time consumed in seconds."
   },
   {
     "name": "container_cpu_user_seconds_total",
-    "description": ""
+    "help": "Cumulative user cpu time consumed in seconds."
   },
   {
     "name": "container_fs_inodes_free",
-    "description": ""
+    "help": "Number of available Inodes"
   },
   {
     "name": "container_fs_inodes_total",
-    "description": ""
+    "help": "Number of Inodes"
   },
   {
     "name": "container_fs_io_current",
-    "description": ""
+    "help": "Number of I/Os currently in progress"
   },
   {
     "name": "container_fs_io_time_seconds_total",
-    "description": ""
+    "help": "Cumulative count of seconds spent doing I/Os"
   },
   {
     "name": "container_fs_io_time_weighted_seconds_total",
-    "description": ""
+    "help": "Cumulative weighted I/O time in seconds"
   },
   {
     "name": "container_fs_limit_bytes",
-    "description": ""
+    "help": "Number of bytes that can be consumed by the container on this filesystem."
   },
   {
     "name": "container_fs_read_seconds_total",
-    "description": ""
+    "help": "Cumulative count of seconds spent reading"
   },
   {
     "name": "container_fs_reads_bytes_total",
-    "description": ""
+    "help": "Cumulative count of bytes read"
   },
   {
     "name": "container_fs_reads_merged_total",
-    "description": ""
+    "help": "Cumulative count of reads merged"
   },
   {
     "name": "container_fs_reads_total",
-    "description": ""
+    "help": "Cumulative count of reads completed"
   },
   {
     "name": "container_fs_sector_reads_total",
-    "description": ""
+    "help": "Cumulative count of sector reads completed"
   },
   {
     "name": "container_fs_sector_writes_total",
-    "description": ""
+    "help": "Cumulative count of sector writes completed"
   },
   {
     "name": "container_fs_usage_bytes",
-    "description": ""
+    "help": "Number of bytes that are consumed by the container on this filesystem."
   },
   {
     "name": "container_fs_write_seconds_total",
-    "description": ""
+    "help": "Cumulative count of seconds spent writing"
   },
   {
     "name": "container_fs_writes_bytes_total",
-    "description": ""
+    "help": "Cumulative count of bytes written"
   },
   {
     "name": "container_fs_writes_merged_total",
-    "description": ""
+    "help": "Cumulative count of writes merged"
   },
   {
     "name": "container_fs_writes_total",
-    "description": ""
+    "help": "Cumulative count of writes completed"
   },
   {
     "name": "container_last_seen",
-    "description": ""
+    "help": "Last time a container was seen by the exporter"
   },
   {
     "name": "container_memory_cache",
-    "description": ""
+    "help": "Number of bytes of page cache memory."
   },
   {
     "name": "container_memory_failcnt",
-    "description": ""
+    "help": "Number of memory usage hits limits"
   },
   {
     "name": "container_memory_failures_total",
-    "description": ""
+    "help": "Cumulative count of memory allocation failures."
   },
   {
     "name": "container_memory_kernel_usage",
-    "description": ""
+    "help": "Size of kernel memory allocated in bytes."
   },
   {
     "name": "container_memory_mapped_file",
-    "description": ""
+    "help": "Size of memory mapped files in bytes."
   },
   {
     "name": "container_memory_max_usage_bytes",
-    "description": ""
+    "help": "Maximum memory usage recorded in bytes"
   },
   {
     "name": "container_memory_rss",
-    "description": ""
+    "help": "Size of RSS in bytes."
   },
   {
     "name": "container_memory_swap",
-    "description": ""
+    "help": "Container swap usage in bytes."
   },
   {
     "name": "container_memory_usage_bytes",
-    "description": ""
+    "help": "Current memory usage in bytes, including all memory regardless of when it was accessed"
   },
   {
     "name": "container_memory_working_set_bytes",
-    "description": ""
+    "help": "Current working set in bytes."
   },
   {
     "name": "container_network_receive_bytes_total",
-    "description": ""
+    "help": "Cumulative count of bytes received"
   },
   {
     "name": "container_network_receive_errors_total",
-    "description": ""
+    "help": "Cumulative count of errors encountered while receiving"
   },
   {
     "name": "container_network_receive_packets_dropped_total",
-    "description": ""
+    "help": "Cumulative count of packets dropped while receiving"
   },
   {
     "name": "container_network_receive_packets_total",
-    "description": ""
+    "help": "Cumulative count of packets received"
   },
   {
     "name": "container_network_transmit_bytes_total",
-    "description": ""
+    "help": "Cumulative count of bytes transmitted"
   },
   {
     "name": "container_network_transmit_errors_total",
-    "description": ""
+    "help": "Cumulative count of errors encountered while transmitting"
   },
   {
     "name": "container_network_transmit_packets_dropped_total",
-    "description": ""
+    "help": "Cumulative count of packets dropped while transmitting"
   },
   {
     "name": "container_network_transmit_packets_total",
-    "description": ""
+    "help": "Cumulative count of packets transmitted"
   },
   {
     "name": "container_oom_events_total",
-    "description": ""
+    "help": "Count of out of memory events observed for the container"
   },
   {
     "name": "container_scrape_error",
-    "description": ""
+    "help": "1 if there was an error while getting container metrics, 0 otherwise"
   },
   {
     "name": "container_spec_cpu_period",
-    "description": ""
+    "help": "CPU period of the container."
   },
   {
     "name": "container_spec_cpu_shares",
-    "description": ""
+    "help": "CPU share of the container."
   },
   {
     "name": "container_spec_memory_limit_bytes",
-    "description": ""
+    "help": "Memory limit for the container."
   },
   {
     "name": "container_spec_memory_reservation_limit_bytes",
-    "description": ""
+    "help": "Memory reservation limit for the container."
   },
   {
     "name": "container_spec_memory_swap_limit_bytes",
-    "description": ""
+    "help": "Memory swap limit for the container."
   },
   {
     "name": "container_start_time_seconds",
-    "description": ""
+    "help": "Start time of the container since unix epoch in seconds."
   },
   {
     "name": "container_tasks_state",
-    "description": ""
+    "help": "Number of tasks in given state"
   },
   {
     "name": "deprecated_flags_inuse",
-    "description": ""
+    "help": "The number of deprecated flags currently set."
   },
   {
     "name": "go_build_info",
-    "description": ""
+    "help": "Build information about the main Go module."
   },
   {
     "name": "go_cgo_go_to_c_calls_calls",
-    "description": ""
+    "help": "Count of calls made from Go to C by the current process. Sourced from /cgo/go-to-c-calls:calls"
   },
   {
     "name": "go_cpu_classes_gc_mark_assist_cpu_seconds",
-    "description": ""
+    "help": "Estimated total CPU time goroutines spent performing GC tasks to assist the GC and prevent it from falling behind the application. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sourced from /cpu/classes/gc/mark/assist:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_gc_mark_dedicated_cpu_seconds",
-    "description": ""
+    "help": "Estimated total CPU time spent performing GC tasks on processors (as defined by GOMAXPROCS) dedicated to those tasks. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sourced from /cpu/classes/gc/mark/dedicated:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_gc_mark_idle_cpu_seconds",
-    "description": ""
+    "help": "Estimated total CPU time spent performing GC tasks on spare CPU resources that the Go scheduler could not otherwise find a use for. This should be subtracted from the total GC CPU time to obtain a measure of compulsory GC CPU time. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sourced from /cpu/classes/gc/mark/idle:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_gc_pause_cpu_seconds",
-    "description": ""
+    "help": "Estimated total CPU time spent with the application paused by the GC. Even if only one thread is running during the pause, this is computed as GOMAXPROCS times the pause latency because nothing else can be executing. This is the exact sum of samples in /sched/pauses/total/gc:seconds if each sample is multiplied by GOMAXPROCS at the time it is taken. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sourced from /cpu/classes/gc/pause:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_gc_total_cpu_seconds",
-    "description": ""
+    "help": "Estimated total CPU time spent performing GC tasks. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sum of all metrics in /cpu/classes/gc. Sourced from /cpu/classes/gc/total:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_idle_cpu_seconds",
-    "description": ""
+    "help": "Estimated total available CPU time not spent executing any Go or Go runtime code. In other words, the part of /cpu/classes/total:cpu-seconds that was unused. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sourced from /cpu/classes/idle:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_scavenge_assist_cpu_seconds",
-    "description": ""
+    "help": "Estimated total CPU time spent returning unused memory to the underlying platform in response eagerly in response to memory pressure. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sourced from /cpu/classes/scavenge/assist:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_scavenge_background_cpu_seconds",
-    "description": ""
+    "help": "Estimated total CPU time spent performing background tasks to return unused memory to the underlying platform. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sourced from /cpu/classes/scavenge/background:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_scavenge_total_cpu_seconds",
-    "description": ""
+    "help": "Estimated total CPU time spent performing tasks that return unused memory to the underlying platform. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sum of all metrics in /cpu/classes/scavenge. Sourced from /cpu/classes/scavenge/total:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_total_cpu_seconds",
-    "description": ""
+    "help": "Estimated total available CPU time for user Go code or the Go runtime, as defined by GOMAXPROCS. In other words, GOMAXPROCS integrated over the wall-clock duration this process has been executing for. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sum of all metrics in /cpu/classes. Sourced from /cpu/classes/total:cpu-seconds"
   },
   {
     "name": "go_cpu_classes_user_cpu_seconds",
-    "description": ""
+    "help": "Estimated total CPU time spent running user Go code. This may also include some small amount of time spent in the Go runtime. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sourced from /cpu/classes/user:cpu-seconds"
   },
   {
     "name": "go_gc_cycles_automatic_gc_cycles",
-    "description": ""
+    "help": "Count of completed GC cycles generated by the Go runtime. Sourced from /gc/cycles/automatic:gc-cycles"
   },
   {
     "name": "go_gc_cycles_automatic_gc_cycles_total",
-    "description": ""
+    "help": "Count of completed GC cycles generated by the Go runtime. Sourced from /gc/cycles/automatic:gc-cycles"
   },
   {
     "name": "go_gc_cycles_forced_gc_cycles",
-    "description": ""
+    "help": "Count of completed GC cycles forced by the application. Sourced from /gc/cycles/forced:gc-cycles"
   },
   {
     "name": "go_gc_cycles_forced_gc_cycles_total",
-    "description": ""
+    "help": "Count of completed GC cycles forced by the application. Sourced from /gc/cycles/forced:gc-cycles"
   },
   {
     "name": "go_gc_cycles_total_gc_cycles",
-    "description": ""
+    "help": "Count of all completed GC cycles. Sourced from /gc/cycles/total:gc-cycles"
   },
   {
     "name": "go_gc_cycles_total_gc_cycles_total",
-    "description": ""
+    "help": "Count of all completed GC cycles. Sourced from /gc/cycles/total:gc-cycles"
   },
   {
     "name": "go_gc_duration_seconds",
-    "description": ""
+    "help": "A summary of the wall-time pause (stop-the-world) duration in garbage collection cycles."
+  },
+  {
+    "name": "go_gc_duration_seconds",
+    "help": "A summary of the pause duration of garbage collection cycles."
   },
   {
     "name": "go_gc_gogc_percent",
-    "description": ""
+    "help": "Heap size target percentage configured by the user, otherwise 100. This value is set by the GOGC environment variable, and the runtime/debug.SetGCPercent function. Sourced from /gc/gogc:percent"
   },
   {
     "name": "go_gc_gomemlimit_bytes",
-    "description": ""
+    "help": "Go runtime memory limit configured by the user, otherwise math.MaxInt64. This value is set by the GOMEMLIMIT environment variable, and the runtime/debug.SetMemoryLimit function. Sourced from /gc/gomemlimit:bytes"
   },
   {
     "name": "go_gc_heap_allocs_by_size_bytes",
-    "description": ""
+    "help": "Distribution of heap allocations by approximate size. Bucket counts increase monotonically. Note that this does not include tiny objects as defined by /gc/heap/tiny/allocs:objects, only tiny blocks. Sourced from /gc/heap/allocs-by-size:bytes"
   },
   {
     "name": "go_gc_heap_allocs_bytes",
-    "description": ""
+    "help": "Cumulative sum of memory allocated to the heap by the application. Sourced from /gc/heap/allocs:bytes"
   },
   {
     "name": "go_gc_heap_allocs_bytes_total",
-    "description": ""
+    "help": "Cumulative sum of memory allocated to the heap by the application. Sourced from /gc/heap/allocs:bytes"
   },
   {
     "name": "go_gc_heap_allocs_objects",
-    "description": ""
+    "help": "Cumulative count of heap allocations triggered by the application. Note that this does not include tiny objects as defined by /gc/heap/tiny/allocs:objects, only tiny blocks. Sourced from /gc/heap/allocs:objects"
   },
   {
     "name": "go_gc_heap_allocs_objects_total",
-    "description": ""
+    "help": "Cumulative count of heap allocations triggered by the application. Note that this does not include tiny objects as defined by /gc/heap/tiny/allocs:objects, only tiny blocks. Sourced from /gc/heap/allocs:objects"
   },
   {
     "name": "go_gc_heap_frees_by_size_bytes",
-    "description": ""
+    "help": "Distribution of freed heap allocations by approximate size. Bucket counts increase monotonically. Note that this does not include tiny objects as defined by /gc/heap/tiny/allocs:objects, only tiny blocks. Sourced from /gc/heap/frees-by-size:bytes"
   },
   {
     "name": "go_gc_heap_frees_bytes",
-    "description": ""
+    "help": "Cumulative sum of heap memory freed by the garbage collector. Sourced from /gc/heap/frees:bytes"
   },
   {
     "name": "go_gc_heap_frees_bytes_total",
-    "description": ""
+    "help": "Cumulative sum of heap memory freed by the garbage collector. Sourced from /gc/heap/frees:bytes"
   },
   {
     "name": "go_gc_heap_frees_objects",
-    "description": ""
+    "help": "Cumulative count of heap allocations whose storage was freed by the garbage collector. Note that this does not include tiny objects as defined by /gc/heap/tiny/allocs:objects, only tiny blocks. Sourced from /gc/heap/frees:objects"
   },
   {
     "name": "go_gc_heap_frees_objects_total",
-    "description": ""
+    "help": "Cumulative count of heap allocations whose storage was freed by the garbage collector. Note that this does not include tiny objects as defined by /gc/heap/tiny/allocs:objects, only tiny blocks. Sourced from /gc/heap/frees:objects"
   },
   {
     "name": "go_gc_heap_goal_bytes",
-    "description": ""
+    "help": "Heap size target for the end of the GC cycle. Sourced from /gc/heap/goal:bytes"
   },
   {
     "name": "go_gc_heap_live_bytes",
-    "description": ""
+    "help": "Heap memory occupied by live objects that were marked by the previous GC. Sourced from /gc/heap/live:bytes"
   },
   {
     "name": "go_gc_heap_objects_objects",
-    "description": ""
+    "help": "Number of objects, live or unswept, occupying heap memory. Sourced from /gc/heap/objects:objects"
   },
   {
     "name": "go_gc_heap_tiny_allocs_objects",
-    "description": ""
+    "help": "Count of small allocations that are packed together into blocks. These allocations are counted separately from other allocations because each individual allocation is not tracked by the runtime, only their block. Each block is already accounted for in allocs-by-size and frees-by-size. Sourced from /gc/heap/tiny/allocs:objects"
   },
   {
     "name": "go_gc_heap_tiny_allocs_objects_total",
-    "description": ""
+    "help": "Count of small allocations that are packed together into blocks. These allocations are counted separately from other allocations because each individual allocation is not tracked by the runtime, only their block. Each block is already accounted for in allocs-by-size and frees-by-size. Sourced from /gc/heap/tiny/allocs:objects"
   },
   {
     "name": "go_gc_limiter_last_enabled_gc_cycle",
-    "description": ""
+    "help": "GC cycle the last time the GC CPU limiter was enabled. This metric is useful for diagnosing the root cause of an out-of-memory error, because the limiter trades memory for CPU time when the GC's CPU time gets too high. This is most likely to occur with use of SetMemoryLimit. The first GC cycle is cycle 1, so a value of 0 indicates that it was never enabled. Sourced from /gc/limiter/last-enabled:gc-cycle"
   },
   {
     "name": "go_gc_pauses_seconds",
-    "description": ""
+    "help": "Deprecated. Prefer the identical /sched/pauses/total/gc:seconds. Sourced from /gc/pauses:seconds"
   },
   {
     "name": "go_gc_scan_globals_bytes",
-    "description": ""
+    "help": "The total amount of global variable space that is scannable. Sourced from /gc/scan/globals:bytes"
   },
   {
     "name": "go_gc_scan_heap_bytes",
-    "description": ""
+    "help": "The total amount of heap space that is scannable. Sourced from /gc/scan/heap:bytes"
   },
   {
     "name": "go_gc_scan_stack_bytes",
-    "description": ""
+    "help": "The number of bytes of stack that were scanned last GC cycle. Sourced from /gc/scan/stack:bytes"
   },
   {
     "name": "go_gc_scan_total_bytes",
-    "description": ""
+    "help": "The total amount space that is scannable. Sum of all metrics in /gc/scan. Sourced from /gc/scan/total:bytes"
   },
   {
     "name": "go_gc_stack_starting_size_bytes",
-    "description": ""
+    "help": "The stack size of new goroutines. Sourced from /gc/stack/starting-size:bytes"
   },
   {
     "name": "go_godebug_non_default_behavior_asynctimerchan_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the time package due to a non-default GODEBUG=asynctimerchan=... setting. Sourced from /godebug/non-default-behavior/asynctimerchan:events"
   },
   {
     "name": "go_godebug_non_default_behavior_execerrdot_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the os/exec package due to a non-default GODEBUG=execerrdot=... setting. Sourced from /godebug/non-default-behavior/execerrdot:events"
   },
   {
     "name": "go_godebug_non_default_behavior_gocachehash_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the cmd/go package due to a non-default GODEBUG=gocachehash=... setting. Sourced from /godebug/non-default-behavior/gocachehash:events"
   },
   {
     "name": "go_godebug_non_default_behavior_gocachetest_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the cmd/go package due to a non-default GODEBUG=gocachetest=... setting. Sourced from /godebug/non-default-behavior/gocachetest:events"
   },
   {
     "name": "go_godebug_non_default_behavior_gocacheverify_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the cmd/go package due to a non-default GODEBUG=gocacheverify=... setting. Sourced from /godebug/non-default-behavior/gocacheverify:events"
   },
   {
     "name": "go_godebug_non_default_behavior_gotypesalias_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the go/types package due to a non-default GODEBUG=gotypesalias=... setting. Sourced from /godebug/non-default-behavior/gotypesalias:events"
   },
   {
     "name": "go_godebug_non_default_behavior_http2client_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the net/http package due to a non-default GODEBUG=http2client=... setting. Sourced from /godebug/non-default-behavior/http2client:events"
   },
   {
     "name": "go_godebug_non_default_behavior_http2server_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the net/http package due to a non-default GODEBUG=http2server=... setting. Sourced from /godebug/non-default-behavior/http2server:events"
   },
   {
     "name": "go_godebug_non_default_behavior_httplaxcontentlength_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the net/http package due to a non-default GODEBUG=httplaxcontentlength=... setting. Sourced from /godebug/non-default-behavior/httplaxcontentlength:events"
   },
   {
     "name": "go_godebug_non_default_behavior_httpmuxgo121_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the net/http package due to a non-default GODEBUG=httpmuxgo121=... setting. Sourced from /godebug/non-default-behavior/httpmuxgo121:events"
   },
   {
     "name": "go_godebug_non_default_behavior_httpservecontentkeepheaders_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the net/http package due to a non-default GODEBUG=httpservecontentkeepheaders=... setting. Sourced from /godebug/non-default-behavior/httpservecontentkeepheaders:events"
   },
   {
     "name": "go_godebug_non_default_behavior_installgoroot_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the go/build package due to a non-default GODEBUG=installgoroot=... setting. Sourced from /godebug/non-default-behavior/installgoroot:events"
   },
   {
     "name": "go_godebug_non_default_behavior_multipartmaxheaders_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the mime/multipart package due to a non-default GODEBUG=multipartmaxheaders=... setting. Sourced from /godebug/non-default-behavior/multipartmaxheaders:events"
   },
   {
     "name": "go_godebug_non_default_behavior_multipartmaxparts_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the mime/multipart package due to a non-default GODEBUG=multipartmaxparts=... setting. Sourced from /godebug/non-default-behavior/multipartmaxparts:events"
   },
   {
     "name": "go_godebug_non_default_behavior_multipathtcp_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the net package due to a non-default GODEBUG=multipathtcp=... setting. Sourced from /godebug/non-default-behavior/multipathtcp:events"
   },
   {
     "name": "go_godebug_non_default_behavior_netedns0_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the net package due to a non-default GODEBUG=netedns0=... setting. Sourced from /godebug/non-default-behavior/netedns0:events"
   },
   {
     "name": "go_godebug_non_default_behavior_panicnil_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the runtime package due to a non-default GODEBUG=panicnil=... setting. Sourced from /godebug/non-default-behavior/panicnil:events"
   },
   {
     "name": "go_godebug_non_default_behavior_randautoseed_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the math/rand package due to a non-default GODEBUG=randautoseed=... setting. Sourced from /godebug/non-default-behavior/randautoseed:events"
   },
   {
     "name": "go_godebug_non_default_behavior_tarinsecurepath_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the archive/tar package due to a non-default GODEBUG=tarinsecurepath=... setting. Sourced from /godebug/non-default-behavior/tarinsecurepath:events"
   },
   {
     "name": "go_godebug_non_default_behavior_tls10server_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/tls package due to a non-default GODEBUG=tls10server=... setting. Sourced from /godebug/non-default-behavior/tls10server:events"
   },
   {
     "name": "go_godebug_non_default_behavior_tls3des_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/tls package due to a non-default GODEBUG=tls3des=... setting. Sourced from /godebug/non-default-behavior/tls3des:events"
   },
   {
     "name": "go_godebug_non_default_behavior_tlsmaxrsasize_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/tls package due to a non-default GODEBUG=tlsmaxrsasize=... setting. Sourced from /godebug/non-default-behavior/tlsmaxrsasize:events"
   },
   {
     "name": "go_godebug_non_default_behavior_tlsrsakex_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/tls package due to a non-default GODEBUG=tlsrsakex=... setting. Sourced from /godebug/non-default-behavior/tlsrsakex:events"
   },
   {
     "name": "go_godebug_non_default_behavior_tlsunsafeekm_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/tls package due to a non-default GODEBUG=tlsunsafeekm=... setting. Sourced from /godebug/non-default-behavior/tlsunsafeekm:events"
   },
   {
     "name": "go_godebug_non_default_behavior_winreadlinkvolume_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the os package due to a non-default GODEBUG=winreadlinkvolume=... setting. Sourced from /godebug/non-default-behavior/winreadlinkvolume:events"
   },
   {
     "name": "go_godebug_non_default_behavior_winsymlink_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the os package due to a non-default GODEBUG=winsymlink=... setting. Sourced from /godebug/non-default-behavior/winsymlink:events"
   },
   {
     "name": "go_godebug_non_default_behavior_x509keypairleaf_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/tls package due to a non-default GODEBUG=x509keypairleaf=... setting. Sourced from /godebug/non-default-behavior/x509keypairleaf:events"
   },
   {
     "name": "go_godebug_non_default_behavior_x509negativeserial_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/x509 package due to a non-default GODEBUG=x509negativeserial=... setting. Sourced from /godebug/non-default-behavior/x509negativeserial:events"
   },
   {
     "name": "go_godebug_non_default_behavior_x509sha1_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/x509 package due to a non-default GODEBUG=x509sha1=... setting. Sourced from /godebug/non-default-behavior/x509sha1:events"
   },
   {
     "name": "go_godebug_non_default_behavior_x509usefallbackroots_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/x509 package due to a non-default GODEBUG=x509usefallbackroots=... setting. Sourced from /godebug/non-default-behavior/x509usefallbackroots:events"
   },
   {
     "name": "go_godebug_non_default_behavior_x509usepolicies_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the crypto/x509 package due to a non-default GODEBUG=x509usepolicies=... setting. Sourced from /godebug/non-default-behavior/x509usepolicies:events"
   },
   {
     "name": "go_godebug_non_default_behavior_zipinsecurepath_events",
-    "description": ""
+    "help": "The number of non-default behaviors executed by the archive/zip package due to a non-default GODEBUG=zipinsecurepath=... setting. Sourced from /godebug/non-default-behavior/zipinsecurepath:events"
   },
   {
     "name": "go_goroutines",
-    "description": ""
+    "help": "Number of goroutines that currently exist."
   },
   {
     "name": "go_info",
-    "description": ""
+    "help": "Information about the Go environment."
   },
   {
     "name": "go_memory_classes_heap_free_bytes",
-    "description": ""
+    "help": "Memory that is completely free and eligible to be returned to the underlying system, but has not been. This metric is the runtime's estimate of free address space that is backed by physical memory. Sourced from /memory/classes/heap/free:bytes"
   },
   {
     "name": "go_memory_classes_heap_objects_bytes",
-    "description": ""
+    "help": "Memory occupied by live objects and dead objects that have not yet been marked free by the garbage collector. Sourced from /memory/classes/heap/objects:bytes"
   },
   {
     "name": "go_memory_classes_heap_released_bytes",
-    "description": ""
+    "help": "Memory that is completely free and has been returned to the underlying system. This metric is the runtime's estimate of free address space that is still mapped into the process, but is not backed by physical memory. Sourced from /memory/classes/heap/released:bytes"
   },
   {
     "name": "go_memory_classes_heap_stacks_bytes",
-    "description": ""
+    "help": "Memory allocated from the heap that is reserved for stack space, whether or not it is currently in-use. Currently, this represents all stack memory for goroutines. It also includes all OS thread stacks in non-cgo programs. Note that stacks may be allocated differently in the future, and this may change. Sourced from /memory/classes/heap/stacks:bytes"
   },
   {
     "name": "go_memory_classes_heap_unused_bytes",
-    "description": ""
+    "help": "Memory that is reserved for heap objects but is not currently used to hold heap objects. Sourced from /memory/classes/heap/unused:bytes"
   },
   {
     "name": "go_memory_classes_metadata_mcache_free_bytes",
-    "description": ""
+    "help": "Memory that is reserved for runtime mcache structures, but not in-use. Sourced from /memory/classes/metadata/mcache/free:bytes"
   },
   {
     "name": "go_memory_classes_metadata_mcache_inuse_bytes",
-    "description": ""
+    "help": "Memory that is occupied by runtime mcache structures that are currently being used. Sourced from /memory/classes/metadata/mcache/inuse:bytes"
   },
   {
     "name": "go_memory_classes_metadata_mspan_free_bytes",
-    "description": ""
+    "help": "Memory that is reserved for runtime mspan structures, but not in-use. Sourced from /memory/classes/metadata/mspan/free:bytes"
   },
   {
     "name": "go_memory_classes_metadata_mspan_inuse_bytes",
-    "description": ""
+    "help": "Memory that is occupied by runtime mspan structures that are currently being used. Sourced from /memory/classes/metadata/mspan/inuse:bytes"
   },
   {
     "name": "go_memory_classes_metadata_other_bytes",
-    "description": ""
+    "help": "Memory that is reserved for or used to hold runtime metadata. Sourced from /memory/classes/metadata/other:bytes"
   },
   {
     "name": "go_memory_classes_os_stacks_bytes",
-    "description": ""
+    "help": "Stack memory allocated by the underlying operating system. In non-cgo programs this metric is currently zero. This may change in the future.In cgo programs this metric includes OS thread stacks allocated directly from the OS. Currently, this only accounts for one stack in c-shared and c-archive build modes, and other sources of stacks from the OS are not measured. This too may change in the future. Sourced from /memory/classes/os-stacks:bytes"
   },
   {
     "name": "go_memory_classes_other_bytes",
-    "description": ""
+    "help": "Memory used by execution trace buffers, structures for debugging the runtime, finalizer and profiler specials, and more. Sourced from /memory/classes/other:bytes"
   },
   {
     "name": "go_memory_classes_profiling_buckets_bytes",
-    "description": ""
+    "help": "Memory that is used by the stack trace hash map used for profiling. Sourced from /memory/classes/profiling/buckets:bytes"
   },
   {
     "name": "go_memory_classes_total_bytes",
-    "description": ""
+    "help": "All memory mapped by the Go runtime into the current process as read-write. Note that this does not include memory mapped by code called via cgo or via the syscall package. Sum of all metrics in /memory/classes. Sourced from /memory/classes/total:bytes"
   },
   {
     "name": "go_memstats_alloc_bytes",
-    "description": ""
+    "help": "Number of bytes allocated in heap and currently in use. Equals to /memory/classes/heap/objects:bytes."
+  },
+  {
+    "name": "go_memstats_alloc_bytes",
+    "help": "Number of bytes allocated and still in use."
+  },
+  {
+    "name": "go_memstats_alloc_bytes",
+    "help": "Total number of bytes allocated in heap until now, even if released already. Equals to /gc/heap/allocs:bytes."
   },
   {
     "name": "go_memstats_alloc_bytes_total",
-    "description": ""
+    "help": "Total number of bytes allocated in heap until now, even if released already. Equals to /gc/heap/allocs:bytes."
+  },
+  {
+    "name": "go_memstats_alloc_bytes_total",
+    "help": "Total number of bytes allocated, even if freed."
   },
   {
     "name": "go_memstats_buck_hash_sys_bytes",
-    "description": ""
+    "help": "Number of bytes used by the profiling bucket hash table. Equals to /memory/classes/profiling/buckets:bytes."
+  },
+  {
+    "name": "go_memstats_buck_hash_sys_bytes",
+    "help": "Number of bytes used by the profiling bucket hash table."
   },
   {
     "name": "go_memstats_frees",
-    "description": ""
+    "help": "Total number of heap objects frees. Equals to /gc/heap/frees:objects + /gc/heap/tiny/allocs:objects."
   },
   {
     "name": "go_memstats_frees_total",
-    "description": ""
+    "help": "Total number of heap objects frees. Equals to /gc/heap/frees:objects + /gc/heap/tiny/allocs:objects."
+  },
+  {
+    "name": "go_memstats_frees_total",
+    "help": "Total number of frees."
   },
   {
     "name": "go_memstats_gc_sys_bytes",
-    "description": ""
+    "help": "Number of bytes used for garbage collection system metadata. Equals to /memory/classes/metadata/other:bytes."
+  },
+  {
+    "name": "go_memstats_gc_sys_bytes",
+    "help": "Number of bytes used for garbage collection system metadata."
   },
   {
     "name": "go_memstats_heap_alloc_bytes",
-    "description": ""
+    "help": "Number of heap bytes allocated and currently in use, same as go_memstats_alloc_bytes. Equals to /memory/classes/heap/objects:bytes."
+  },
+  {
+    "name": "go_memstats_heap_alloc_bytes",
+    "help": "Number of heap bytes allocated and still in use."
   },
   {
     "name": "go_memstats_heap_idle_bytes",
-    "description": ""
+    "help": "Number of heap bytes waiting to be used. Equals to /memory/classes/heap/released:bytes + /memory/classes/heap/free:bytes."
+  },
+  {
+    "name": "go_memstats_heap_idle_bytes",
+    "help": "Number of heap bytes waiting to be used."
   },
   {
     "name": "go_memstats_heap_inuse_bytes",
-    "description": ""
+    "help": "Number of heap bytes that are in use. Equals to /memory/classes/heap/objects:bytes + /memory/classes/heap/unused:bytes"
+  },
+  {
+    "name": "go_memstats_heap_inuse_bytes",
+    "help": "Number of heap bytes that are in use."
   },
   {
     "name": "go_memstats_heap_objects",
-    "description": ""
+    "help": "Number of currently allocated objects. Equals to /gc/heap/objects:objects."
+  },
+  {
+    "name": "go_memstats_heap_objects",
+    "help": "Number of allocated objects."
   },
   {
     "name": "go_memstats_heap_released_bytes",
-    "description": ""
+    "help": "Number of heap bytes released to OS. Equals to /memory/classes/heap/released:bytes."
+  },
+  {
+    "name": "go_memstats_heap_released_bytes",
+    "help": "Number of heap bytes released to OS."
   },
   {
     "name": "go_memstats_heap_sys_bytes",
-    "description": ""
+    "help": "Number of heap bytes obtained from system. Equals to /memory/classes/heap/objects:bytes + /memory/classes/heap/unused:bytes + /memory/classes/heap/released:bytes + /memory/classes/heap/free:bytes."
+  },
+  {
+    "name": "go_memstats_heap_sys_bytes",
+    "help": "Number of heap bytes obtained from system."
   },
   {
     "name": "go_memstats_last_gc_time_seconds",
-    "description": ""
+    "help": "Number of seconds since 1970 of last garbage collection."
   },
   {
     "name": "go_memstats_lookups_total",
-    "description": ""
+    "help": "Total number of pointer lookups."
   },
   {
     "name": "go_memstats_mallocs",
-    "description": ""
+    "help": "Total number of heap objects allocated, both live and gc-ed. Semantically a counter version for go_memstats_heap_objects gauge. Equals to /gc/heap/allocs:objects + /gc/heap/tiny/allocs:objects."
   },
   {
     "name": "go_memstats_mallocs_total",
-    "description": ""
+    "help": "Total number of mallocs."
+  },
+  {
+    "name": "go_memstats_mallocs_total",
+    "help": "Total number of heap objects allocated, both live and gc-ed. Semantically a counter version for go_memstats_heap_objects gauge. Equals to /gc/heap/allocs:objects + /gc/heap/tiny/allocs:objects."
   },
   {
     "name": "go_memstats_mcache_inuse_bytes",
-    "description": ""
+    "help": "Number of bytes in use by mcache structures. Equals to /memory/classes/metadata/mcache/inuse:bytes."
+  },
+  {
+    "name": "go_memstats_mcache_inuse_bytes",
+    "help": "Number of bytes in use by mcache structures."
   },
   {
     "name": "go_memstats_mcache_sys_bytes",
-    "description": ""
+    "help": "Number of bytes used for mcache structures obtained from system. Equals to /memory/classes/metadata/mcache/inuse:bytes + /memory/classes/metadata/mcache/free:bytes."
+  },
+  {
+    "name": "go_memstats_mcache_sys_bytes",
+    "help": "Number of bytes used for mcache structures obtained from system."
   },
   {
     "name": "go_memstats_mspan_inuse_bytes",
-    "description": ""
+    "help": "Number of bytes in use by mspan structures. Equals to /memory/classes/metadata/mspan/inuse:bytes."
+  },
+  {
+    "name": "go_memstats_mspan_inuse_bytes",
+    "help": "Number of bytes in use by mspan structures."
   },
   {
     "name": "go_memstats_mspan_sys_bytes",
-    "description": ""
+    "help": "Number of bytes used for mspan structures obtained from system. Equals to /memory/classes/metadata/mspan/inuse:bytes + /memory/classes/metadata/mspan/free:bytes."
+  },
+  {
+    "name": "go_memstats_mspan_sys_bytes",
+    "help": "Number of bytes used for mspan structures obtained from system."
   },
   {
     "name": "go_memstats_next_gc_bytes",
-    "description": ""
+    "help": "Number of heap bytes when next garbage collection will take place. Equals to /gc/heap/goal:bytes."
+  },
+  {
+    "name": "go_memstats_next_gc_bytes",
+    "help": "Number of heap bytes when next garbage collection will take place."
   },
   {
     "name": "go_memstats_other_sys_bytes",
-    "description": ""
+    "help": "Number of bytes used for other system allocations. Equals to /memory/classes/other:bytes."
+  },
+  {
+    "name": "go_memstats_other_sys_bytes",
+    "help": "Number of bytes used for other system allocations."
   },
   {
     "name": "go_memstats_stack_inuse_bytes",
-    "description": ""
+    "help": "Number of bytes obtained from system for stack allocator in non-CGO environments. Equals to /memory/classes/heap/stacks:bytes."
+  },
+  {
+    "name": "go_memstats_stack_inuse_bytes",
+    "help": "Number of bytes in use by the stack allocator."
   },
   {
     "name": "go_memstats_stack_sys_bytes",
-    "description": ""
+    "help": "Number of bytes obtained from system for stack allocator. Equals to /memory/classes/heap/stacks:bytes + /memory/classes/os-stacks:bytes."
+  },
+  {
+    "name": "go_memstats_stack_sys_bytes",
+    "help": "Number of bytes obtained from system for stack allocator."
   },
   {
     "name": "go_memstats_sys_bytes",
-    "description": ""
+    "help": "Number of bytes obtained from system. Equals to /memory/classes/total:byte."
+  },
+  {
+    "name": "go_memstats_sys_bytes",
+    "help": "Number of bytes obtained from system."
   },
   {
     "name": "go_sched_gomaxprocs_threads",
-    "description": ""
+    "help": "The current runtime.GOMAXPROCS setting, or the number of operating system threads that can execute user-level Go code simultaneously. Sourced from /sched/gomaxprocs:threads"
   },
   {
     "name": "go_sched_goroutines_goroutines",
-    "description": ""
+    "help": "Count of live goroutines. Sourced from /sched/goroutines:goroutines"
   },
   {
     "name": "go_sched_latencies_seconds",
-    "description": ""
+    "help": "Distribution of the time goroutines have spent in the scheduler in a runnable state before actually running. Bucket counts increase monotonically. Sourced from /sched/latencies:seconds"
   },
   {
     "name": "go_sched_pauses_stopping_gc_seconds",
-    "description": ""
+    "help": "Distribution of individual GC-related stop-the-world stopping latencies. This is the time it takes from deciding to stop the world until all Ps are stopped. This is a subset of the total GC-related stop-the-world time (/sched/pauses/total/gc:seconds). During this time, some threads may be executing. Bucket counts increase monotonically. Sourced from /sched/pauses/stopping/gc:seconds"
   },
   {
     "name": "go_sched_pauses_stopping_other_seconds",
-    "description": ""
+    "help": "Distribution of individual non-GC-related stop-the-world stopping latencies. This is the time it takes from deciding to stop the world until all Ps are stopped. This is a subset of the total non-GC-related stop-the-world time (/sched/pauses/total/other:seconds). During this time, some threads may be executing. Bucket counts increase monotonically. Sourced from /sched/pauses/stopping/other:seconds"
   },
   {
     "name": "go_sched_pauses_total_gc_seconds",
-    "description": ""
+    "help": "Distribution of individual GC-related stop-the-world pause latencies. This is the time from deciding to stop the world until the world is started again. Some of this time is spent getting all threads to stop (this is measured directly in /sched/pauses/stopping/gc:seconds), during which some threads may still be running. Bucket counts increase monotonically. Sourced from /sched/pauses/total/gc:seconds"
   },
   {
     "name": "go_sched_pauses_total_other_seconds",
-    "description": ""
+    "help": "Distribution of individual non-GC-related stop-the-world pause latencies. This is the time from deciding to stop the world until the world is started again. Some of this time is spent getting all threads to stop (measured directly in /sched/pauses/stopping/other:seconds). Bucket counts increase monotonically. Sourced from /sched/pauses/total/other:seconds"
   },
   {
     "name": "go_sql_stats_connections_blocked_seconds",
-    "description": ""
+    "help": "The total time blocked waiting for a new connection."
   },
   {
     "name": "go_sql_stats_connections_closed_max_idle",
-    "description": ""
+    "help": "The total number of connections closed due to SetMaxIdleConns."
   },
   {
     "name": "go_sql_stats_connections_closed_max_idle_time",
-    "description": ""
+    "help": "The total number of connections closed due to SetConnMaxIdleTime."
   },
   {
     "name": "go_sql_stats_connections_closed_max_lifetime",
-    "description": ""
+    "help": "The total number of connections closed due to SetConnMaxLifetime."
   },
   {
     "name": "go_sql_stats_connections_idle",
-    "description": ""
+    "help": "The number of idle connections."
   },
   {
     "name": "go_sql_stats_connections_in_use",
-    "description": ""
+    "help": "The number of connections currently in use."
   },
   {
     "name": "go_sql_stats_connections_max_open",
-    "description": ""
+    "help": "Maximum number of open connections to the database."
   },
   {
     "name": "go_sql_stats_connections_open",
-    "description": ""
+    "help": "The number of established connections both in use and idle."
   },
   {
     "name": "go_sql_stats_connections_waited_for",
-    "description": ""
+    "help": "The total number of connections waited for."
   },
   {
     "name": "go_sync_mutex_wait_total_seconds",
-    "description": ""
+    "help": "Approximate cumulative time goroutines have spent blocked on a sync.Mutex, sync.RWMutex, or runtime-internal lock. This metric is useful for identifying global changes in lock contention. Collect a mutex or block profile using the runtime/pprof package for more detailed contention data. Sourced from /sync/mutex/wait/total:seconds"
   },
   {
     "name": "go_threads",
-    "description": ""
+    "help": "Number of OS threads created."
   },
   {
     "name": "grafana_access_evaluation_count",
-    "description": ""
+    "help": "number of evaluation calls"
   },
   {
     "name": "grafana_access_evaluation_duration",
-    "description": ""
+    "help": "Histogram for the runtime of evaluation function."
   },
   {
     "name": "grafana_access_permissions_cache_usage",
-    "description": ""
+    "help": "access control permissions cache hit/miss"
   },
   {
     "name": "grafana_access_permissions_duration",
-    "description": ""
+    "help": "Histogram for the runtime of permissions check function."
   },
   {
     "name": "grafana_access_search_permissions_duration",
-    "description": ""
+    "help": "Histogram for the runtime of permissions search function"
   },
   {
     "name": "grafana_access_search_user_permissions_cache_usage",
-    "description": ""
+    "help": "access control search user permissions cache hit/miss"
   },
   {
     "name": "grafana_aggregator_discovery_aggregation_count",
-    "description": ""
+    "help": "[ALPHA] Counter of number of times discovery was aggregated"
   },
   {
     "name": "grafana_alerting_active_alerts",
-    "description": ""
+    "help": "amount of active alerts"
   },
   {
     "name": "grafana_alerting_active_configurations",
-    "description": ""
+    "help": "The number of active Alertmanager configurations."
   },
   {
     "name": "grafana_alerting_alertmanager_alerts",
-    "description": ""
+    "help": "How many alerts by state are in Grafana's Alertmanager."
   },
   {
     "name": "grafana_alerting_alertmanager_config_hash",
-    "description": ""
+    "help": "The hash of the Alertmanager configuration."
   },
   {
     "name": "grafana_alerting_alertmanager_config_match",
-    "description": ""
+    "help": "The total number of match"
   },
   {
     "name": "grafana_alerting_alertmanager_config_match_re",
-    "description": ""
+    "help": "The total number of matchRE"
   },
   {
     "name": "grafana_alerting_alertmanager_config_matchers",
-    "description": ""
+    "help": "The total number of matchers"
   },
   {
     "name": "grafana_alerting_alertmanager_config_object_matchers",
-    "description": ""
+    "help": "The total number of object_matchers"
   },
   {
     "name": "grafana_alerting_alertmanager_config_size_bytes",
-    "description": ""
+    "help": "The size of the grafana alertmanager configuration in bytes"
   },
   {
     "name": "grafana_alerting_alertmanager_inhibition_rules",
-    "description": ""
+    "help": "Number of configured inhibition rules."
   },
   {
     "name": "grafana_alerting_alertmanager_integrations",
-    "description": ""
+    "help": "Number of configured receivers."
   },
   {
     "name": "grafana_alerting_alertmanager_receivers",
-    "description": ""
+    "help": "Number of configured receivers by state. It is considered active if used within a route."
   },
   {
     "name": "grafana_alerting_alerts",
-    "description": ""
+    "help": "How many alerts by state are in the scheduler."
   },
   {
     "name": "grafana_alerting_alerts_invalid",
-    "description": ""
+    "help": "The total number of received alerts that were invalid."
   },
   {
     "name": "grafana_alerting_alerts_received",
-    "description": ""
+    "help": "The total number of received alerts."
   },
   {
     "name": "grafana_alerting_discovered_configurations",
-    "description": ""
+    "help": "The number of organizations we've discovered that require an Alertmanager configuration."
   },
   {
     "name": "grafana_alerting_dispatcher_aggregation_groups",
-    "description": ""
+    "help": "Number of active aggregation groups"
   },
   {
     "name": "grafana_alerting_dispatcher_alert_processing_duration_seconds",
-    "description": ""
+    "help": "Summary of latencies for the processing of alerts."
   },
   {
     "name": "grafana_alerting_execution_time_milliseconds",
-    "description": ""
+    "help": "summary of alert execution duration"
   },
   {
     "name": "grafana_alerting_nflog_gc_duration_seconds",
-    "description": ""
+    "help": "Duration of the last notification log garbage collection cycle."
   },
   {
     "name": "grafana_alerting_nflog_gossip_messages_propagated",
-    "description": ""
+    "help": "Number of received gossip messages that have been further gossiped."
   },
   {
     "name": "grafana_alerting_nflog_queries",
-    "description": ""
+    "help": "Number of notification log queries were received."
   },
   {
     "name": "grafana_alerting_nflog_query_duration_seconds",
-    "description": ""
+    "help": "Duration of notification log query evaluation."
   },
   {
     "name": "grafana_alerting_nflog_query_errors",
-    "description": ""
+    "help": "Number notification log received queries that failed."
   },
   {
     "name": "grafana_alerting_nflog_snapshot_duration_seconds",
-    "description": ""
+    "help": "Duration of the last notification log snapshot."
   },
   {
     "name": "grafana_alerting_nflog_snapshot_size_bytes",
-    "description": ""
+    "help": "Size of the last notification log snapshot in bytes."
   },
   {
     "name": "grafana_alerting_notification_latency_seconds",
-    "description": ""
+    "help": "The latency of notifications in seconds."
   },
   {
     "name": "grafana_alerting_remote_alertmanager_configuration_sync_failures",
-    "description": ""
+    "help": "Total number of failed attempts to sync configurations between Alertmanagers."
   },
   {
     "name": "grafana_alerting_remote_alertmanager_configuration_syncs",
-    "description": ""
+    "help": "Total number of configuration syncs to the remote Alertmanager."
   },
   {
     "name": "grafana_alerting_remote_alertmanager_last_configuration_sync_timestamp_seconds",
-    "description": ""
+    "help": "Timestamp of the last successful configuration sync to the remote Alertmanager in seconds."
   },
   {
     "name": "grafana_alerting_remote_alertmanager_last_readiness_check_timestamp_seconds",
-    "description": ""
+    "help": "Timestamp of the last successful readiness check to the remote Alertmanager in seconds."
   },
   {
     "name": "grafana_alerting_remote_alertmanager_last_state_sync_timestamp_seconds",
-    "description": ""
+    "help": "Timestamp of the last successful state sync to the remote Alertmanager in seconds."
   },
   {
     "name": "grafana_alerting_remote_alertmanager_state_sync_failures",
-    "description": ""
+    "help": "Total number of failed attempts to sync state between Alertmanagers."
   },
   {
     "name": "grafana_alerting_remote_alertmanager_state_syncs",
-    "description": ""
+    "help": "Total number of state syncs to the remote Alertmanager."
   },
   {
     "name": "grafana_alerting_request_duration_seconds",
-    "description": ""
+    "help": "Histogram of requests to the Alerting API"
   },
   {
     "name": "grafana_alerting_schedule_alert_rules",
-    "description": ""
+    "help": "The number of alert rules that could be considered for evaluation at the next tick."
   },
   {
     "name": "grafana_alerting_schedule_alert_rules_hash",
-    "description": ""
+    "help": "A hash of the alert rules that could be considered for evaluation at the next tick."
   },
   {
     "name": "grafana_alerting_schedule_periodic_duration_seconds",
-    "description": ""
+    "help": "The time taken to run the scheduler."
   },
   {
     "name": "grafana_alerting_schedule_query_alert_rules_duration_seconds",
-    "description": ""
+    "help": "The time taken to fetch alert rules from the database."
   },
   {
     "name": "grafana_alerting_scheduler_behind_seconds",
-    "description": ""
+    "help": "The total number of seconds the scheduler is behind."
   },
   {
     "name": "grafana_alerting_silences",
-    "description": ""
+    "help": "How many silences by state."
   },
   {
     "name": "grafana_alerting_silences_gc_duration_seconds",
-    "description": ""
+    "help": "Duration of the last silence garbage collection cycle."
   },
   {
     "name": "grafana_alerting_silences_gossip_messages_propagated",
-    "description": ""
+    "help": "Number of received gossip messages that have been further gossiped."
   },
   {
     "name": "grafana_alerting_silences_queries",
-    "description": ""
+    "help": "How many silence queries were received."
   },
   {
     "name": "grafana_alerting_silences_query_duration_seconds",
-    "description": ""
+    "help": "Duration of silence query evaluation."
   },
   {
     "name": "grafana_alerting_silences_query_errors",
-    "description": ""
+    "help": "How many silence received queries did not succeed."
   },
   {
     "name": "grafana_alerting_silences_snapshot_duration_seconds",
-    "description": ""
+    "help": "Duration of the last silence snapshot."
   },
   {
     "name": "grafana_alerting_silences_snapshot_size_bytes",
-    "description": ""
+    "help": "Size of the last silence snapshot in bytes."
   },
   {
     "name": "grafana_alerting_state_calculation_duration_seconds",
-    "description": ""
+    "help": "The duration of calculation of a single state."
   },
   {
     "name": "grafana_alerting_state_full_sync_duration_seconds",
-    "description": ""
+    "help": "The duration of fully synchronizing the state with the database."
   },
   {
     "name": "grafana_alerting_state_history_info",
-    "description": ""
+    "help": "Information about the state history store."
   },
   {
     "name": "grafana_alerting_state_history_writes_bytes",
-    "description": ""
+    "help": "The total number of bytes sent within a batch to the state history store. Only valid when using the Loki store."
   },
   {
     "name": "grafana_alerting_ticker_interval_seconds",
-    "description": ""
+    "help": "Interval at which the ticker is meant to tick."
   },
   {
     "name": "grafana_alerting_ticker_last_consumed_tick_timestamp_seconds",
-    "description": ""
+    "help": "Timestamp of the last consumed tick in seconds."
   },
   {
     "name": "grafana_alerting_ticker_next_tick_timestamp_seconds",
-    "description": ""
+    "help": "Timestamp of the next tick in seconds before it is consumed."
   },
   {
     "name": "grafana_api_admin_user_created",
-    "description": ""
+    "help": "api admin user created counter"
   },
   {
     "name": "grafana_api_dashboard_get_milliseconds",
-    "description": ""
+    "help": "summary for dashboard get duration"
   },
   {
     "name": "grafana_api_dashboard_save_milliseconds",
-    "description": ""
+    "help": "summary for dashboard save duration"
   },
   {
     "name": "grafana_api_dashboard_search_milliseconds",
-    "description": ""
+    "help": "summary for dashboard search duration"
   },
   {
     "name": "grafana_api_dashboard_snapshot_create",
-    "description": ""
+    "help": "dashboard snapshots created"
   },
   {
     "name": "grafana_api_dashboard_snapshot_external",
-    "description": ""
+    "help": "external dashboard snapshots created"
   },
   {
     "name": "grafana_api_dashboard_snapshot_get",
-    "description": ""
+    "help": "loaded dashboards"
   },
   {
     "name": "grafana_api_dataproxy_request_all_milliseconds",
-    "description": ""
+    "help": "summary for dataproxy request duration"
   },
   {
     "name": "grafana_api_login_oauth",
-    "description": ""
+    "help": "api login oauth counter"
   },
   {
     "name": "grafana_api_login_post",
-    "description": ""
+    "help": "api login post counter"
   },
   {
     "name": "grafana_api_login_saml",
-    "description": ""
+    "help": "api login saml counter"
   },
   {
     "name": "grafana_api_models_dashboard_insert",
-    "description": ""
+    "help": "dashboards inserted "
   },
   {
     "name": "grafana_api_org_create",
-    "description": ""
+    "help": "api org created counter"
   },
   {
     "name": "grafana_api_response_status",
-    "description": ""
+    "help": "api http response status"
   },
   {
     "name": "grafana_api_user_signup_completed",
-    "description": ""
+    "help": "amount of users who completed the signup flow"
   },
   {
     "name": "grafana_api_user_signup_invite",
-    "description": ""
+    "help": "amount of users who have been invited"
   },
   {
     "name": "grafana_api_user_signup_started",
-    "description": ""
+    "help": "amount of users who started the signup flow"
   },
   {
     "name": "grafana_apiserver_audit_event",
-    "description": ""
+    "help": "[ALPHA] Counter of audit events generated and sent to the audit backend."
   },
   {
     "name": "grafana_apiserver_audit_requests_rejected",
-    "description": ""
+    "help": "[ALPHA] Counter of apiserver requests rejected due to an error in audit logging backend."
   },
   {
     "name": "grafana_apiserver_client_certificate_expiration_seconds",
-    "description": ""
+    "help": "[ALPHA] Distribution of the remaining lifetime on the certificate used to authenticate a request."
   },
   {
     "name": "grafana_apiserver_current_inflight_requests",
-    "description": ""
+    "help": "[STABLE] Maximal number of currently used inflight request limit of this apiserver per request kind in last second."
   },
   {
     "name": "grafana_apiserver_envelope_encryption_dek_cache_fill_percent",
-    "description": ""
+    "help": "[ALPHA] Percent of the cache slots currently occupied by cached DEKs."
   },
   {
     "name": "grafana_apiserver_flowcontrol_read_vs_write_current_requests",
-    "description": ""
+    "help": "EXPERIMENTAL: [ALPHA] Observations, at the end of every nanosecond, of the number of requests (as a fraction of the relevant limit) waiting or in regular stage of execution"
   },
   {
     "name": "grafana_apiserver_flowcontrol_seat_fair_frac",
-    "description": ""
+    "help": "[ALPHA] Fair fraction of server's concurrency to allocate to each priority level that can use it"
   },
   {
     "name": "grafana_apiserver_kube_aggregator_x509_insecure_sha1",
-    "description": ""
+    "help": "[ALPHA] Counts the number of requests to servers with insecure SHA1 signatures in their serving certificate OR the number of connection failures due to the insecure SHA1 signatures (either/or, based on the runtime environment)"
   },
   {
     "name": "grafana_apiserver_kube_aggregator_x509_missing_san",
-    "description": ""
+    "help": "[ALPHA] Counts the number of requests to servers missing SAN extension in their serving certificate OR the number of connection failures due to the lack of x509 certificate SAN extension missing (either/or, based on the runtime environment)"
   },
   {
     "name": "grafana_apiserver_request",
-    "description": ""
+    "help": "[STABLE] Counter of apiserver requests broken out for each verb, dry run value, group, version, resource, scope, component, and HTTP response code."
   },
   {
     "name": "grafana_apiserver_request_aborts",
-    "description": ""
+    "help": "[ALPHA] Number of requests which apiserver aborted possibly due to a timeout, for each group, version, verb, resource, subresource and scope"
   },
   {
     "name": "grafana_apiserver_request_duration_seconds",
-    "description": ""
+    "help": "[STABLE] Response latency distribution in seconds for each verb, dry run value, group, version, resource, subresource, scope and component."
   },
   {
     "name": "grafana_apiserver_request_filter_duration_seconds",
-    "description": ""
+    "help": "[ALPHA] Request filter latency distribution in seconds, for each filter type"
   },
   {
     "name": "grafana_apiserver_request_post_timeout",
-    "description": ""
+    "help": "[ALPHA] Tracks the activity of the request handlers after the associated requests have been timed out by the apiserver"
   },
   {
     "name": "grafana_apiserver_request_sli_duration_seconds",
-    "description": ""
+    "help": "[ALPHA] Response latency distribution (not counting webhook duration and priority & fairness queue wait times) in seconds for each verb, group, version, resource, subresource, scope and component."
   },
   {
     "name": "grafana_apiserver_request_slo_duration_seconds",
-    "description": ""
+    "help": "[ALPHA] Response latency distribution (not counting webhook duration and priority & fairness queue wait times) in seconds for each verb, group, version, resource, subresource, scope and component."
   },
   {
     "name": "grafana_apiserver_request_terminations",
-    "description": ""
+    "help": "[ALPHA] Number of requests which apiserver terminated in self-defense."
   },
   {
     "name": "grafana_apiserver_response_sizes",
-    "description": ""
+    "help": "[STABLE] Response size distribution in bytes for each group, version, verb, resource, subresource, scope and component."
   },
   {
     "name": "grafana_apiserver_storage_data_key_generation_duration_seconds",
-    "description": ""
+    "help": "[ALPHA] Latencies in seconds of data encryption key(DEK) generation operations."
   },
   {
     "name": "grafana_apiserver_storage_data_key_generation_failures",
-    "description": ""
+    "help": "[ALPHA] Total number of failed data encryption key(DEK) generation operations."
   },
   {
     "name": "grafana_apiserver_storage_envelope_transformation_cache_misses",
-    "description": ""
+    "help": "[ALPHA] Total number of cache misses while accessing key decryption key(KEK)."
   },
   {
     "name": "grafana_apiserver_tls_handshake_errors",
-    "description": ""
+    "help": "[ALPHA] Number of requests dropped with 'TLS handshake error from' error"
   },
   {
     "name": "grafana_apiserver_webhooks_x509_insecure_sha1",
-    "description": ""
+    "help": "[ALPHA] Counts the number of requests to servers with insecure SHA1 signatures in their serving certificate OR the number of connection failures due to the insecure SHA1 signatures (either/or, based on the runtime environment)"
   },
   {
     "name": "grafana_apiserver_webhooks_x509_missing_san",
-    "description": ""
+    "help": "[ALPHA] Counts the number of requests to servers missing SAN extension in their serving certificate OR the number of connection failures due to the lack of x509 certificate SAN extension missing (either/or, based on the runtime environment)"
   },
   {
     "name": "grafana_authenticated_user_requests",
-    "description": ""
+    "help": "[ALPHA] Counter of authenticated requests broken out by username."
   },
   {
     "name": "grafana_authentication_attempts",
-    "description": ""
+    "help": "[ALPHA] Counter of authenticated attempts."
   },
   {
     "name": "grafana_authentication_duration_seconds",
-    "description": ""
+    "help": "[ALPHA] Authentication duration in seconds broken out by result."
   },
   {
     "name": "grafana_authn_authn_failed_authentication",
-    "description": ""
+    "help": "Number of failed authentications"
   },
   {
     "name": "grafana_authn_authn_failed_login",
-    "description": ""
+    "help": "Number of failed logins"
   },
   {
     "name": "grafana_authn_authn_successful_authentication",
-    "description": ""
+    "help": "Number of successful authentications"
   },
   {
     "name": "grafana_authorization_attempts",
-    "description": ""
+    "help": "[ALPHA] Counter of authorization attempts broken down by result. It can be either 'allowed', 'denied', 'no-opinion' or 'error'."
   },
   {
     "name": "grafana_authorization_duration_seconds",
-    "description": ""
+    "help": "[ALPHA] Authorization duration in seconds broken out by result."
   },
   {
     "name": "grafana_build_info",
-    "description": ""
+    "help": "A metric with a constant '1' value labeled by version, revision, branch, and goversion from which Grafana was built"
   },
   {
     "name": "grafana_build_timestamp",
-    "description": ""
+    "help": "A metric exposing when the binary was built in epoch"
   },
   {
     "name": "grafana_cardinality_enforcement_unexpected_categorizations",
-    "description": ""
+    "help": "[ALPHA] The count of unexpected categorizations during cardinality enforcement."
   },
   {
     "name": "grafana_database_conn_idle",
-    "description": ""
+    "help": "The number of idle connections"
   },
   {
     "name": "grafana_database_conn_in_use",
-    "description": ""
+    "help": "The number of connections currently in use"
   },
   {
     "name": "grafana_database_conn_max_idle_closed",
-    "description": ""
+    "help": "The total number of connections closed due to SetMaxIdleConns"
   },
   {
     "name": "grafana_database_conn_max_idle_closed_seconds",
-    "description": ""
+    "help": "The total number of connections closed due to SetConnMaxIdleTime"
   },
   {
     "name": "grafana_database_conn_max_lifetime_closed",
-    "description": ""
+    "help": "The total number of connections closed due to SetConnMaxLifetime"
   },
   {
     "name": "grafana_database_conn_max_open",
-    "description": ""
+    "help": "Maximum number of open connections to the database"
   },
   {
     "name": "grafana_database_conn_open",
-    "description": ""
+    "help": "The number of established connections both in use and idle"
   },
   {
     "name": "grafana_database_conn_wait_count",
-    "description": ""
+    "help": "The total number of connections waited for"
   },
   {
     "name": "grafana_database_conn_wait_duration_seconds",
-    "description": ""
+    "help": "The total time blocked waiting for a new connection"
   },
   {
     "name": "grafana_datasource_request",
-    "description": ""
+    "help": "A counter for outgoing requests for a data source"
   },
   {
     "name": "grafana_datasource_request_duration_seconds",
-    "description": ""
+    "help": "histogram of durations of outgoing data source requests sent from Grafana"
   },
   {
     "name": "grafana_datasource_request_in_flight",
-    "description": ""
+    "help": "A gauge of outgoing data source requests currently being sent by Grafana"
   },
   {
     "name": "grafana_datasource_response_size_bytes",
-    "description": ""
+    "help": "histogram of data source response sizes returned to Grafana"
   },
   {
     "name": "grafana_db_datasource_query_by_id",
-    "description": ""
+    "help": "counter for getting datasource by id"
   },
   {
     "name": "grafana_disabled_metrics",
-    "description": ""
+    "help": "[BETA] The count of disabled metrics."
   },
   {
     "name": "grafana_emails_sent",
-    "description": ""
+    "help": "Number of emails sent by Grafana"
   },
   {
     "name": "grafana_emails_sent_failed",
-    "description": ""
+    "help": "Number of emails Grafana failed to send"
   },
   {
     "name": "grafana_encryption_cache_reads",
-    "description": ""
+    "help": "A counter for encryption cache reads"
   },
   {
     "name": "grafana_encryption_ops",
-    "description": ""
+    "help": "A counter for encryption operations"
   },
   {
     "name": "grafana_environment_info",
-    "description": ""
+    "help": "A metric with a constant '1' value labeled by environment information about the running instance."
   },
   {
     "name": "grafana_feature_toggles_info",
-    "description": ""
+    "help": "info metric that exposes what feature toggles are enabled or not"
   },
   {
     "name": "grafana_field_validation_request_duration_seconds",
-    "description": ""
+    "help": "[ALPHA] Response latency distribution in seconds for each field validation value"
   },
   {
     "name": "grafana_folder_id_api_count",
-    "description": ""
+    "help": "counter for folder id usage in api package"
   },
   {
     "name": "grafana_folder_id_service_count",
-    "description": ""
+    "help": "counter for folder id usage in service package"
   },
   {
     "name": "grafana_folders_get_children_duration_seconds",
-    "description": ""
+    "help": "Duration of listing subfolders in specific folder"
   },
   {
     "name": "grafana_folders_sharedwithme_fetch_folders_duration_seconds",
-    "description": ""
+    "help": "Duration of fetching folders with permissions directly assigned to user"
   },
   {
     "name": "grafana_frontend_boot_css_time_seconds",
-    "description": ""
+    "help": "Frontend boot initial css load"
   },
   {
     "name": "grafana_frontend_boot_first_contentful_paint_time_seconds",
-    "description": ""
+    "help": "Frontend boot first contentful paint"
   },
   {
     "name": "grafana_frontend_boot_first_paint_time_seconds",
-    "description": ""
+    "help": "Frontend boot first paint"
   },
   {
     "name": "grafana_frontend_boot_js_done_time_seconds",
-    "description": ""
+    "help": "Frontend boot initial js load"
   },
   {
     "name": "grafana_frontend_boot_load_time_seconds",
-    "description": ""
+    "help": "Frontend boot time measurement"
   },
   {
     "name": "grafana_frontend_plugins_preload_ms",
-    "description": ""
+    "help": "Frontend preload plugin time measurement"
   },
   {
     "name": "grafana_hidden_metrics",
-    "description": ""
+    "help": "[BETA] The count of hidden metrics."
   },
   {
     "name": "grafana_http_request_duration_seconds",
-    "description": ""
+    "help": "Histogram of latencies for HTTP requests."
   },
   {
     "name": "grafana_http_request_in_flight",
-    "description": ""
+    "help": "A gauge of requests currently being served by Grafana."
   },
   {
     "name": "grafana_idforwarding_idforwarding_failed_token_signing",
-    "description": ""
+    "help": "Number of failed token signings"
   },
   {
     "name": "grafana_idforwarding_idforwarding_token_signing",
-    "description": ""
+    "help": "Number of token signings"
   },
   {
     "name": "grafana_idforwarding_idforwarding_token_signing_duration_seconds",
-    "description": ""
+    "help": "Histogram of token signing duration"
   },
   {
     "name": "grafana_idforwarding_idforwarding_token_signing_from_cache",
-    "description": ""
+    "help": "Number of signed tokens retrieved from cache"
   },
   {
     "name": "grafana_instance_start",
-    "description": ""
+    "help": "counter for started instances"
   },
   {
     "name": "grafana_ldap_users_sync_execution_time",
-    "description": ""
+    "help": "summary for LDAP users sync execution duration"
   },
   {
     "name": "grafana_live_client_command_duration_seconds",
-    "description": ""
+    "help": "Client command duration summary."
   },
   {
     "name": "grafana_live_client_num_reply_errors",
-    "description": ""
+    "help": "Number of errors in replies sent to clients."
   },
   {
     "name": "grafana_live_client_num_server_disconnects",
-    "description": ""
+    "help": "Number of server initiated disconnects."
   },
   {
     "name": "grafana_live_client_ping_pong_duration_seconds",
-    "description": ""
+    "help": "Ping/Pong duration in seconds"
   },
   {
     "name": "grafana_live_client_recover",
-    "description": ""
+    "help": "Count of recover operations."
   },
   {
     "name": "grafana_live_node_action_count",
-    "description": ""
+    "help": "Number of various actions called."
   },
   {
     "name": "grafana_live_node_broadcast_duration_seconds",
-    "description": ""
+    "help": "Broadcast duration in seconds"
   },
   {
     "name": "grafana_live_node_build",
-    "description": ""
+    "help": "Node build info."
   },
   {
     "name": "grafana_live_node_messages_received_count",
-    "description": ""
+    "help": "Number of messages received from broker."
   },
   {
     "name": "grafana_live_node_messages_sent_count",
-    "description": ""
+    "help": "Number of messages sent by node to broker."
   },
   {
     "name": "grafana_live_node_num_channels",
-    "description": ""
+    "help": "Number of channels with one or more subscribers."
   },
   {
     "name": "grafana_live_node_num_clients",
-    "description": ""
+    "help": "Number of clients connected."
   },
   {
     "name": "grafana_live_node_num_nodes",
-    "description": ""
+    "help": "Number of nodes in the cluster."
   },
   {
     "name": "grafana_live_node_num_subscriptions",
-    "description": ""
+    "help": "Number of subscriptions."
   },
   {
     "name": "grafana_live_node_num_users",
-    "description": ""
+    "help": "Number of unique users connected."
   },
   {
     "name": "grafana_live_node_pub_sub_lag_seconds",
-    "description": ""
+    "help": "Pub sub lag in seconds"
   },
   {
     "name": "grafana_live_transport_connect_count",
-    "description": ""
+    "help": "Number of connections to specific transport."
   },
   {
     "name": "grafana_live_transport_messages_received",
-    "description": ""
+    "help": "Number of messages received from client connections over specific transport."
   },
   {
     "name": "grafana_live_transport_messages_received_size",
-    "description": ""
+    "help": "Size in bytes of messages received from client connections over specific transport."
   },
   {
     "name": "grafana_live_transport_messages_sent",
-    "description": ""
+    "help": "Number of messages sent to client connections over specific transport."
   },
   {
     "name": "grafana_live_transport_messages_sent_size",
-    "description": ""
+    "help": "Size in bytes of messages sent to client connections over specific transport."
   },
   {
     "name": "grafana_page_response_status",
-    "description": ""
+    "help": "page http response status"
   },
   {
     "name": "grafana_plugin_build_info",
-    "description": ""
+    "help": "A metric with a constant '1' value labeled by pluginId, pluginType and version from which Grafana plugin was built"
   },
   {
     "name": "grafana_plugin_request",
-    "description": ""
+    "help": "The total amount of plugin requests"
   },
   {
     "name": "grafana_plugin_request_duration_milliseconds",
-    "description": ""
+    "help": "Plugin request duration"
   },
   {
     "name": "grafana_plugin_request_duration_seconds",
-    "description": ""
+    "help": "Plugin request duration in seconds"
   },
   {
     "name": "grafana_plugin_request_size_bytes",
-    "description": ""
+    "help": "histogram of plugin request sizes returned"
   },
   {
     "name": "grafana_process_cpu_seconds",
-    "description": ""
+    "help": "Total user and system CPU time spent in seconds."
   },
   {
     "name": "grafana_process_max_fds",
-    "description": ""
+    "help": "Maximum number of open file descriptors."
   },
   {
     "name": "grafana_process_network_receive_bytes",
-    "description": ""
+    "help": "Number of bytes received by the process over the network."
   },
   {
     "name": "grafana_process_network_transmit_bytes",
-    "description": ""
+    "help": "Number of bytes sent by the process over the network."
   },
   {
     "name": "grafana_process_open_fds",
-    "description": ""
+    "help": "Number of open file descriptors."
   },
   {
     "name": "grafana_process_resident_memory_bytes",
-    "description": ""
+    "help": "Resident memory size in bytes."
   },
   {
     "name": "grafana_process_start_time_seconds",
-    "description": ""
+    "help": "Start time of the process since unix epoch in seconds."
   },
   {
     "name": "grafana_process_virtual_memory_bytes",
-    "description": ""
+    "help": "Virtual memory size in bytes."
   },
   {
     "name": "grafana_process_virtual_memory_max_bytes",
-    "description": ""
+    "help": "Maximum amount of virtual memory available in bytes."
   },
   {
     "name": "grafana_prometheus_plugin_backend_request_count",
-    "description": ""
+    "help": "The total amount of prometheus backend plugin requests"
   },
   {
     "name": "grafana_proxy_response_status",
-    "description": ""
+    "help": "proxy http response status"
   },
   {
     "name": "grafana_public_dashboard_request_count",
-    "description": ""
+    "help": "counter for public dashboards requests"
   },
   {
     "name": "grafana_registered_metrics",
-    "description": ""
+    "help": "[BETA] The count of registered metrics broken by stability level and deprecation version."
   },
   {
     "name": "grafana_rendering_queue_size",
-    "description": ""
+    "help": "size of rendering queue"
   },
   {
     "name": "grafana_search_dashboard_search_failures_duration_seconds",
-    "description": ""
+    "help": ""
   },
   {
     "name": "grafana_search_dashboard_search_successes_duration_seconds",
-    "description": ""
+    "help": ""
   },
   {
     "name": "grafana_sse_ds_queries",
-    "description": ""
+    "help": "Number of datasource queries made via server side expression requests"
   },
   {
     "name": "grafana_stat_active_users",
-    "description": ""
+    "help": "number of active users"
   },
   {
     "name": "grafana_stat_total_orgs",
-    "description": ""
+    "help": "total amount of orgs"
   },
   {
     "name": "grafana_stat_total_playlists",
-    "description": ""
+    "help": "total amount of playlists"
   },
   {
     "name": "grafana_stat_total_service_account_tokens",
-    "description": ""
+    "help": "total amount of service account tokens"
   },
   {
     "name": "grafana_stat_total_service_accounts",
-    "description": ""
+    "help": "total amount of service accounts"
   },
   {
     "name": "grafana_stat_total_service_accounts_role_none",
-    "description": ""
+    "help": "total amount of service accounts with no role"
   },
   {
     "name": "grafana_stat_total_teams",
-    "description": ""
+    "help": "total amount of teams"
   },
   {
     "name": "grafana_stat_total_users",
-    "description": ""
+    "help": "total amount of users"
   },
   {
     "name": "grafana_stat_totals_active_admins",
-    "description": ""
+    "help": "total amount of active admins"
   },
   {
     "name": "grafana_stat_totals_active_editors",
-    "description": ""
+    "help": "total amount of active editors"
   },
   {
     "name": "grafana_stat_totals_active_viewers",
-    "description": ""
+    "help": "total amount of active viewers"
   },
   {
     "name": "grafana_stat_totals_admins",
-    "description": ""
+    "help": "total amount of admins"
   },
   {
     "name": "grafana_stat_totals_alert_rules",
-    "description": ""
+    "help": "total amount of alert rules in the database"
   },
   {
     "name": "grafana_stat_totals_annotations",
-    "description": ""
+    "help": "total amount of annotations in the database"
   },
   {
     "name": "grafana_stat_totals_correlations",
-    "description": ""
+    "help": "total amount of correlations"
   },
   {
     "name": "grafana_stat_totals_dashboard",
-    "description": ""
+    "help": "total amount of dashboards"
   },
   {
     "name": "grafana_stat_totals_dashboard_versions",
-    "description": ""
+    "help": "total amount of dashboard versions in the database"
   },
   {
     "name": "grafana_stat_totals_data_keys",
-    "description": ""
+    "help": "total amount of data keys in the database"
   },
   {
     "name": "grafana_stat_totals_datasource",
-    "description": ""
+    "help": "total number of defined datasources, labeled by pluginId"
   },
   {
     "name": "grafana_stat_totals_editors",
-    "description": ""
+    "help": "total amount of editors"
   },
   {
     "name": "grafana_stat_totals_folder",
-    "description": ""
+    "help": "total amount of folders"
   },
   {
     "name": "grafana_stat_totals_library_panels",
-    "description": ""
+    "help": "total amount of library panels in the database"
   },
   {
     "name": "grafana_stat_totals_library_variables",
-    "description": ""
+    "help": "total amount of library variables in the database"
   },
   {
     "name": "grafana_stat_totals_public_dashboard",
-    "description": ""
+    "help": "total amount of public dashboards"
   },
   {
     "name": "grafana_stat_totals_rule_groups",
-    "description": ""
+    "help": "total amount of alert rule groups in the database"
   },
   {
     "name": "grafana_stat_totals_viewers",
-    "description": ""
+    "help": "total amount of viewers"
   },
   {
     "name": "machine_cpu_cores",
-    "description": ""
+    "help": "Number of logical CPU cores."
   },
   {
     "name": "machine_cpu_physical_cores",
-    "description": ""
+    "help": "Number of physical CPU cores."
   },
   {
     "name": "machine_cpu_sockets",
-    "description": ""
+    "help": "Number of CPU sockets."
   },
   {
     "name": "machine_memory_bytes",
-    "description": ""
+    "help": "Amount of memory installed on the machine."
   },
   {
     "name": "machine_nvm_avg_power_budget_watts",
-    "description": ""
+    "help": "NVM power budget."
   },
   {
     "name": "machine_nvm_capacity",
-    "description": ""
+    "help": "NVM capacity value labeled by NVM mode (memory mode or app direct mode)."
   },
   {
     "name": "machine_scrape_error",
-    "description": ""
+    "help": "1 if there was an error while getting machine metrics, 0 otherwise."
   },
   {
     "name": "machine_swap_bytes",
-    "description": ""
+    "help": "Amount of swap memory available on the machine."
   },
   {
     "name": "net_conntrack_dialer_conn_attempted",
-    "description": ""
+    "help": "Total number of connections attempted by the given dialer a given name."
   },
   {
     "name": "net_conntrack_dialer_conn_attempted_total",
-    "description": ""
+    "help": "Total number of connections attempted by the given dialer a given name."
   },
   {
     "name": "net_conntrack_dialer_conn_closed",
-    "description": ""
+    "help": "Total number of connections closed which originated from the dialer of a given name."
   },
   {
     "name": "net_conntrack_dialer_conn_closed_total",
-    "description": ""
+    "help": "Total number of connections closed which originated from the dialer of a given name."
   },
   {
     "name": "net_conntrack_dialer_conn_established",
-    "description": ""
+    "help": "Total number of connections successfully established by the given dialer a given name."
   },
   {
     "name": "net_conntrack_dialer_conn_established_total",
-    "description": ""
+    "help": "Total number of connections successfully established by the given dialer a given name."
   },
   {
     "name": "net_conntrack_dialer_conn_failed",
-    "description": ""
+    "help": "Total number of connections failed to dial by the dialer a given name."
   },
   {
     "name": "net_conntrack_dialer_conn_failed_total",
-    "description": ""
+    "help": "Total number of connections failed to dial by the dialer a given name."
   },
   {
     "name": "net_conntrack_listener_conn_accepted_total",
-    "description": ""
+    "help": "Total number of connections opened to the listener of a given name."
   },
   {
     "name": "net_conntrack_listener_conn_closed_total",
-    "description": ""
+    "help": "Total number of connections closed that were made to the listener of a given name."
   },
   {
     "name": "node_arp_entries",
-    "description": ""
+    "help": "ARP entries by device"
   },
   {
     "name": "node_boot_time_seconds",
-    "description": ""
+    "help": "Node boot time, in unixtime."
   },
   {
     "name": "node_context_switches_total",
-    "description": ""
+    "help": "Total number of context switches."
   },
   {
     "name": "node_cooling_device_cur_state",
-    "description": ""
+    "help": "Current throttle state of the cooling device"
   },
   {
     "name": "node_cooling_device_max_state",
-    "description": ""
+    "help": "Maximum throttle state of the cooling device"
   },
   {
     "name": "node_cpu_guest_seconds_total",
-    "description": ""
+    "help": "Seconds the CPUs spent in guests (VMs) for each mode."
   },
   {
     "name": "node_cpu_seconds_total",
-    "description": ""
+    "help": "Seconds the CPUs spent in each mode."
   },
   {
     "name": "node_cpu_utilization_percent_threshold",
-    "description": ""
+    "help": "The CPU utilization percent which triggers an alert."
   },
   {
     "name": "node_disk_discard_time_seconds_total",
-    "description": ""
+    "help": "This is the total number of seconds spent by all discards."
   },
   {
     "name": "node_disk_discarded_sectors_total",
-    "description": ""
+    "help": "The total number of sectors discarded successfully."
   },
   {
     "name": "node_disk_discards_completed_total",
-    "description": ""
+    "help": "The total number of discards completed successfully."
   },
   {
     "name": "node_disk_discards_merged_total",
-    "description": ""
+    "help": "The total number of discards merged."
   },
   {
     "name": "node_disk_flush_requests_time_seconds_total",
-    "description": ""
+    "help": "This is the total number of seconds spent by all flush requests."
   },
   {
     "name": "node_disk_flush_requests_total",
-    "description": ""
+    "help": "The total number of flush requests completed successfully"
   },
   {
     "name": "node_disk_info",
-    "description": ""
+    "help": "Info of /sys/block/<block_device>."
   },
   {
     "name": "node_disk_io_now",
-    "description": ""
+    "help": "The number of I/Os currently in progress."
   },
   {
     "name": "node_disk_io_time_seconds_total",
-    "description": ""
+    "help": "Total seconds spent doing I/Os."
   },
   {
     "name": "node_disk_io_time_weighted_seconds_total",
-    "description": ""
+    "help": "The weighted # of seconds spent doing I/Os."
   },
   {
     "name": "node_disk_read_bytes_total",
-    "description": ""
+    "help": "The total number of bytes read successfully."
   },
   {
     "name": "node_disk_read_time_seconds_total",
-    "description": ""
+    "help": "The total number of seconds spent by all reads."
   },
   {
     "name": "node_disk_reads_completed_total",
-    "description": ""
+    "help": "The total number of reads completed successfully."
   },
   {
     "name": "node_disk_reads_merged_total",
-    "description": ""
+    "help": "The total number of reads merged."
   },
   {
     "name": "node_disk_write_time_seconds_total",
-    "description": ""
+    "help": "This is the total number of seconds spent by all writes."
   },
   {
     "name": "node_disk_writes_completed_total",
-    "description": ""
+    "help": "The total number of writes completed successfully."
   },
   {
     "name": "node_disk_writes_merged_total",
-    "description": ""
+    "help": "The number of writes merged."
   },
   {
     "name": "node_disk_written_bytes_total",
-    "description": ""
+    "help": "The total number of bytes written successfully."
   },
   {
     "name": "node_dmi_info",
-    "description": ""
+    "help": "A metric with a constant '1' value labeled by bios_date, bios_release, bios_vendor, bios_version, board_asset_tag, board_name, board_serial, board_vendor, board_version, chassis_asset_tag, chassis_serial, chassis_vendor, chassis_version, product_family, product_name, product_serial, product_sku, product_uuid, product_version, system_vendor if provided by DMI."
   },
   {
     "name": "node_entropy_available_bits",
-    "description": ""
+    "help": "Bits of available entropy."
   },
   {
     "name": "node_entropy_pool_size_bits",
-    "description": ""
+    "help": "Bits of entropy pool."
   },
   {
     "name": "node_exporter_build_info",
-    "description": ""
+    "help": "A metric with a constant '1' value labeled by version, revision, branch, goversion from which node_exporter was built, and the goos and goarch for the build."
   },
   {
     "name": "node_filefd_allocated",
-    "description": ""
+    "help": "File descriptor statistics: allocated."
   },
   {
     "name": "node_filefd_maximum",
-    "description": ""
+    "help": "File descriptor statistics: maximum."
   },
   {
     "name": "node_filesystem_avail_bytes",
-    "description": ""
+    "help": "Filesystem space available to non-root users in bytes."
   },
   {
     "name": "node_filesystem_device_error",
-    "description": ""
+    "help": "Whether an error occurred while getting statistics for the given device."
   },
   {
     "name": "node_filesystem_files",
-    "description": ""
+    "help": "Filesystem total file nodes."
   },
   {
     "name": "node_filesystem_files_free",
-    "description": ""
+    "help": "Filesystem total free file nodes."
   },
   {
     "name": "node_filesystem_free_bytes",
-    "description": ""
+    "help": "Filesystem free space in bytes."
   },
   {
     "name": "node_filesystem_readonly",
-    "description": ""
+    "help": "Filesystem read-only status."
   },
   {
     "name": "node_filesystem_size_bytes",
-    "description": ""
+    "help": "Filesystem size in bytes."
   },
   {
     "name": "node_forks_total",
-    "description": ""
+    "help": "Total number of forks."
   },
   {
     "name": "node_intr_total",
-    "description": ""
+    "help": "Total number of interrupts serviced."
   },
   {
     "name": "node_load1",
-    "description": ""
+    "help": "1m load average."
   },
   {
     "name": "node_load15",
-    "description": ""
+    "help": "15m load average."
   },
   {
     "name": "node_load5",
-    "description": ""
+    "help": "5m load average."
   },
   {
     "name": "node_memory_Active_anon_bytes",
-    "description": ""
+    "help": "Memory information field Active_anon_bytes."
   },
   {
     "name": "node_memory_Active_bytes",
-    "description": ""
+    "help": "Memory information field Active_bytes."
   },
   {
     "name": "node_memory_Active_file_bytes",
-    "description": ""
+    "help": "Memory information field Active_file_bytes."
   },
   {
     "name": "node_memory_AnonHugePages_bytes",
-    "description": ""
+    "help": "Memory information field AnonHugePages_bytes."
   },
   {
     "name": "node_memory_AnonPages_bytes",
-    "description": ""
+    "help": "Memory information field AnonPages_bytes."
   },
   {
     "name": "node_memory_Bounce_bytes",
-    "description": ""
+    "help": "Memory information field Bounce_bytes."
   },
   {
     "name": "node_memory_Buffers_bytes",
-    "description": ""
+    "help": "Memory information field Buffers_bytes."
   },
   {
     "name": "node_memory_Cached_bytes",
-    "description": ""
+    "help": "Memory information field Cached_bytes."
   },
   {
     "name": "node_memory_CommitLimit_bytes",
-    "description": ""
+    "help": "Memory information field CommitLimit_bytes."
   },
   {
     "name": "node_memory_Committed_AS_bytes",
-    "description": ""
+    "help": "Memory information field Committed_AS_bytes."
   },
   {
     "name": "node_memory_DirectMap1G_bytes",
-    "description": ""
+    "help": "Memory information field DirectMap1G_bytes."
   },
   {
     "name": "node_memory_DirectMap2M_bytes",
-    "description": ""
+    "help": "Memory information field DirectMap2M_bytes."
   },
   {
     "name": "node_memory_DirectMap4k_bytes",
-    "description": ""
+    "help": "Memory information field DirectMap4k_bytes."
   },
   {
     "name": "node_memory_Dirty_bytes",
-    "description": ""
+    "help": "Memory information field Dirty_bytes."
   },
   {
     "name": "node_memory_FileHugePages_bytes",
-    "description": ""
+    "help": "Memory information field FileHugePages_bytes."
   },
   {
     "name": "node_memory_FilePmdMapped_bytes",
-    "description": ""
+    "help": "Memory information field FilePmdMapped_bytes."
   },
   {
     "name": "node_memory_HardwareCorrupted_bytes",
-    "description": ""
+    "help": "Memory information field HardwareCorrupted_bytes."
   },
   {
     "name": "node_memory_HugePages_Free",
-    "description": ""
+    "help": "Memory information field HugePages_Free."
   },
   {
     "name": "node_memory_HugePages_Rsvd",
-    "description": ""
+    "help": "Memory information field HugePages_Rsvd."
   },
   {
     "name": "node_memory_HugePages_Surp",
-    "description": ""
+    "help": "Memory information field HugePages_Surp."
   },
   {
     "name": "node_memory_HugePages_Total",
-    "description": ""
+    "help": "Memory information field HugePages_Total."
   },
   {
     "name": "node_memory_Hugepagesize_bytes",
-    "description": ""
+    "help": "Memory information field Hugepagesize_bytes."
   },
   {
     "name": "node_memory_Hugetlb_bytes",
-    "description": ""
+    "help": "Memory information field Hugetlb_bytes."
   },
   {
     "name": "node_memory_Inactive_anon_bytes",
-    "description": ""
+    "help": "Memory information field Inactive_anon_bytes."
   },
   {
     "name": "node_memory_Inactive_bytes",
-    "description": ""
+    "help": "Memory information field Inactive_bytes."
   },
   {
     "name": "node_memory_Inactive_file_bytes",
-    "description": ""
+    "help": "Memory information field Inactive_file_bytes."
   },
   {
     "name": "node_memory_KReclaimable_bytes",
-    "description": ""
+    "help": "Memory information field KReclaimable_bytes."
   },
   {
     "name": "node_memory_KernelStack_bytes",
-    "description": ""
+    "help": "Memory information field KernelStack_bytes."
   },
   {
     "name": "node_memory_Mapped_bytes",
-    "description": ""
+    "help": "Memory information field Mapped_bytes."
   },
   {
     "name": "node_memory_MemAvailable_bytes",
-    "description": ""
+    "help": "Memory information field MemAvailable_bytes."
   },
   {
     "name": "node_memory_MemFree_bytes",
-    "description": ""
+    "help": "Memory information field MemFree_bytes."
   },
   {
     "name": "node_memory_MemTotal_bytes",
-    "description": ""
+    "help": "Memory information field MemTotal_bytes."
   },
   {
     "name": "node_memory_Mlocked_bytes",
-    "description": ""
+    "help": "Memory information field Mlocked_bytes."
   },
   {
     "name": "node_memory_NFS_Unstable_bytes",
-    "description": ""
+    "help": "Memory information field NFS_Unstable_bytes."
   },
   {
     "name": "node_memory_PageTables_bytes",
-    "description": ""
+    "help": "Memory information field PageTables_bytes."
   },
   {
     "name": "node_memory_Percpu_bytes",
-    "description": ""
+    "help": "Memory information field Percpu_bytes."
   },
   {
     "name": "node_memory_SReclaimable_bytes",
-    "description": ""
+    "help": "Memory information field SReclaimable_bytes."
   },
   {
     "name": "node_memory_SUnreclaim_bytes",
-    "description": ""
+    "help": "Memory information field SUnreclaim_bytes."
   },
   {
     "name": "node_memory_ShmemHugePages_bytes",
-    "description": ""
+    "help": "Memory information field ShmemHugePages_bytes."
   },
   {
     "name": "node_memory_ShmemPmdMapped_bytes",
-    "description": ""
+    "help": "Memory information field ShmemPmdMapped_bytes."
   },
   {
     "name": "node_memory_Shmem_bytes",
-    "description": ""
+    "help": "Memory information field Shmem_bytes."
   },
   {
     "name": "node_memory_Slab_bytes",
-    "description": ""
+    "help": "Memory information field Slab_bytes."
   },
   {
     "name": "node_memory_SwapCached_bytes",
-    "description": ""
+    "help": "Memory information field SwapCached_bytes."
   },
   {
     "name": "node_memory_SwapFree_bytes",
-    "description": ""
+    "help": "Memory information field SwapFree_bytes."
   },
   {
     "name": "node_memory_SwapTotal_bytes",
-    "description": ""
+    "help": "Memory information field SwapTotal_bytes."
   },
   {
     "name": "node_memory_Unevictable_bytes",
-    "description": ""
+    "help": "Memory information field Unevictable_bytes."
   },
   {
     "name": "node_memory_VmallocChunk_bytes",
-    "description": ""
+    "help": "Memory information field VmallocChunk_bytes."
   },
   {
     "name": "node_memory_VmallocTotal_bytes",
-    "description": ""
+    "help": "Memory information field VmallocTotal_bytes."
   },
   {
     "name": "node_memory_VmallocUsed_bytes",
-    "description": ""
+    "help": "Memory information field VmallocUsed_bytes."
   },
   {
     "name": "node_memory_WritebackTmp_bytes",
-    "description": ""
+    "help": "Memory information field WritebackTmp_bytes."
   },
   {
     "name": "node_memory_Writeback_bytes",
-    "description": ""
+    "help": "Memory information field Writeback_bytes."
   },
   {
     "name": "node_netstat_Icmp6_InErrors",
-    "description": ""
+    "help": "Statistic Icmp6InErrors."
   },
   {
     "name": "node_netstat_Icmp6_InMsgs",
-    "description": ""
+    "help": "Statistic Icmp6InMsgs."
   },
   {
     "name": "node_netstat_Icmp6_OutMsgs",
-    "description": ""
+    "help": "Statistic Icmp6OutMsgs."
   },
   {
     "name": "node_netstat_Icmp_InErrors",
-    "description": ""
+    "help": "Statistic IcmpInErrors."
   },
   {
     "name": "node_netstat_Icmp_InMsgs",
-    "description": ""
+    "help": "Statistic IcmpInMsgs."
   },
   {
     "name": "node_netstat_Icmp_OutMsgs",
-    "description": ""
+    "help": "Statistic IcmpOutMsgs."
   },
   {
     "name": "node_netstat_Ip6_InOctets",
-    "description": ""
+    "help": "Statistic Ip6InOctets."
   },
   {
     "name": "node_netstat_Ip6_OutOctets",
-    "description": ""
+    "help": "Statistic Ip6OutOctets."
   },
   {
     "name": "node_netstat_IpExt_InOctets",
-    "description": ""
+    "help": "Statistic IpExtInOctets."
   },
   {
     "name": "node_netstat_IpExt_OutOctets",
-    "description": ""
+    "help": "Statistic IpExtOutOctets."
   },
   {
     "name": "node_netstat_Ip_Forwarding",
-    "description": ""
+    "help": "Statistic IpForwarding."
   },
   {
     "name": "node_netstat_TcpExt_ListenDrops",
-    "description": ""
+    "help": "Statistic TcpExtListenDrops."
   },
   {
     "name": "node_netstat_TcpExt_ListenOverflows",
-    "description": ""
+    "help": "Statistic TcpExtListenOverflows."
   },
   {
     "name": "node_netstat_TcpExt_SyncookiesFailed",
-    "description": ""
+    "help": "Statistic TcpExtSyncookiesFailed."
   },
   {
     "name": "node_netstat_TcpExt_SyncookiesRecv",
-    "description": ""
+    "help": "Statistic TcpExtSyncookiesRecv."
   },
   {
     "name": "node_netstat_TcpExt_SyncookiesSent",
-    "description": ""
+    "help": "Statistic TcpExtSyncookiesSent."
   },
   {
     "name": "node_netstat_TcpExt_TCPOFOQueue",
-    "description": ""
+    "help": "Statistic TcpExtTCPOFOQueue."
   },
   {
     "name": "node_netstat_TcpExt_TCPSynRetrans",
-    "description": ""
+    "help": "Statistic TcpExtTCPSynRetrans."
   },
   {
     "name": "node_netstat_TcpExt_TCPTimeouts",
-    "description": ""
+    "help": "Statistic TcpExtTCPTimeouts."
   },
   {
     "name": "node_netstat_Tcp_ActiveOpens",
-    "description": ""
+    "help": "Statistic TcpActiveOpens."
   },
   {
     "name": "node_netstat_Tcp_CurrEstab",
-    "description": ""
+    "help": "Statistic TcpCurrEstab."
   },
   {
     "name": "node_netstat_Tcp_InErrs",
-    "description": ""
+    "help": "Statistic TcpInErrs."
   },
   {
     "name": "node_netstat_Tcp_InSegs",
-    "description": ""
+    "help": "Statistic TcpInSegs."
   },
   {
     "name": "node_netstat_Tcp_OutRsts",
-    "description": ""
+    "help": "Statistic TcpOutRsts."
   },
   {
     "name": "node_netstat_Tcp_OutSegs",
-    "description": ""
+    "help": "Statistic TcpOutSegs."
   },
   {
     "name": "node_netstat_Tcp_PassiveOpens",
-    "description": ""
+    "help": "Statistic TcpPassiveOpens."
   },
   {
     "name": "node_netstat_Tcp_RetransSegs",
-    "description": ""
+    "help": "Statistic TcpRetransSegs."
   },
   {
     "name": "node_netstat_Udp6_InDatagrams",
-    "description": ""
+    "help": "Statistic Udp6InDatagrams."
   },
   {
     "name": "node_netstat_Udp6_InErrors",
-    "description": ""
+    "help": "Statistic Udp6InErrors."
   },
   {
     "name": "node_netstat_Udp6_NoPorts",
-    "description": ""
+    "help": "Statistic Udp6NoPorts."
   },
   {
     "name": "node_netstat_Udp6_OutDatagrams",
-    "description": ""
+    "help": "Statistic Udp6OutDatagrams."
   },
   {
     "name": "node_netstat_Udp6_RcvbufErrors",
-    "description": ""
+    "help": "Statistic Udp6RcvbufErrors."
   },
   {
     "name": "node_netstat_Udp6_SndbufErrors",
-    "description": ""
+    "help": "Statistic Udp6SndbufErrors."
   },
   {
     "name": "node_netstat_UdpLite6_InErrors",
-    "description": ""
+    "help": "Statistic UdpLite6InErrors."
   },
   {
     "name": "node_netstat_UdpLite_InErrors",
-    "description": ""
+    "help": "Statistic UdpLiteInErrors."
   },
   {
     "name": "node_netstat_Udp_InDatagrams",
-    "description": ""
+    "help": "Statistic UdpInDatagrams."
   },
   {
     "name": "node_netstat_Udp_InErrors",
-    "description": ""
+    "help": "Statistic UdpInErrors."
   },
   {
     "name": "node_netstat_Udp_NoPorts",
-    "description": ""
+    "help": "Statistic UdpNoPorts."
   },
   {
     "name": "node_netstat_Udp_OutDatagrams",
-    "description": ""
+    "help": "Statistic UdpOutDatagrams."
   },
   {
     "name": "node_netstat_Udp_RcvbufErrors",
-    "description": ""
+    "help": "Statistic UdpRcvbufErrors."
   },
   {
     "name": "node_netstat_Udp_SndbufErrors",
-    "description": ""
+    "help": "Statistic UdpSndbufErrors."
   },
   {
     "name": "node_network_address_assign_type",
-    "description": ""
+    "help": "Network device property: address_assign_type"
   },
   {
     "name": "node_network_carrier",
-    "description": ""
+    "help": "Network device property: carrier"
   },
   {
     "name": "node_network_carrier_changes_total",
-    "description": ""
+    "help": "Network device property: carrier_changes_total"
   },
   {
     "name": "node_network_carrier_down_changes_total",
-    "description": ""
+    "help": "Network device property: carrier_down_changes_total"
   },
   {
     "name": "node_network_carrier_up_changes_total",
-    "description": ""
+    "help": "Network device property: carrier_up_changes_total"
   },
   {
     "name": "node_network_device_id",
-    "description": ""
+    "help": "Network device property: device_id"
   },
   {
     "name": "node_network_dormant",
-    "description": ""
+    "help": "Network device property: dormant"
   },
   {
     "name": "node_network_flags",
-    "description": ""
+    "help": "Network device property: flags"
   },
   {
     "name": "node_network_iface_id",
-    "description": ""
+    "help": "Network device property: iface_id"
   },
   {
     "name": "node_network_iface_link",
-    "description": ""
+    "help": "Network device property: iface_link"
   },
   {
     "name": "node_network_iface_link_mode",
-    "description": ""
+    "help": "Network device property: iface_link_mode"
   },
   {
     "name": "node_network_info",
-    "description": ""
+    "help": "Non-numeric data from /sys/class/net/<iface>, value is always 1."
   },
   {
     "name": "node_network_mtu_bytes",
-    "description": ""
+    "help": "Network device property: mtu_bytes"
   },
   {
     "name": "node_network_name_assign_type",
-    "description": ""
+    "help": "Network device property: name_assign_type"
   },
   {
     "name": "node_network_net_dev_group",
-    "description": ""
+    "help": "Network device property: net_dev_group"
   },
   {
     "name": "node_network_protocol_type",
-    "description": ""
+    "help": "Network device property: protocol_type"
   },
   {
     "name": "node_network_receive_bytes_total",
-    "description": ""
+    "help": "Network device statistic receive_bytes."
   },
   {
     "name": "node_network_receive_compressed_total",
-    "description": ""
+    "help": "Network device statistic receive_compressed."
   },
   {
     "name": "node_network_receive_drop_total",
-    "description": ""
+    "help": "Network device statistic receive_drop."
   },
   {
     "name": "node_network_receive_errs_total",
-    "description": ""
+    "help": "Network device statistic receive_errs."
   },
   {
     "name": "node_network_receive_fifo_total",
-    "description": ""
+    "help": "Network device statistic receive_fifo."
   },
   {
     "name": "node_network_receive_frame_total",
-    "description": ""
+    "help": "Network device statistic receive_frame."
   },
   {
     "name": "node_network_receive_multicast_total",
-    "description": ""
+    "help": "Network device statistic receive_multicast."
   },
   {
     "name": "node_network_receive_nohandler_total",
-    "description": ""
+    "help": "Network device statistic receive_nohandler."
   },
   {
     "name": "node_network_receive_packets_total",
-    "description": ""
+    "help": "Network device statistic receive_packets."
   },
   {
     "name": "node_network_speed_bytes",
-    "description": ""
+    "help": "Network device property: speed_bytes"
   },
   {
     "name": "node_network_transmit_bytes_total",
-    "description": ""
+    "help": "Network device statistic transmit_bytes."
   },
   {
     "name": "node_network_transmit_carrier_total",
-    "description": ""
+    "help": "Network device statistic transmit_carrier."
   },
   {
     "name": "node_network_transmit_colls_total",
-    "description": ""
+    "help": "Network device statistic transmit_colls."
   },
   {
     "name": "node_network_transmit_compressed_total",
-    "description": ""
+    "help": "Network device statistic transmit_compressed."
   },
   {
     "name": "node_network_transmit_drop_total",
-    "description": ""
+    "help": "Network device statistic transmit_drop."
   },
   {
     "name": "node_network_transmit_errs_total",
-    "description": ""
+    "help": "Network device statistic transmit_errs."
   },
   {
     "name": "node_network_transmit_fifo_total",
-    "description": ""
+    "help": "Network device statistic transmit_fifo."
   },
   {
     "name": "node_network_transmit_packets_total",
-    "description": ""
+    "help": "Network device statistic transmit_packets."
   },
   {
     "name": "node_network_transmit_queue_length",
-    "description": ""
+    "help": "Network device property: transmit_queue_length"
   },
   {
     "name": "node_network_up",
-    "description": ""
+    "help": "Value is 1 if operstate is 'up', 0 otherwise."
   },
   {
     "name": "node_nf_conntrack_entries",
-    "description": ""
+    "help": "Number of currently allocated flow entries for connection tracking."
   },
   {
     "name": "node_nf_conntrack_entries_limit",
-    "description": ""
+    "help": "Maximum size of connection tracking table."
   },
   {
     "name": "node_os_info",
-    "description": ""
+    "help": "A metric with a constant '1' value labeled by build_id, id, id_like, image_id, image_version, name, pretty_name, variant, variant_id, version, version_codename, version_id."
   },
   {
     "name": "node_os_version",
-    "description": ""
+    "help": "Metric containing the major.minor part of the OS version."
   },
   {
     "name": "node_pressure_cpu_waiting_seconds_total",
-    "description": ""
+    "help": "Total time in seconds that processes have waited for CPU time"
   },
   {
     "name": "node_pressure_io_stalled_seconds_total",
-    "description": ""
+    "help": "Total time in seconds no process could make progress due to IO congestion"
   },
   {
     "name": "node_pressure_io_waiting_seconds_total",
-    "description": ""
+    "help": "Total time in seconds that processes have waited due to IO congestion"
   },
   {
     "name": "node_pressure_memory_stalled_seconds_total",
-    "description": ""
+    "help": "Total time in seconds no process could make progress due to memory congestion"
   },
   {
     "name": "node_pressure_memory_waiting_seconds_total",
-    "description": ""
+    "help": "Total time in seconds that processes have waited for memory"
   },
   {
     "name": "node_procs_blocked",
-    "description": ""
+    "help": "Number of processes blocked waiting for I/O to complete."
   },
   {
     "name": "node_procs_running",
-    "description": ""
+    "help": "Number of processes in runnable state."
   },
   {
     "name": "node_schedstat_running_seconds_total",
-    "description": ""
+    "help": "Number of seconds CPU spent running a process."
   },
   {
     "name": "node_schedstat_timeslices_total",
-    "description": ""
+    "help": "Number of timeslices executed by CPU."
   },
   {
     "name": "node_schedstat_waiting_seconds_total",
-    "description": ""
+    "help": "Number of seconds spent by processing waiting for this CPU."
   },
   {
     "name": "node_scrape_collector_duration_seconds",
-    "description": ""
+    "help": "node_exporter: Duration of a collector scrape."
   },
   {
     "name": "node_scrape_collector_success",
-    "description": ""
+    "help": "node_exporter: Whether a collector succeeded."
   },
   {
     "name": "node_selinux_enabled",
-    "description": ""
+    "help": "SELinux is enabled, 1 is true, 0 is false"
   },
   {
     "name": "node_sockstat_FRAG6_inuse",
-    "description": ""
+    "help": "Number of FRAG6 sockets in state inuse."
   },
   {
     "name": "node_sockstat_FRAG6_memory",
-    "description": ""
+    "help": "Number of FRAG6 sockets in state memory."
   },
   {
     "name": "node_sockstat_FRAG_inuse",
-    "description": ""
+    "help": "Number of FRAG sockets in state inuse."
   },
   {
     "name": "node_sockstat_FRAG_memory",
-    "description": ""
+    "help": "Number of FRAG sockets in state memory."
   },
   {
     "name": "node_sockstat_RAW6_inuse",
-    "description": ""
+    "help": "Number of RAW6 sockets in state inuse."
   },
   {
     "name": "node_sockstat_RAW_inuse",
-    "description": ""
+    "help": "Number of RAW sockets in state inuse."
   },
   {
     "name": "node_sockstat_TCP6_inuse",
-    "description": ""
+    "help": "Number of TCP6 sockets in state inuse."
   },
   {
     "name": "node_sockstat_TCP_alloc",
-    "description": ""
+    "help": "Number of TCP sockets in state alloc."
   },
   {
     "name": "node_sockstat_TCP_inuse",
-    "description": ""
+    "help": "Number of TCP sockets in state inuse."
   },
   {
     "name": "node_sockstat_TCP_mem",
-    "description": ""
+    "help": "Number of TCP sockets in state mem."
   },
   {
     "name": "node_sockstat_TCP_mem_bytes",
-    "description": ""
+    "help": "Number of TCP sockets in state mem_bytes."
   },
   {
     "name": "node_sockstat_TCP_orphan",
-    "description": ""
+    "help": "Number of TCP sockets in state orphan."
   },
   {
     "name": "node_sockstat_TCP_tw",
-    "description": ""
+    "help": "Number of TCP sockets in state tw."
   },
   {
     "name": "node_sockstat_UDP6_inuse",
-    "description": ""
+    "help": "Number of UDP6 sockets in state inuse."
   },
   {
     "name": "node_sockstat_UDPLITE6_inuse",
-    "description": ""
+    "help": "Number of UDPLITE6 sockets in state inuse."
   },
   {
     "name": "node_sockstat_UDPLITE_inuse",
-    "description": ""
+    "help": "Number of UDPLITE sockets in state inuse."
   },
   {
     "name": "node_sockstat_UDP_inuse",
-    "description": ""
+    "help": "Number of UDP sockets in state inuse."
   },
   {
     "name": "node_sockstat_UDP_mem",
-    "description": ""
+    "help": "Number of UDP sockets in state mem."
   },
   {
     "name": "node_sockstat_UDP_mem_bytes",
-    "description": ""
+    "help": "Number of UDP sockets in state mem_bytes."
   },
   {
     "name": "node_sockstat_sockets_used",
-    "description": ""
+    "help": "Number of IPv4 sockets in use."
   },
   {
     "name": "node_softnet_backlog_len",
-    "description": ""
+    "help": "Softnet backlog status"
   },
   {
     "name": "node_softnet_cpu_collision_total",
-    "description": ""
+    "help": "Number of collision occur while obtaining device lock while transmitting"
   },
   {
     "name": "node_softnet_dropped_total",
-    "description": ""
+    "help": "Number of dropped packets"
   },
   {
     "name": "node_softnet_flow_limit_count_total",
-    "description": ""
+    "help": "Number of times flow limit has been reached"
   },
   {
     "name": "node_softnet_processed_total",
-    "description": ""
+    "help": "Number of processed packets"
   },
   {
     "name": "node_softnet_received_rps_total",
-    "description": ""
+    "help": "Number of times cpu woken up received_rps"
   },
   {
     "name": "node_softnet_times_squeezed_total",
-    "description": ""
+    "help": "Number of times processing packets ran out of quota"
   },
   {
     "name": "node_systemd_socket_accepted_connections_total",
-    "description": ""
+    "help": "Total number of accepted socket connections"
   },
   {
     "name": "node_systemd_socket_current_connections",
-    "description": ""
+    "help": "Current number of socket connections"
   },
   {
     "name": "node_systemd_socket_refused_connections_total",
-    "description": ""
+    "help": "Total number of refused socket connections"
   },
   {
     "name": "node_systemd_system_running",
-    "description": ""
+    "help": "Whether the system is operational (see 'systemctl is-system-running')"
   },
   {
     "name": "node_systemd_timer_last_trigger_seconds",
-    "description": ""
+    "help": "Seconds since epoch of last trigger."
   },
   {
     "name": "node_systemd_unit_state",
-    "description": ""
+    "help": "Systemd unit"
   },
   {
     "name": "node_systemd_units",
-    "description": ""
+    "help": "Summary of systemd unit states"
   },
   {
     "name": "node_systemd_version",
-    "description": ""
+    "help": "Detected systemd version"
   },
   {
     "name": "node_textfile_mtime_seconds",
-    "description": ""
+    "help": "Unixtime mtime of textfiles successfully read."
   },
   {
     "name": "node_textfile_scrape_error",
-    "description": ""
+    "help": "1 if there was an error opening or reading a file, 0 otherwise"
   },
   {
     "name": "node_time_clocksource_available_info",
-    "description": ""
+    "help": "Available clocksources read from '/sys/devices/system/clocksource'."
   },
   {
     "name": "node_time_clocksource_current_info",
-    "description": ""
+    "help": "Current clocksource read from '/sys/devices/system/clocksource'."
   },
   {
     "name": "node_time_seconds",
-    "description": ""
+    "help": "System time in seconds since epoch (1970)."
   },
   {
     "name": "node_time_zone_offset_seconds",
-    "description": ""
+    "help": "System time zone offset in seconds."
   },
   {
     "name": "node_timex_estimated_error_seconds",
-    "description": ""
+    "help": "Estimated error in seconds."
   },
   {
     "name": "node_timex_frequency_adjustment_ratio",
-    "description": ""
+    "help": "Local clock frequency adjustment."
   },
   {
     "name": "node_timex_loop_time_constant",
-    "description": ""
+    "help": "Phase-locked loop time constant."
   },
   {
     "name": "node_timex_maxerror_seconds",
-    "description": ""
+    "help": "Maximum error in seconds."
   },
   {
     "name": "node_timex_offset_seconds",
-    "description": ""
+    "help": "Time offset in between local system and reference clock."
   },
   {
     "name": "node_timex_pps_calibration_total",
-    "description": ""
+    "help": "Pulse per second count of calibration intervals."
   },
   {
     "name": "node_timex_pps_error_total",
-    "description": ""
+    "help": "Pulse per second count of calibration errors."
   },
   {
     "name": "node_timex_pps_frequency_hertz",
-    "description": ""
+    "help": "Pulse per second frequency."
   },
   {
     "name": "node_timex_pps_jitter_seconds",
-    "description": ""
+    "help": "Pulse per second jitter."
   },
   {
     "name": "node_timex_pps_jitter_total",
-    "description": ""
+    "help": "Pulse per second count of jitter limit exceeded events."
   },
   {
     "name": "node_timex_pps_shift_seconds",
-    "description": ""
+    "help": "Pulse per second interval duration."
   },
   {
     "name": "node_timex_pps_stability_exceeded_total",
-    "description": ""
+    "help": "Pulse per second count of stability limit exceeded events."
   },
   {
     "name": "node_timex_pps_stability_hertz",
-    "description": ""
+    "help": "Pulse per second stability, average of recent frequency changes."
   },
   {
     "name": "node_timex_status",
-    "description": ""
+    "help": "Value of the status array bits."
   },
   {
     "name": "node_timex_sync_status",
-    "description": ""
+    "help": "Is clock synchronized to a reliable server (1 = yes, 0 = no)."
   },
   {
     "name": "node_timex_tai_offset_seconds",
-    "description": ""
+    "help": "International Atomic Time (TAI) offset."
   },
   {
     "name": "node_timex_tick_seconds",
-    "description": ""
+    "help": "Seconds between clock ticks."
   },
   {
     "name": "node_udp_queues",
-    "description": ""
+    "help": "Number of allocated memory in the kernel for UDP datagrams in bytes."
   },
   {
     "name": "node_uname_info",
-    "description": ""
+    "help": "Labeled system information as provided by the uname system call."
   },
   {
     "name": "node_vmstat_oom_kill",
-    "description": ""
+    "help": "/proc/vmstat information field oom_kill."
   },
   {
     "name": "node_vmstat_pgfault",
-    "description": ""
+    "help": "/proc/vmstat information field pgfault."
   },
   {
     "name": "node_vmstat_pgmajfault",
-    "description": ""
+    "help": "/proc/vmstat information field pgmajfault."
   },
   {
     "name": "node_vmstat_pgpgin",
-    "description": ""
+    "help": "/proc/vmstat information field pgpgin."
   },
   {
     "name": "node_vmstat_pgpgout",
-    "description": ""
+    "help": "/proc/vmstat information field pgpgout."
   },
   {
     "name": "node_vmstat_pswpin",
-    "description": ""
+    "help": "/proc/vmstat information field pswpin."
   },
   {
     "name": "node_vmstat_pswpout",
-    "description": ""
+    "help": "/proc/vmstat information field pswpout."
   },
   {
     "name": "openfga_check_cache_hit_count",
-    "description": ""
+    "help": "The total number of cache hits for ResolveCheck."
   },
   {
     "name": "openfga_check_cache_total_count",
-    "description": ""
+    "help": "The total number of calls to ResolveCheck."
   },
   {
     "name": "openfga_condition_compilation_duration_ms",
-    "description": ""
+    "help": "A histogram measuring the compilation time (in milliseconds) of a Condition."
   },
   {
     "name": "openfga_condition_evaluation_cost",
-    "description": ""
+    "help": "A histogram of the CEL evaluation cost of a Condition in a Relationship Tuple"
   },
   {
     "name": "openfga_condition_evaluation_duration_ms",
-    "description": ""
+    "help": "A histogram measuring the evaluation time (in milliseconds) of a Condition."
   },
   {
     "name": "openfga_list_objects_further_eval_required_count",
-    "description": ""
+    "help": "Number of objects in a ListObjects call that needed to issue a Check call to determine a final result"
   },
   {
     "name": "openfga_list_objects_no_further_eval_required_count",
-    "description": ""
+    "help": "Number of objects in a ListObjects call that needed to issue a Check call to determine a final result"
   },
   {
     "name": "plugins_active_instances",
-    "description": ""
+    "help": "The number of active plugin instances"
   },
   {
     "name": "plugins_datasource_instances",
-    "description": ""
+    "help": "The total number of data source instances created"
   },
   {
     "name": "probe_dns_lookup_time_seconds",
-    "description": ""
+    "help": "Returns the time taken for probe dns lookup in seconds"
   },
   {
     "name": "probe_duration_seconds",
-    "description": ""
+    "help": "Returns how long the probe took to complete in seconds"
   },
   {
     "name": "probe_failed_due_to_regex",
-    "description": ""
+    "help": "Indicates if probe failed due to regex"
   },
   {
     "name": "probe_http_content_length",
-    "description": ""
+    "help": "Length of http content response"
   },
   {
     "name": "probe_http_duration_seconds",
-    "description": ""
+    "help": "Duration of http request by phase, summed over all redirects"
   },
   {
     "name": "probe_http_redirects",
-    "description": ""
+    "help": "The number of redirects"
   },
   {
     "name": "probe_http_ssl",
-    "description": ""
+    "help": "Indicates if SSL was used for the final redirect"
   },
   {
     "name": "probe_http_status_code",
-    "description": ""
+    "help": "Response HTTP status code"
   },
   {
     "name": "probe_http_uncompressed_body_length",
-    "description": ""
+    "help": "Length of uncompressed response body"
   },
   {
     "name": "probe_http_version",
-    "description": ""
+    "help": "Returns the version of HTTP of the probe response"
   },
   {
     "name": "probe_ip_addr_hash",
-    "description": ""
+    "help": "Specifies the hash of IP address. It's useful to detect if the IP address changes."
   },
   {
     "name": "probe_ip_protocol",
-    "description": ""
+    "help": "Specifies whether probe ip protocol is IP4 or IP6"
   },
   {
     "name": "probe_success",
-    "description": ""
+    "help": "Displays whether or not the probe was a success"
   },
   {
     "name": "process_cpu_seconds",
-    "description": ""
+    "help": "Total user and system CPU time spent in seconds."
   },
   {
     "name": "process_cpu_seconds_total",
-    "description": ""
+    "help": "Total user and system CPU time spent in seconds."
   },
   {
     "name": "process_max_fds",
-    "description": ""
+    "help": "Maximum number of open file descriptors."
   },
   {
     "name": "process_network_receive_bytes",
-    "description": ""
+    "help": "Number of bytes received by the process over the network."
   },
   {
     "name": "process_network_receive_bytes_total",
-    "description": ""
+    "help": "Number of bytes received by the process over the network."
   },
   {
     "name": "process_network_transmit_bytes",
-    "description": ""
+    "help": "Number of bytes sent by the process over the network."
   },
   {
     "name": "process_network_transmit_bytes_total",
-    "description": ""
+    "help": "Number of bytes sent by the process over the network."
   },
   {
     "name": "process_open_fds",
-    "description": ""
+    "help": "Number of open file descriptors."
   },
   {
     "name": "process_resident_memory_bytes",
-    "description": ""
+    "help": "Resident memory size in bytes."
   },
   {
     "name": "process_start_time_seconds",
-    "description": ""
+    "help": "Start time of the process since unix epoch in seconds."
   },
   {
     "name": "process_virtual_memory_bytes",
-    "description": ""
+    "help": "Virtual memory size in bytes."
   },
   {
     "name": "process_virtual_memory_max_bytes",
-    "description": ""
+    "help": "Maximum amount of virtual memory available in bytes."
   },
   {
     "name": "prometheus_api_notification_active_subscribers",
-    "description": ""
+    "help": "The current number of active notification subscribers."
   },
   {
     "name": "prometheus_api_notification_updates_dropped_total",
-    "description": ""
+    "help": "Total number of notification updates dropped."
   },
   {
     "name": "prometheus_api_notification_updates_sent_total",
-    "description": ""
+    "help": "Total number of notification updates sent."
   },
   {
     "name": "prometheus_api_remote_read_queries",
-    "description": ""
+    "help": "The current number of remote read queries being executed or waiting."
   },
   {
     "name": "prometheus_build_info",
-    "description": ""
+    "help": "A metric with a constant '1' value labeled by version, revision, branch, goversion from which prometheus was built, and the goos and goarch for the build."
   },
   {
     "name": "prometheus_config_last_reload_success_timestamp_seconds",
-    "description": ""
+    "help": "Timestamp of the last successful configuration reload."
   },
   {
     "name": "prometheus_config_last_reload_successful",
-    "description": ""
+    "help": "Whether the last configuration reload attempt was successful."
   },
   {
     "name": "prometheus_engine_queries",
-    "description": ""
+    "help": "The current number of queries being executed or waiting."
   },
   {
     "name": "prometheus_engine_queries_concurrent_max",
-    "description": ""
+    "help": "The max number of concurrent queries."
   },
   {
     "name": "prometheus_engine_query_duration_seconds",
-    "description": ""
+    "help": "Query timings"
   },
   {
     "name": "prometheus_engine_query_log_enabled",
-    "description": ""
+    "help": "State of the query log."
   },
   {
     "name": "prometheus_engine_query_log_failures_total",
-    "description": ""
+    "help": "The number of query log failures."
   },
   {
     "name": "prometheus_engine_query_samples_total",
-    "description": ""
+    "help": "The total number of samples loaded by all queries."
   },
   {
     "name": "prometheus_http_request_duration_seconds",
-    "description": ""
+    "help": "Histogram of latencies for HTTP requests."
   },
   {
     "name": "prometheus_http_requests_total",
-    "description": ""
+    "help": "Counter of HTTP requests."
   },
   {
     "name": "prometheus_http_response_size_bytes",
-    "description": ""
+    "help": "Histogram of response size for HTTP requests."
   },
   {
     "name": "prometheus_notifications_alertmanagers_discovered",
-    "description": ""
+    "help": "The number of alertmanagers discovered and active."
   },
   {
     "name": "prometheus_notifications_dropped_total",
-    "description": ""
+    "help": "Total number of alerts dropped due to errors when sending to Alertmanager."
   },
   {
     "name": "prometheus_notifications_errors_total",
-    "description": ""
+    "help": "Total number of errors sending alert notifications."
   },
   {
     "name": "prometheus_notifications_latency_seconds",
-    "description": ""
+    "help": "Latency quantiles for sending alert notifications."
   },
   {
     "name": "prometheus_notifications_queue_capacity",
-    "description": ""
+    "help": "The capacity of the alert notifications queue."
   },
   {
     "name": "prometheus_notifications_queue_length",
-    "description": ""
+    "help": "The number of alert notifications in the queue."
   },
   {
     "name": "prometheus_notifications_sent_total",
-    "description": ""
+    "help": "Total number of alerts sent."
   },
   {
     "name": "prometheus_ready",
-    "description": ""
+    "help": "Whether Prometheus startup was fully completed and the server is ready for normal operation."
   },
   {
     "name": "prometheus_remote_storage_exemplars_in_total",
-    "description": ""
+    "help": "Exemplars in to remote storage, compare to exemplars out for queue managers."
   },
   {
     "name": "prometheus_remote_storage_highest_timestamp_in_seconds",
-    "description": ""
+    "help": "Highest timestamp that has come into the remote storage via the Appender interface, in seconds since epoch. Initialized to 0 when no data has been received yet."
   },
   {
     "name": "prometheus_remote_storage_histograms_in_total",
-    "description": ""
+    "help": "HistogramSamples in to remote storage, compare to histograms out for queue managers."
   },
   {
     "name": "prometheus_remote_storage_samples_in_total",
-    "description": ""
+    "help": "Samples in to remote storage, compare to samples out for queue managers."
   },
   {
     "name": "prometheus_remote_storage_string_interner_zero_reference_releases_total",
-    "description": ""
+    "help": "The number of times release has been called for strings that are not interned."
   },
   {
     "name": "prometheus_rule_evaluation_duration_seconds",
-    "description": ""
+    "help": "The duration for a rule to execute."
   },
   {
     "name": "prometheus_rule_evaluation_failures_total",
-    "description": ""
+    "help": "The total number of rule evaluation failures."
   },
   {
     "name": "prometheus_rule_evaluations_total",
-    "description": ""
+    "help": "The total number of rule evaluations."
   },
   {
     "name": "prometheus_rule_group_duration_seconds",
-    "description": ""
+    "help": "The duration of rule group evaluations."
   },
   {
     "name": "prometheus_rule_group_interval_seconds",
-    "description": ""
+    "help": "The interval of a rule group."
   },
   {
     "name": "prometheus_rule_group_iterations_missed_total",
-    "description": ""
+    "help": "The total number of rule group evaluations missed due to slow rule group evaluation."
   },
   {
     "name": "prometheus_rule_group_iterations_total",
-    "description": ""
+    "help": "The total number of scheduled rule group evaluations, whether executed or missed."
   },
   {
     "name": "prometheus_rule_group_last_duration_seconds",
-    "description": ""
+    "help": "The duration of the last rule group evaluation."
   },
   {
     "name": "prometheus_rule_group_last_evaluation_samples",
-    "description": ""
+    "help": "The number of samples returned during the last rule group evaluation."
   },
   {
     "name": "prometheus_rule_group_last_evaluation_timestamp_seconds",
-    "description": ""
+    "help": "The timestamp of the last rule group evaluation in seconds."
   },
   {
     "name": "prometheus_rule_group_last_restore_duration_seconds",
-    "description": ""
+    "help": "The duration of the last alert rules alerts restoration using the `ALERTS_FOR_STATE` series."
   },
   {
     "name": "prometheus_rule_group_rules",
-    "description": ""
+    "help": "The number of rules."
   },
   {
     "name": "prometheus_sd_azure_cache_hit_total",
-    "description": ""
+    "help": "Number of cache hit during refresh."
   },
   {
     "name": "prometheus_sd_azure_failures_total",
-    "description": ""
+    "help": "Number of Azure service discovery refresh failures."
   },
   {
     "name": "prometheus_sd_consul_rpc_duration_seconds",
-    "description": ""
+    "help": "The duration of a Consul RPC call in seconds."
   },
   {
     "name": "prometheus_sd_consul_rpc_failures_total",
-    "description": ""
+    "help": "The number of Consul RPC call failures."
   },
   {
     "name": "prometheus_sd_discovered_targets",
-    "description": ""
+    "help": "Current number of discovered targets."
   },
   {
     "name": "prometheus_sd_dns_lookup_failures_total",
-    "description": ""
+    "help": "The number of DNS-SD lookup failures."
   },
   {
     "name": "prometheus_sd_dns_lookups_total",
-    "description": ""
+    "help": "The number of DNS-SD lookups."
   },
   {
     "name": "prometheus_sd_failed_configs",
-    "description": ""
+    "help": "Current number of service discovery configurations that failed to load."
   },
   {
     "name": "prometheus_sd_file_mtime_seconds",
-    "description": ""
+    "help": "Timestamp (mtime) of files read by FileSD. Timestamp is set at read time."
   },
   {
     "name": "prometheus_sd_file_read_errors_total",
-    "description": ""
+    "help": "The number of File-SD read errors."
   },
   {
     "name": "prometheus_sd_file_scan_duration_seconds",
-    "description": ""
+    "help": "The duration of the File-SD scan in seconds."
   },
   {
     "name": "prometheus_sd_file_watcher_errors_total",
-    "description": ""
+    "help": "The number of File-SD errors caused by filesystem watch failures."
   },
   {
     "name": "prometheus_sd_http_failures_total",
-    "description": ""
+    "help": "Number of HTTP service discovery refresh failures."
   },
   {
     "name": "prometheus_sd_kubernetes_events_total",
-    "description": ""
+    "help": "The number of Kubernetes events handled."
   },
   {
     "name": "prometheus_sd_kubernetes_failures_total",
-    "description": ""
+    "help": "The number of failed WATCH/LIST requests."
   },
   {
     "name": "prometheus_sd_kuma_fetch_duration_seconds",
-    "description": ""
+    "help": "The duration of a Kuma MADS fetch call."
   },
   {
     "name": "prometheus_sd_kuma_fetch_failures_total",
-    "description": ""
+    "help": "The number of Kuma MADS fetch call failures."
   },
   {
     "name": "prometheus_sd_kuma_fetch_skipped_updates_total",
-    "description": ""
+    "help": "The number of Kuma MADS fetch calls that result in no updates to the targets."
   },
   {
     "name": "prometheus_sd_linode_failures_total",
-    "description": ""
+    "help": "Number of Linode service discovery refresh failures."
   },
   {
     "name": "prometheus_sd_nomad_failures_total",
-    "description": ""
+    "help": "Number of nomad service discovery refresh failures."
   },
   {
     "name": "prometheus_sd_received_updates_total",
-    "description": ""
+    "help": "Total number of update events received from the SD providers."
   },
   {
     "name": "prometheus_sd_updates_delayed_total",
-    "description": ""
+    "help": "Total number of update events that couldn't be sent immediately."
   },
   {
     "name": "prometheus_sd_updates_total",
-    "description": ""
+    "help": "Total number of update events sent to the SD consumers."
   },
   {
     "name": "prometheus_target_interval_length_seconds",
-    "description": ""
+    "help": "Actual intervals between scrapes."
   },
   {
     "name": "prometheus_target_metadata_cache_bytes",
-    "description": ""
+    "help": "The number of bytes that are currently used for storing metric metadata in the cache"
   },
   {
     "name": "prometheus_target_metadata_cache_entries",
-    "description": ""
+    "help": "Total number of metric metadata entries in the cache"
   },
   {
     "name": "prometheus_target_scrape_pool_exceeded_label_limits_total",
-    "description": ""
+    "help": "Total number of times scrape pools hit the label limits, during sync or config reload."
   },
   {
     "name": "prometheus_target_scrape_pool_exceeded_target_limit_total",
-    "description": ""
+    "help": "Total number of times scrape pools hit the target limit, during sync or config reload."
   },
   {
     "name": "prometheus_target_scrape_pool_reloads_failed_total",
-    "description": ""
+    "help": "Total number of failed scrape pool reloads."
   },
   {
     "name": "prometheus_target_scrape_pool_reloads_total",
-    "description": ""
+    "help": "Total number of scrape pool reloads."
   },
   {
     "name": "prometheus_target_scrape_pool_symboltable_items",
-    "description": ""
+    "help": "Current number of symbols in table for this scrape pool."
   },
   {
     "name": "prometheus_target_scrape_pool_sync_total",
-    "description": ""
+    "help": "Total number of syncs that were executed on a scrape pool."
   },
   {
     "name": "prometheus_target_scrape_pool_target_limit",
-    "description": ""
+    "help": "Maximum number of targets allowed in this scrape pool."
   },
   {
     "name": "prometheus_target_scrape_pool_targets",
-    "description": ""
+    "help": "Current number of targets in this scrape pool."
   },
   {
     "name": "prometheus_target_scrape_pools_failed_total",
-    "description": ""
+    "help": "Total number of scrape pool creations that failed."
   },
   {
     "name": "prometheus_target_scrape_pools_total",
-    "description": ""
+    "help": "Total number of scrape pool creation attempts."
   },
   {
     "name": "prometheus_target_scrapes_cache_flush_forced_total",
-    "description": ""
+    "help": "How many times a scrape cache was flushed due to getting big while scrapes are failing."
   },
   {
     "name": "prometheus_target_scrapes_exceeded_body_size_limit_total",
-    "description": ""
+    "help": "Total number of scrapes that hit the body size limit"
   },
   {
     "name": "prometheus_target_scrapes_exceeded_native_histogram_bucket_limit_total",
-    "description": ""
+    "help": "Total number of scrapes that hit the native histogram bucket limit and were rejected."
   },
   {
     "name": "prometheus_target_scrapes_exceeded_sample_limit_total",
-    "description": ""
+    "help": "Total number of scrapes that hit the sample limit and were rejected."
   },
   {
     "name": "prometheus_target_scrapes_exemplar_out_of_order_total",
-    "description": ""
+    "help": "Total number of exemplar rejected due to not being out of the expected order."
   },
   {
     "name": "prometheus_target_scrapes_sample_duplicate_timestamp_total",
-    "description": ""
+    "help": "Total number of samples rejected due to duplicate timestamps but different values."
   },
   {
     "name": "prometheus_target_scrapes_sample_out_of_bounds_total",
-    "description": ""
+    "help": "Total number of samples rejected due to timestamp falling outside of the time bounds."
   },
   {
     "name": "prometheus_target_scrapes_sample_out_of_order_total",
-    "description": ""
+    "help": "Total number of samples rejected due to not being out of the expected order."
   },
   {
     "name": "prometheus_target_sync_failed_total",
-    "description": ""
+    "help": "Total number of target sync failures."
   },
   {
     "name": "prometheus_target_sync_length_seconds",
-    "description": ""
+    "help": "Actual interval to sync the scrape pool."
   },
   {
     "name": "prometheus_template_text_expansion_failures",
-    "description": ""
+    "help": "The total number of template text expansion failures."
   },
   {
     "name": "prometheus_template_text_expansion_failures_total",
-    "description": ""
+    "help": "The total number of template text expansion failures."
   },
   {
     "name": "prometheus_template_text_expansions",
-    "description": ""
+    "help": "The total number of template text expansions."
   },
   {
     "name": "prometheus_template_text_expansions_total",
-    "description": ""
+    "help": "The total number of template text expansions."
   },
   {
     "name": "prometheus_treecache_watcher_goroutines",
-    "description": ""
+    "help": "The current number of watcher goroutines."
   },
   {
     "name": "prometheus_treecache_zookeeper_failures_total",
-    "description": ""
+    "help": "The total number of ZooKeeper failures."
   },
   {
     "name": "prometheus_tsdb_blocks_loaded",
-    "description": ""
+    "help": "Number of currently loaded data blocks"
   },
   {
     "name": "prometheus_tsdb_checkpoint_creations_failed_total",
-    "description": ""
+    "help": "Total number of checkpoint creations that failed."
   },
   {
     "name": "prometheus_tsdb_checkpoint_creations_total",
-    "description": ""
+    "help": "Total number of checkpoint creations attempted."
   },
   {
     "name": "prometheus_tsdb_checkpoint_deletions_failed_total",
-    "description": ""
+    "help": "Total number of checkpoint deletions that failed."
   },
   {
     "name": "prometheus_tsdb_checkpoint_deletions_total",
-    "description": ""
+    "help": "Total number of checkpoint deletions attempted."
   },
   {
     "name": "prometheus_tsdb_clean_start",
-    "description": ""
+    "help": "-1: lockfile is disabled. 0: a lockfile from a previous execution was replaced. 1: lockfile creation was clean"
   },
   {
     "name": "prometheus_tsdb_compaction_chunk_range_seconds",
-    "description": ""
+    "help": "Final time range of chunks on their first compaction"
   },
   {
     "name": "prometheus_tsdb_compaction_chunk_samples",
-    "description": ""
+    "help": "Final number of samples on their first compaction"
   },
   {
     "name": "prometheus_tsdb_compaction_chunk_size_bytes",
-    "description": ""
+    "help": "Final size of chunks on their first compaction"
   },
   {
     "name": "prometheus_tsdb_compaction_duration_seconds",
-    "description": ""
+    "help": "Duration of compaction runs"
   },
   {
     "name": "prometheus_tsdb_compaction_populating_block",
-    "description": ""
+    "help": "Set to 1 when a block is currently being written to the disk."
   },
   {
     "name": "prometheus_tsdb_compactions_failed_total",
-    "description": ""
+    "help": "Total number of compactions that failed for the partition."
   },
   {
     "name": "prometheus_tsdb_compactions_skipped_total",
-    "description": ""
+    "help": "Total number of skipped compactions due to disabled auto compaction."
   },
   {
     "name": "prometheus_tsdb_compactions_total",
-    "description": ""
+    "help": "Total number of compactions that were executed for the partition."
   },
   {
     "name": "prometheus_tsdb_compactions_triggered_total",
-    "description": ""
+    "help": "Total number of triggered compactions for the partition."
   },
   {
     "name": "prometheus_tsdb_data_replay_duration_seconds",
-    "description": ""
+    "help": "Time taken to replay the data on disk."
   },
   {
     "name": "prometheus_tsdb_exemplar_exemplars_appended_total",
-    "description": ""
+    "help": "Total number of appended exemplars."
   },
   {
     "name": "prometheus_tsdb_exemplar_exemplars_in_storage",
-    "description": ""
+    "help": "Number of exemplars currently in circular storage."
   },
   {
     "name": "prometheus_tsdb_exemplar_last_exemplars_timestamp_seconds",
-    "description": ""
+    "help": "The timestamp of the oldest exemplar stored in circular storage. Useful to check for what timerange the current exemplar buffer limit allows. This usually means the last timestampfor all exemplars for a typical setup. This is not true though if one of the series timestamp is in future compared to rest series."
   },
   {
     "name": "prometheus_tsdb_exemplar_max_exemplars",
-    "description": ""
+    "help": "Total number of exemplars the exemplar storage can store, resizeable."
   },
   {
     "name": "prometheus_tsdb_exemplar_out_of_order_exemplars_total",
-    "description": ""
+    "help": "Total number of out of order exemplar ingestion failed attempts."
   },
   {
     "name": "prometheus_tsdb_exemplar_series_with_exemplars_in_storage",
-    "description": ""
+    "help": "Number of series with exemplars currently in circular storage."
   },
   {
     "name": "prometheus_tsdb_head_active_appenders",
-    "description": ""
+    "help": "Number of currently active appender transactions"
   },
   {
     "name": "prometheus_tsdb_head_chunks",
-    "description": ""
+    "help": "Total number of chunks in the head block."
   },
   {
     "name": "prometheus_tsdb_head_chunks_created_total",
-    "description": ""
+    "help": "Total number of chunks created in the head"
   },
   {
     "name": "prometheus_tsdb_head_chunks_removed_total",
-    "description": ""
+    "help": "Total number of chunks removed in the head"
   },
   {
     "name": "prometheus_tsdb_head_chunks_storage_size_bytes",
-    "description": ""
+    "help": "Size of the chunks_head directory."
   },
   {
     "name": "prometheus_tsdb_head_gc_duration_seconds",
-    "description": ""
+    "help": "Runtime of garbage collection in the head block."
   },
   {
     "name": "prometheus_tsdb_head_max_time",
-    "description": ""
+    "help": "Maximum timestamp of the head block. The unit is decided by the library consumer."
   },
   {
     "name": "prometheus_tsdb_head_max_time_seconds",
-    "description": ""
+    "help": "Maximum timestamp of the head block."
   },
   {
     "name": "prometheus_tsdb_head_min_time",
-    "description": ""
+    "help": "Minimum time bound of the head block. The unit is decided by the library consumer."
   },
   {
     "name": "prometheus_tsdb_head_min_time_seconds",
-    "description": ""
+    "help": "Minimum time bound of the head block."
   },
   {
     "name": "prometheus_tsdb_head_out_of_order_samples_appended_total",
-    "description": ""
+    "help": "Total number of appended out of order samples."
   },
   {
     "name": "prometheus_tsdb_head_samples_appended_total",
-    "description": ""
+    "help": "Total number of appended samples."
   },
   {
     "name": "prometheus_tsdb_head_series",
-    "description": ""
+    "help": "Total number of series in the head block."
   },
   {
     "name": "prometheus_tsdb_head_series_created_total",
-    "description": ""
+    "help": "Total number of series created in the head"
   },
   {
     "name": "prometheus_tsdb_head_series_not_found_total",
-    "description": ""
+    "help": "Total number of requests for series that were not found."
   },
   {
     "name": "prometheus_tsdb_head_series_removed_total",
-    "description": ""
+    "help": "Total number of series removed in the head"
   },
   {
     "name": "prometheus_tsdb_head_truncations_failed_total",
-    "description": ""
+    "help": "Total number of head truncations that failed."
   },
   {
     "name": "prometheus_tsdb_head_truncations_total",
-    "description": ""
+    "help": "Total number of head truncations attempted."
   },
   {
     "name": "prometheus_tsdb_isolation_high_watermark",
-    "description": ""
+    "help": "The highest TSDB append ID that has been given out."
   },
   {
     "name": "prometheus_tsdb_isolation_low_watermark",
-    "description": ""
+    "help": "The lowest TSDB append ID that is still referenced."
   },
   {
     "name": "prometheus_tsdb_lowest_timestamp",
-    "description": ""
+    "help": "Lowest timestamp value stored in the database. The unit is decided by the library consumer."
   },
   {
     "name": "prometheus_tsdb_lowest_timestamp_seconds",
-    "description": ""
+    "help": "Lowest timestamp value stored in the database."
   },
   {
     "name": "prometheus_tsdb_mmap_chunk_corruptions_total",
-    "description": ""
+    "help": "Total number of memory-mapped chunk corruptions."
   },
   {
     "name": "prometheus_tsdb_mmap_chunks_total",
-    "description": ""
+    "help": "Total number of chunks that were memory-mapped."
   },
   {
     "name": "prometheus_tsdb_out_of_bound_samples_total",
-    "description": ""
+    "help": "Total number of out of bound samples ingestion failed attempts with out of order support disabled."
   },
   {
     "name": "prometheus_tsdb_out_of_order_samples_total",
-    "description": ""
+    "help": "Total number of out of order samples ingestion failed attempts due to out of order being disabled."
   },
   {
     "name": "prometheus_tsdb_reloads_failures_total",
-    "description": ""
+    "help": "Number of times the database failed to reloadBlocks block data from disk."
   },
   {
     "name": "prometheus_tsdb_reloads_total",
-    "description": ""
+    "help": "Number of times the database reloaded block data from disk."
   },
   {
     "name": "prometheus_tsdb_retention_limit_bytes",
-    "description": ""
+    "help": "Max number of bytes to be retained in the tsdb blocks, configured 0 means disabled"
   },
   {
     "name": "prometheus_tsdb_retention_limit_seconds",
-    "description": ""
+    "help": "How long to retain samples in storage."
   },
   {
     "name": "prometheus_tsdb_size_retentions_total",
-    "description": ""
+    "help": "The number of times that blocks were deleted because the maximum number of bytes was exceeded."
   },
   {
     "name": "prometheus_tsdb_snapshot_replay_error_total",
-    "description": ""
+    "help": "Total number snapshot replays that failed."
   },
   {
     "name": "prometheus_tsdb_storage_blocks_bytes",
-    "description": ""
+    "help": "The number of bytes that are currently used for local storage by all blocks."
   },
   {
     "name": "prometheus_tsdb_symbol_table_size_bytes",
-    "description": ""
+    "help": "Size of symbol table in memory for loaded blocks"
   },
   {
     "name": "prometheus_tsdb_time_retentions_total",
-    "description": ""
+    "help": "The number of times that blocks were deleted because the maximum time limit was exceeded."
   },
   {
     "name": "prometheus_tsdb_tombstone_cleanup_seconds",
-    "description": ""
+    "help": "The time taken to recompact blocks to remove tombstones."
   },
   {
     "name": "prometheus_tsdb_too_old_samples_total",
-    "description": ""
+    "help": "Total number of out of order samples ingestion failed attempts with out of support enabled, but sample outside of time window."
   },
   {
     "name": "prometheus_tsdb_vertical_compactions_total",
-    "description": ""
+    "help": "Total number of compactions done on overlapping blocks."
   },
   {
     "name": "prometheus_tsdb_wal_completed_pages_total",
-    "description": ""
+    "help": "Total number of completed pages."
   },
   {
     "name": "prometheus_tsdb_wal_corruptions_total",
-    "description": ""
+    "help": "Total number of WAL corruptions."
   },
   {
     "name": "prometheus_tsdb_wal_fsync_duration_seconds",
-    "description": ""
+    "help": "Duration of write log fsync."
   },
   {
     "name": "prometheus_tsdb_wal_page_flushes_total",
-    "description": ""
+    "help": "Total number of page flushes."
   },
   {
     "name": "prometheus_tsdb_wal_segment_current",
-    "description": ""
+    "help": "Write log segment index that TSDB is currently writing to."
   },
   {
     "name": "prometheus_tsdb_wal_storage_size_bytes",
-    "description": ""
+    "help": "Size of the write log directory."
   },
   {
     "name": "prometheus_tsdb_wal_truncate_duration_seconds",
-    "description": ""
+    "help": "Duration of WAL truncation."
   },
   {
     "name": "prometheus_tsdb_wal_truncations_failed_total",
-    "description": ""
+    "help": "Total number of write log truncations that failed."
   },
   {
     "name": "prometheus_tsdb_wal_truncations_total",
-    "description": ""
+    "help": "Total number of write log truncations attempted."
   },
   {
     "name": "prometheus_tsdb_wal_writes_failed_total",
-    "description": ""
+    "help": "Total number of write log writes that failed."
   },
   {
     "name": "prometheus_web_federation_errors_total",
-    "description": ""
+    "help": "Total number of errors that occurred while sending federation responses."
   },
   {
     "name": "prometheus_web_federation_warnings_total",
-    "description": ""
+    "help": "Total number of warnings that occurred while sending federation responses."
   },
   {
     "name": "promhttp_metric_handler_errors",
-    "description": ""
+    "help": "Total number of internal errors encountered by the promhttp metric handler."
   },
   {
     "name": "promhttp_metric_handler_errors_total",
-    "description": ""
+    "help": "Total number of internal errors encountered by the promhttp metric handler."
   },
   {
     "name": "promhttp_metric_handler_requests",
-    "description": ""
+    "help": "Total number of scrapes by HTTP status code."
   },
   {
     "name": "promhttp_metric_handler_requests_in_flight",
-    "description": ""
+    "help": "Current number of scrapes being served."
   },
   {
     "name": "promhttp_metric_handler_requests_total",
-    "description": ""
+    "help": "Total number of scrapes by HTTP status code."
   },
   {
     "name": "rpc_durations_histogram_seconds",
-    "description": ""
+    "help": "RPC latency distributions."
   },
   {
     "name": "rpc_durations_seconds",
-    "description": ""
+    "help": "RPC latency distributions."
   }
 ]

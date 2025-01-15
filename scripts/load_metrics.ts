@@ -9,7 +9,7 @@ import { ChromaClient } from "chromadb";
 dotenv.config();
 
 // Read and parse the JSON file
-const rawData = fs.readFileSync('./training_data/enriched/grafana_dashboards/1860_rev37.json', 'utf-8');
+const rawData = fs.readFileSync('./training_data/metrics/metrics.json', 'utf-8');
 const inputData: Document[] = JSON.parse(rawData);
 
 // Ensure the data is an array of documents
@@ -20,14 +20,10 @@ if (!Array.isArray(inputData)) {
 // Transform the data into the desired format
 const transformedData: Document[] = inputData.map((item: any) => ({
   id: item.id,
-  pageContent: `${item.name}. ${item.description} Question: ${item.question} Metrics: ${item.metrics.join(', ')}`,
+  pageContent: `${item.name}: ${item.help}`,
   metadata: {
-    question: item.question,
-    metrics: item.metrics.join(', '),
-    query: item.query,
-    unit: item.unit,
-    unit_description: item.unit_description,
-    example_value: item.example_value,
+    name: item.name,
+    help: item.help
   },
 }));
 
@@ -36,16 +32,16 @@ const embeddings = new OpenAIEmbeddings({
 });
 
 const vectorStore = new Chroma(embeddings, {
-  collectionName: process.env.CHROMA_INDEX,
-  url: process.env.CHROMA_URL,
+  collectionName: process.env.CHROMA_METRICS_INDEX || "prometheus_metrics",
+  url: process.env.CHROMA_URL || "http://localhost:8000",
 });
 
 // Add documents to vector store
 (async () => {
   try {
     const client = new ChromaClient();
-    const chromaIndex = process.env.CHROMA_INDEX || "default_metrics_index";
-    await client.deleteCollection({ name: chromaIndex });
+    const metricsIndex = process.env.CHROMA_METRICS_INDEX || "default_metrics_index";
+    await client.deleteCollection({ name: metricsIndex });
     await vectorStore.addDocuments(transformedData);
     console.log("Documents successfully added to the vector store.");
   } catch (error) {

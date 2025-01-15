@@ -41,6 +41,7 @@
     "import-dashboards": "node --loader ts-node/esm scripts/import_dashboards.ts",
     "refine-data": "node --loader ts-node/esm scripts/refine_data.ts",
     "import-metrics": "node --loader ts-node/esm scripts/import_metrics.ts",
-    "load-examples": "node --loader ts-node/esm scripts/load_examples.ts"
+    "load-examples": "node --loader ts-node/esm scripts/load_examples.ts",
+    "load-metrics": "node --loader ts-node/esm scripts/load_metrics.ts"
   }
 }

@@ -1,9 +1,6 @@
 import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import { z } from "zod";
 import { FewShotPromptTemplate, PromptTemplate } from "@langchain/core/prompts";
-import { MemoryVectorStore } from "langchain/vectorstores/memory";
-import { SemanticSimilarityExampleSelector } from "@langchain/core/example_selectors";
-import { examples } from "./training.js";
 import { Annotation } from "@langchain/langgraph";
 import { createQueryExecutor, createMetricsFetcher } from './prometheus.js';
 import { DynamicStructuredTool } from "@langchain/core/tools";
@@ -16,17 +13,12 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-// Load metrics
-
-const rawData = fs.readFileSync('./training_data/metrics/metrics.json', 'utf-8');
-const metrics = JSON.parse(rawData);
-
 const embeddings = new OpenAIEmbeddings({
-  model: "text-embedding-3-small",
+  model: "text-embedding-ada-002",
 });
 
 const vectorStore = new Chroma(embeddings, {
-  collectionName: "prometheus_examples",
+  collectionName: process.env.CHROMA_INDEX || 'prometheus_examples-2',
   url: process.env.CHROMA_URL || "http://localhost:8000", // Optional, will default to this value
 });
 
@@ -34,13 +26,15 @@ const exampleSelector = vectorStore.asRetriever({
   k: 5
 });
 
-console.log(await exampleSelector.invoke('cpu'));
+const MetricsVectorStore = new Chroma(embeddings, {
+  collectionName: process.env.CHROMA_METRICS_INDEX || 'prometheus_metrics',
+  url: process.env.CHROMA_URL || "http://localhost:8000", // Optional, will default to this value
+});
 
-// Map the JSON data to an array with the desired structure
-const metricsArray: Array<{ name: string; description: string }> = metrics.map((metric: { name: string; description: string }) => ({
-  name: metric.name,
-  description: metric.description || ``,
-}));
+const metricsExampleSelector = MetricsVectorStore.asRetriever({
+  k: 5
+});
+
 
 const model = new ChatOpenAI({
   openAIApiKey: process.env.OPENAI_API_KEY,
@@ -59,11 +53,8 @@ const prometheusUrl = process.env.PROMETHEUS_URL || 'http://localhost:9090'
 
 const queryPrometheus = createQueryExecutor(prometheusUrl);
 
-
-
-
 const queryPromptTemplate = PromptTemplate.fromTemplate(
-`Given an input question, first create a syntactically correct PromQL query to run, then look at the results of the query and return the answer.
+  `Given an input question, first create a syntactically correct PromQL query to run, then look at the results of the query and return the answer.
 
 Use the following format:
 
@@ -72,26 +63,15 @@ PromQLQuery: "PromQL Query to run"
 PromQLResult: "Result of the PromQLQuery"
 Answer: "Final answer here"
 
-List of available metrics:
+Below are a number of relevent Prometheus metrics and their help text.
 {metrics}
 
-Below are a number of examples of questions and their corresponding PromQL queries.
+Below are a number of relevent examples of questions and their corresponding PromQL queries.
 {examples}
 
 User Question: {question}
 PromQLQuery: 
 `);
-
-const getMetricsFetcher = createMetricsFetcher(prometheusUrl);
-
-const prometheusMetricsTool = new DynamicStructuredTool({
-  name: "prometheus_metrics",
-  description: "Get all metrics from Prometheus",
-  schema: z.object({}),
-  func: async () => {
-    return await getMetricsFetcher();
-  },
-});
 
 const prometheusQueryTool = new DynamicStructuredTool({
   name: "prometheus_query",
@@ -112,6 +92,8 @@ const StateAnnotation = Annotation.Root({
   query: Annotation<string>,
   result: Annotation<string>,
   answer: Annotation<string>,
+  unit: Annotation<string>,
+  unit_description: Annotation<string>
 });
 
 const getExamples = async (state: typeof StateAnnotation.State) => {
@@ -119,28 +101,50 @@ const getExamples = async (state: typeof StateAnnotation.State) => {
 
   const examplePrompt = PromptTemplate.fromTemplate(`
 Example Question: {question}
-Example PromQL: {query}`
+Example PromQL Query: {query}`
   );
 
   const formattedExamples = await Promise.all(
-    examples.map(example => 
+    examples.map(example =>
       examplePrompt.format({
         question: example.metadata.question,
         query: example.metadata.query
       })
     )
   );
-  
+
   const combinedExamples = formattedExamples.join('\n\n');
 
   return { examples: combinedExamples };
 };
 
+const getMetricExamples = async (state: typeof StateAnnotation.State) => {
+  const metricExamples = await metricsExampleSelector.invoke(state.question);
+
+  const metricExamplePrompt = PromptTemplate.fromTemplate(`
+Example Metric: {name}
+Example Metric Description: {help}`
+  );
+
+  const formattedMetricExamples = await Promise.all(
+    metricExamples.map(example =>
+      metricExamplePrompt.format({
+        name: example.metadata.name,
+        help: example.metadata.help
+      })
+    )
+  );
+
+  const combinedMetricExamples = formattedMetricExamples.join('\n\n');
+
+  return { metrics: combinedMetricExamples };
+};
+
 const writeQueryTemplate = async (state: typeof StateAnnotation.State) => {
   const promptValue = await queryPromptTemplate.invoke({
     question: state.question,
-    examples: state.examples, 
-    metrics: state.metrics
+    examples: state.examples,
+    metrics: state.metrics,
   });
   console.log(promptValue);
   const result = await structuredModel.invoke(promptValue);
@@ -164,12 +168,11 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
     The query returned the following data:
      ${state.result}
 
-    Using the data above and your knowledge of Prometheus, give a brief answer to the user's question being as specific as possible:
+    Using the above give a brief answer to the user's question being as specific as possible:
     ${state.question}
 
     Do not ask for more information.
-    If you respond with any numbers please give the units based on the above.
-    If the query returned "[]" you can say "No data found". 
+    If you respond with any numbers please give the correct units units.
     `;
   console.log(promptValue);
   const response = await model.invoke(promptValue);
@@ -184,11 +187,13 @@ const graphBuilder = new StateGraph({
   stateSchema: StateAnnotation,
 })
   .addNode("getExamples", getExamples)
+  .addNode("getMetricExamples", getMetricExamples)
   .addNode("writeQueryTemplate", writeQueryTemplate)
   .addNode("executeQuery", executeQuery)
   .addNode("generateAnswer", generateAnswer)
   .addEdge("__start__", "getExamples")
-  .addEdge("getExamples", "writeQueryTemplate")
+  .addEdge("getExamples", "getMetricExamples")
+  .addEdge("getMetricExamples", "writeQueryTemplate")
   .addEdge("writeQueryTemplate", "executeQuery")
   .addEdge("executeQuery", "generateAnswer")
   .addEdge("generateAnswer", "__end__");
