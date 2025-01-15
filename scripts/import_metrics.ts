@@ -21,7 +21,6 @@ interface MetricsResult {
     [key: string]: Metric[];
 }
 
-// Set Prometheus URL with type safety
 const prometheusUrl: string = process.env.PROMETHEUS_URL || 'http://localhost:9090';
 
 async function fetchAndSaveMetrics(): Promise<void> {
@@ -40,7 +39,7 @@ async function fetchAndSaveMetrics(): Promise<void> {
         );
 
         // Ensure directory exists
-        const dirPath = 'training_data/metrics';
+        const dirPath = 'data/metrics';
         await fs.mkdir(dirPath, { recursive: true });
 
         // Write to metrics.json file

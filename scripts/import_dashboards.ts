@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 
 // Directories
-const inputDir = 'training_data/imports/grafana_dashboards'; // Directory containing JSON files
-const outputDir = 'training_data/exports/grafana_dashboards'; // Directory to save processed files
+const inputDir = 'data/raw'; // Directory containing JSON files
+const outputDir = 'data/processed'; // Directory to save processed files
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {

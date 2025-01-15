@@ -9,7 +9,7 @@ import { ChromaClient } from "chromadb";
 dotenv.config();
 
 // Read and parse the JSON file
-const rawData = fs.readFileSync('./training_data/enriched/grafana_dashboards/1860_rev37.json', 'utf-8');
+const rawData = fs.readFileSync('./data/enriched/1860_rev37.json', 'utf-8');
 const inputData: Document[] = JSON.parse(rawData);
 
 // Ensure the data is an array of documents

@@ -12,8 +12,8 @@ const openai = new OpenAI({
 });
 
 // Directories
-const inputDir = 'training_data/exports/grafana_dashboards'; // Directory containing JSON files
-const outputDir = 'training_data/enriched/grafana_dashboards'; // Directory to save processed files
+const inputDir = 'data/processed'; // Directory containing JSON files
+const outputDir = 'data/enriched'; // Directory to save processed files
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
