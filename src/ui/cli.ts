@@ -32,19 +32,12 @@ export class CLI {
             const messageText = input.trim();
             if (!messageText) return;
 
-            const spinner = ora({
-                text: chalk.green('Processing your input...'),
-                spinner: 'dots',
-                color: 'green',
-            }).start();
-
-            console.log(chalk.green('Processing your input...'));
-
-            spinner.stop();
-
+            chalk.green('Processing your input...')
+            
             const result = await answerQuestion({ question: messageText });
 
             console.log(chalk.magenta("ollychat >> ") + chalk.cyan(result.answer));
+
         } catch (error) {
             if (logging === true) {
                 console.error(chalk.red('Error processing input:'), error);

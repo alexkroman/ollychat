@@ -31,11 +31,13 @@
   "type": "module",
   "devDependencies": {
     "@types/node": "^22.10.5",
+    "cpy-cli": "^5.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run copy-txt",
+    "copy-txt": "mkdir -p dist/prompts && cp -R src/prompts/*.txt dist/prompts/",
     "dev:cli": "node --watch --loader ts-node/esm src/ui/cli.ts",
     "start:cli": "npm run build && node dist/ui/cli.js",
     "dev:slack": "node --watch --loader ts-node/esm src/ui/slack.ts",

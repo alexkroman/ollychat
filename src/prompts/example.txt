@@ -1,0 +1,2 @@
+User Question: {question}
+PromQL Query: {query}
