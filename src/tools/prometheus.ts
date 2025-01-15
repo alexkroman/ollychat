@@ -1,11 +1,10 @@
-import { createQueryExecutor, createMetricsFetcher } from '../connectors/prometheus.js';
+import { createQueryExecutor } from '../connectors/prometheus.js';
 import { DynamicStructuredTool } from "@langchain/core/tools";
 import { z } from "zod";
 import * as dotenv from 'dotenv';
 dotenv.config();
 
 const prometheusUrl = process.env.PROMETHEUS_URL || 'http://localhost:9090'
-
 const queryPrometheus = createQueryExecutor(prometheusUrl);
 
 export const prometheusQueryTool = new DynamicStructuredTool({

@@ -17,9 +17,9 @@ export class CLI {
     private prompt: string;
     private isRunning: boolean = true;
 
-    constructor(promptText: string = '     you >> ') {
+    constructor(promptText: string = 'you >> ') {
         this.prompt = chalk.blue(promptText);
-        // Initialize readline interface
+
         this.rl = createInterface({
             input: process.stdin,
             output: process.stdout,
@@ -47,9 +47,6 @@ export class CLI {
         }
     }
 
-    /**
-     * Start the CLI
-     */
     public async start() {
         console.log(chalk.cyan('══════════════════════════════════════════════'));
         console.log(chalk.bold.rgb(255, 165, 0)('💬🤖  Welcome to OLLYCHAT 🚀✨'));
@@ -80,16 +77,12 @@ export class CLI {
         });
     }
 
-    /**
-     * Stop the CLI
-     */
     public stop() {
         this.isRunning = false;
         this.rl.close();
     }
 }
 
-// Start your app
 const main = async () => {
     try {
         const cli = new CLI();

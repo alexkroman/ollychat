@@ -1,46 +1,24 @@
-import { z } from "zod";
 import { Annotation } from "@langchain/langgraph";
 import { StateGraph } from "@langchain/langgraph";
+
+import { model } from '../models/openai.js';
+import { promModel } from '../models/prom.js';
+
 import { prometheusQueryTool } from '../tools/prometheus.js';
 import { metricsExampleSelector } from '../tools/getMetrics.js';
-import { exampleSelector } from '../tools/getExamples.js';
-import { model } from '../models/openai.js';
 import { loadPromptFromFile, loadFile } from '../tools/loadPrompts.js';
+import { exampleSelector } from '../tools/getQueryExamples.js';
+import { formatExamples } from '../tools/formatExamples.js';
 
-const queryOutput = z.object({
-  explanation: z.string().describe("Description of what the PromQL query does."),
-  query: z.string().describe("Syntactically valid PromQL query."),
-});
-
-const structuredModel = model.withStructuredOutput(queryOutput);
-
-const getExamples = async (state: typeof StateAnnotation.State) => {
+const getQueryExamples = async (state: typeof StateAnnotation.State) => {
   const examples = await exampleSelector.invoke(state.question);
-  const examplePrompt = loadPromptFromFile('example')
-  const formattedExamples = await Promise.all(
-    examples.map(example =>
-      examplePrompt.format({
-        question: example.metadata.question,
-        query: example.metadata.query
-      })
-    )
-  );
-  const combinedExamples = formattedExamples.join('\n\n');
+  const combinedExamples = await formatExamples(examples, 'example', ['question', 'query']);
   return { examples: combinedExamples };
 };
 
 const getMetricExamples = async (state: typeof StateAnnotation.State) => {
   const metricExamples = await metricsExampleSelector.invoke(state.question);
-  const metricExamplePrompt = loadPromptFromFile('metricExample')
-  const formattedMetricExamples = await Promise.all(
-    metricExamples.map(example =>
-      metricExamplePrompt.format({
-        name: example.metadata.name,
-        help: example.metadata.help
-      })
-    )
-  );
-  const combinedMetricExamples = formattedMetricExamples.join('\n\n');
+  const combinedMetricExamples = await formatExamples(metricExamples, 'metricExample', ['name', 'help']);
   return { metrics: combinedMetricExamples };
 };
 
@@ -51,7 +29,7 @@ const writeQueryTemplate = async (state: typeof StateAnnotation.State) => {
     examples: state.examples,
     metrics: state.metrics,
   });
-  const result = await structuredModel.invoke(promptValue);
+  const result = await promModel.invoke(promptValue);
   return { query: result.query, query_explanation: result.explanation };
 };
 
@@ -84,20 +62,19 @@ const InputStateAnnotation = Annotation.Root({
 const graphBuilder = new StateGraph({
   stateSchema: StateAnnotation,
 })
-  .addNode("getExamples", getExamples)
+  .addNode("getQueryExamples", getQueryExamples)
   .addNode("getMetricExamples", getMetricExamples)
   .addNode("writeQueryTemplate", writeQueryTemplate)
   .addNode("executeQuery", executeQuery)
   .addNode("generateAnswer", generateAnswer)
-  .addEdge("__start__", "getExamples")
-  .addEdge("getExamples", "getMetricExamples")
+  .addEdge("__start__", "getQueryExamples")
+  .addEdge("getQueryExamples", "getMetricExamples")
   .addEdge("getMetricExamples", "writeQueryTemplate")
   .addEdge("writeQueryTemplate", "executeQuery")
   .addEdge("executeQuery", "generateAnswer")
   .addEdge("generateAnswer", "__end__");
 
-const graph = graphBuilder.compile();
-
 export const answerQuestion = async (inputs: { question: string }) => {
+  const graph = graphBuilder.compile();
   return await graph.invoke(inputs);
 }

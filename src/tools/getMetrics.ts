@@ -1,4 +1,4 @@
-import { vectorStore, MetricsVectorStore } from '../tools/chroma.js';
+import { MetricsVectorStore } from '../tools/chroma.js';
 
 export const metricsExampleSelector = MetricsVectorStore.asRetriever({
   k: 5
