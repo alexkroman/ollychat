@@ -1,6 +1,6 @@
 import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import { z } from "zod";
-import { FewShotPromptTemplate, PromptTemplate } from "@langchain/core/prompts";
+import { PromptTemplate } from "@langchain/core/prompts";
 import { Annotation } from "@langchain/langgraph";
 import { createQueryExecutor, createMetricsFetcher } from './prometheus.js';
 import { DynamicStructuredTool } from "@langchain/core/tools";
