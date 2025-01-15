@@ -1,7 +1,0 @@
-Attached is an exported Grafana dashboard. 
-
-I am creating a RAG LLM app that takes a user question and converts it into a PromQL query.  
-
-Please create a Typescript program that takes this JSON file and converts it into another JSON file that can be imported into a Vector database.
-
-The only data I am looking to save is data that will help a user create a PromQL query.

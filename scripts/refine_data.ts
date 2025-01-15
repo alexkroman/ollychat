@@ -15,8 +15,6 @@ const openai = new OpenAI({
 const inputDir = 'training_data/exports/grafana_dashboards'; // Directory containing JSON files
 const outputDir = 'training_data/enriched/grafana_dashboards'; // Directory to save processed files
 
-
-
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
@@ -29,17 +27,11 @@ interface EnrichedEntry {
   metrics: string[];
   description: string;
   query: string;
-  unit: string;
-  unit_description: string;
-  example_value: string;
   question: string;
 }
 
 interface EnrichmentResponse {
     metrics: string[];
-    unit: string;
-    unit_description: string;
-    example_value: string;
     description: string;
     questions: string[];
   }
@@ -53,55 +45,22 @@ async function enrichMetricData(
     const prompt = `Given a Grafana dashboard query with the following details:
   Name: ${name}
   Current Description: ${currentDescription}
-  Query: ${query}
+  PromQL query: ${query}
   
   Provide the following information in JSON format:
   
-  1. unit: The unit of measurement for this metric. Choose from:
-     - percentage (for metrics measuring percentages or ratios)
-     - time (for durations, latency, or time periods)
-     - bytes (for memory, storage, or data size)
-     - count (for counting events, requests, or errors)
-     - requests_per_second (for throughput metrics)
-     - bytes_per_second (for bandwidth metrics)
-     - currency (for financial metrics)
-     - temperature (for system temperature metrics)
-     - voltage (for power-related metrics)
-     - unknown (if unit cannot be determined)
+  1. description: A comprehensive but concise description that explains what the PromQL query measures
   
-    2. unit_description: A concise explanation of the unit. This should clarify:
-    - What the unit represents
-    - How it relates to the metric (e.g., if the unit is time, describe whether it represents duration, latency, etc.).
-    - Any additional context that helps interpret the metric's values.
-
-    3. example_value: A realistic example value for this metric. The example value should:
-    - Be representative of typical values for this metric.
-    - Include the unit for clarity (e.g., 85%, 120 ms, 500 MB, 15 requests/second).
-    - Use a format that aligns with the unit type, as outlined below:
-        - percentage: A value between 0% and 100%.
-        - time: A value in seconds, milliseconds, or minutes.
-        - bytes: A value in KB, MB, GB, or TB.
-        - count: A whole number (e.g., number of events, requests, errors).
-        - requests_per_second: A positive number, typically between 1 and 10,000.
-        - bytes_per_second: A value in KB/s, MB/s, or GB/s.
-        - currency: A value in USD or other currencies, with a typical range for financial metrics.
-        - temperature: A value in degrees Celsius or Fahrenheit.
-        - voltage: A value in volts (e.g., 3.3V, 12V).
-        - unknown: Provide a reasonable number if no unit-specific context is available.
-
-  4. description: A comprehensive but concise description that explains:
-     - What this metric measures
-     - Why it's important
-     - What insights it provides
-     (If the current description is over 100 characters, return it unchanged)
-  
-  5. metrics: Identify and extract all metric names from the query. A metric name is typically a string that:
+  2. metrics: Identify and extract all metric names from the query. A metric name is typically a string that:
     - Appears before any {, (, or other operators (e.g., node_cpu_seconds_total in rate(node_cpu_seconds_total[5m])).
     - Can be surrounded by functions, filters, or time ranges.
 
-  5. questions: Generate 3-5 relevant questions that this query could answer, focusing on operational insights.
+  3. questions: Guess 3 questions that this PromQL query is answering.
+    - Return just the questions without any additional explanation
+    - Do not reference any timeframes in the question
+    - Make guesses that are short questions a user would enter into Slack
   
-  Format the response as a JSON object with these exact keys: unit, description, and questions (as an array).`;
+Format the response as a JSON object with these exact keys: description, and questions (as an array).`;
   
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
@@ -124,7 +83,7 @@ async function enrichMetricData(
       const parsedResponse = JSON.parse(content) as EnrichmentResponse;
       
       // Validate response format
-      if (!parsedResponse.unit || !parsedResponse.unit_description || !parsedResponse.example_value || !parsedResponse.description || !Array.isArray(parsedResponse.metrics) || !Array.isArray(parsedResponse.questions)) {
+      if ( !parsedResponse.description || !Array.isArray(parsedResponse.metrics) || !Array.isArray(parsedResponse.questions)) {
         throw new Error('Invalid response format');
       }
  
@@ -133,9 +92,6 @@ async function enrichMetricData(
       console.error('Error parsing OpenAI response:', error);
       // Return fallback values if parsing fails
       return {
-        unit: 'unknown',
-        unit_description: 'Unit could not be determined',
-        example_value: '0',
         description: currentDescription || name,
         questions: [],
         metrics: []
@@ -163,9 +119,6 @@ async function enrichMetricData(
             description: enriched.description,
             question,
             query,
-            unit: enriched.unit,
-            unit_description: enriched.unit_description,
-            example_value: enriched.example_value,
             metrics: enriched.metrics,
           });
         });

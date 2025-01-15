@@ -20,14 +20,11 @@ if (!Array.isArray(inputData)) {
 // Transform the data into the desired format
 const transformedData: Document[] = inputData.map((item: any) => ({
   id: item.id,
-  pageContent: `${item.name}. ${item.description} Question: ${item.question} Metrics: ${item.metrics.join(', ')}`,
+  pageContent: `${item.question} ${item.name} ${item.description} ${item.metrics.join(', ')}`,
   metadata: {
     question: item.question,
     metrics: item.metrics.join(', '),
-    query: item.query,
-    unit: item.unit,
-    unit_description: item.unit_description,
-    example_value: item.example_value,
+    query: item.query
   },
 }));
 

@@ -1,1252 +1,628 @@
 [
   {
-    "id": "70b8d138-28fb-431f-91fe-5e5cb7019081",
+    "id": "55f78b7f-fe7b-480c-b605-90f0422b34b2",
     "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average waiting time in seconds for CPU pressure on the node. It provides insights into resource contention and potential performance bottlenecks, helping operators identify and address issues affecting system performance.",
-    "question": "What is the average CPU waiting time over the last 30 minutes?",
+    "description": "The PromQL query measures the rate of change in CPU waiting time for pressure metrics on a node over the last 30 minutes.",
+    "question": "What is the rate of change in CPU waiting time for pressure metrics on a node?",
     "query": "irate(node_pressure_cpu_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric measures the average waiting time in seconds for CPU pressure on the node. It represents the duration the CPU spends waiting for a resource to become available, indicating potential performance bottlenecks or resource contention.",
-    "example_value": "0.5 seconds",
     "metrics": [
       "node_pressure_cpu_waiting_seconds_total"
     ]
   },
   {
-    "id": "534a8412-679a-4b6c-85e9-1b671b2d24ed",
+    "id": "dbdaeda4-c620-434a-9a6b-c2334526d694",
     "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average waiting time in seconds for CPU pressure on the node. It provides insights into resource contention and potential performance bottlenecks, helping operators identify and address issues affecting system performance.",
-    "question": "Are there any spikes in CPU waiting time that could indicate resource contention?",
+    "description": "The PromQL query measures the rate of change in CPU waiting time for pressure metrics on a node over the last 30 minutes.",
+    "question": "How is the CPU waiting time affecting resource pressure?",
     "query": "irate(node_pressure_cpu_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric measures the average waiting time in seconds for CPU pressure on the node. It represents the duration the CPU spends waiting for a resource to become available, indicating potential performance bottlenecks or resource contention.",
-    "example_value": "0.5 seconds",
     "metrics": [
       "node_pressure_cpu_waiting_seconds_total"
     ]
   },
   {
-    "id": "a61f42e9-b02a-423a-810d-d95c9ddae969",
+    "id": "9c01bd7c-9252-490b-8fd6-7eaafdd98ce2",
     "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average waiting time in seconds for CPU pressure on the node. It provides insights into resource contention and potential performance bottlenecks, helping operators identify and address issues affecting system performance.",
-    "question": "How does CPU pressure correlate with overall system performance?",
+    "description": "The PromQL query measures the rate of change in CPU waiting time for pressure metrics on a node over the last 30 minutes.",
+    "question": "Is the CPU waiting time increasing or decreasing for pressure metrics?",
     "query": "irate(node_pressure_cpu_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric measures the average waiting time in seconds for CPU pressure on the node. It represents the duration the CPU spends waiting for a resource to become available, indicating potential performance bottlenecks or resource contention.",
-    "example_value": "0.5 seconds",
     "metrics": [
       "node_pressure_cpu_waiting_seconds_total"
     ]
   },
   {
-    "id": "310b7267-aef9-4874-934e-2a93708964a4",
+    "id": "b5f6b419-7cbd-4102-b301-d0a7b42bdc3c",
     "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average waiting time in seconds for CPU pressure on the node. It provides insights into resource contention and potential performance bottlenecks, helping operators identify and address issues affecting system performance.",
-    "question": "Is there a pattern in CPU waiting times during peak usage hours?",
-    "query": "irate(node_pressure_cpu_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric measures the average waiting time in seconds for CPU pressure on the node. It represents the duration the CPU spends waiting for a resource to become available, indicating potential performance bottlenecks or resource contention.",
-    "example_value": "0.5 seconds",
-    "metrics": [
-      "node_pressure_cpu_waiting_seconds_total"
-    ]
-  },
-  {
-    "id": "97008be7-2e10-4a48-838f-fe8b2936733d",
-    "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average waiting time in seconds for CPU pressure on the node. It provides insights into resource contention and potential performance bottlenecks, helping operators identify and address issues affecting system performance.",
-    "question": "Are there any specific nodes experiencing unusually high CPU pressure?",
-    "query": "irate(node_pressure_cpu_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric measures the average waiting time in seconds for CPU pressure on the node. It represents the duration the CPU spends waiting for a resource to become available, indicating potential performance bottlenecks or resource contention.",
-    "example_value": "0.5 seconds",
-    "metrics": [
-      "node_pressure_cpu_waiting_seconds_total"
-    ]
-  },
-  {
-    "id": "158fdd2f-5bc7-4c2b-ba34-5436933163ad",
-    "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average time, in seconds, that a node's memory pressure is waiting before being resolved. It provides insights into the efficiency of memory resource allocation and utilization, helping to identify and address potential performance bottlenecks or resource constraints.",
-    "question": "What is the current average wait time for memory pressure to be resolved on the nodes?",
+    "description": "The PromQL query measures the rate of change over time in the 'node_pressure_memory_waiting_seconds_total' metric within the last 30 minutes.",
+    "question": "How fast is the memory pressure increasing on the node?",
     "query": "irate(node_pressure_memory_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric represents the average time, in seconds, that a node's memory pressure is waiting before being resolved. It indicates the delay in memory pressure relief, highlighting potential performance bottlenecks or resource constraints.",
-    "example_value": "0.5 seconds",
     "metrics": [
       "node_pressure_memory_waiting_seconds_total"
     ]
   },
   {
-    "id": "17e4d7c2-9a7b-47a1-90fa-502077dbfb34",
+    "id": "e93fa517-d4a7-4c9d-ac99-57b1d2b94e2d",
     "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average time, in seconds, that a node's memory pressure is waiting before being resolved. It provides insights into the efficiency of memory resource allocation and utilization, helping to identify and address potential performance bottlenecks or resource constraints.",
-    "question": "Are there any nodes consistently experiencing high memory pressure wait times?",
+    "description": "The PromQL query measures the rate of change over time in the 'node_pressure_memory_waiting_seconds_total' metric within the last 30 minutes.",
+    "question": "Is there a significant change in memory pressure on the node?",
     "query": "irate(node_pressure_memory_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric represents the average time, in seconds, that a node's memory pressure is waiting before being resolved. It indicates the delay in memory pressure relief, highlighting potential performance bottlenecks or resource constraints.",
-    "example_value": "0.5 seconds",
     "metrics": [
       "node_pressure_memory_waiting_seconds_total"
     ]
   },
   {
-    "id": "3bf98731-9128-44ab-ac5d-cffeafffbbe2",
+    "id": "6e19e8df-797c-4316-867f-81ad2aecf33e",
     "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average time, in seconds, that a node's memory pressure is waiting before being resolved. It provides insights into the efficiency of memory resource allocation and utilization, helping to identify and address potential performance bottlenecks or resource constraints.",
-    "question": "How does the memory pressure wait time correlate with overall system performance?",
+    "description": "The PromQL query measures the rate of change over time in the 'node_pressure_memory_waiting_seconds_total' metric within the last 30 minutes.",
+    "question": "What is the trend of memory pressure on the node?",
     "query": "irate(node_pressure_memory_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric represents the average time, in seconds, that a node's memory pressure is waiting before being resolved. It indicates the delay in memory pressure relief, highlighting potential performance bottlenecks or resource constraints.",
-    "example_value": "0.5 seconds",
     "metrics": [
       "node_pressure_memory_waiting_seconds_total"
     ]
   },
   {
-    "id": "9dd1d58c-aa49-45e2-8cae-c86774ad5aab",
+    "id": "3e105b65-303c-484b-9af7-e16ec8cc5b56",
     "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average time, in seconds, that a node's memory pressure is waiting before being resolved. It provides insights into the efficiency of memory resource allocation and utilization, helping to identify and address potential performance bottlenecks or resource constraints.",
-    "question": "Is there a trend in memory pressure wait times during peak usage hours?",
-    "query": "irate(node_pressure_memory_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric represents the average time, in seconds, that a node's memory pressure is waiting before being resolved. It indicates the delay in memory pressure relief, highlighting potential performance bottlenecks or resource constraints.",
-    "example_value": "0.5 seconds",
+    "description": "The PromQL query measures the Instantaneous Rate (per second) of the total IO waiting time in seconds for pressure on a node.",
+    "question": "How much is the IO waiting time for resource pressure?",
+    "query": "irate(node_pressure_io_waiting_seconds_total{}[30m])",
     "metrics": [
-      "node_pressure_memory_waiting_seconds_total"
+      "node_pressure_io_waiting_seconds_total"
     ]
   },
   {
-    "id": "159a7282-c87b-4cb7-8050-7a2af597dda5",
+    "id": "0860d6f5-2805-4401-8edf-d1f56193cbb5",
     "name": "Pressure",
-    "description": "The 'Pressure' metric measures the average time, in seconds, that a node's memory pressure is waiting before being resolved. It provides insights into the efficiency of memory resource allocation and utilization, helping to identify and address potential performance bottlenecks or resource constraints.",
-    "question": "Are there any specific applications or processes causing prolonged memory pressure wait times?",
-    "query": "irate(node_pressure_memory_waiting_seconds_total{}[30m])",
-    "unit": "time",
-    "unit_description": "This metric represents the average time, in seconds, that a node's memory pressure is waiting before being resolved. It indicates the delay in memory pressure relief, highlighting potential performance bottlenecks or resource constraints.",
-    "example_value": "0.5 seconds",
+    "description": "The PromQL query measures the Instantaneous Rate (per second) of the total IO waiting time in seconds for pressure on a node.",
+    "question": "What is the rate of IO waiting for pressure?",
+    "query": "irate(node_pressure_io_waiting_seconds_total{}[30m])",
     "metrics": [
-      "node_pressure_memory_waiting_seconds_total"
+      "node_pressure_io_waiting_seconds_total"
     ]
   },
   {
-    "id": "c1bd55f8-943a-4be1-8e53-b6b3248d0c9e",
+    "id": "4478a3ab-498b-4add-b74b-b75887e4a47f",
+    "name": "Pressure",
+    "description": "The PromQL query measures the Instantaneous Rate (per second) of the total IO waiting time in seconds for pressure on a node.",
+    "question": "Which node is experiencing the most pressure in terms of IO waiting time?",
+    "query": "irate(node_pressure_io_waiting_seconds_total{}[30m])",
+    "metrics": [
+      "node_pressure_io_waiting_seconds_total"
+    ]
+  },
+  {
+    "id": "9f04e35f-6974-4314-bd28-6dfb71d7b04d",
     "name": "CPU Busy",
-    "description": "This metric measures the aggregated busy state of all CPU cores, providing insight into the overall CPU utilization. Monitoring CPU busy helps in understanding system performance, identifying potential bottlenecks, and optimizing resource allocation.",
-    "question": "What is the average CPU busy percentage over the last 30 minutes?",
+    "description": "The PromQL query calculates the percentage of time all CPU cores are busy by subtracting the average idle time from 100%.",
+    "question": "What is the overall CPU busy percentage?",
     "query": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\"}[30m])))",
-    "unit": "percentage",
-    "unit_description": "A value between 0% and 100% representing the busy state of all CPU cores together. It indicates the percentage of time the CPU cores are not idle, which can reflect the overall CPU load.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "6d9f92ea-018f-4302-990b-9fb946072c88",
+    "id": "dd0549ee-46a7-4d72-b655-c2e844155ba7",
     "name": "CPU Busy",
-    "description": "This metric measures the aggregated busy state of all CPU cores, providing insight into the overall CPU utilization. Monitoring CPU busy helps in understanding system performance, identifying potential bottlenecks, and optimizing resource allocation.",
-    "question": "Are there any significant spikes or drops in CPU busy that could indicate performance issues?",
+    "description": "The PromQL query calculates the percentage of time all CPU cores are busy by subtracting the average idle time from 100%.",
+    "question": "How much time are all CPU cores busy?",
     "query": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\"}[30m])))",
-    "unit": "percentage",
-    "unit_description": "A value between 0% and 100% representing the busy state of all CPU cores together. It indicates the percentage of time the CPU cores are not idle, which can reflect the overall CPU load.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "66496015-30bf-4b8c-995c-6bf09418f164",
+    "id": "3f87d949-db69-4211-8c74-24034ff506af",
     "name": "CPU Busy",
-    "description": "This metric measures the aggregated busy state of all CPU cores, providing insight into the overall CPU utilization. Monitoring CPU busy helps in understanding system performance, identifying potential bottlenecks, and optimizing resource allocation.",
-    "question": "How does the CPU busy metric correlate with other system metrics such as memory usage or disk I/O?",
+    "description": "The PromQL query calculates the percentage of time all CPU cores are busy by subtracting the average idle time from 100%.",
+    "question": "What is the average idle time of all CPU cores?",
     "query": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\"}[30m])))",
-    "unit": "percentage",
-    "unit_description": "A value between 0% and 100% representing the busy state of all CPU cores together. It indicates the percentage of time the CPU cores are not idle, which can reflect the overall CPU load.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "dd1acd74-fb10-4e05-af4e-0673118beaf3",
-    "name": "CPU Busy",
-    "description": "This metric measures the aggregated busy state of all CPU cores, providing insight into the overall CPU utilization. Monitoring CPU busy helps in understanding system performance, identifying potential bottlenecks, and optimizing resource allocation.",
-    "question": "Is there a specific time of day when CPU busy is consistently high?",
-    "query": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\"}[30m])))",
-    "unit": "percentage",
-    "unit_description": "A value between 0% and 100% representing the busy state of all CPU cores together. It indicates the percentage of time the CPU cores are not idle, which can reflect the overall CPU load.",
-    "example_value": "75%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "a3420fb6-f122-4bd9-ab91-5efbfbe64dfe",
-    "name": "CPU Busy",
-    "description": "This metric measures the aggregated busy state of all CPU cores, providing insight into the overall CPU utilization. Monitoring CPU busy helps in understanding system performance, identifying potential bottlenecks, and optimizing resource allocation.",
-    "question": "What impact does application workload have on CPU busy levels?",
-    "query": "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\"}[30m])))",
-    "unit": "percentage",
-    "unit_description": "A value between 0% and 100% representing the busy state of all CPU cores together. It indicates the percentage of time the CPU cores are not idle, which can reflect the overall CPU load.",
-    "example_value": "75%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "cc909ee1-06c6-4312-886a-82669b7ed2a3",
+    "id": "8f505120-fe5a-4d96-aefa-771dd42bacbe",
     "name": "Sys Load",
-    "description": "The metric 'Sys Load' measures the system load over all CPU cores together as a percentage value. This is important for monitoring the overall CPU utilization of the system, indicating how close the system is to its maximum capacity. It provides insights into potential performance bottlenecks and can help in capacity planning.",
-    "question": "What is the current system load percentage across all CPU cores?",
+    "description": "Calculates the average system load across all CPU cores by dividing the current system load by the total number of CPU cores available.",
+    "question": "What is the average system load across all CPU cores?",
     "query": "scalar(node_load1{}) * 100 / count(count(node_cpu_seconds_total{}) by (cpu))",
-    "unit": "percentage",
-    "unit_description": "A percentage value representing the system load over all CPU cores together. This metric indicates the utilization of CPU resources relative to the total capacity available, with higher values indicating higher workload on the system.",
-    "example_value": "75%",
     "metrics": [
       "node_load1",
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "812776f2-ecfd-45d4-8a49-e261923afc6f",
+    "id": "1b8cdb02-4ca6-4007-9486-bc40d46815aa",
     "name": "Sys Load",
-    "description": "The metric 'Sys Load' measures the system load over all CPU cores together as a percentage value. This is important for monitoring the overall CPU utilization of the system, indicating how close the system is to its maximum capacity. It provides insights into potential performance bottlenecks and can help in capacity planning.",
-    "question": "Is the system load consistently high, indicating potential performance issues?",
+    "description": "Calculates the average system load across all CPU cores by dividing the current system load by the total number of CPU cores available.",
+    "question": "How many CPU cores are currently experiencing load?",
     "query": "scalar(node_load1{}) * 100 / count(count(node_cpu_seconds_total{}) by (cpu))",
-    "unit": "percentage",
-    "unit_description": "A percentage value representing the system load over all CPU cores together. This metric indicates the utilization of CPU resources relative to the total capacity available, with higher values indicating higher workload on the system.",
-    "example_value": "75%",
     "metrics": [
       "node_load1",
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "08484fbb-8334-4f99-a87d-2e9894e3705f",
+    "id": "37207db1-4471-40a5-9e9f-56ce5de0205d",
     "name": "Sys Load",
-    "description": "The metric 'Sys Load' measures the system load over all CPU cores together as a percentage value. This is important for monitoring the overall CPU utilization of the system, indicating how close the system is to its maximum capacity. It provides insights into potential performance bottlenecks and can help in capacity planning.",
-    "question": "How does the system load vary during peak usage hours?",
+    "description": "Calculates the average system load across all CPU cores by dividing the current system load by the total number of CPU cores available.",
+    "question": "What is the percentage of system load distributed across CPU cores?",
     "query": "scalar(node_load1{}) * 100 / count(count(node_cpu_seconds_total{}) by (cpu))",
-    "unit": "percentage",
-    "unit_description": "A percentage value representing the system load over all CPU cores together. This metric indicates the utilization of CPU resources relative to the total capacity available, with higher values indicating higher workload on the system.",
-    "example_value": "75%",
     "metrics": [
       "node_load1",
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "0fbfdad9-470c-440b-a9d0-7b500d1cb37f",
-    "name": "Sys Load",
-    "description": "The metric 'Sys Load' measures the system load over all CPU cores together as a percentage value. This is important for monitoring the overall CPU utilization of the system, indicating how close the system is to its maximum capacity. It provides insights into potential performance bottlenecks and can help in capacity planning.",
-    "question": "Are there specific CPU cores experiencing higher load compared to others?",
-    "query": "scalar(node_load1{}) * 100 / count(count(node_cpu_seconds_total{}) by (cpu))",
-    "unit": "percentage",
-    "unit_description": "A percentage value representing the system load over all CPU cores together. This metric indicates the utilization of CPU resources relative to the total capacity available, with higher values indicating higher workload on the system.",
-    "example_value": "75%",
+    "id": "84eaccec-6cda-4a02-bdd1-c79cfd90e0d9",
+    "name": "RAM Used",
+    "description": "This PromQL query calculates the percentage of used RAM memory on a node by subtracting the amount of free RAM memory from the total RAM memory, then dividing the result by the total RAM memory and multiplying by 100.",
+    "question": "What is the percentage of used RAM memory on the node?",
+    "query": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100",
     "metrics": [
-      "node_load1",
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "962b916e-7656-47cb-99de-c9c031f5b4a9",
+    "name": "RAM Used",
+    "description": "This PromQL query calculates the percentage of used RAM memory on a node by subtracting the amount of free RAM memory from the total RAM memory, then dividing the result by the total RAM memory and multiplying by 100.",
+    "question": "How much RAM memory is currently being utilized?",
+    "query": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "e9c304f2-30f7-4962-840b-b75c45071ad9",
+    "name": "RAM Used",
+    "description": "This PromQL query calculates the percentage of used RAM memory on a node by subtracting the amount of free RAM memory from the total RAM memory, then dividing the result by the total RAM memory and multiplying by 100.",
+    "question": "What is the proportion of free RAM memory compared to the total RAM memory?",
+    "query": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "87dd1c9f-31a0-415e-a93c-d88db7467c26",
+    "name": "RAM Used",
+    "description": "This PromQL query calculates the percentage of used RAM memory by subtracting the available RAM memory from the total RAM memory, then normalizing it to a percentage scale.",
+    "question": "What is the percentage of used RAM memory?",
+    "query": "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "a91bacaf-8e19-4b0c-abcc-025b77899ed1",
+    "name": "RAM Used",
+    "description": "This PromQL query calculates the percentage of used RAM memory by subtracting the available RAM memory from the total RAM memory, then normalizing it to a percentage scale.",
+    "question": "How much RAM memory is currently being utilized?",
+    "query": "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "ee7fed6d-da82-46cd-8eac-c3f5a8508ac4",
+    "name": "RAM Used",
+    "description": "This PromQL query calculates the percentage of used RAM memory by subtracting the available RAM memory from the total RAM memory, then normalizing it to a percentage scale.",
+    "question": "What is the ratio of used RAM memory to total RAM memory?",
+    "query": "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "ba327ef4-d235-4b58-b3b8-a636891ea7c9",
+    "name": "SWAP Used",
+    "description": "Calculates the percentage of used swap memory out of the total swap memory available on a node.",
+    "question": "What is the percentage of used swap memory?",
+    "query": "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "d67a6064-85ab-4cdd-b596-b95d86e38e22",
+    "name": "SWAP Used",
+    "description": "Calculates the percentage of used swap memory out of the total swap memory available on a node.",
+    "question": "How much swap memory is currently being utilized?",
+    "query": "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "365e4fd5-9d87-4417-a337-6a38c5fb00ea",
+    "name": "SWAP Used",
+    "description": "Calculates the percentage of used swap memory out of the total swap memory available on a node.",
+    "question": "What is the swap memory utilization percentage?",
+    "query": "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "f1306cb1-82d3-4ce4-8d22-a498c7c3cd90",
+    "name": "Root FS Used",
+    "description": "Calculates the percentage of used space on the root filesystem (excluding rootfs) on a node.",
+    "question": "What is the percentage of used space on the root filesystem?",
+    "query": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "76f604e4-2924-418a-b66e-ab4c4e425797",
+    "name": "Root FS Used",
+    "description": "Calculates the percentage of used space on the root filesystem (excluding rootfs) on a node.",
+    "question": "How much space is available on the root filesystem?",
+    "query": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "d42f954f-85be-435f-a1f5-a97220c86d6e",
+    "name": "Root FS Used",
+    "description": "Calculates the percentage of used space on the root filesystem (excluding rootfs) on a node.",
+    "question": "What is the total size of the root filesystem?",
+    "query": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "e2f1cfcd-1999-452c-b7d6-2dda65de37f5",
+    "name": "CPU Cores",
+    "description": "This PromQL query counts the total number of CPU cores by grouping the node_cpu_seconds_total metric by the cpu label.",
+    "question": "How many CPU cores are available?",
+    "query": "count(count(node_cpu_seconds_total{}) by (cpu))",
+    "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "92991cc1-6098-4fd3-883f-bb4bfe04aa74",
-    "name": "Sys Load",
-    "description": "The metric 'Sys Load' measures the system load over all CPU cores together as a percentage value. This is important for monitoring the overall CPU utilization of the system, indicating how close the system is to its maximum capacity. It provides insights into potential performance bottlenecks and can help in capacity planning.",
-    "question": "Can the system load metric help predict resource exhaustion or the need for scaling?",
-    "query": "scalar(node_load1{}) * 100 / count(count(node_cpu_seconds_total{}) by (cpu))",
-    "unit": "percentage",
-    "unit_description": "A percentage value representing the system load over all CPU cores together. This metric indicates the utilization of CPU resources relative to the total capacity available, with higher values indicating higher workload on the system.",
-    "example_value": "75%",
+    "id": "4790e835-51de-4454-99be-eef9d191d164",
+    "name": "CPU Cores",
+    "description": "This PromQL query counts the total number of CPU cores by grouping the node_cpu_seconds_total metric by the cpu label.",
+    "question": "What is the total count of CPU cores?",
+    "query": "count(count(node_cpu_seconds_total{}) by (cpu))",
     "metrics": [
-      "node_load1",
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "a19953d7-49a6-4d22-9ce1-2c397dccb1f2",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of RAM memory that is currently in use compared to the total RAM memory available on the node. Monitoring RAM usage is crucial for identifying potential memory bottlenecks that could impact system performance.",
-    "question": "What is the current RAM usage percentage on the node?",
-    "query": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total RAM memory available on the node. It indicates the utilization of memory resources.",
-    "example_value": "75%",
+    "id": "680a2356-c2f5-4d68-be75-e215da669f46",
+    "name": "CPU Cores",
+    "description": "This PromQL query counts the total number of CPU cores by grouping the node_cpu_seconds_total metric by the cpu label.",
+    "question": "How many CPU cores are being monitored?",
+    "query": "count(count(node_cpu_seconds_total{}) by (cpu))",
     "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "bda06aed-cb08-47ab-adb2-5da4154972d7",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of RAM memory that is currently in use compared to the total RAM memory available on the node. Monitoring RAM usage is crucial for identifying potential memory bottlenecks that could impact system performance.",
-    "question": "Is the RAM usage approaching critical levels?",
-    "query": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total RAM memory available on the node. It indicates the utilization of memory resources.",
-    "example_value": "75%",
-    "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes"
-    ]
-  },
-  {
-    "id": "730c0289-d745-498e-8415-982f9b899ab4",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of RAM memory that is currently in use compared to the total RAM memory available on the node. Monitoring RAM usage is crucial for identifying potential memory bottlenecks that could impact system performance.",
-    "question": "Are there any trends in RAM usage over time that could indicate memory leaks?",
-    "query": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total RAM memory available on the node. It indicates the utilization of memory resources.",
-    "example_value": "75%",
-    "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes"
-    ]
-  },
-  {
-    "id": "a1543083-0496-4a65-a095-c257aa417b65",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of RAM memory that is currently in use compared to the total RAM memory available on the node. Monitoring RAM usage is crucial for identifying potential memory bottlenecks that could impact system performance.",
-    "question": "How does the RAM usage vary across different nodes?",
-    "query": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total RAM memory available on the node. It indicates the utilization of memory resources.",
-    "example_value": "75%",
-    "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes"
-    ]
-  },
-  {
-    "id": "1782b11b-1a91-435d-8220-2234c99a5e08",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of RAM memory that is currently in use compared to the total RAM memory available on the node. Monitoring RAM usage is crucial for identifying potential memory bottlenecks that could impact system performance.",
-    "question": "What is the impact of high RAM usage on application performance?",
-    "query": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total RAM memory available on the node. It indicates the utilization of memory resources.",
-    "example_value": "75%",
-    "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes"
-    ]
-  },
-  {
-    "id": "304e33a4-a102-4939-b694-3305b02ffed6",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of used RAM memory compared to the total available RAM memory. Monitoring RAM utilization is crucial for understanding system resource usage, identifying potential bottlenecks, and optimizing performance.",
-    "question": "What is the current RAM utilization percentage on the system?",
-    "query": "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total available RAM memory. It indicates the utilization of RAM resources on the system.",
-    "example_value": "70%",
-    "metrics": [
-      "node_memory_MemAvailable_bytes",
-      "node_memory_MemTotal_bytes"
-    ]
-  },
-  {
-    "id": "28204973-d6c6-4397-ba42-434dfda75d34",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of used RAM memory compared to the total available RAM memory. Monitoring RAM utilization is crucial for understanding system resource usage, identifying potential bottlenecks, and optimizing performance.",
-    "question": "Is the system approaching full RAM capacity based on the RAM utilization percentage?",
-    "query": "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total available RAM memory. It indicates the utilization of RAM resources on the system.",
-    "example_value": "70%",
-    "metrics": [
-      "node_memory_MemAvailable_bytes",
-      "node_memory_MemTotal_bytes"
-    ]
-  },
-  {
-    "id": "fd26fad3-21fd-4501-b33c-d9ed2d886a63",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of used RAM memory compared to the total available RAM memory. Monitoring RAM utilization is crucial for understanding system resource usage, identifying potential bottlenecks, and optimizing performance.",
-    "question": "Are there any spikes in RAM utilization that could indicate performance issues?",
-    "query": "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total available RAM memory. It indicates the utilization of RAM resources on the system.",
-    "example_value": "70%",
-    "metrics": [
-      "node_memory_MemAvailable_bytes",
-      "node_memory_MemTotal_bytes"
-    ]
-  },
-  {
-    "id": "fc6ebbd3-89e8-4284-89a7-30954230d790",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of used RAM memory compared to the total available RAM memory. Monitoring RAM utilization is crucial for understanding system resource usage, identifying potential bottlenecks, and optimizing performance.",
-    "question": "How does the RAM utilization percentage vary during peak usage hours?",
-    "query": "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total available RAM memory. It indicates the utilization of RAM resources on the system.",
-    "example_value": "70%",
-    "metrics": [
-      "node_memory_MemAvailable_bytes",
-      "node_memory_MemTotal_bytes"
-    ]
-  },
-  {
-    "id": "d78c741b-6869-40c9-ba4b-76c190c01c93",
-    "name": "RAM Used",
-    "description": "This metric measures the percentage of used RAM memory compared to the total available RAM memory. Monitoring RAM utilization is crucial for understanding system resource usage, identifying potential bottlenecks, and optimizing performance.",
-    "question": "Is there a correlation between RAM utilization percentage and application performance metrics?",
-    "query": "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the proportion of used RAM memory relative to the total available RAM memory. It indicates the utilization of RAM resources on the system.",
-    "example_value": "70%",
-    "metrics": [
-      "node_memory_MemAvailable_bytes",
-      "node_memory_MemTotal_bytes"
-    ]
-  },
-  {
-    "id": "db06d964-7381-459c-9d53-e44e841393ca",
-    "name": "SWAP Used",
-    "description": "This metric measures the percentage of swap memory that is currently being used on the system. It is important because high swap usage can indicate memory contention and potential performance degradation. Monitoring swap utilization helps in identifying memory bottlenecks and optimizing system performance.",
-    "question": "What is the current swap memory utilization on the system?",
-    "query": "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the amount of used swap space relative to the total swap space available on the system. It indicates the utilization of swap memory, which is important for understanding memory pressure and potential performance issues.",
-    "example_value": "25%",
-    "metrics": [
-      "node_memory_SwapTotal_bytes",
-      "node_memory_SwapFree_bytes"
-    ]
-  },
-  {
-    "id": "8c992640-a849-41d6-9975-625e69bef16c",
-    "name": "SWAP Used",
-    "description": "This metric measures the percentage of swap memory that is currently being used on the system. It is important because high swap usage can indicate memory contention and potential performance degradation. Monitoring swap utilization helps in identifying memory bottlenecks and optimizing system performance.",
-    "question": "Is the swap memory usage consistently increasing over time?",
-    "query": "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the amount of used swap space relative to the total swap space available on the system. It indicates the utilization of swap memory, which is important for understanding memory pressure and potential performance issues.",
-    "example_value": "25%",
-    "metrics": [
-      "node_memory_SwapTotal_bytes",
-      "node_memory_SwapFree_bytes"
-    ]
-  },
-  {
-    "id": "6140d520-f48b-489e-ace4-41c4fa496629",
-    "name": "SWAP Used",
-    "description": "This metric measures the percentage of swap memory that is currently being used on the system. It is important because high swap usage can indicate memory contention and potential performance degradation. Monitoring swap utilization helps in identifying memory bottlenecks and optimizing system performance.",
-    "question": "Are there any specific processes or applications causing high swap usage?",
-    "query": "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the amount of used swap space relative to the total swap space available on the system. It indicates the utilization of swap memory, which is important for understanding memory pressure and potential performance issues.",
-    "example_value": "25%",
-    "metrics": [
-      "node_memory_SwapTotal_bytes",
-      "node_memory_SwapFree_bytes"
-    ]
-  },
-  {
-    "id": "682314b8-6a89-4b1c-8921-e119fe325b3f",
-    "name": "SWAP Used",
-    "description": "This metric measures the percentage of swap memory that is currently being used on the system. It is important because high swap usage can indicate memory contention and potential performance degradation. Monitoring swap utilization helps in identifying memory bottlenecks and optimizing system performance.",
-    "question": "How does swap memory usage correlate with overall system performance?",
-    "query": "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the amount of used swap space relative to the total swap space available on the system. It indicates the utilization of swap memory, which is important for understanding memory pressure and potential performance issues.",
-    "example_value": "25%",
-    "metrics": [
-      "node_memory_SwapTotal_bytes",
-      "node_memory_SwapFree_bytes"
-    ]
-  },
-  {
-    "id": "9650a3f0-5c2c-4b9e-9001-f2a8464e1f28",
-    "name": "SWAP Used",
-    "description": "This metric measures the percentage of swap memory that is currently being used on the system. It is important because high swap usage can indicate memory contention and potential performance degradation. Monitoring swap utilization helps in identifying memory bottlenecks and optimizing system performance.",
-    "question": "Is the swap space utilization impacting application responsiveness?",
-    "query": "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the amount of used swap space relative to the total swap space available on the system. It indicates the utilization of swap memory, which is important for understanding memory pressure and potential performance issues.",
-    "example_value": "25%",
-    "metrics": [
-      "node_memory_SwapTotal_bytes",
-      "node_memory_SwapFree_bytes"
-    ]
-  },
-  {
-    "id": "580003d3-c597-4735-97c3-5ebeeaa923c6",
-    "name": "Root FS Used",
-    "description": "This metric measures the percentage of used space on the root file system. It is important to monitor to ensure that the root file system does not run out of space, which can lead to system instability, performance issues, or service disruptions. High values indicate potential storage constraints that may require action to prevent system failures and ensure smooth operations.",
-    "question": "What is the current utilization of the root file system?",
-    "query": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents a proportion out of 100, indicating the used space relative to the total available space on the root file system.",
-    "example_value": "75%",
-    "metrics": [
-      "node_filesystem_avail_bytes",
-      "node_filesystem_size_bytes"
-    ]
-  },
-  {
-    "id": "1e7cb754-1dba-4765-b8bc-26d943a30fa5",
-    "name": "Root FS Used",
-    "description": "This metric measures the percentage of used space on the root file system. It is important to monitor to ensure that the root file system does not run out of space, which can lead to system instability, performance issues, or service disruptions. High values indicate potential storage constraints that may require action to prevent system failures and ensure smooth operations.",
-    "question": "Is the root file system approaching full capacity?",
-    "query": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents a proportion out of 100, indicating the used space relative to the total available space on the root file system.",
-    "example_value": "75%",
-    "metrics": [
-      "node_filesystem_avail_bytes",
-      "node_filesystem_size_bytes"
-    ]
-  },
-  {
-    "id": "d0ef5460-732b-4abc-bbf2-f3956dc0fda0",
-    "name": "Root FS Used",
-    "description": "This metric measures the percentage of used space on the root file system. It is important to monitor to ensure that the root file system does not run out of space, which can lead to system instability, performance issues, or service disruptions. High values indicate potential storage constraints that may require action to prevent system failures and ensure smooth operations.",
-    "question": "Are there any trends indicating increasing storage usage on the root file system?",
-    "query": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents a proportion out of 100, indicating the used space relative to the total available space on the root file system.",
-    "example_value": "75%",
-    "metrics": [
-      "node_filesystem_avail_bytes",
-      "node_filesystem_size_bytes"
-    ]
-  },
-  {
-    "id": "292e9c19-b79e-4ec8-9fd3-05c3712c1dc4",
-    "name": "Root FS Used",
-    "description": "This metric measures the percentage of used space on the root file system. It is important to monitor to ensure that the root file system does not run out of space, which can lead to system instability, performance issues, or service disruptions. High values indicate potential storage constraints that may require action to prevent system failures and ensure smooth operations.",
-    "question": "Is the storage capacity of the root file system adequate for current operations?",
-    "query": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents a proportion out of 100, indicating the used space relative to the total available space on the root file system.",
-    "example_value": "75%",
-    "metrics": [
-      "node_filesystem_avail_bytes",
-      "node_filesystem_size_bytes"
-    ]
-  },
-  {
-    "id": "cfd86821-f39e-4e28-9832-89770e9e41bd",
-    "name": "Root FS Used",
-    "description": "This metric measures the percentage of used space on the root file system. It is important to monitor to ensure that the root file system does not run out of space, which can lead to system instability, performance issues, or service disruptions. High values indicate potential storage constraints that may require action to prevent system failures and ensure smooth operations.",
-    "question": "Are there any applications or processes causing a sudden spike in root file system usage?",
-    "query": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents a proportion out of 100, indicating the used space relative to the total available space on the root file system.",
-    "example_value": "75%",
-    "metrics": [
-      "node_filesystem_avail_bytes",
-      "node_filesystem_size_bytes"
-    ]
-  },
-  {
-    "id": "1bfec4a4-92dd-4007-add0-c85117180b22",
+    "id": "6081cbca-cda6-4360-b77d-200ec8fe1cf4",
     "name": "Uptime",
-    "description": "The 'Uptime' metric measures the duration of system uptime, which is crucial for assessing system reliability and stability. It indicates how long the system has been operational without any interruptions or restarts, offering insights into system performance and availability.",
-    "question": "What is the average uptime duration of the system over the past week?",
+    "description": "The PromQL query measures the system uptime by calculating the difference between the current time and the time when the system was last booted.",
+    "question": "What is the current system uptime?",
     "query": "node_time_seconds{} - node_boot_time_seconds{}",
-    "unit": "time",
-    "unit_description": "The unit represents the duration of system uptime, calculated as the time elapsed between the current time and the system boot time. It provides insight into how long the system has been running without restarting, indicating system stability and reliability.",
-    "example_value": "120 minutes",
     "metrics": [
       "node_time_seconds",
       "node_boot_time_seconds"
     ]
   },
   {
-    "id": "8a5e662d-975f-47ad-b9fe-e1c827e14e32",
+    "id": "2bd00cc7-9371-49e5-9254-50ee066cd9e0",
     "name": "Uptime",
-    "description": "The 'Uptime' metric measures the duration of system uptime, which is crucial for assessing system reliability and stability. It indicates how long the system has been operational without any interruptions or restarts, offering insights into system performance and availability.",
-    "question": "Are there any significant fluctuations in system uptime over different time periods?",
+    "description": "The PromQL query measures the system uptime by calculating the difference between the current time and the time when the system was last booted.",
+    "question": "How long has the system been running?",
     "query": "node_time_seconds{} - node_boot_time_seconds{}",
-    "unit": "time",
-    "unit_description": "The unit represents the duration of system uptime, calculated as the time elapsed between the current time and the system boot time. It provides insight into how long the system has been running without restarting, indicating system stability and reliability.",
-    "example_value": "120 minutes",
     "metrics": [
       "node_time_seconds",
       "node_boot_time_seconds"
     ]
   },
   {
-    "id": "eec882e4-b713-4e25-b714-3efc0e6b09b3",
+    "id": "514cc334-a4d9-4bd8-b138-1ee2e8a39895",
     "name": "Uptime",
-    "description": "The 'Uptime' metric measures the duration of system uptime, which is crucial for assessing system reliability and stability. It indicates how long the system has been operational without any interruptions or restarts, offering insights into system performance and availability.",
-    "question": "Can the uptime metric help identify any patterns or trends in system performance?",
+    "description": "The PromQL query measures the system uptime by calculating the difference between the current time and the time when the system was last booted.",
+    "question": "When was the last system boot time?",
     "query": "node_time_seconds{} - node_boot_time_seconds{}",
-    "unit": "time",
-    "unit_description": "The unit represents the duration of system uptime, calculated as the time elapsed between the current time and the system boot time. It provides insight into how long the system has been running without restarting, indicating system stability and reliability.",
-    "example_value": "120 minutes",
     "metrics": [
       "node_time_seconds",
       "node_boot_time_seconds"
     ]
   },
   {
-    "id": "8ecc2f8d-5d00-464b-a170-de6bd8addf03",
-    "name": "Uptime",
-    "description": "The 'Uptime' metric measures the duration of system uptime, which is crucial for assessing system reliability and stability. It indicates how long the system has been operational without any interruptions or restarts, offering insights into system performance and availability.",
-    "question": "Is there a correlation between system uptime and other performance metrics?",
-    "query": "node_time_seconds{} - node_boot_time_seconds{}",
-    "unit": "time",
-    "unit_description": "The unit represents the duration of system uptime, calculated as the time elapsed between the current time and the system boot time. It provides insight into how long the system has been running without restarting, indicating system stability and reliability.",
-    "example_value": "120 minutes",
-    "metrics": [
-      "node_time_seconds",
-      "node_boot_time_seconds"
-    ]
-  },
-  {
-    "id": "da2eac5a-7345-445a-b06f-17b666abe92c",
-    "name": "Uptime",
-    "description": "The 'Uptime' metric measures the duration of system uptime, which is crucial for assessing system reliability and stability. It indicates how long the system has been operational without any interruptions or restarts, offering insights into system performance and availability.",
-    "question": "How does system uptime vary between different servers or nodes in the infrastructure?",
-    "query": "node_time_seconds{} - node_boot_time_seconds{}",
-    "unit": "time",
-    "unit_description": "The unit represents the duration of system uptime, calculated as the time elapsed between the current time and the system boot time. It provides insight into how long the system has been running without restarting, indicating system stability and reliability.",
-    "example_value": "120 minutes",
-    "metrics": [
-      "node_time_seconds",
-      "node_boot_time_seconds"
-    ]
-  },
-  {
-    "id": "2da3b11a-adc0-406f-af95-b928a95a0c94",
+    "id": "669514ae-5b8c-4623-97a8-c71515f31368",
     "name": "RootFS Total",
-    "description": "The RootFS Total metric measures the total size of the RootFS filesystem, providing insights into the storage capacity available for system files and applications. Monitoring this metric is important for capacity planning, identifying storage constraints, and ensuring optimal performance.",
-    "question": "What is the current total size of the RootFS filesystem?",
+    "description": "This PromQL query measures the total size of the RootFS (root filesystem) excluding the rootfs mountpoint.",
+    "question": "What is the total size of the RootFS?",
     "query": "node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"}",
-    "unit": "bytes",
-    "unit_description": "Data size unit representing the total size of the RootFS filesystem in bytes. This metric indicates the storage capacity of the root filesystem excluding the rootfs virtual filesystem.",
-    "example_value": "5242880000 bytes",
     "metrics": [
       "node_filesystem_size_bytes"
     ]
   },
   {
-    "id": "89d774ed-e490-4d1e-a8c8-2039bd10268a",
+    "id": "1c2161ae-8212-43db-8d72-a54fd1d47d22",
     "name": "RootFS Total",
-    "description": "The RootFS Total metric measures the total size of the RootFS filesystem, providing insights into the storage capacity available for system files and applications. Monitoring this metric is important for capacity planning, identifying storage constraints, and ensuring optimal performance.",
-    "question": "Is the RootFS running out of storage capacity?",
+    "description": "This PromQL query measures the total size of the RootFS (root filesystem) excluding the rootfs mountpoint.",
+    "question": "How much disk space is occupied by the RootFS?",
     "query": "node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"}",
-    "unit": "bytes",
-    "unit_description": "Data size unit representing the total size of the RootFS filesystem in bytes. This metric indicates the storage capacity of the root filesystem excluding the rootfs virtual filesystem.",
-    "example_value": "5242880000 bytes",
     "metrics": [
       "node_filesystem_size_bytes"
     ]
   },
   {
-    "id": "44622054-2c79-4391-b6e2-ce204a8ac9b1",
+    "id": "8a2b0fb8-af26-4037-a1e1-807259990cbe",
     "name": "RootFS Total",
-    "description": "The RootFS Total metric measures the total size of the RootFS filesystem, providing insights into the storage capacity available for system files and applications. Monitoring this metric is important for capacity planning, identifying storage constraints, and ensuring optimal performance.",
-    "question": "How does the RootFS size trend over time?",
+    "description": "This PromQL query measures the total size of the RootFS (root filesystem) excluding the rootfs mountpoint.",
+    "question": "What is the capacity of the RootFS?",
     "query": "node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"}",
-    "unit": "bytes",
-    "unit_description": "Data size unit representing the total size of the RootFS filesystem in bytes. This metric indicates the storage capacity of the root filesystem excluding the rootfs virtual filesystem.",
-    "example_value": "5242880000 bytes",
     "metrics": [
       "node_filesystem_size_bytes"
     ]
   },
   {
-    "id": "9a421e94-0581-4d36-8cc7-d93b27559afd",
+    "id": "e827fb8c-f1db-440e-9262-290513d2d16e",
     "name": "RAM Total",
-    "description": "This metric measures the total amount of RAM available on the system. It is important for understanding the overall memory capacity and resource availability of the system. Monitoring changes in total RAM can provide insights into potential performance issues related to memory constraints.",
-    "question": "What is the current total RAM capacity of the system?",
+    "description": "The PromQL query node_memory_MemTotal_bytes{} retrieves the total amount of physical memory (RAM) available on the node in bytes.",
+    "question": "What is the total RAM available on the node?",
     "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total amount of RAM in bytes installed on the system.",
-    "example_value": "8 GB",
     "metrics": [
       "node_memory_MemTotal_bytes"
     ]
   },
   {
-    "id": "fe8e8670-dd7d-451d-b32b-ffd678375f9e",
+    "id": "e2a5068a-6f9d-4467-86a9-d47ba23b7ec6",
     "name": "RAM Total",
-    "description": "This metric measures the total amount of RAM available on the system. It is important for understanding the overall memory capacity and resource availability of the system. Monitoring changes in total RAM can provide insights into potential performance issues related to memory constraints.",
-    "question": "Has there been any increase or decrease in total RAM over time?",
+    "description": "The PromQL query node_memory_MemTotal_bytes{} retrieves the total amount of physical memory (RAM) available on the node in bytes.",
+    "question": "How much physical memory is present on the system?",
     "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total amount of RAM in bytes installed on the system.",
-    "example_value": "8 GB",
     "metrics": [
       "node_memory_MemTotal_bytes"
     ]
   },
   {
-    "id": "0083e0e1-98a6-4f89-9be8-b5945e0107d0",
+    "id": "5fd52c12-7274-4b03-b891-c4071b82fc95",
     "name": "RAM Total",
-    "description": "This metric measures the total amount of RAM available on the system. It is important for understanding the overall memory capacity and resource availability of the system. Monitoring changes in total RAM can provide insights into potential performance issues related to memory constraints.",
-    "question": "Is the total RAM nearing its capacity, indicating a need for upgrades or optimization?",
+    "description": "The PromQL query node_memory_MemTotal_bytes{} retrieves the total amount of physical memory (RAM) available on the node in bytes.",
+    "question": "What is the total memory capacity of the node?",
     "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total amount of RAM in bytes installed on the system.",
-    "example_value": "8 GB",
     "metrics": [
       "node_memory_MemTotal_bytes"
     ]
   },
   {
-    "id": "8eee6e2c-b78b-44a7-8e6b-8491968ae262",
-    "name": "RAM Total",
-    "description": "This metric measures the total amount of RAM available on the system. It is important for understanding the overall memory capacity and resource availability of the system. Monitoring changes in total RAM can provide insights into potential performance issues related to memory constraints.",
-    "question": "How does the total RAM correlate with overall system performance?",
-    "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total amount of RAM in bytes installed on the system.",
-    "example_value": "8 GB",
-    "metrics": [
-      "node_memory_MemTotal_bytes"
-    ]
-  },
-  {
-    "id": "4f7f6196-9ae6-49da-ba14-9ec55c179093",
-    "name": "RAM Total",
-    "description": "This metric measures the total amount of RAM available on the system. It is important for understanding the overall memory capacity and resource availability of the system. Monitoring changes in total RAM can provide insights into potential performance issues related to memory constraints.",
-    "question": "Are there any anomalies or trends in total RAM usage that require further investigation?",
-    "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total amount of RAM in bytes installed on the system.",
-    "example_value": "8 GB",
-    "metrics": [
-      "node_memory_MemTotal_bytes"
-    ]
-  },
-  {
-    "id": "01eb1e28-8ab1-47cb-afe0-220e4bd6dc32",
+    "id": "f6db7449-fa8a-4615-8c12-caeaddc7000c",
     "name": "SWAP Total",
-    "description": "This metric measures the total amount of swap memory available in bytes on the system. It is important as swap space is used as a supplement to physical memory and can impact system performance when exhausted. Higher swap usage may indicate memory pressure and potential performance issues.",
-    "question": "What is the current total swap space capacity on the system?",
+    "description": "This PromQL query measures the total amount of swap memory available on a node in bytes.",
+    "question": "What is the total swap memory available on the node?",
     "query": "node_memory_SwapTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total swap space available on the system. Swap space is used by the operating system when physical memory (RAM) is full to temporarily store data that would normally be kept in RAM.",
-    "example_value": "2 GB",
     "metrics": [
       "node_memory_SwapTotal_bytes"
     ]
   },
   {
-    "id": "2096f84e-495b-4154-965d-f13f6dd743e7",
+    "id": "7226178c-3fce-4183-9592-5a150afff816",
     "name": "SWAP Total",
-    "description": "This metric measures the total amount of swap memory available in bytes on the system. It is important as swap space is used as a supplement to physical memory and can impact system performance when exhausted. Higher swap usage may indicate memory pressure and potential performance issues.",
-    "question": "Is the swap space usage nearing its capacity limit?",
+    "description": "This PromQL query measures the total amount of swap memory available on a node in bytes.",
+    "question": "How much swap memory is allocated on the node?",
     "query": "node_memory_SwapTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total swap space available on the system. Swap space is used by the operating system when physical memory (RAM) is full to temporarily store data that would normally be kept in RAM.",
-    "example_value": "2 GB",
     "metrics": [
       "node_memory_SwapTotal_bytes"
     ]
   },
   {
-    "id": "b6caf402-2651-400c-ab47-060839c0f6f5",
+    "id": "c7429708-4b1a-4c08-bd7b-96495de89df2",
     "name": "SWAP Total",
-    "description": "This metric measures the total amount of swap memory available in bytes on the system. It is important as swap space is used as a supplement to physical memory and can impact system performance when exhausted. Higher swap usage may indicate memory pressure and potential performance issues.",
-    "question": "How does the total swap space size change over time?",
+    "description": "This PromQL query measures the total amount of swap memory available on a node in bytes.",
+    "question": "What is the maximum swap memory capacity of the node?",
     "query": "node_memory_SwapTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total swap space available on the system. Swap space is used by the operating system when physical memory (RAM) is full to temporarily store data that would normally be kept in RAM.",
-    "example_value": "2 GB",
     "metrics": [
       "node_memory_SwapTotal_bytes"
     ]
   },
   {
-    "id": "8c433608-d337-47c3-a9ce-fcb97f712514",
-    "name": "SWAP Total",
-    "description": "This metric measures the total amount of swap memory available in bytes on the system. It is important as swap space is used as a supplement to physical memory and can impact system performance when exhausted. Higher swap usage may indicate memory pressure and potential performance issues.",
-    "question": "Are there any patterns in swap space utilization during peak load?",
-    "query": "node_memory_SwapTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total swap space available on the system. Swap space is used by the operating system when physical memory (RAM) is full to temporarily store data that would normally be kept in RAM.",
-    "example_value": "2 GB",
-    "metrics": [
-      "node_memory_SwapTotal_bytes"
-    ]
-  },
-  {
-    "id": "f4e96f26-1f80-4597-830b-3e48380de67d",
-    "name": "SWAP Total",
-    "description": "This metric measures the total amount of swap memory available in bytes on the system. It is important as swap space is used as a supplement to physical memory and can impact system performance when exhausted. Higher swap usage may indicate memory pressure and potential performance issues.",
-    "question": "Is the available swap space sufficient to handle memory demands during system peaks?",
-    "query": "node_memory_SwapTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory size unit representing the total swap space available on the system. Swap space is used by the operating system when physical memory (RAM) is full to temporarily store data that would normally be kept in RAM.",
-    "example_value": "2 GB",
-    "metrics": [
-      "node_memory_SwapTotal_bytes"
-    ]
-  },
-  {
-    "id": "d4203004-4ce4-4bba-b553-14704caeaa67",
+    "id": "82fd518c-b7c6-46f1-9229-3549d2896e5b",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent on system-level tasks, providing insights into the system's kernel and other operating system processes. It is important for monitoring system resource utilization and identifying potential bottlenecks caused by excessive system-level activity.",
-    "question": "What is the average system CPU usage over the last 30 minutes?",
+    "description": "This PromQL query calculates the average system CPU usage over the last 30 minutes per CPU core.",
+    "question": "What is the average system CPU usage per CPU core?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"system\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on the CPU in system mode. This metric indicates the proportion of CPU time spent executing kernel processes and handling system-level tasks.",
-    "example_value": "5%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "cf4579e8-6d98-4eae-8f0e-45b6e0cc2900",
+    "id": "a2eefd7f-8bd6-4034-91ca-742fcc3e3458",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent on system-level tasks, providing insights into the system's kernel and other operating system processes. It is important for monitoring system resource utilization and identifying potential bottlenecks caused by excessive system-level activity.",
-    "question": "Are there any spikes in system CPU utilization that may indicate performance issues?",
+    "description": "This PromQL query calculates the average system CPU usage over the last 30 minutes per CPU core.",
+    "question": "How many CPU cores are currently active?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"system\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on the CPU in system mode. This metric indicates the proportion of CPU time spent executing kernel processes and handling system-level tasks.",
-    "example_value": "5%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "6e0e4952-5cc7-4f5f-bf40-5da79f6b7916",
+    "id": "1bcf3335-b327-4fa3-a886-d834c043ae01",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent on system-level tasks, providing insights into the system's kernel and other operating system processes. It is important for monitoring system resource utilization and identifying potential bottlenecks caused by excessive system-level activity.",
-    "question": "Is the system spending a significant amount of time on system-level tasks, affecting overall performance?",
+    "description": "This PromQL query calculates the average system CPU usage over the last 30 minutes per CPU core.",
+    "question": "What is the total system CPU usage in the last 30 minutes?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"system\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on the CPU in system mode. This metric indicates the proportion of CPU time spent executing kernel processes and handling system-level tasks.",
-    "example_value": "5%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "9d60befe-6e35-4203-b448-344c7477abc0",
+    "id": "977694b6-ea44-4f7c-ab1a-5b6f26b3a617",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent on system-level tasks, providing insights into the system's kernel and other operating system processes. It is important for monitoring system resource utilization and identifying potential bottlenecks caused by excessive system-level activity.",
-    "question": "How does the system CPU usage in system mode compare across different CPUs?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=\"system\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on the CPU in system mode. This metric indicates the proportion of CPU time spent executing kernel processes and handling system-level tasks.",
-    "example_value": "5%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "9face02e-bc6c-4409-8d7b-530ce32e6e14",
-    "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent on system-level tasks, providing insights into the system's kernel and other operating system processes. It is important for monitoring system resource utilization and identifying potential bottlenecks caused by excessive system-level activity.",
-    "question": "Can the system CPU usage in system mode be correlated with specific system processes or activities?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=\"system\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on the CPU in system mode. This metric indicates the proportion of CPU time spent executing kernel processes and handling system-level tasks.",
-    "example_value": "5%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "5548ed84-ac8a-4f66-ba4e-9ea0969e4f8a",
-    "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent in user mode, providing insights into the workload generated by user-space processes. Understanding this metric is important for optimizing system performance and identifying potential bottlenecks.",
-    "question": "What is the average CPU time spent in user mode over the last 30 minutes?",
+    "description": "The PromQL query calculates the average CPU utilization in terms of user mode across all available CPU cores over the last 30 minutes.",
+    "question": "What is the average CPU utilization in user mode?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"user\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in user mode. This metric represents the proportion of time the CPU spends executing user-space processes compared to other modes.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "d4310dec-6afc-4381-96f5-45078bc74610",
+    "id": "c3576dee-8bd6-4d71-bfd3-fde900223f10",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent in user mode, providing insights into the workload generated by user-space processes. Understanding this metric is important for optimizing system performance and identifying potential bottlenecks.",
-    "question": "Are there any spikes in user mode CPU usage that could indicate performance issues?",
+    "description": "The PromQL query calculates the average CPU utilization in terms of user mode across all available CPU cores over the last 30 minutes.",
+    "question": "How many CPU cores are currently in use?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"user\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in user mode. This metric represents the proportion of time the CPU spends executing user-space processes compared to other modes.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "de38a59f-8409-4d58-9b8b-cbc49fa8f31f",
+    "id": "a12c098d-a4f4-4981-ac1b-a52d9019fc14",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent in user mode, providing insights into the workload generated by user-space processes. Understanding this metric is important for optimizing system performance and identifying potential bottlenecks.",
-    "question": "How does the user mode CPU usage vary across different CPU cores?",
+    "description": "The PromQL query calculates the average CPU utilization in terms of user mode across all available CPU cores over the last 30 minutes.",
+    "question": "What is the total amount of time spent by the CPU in user mode?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"user\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in user mode. This metric represents the proportion of time the CPU spends executing user-space processes compared to other modes.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "55503a59-c950-4121-8398-a0e12dcc07a4",
+    "id": "3e180ce3-ef61-4503-bae9-a7ebe526fb7f",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent in user mode, providing insights into the workload generated by user-space processes. Understanding this metric is important for optimizing system performance and identifying potential bottlenecks.",
-    "question": "Is there any correlation between user mode CPU usage and application performance?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=\"user\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in user mode. This metric represents the proportion of time the CPU spends executing user-space processes compared to other modes.",
-    "example_value": "75%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "d4cf372d-e2e7-4a2b-8daf-bd2757288451",
-    "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent in user mode, providing insights into the workload generated by user-space processes. Understanding this metric is important for optimizing system performance and identifying potential bottlenecks.",
-    "question": "Can we identify any trends or patterns in user mode CPU usage that could help in capacity planning?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=\"user\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in user mode. This metric represents the proportion of time the CPU spends executing user-space processes compared to other modes.",
-    "example_value": "75%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "9e065ea6-7cba-4722-bad1-9d6931805ec0",
-    "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent waiting for I/O operations to complete. It is important for understanding if the system is experiencing I/O bottlenecks that could impact overall performance. Higher values indicate a higher proportion of time spent waiting for I/O operations to finish, which can lead to slower system responsiveness.",
-    "question": "What is the average percentage of CPU time spent in iowait state over the last 30 minutes?",
+    "description": "This PromQL query calculates the average amount of time spent in I/O wait per CPU core over the last 30 minutes.",
+    "question": "What is the average I/O wait time per CPU core?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"iowait\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in iowait state",
-    "example_value": "5%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "7ed8e9d3-cb71-4e8f-904f-8684d8f1ebdc",
+    "id": "7a04d9c2-4d63-4936-91cf-ce1bc7cbd6e9",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent waiting for I/O operations to complete. It is important for understanding if the system is experiencing I/O bottlenecks that could impact overall performance. Higher values indicate a higher proportion of time spent waiting for I/O operations to finish, which can lead to slower system responsiveness.",
-    "question": "Are there any specific CPU cores experiencing higher iowait times compared to others?",
+    "description": "This PromQL query calculates the average amount of time spent in I/O wait per CPU core over the last 30 minutes.",
+    "question": "How many CPU cores are experiencing I/O wait?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"iowait\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in iowait state",
-    "example_value": "5%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "017dea9a-62e6-4a01-b256-dca8448638e3",
+    "id": "39b6c5b7-6444-47c1-8569-adf26ab7a180",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent waiting for I/O operations to complete. It is important for understanding if the system is experiencing I/O bottlenecks that could impact overall performance. Higher values indicate a higher proportion of time spent waiting for I/O operations to finish, which can lead to slower system responsiveness.",
-    "question": "Is there a correlation between high iowait times and application performance degradation?",
+    "description": "This PromQL query calculates the average amount of time spent in I/O wait per CPU core over the last 30 minutes.",
+    "question": "What is the total I/O wait time across all CPU cores?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"iowait\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in iowait state",
-    "example_value": "5%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "6733627b-3722-4496-9764-0a771fce21fc",
+    "id": "fdc1b091-a618-4126-b253-b3d221a83dd6",
     "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent waiting for I/O operations to complete. It is important for understanding if the system is experiencing I/O bottlenecks that could impact overall performance. Higher values indicate a higher proportion of time spent waiting for I/O operations to finish, which can lead to slower system responsiveness.",
-    "question": "How does the iowait percentage change during peak usage hours?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=\"iowait\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in iowait state",
-    "example_value": "5%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "ce6010aa-9a3d-491a-bcdd-1baa3fbfe617",
-    "name": "CPU Basic",
-    "description": "This metric measures the percentage of CPU time spent waiting for I/O operations to complete. It is important for understanding if the system is experiencing I/O bottlenecks that could impact overall performance. Higher values indicate a higher proportion of time spent waiting for I/O operations to finish, which can lead to slower system responsiveness.",
-    "question": "Are there any patterns in iowait times that coincide with specific system activities or events?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=\"iowait\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of CPU time spent in iowait state",
-    "example_value": "5%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "c97f3aaa-c1bd-483c-8a23-cb0dac86af84",
-    "name": "CPU Basic",
-    "description": "This metric measures the average number of IRQ (Interrupt Request) events handled by each CPU core over a specified time period. Monitoring IRQ events is important for understanding the workload and interrupt handling efficiency of the system. Higher IRQ counts can indicate high hardware activity or potential performance bottlenecks related to interrupt processing.",
-    "question": "What is the average number of IRQ events handled per CPU core in the last 30 minutes?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=~\".*irq\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "count",
-    "unit_description": "The unit represents the count of IRQ (Interrupt Request) events handled by the CPU over a specified time period. It indicates the frequency of interrupts occurring on the system CPUs.",
-    "example_value": "10 IRQ events",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "3484324b-a332-44e3-ab14-5e47d37a58ca",
-    "name": "CPU Basic",
-    "description": "This metric measures the average number of IRQ (Interrupt Request) events handled by each CPU core over a specified time period. Monitoring IRQ events is important for understanding the workload and interrupt handling efficiency of the system. Higher IRQ counts can indicate high hardware activity or potential performance bottlenecks related to interrupt processing.",
-    "question": "Are there specific CPU cores experiencing significantly higher IRQ event counts?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=~\".*irq\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "count",
-    "unit_description": "The unit represents the count of IRQ (Interrupt Request) events handled by the CPU over a specified time period. It indicates the frequency of interrupts occurring on the system CPUs.",
-    "example_value": "10 IRQ events",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "59be8d3e-f8ab-42bc-bbeb-5b9e5df365fe",
-    "name": "CPU Basic",
-    "description": "This metric measures the average number of IRQ (Interrupt Request) events handled by each CPU core over a specified time period. Monitoring IRQ events is important for understanding the workload and interrupt handling efficiency of the system. Higher IRQ counts can indicate high hardware activity or potential performance bottlenecks related to interrupt processing.",
-    "question": "How does the IRQ event count correlate with overall system performance?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=~\".*irq\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "count",
-    "unit_description": "The unit represents the count of IRQ (Interrupt Request) events handled by the CPU over a specified time period. It indicates the frequency of interrupts occurring on the system CPUs.",
-    "example_value": "10 IRQ events",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "0ecfda6c-7d19-4667-9aa0-bcf9f632d3ed",
-    "name": "CPU Basic",
-    "description": "This metric measures the average number of IRQ (Interrupt Request) events handled by each CPU core over a specified time period. Monitoring IRQ events is important for understanding the workload and interrupt handling efficiency of the system. Higher IRQ counts can indicate high hardware activity or potential performance bottlenecks related to interrupt processing.",
-    "question": "Is there a trend in the IRQ event count over time that could indicate potential issues?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=~\".*irq\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "count",
-    "unit_description": "The unit represents the count of IRQ (Interrupt Request) events handled by the CPU over a specified time period. It indicates the frequency of interrupts occurring on the system CPUs.",
-    "example_value": "10 IRQ events",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "ccc9a1ab-5699-44a2-8fbd-7071c882acf0",
-    "name": "CPU Basic",
-    "description": "This metric measures the average number of IRQ (Interrupt Request) events handled by each CPU core over a specified time period. Monitoring IRQ events is important for understanding the workload and interrupt handling efficiency of the system. Higher IRQ counts can indicate high hardware activity or potential performance bottlenecks related to interrupt processing.",
-    "question": "Can we identify any patterns in the distribution of IRQ events across different CPU cores?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=~\".*irq\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "count",
-    "unit_description": "The unit represents the count of IRQ (Interrupt Request) events handled by the CPU over a specified time period. It indicates the frequency of interrupts occurring on the system CPUs.",
-    "example_value": "10 IRQ events",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "63986dc1-6c5b-404a-a990-52370dd40563",
-    "name": "CPU Basic",
-    "description": "The metric measures the percentage of time each CPU core spent on non-idle modes (excluding idle, user, system, iowait, irq, and softirq) over the last 30 minutes. This metric is important for understanding the overall CPU utilization and workload distribution across CPU cores, providing insights into potential bottlenecks or resource contention.",
-    "question": "What is the average non-idle CPU time utilization across all CPU cores over the last 30 minutes?",
+    "description": "This PromQL query calculates the average CPU usage across all CPUs by summing the rates of non-idle CPU modes (excluding idle, user, system, iowait, irq, and softirq) over the last 30 minutes and dividing it by the total number of CPUs.",
+    "question": "What is the average CPU usage across all CPUs?",
     "query": "sum(irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on non-idle CPU modes by each CPU core over the last 30 minutes.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "106604d3-22ae-4db2-85c4-2b1efbc3fef4",
+    "id": "9eee9c27-6b7e-4d11-9ac6-1998ea39b92e",
     "name": "CPU Basic",
-    "description": "The metric measures the percentage of time each CPU core spent on non-idle modes (excluding idle, user, system, iowait, irq, and softirq) over the last 30 minutes. This metric is important for understanding the overall CPU utilization and workload distribution across CPU cores, providing insights into potential bottlenecks or resource contention.",
-    "question": "Which CPU core has the highest non-idle time utilization during peak hours?",
+    "description": "This PromQL query calculates the average CPU usage across all CPUs by summing the rates of non-idle CPU modes (excluding idle, user, system, iowait, irq, and softirq) over the last 30 minutes and dividing it by the total number of CPUs.",
+    "question": "How many non-idle CPU modes are currently in use?",
     "query": "sum(irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on non-idle CPU modes by each CPU core over the last 30 minutes.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "8a9d9879-7215-48be-b04b-7f4ceb364b00",
+    "id": "32ba12c4-b10f-4f97-8818-81f40fb4b00f",
     "name": "CPU Basic",
-    "description": "The metric measures the percentage of time each CPU core spent on non-idle modes (excluding idle, user, system, iowait, irq, and softirq) over the last 30 minutes. This metric is important for understanding the overall CPU utilization and workload distribution across CPU cores, providing insights into potential bottlenecks or resource contention.",
-    "question": "Are there any CPU cores consistently underutilized in terms of non-idle time?",
+    "description": "This PromQL query calculates the average CPU usage across all CPUs by summing the rates of non-idle CPU modes (excluding idle, user, system, iowait, irq, and softirq) over the last 30 minutes and dividing it by the total number of CPUs.",
+    "question": "What is the total count of CPU cores?",
     "query": "sum(irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on non-idle CPU modes by each CPU core over the last 30 minutes.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "d2300c5f-27af-4595-86fa-7948ab220c18",
+    "id": "7a4bd734-62c6-4a25-900c-d059a15c34cc",
     "name": "CPU Basic",
-    "description": "The metric measures the percentage of time each CPU core spent on non-idle modes (excluding idle, user, system, iowait, irq, and softirq) over the last 30 minutes. This metric is important for understanding the overall CPU utilization and workload distribution across CPU cores, providing insights into potential bottlenecks or resource contention.",
-    "question": "How does the distribution of non-idle time utilization vary between different time periods?",
-    "query": "sum(irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on non-idle CPU modes by each CPU core over the last 30 minutes.",
-    "example_value": "75%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "3bc9525c-21ff-4ca7-8117-7f4888ad1e15",
-    "name": "CPU Basic",
-    "description": "The metric measures the percentage of time each CPU core spent on non-idle modes (excluding idle, user, system, iowait, irq, and softirq) over the last 30 minutes. This metric is important for understanding the overall CPU utilization and workload distribution across CPU cores, providing insights into potential bottlenecks or resource contention.",
-    "question": "Is there a correlation between non-idle time utilization and application performance metrics?",
-    "query": "sum(irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent on non-idle CPU modes by each CPU core over the last 30 minutes.",
-    "example_value": "75%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "c7bfda69-34b7-42c1-984e-1a9434075885",
-    "name": "CPU Basic",
-    "description": "The metric measures the average CPU idle time across all CPUs in the monitored nodes over the specified time range. This metric is important for understanding the overall CPU utilization and system load. Higher idle percentages generally indicate lower CPU utilization and potentially underutilized resources.",
-    "question": "What is the average CPU idle time across all nodes in the last 30 minutes?",
+    "description": "This PromQL query calculates the average idle CPU time across all CPU cores over the last 30 minutes.",
+    "question": "What is the average idle CPU time?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"idle\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent in idle state by CPUs across the monitored nodes. It indicates the proportion of time that CPUs are not actively processing tasks.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "f7d656ab-99cb-478d-b4d2-c2a70c5a57c2",
+    "id": "11742046-7d53-4fbe-a9a3-b4564fecc70c",
     "name": "CPU Basic",
-    "description": "The metric measures the average CPU idle time across all CPUs in the monitored nodes over the specified time range. This metric is important for understanding the overall CPU utilization and system load. Higher idle percentages generally indicate lower CPU utilization and potentially underutilized resources.",
-    "question": "Are there any nodes consistently showing low CPU idle percentages that might be overloaded?",
+    "description": "This PromQL query calculates the average idle CPU time across all CPU cores over the last 30 minutes.",
+    "question": "How many CPU cores are being monitored?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"idle\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent in idle state by CPUs across the monitored nodes. It indicates the proportion of time that CPUs are not actively processing tasks.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "bc900d06-cf0d-423b-a541-8499eef248bd",
+    "id": "9c85f787-cec5-4bca-b975-8eab15d6d4e2",
     "name": "CPU Basic",
-    "description": "The metric measures the average CPU idle time across all CPUs in the monitored nodes over the specified time range. This metric is important for understanding the overall CPU utilization and system load. Higher idle percentages generally indicate lower CPU utilization and potentially underutilized resources.",
-    "question": "Is there a trend of increasing or decreasing CPU idle time over time?",
+    "description": "This PromQL query calculates the average idle CPU time across all CPU cores over the last 30 minutes.",
+    "question": "What is the total CPU time?",
     "query": "sum(irate(node_cpu_seconds_total{mode=\"idle\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent in idle state by CPUs across the monitored nodes. It indicates the proportion of time that CPUs are not actively processing tasks.",
-    "example_value": "75%",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "65908b01-b3eb-4948-9ac8-1439a81a3e4f",
-    "name": "CPU Basic",
-    "description": "The metric measures the average CPU idle time across all CPUs in the monitored nodes over the specified time range. This metric is important for understanding the overall CPU utilization and system load. Higher idle percentages generally indicate lower CPU utilization and potentially underutilized resources.",
-    "question": "Which nodes have the highest and lowest CPU idle percentages?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=\"idle\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent in idle state by CPUs across the monitored nodes. It indicates the proportion of time that CPUs are not actively processing tasks.",
-    "example_value": "75%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "5f49e175-7df5-4855-b4c1-7b2ca64d5b01",
-    "name": "CPU Basic",
-    "description": "The metric measures the average CPU idle time across all CPUs in the monitored nodes over the specified time range. This metric is important for understanding the overall CPU utilization and system load. Higher idle percentages generally indicate lower CPU utilization and potentially underutilized resources.",
-    "question": "How does the CPU idle time correlate with application performance metrics on the nodes?",
-    "query": "sum(irate(node_cpu_seconds_total{mode=\"idle\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-    "unit": "percentage",
-    "unit_description": "Percentage of time spent in idle state by CPUs across the monitored nodes. It indicates the proportion of time that CPUs are not actively processing tasks.",
-    "example_value": "75%",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "0cfc31e6-3180-4248-9811-0d401deb4ceb",
+    "id": "b4173ed9-6256-42da-9ca7-c96c8e5e6463",
     "name": "Memory Basic",
-    "description": "The metric 'node_memory_MemTotal_bytes' measures the total memory capacity of the system in bytes. Understanding the total memory available is crucial for capacity planning, resource allocation, and performance optimization.",
-    "question": "What is the total memory capacity of the system in bytes?",
+    "description": "This PromQL query measures the total memory available on the node in bytes.",
+    "question": "What is the total memory available on the node?",
     "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory, storage, or data size. Represents the total memory capacity of the system in bytes.",
-    "example_value": "8 GB",
     "metrics": [
       "node_memory_MemTotal_bytes"
     ]
   },
   {
-    "id": "bffdb760-ddb8-4bba-aa3d-7a17dc529093",
+    "id": "2f9793b0-4265-4785-810f-261190fcc05f",
     "name": "Memory Basic",
-    "description": "The metric 'node_memory_MemTotal_bytes' measures the total memory capacity of the system in bytes. Understanding the total memory available is crucial for capacity planning, resource allocation, and performance optimization.",
-    "question": "How much memory is available for applications and processes?",
+    "description": "This PromQL query measures the total memory available on the node in bytes.",
+    "question": "How much memory does the node have?",
     "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory, storage, or data size. Represents the total memory capacity of the system in bytes.",
-    "example_value": "8 GB",
     "metrics": [
       "node_memory_MemTotal_bytes"
     ]
   },
   {
-    "id": "4e1789e1-daf4-4314-afea-2cb57ce26ffc",
+    "id": "8d3c0d14-f674-4845-961a-823310097d0d",
     "name": "Memory Basic",
-    "description": "The metric 'node_memory_MemTotal_bytes' measures the total memory capacity of the system in bytes. Understanding the total memory available is crucial for capacity planning, resource allocation, and performance optimization.",
-    "question": "Is the memory capacity sufficient to handle current workload demands?",
+    "description": "This PromQL query measures the total memory available on the node in bytes.",
+    "question": "What is the total memory capacity of the node?",
     "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory, storage, or data size. Represents the total memory capacity of the system in bytes.",
-    "example_value": "8 GB",
     "metrics": [
       "node_memory_MemTotal_bytes"
     ]
   },
   {
-    "id": "68de1e74-9a26-4aff-8e26-0d5f0947ae8f",
+    "id": "e28b0e52-8ef4-4463-88b6-8672c81c0670",
     "name": "Memory Basic",
-    "description": "The metric 'node_memory_MemTotal_bytes' measures the total memory capacity of the system in bytes. Understanding the total memory available is crucial for capacity planning, resource allocation, and performance optimization.",
-    "question": "Are there any trends in memory capacity usage over time?",
-    "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory, storage, or data size. Represents the total memory capacity of the system in bytes.",
-    "example_value": "8 GB",
-    "metrics": [
-      "node_memory_MemTotal_bytes"
-    ]
-  },
-  {
-    "id": "090a8aaf-afb3-45a5-be69-603957efb107",
-    "name": "Memory Basic",
-    "description": "The metric 'node_memory_MemTotal_bytes' measures the total memory capacity of the system in bytes. Understanding the total memory available is crucial for capacity planning, resource allocation, and performance optimization.",
-    "question": "Is there a need to upgrade memory capacity based on current utilization?",
-    "query": "node_memory_MemTotal_bytes{}",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory, storage, or data size. Represents the total memory capacity of the system in bytes.",
-    "example_value": "8 GB",
-    "metrics": [
-      "node_memory_MemTotal_bytes"
-    ]
-  },
-  {
-    "id": "dccb2760-000a-43e5-b37b-3808392eba82",
-    "name": "Memory Basic",
-    "description": "This metric measures the actual amount of memory used by the system, accounting for both free and cached memory. It is important to monitor memory usage to ensure optimal system performance and avoid potential bottlenecks. By subtracting free memory and cached data from the total memory, this metric provides insights into the actual memory consumption by applications and system processes.",
-    "question": "What is the current memory utilization of the system?",
+    "description": "Calculates the total memory usage by subtracting the free memory from the total memory and then subtracting the sum of cached memory, buffered memory, and reclaimable memory",
+    "question": "What is the total memory available?",
     "query": "node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{} - (node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{})",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory usage, representing the amount of data storage consumed by the system. It includes used memory that is not immediately available for applications, such as cached data and buffers.",
-    "example_value": "500 MB",
     "metrics": [
       "node_memory_MemTotal_bytes",
       "node_memory_MemFree_bytes",
@@ -1256,14 +632,11 @@
     ]
   },
   {
-    "id": "94fb7e72-c118-495a-a7b1-2aea28c23541",
+    "id": "35fd8991-1230-4b68-9a3c-b6bdabe636ce",
     "name": "Memory Basic",
-    "description": "This metric measures the actual amount of memory used by the system, accounting for both free and cached memory. It is important to monitor memory usage to ensure optimal system performance and avoid potential bottlenecks. By subtracting free memory and cached data from the total memory, this metric provides insights into the actual memory consumption by applications and system processes.",
-    "question": "Are there any memory leaks or inefficient memory usage patterns?",
+    "description": "Calculates the total memory usage by subtracting the free memory from the total memory and then subtracting the sum of cached memory, buffered memory, and reclaimable memory",
+    "question": "How much memory is currently free?",
     "query": "node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{} - (node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{})",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory usage, representing the amount of data storage consumed by the system. It includes used memory that is not immediately available for applications, such as cached data and buffers.",
-    "example_value": "500 MB",
     "metrics": [
       "node_memory_MemTotal_bytes",
       "node_memory_MemFree_bytes",
@@ -1273,14 +646,11 @@
     ]
   },
   {
-    "id": "7a672200-147a-4028-8d62-08abce8ef11c",
+    "id": "88261bbd-f250-45d2-a67b-37707f5560f7",
     "name": "Memory Basic",
-    "description": "This metric measures the actual amount of memory used by the system, accounting for both free and cached memory. It is important to monitor memory usage to ensure optimal system performance and avoid potential bottlenecks. By subtracting free memory and cached data from the total memory, this metric provides insights into the actual memory consumption by applications and system processes.",
-    "question": "How much memory is being utilized by cached data and buffers?",
+    "description": "Calculates the total memory usage by subtracting the free memory from the total memory and then subtracting the sum of cached memory, buffered memory, and reclaimable memory",
+    "question": "What is the total memory usage after accounting for cached and buffered memory?",
     "query": "node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{} - (node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{})",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory usage, representing the amount of data storage consumed by the system. It includes used memory that is not immediately available for applications, such as cached data and buffers.",
-    "example_value": "500 MB",
     "metrics": [
       "node_memory_MemTotal_bytes",
       "node_memory_MemFree_bytes",
@@ -1290,48 +660,11 @@
     ]
   },
   {
-    "id": "b6b8582a-80c5-4e0d-9f24-27efd7f35bdd",
+    "id": "dda7fc03-8f39-49a2-b692-0c721a87f709",
     "name": "Memory Basic",
-    "description": "This metric measures the actual amount of memory used by the system, accounting for both free and cached memory. It is important to monitor memory usage to ensure optimal system performance and avoid potential bottlenecks. By subtracting free memory and cached data from the total memory, this metric provides insights into the actual memory consumption by applications and system processes.",
-    "question": "Is the system experiencing memory pressure that could affect performance?",
-    "query": "node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{} - (node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{})",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory usage, representing the amount of data storage consumed by the system. It includes used memory that is not immediately available for applications, such as cached data and buffers.",
-    "example_value": "500 MB",
-    "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes",
-      "node_memory_Cached_bytes",
-      "node_memory_Buffers_bytes",
-      "node_memory_SReclaimable_bytes"
-    ]
-  },
-  {
-    "id": "7ddd6a4c-0b6c-49dc-9287-5ada82f113eb",
-    "name": "Memory Basic",
-    "description": "This metric measures the actual amount of memory used by the system, accounting for both free and cached memory. It is important to monitor memory usage to ensure optimal system performance and avoid potential bottlenecks. By subtracting free memory and cached data from the total memory, this metric provides insights into the actual memory consumption by applications and system processes.",
-    "question": "Are there any specific processes or applications consuming a significant amount of memory?",
-    "query": "node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{} - (node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{})",
-    "unit": "bytes",
-    "unit_description": "The unit of measurement for memory usage, representing the amount of data storage consumed by the system. It includes used memory that is not immediately available for applications, such as cached data and buffers.",
-    "example_value": "500 MB",
-    "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes",
-      "node_memory_Cached_bytes",
-      "node_memory_Buffers_bytes",
-      "node_memory_SReclaimable_bytes"
-    ]
-  },
-  {
-    "id": "12cf9773-3330-46a6-a1dd-e3b6c1c30ba2",
-    "name": "Memory Basic",
-    "description": "This metric measures the total memory utilization by considering the combined size of cached memory, buffer memory, and reclaimable memory on a node. It is important as it provides insights into how efficiently memory resources are being utilized and helps in capacity planning and performance optimization.",
-    "question": "What is the total memory utilization on the node?",
+    "description": "The PromQL query measures the total memory usage by summing up the cached memory, buffer memory, and reclaimable memory on a node.",
+    "question": "What is the total memory usage including cached, buffer, and reclaimable memory?",
     "query": "node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage metric representing the combined size of cached memory, buffer memory, and reclaimable memory",
-    "example_value": "500 MB",
     "metrics": [
       "node_memory_Cached_bytes",
       "node_memory_Buffers_bytes",
@@ -1339,14 +672,11 @@
     ]
   },
   {
-    "id": "0eaaf6da-6dc4-4ad9-9c25-d99b8ec711a9",
+    "id": "5f6bdaf2-5fff-4133-9f2e-36aa9654f8d5",
     "name": "Memory Basic",
-    "description": "This metric measures the total memory utilization by considering the combined size of cached memory, buffer memory, and reclaimable memory on a node. It is important as it provides insights into how efficiently memory resources are being utilized and helps in capacity planning and performance optimization.",
-    "question": "How much memory is utilized for caching purposes?",
+    "description": "The PromQL query measures the total memory usage by summing up the cached memory, buffer memory, and reclaimable memory on a node.",
+    "question": "How much memory is occupied by cached data, buffers, and reclaimable memory?",
     "query": "node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage metric representing the combined size of cached memory, buffer memory, and reclaimable memory",
-    "example_value": "500 MB",
     "metrics": [
       "node_memory_Cached_bytes",
       "node_memory_Buffers_bytes",
@@ -1354,14 +684,11 @@
     ]
   },
   {
-    "id": "a49c3363-71f0-4e0f-b6b3-5b16c8862d5e",
+    "id": "6da586c9-3556-462f-aa53-e95c8b7b4000",
     "name": "Memory Basic",
-    "description": "This metric measures the total memory utilization by considering the combined size of cached memory, buffer memory, and reclaimable memory on a node. It is important as it provides insights into how efficiently memory resources are being utilized and helps in capacity planning and performance optimization.",
-    "question": "Are buffer memory and reclaimable memory contributing significantly to the overall memory usage?",
+    "description": "The PromQL query measures the total memory usage by summing up the cached memory, buffer memory, and reclaimable memory on a node.",
+    "question": "What are the memory components contributing to the total memory usage?",
     "query": "node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage metric representing the combined size of cached memory, buffer memory, and reclaimable memory",
-    "example_value": "500 MB",
     "metrics": [
       "node_memory_Cached_bytes",
       "node_memory_Buffers_bytes",
@@ -1369,295 +696,156 @@
     ]
   },
   {
-    "id": "c61f048b-442c-4f1c-94a9-627b818341c6",
+    "id": "64bb8d39-3d31-438a-915f-4c9d1e475b42",
     "name": "Memory Basic",
-    "description": "This metric measures the total memory utilization by considering the combined size of cached memory, buffer memory, and reclaimable memory on a node. It is important as it provides insights into how efficiently memory resources are being utilized and helps in capacity planning and performance optimization.",
-    "question": "Is there a trend in the memory usage over time?",
-    "query": "node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage metric representing the combined size of cached memory, buffer memory, and reclaimable memory",
-    "example_value": "500 MB",
-    "metrics": [
-      "node_memory_Cached_bytes",
-      "node_memory_Buffers_bytes",
-      "node_memory_SReclaimable_bytes"
-    ]
-  },
-  {
-    "id": "dbfe1925-f627-46d7-a2a2-5e9d16e24065",
-    "name": "Memory Basic",
-    "description": "This metric measures the total memory utilization by considering the combined size of cached memory, buffer memory, and reclaimable memory on a node. It is important as it provides insights into how efficiently memory resources are being utilized and helps in capacity planning and performance optimization.",
-    "question": "How does memory usage correlate with other system metrics like CPU usage or disk I/O?",
-    "query": "node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage metric representing the combined size of cached memory, buffer memory, and reclaimable memory",
-    "example_value": "500 MB",
-    "metrics": [
-      "node_memory_Cached_bytes",
-      "node_memory_Buffers_bytes",
-      "node_memory_SReclaimable_bytes"
-    ]
-  },
-  {
-    "id": "09e6b894-672b-4fbf-8c30-320856ca1f0a",
-    "name": "Memory Basic",
-    "description": "This metric measures the amount of free memory available on the node. Monitoring memory usage is important as it helps in identifying potential resource constraints that can impact system performance. It provides insights into how much memory is available for running applications and processes.",
-    "question": "What is the current free memory available on the node?",
+    "description": "This PromQL query measures the amount of free memory available on a node.",
+    "question": "How much free memory is available on the node?",
     "query": "node_memory_MemFree_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage in bytes",
-    "example_value": "500 MB",
     "metrics": [
       "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "d72a3bb8-2cb2-4a47-8a3e-c0b1f952e07e",
+    "id": "dcbd06d0-ac99-4706-9918-b2d5e055e813",
     "name": "Memory Basic",
-    "description": "This metric measures the amount of free memory available on the node. Monitoring memory usage is important as it helps in identifying potential resource constraints that can impact system performance. It provides insights into how much memory is available for running applications and processes.",
-    "question": "Is the free memory approaching a critical level that could impact system performance?",
+    "description": "This PromQL query measures the amount of free memory available on a node.",
+    "question": "What is the current amount of available memory on the node?",
     "query": "node_memory_MemFree_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage in bytes",
-    "example_value": "500 MB",
     "metrics": [
       "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "9ecbf60b-a620-4077-81be-51659232698a",
+    "id": "0c1fcde2-bf18-46fa-8ede-c1d76fbfc893",
     "name": "Memory Basic",
-    "description": "This metric measures the amount of free memory available on the node. Monitoring memory usage is important as it helps in identifying potential resource constraints that can impact system performance. It provides insights into how much memory is available for running applications and processes.",
-    "question": "Are there any trends indicating increasing or decreasing free memory over time?",
+    "description": "This PromQL query measures the amount of free memory available on a node.",
+    "question": "How much memory is not being used on the node?",
     "query": "node_memory_MemFree_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage in bytes",
-    "example_value": "500 MB",
     "metrics": [
       "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "be107350-c3e1-48b1-8dad-8aa45a6e292c",
+    "id": "be13a810-b63f-40ab-b9c5-06198d4db7b7",
     "name": "Memory Basic",
-    "description": "This metric measures the amount of free memory available on the node. Monitoring memory usage is important as it helps in identifying potential resource constraints that can impact system performance. It provides insights into how much memory is available for running applications and processes.",
-    "question": "How does the free memory correlate with any performance issues observed on the system?",
-    "query": "node_memory_MemFree_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage in bytes",
-    "example_value": "500 MB",
+    "description": "The PromQL query calculates the total used swap memory on a node by subtracting the amount of free swap memory from the total swap memory available.",
+    "question": "What is the total used swap memory on the node?",
+    "query": "(node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{})",
     "metrics": [
-      "node_memory_MemFree_bytes"
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
     ]
   },
   {
-    "id": "0d715448-6410-45ce-878b-38ffc2d10399",
+    "id": "a2fe09b6-8b84-405b-ae8a-1696efd6384b",
     "name": "Memory Basic",
-    "description": "This metric measures the amount of free memory available on the node. Monitoring memory usage is important as it helps in identifying potential resource constraints that can impact system performance. It provides insights into how much memory is available for running applications and processes.",
-    "question": "Is the free memory sufficient to handle peak loads during specific times?",
-    "query": "node_memory_MemFree_bytes{}",
-    "unit": "bytes",
-    "unit_description": "Memory usage in bytes",
-    "example_value": "500 MB",
+    "description": "The PromQL query calculates the total used swap memory on a node by subtracting the amount of free swap memory from the total swap memory available.",
+    "question": "How much swap memory is currently utilized?",
+    "query": "(node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{})",
     "metrics": [
-      "node_memory_MemFree_bytes"
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
     ]
   },
   {
-    "id": "e7722e76-2745-4438-b06b-98f7cdb93c44",
+    "id": "36b66f04-60ce-42dc-bc48-6665a00840f8",
+    "name": "Memory Basic",
+    "description": "The PromQL query calculates the total used swap memory on a node by subtracting the amount of free swap memory from the total swap memory available.",
+    "question": "What is the difference between total swap memory and free swap memory?",
+    "query": "(node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{})",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "a0e6b4ea-0577-4f4c-8535-42f4ac0f29b1",
     "name": "Network Traffic Basic",
-    "description": "This metric measures the rate of network traffic in bytes per second on each network interface. Monitoring network traffic is important for understanding data transfer speeds and identifying potential bottlenecks or anomalies in network performance.",
-    "question": "What is the current rate of data transfer on each network interface?",
+    "description": "Calculates the average network traffic rate in bits per second received per network interface over the last 30 minutes.",
+    "question": "What is the average network traffic rate received per interface?",
     "query": "irate(node_network_receive_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "Rate of data transfer per second in bytes. This metric measures the speed at which data is received by network interfaces.",
-    "example_value": "5 MB/s",
     "metrics": [
       "node_network_receive_bytes_total"
     ]
   },
   {
-    "id": "261ddff5-261e-44f6-9406-ddb30724c3f7",
+    "id": "b885a974-3138-472a-934c-891e85861405",
     "name": "Network Traffic Basic",
-    "description": "This metric measures the rate of network traffic in bytes per second on each network interface. Monitoring network traffic is important for understanding data transfer speeds and identifying potential bottlenecks or anomalies in network performance.",
-    "question": "Are there any network interfaces experiencing unusually high or low data transfer speeds?",
+    "description": "Calculates the average network traffic rate in bits per second received per network interface over the last 30 minutes.",
+    "question": "How much data has been received by the network interfaces?",
     "query": "irate(node_network_receive_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "Rate of data transfer per second in bytes. This metric measures the speed at which data is received by network interfaces.",
-    "example_value": "5 MB/s",
     "metrics": [
       "node_network_receive_bytes_total"
     ]
   },
   {
-    "id": "7a11d32c-0398-4404-9ee2-bcc4169a22f9",
+    "id": "54788244-2535-4eda-a637-dc1dd6ebc02f",
     "name": "Network Traffic Basic",
-    "description": "This metric measures the rate of network traffic in bytes per second on each network interface. Monitoring network traffic is important for understanding data transfer speeds and identifying potential bottlenecks or anomalies in network performance.",
-    "question": "Is there a sudden spike or drop in network traffic that requires investigation?",
+    "description": "Calculates the average network traffic rate in bits per second received per network interface over the last 30 minutes.",
+    "question": "What is the current network traffic rate per interface?",
     "query": "irate(node_network_receive_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "Rate of data transfer per second in bytes. This metric measures the speed at which data is received by network interfaces.",
-    "example_value": "5 MB/s",
     "metrics": [
       "node_network_receive_bytes_total"
     ]
   },
   {
-    "id": "17904424-97cf-4ad5-8528-f75d3e6b702c",
+    "id": "ee409455-9d9b-4e85-a682-6127f4b87008",
     "name": "Network Traffic Basic",
-    "description": "This metric measures the rate of network traffic in bytes per second on each network interface. Monitoring network traffic is important for understanding data transfer speeds and identifying potential bottlenecks or anomalies in network performance.",
-    "question": "Which network interface is handling the highest data transfer rate?",
-    "query": "irate(node_network_receive_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "Rate of data transfer per second in bytes. This metric measures the speed at which data is received by network interfaces.",
-    "example_value": "5 MB/s",
-    "metrics": [
-      "node_network_receive_bytes_total"
-    ]
-  },
-  {
-    "id": "1532cd96-1f5c-45ba-b6f4-99e959e46cdf",
-    "name": "Network Traffic Basic",
-    "description": "This metric measures the rate of network traffic in bytes per second on each network interface. Monitoring network traffic is important for understanding data transfer speeds and identifying potential bottlenecks or anomalies in network performance.",
-    "question": "Are there any patterns or trends in network traffic that could impact network performance?",
-    "query": "irate(node_network_receive_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "Rate of data transfer per second in bytes. This metric measures the speed at which data is received by network interfaces.",
-    "example_value": "5 MB/s",
-    "metrics": [
-      "node_network_receive_bytes_total"
-    ]
-  },
-  {
-    "id": "aa206901-3e66-4ebc-b047-187cbb03b303",
-    "name": "Network Traffic Basic",
-    "description": "This metric measures the network traffic rate in bytes per second for each network interface. It provides insights into the data transfer speed and volume, helping to monitor network performance and identify potential bottlenecks.",
-    "question": "What is the current rate of data transmission in bytes per second for each network interface?",
+    "description": "Calculates the average rate of network traffic transmitted per second over the last 30 minutes on each network interface in bytes",
+    "question": "What is the average rate of network traffic transmitted per second?",
     "query": "irate(node_network_transmit_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "The unit represents the rate of data transmission in bytes per second. It measures the amount of data transmitted over a network interface per second.",
-    "example_value": "500 KB/s",
     "metrics": [
       "node_network_transmit_bytes_total"
     ]
   },
   {
-    "id": "c1614192-015e-4eb5-9de6-4d7c66f15a26",
+    "id": "973df5da-7218-4e47-b605-2828d5d6099b",
     "name": "Network Traffic Basic",
-    "description": "This metric measures the network traffic rate in bytes per second for each network interface. It provides insights into the data transfer speed and volume, helping to monitor network performance and identify potential bottlenecks.",
-    "question": "Are there any network interfaces experiencing unusually high or low data transfer rates?",
+    "description": "Calculates the average rate of network traffic transmitted per second over the last 30 minutes on each network interface in bytes",
+    "question": "How much data is being sent over the network interfaces?",
     "query": "irate(node_network_transmit_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "The unit represents the rate of data transmission in bytes per second. It measures the amount of data transmitted over a network interface per second.",
-    "example_value": "500 KB/s",
     "metrics": [
       "node_network_transmit_bytes_total"
     ]
   },
   {
-    "id": "4bc614e8-53e2-48b3-9cb1-46787362d41a",
+    "id": "fa70a330-e1d6-4985-a665-a4ea4c7dd488",
     "name": "Network Traffic Basic",
-    "description": "This metric measures the network traffic rate in bytes per second for each network interface. It provides insights into the data transfer speed and volume, helping to monitor network performance and identify potential bottlenecks.",
-    "question": "How has the network traffic pattern changed over the last 30 minutes?",
+    "description": "Calculates the average rate of network traffic transmitted per second over the last 30 minutes on each network interface in bytes",
+    "question": "Which network interfaces are transmitting the most data?",
     "query": "irate(node_network_transmit_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "The unit represents the rate of data transmission in bytes per second. It measures the amount of data transmitted over a network interface per second.",
-    "example_value": "500 KB/s",
     "metrics": [
       "node_network_transmit_bytes_total"
     ]
   },
   {
-    "id": "8887edd2-cd3b-4716-bc3f-7d62ae1ac642",
-    "name": "Network Traffic Basic",
-    "description": "This metric measures the network traffic rate in bytes per second for each network interface. It provides insights into the data transfer speed and volume, helping to monitor network performance and identify potential bottlenecks.",
-    "question": "Which network interfaces are the top contributors to the overall data transmission rate?",
-    "query": "irate(node_network_transmit_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "The unit represents the rate of data transmission in bytes per second. It measures the amount of data transmitted over a network interface per second.",
-    "example_value": "500 KB/s",
-    "metrics": [
-      "node_network_transmit_bytes_total"
-    ]
-  },
-  {
-    "id": "cb525179-0e24-43c3-b6cb-ae0deb2ab026",
-    "name": "Network Traffic Basic",
-    "description": "This metric measures the network traffic rate in bytes per second for each network interface. It provides insights into the data transfer speed and volume, helping to monitor network performance and identify potential bottlenecks.",
-    "question": "Is there any correlation between network traffic spikes and specific time periods or events?",
-    "query": "irate(node_network_transmit_bytes_total{}[30m])*8",
-    "unit": "bytes_per_second",
-    "unit_description": "The unit represents the rate of data transmission in bytes per second. It measures the amount of data transmitted over a network interface per second.",
-    "example_value": "500 KB/s",
-    "metrics": [
-      "node_network_transmit_bytes_total"
-    ]
-  },
-  {
-    "id": "7d283730-b8e9-47b9-a1f4-d7ff752130c3",
+    "id": "2a48a3b1-5ed0-4dcc-8138-1b1ce8319420",
     "name": "Disk Space Used Basic",
-    "description": "This metric measures the percentage of disk space used on all filesystems mounted. It is important to monitor disk space usage to ensure sufficient capacity for storing data and running applications. High disk space usage can lead to performance degradation and potential system failures. By tracking this metric, administrators can proactively manage storage resources and prevent outages.",
-    "question": "What is the current disk space utilization across all mounted filesystems?",
+    "description": "The PromQL query calculates the percentage of disk space used of all filesystems mounted, excluding the root filesystem, by subtracting the percentage of available space from 100%.",
+    "question": "What is the percentage of disk space used?",
     "query": "100 - ((node_filesystem_avail_bytes{device!~'rootfs'} * 100) / node_filesystem_size_bytes{device!~'rootfs'})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the disk space used as a ratio of total available space. It indicates the proportion of disk space that is currently in use.",
-    "example_value": "75%",
     "metrics": [
       "node_filesystem_avail_bytes",
       "node_filesystem_size_bytes"
     ]
   },
   {
-    "id": "85bcdc5c-95b0-413e-b060-034bc0bf2823",
+    "id": "7fa97f89-921f-4eed-a56d-dd704a49ba51",
     "name": "Disk Space Used Basic",
-    "description": "This metric measures the percentage of disk space used on all filesystems mounted. It is important to monitor disk space usage to ensure sufficient capacity for storing data and running applications. High disk space usage can lead to performance degradation and potential system failures. By tracking this metric, administrators can proactively manage storage resources and prevent outages.",
-    "question": "Are there any filesystems approaching full capacity that require attention?",
+    "description": "The PromQL query calculates the percentage of disk space used of all filesystems mounted, excluding the root filesystem, by subtracting the percentage of available space from 100%.",
+    "question": "How much disk space is available?",
     "query": "100 - ((node_filesystem_avail_bytes{device!~'rootfs'} * 100) / node_filesystem_size_bytes{device!~'rootfs'})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the disk space used as a ratio of total available space. It indicates the proportion of disk space that is currently in use.",
-    "example_value": "75%",
     "metrics": [
       "node_filesystem_avail_bytes",
       "node_filesystem_size_bytes"
     ]
   },
   {
-    "id": "1a3c991a-1c13-496e-a119-10ddc244adb2",
+    "id": "31d59d8d-d625-4164-b2ae-9d8a32956cb5",
     "name": "Disk Space Used Basic",
-    "description": "This metric measures the percentage of disk space used on all filesystems mounted. It is important to monitor disk space usage to ensure sufficient capacity for storing data and running applications. High disk space usage can lead to performance degradation and potential system failures. By tracking this metric, administrators can proactively manage storage resources and prevent outages.",
-    "question": "How does disk space usage vary over time, and are there any recurring patterns or trends?",
+    "description": "The PromQL query calculates the percentage of disk space used of all filesystems mounted, excluding the root filesystem, by subtracting the percentage of available space from 100%.",
+    "question": "What is the total size of the filesystem?",
     "query": "100 - ((node_filesystem_avail_bytes{device!~'rootfs'} * 100) / node_filesystem_size_bytes{device!~'rootfs'})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the disk space used as a ratio of total available space. It indicates the proportion of disk space that is currently in use.",
-    "example_value": "75%",
-    "metrics": [
-      "node_filesystem_avail_bytes",
-      "node_filesystem_size_bytes"
-    ]
-  },
-  {
-    "id": "fc4e56de-c74b-4492-999f-eb80be16ebf2",
-    "name": "Disk Space Used Basic",
-    "description": "This metric measures the percentage of disk space used on all filesystems mounted. It is important to monitor disk space usage to ensure sufficient capacity for storing data and running applications. High disk space usage can lead to performance degradation and potential system failures. By tracking this metric, administrators can proactively manage storage resources and prevent outages.",
-    "question": "Which filesystems contribute the most to overall disk space consumption?",
-    "query": "100 - ((node_filesystem_avail_bytes{device!~'rootfs'} * 100) / node_filesystem_size_bytes{device!~'rootfs'})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the disk space used as a ratio of total available space. It indicates the proportion of disk space that is currently in use.",
-    "example_value": "75%",
-    "metrics": [
-      "node_filesystem_avail_bytes",
-      "node_filesystem_size_bytes"
-    ]
-  },
-  {
-    "id": "11dcda95-d844-4391-bc88-70c228e41904",
-    "name": "Disk Space Used Basic",
-    "description": "This metric measures the percentage of disk space used on all filesystems mounted. It is important to monitor disk space usage to ensure sufficient capacity for storing data and running applications. High disk space usage can lead to performance degradation and potential system failures. By tracking this metric, administrators can proactively manage storage resources and prevent outages.",
-    "question": "Is there a correlation between high disk space usage and system performance metrics such as CPU or memory utilization?",
-    "query": "100 - ((node_filesystem_avail_bytes{device!~'rootfs'} * 100) / node_filesystem_size_bytes{device!~'rootfs'})",
-    "unit": "percentage",
-    "unit_description": "Percentage represents the disk space used as a ratio of total available space. It indicates the proportion of disk space that is currently in use.",
-    "example_value": "75%",
     "metrics": [
       "node_filesystem_avail_bytes",
       "node_filesystem_size_bytes"
