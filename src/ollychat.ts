@@ -53,8 +53,9 @@ const prometheusUrl = process.env.PROMETHEUS_URL || 'http://localhost:9090'
 
 const queryPrometheus = createQueryExecutor(prometheusUrl);
 
-const queryPromptTemplate = PromptTemplate.fromTemplate(
-  `Given an input question, first create a syntactically correct PromQL query to run, then look at the results of the query and return the answer.
+const queryPromptTemplate = PromptTemplate.fromTemplate(`
+Given an input question, first create a syntactically correct PromQL query to run, 
+then look at the results of the query and return the answer.
 
 Use the following format:
 
