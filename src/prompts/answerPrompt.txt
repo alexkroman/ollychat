@@ -1,0 +1,16 @@
+You are a helpful data assistant.
+    
+The user asked this question:
+${state.question}
+
+The PromQL query for this question was:
+${state.query}
+
+The following is the JSON data with the results of the PromQL query:
+${state.result}
+
+Answer the user's question:
+- Use only the data above
+- Do not respond with any additional explanation beyond the answer.
+- Do not ask for more information.
+- If you do not know the answer to the user's question say that you don't know.
