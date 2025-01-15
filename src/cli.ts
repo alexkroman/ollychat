@@ -8,12 +8,14 @@ interface Command {
     execute: (...args: string[]) => Promise<void>;
 }
 
+const logging = !process.execArgv.includes('--no-warnings');
+
 export class CLI {
     private rl: Interface;
     private prompt: string;
     private isRunning: boolean = true;
 
-    constructor(promptText: string = '> ') {
+    constructor(promptText: string = '     you >> ') {
         this.prompt = promptText;
         // Initialize readline interface
         this.rl = createInterface({
@@ -25,13 +27,16 @@ export class CLI {
 
     private async handleInput(input: string) {
         try {
-            // Since we're using the entire input as a query
             const messageText = input.trim();
             if (!messageText) return;
             const result = await answerQuestion({ question: messageText });           
-            console.log(result.answer);
+            console.log("ollychat >> " + result.answer.replaceAll('\n', '\n         >> '));
         } catch (error) {
-            console.error('Error processing input:', error);
+            if (logging === true) {
+                console.error('Error processing input:', error);
+            } else {
+                console.log("ollychat >> Sorry I ran into an issue.");
+            }
         }
     }
 
@@ -39,7 +44,12 @@ export class CLI {
      * Start the CLI
      */
     public async start() {
-        console.log('OLLYCHAT is running!');
+        console.log('\n\n--------------------');
+        console.log('Welcome to OLLYCHAT!');
+        console.log('Ctrl-C to Quit');
+
+        console.log('--------------------\n\n');
+
         this.rl.prompt();
 
         this.rl.on('line', async (line) => {

@@ -55,10 +55,9 @@ async function enrichMetricData(
     - Appears before any {, (, or other operators (e.g., node_cpu_seconds_total in rate(node_cpu_seconds_total[5m])).
     - Can be surrounded by functions, filters, or time ranges.
 
-  3. questions: Guess 3 questions that this PromQL query is answering.
+  3. questions: Guess 3 different questions that this PromQL query is answering.
     - Return just the questions without any additional explanation
-    - Do not reference any timeframes in the question
-    - Make guesses that are short questions a user would enter into Slack
+    - Do not reference time in the question
   
 Format the response as a JSON object with these exact keys: description, and questions (as an array).`;
   

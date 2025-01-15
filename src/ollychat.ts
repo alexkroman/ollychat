@@ -14,6 +14,8 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
+const logging = !process.execArgv.includes('--no-warnings');
+
 const embeddings = new OpenAIEmbeddings({
   model: "text-embedding-ada-002",
 });
@@ -165,7 +167,9 @@ const writeQueryTemplate = async (state: typeof StateAnnotation.State) => {
     examples: state.examples,
     metrics: state.metrics,
   });
-  console.log(promptValue);
+  if (logging === true) {
+    console.log(promptValue);
+  }
   const result = await structuredModel.invoke(promptValue);
   return { query: result.query, query_explanation: result.explanation };
 };
@@ -187,11 +191,15 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
     The following is the JSON data with the results of the PromQL query:
      ${state.result}
 
-     Use the data above to answer the user's question. 
+    Answer the user's question:
+     Use only the data above
      Do not respond with any additional explanation beyond the answer.
      Do not ask for more information.
+     If you do not know the answer to the user's question say that you don't know.
     `;
-  console.log(promptValue);
+    if (logging === true) {
+      console.log(promptValue);
+    }
   const response = await model.invoke(promptValue);
   return { answer: response.content };
 };

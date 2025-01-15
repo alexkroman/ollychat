@@ -35,7 +35,7 @@
   "scripts": {
     "build": "tsc",
     "cli-dev": "node --watch --loader ts-node/esm src/cli.ts",
-    "cli-start": "node --loader ts-node/esm src/cli.ts",
+    "cli-start": "node --no-warnings --loader ts-node/esm src/cli.ts",
     "slack-dev": "node --watch --loader ts-node/esm src/slack.ts",
     "slack-start": "node --loader ts-node/esm src/slack.ts",
     "import-dashboards": "node --loader ts-node/esm scripts/import_dashboards.ts",
