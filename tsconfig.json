@@ -1,68 +1,39 @@
 {
   "compilerOptions": {
-    // Target latest version of ECMAScript
-    "target": "ES2022",
-    
-    // Search under node_modules for non-relative imports
-    "moduleResolution": "nodenext",
-    
-    // Enable strictest settings like strictNullChecks & noImplicitAny
-    "strict": true,
-    
-    // Import non-default exports without import syntax
-    "allowSyntheticDefaultImports": true,
-    
-    // Enables emit interop between CommonJS and ES modules
-    "esModuleInterop": true,
-    
-    // Skip type checking of declaration files
-    "skipLibCheck": true,
-    
-    // Disallow features that require cross-file information for emit
-    "isolatedModules": true,
-    
-    // Specify module code generation
-    "module": "NodeNext",
-    
-    // Include sourcemap files inside the emitted JavaScript
-    "sourceMap": true,
-    
-    // Specify JSX code generation
-    "jsx": "react-jsx",
-    
-    // Resolve JSON imports
-    "resolveJsonModule": true,
-    
-    // Base directory to resolve non-relative module names
-    "baseUrl": ".",
-    
-    // Output directory for compiled files
-    "outDir": "dist",
-    
-    // Specify path aliases for imports
-    "paths": {
+    /* Basic Options */
+    "target": "ES2020",                        // Modern JavaScript output (adjust based on your needs)
+    "module": "esnext",                      // Node.js module resolution
+    "outDir": "./dist",                        // Output folder for compiled files
+    "rootDir": "/",                            // Root folder for TypeScript files
+    "strict": true,                            // Enable all strict type-checking options
+    "esModuleInterop": true,                   // Support for CommonJS and ES modules
+    "forceConsistentCasingInFileNames": true,  // Ensure consistent file casing
+    "skipLibCheck": true,                      // Skip type checks on declaration files
+
+    /* Type Checking */
+    "strictNullChecks": true,                  // Disallow `null` and `undefined` where not explicitly allowed
+    "noImplicitAny": true,                     // Warn on variables with `any` type
+    "noImplicitThis": true,                    // Warn on `this` with implicit type `any`
+    "alwaysStrict": true,                      // Parse in strict mode and emit `"use strict"`
+
+    /* Module Resolution */
+    "moduleResolution": "node",               // Resolve modules in Node.js style
+    "resolveJsonModule": true,                // Allow importing JSON files
+    "baseUrl": ".",                           // Base directory for resolving paths
+    "paths": {                                // Alias paths for cleaner imports
       "@/*": ["src/*"]
     },
-    
-    // List of library files to include
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ]
+
+    /* Output Options */
+    "declaration": true,                      // Emit declaration files for TypeScript
+    "sourceMap": true,                        // Emit source maps for debugging
+    "removeComments": true,                   // Remove comments in output
+
+    /* Additional Options */
+    "allowSyntheticDefaultImports": true,     // Allow default imports from modules without default exports
+    "experimentalDecorators": true,           // Enable decorators (if using frameworks like NestJS)
+    "emitDecoratorMetadata": true             // Emit metadata for decorators
   },
-  // Files to include in compilation
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "scripts/**/*.ts",
-    "scripts/**/*.tsx",
-  ],
-  // Files to exclude from compilation
-  "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    "**/*.spec.ts"
-  ]
+  "include": ["src", "scripts"],              // Include all files in the `src` directory
+  "exclude": ["node_modules", "dist"]         // Exclude build and dependency directories
 }
