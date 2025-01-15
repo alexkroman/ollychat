@@ -31,7 +31,6 @@
   "type": "module",
   "devDependencies": {
     "@types/node": "^22.10.5",
-    "cpy-cli": "^5.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
