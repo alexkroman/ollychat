@@ -6,8 +6,6 @@ import { metricsExampleSelector } from '../tools/getMetrics.js';
 import { exampleSelector } from '../tools/getExamples.js';
 import { model } from '../models/openai.js';
 import { loadPromptFromFile, loadFile } from '../tools/loadPrompts.js';
-import * as dotenv from 'dotenv';
-dotenv.config();
 
 const queryOutput = z.object({
   explanation: z.string().describe("Description of what the PromQL query does."),
