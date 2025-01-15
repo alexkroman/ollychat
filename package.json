@@ -17,11 +17,13 @@
     "@langchain/community": "^0.3.24",
     "@langchain/langgraph": "^0.2.39",
     "@slack/bolt": "^4.2.0",
+    "chalk": "^5.4.1",
     "chromadb": "^1.10.0",
     "dotenv": "^16.4.7",
     "fs": "^0.0.1-security",
     "langchain": "^0.3.10",
     "openai": "^4.78.1",
+    "ora": "^8.1.1",
     "path": "^0.12.7",
     "readline": "^1.3.0",
     "zod": "^3.24.1"
