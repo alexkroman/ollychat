@@ -2,7 +2,7 @@ import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
 import { z } from "zod";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { Annotation } from "@langchain/langgraph";
-import { createQueryExecutor, createMetricsFetcher } from './prometheus.js';
+import { createQueryExecutor, createMetricsFetcher } from '../connectors/prometheus.js';
 import { DynamicStructuredTool } from "@langchain/core/tools";
 import { StateGraph } from "@langchain/langgraph";
 import { Chroma } from "@langchain/community/vectorstores/chroma";

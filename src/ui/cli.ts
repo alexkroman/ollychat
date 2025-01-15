@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
-import { answerQuestion } from "./ollychat.js";
+import { answerQuestion } from "../agents/ollychat.js";
 import ora from 'ora';
 
 interface Command {

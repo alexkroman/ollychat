@@ -1,6 +1,6 @@
 import slack from '@slack/bolt';
 const { App } = slack;
-import { answerQuestion  } from "./ollychat.js";
+import { answerQuestion  } from "../agents/ollychat.js";
 
 // Initialize Bolt app
 const app = new App({
