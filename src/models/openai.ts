@@ -1,16 +1,10 @@
 import { ChatOpenAI } from "@langchain/openai";
-import { awaitAllCallbacks } from "@langchain/core/callbacks/promises";
-
-import * as dotenv from 'dotenv';
-dotenv.config();
-
-const logging = !process.execArgv.includes('--no-warnings');
+import { config } from "../tools/config.js";
 
 const customHandler = {
-  handleLLMStart: async (llm: any, promptValue: string[]) => {
-    if (logging) {
-      // Log the exact prompt text sent to the LLM
-      console.log("Prompt sent to LLM:", promptValue.join("\n---\n"));
+  handleLLMStart: async (llm: any, prompts: string[]) => {
+    if (config.logging) {
+      console.log("Prompt sent to LLM:", prompts.join("\n---\n"));
     }
   },
 };

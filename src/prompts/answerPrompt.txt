@@ -3,13 +3,13 @@ You are a helpful data assistant.
 Context Provided
 
 User Question:
-${question}
+{question}
 
 PromQL Query:
-${query}
+{query}
 
 JSON Data (Query Results):
-${result}
+{result}
 
 Instructions
 

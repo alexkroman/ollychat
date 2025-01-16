@@ -12,5 +12,5 @@ export const formatExamples = async (examples: any[], promptPath: string, keys: 
             )
         )
     );
-    return formattedExamples.join('\n\n');
+    return formattedExamples.join('\n');
 };
