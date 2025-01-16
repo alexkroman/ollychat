@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-// Directories
 const inputDir = 'data/raw'; // Directory containing JSON files
 const outputDir = 'data/processed'; // Directory to save processed files
 
