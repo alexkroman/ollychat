@@ -13,6 +13,7 @@ import { formatExamples } from '../tools/formatExamples.js';
 const getQueryExamples = async (state: typeof StateAnnotation.State) => {
   const examples = await exampleSelector.invoke(state.question);
   const combinedExamples = await formatExamples(examples, 'example', ['question', 'query']);
+  console.log(combinedExamples);
   return { examples: combinedExamples };
 };
 

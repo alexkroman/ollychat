@@ -3,12 +3,12 @@ import path from 'path';
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { ChromaClient } from "chromadb";
-import * as dotenv from 'dotenv';
 
+import * as dotenv from 'dotenv';
 dotenv.config();
 
 const enrichedDir = './data/enriched';
-const embeddings = new OpenAIEmbeddings({ model: "text-embedding-ada-002" });
+const embeddings = new OpenAIEmbeddings({ model: process.env.OPENAI_EMBEDDINGS });
 const vectorStore = new Chroma(embeddings, {
   collectionName: process.env.CHROMA_INDEX,
   url: process.env.CHROMA_URL,
