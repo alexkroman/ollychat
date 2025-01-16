@@ -1,182 +1,32 @@
 [
   {
-    "id": "4657f6d4-1adb-4721-b15f-be6699d471c9",
+    "id": "e2c67a2d-a000-4e3a-b619-14f9cc5e1afa",
     "name": "Total number of Pods",
     "description": "This PromQL query measures the total number of Pods currently running in the Kubernetes cluster.",
-    "question": "What is the total number of Pods running?",
+    "question": "What is the current total number of Pods?",
     "query": "",
     "metrics": [
       "Pods"
     ]
   },
   {
-    "id": "ba2b59d0-8dd2-4cad-a17d-bf21ea2bcc50",
+    "id": "1be8421b-8449-4708-a64d-99c5ed07c81c",
     "name": "Total number of Pods",
     "description": "This PromQL query measures the total number of Pods currently running in the Kubernetes cluster.",
-    "question": "How many Pods are currently active?",
+    "question": "How many Pods are running in the cluster?",
     "query": "",
     "metrics": [
       "Pods"
     ]
   },
   {
-    "id": "61f26b03-c102-44f0-8168-7d153b0f9cae",
+    "id": "986f6b3a-a782-443e-b3bf-8d92ce11caca",
     "name": "Total number of Pods",
     "description": "This PromQL query measures the total number of Pods currently running in the Kubernetes cluster.",
     "question": "What is the overall count of Pods?",
     "query": "",
     "metrics": [
       "Pods"
-    ]
-  },
-  {
-    "id": "955435ea-e20d-432d-aa58-bbf73090db50",
-    "name": "Pod Distribution by AZ",
-    "description": "The PromQL query measures the distribution of pods across different availability zones (AZ) in the Kubernetes cluster.",
-    "question": "How many pods are running in each availability zone?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "96b82267-0893-4e8a-baca-3e3fc6376e87",
-    "name": "Pod Distribution by AZ",
-    "description": "The PromQL query measures the distribution of pods across different availability zones (AZ) in the Kubernetes cluster.",
-    "question": "Which availability zone has the highest number of pods?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "62f1ff33-b9ee-4de6-9e52-ea0c9e1fd4eb",
-    "name": "Pod Distribution by AZ",
-    "description": "The PromQL query measures the distribution of pods across different availability zones (AZ) in the Kubernetes cluster.",
-    "question": "Is the pod distribution evenly spread across all availability zones?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "ab920fb1-9698-4868-a4e8-c7a4d401c24b",
-    "name": "Pod Distribution by Namespaces",
-    "description": "The PromQL query measures the distribution of pods across different namespaces.",
-    "question": "How many pods are running in each namespace?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "d319885d-27f8-4987-9f08-e0d82e094390",
-    "name": "Pod Distribution by Namespaces",
-    "description": "The PromQL query measures the distribution of pods across different namespaces.",
-    "question": "Which namespace has the highest number of pods?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "eeb265e1-7dd8-492a-9aae-f11f8e25acbc",
-    "name": "Pod Distribution by Namespaces",
-    "description": "The PromQL query measures the distribution of pods across different namespaces.",
-    "question": "Is there any namespace with no running pods?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "3420732b-f4f8-4c49-ac48-a11dd7f3de16",
-    "name": "Pod Distribution by Node",
-    "description": "The PromQL query measures the distribution of pods across different nodes in the Kubernetes cluster.",
-    "question": "How many pods are running on each node?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "70de7a25-09ad-4b52-871d-30f5c5748f44",
-    "name": "Pod Distribution by Node",
-    "description": "The PromQL query measures the distribution of pods across different nodes in the Kubernetes cluster.",
-    "question": "Which node has the highest number of pods?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "e4530b41-04aa-496b-a182-546b11bcb815",
-    "name": "Pod Distribution by Node",
-    "description": "The PromQL query measures the distribution of pods across different nodes in the Kubernetes cluster.",
-    "question": "Are there any nodes with no pods running on them?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "1c79a509-be7c-4e62-b222-ba17d0259221",
-    "name": "Pod Distribution by Instance Type",
-    "description": "The PromQL query measures the distribution of pods based on the type of instance they are running on.",
-    "question": "How many pods are running on each instance type?",
-    "query": "",
-    "metrics": [
-      "pod_distribution"
-    ]
-  },
-  {
-    "id": "b4ba0c97-f6b9-487f-b1a8-0a57d8df71a5",
-    "name": "Pod Distribution by Instance Type",
-    "description": "The PromQL query measures the distribution of pods based on the type of instance they are running on.",
-    "question": "Which instance type has the highest number of pods?",
-    "query": "",
-    "metrics": [
-      "pod_distribution"
-    ]
-  },
-  {
-    "id": "14cc3b5e-81a5-46c6-84a2-8f215f9218ba",
-    "name": "Pod Distribution by Instance Type",
-    "description": "The PromQL query measures the distribution of pods based on the type of instance they are running on.",
-    "question": "Is there any imbalance in the distribution of pods across different instance types?",
-    "query": "",
-    "metrics": [
-      "pod_distribution"
-    ]
-  },
-  {
-    "id": "b525a1dc-6c5a-4c73-b9f8-862ae1e28a80",
-    "name": "Pod Distribution by Phase",
-    "description": "The PromQL query measures the distribution of pods based on their current phase (e.g., Running, Pending, Succeeded, Failed) within a Kubernetes cluster.",
-    "question": "How many pods are currently in the Running phase?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "b52129cf-d4a9-46bc-b0a7-6eb89ff69726",
-    "name": "Pod Distribution by Phase",
-    "description": "The PromQL query measures the distribution of pods based on their current phase (e.g., Running, Pending, Succeeded, Failed) within a Kubernetes cluster.",
-    "question": "What is the distribution of pods among different phases?",
-    "query": "",
-    "metrics": [
-      "pod"
-    ]
-  },
-  {
-    "id": "48e31265-68c1-4cb1-8af3-63bf9e918560",
-    "name": "Pod Distribution by Phase",
-    "description": "The PromQL query measures the distribution of pods based on their current phase (e.g., Running, Pending, Succeeded, Failed) within a Kubernetes cluster.",
-    "question": "Are there any pods in the Failed phase?",
-    "query": "",
-    "metrics": [
-      "pod"
     ]
   }
 ]

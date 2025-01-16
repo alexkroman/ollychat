@@ -1,0 +1,155 @@
+[
+  {
+    "id": "20147034-d38c-490b-93c3-828c7ef976d6",
+    "name": "Erlang Distribution outgoing traffic / s",
+    "description": "This PromQL query measures the outgoing traffic per second for the Erlang Distribution service.",
+    "question": "What is the current outgoing traffic rate for the Erlang Distribution service?",
+    "query": "",
+    "metrics": [
+      "Erlang_Distribution_outgoing_traffic"
+    ]
+  },
+  {
+    "id": "8bc581c2-e659-4c60-99d9-77b44e66b0f8",
+    "name": "Erlang Distribution outgoing traffic / s",
+    "description": "This PromQL query measures the outgoing traffic per second for the Erlang Distribution service.",
+    "question": "How does the outgoing traffic fluctuate over time for the Erlang Distribution service?",
+    "query": "",
+    "metrics": [
+      "Erlang_Distribution_outgoing_traffic"
+    ]
+  },
+  {
+    "id": "93d69f14-5caa-4369-a48d-e7a67964a284",
+    "name": "Erlang Distribution outgoing traffic / s",
+    "description": "This PromQL query measures the outgoing traffic per second for the Erlang Distribution service.",
+    "question": "Is there a pattern or trend in the outgoing traffic of the Erlang Distribution service?",
+    "query": "",
+    "metrics": [
+      "Erlang_Distribution_outgoing_traffic"
+    ]
+  },
+  {
+    "id": "5897c587-8e02-46fb-91fb-05aad3fdb1ce",
+    "name": "Erlang Distribution outgoing traffic / s",
+    "description": "This PromQL query measures Erlang Distribution traffic, node network traffic, and CPU + PerfTest message throughput and latency.",
+    "question": "What is the total CPU usage in seconds?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "rate"
+    ]
+  },
+  {
+    "id": "c9a645df-1af4-476d-b42a-fb1739d752d9",
+    "name": "Erlang Distribution outgoing traffic / s",
+    "description": "This PromQL query measures Erlang Distribution traffic, node network traffic, and CPU + PerfTest message throughput and latency.",
+    "question": "What is the rate of change in CPU usage over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "rate"
+    ]
+  },
+  {
+    "id": "9f4558c2-1a7a-46d5-b9b9-0aecd5b69b45",
+    "name": "Erlang Distribution outgoing traffic / s",
+    "description": "This PromQL query measures Erlang Distribution traffic, node network traffic, and CPU + PerfTest message throughput and latency.",
+    "question": "What is the throughput and latency of PerfTest messages?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "rate"
+    ]
+  },
+  {
+    "id": "772fea11-d472-4984-bc9c-f6a18335015c",
+    "name": "Network incoming traffic / s",
+    "description": "Measures the rate of incoming network traffic per second",
+    "question": "What is the rate of incoming network traffic?",
+    "query": "",
+    "metrics": [
+      "network_incoming_traffic"
+    ]
+  },
+  {
+    "id": "ed7de4a0-f728-421f-8479-2338c2cb60cb",
+    "name": "Network incoming traffic / s",
+    "description": "Measures the rate of incoming network traffic per second",
+    "question": "How much network traffic is being received per second?",
+    "query": "",
+    "metrics": [
+      "network_incoming_traffic"
+    ]
+  },
+  {
+    "id": "33f971b4-156f-49f4-a03f-d0a17ddee782",
+    "name": "Network incoming traffic / s",
+    "description": "Measures the rate of incoming network traffic per second",
+    "question": "Is the incoming network traffic increasing or decreasing?",
+    "query": "",
+    "metrics": [
+      "network_incoming_traffic"
+    ]
+  },
+  {
+    "id": "ed818a30-85f4-434c-96dd-4c9643c28385",
+    "name": "Network incoming traffic / s",
+    "description": "Measures the rate of incoming network traffic per second",
+    "question": "What is the rate of incoming network traffic?",
+    "query": "",
+    "metrics": [
+      "network_incoming_traffic"
+    ]
+  },
+  {
+    "id": "4c9b8d13-9d3b-41a0-8396-e8bd425d88fb",
+    "name": "Network incoming traffic / s",
+    "description": "Measures the rate of incoming network traffic per second",
+    "question": "How much network traffic is being received per second?",
+    "query": "",
+    "metrics": [
+      "network_incoming_traffic"
+    ]
+  },
+  {
+    "id": "fb1c166b-8055-4839-b2fc-3e6f340b61cf",
+    "name": "Network incoming traffic / s",
+    "description": "Measures the rate of incoming network traffic per second",
+    "question": "Is there a trend in the incoming network traffic?",
+    "query": "",
+    "metrics": [
+      "network_incoming_traffic"
+    ]
+  },
+  {
+    "id": "1de3bfd9-68ed-4f63-9684-c9ca62a6a407",
+    "name": "Network outgoing traffic / s",
+    "description": "Measures the rate of outgoing network traffic per second",
+    "question": "What is the rate of outgoing network traffic?",
+    "query": "",
+    "metrics": [
+      "network_outgoing_traffic"
+    ]
+  },
+  {
+    "id": "fccd00dc-f782-4ca4-abd8-5be26a21d3c9",
+    "name": "Network outgoing traffic / s",
+    "description": "Measures the rate of outgoing network traffic per second",
+    "question": "How much data is being sent out per second?",
+    "query": "",
+    "metrics": [
+      "network_outgoing_traffic"
+    ]
+  },
+  {
+    "id": "946b62f3-5d9d-437b-98bc-ab4221e4fbce",
+    "name": "Network outgoing traffic / s",
+    "description": "Measures the rate of outgoing network traffic per second",
+    "question": "Is the outgoing network traffic increasing or decreasing?",
+    "query": "",
+    "metrics": [
+      "network_outgoing_traffic"
+    ]
+  }
+]

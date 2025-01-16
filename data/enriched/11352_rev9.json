@@ -1,0 +1,125 @@
+[
+  {
+    "id": "8bcbef99-7753-4882-be1c-4bcd94232f7f",
+    "name": "All distribution links",
+    "description": "This PromQL query measures the distribution of links across all nodes in the system.",
+    "question": "How is the CPU time distributed across all nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "5e750fc7-75dc-4f76-a368-df17e0e9e5e6",
+    "name": "All distribution links",
+    "description": "This PromQL query measures the distribution of links across all nodes in the system.",
+    "question": "What is the total CPU time consumed by all nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "14e98d50-64e6-455a-af56-8a4e12ded0e9",
+    "name": "All distribution links",
+    "description": "This PromQL query measures the distribution of links across all nodes in the system.",
+    "question": "Which node has the highest CPU consumption?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "71a8cafc-e64d-4bca-85a4-1e7c95f95f42",
+    "name": "Established distribution links",
+    "description": "This PromQL query measures the number of established distribution links between nodes and their peers, indicating successful connections.",
+    "question": "How many established distribution links are currently active?",
+    "query": "",
+    "metrics": [
+      "established_distribution_links"
+    ]
+  },
+  {
+    "id": "1c1df2ea-1323-475b-9a9c-bdf0a0e18901",
+    "name": "Established distribution links",
+    "description": "This PromQL query measures the number of established distribution links between nodes and their peers, indicating successful connections.",
+    "question": "Which nodes have the highest number of established distribution links?",
+    "query": "",
+    "metrics": [
+      "established_distribution_links"
+    ]
+  },
+  {
+    "id": "dfd6caeb-7381-4367-84f2-2fcb013acab3",
+    "name": "Established distribution links",
+    "description": "This PromQL query measures the number of established distribution links between nodes and their peers, indicating successful connections.",
+    "question": "Are there any peers with a consistently low number of established distribution links?",
+    "query": "",
+    "metrics": [
+      "established_distribution_links"
+    ]
+  },
+  {
+    "id": "ab0b5c0c-4c07-4cea-8433-912062119a41",
+    "name": "Connecting distribution links",
+    "description": "This PromQL query measures the distribution of pending connections when a new connection is exchanging information between the node and the peer.",
+    "question": "How many pending connections are currently being established between the node and the peer?",
+    "query": "",
+    "metrics": [
+      "node",
+      "peer"
+    ]
+  },
+  {
+    "id": "c08b40a1-1913-4dc9-88c9-1434df588b82",
+    "name": "Connecting distribution links",
+    "description": "This PromQL query measures the distribution of pending connections when a new connection is exchanging information between the node and the peer.",
+    "question": "What is the distribution of pending connections over a specific time range?",
+    "query": "",
+    "metrics": [
+      "node",
+      "peer"
+    ]
+  },
+  {
+    "id": "f4e23931-8346-41fd-894b-fa93717b22a8",
+    "name": "Connecting distribution links",
+    "description": "This PromQL query measures the distribution of pending connections when a new connection is exchanging information between the node and the peer.",
+    "question": "Are there any peaks in pending connections between the node and the peer?",
+    "query": "",
+    "metrics": [
+      "node",
+      "peer"
+    ]
+  },
+  {
+    "id": "ff7eccba-ce9d-4ef6-af72-b87d8e58f4d7",
+    "name": "Waiting distribution links",
+    "description": "This PromQL query measures the distribution of waiting links that are in the 'up_pending' state when a new connection is established and has to wait for an existing connection to go down before becoming active.",
+    "question": "How many links are currently in the 'up_pending' state?",
+    "query": "",
+    "metrics": [
+      "up_pending"
+    ]
+  },
+  {
+    "id": "15b0bb04-2f7c-468a-b272-506bd58e1e97",
+    "name": "Waiting distribution links",
+    "description": "This PromQL query measures the distribution of waiting links that are in the 'up_pending' state when a new connection is established and has to wait for an existing connection to go down before becoming active.",
+    "question": "What is the distribution of waiting links based on the 'up_pending' status?",
+    "query": "",
+    "metrics": [
+      "up_pending"
+    ]
+  },
+  {
+    "id": "758d47aa-c45b-48a8-9463-17ff29df1fe2",
+    "name": "Waiting distribution links",
+    "description": "This PromQL query measures the distribution of waiting links that are in the 'up_pending' state when a new connection is established and has to wait for an existing connection to go down before becoming active.",
+    "question": "Which nodes or peers have the highest number of links in the 'up_pending' state?",
+    "query": "",
+    "metrics": [
+      "up_pending"
+    ]
+  }
+]

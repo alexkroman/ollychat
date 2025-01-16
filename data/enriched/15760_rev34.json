@@ -1,0 +1,152 @@
+[
+  {
+    "id": "fe985416-5474-468a-9f50-210d0fff5677",
+    "name": "Created by",
+    "description": "This PromQL query measures the total CPU seconds consumed by a specific pod within the last 5 minutes.",
+    "question": "What is the total CPU usage of a specific pod?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "e6443c51-4701-438b-b1e8-b2379d2e6a51",
+    "name": "Created by",
+    "description": "This PromQL query measures the total CPU seconds consumed by a specific pod within the last 5 minutes.",
+    "question": "How much CPU time has been consumed by a single pod?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "d13c4747-e300-4d6e-bb0b-a368f5df29dc",
+    "name": "Created by",
+    "description": "This PromQL query measures the total CPU seconds consumed by a specific pod within the last 5 minutes.",
+    "question": "Which pod has the highest CPU consumption in the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "beba554f-cfe2-4a1e-b699-2bb8dcb62144",
+    "name": "Running on",
+    "description": "This PromQL query measures the total number of running instances of a specific pod.",
+    "question": "How many instances of the pod are currently running?",
+    "query": "",
+    "metrics": [
+      "running_instances"
+    ]
+  },
+  {
+    "id": "b5337e4c-4097-42ac-8aa7-79365ed8f516",
+    "name": "Running on",
+    "description": "This PromQL query measures the total number of running instances of a specific pod.",
+    "question": "What is the total count of running instances for the specified pod?",
+    "query": "",
+    "metrics": [
+      "running_instances"
+    ]
+  },
+  {
+    "id": "3926fbbd-572b-40b6-84fd-94177c5d9d81",
+    "name": "Running on",
+    "description": "This PromQL query measures the total number of running instances of a specific pod.",
+    "question": "Is there a single pod currently running?",
+    "query": "",
+    "metrics": [
+      "running_instances"
+    ]
+  },
+  {
+    "id": "8dcdd915-3996-4eb6-b891-d8ff4ffce2e7",
+    "name": "Pod IP",
+    "description": "This PromQL query measures the IP addresses of pods when a single pod is selected.",
+    "question": "How many IP addresses are associated with a single selected pod?",
+    "query": "",
+    "metrics": [
+      "pod_ip"
+    ]
+  },
+  {
+    "id": "23bc4606-2a35-4a96-b19f-33531e35dd21",
+    "name": "Pod IP",
+    "description": "This PromQL query measures the IP addresses of pods when a single pod is selected.",
+    "question": "What is the IP address of the currently selected pod?",
+    "query": "",
+    "metrics": [
+      "pod_ip"
+    ]
+  },
+  {
+    "id": "6d0a5dab-3d92-475d-be87-4b62ea4c0040",
+    "name": "Pod IP",
+    "description": "This PromQL query measures the IP addresses of pods when a single pod is selected.",
+    "question": "Which pod IP address should be displayed when only one pod is selected?",
+    "query": "",
+    "metrics": [
+      "pod_ip"
+    ]
+  },
+  {
+    "id": "2ce253d0-0169-4eed-b114-b7795dd28efd",
+    "name": "Priority Class",
+    "description": "This PromQL query measures the priority class of a single pod.",
+    "question": "What is the priority class of the selected pod?",
+    "query": "",
+    "metrics": [
+      "priority_class"
+    ]
+  },
+  {
+    "id": "4960ff11-7640-4995-a61a-ef0029c52931",
+    "name": "Priority Class",
+    "description": "This PromQL query measures the priority class of a single pod.",
+    "question": "Is the priority class of the pod within the specified threshold?",
+    "query": "",
+    "metrics": [
+      "priority_class"
+    ]
+  },
+  {
+    "id": "eacbfa49-760e-4bec-9520-291a549d8817",
+    "name": "Priority Class",
+    "description": "This PromQL query measures the priority class of a single pod.",
+    "question": "How does the priority class of the pod compare to other pods?",
+    "query": "",
+    "metrics": [
+      "priority_class"
+    ]
+  },
+  {
+    "id": "fcf7ca36-3f89-4cc3-9cdc-5d56f90158ec",
+    "name": "QOS Class",
+    "description": "This PromQL query measures the quality of service (QOS) for a specific class, focusing on a single pod at a time.",
+    "question": "What is the CPU usage in seconds for the selected pod?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "d3490543-7cf9-42e5-87c4-31bcfbe34616",
+    "name": "QOS Class",
+    "description": "This PromQL query measures the quality of service (QOS) for a specific class, focusing on a single pod at a time.",
+    "question": "How does the CPU usage trend change over a 5-minute window for the selected pod?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "b110f66e-140a-4055-a1a1-38110112ed3b",
+    "name": "QOS Class",
+    "description": "This PromQL query measures the quality of service (QOS) for a specific class, focusing on a single pod at a time.",
+    "question": "Is the CPU usage for the selected pod within acceptable limits based on historical data?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

@@ -1,111 +1,108 @@
 [
   {
-    "id": "94e93399-b5d9-4415-9863-aaeb6a608d3c",
+    "id": "9a1c4e59-5040-4e2b-aea4-6fe2611b57c6",
     "name": "Deployment memory usage",
-    "description": "The PromQL query measures the memory usage of a specific deployment in a Kubernetes cluster over time.",
-    "question": "What is the memory usage of the deployment?",
+    "description": "This PromQL query measures the memory usage of a deployment over time.",
+    "question": "What is the current memory usage of the deployment?",
     "query": "",
     "metrics": [
-      "container_memory_usage_bytes"
+      "deployment_memory_usage"
     ]
   },
   {
-    "id": "3d9bd30e-f0f1-4f3c-be47-09103230351a",
+    "id": "eadb2056-94cb-4733-a33f-bcbc585e208d",
     "name": "Deployment memory usage",
-    "description": "The PromQL query measures the memory usage of a specific deployment in a Kubernetes cluster over time.",
-    "question": "How has the memory usage of the deployment changed over time?",
+    "description": "This PromQL query measures the memory usage of a deployment over time.",
+    "question": "How has the memory usage of the deployment changed over the last hour?",
     "query": "",
     "metrics": [
-      "container_memory_usage_bytes"
+      "deployment_memory_usage"
     ]
   },
   {
-    "id": "f8a56c35-53c9-47a1-9e80-2986a88aa0a1",
+    "id": "3bb46e40-9f06-4661-b4e2-e468fad2f0a4",
     "name": "Deployment memory usage",
-    "description": "The PromQL query measures the memory usage of a specific deployment in a Kubernetes cluster over time.",
-    "question": "Is the memory usage of the deployment within acceptable limits?",
+    "description": "This PromQL query measures the memory usage of a deployment over time.",
+    "question": "Is the memory usage of the deployment trending upwards or downwards?",
     "query": "",
     "metrics": [
-      "container_memory_usage_bytes"
+      "deployment_memory_usage"
     ]
   },
   {
-    "id": "f19d98bc-31b0-42a4-8812-bfbb25af7679",
+    "id": "09df9882-9ec6-458c-a409-44161141160c",
     "name": "Deployment CPU usage",
-    "description": "This PromQL query measures the CPU usage of a deployment over a specific time range.",
-    "question": "What is the current CPU usage of the deployment?",
-    "query": "",
-    "metrics": [
-      "deployment_cpu_usage"
-    ]
-  },
-  {
-    "id": "4ff2e8dc-5e8b-42e7-8a82-9e6be6051d25",
-    "name": "Deployment CPU usage",
-    "description": "This PromQL query measures the CPU usage of a deployment over a specific time range.",
-    "question": "How has the CPU usage of the deployment changed over the specified time period?",
-    "query": "",
-    "metrics": [
-      "deployment_cpu_usage"
-    ]
-  },
-  {
-    "id": "47e30e2a-e550-4a2f-905f-b3056464cfd3",
-    "name": "Deployment CPU usage",
-    "description": "This PromQL query measures the CPU usage of a deployment over a specific time range.",
-    "question": "Which deployment is consuming the most CPU?",
-    "query": "",
-    "metrics": [
-      "deployment_cpu_usage"
-    ]
-  },
-  {
-    "id": "d6455fbf-8c49-4e03-8960-9bf3da18bbfd",
-    "name": "Unavailable Replicas",
-    "description": "This PromQL query measures the number of unavailable replicas in a Kubernetes cluster.",
-    "question": "How many replicas are currently unavailable?",
-    "query": "",
-    "metrics": [
-      "kube_replica_status_replicas",
-      "kube_replica_status_ready_replicas"
-    ]
-  },
-  {
-    "id": "e2ba70c1-1c86-49ed-bc37-df3f434e5519",
-    "name": "Unavailable Replicas",
-    "description": "This PromQL query measures the number of unavailable replicas in a Kubernetes cluster.",
-    "question": "What is the difference between total replicas and ready replicas?",
-    "query": "",
-    "metrics": [
-      "kube_replica_status_replicas",
-      "kube_replica_status_ready_replicas"
-    ]
-  },
-  {
-    "id": "3e5c8987-92b5-4023-9039-55ce273a3b42",
-    "name": "Unavailable Replicas",
-    "description": "This PromQL query measures the number of unavailable replicas in a Kubernetes cluster.",
-    "question": "Which deployments have replicas that are not ready?",
-    "query": "",
-    "metrics": [
-      "kube_replica_status_replicas",
-      "kube_replica_status_ready_replicas"
-    ]
-  },
-  {
-    "id": "2f68f85f-37d5-45fc-b04e-db4181ff9835",
-    "name": "Used",
-    "description": "This PromQL query measures the amount of a specific resource that is currently being used.",
-    "question": "What is the current CPU usage?",
+    "description": "The PromQL query measures the CPU usage of a specific deployment over a given time period.",
+    "question": "What is the total CPU usage of the deployment?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "724e770e-c9f8-4141-9ef0-6eca77270c18",
+    "id": "d5a2666d-35c5-4272-b2e0-5a7e38e4aff3",
+    "name": "Deployment CPU usage",
+    "description": "The PromQL query measures the CPU usage of a specific deployment over a given time period.",
+    "question": "How has the CPU usage of the deployment changed over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "827ad7ba-7942-4c68-8942-6faa492fe944",
+    "name": "Deployment CPU usage",
+    "description": "The PromQL query measures the CPU usage of a specific deployment over a given time period.",
+    "question": "Which deployment is consuming the most CPU?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "1d7e3ad8-0c6b-454f-9965-b40857f24147",
+    "name": "Unavailable Replicas",
+    "description": "The PromQL query measures the number of replicas that are currently unavailable in the system.",
+    "question": "How many replicas are currently unavailable?",
+    "query": "",
+    "metrics": [
+      "replicas"
+    ]
+  },
+  {
+    "id": "046d503a-347f-45d5-a94a-a99305dfafda",
+    "name": "Unavailable Replicas",
+    "description": "The PromQL query measures the number of replicas that are currently unavailable in the system.",
+    "question": "Which components are experiencing replica unavailability?",
+    "query": "",
+    "metrics": [
+      "replicas"
+    ]
+  },
+  {
+    "id": "a54ecdbb-705e-4f53-a202-1cdf357a12d3",
+    "name": "Unavailable Replicas",
+    "description": "The PromQL query measures the number of replicas that are currently unavailable in the system.",
+    "question": "Is there a trend in the number of unavailable replicas over time?",
+    "query": "",
+    "metrics": [
+      "replicas"
+    ]
+  },
+  {
+    "id": "8e4225b6-d849-49a9-b640-1e559c8b30a9",
     "name": "Used",
-    "description": "This PromQL query measures the amount of a specific resource that is currently being used.",
+    "description": "This PromQL query measures the amount of used resources over time.",
+    "question": "What is the total CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "991523f4-f7fd-47ba-bfd3-2b421fb5c1d9",
+    "name": "Used",
+    "description": "This PromQL query measures the amount of used resources over time.",
     "question": "How much memory is currently being utilized?",
     "query": "",
     "metrics": [
@@ -113,43 +110,13 @@
     ]
   },
   {
-    "id": "d037c6ec-7b7a-4768-b7d8-9f8989b6a7d4",
+    "id": "b0a1a32e-9a9b-4fa6-bc7c-bb1956f16a1e",
     "name": "Used",
-    "description": "This PromQL query measures the amount of a specific resource that is currently being used.",
-    "question": "What is the current network traffic volume?",
+    "description": "This PromQL query measures the amount of used resources over time.",
+    "question": "What is the network traffic usage?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "7449720d-62f2-4d47-b067-e4fc1d769aa0",
-    "name": "Total",
-    "description": "The PromQL query measures the total value of a specific metric over a certain time range.",
-    "question": "What is the total value of the metric?",
-    "query": "",
-    "metrics": [
-      "total"
-    ]
-  },
-  {
-    "id": "94b26d85-f33c-47c2-890b-1213f22c14b4",
-    "name": "Total",
-    "description": "The PromQL query measures the total value of a specific metric over a certain time range.",
-    "question": "How does the total value of the metric change over time?",
-    "query": "",
-    "metrics": [
-      "total"
-    ]
-  },
-  {
-    "id": "b4e695df-2591-4a69-a733-1c44481b40bc",
-    "name": "Total",
-    "description": "The PromQL query measures the total value of a specific metric over a certain time range.",
-    "question": "What is the cumulative sum of the metric?",
-    "query": "",
-    "metrics": [
-      "total"
     ]
   }
 ]

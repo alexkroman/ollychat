@@ -1,92 +1,122 @@
 [
   {
-    "id": "f7c69747-aa4b-4d71-b5be-be81be3a203f",
+    "id": "a6b2ad86-048f-478a-a7cd-e34da0f4a2ec",
     "name": "Memory",
-    "description": "The PromQL query measures the memory usage of a specific system component over a given time period.",
-    "question": "What is the total memory capacity of the system component being monitored?",
+    "description": "This PromQL query measures the memory usage of a system over a specified time range.",
+    "question": "What is the total memory available in the system?",
     "query": "",
     "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes"
+      "node_memory_MemTotal",
+      "node_memory_MemFree"
     ]
   },
   {
-    "id": "98f1993e-b002-43c8-acb6-cd6d4624d1c3",
+    "id": "d5298821-982f-408e-9f4f-54cc73004aba",
     "name": "Memory",
-    "description": "The PromQL query measures the memory usage of a specific system component over a given time period.",
-    "question": "How much free memory is available in the system component?",
+    "description": "This PromQL query measures the memory usage of a system over a specified time range.",
+    "question": "How much free memory is currently available?",
     "query": "",
     "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes"
+      "node_memory_MemTotal",
+      "node_memory_MemFree"
     ]
   },
   {
-    "id": "c06a894d-7850-44ff-a3bd-71ad884ba194",
+    "id": "3e5a603e-70a1-4dda-a79f-8dd4fb7d5ffe",
     "name": "Memory",
-    "description": "The PromQL query measures the memory usage of a specific system component over a given time period.",
-    "question": "What is the memory utilization percentage of the system component?",
+    "description": "This PromQL query measures the memory usage of a system over a specified time range.",
+    "question": "What is the memory utilization percentage?",
     "query": "",
     "metrics": [
-      "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes"
+      "node_memory_MemTotal",
+      "node_memory_MemFree"
     ]
   },
   {
-    "id": "75f9890d-00aa-4fd7-a652-bec795c59942",
+    "id": "1097e760-0b5c-49d5-a40e-a8dcbafbef9f",
     "name": "Memory write cache",
-    "description": "The PromQL query measures the amount of memory being used by the write cache in the system.",
-    "question": "What is the current memory usage of the write cache?",
+    "description": "This PromQL query measures the memory write cache usage.",
+    "question": "What is the current memory write cache usage?",
     "query": "",
     "metrics": [
       "memory_write_cache"
     ]
   },
   {
-    "id": "510af054-fac8-4e3b-b350-e855b67aa77d",
+    "id": "d1478b67-050c-4598-8e14-6114463ca153",
     "name": "Memory write cache",
-    "description": "The PromQL query measures the amount of memory being used by the write cache in the system.",
-    "question": "How has the memory write cache usage changed over the last 24 hours?",
+    "description": "This PromQL query measures the memory write cache usage.",
+    "question": "How has the memory write cache usage trended over time?",
     "query": "",
     "metrics": [
       "memory_write_cache"
     ]
   },
   {
-    "id": "21834d68-25d3-4e94-9a08-637cf881bac7",
+    "id": "e6b46d08-1627-4472-90a2-6ce8d0b94f06",
     "name": "Memory write cache",
-    "description": "The PromQL query measures the amount of memory being used by the write cache in the system.",
-    "question": "Which components are contributing the most to the memory write cache usage?",
+    "description": "This PromQL query measures the memory write cache usage.",
+    "question": "Which components contribute the most to memory write cache usage?",
     "query": "",
     "metrics": [
       "memory_write_cache"
     ]
   },
   {
-    "id": "b8877b65-1b3f-4f19-99b0-8b4abccffe33",
+    "id": "4a55b792-44b7-46a9-9a24-a481156fb710",
+    "name": "OOM killed procs",
+    "description": "This PromQL query measures the number of processes killed due to out-of-memory errors.",
+    "question": "How many processes were killed due to out-of-memory errors?",
+    "query": "",
+    "metrics": [
+      "processes_killed"
+    ]
+  },
+  {
+    "id": "a74fb68f-eaa0-48a0-bd33-8a08c72e7b56",
+    "name": "OOM killed procs",
+    "description": "This PromQL query measures the number of processes killed due to out-of-memory errors.",
+    "question": "What is the trend of out-of-memory process kills over time?",
+    "query": "",
+    "metrics": [
+      "processes_killed"
+    ]
+  },
+  {
+    "id": "4104b1ed-6f29-49ab-a6f5-6c9d0fc5c620",
+    "name": "OOM killed procs",
+    "description": "This PromQL query measures the number of processes killed due to out-of-memory errors.",
+    "question": "Which process had the highest number of out-of-memory kills?",
+    "query": "",
+    "metrics": [
+      "processes_killed"
+    ]
+  },
+  {
+    "id": "c9b5f293-8848-4acd-82cc-5e40093a1b3c",
     "name": "IO Wait per core",
-    "description": "The PromQL query measures the input/output (I/O) wait time per core of a system, indicating the amount of time a CPU core spends waiting for I/O operations to complete.",
-    "question": "What is the average I/O wait time per core over the last 5 minutes?",
+    "description": "The PromQL query measures the IO wait time per core, indicating the amount of time each CPU core spends waiting for input/output operations to complete.",
+    "question": "What is the total CPU time spent on IO wait per core?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "49d33e89-098e-4051-a5c7-4ab6216c8762",
+    "id": "aca136ed-62d9-4b3d-a0ab-d5bd42902550",
     "name": "IO Wait per core",
-    "description": "The PromQL query measures the input/output (I/O) wait time per core of a system, indicating the amount of time a CPU core spends waiting for I/O operations to complete.",
-    "question": "Which CPU core has the highest I/O wait time?",
+    "description": "The PromQL query measures the IO wait time per core, indicating the amount of time each CPU core spends waiting for input/output operations to complete.",
+    "question": "How does the IO wait time vary across different CPU cores?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "93f70f8b-33d5-4348-a50d-9b7680751f4b",
+    "id": "6dbca079-d416-46df-9d90-bd21cc7075e9",
     "name": "IO Wait per core",
-    "description": "The PromQL query measures the input/output (I/O) wait time per core of a system, indicating the amount of time a CPU core spends waiting for I/O operations to complete.",
-    "question": "How does the I/O wait time per core change during peak usage hours?",
+    "description": "The PromQL query measures the IO wait time per core, indicating the amount of time each CPU core spends waiting for input/output operations to complete.",
+    "question": "Which CPU core has the highest IO wait time?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"

@@ -1,69 +1,72 @@
 [
   {
-    "id": "ff7af0fb-c492-4a7d-a5f0-4a0abc2c2c3f",
+    "id": "9901fbff-6916-49aa-a909-46c3956c34d0",
     "name": " Overall core usage ",
-    "description": "This PromQL query measures the overall usage of CPU cores on a system by calculating the total CPU time spent in seconds across all cores within a specified time range.",
-    "question": "What is the total CPU time spent across all cores?",
+    "description": "The PromQL query measures the overall usage of system cores over a specified time range.",
+    "question": "What is the total CPU usage of the system cores?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "7cc8888b-3556-4032-a7e2-d0ce5b040741",
+    "id": "172bc251-ecf8-45e6-b7aa-552fc727c7e5",
     "name": " Overall core usage ",
-    "description": "This PromQL query measures the overall usage of CPU cores on a system by calculating the total CPU time spent in seconds across all cores within a specified time range.",
-    "question": "How has the overall CPU core usage changed over the specified time range?",
+    "description": "The PromQL query measures the overall usage of system cores over a specified time range.",
+    "question": "How has the CPU usage of the system cores changed over time?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "828d0393-0f52-4183-93a3-ae4b422e6c7a",
+    "id": "acfe84ee-3b5b-4c57-92d7-57a645ce21b2",
     "name": " Overall core usage ",
-    "description": "This PromQL query measures the overall usage of CPU cores on a system by calculating the total CPU time spent in seconds across all cores within a specified time range.",
-    "question": "Which core has the highest usage based on total CPU time?",
+    "description": "The PromQL query measures the overall usage of system cores over a specified time range.",
+    "question": "Which system cores are experiencing the highest usage?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "9281eb00-9804-40e3-af35-4f4f34aced51",
+    "id": "951004c4-1f0a-4d90-9993-6237977982f1",
     "name": " container CPU proportion ",
-    "description": "This PromQL query measures the proportion of CPU usage for containers in a given environment.",
-    "question": "What is the current CPU usage proportion of containers?",
+    "description": "This PromQL query measures the proportion of CPU usage by containers.",
+    "question": "What is the total CPU usage of containers?",
     "query": "",
     "metrics": [
-      "container_cpu_seconds_total"
+      "container_cpu_usage_seconds_total",
+      "container_spec_cpu_period"
     ]
   },
   {
-    "id": "94e2ec6f-0050-422f-b8ba-6065852175b9",
+    "id": "cc237066-97b8-4d3a-94c7-d25446a3efae",
     "name": " container CPU proportion ",
-    "description": "This PromQL query measures the proportion of CPU usage for containers in a given environment.",
-    "question": "Which containers are consuming the most CPU?",
+    "description": "This PromQL query measures the proportion of CPU usage by containers.",
+    "question": "What is the CPU period specified for containers?",
     "query": "",
     "metrics": [
-      "container_cpu_seconds_total"
+      "container_cpu_usage_seconds_total",
+      "container_spec_cpu_period"
     ]
   },
   {
-    "id": "20135d08-fe07-4c6d-80f0-53befd0cc912",
+    "id": "f7e0d5ab-80b3-4778-983e-8fa66624c44d",
     "name": " container CPU proportion ",
-    "description": "This PromQL query measures the proportion of CPU usage for containers in a given environment.",
-    "question": "How has the CPU proportion of containers changed over time?",
+    "description": "This PromQL query measures the proportion of CPU usage by containers.",
+    "question": "How does the CPU usage of containers compare to their specified CPU period?",
     "query": "",
     "metrics": [
-      "container_cpu_seconds_total"
+      "container_cpu_usage_seconds_total",
+      "container_spec_cpu_period"
     ]
   },
   {
-    "id": "06e9966f-f2d3-4fcc-9188-281beac3b9dc",
+    "id": "d79f78a1-c7ea-4a9c-a14c-c3609f824ac7",
     "name": " microservice Pod",
-    "description": "This PromQL query measures the memory request rate, CPU core usage, and disk usage of a specific microservice Pod in a Kubernetes cluster.",
-    "question": "What is the rate at which memory is being requested by the microservice Pod?",
+    "description": "The PromQL query measures the memory request rate, container pod core, and container pod disk metrics.",
+    "question": "What is the rate of memory requests?",
     "query": "",
     "metrics": [
       "memory_request_rate",
@@ -72,10 +75,10 @@
     ]
   },
   {
-    "id": "aaf62494-f1d4-4135-a9f0-2201856fe99b",
+    "id": "df5f92ad-e67a-4903-8f6a-015d7254a3bb",
     "name": " microservice Pod",
-    "description": "This PromQL query measures the memory request rate, CPU core usage, and disk usage of a specific microservice Pod in a Kubernetes cluster.",
-    "question": "How much CPU core is the microservice Pod currently utilizing?",
+    "description": "The PromQL query measures the memory request rate, container pod core, and container pod disk metrics.",
+    "question": "How is the core utilization of the container pod?",
     "query": "",
     "metrics": [
       "memory_request_rate",
@@ -84,10 +87,10 @@
     ]
   },
   {
-    "id": "c00f892b-c9c6-400e-b748-8a4d43878d68",
+    "id": "9d5a4651-d8a2-4dfb-a96c-7fcdb7c23a7b",
     "name": " microservice Pod",
-    "description": "This PromQL query measures the memory request rate, CPU core usage, and disk usage of a specific microservice Pod in a Kubernetes cluster.",
-    "question": "What is the disk usage of the microservice Pod?",
+    "description": "The PromQL query measures the memory request rate, container pod core, and container pod disk metrics.",
+    "question": "What is the disk usage of the container pod?",
     "query": "",
     "metrics": [
       "memory_request_rate",
@@ -96,33 +99,63 @@
     ]
   },
   {
-    "id": "c650a9e8-72a5-46dd-97d5-b36433bb3a66",
+    "id": "d8507907-4fb9-44d6-8002-415857ca16ce",
     "name": " average memory ",
-    "description": "This PromQL query calculates the average memory usage over a specific time range.",
+    "description": "The PromQL query calculates the average memory usage across a specified time range.",
     "question": "What is the average memory usage?",
     "query": "",
     "metrics": [
-      "memory"
+      "memory_usage"
     ]
   },
   {
-    "id": "bb019d32-aa4e-4f73-9906-87a2200a7c89",
+    "id": "a92159f8-a56c-403e-a286-12eaa7bd3fc0",
     "name": " average memory ",
-    "description": "This PromQL query calculates the average memory usage over a specific time range.",
-    "question": "How does the memory usage trend over time?",
+    "description": "The PromQL query calculates the average memory usage across a specified time range.",
+    "question": "Which component has the highest memory consumption?",
     "query": "",
     "metrics": [
-      "memory"
+      "memory_usage"
     ]
   },
   {
-    "id": "78b1c724-ddd1-4224-ae31-d98cff79e29e",
+    "id": "1515eaef-69fb-4c27-9fb6-3a36e9fca4ed",
     "name": " average memory ",
-    "description": "This PromQL query calculates the average memory usage over a specific time range.",
-    "question": "Which system components contribute the most to memory usage?",
+    "description": "The PromQL query calculates the average memory usage across a specified time range.",
+    "question": "Is there a trend of increasing memory usage over time?",
     "query": "",
     "metrics": [
-      "memory"
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "6964f6d4-29e3-41d8-9ead-de5e9def22f3",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "description": "This PromQL query measures the selected nodes associated with the specified namespace.",
+    "question": "How many CPU seconds have been consumed by the selected nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "14af5c39-bcad-480f-bcdb-1c9354717cb9",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "description": "This PromQL query measures the selected nodes associated with the specified namespace.",
+    "question": "What is the total CPU usage of the selected nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "34b86a45-3165-4bdb-8fda-b8ff907cedb8",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "description": "This PromQL query measures the selected nodes associated with the specified namespace.",
+    "question": "Which nodes in the specified namespace have the highest CPU consumption?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
     ]
   }
 ]

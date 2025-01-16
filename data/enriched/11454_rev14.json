@@ -1,92 +1,122 @@
 [
   {
-    "id": "599ef748-95e2-409f-9914-00c7755bc4a3",
+    "id": "1992bff1-138b-4d4b-82d7-347cac112192",
     "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the daily usage rate of storage volumes within a specific infrastructure namespace over the past week, indicating when these volumes reach full capacity.",
-    "question": "How has the daily use rate of storage volumes in the infrastructure namespace changed over the past week?",
+    "description": "This PromQL query measures the rate of volume usage in a specific namespace within the infrastructure over the past week based on daily usage rates.",
+    "question": "What is the daily rate of volume usage in the specified namespace?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "377e815b-46e5-4bf8-acca-4e5eb69db09f",
+    "id": "9991ac61-7827-433e-82d4-96f8d0215b6d",
     "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the daily usage rate of storage volumes within a specific infrastructure namespace over the past week, indicating when these volumes reach full capacity.",
-    "question": "Which days experienced the highest storage volume usage within the infrastructure namespace over the past week?",
+    "description": "This PromQL query measures the rate of volume usage in a specific namespace within the infrastructure over the past week based on daily usage rates.",
+    "question": "How has the volume usage trend changed over the past week?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "0ea47f24-f1d6-4cef-b98b-32baf0c2450e",
+    "id": "3cd0f9b3-2544-418e-98cc-57092e344310",
     "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the daily usage rate of storage volumes within a specific infrastructure namespace over the past week, indicating when these volumes reach full capacity.",
-    "question": "Are there any storage volumes within the infrastructure namespace that have consistently high usage rates throughout the week?",
+    "description": "This PromQL query measures the rate of volume usage in a specific namespace within the infrastructure over the past week based on daily usage rates.",
+    "question": "Which namespace shows the highest volume usage based on daily rates?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "862f1a7e-7385-4458-8eec-6b7ea8c8bace",
+    "id": "d010d330-ce59-4576-9bc1-9ca74b828387",
     "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the rate at which user namespace volumes become full over the past week, based on their daily use rate.",
-    "question": "What is the rate at which user namespace volumes become full over the past week?",
+    "description": "Measures the rate at which user namespace volumes become full in a week based on daily use rate",
+    "question": "What is the daily use rate of user namespace volumes?",
     "query": "",
     "metrics": [
       "user_namespace_volumes_full"
     ]
   },
   {
-    "id": "6befd47b-12bd-4a7b-9163-774c395b79b1",
+    "id": "8f2bbfb0-f9db-4be8-9005-34425a93836c",
     "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the rate at which user namespace volumes become full over the past week, based on their daily use rate.",
-    "question": "Which user namespace volumes have experienced the highest daily use rate?",
+    "description": "Measures the rate at which user namespace volumes become full in a week based on daily use rate",
+    "question": "How fast are user namespace volumes becoming full?",
     "query": "",
     "metrics": [
       "user_namespace_volumes_full"
     ]
   },
   {
-    "id": "6f2a77d7-914d-4626-980f-53247301bdc3",
+    "id": "1bd17919-465b-4232-b06b-527d62441762",
     "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the rate at which user namespace volumes become full over the past week, based on their daily use rate.",
-    "question": "Are there any user namespace volumes that have consistently remained full over the past week?",
+    "description": "Measures the rate at which user namespace volumes become full in a week based on daily use rate",
+    "question": "What is the trend of user namespace volumes becoming full over a week?",
     "query": "",
     "metrics": [
       "user_namespace_volumes_full"
     ]
   },
   {
-    "id": "c690ccf5-1114-462d-aa16-fd114d7695fb",
-    "name": "Unbound PVCs",
-    "description": "The PromQL query measures the number of Unbound Persistent Volume Claims (PVCs) in the system.",
-    "question": "How many Unbound PVCs are currently present?",
+    "id": "d6bc4e7e-f885-4ef9-8a7b-e5558f8f66b6",
+    "name": "Running PVCs Above % Used Warning Threshold",
+    "description": "This PromQL query measures the number of Persistent Volume Claims (PVCs) that are currently utilizing storage capacity above a specified warning threshold percentage.",
+    "question": "How many PVCs are utilizing storage capacity above the warning threshold?",
     "query": "",
     "metrics": [
-      "unbound_pvc_count"
+      "Persistent Volume Claims (PVCs)"
     ]
   },
   {
-    "id": "60fb966e-42a0-4721-88ad-8fb69014675b",
-    "name": "Unbound PVCs",
-    "description": "The PromQL query measures the number of Unbound Persistent Volume Claims (PVCs) in the system.",
-    "question": "What is the total count of Unbound PVCs?",
+    "id": "c52404c5-bb21-4c10-97b5-6f96839cb2c3",
+    "name": "Running PVCs Above % Used Warning Threshold",
+    "description": "This PromQL query measures the number of Persistent Volume Claims (PVCs) that are currently utilizing storage capacity above a specified warning threshold percentage.",
+    "question": "Which PVCs need attention due to high storage utilization?",
     "query": "",
     "metrics": [
-      "unbound_pvc_count"
+      "Persistent Volume Claims (PVCs)"
     ]
   },
   {
-    "id": "5afe9088-7afb-44af-b130-b3d1cb8d7dfc",
-    "name": "Unbound PVCs",
-    "description": "The PromQL query measures the number of Unbound Persistent Volume Claims (PVCs) in the system.",
-    "question": "Are there any Unbound PVCs without associated storage?",
+    "id": "9a5e50fd-04ec-4f95-b03d-c1ff1071832a",
+    "name": "Running PVCs Above % Used Warning Threshold",
+    "description": "This PromQL query measures the number of Persistent Volume Claims (PVCs) that are currently utilizing storage capacity above a specified warning threshold percentage.",
+    "question": "Are there any PVCs at risk of running out of storage capacity?",
     "query": "",
     "metrics": [
-      "unbound_pvc_count"
+      "Persistent Volume Claims (PVCs)"
+    ]
+  },
+  {
+    "id": "6159fdd2-3ad4-4c5d-9632-04a1af5ba2c4",
+    "name": "Unbound PVCs",
+    "description": "The PromQL query measures the number of unbound Persistent Volume Claims (PVCs) in the system.",
+    "question": "How many unbound Persistent Volume Claims are there?",
+    "query": "",
+    "metrics": [
+      "count"
+    ]
+  },
+  {
+    "id": "83189d54-b8d8-417d-a425-94e4d55f313d",
+    "name": "Unbound PVCs",
+    "description": "The PromQL query measures the number of unbound Persistent Volume Claims (PVCs) in the system.",
+    "question": "What is the total count of unbound PVCs?",
+    "query": "",
+    "metrics": [
+      "count"
+    ]
+  },
+  {
+    "id": "33f8798e-f020-4dec-ab1a-bbdb7a4d50bf",
+    "name": "Unbound PVCs",
+    "description": "The PromQL query measures the number of unbound Persistent Volume Claims (PVCs) in the system.",
+    "question": "How many PVCs are not currently bound to any persistent volume?",
+    "query": "",
+    "metrics": [
+      "count"
     ]
   }
 ]

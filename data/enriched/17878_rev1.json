@@ -1,0 +1,92 @@
+[
+  {
+    "id": "77125339-2fac-4569-ac70-0a4f79d039ca",
+    "name": "Current Memory HEAP",
+    "description": "This PromQL query measures the current memory heap usage.",
+    "question": "What is the current memory heap usage?",
+    "query": "",
+    "metrics": [
+      "memory_heap"
+    ]
+  },
+  {
+    "id": "d5f9b88e-85b8-4f60-8d4a-7cc3de335409",
+    "name": "Current Memory HEAP",
+    "description": "This PromQL query measures the current memory heap usage.",
+    "question": "How much memory is allocated to the heap?",
+    "query": "",
+    "metrics": [
+      "memory_heap"
+    ]
+  },
+  {
+    "id": "9a38fac9-3b6b-4db5-8a44-4801280428f3",
+    "name": "Current Memory HEAP",
+    "description": "This PromQL query measures the current memory heap usage.",
+    "question": "Is the memory heap utilization within acceptable limits?",
+    "query": "",
+    "metrics": [
+      "memory_heap"
+    ]
+  },
+  {
+    "id": "86be3fa7-7ea2-4131-b45f-fcc36ce19729",
+    "name": "Current Memory nonHEAP",
+    "description": "This PromQL query measures the current memory usage of the non-heap memory.",
+    "question": "What is the current memory usage of non-heap memory?",
+    "query": "",
+    "metrics": [
+      "metric_name"
+    ]
+  },
+  {
+    "id": "e793ef58-a7f3-4cf7-b493-d10cb2133de2",
+    "name": "Current Memory nonHEAP",
+    "description": "This PromQL query measures the current memory usage of the non-heap memory.",
+    "question": "How much non-heap memory is currently being utilized?",
+    "query": "",
+    "metrics": [
+      "metric_name"
+    ]
+  },
+  {
+    "id": "ac95f280-3cd6-45cb-9eb2-2d5b883859a3",
+    "name": "Current Memory nonHEAP",
+    "description": "This PromQL query measures the current memory usage of the non-heap memory.",
+    "question": "What is the non-heap memory consumption at the present moment?",
+    "query": "",
+    "metrics": [
+      "metric_name"
+    ]
+  },
+  {
+    "id": "84296eb1-963e-411c-92c1-507c0a58e7cf",
+    "name": "Percentage of requests \"HEAD\"  method  was served in 100ms or below",
+    "description": "This PromQL query measures the percentage of requests with the HTTP method 'HEAD' that were served in 100ms or below.",
+    "question": "What is the percentage of 'HEAD' requests served in 100ms or below?",
+    "query": "",
+    "metrics": [
+      "requests_total"
+    ]
+  },
+  {
+    "id": "ad46ffba-1704-44ff-8852-43adb0c83436",
+    "name": "Percentage of requests \"HEAD\"  method  was served in 100ms or below",
+    "description": "This PromQL query measures the percentage of requests with the HTTP method 'HEAD' that were served in 100ms or below.",
+    "question": "How many 'HEAD' requests were served in 100ms or below?",
+    "query": "",
+    "metrics": [
+      "requests_total"
+    ]
+  },
+  {
+    "id": "6b3eb2d8-2eaf-4d0a-afdb-d363914831d1",
+    "name": "Percentage of requests \"HEAD\"  method  was served in 100ms or below",
+    "description": "This PromQL query measures the percentage of requests with the HTTP method 'HEAD' that were served in 100ms or below.",
+    "question": "What percentage of all requests with the 'HEAD' method had a response time of 100ms or less?",
+    "query": "",
+    "metrics": [
+      "requests_total"
+    ]
+  }
+]

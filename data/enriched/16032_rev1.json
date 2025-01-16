@@ -1,0 +1,95 @@
+[
+  {
+    "id": "ccf1be7c-8684-4052-b76b-24b0ef449ceb",
+    "name": "CNI Pods",
+    "description": "The PromQL query measures the count of assigned IP addresses for pods that are not using the host network, where the sum of normal pods and preemptible pods should be equal to the total count of agents and nodes.",
+    "question": "What is the total count of assigned IP addresses for pods not using the host network?",
+    "query": "",
+    "metrics": [
+      "assigned_ip_addresses_count"
+    ]
+  },
+  {
+    "id": "2343c9db-dcf7-4dd9-a2f3-bf6e246f8b15",
+    "name": "CNI Pods",
+    "description": "The PromQL query measures the count of assigned IP addresses for pods that are not using the host network, where the sum of normal pods and preemptible pods should be equal to the total count of agents and nodes.",
+    "question": "How does the sum of normal pods and preemptible pods compare to the total count of agents and nodes?",
+    "query": "",
+    "metrics": [
+      "assigned_ip_addresses_count"
+    ]
+  },
+  {
+    "id": "59ee8077-ddcc-454e-9ed8-3230194b307c",
+    "name": "CNI Pods",
+    "description": "The PromQL query measures the count of assigned IP addresses for pods that are not using the host network, where the sum of normal pods and preemptible pods should be equal to the total count of agents and nodes.",
+    "question": "Are there any discrepancies between the counts of normal pods, preemptible pods, agents, and nodes?",
+    "query": "",
+    "metrics": [
+      "assigned_ip_addresses_count"
+    ]
+  },
+  {
+    "id": "dc20609d-32f5-4063-9314-ee75c10a8442",
+    "name": "ENI in the Cluster",
+    "description": "This PromQL query measures the total number of Elastic Network Interfaces (ENI) present in the cluster",
+    "question": "What is the total number of ENIs in the cluster?",
+    "query": "",
+    "metrics": [
+      "eni"
+    ]
+  },
+  {
+    "id": "5561130c-d6ca-4eae-9e79-2a2d7f01ec58",
+    "name": "ENI in the Cluster",
+    "description": "This PromQL query measures the total number of Elastic Network Interfaces (ENI) present in the cluster",
+    "question": "How many ENIs are currently active in the cluster?",
+    "query": "",
+    "metrics": [
+      "eni"
+    ]
+  },
+  {
+    "id": "2cf3f29f-2f67-4c95-845c-eb7af256a2c3",
+    "name": "ENI in the Cluster",
+    "description": "This PromQL query measures the total number of Elastic Network Interfaces (ENI) present in the cluster",
+    "question": "Are there any unused ENIs in the cluster?",
+    "query": "",
+    "metrics": [
+      "eni"
+    ]
+  },
+  {
+    "id": "88d3eade-4fcd-4cf3-9b2b-b85a411e5e99",
+    "name": "IP Addresses in the Cluster",
+    "description": "This PromQL query measures the maximum number of IP addresses reachable by the nodes based on the IP addresses assigned to pods.",
+    "question": "What is the maximum number of IP addresses reachable with these nodes?",
+    "query": "",
+    "metrics": [
+      "max",
+      "IP addresses assigned to pods"
+    ]
+  },
+  {
+    "id": "cce49ddf-308c-4dea-889a-753ca77c6165",
+    "name": "IP Addresses in the Cluster",
+    "description": "This PromQL query measures the maximum number of IP addresses reachable by the nodes based on the IP addresses assigned to pods.",
+    "question": "How many IP addresses are assigned to pods?",
+    "query": "",
+    "metrics": [
+      "max",
+      "IP addresses assigned to pods"
+    ]
+  },
+  {
+    "id": "392b18af-a770-4d27-a9bb-ea14239e4e7d",
+    "name": "IP Addresses in the Cluster",
+    "description": "This PromQL query measures the maximum number of IP addresses reachable by the nodes based on the IP addresses assigned to pods.",
+    "question": "What is the total count of IP addresses that can be reached by the nodes?",
+    "query": "",
+    "metrics": [
+      "max",
+      "IP addresses assigned to pods"
+    ]
+  }
+]

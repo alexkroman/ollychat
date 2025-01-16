@@ -1,88 +1,58 @@
 [
   {
-    "id": "c378137a-c847-470e-8aac-273241646ff5",
+    "id": "6038659c-bfb4-4b51-9031-11cbab81a01d",
     "name": "Actor System Processed messages",
     "description": "This PromQL query measures the number of processed messages by the actor system.",
-    "question": "How many messages have been processed by the actor system?",
+    "question": "What is the total number of processed messages by the actor system?",
     "query": "",
     "metrics": [
-      "processed_messages"
+      "actor_system_processed_messages"
     ]
   },
   {
-    "id": "eae9349f-2f06-4668-8865-27be6612f5e8",
+    "id": "d635e451-3a58-458f-b3d8-5ea4f667375a",
     "name": "Actor System Processed messages",
     "description": "This PromQL query measures the number of processed messages by the actor system.",
-    "question": "What is the total count of messages processed by the actor system?",
+    "question": "Which actor system component has processed the most messages?",
     "query": "",
     "metrics": [
-      "processed_messages"
+      "actor_system_processed_messages"
     ]
   },
   {
-    "id": "0713e23f-4553-4975-a0c7-a8ec9f3d6f8a",
+    "id": "bab0a9db-9ad3-4b2f-b4df-437ff5e07da2",
     "name": "Actor System Processed messages",
     "description": "This PromQL query measures the number of processed messages by the actor system.",
-    "question": "Which actor system has processed the most messages?",
+    "question": "Are there any spikes or anomalies in the processed message count?",
     "query": "",
     "metrics": [
-      "processed_messages"
+      "actor_system_processed_messages"
     ]
   },
   {
-    "id": "f60a6d21-f0d6-48f9-9cfe-a7c5d0eed38d",
-    "name": "Dead Letters queue",
-    "description": "The PromQL query measures the number of dead letters in a specific queue within a messaging system.",
-    "question": "How many dead letters are currently in the queue?",
-    "query": "",
-    "metrics": [
-      "dead_letters_total"
-    ]
-  },
-  {
-    "id": "388e5905-cb60-4605-8439-57069f61291e",
-    "name": "Dead Letters queue",
-    "description": "The PromQL query measures the number of dead letters in a specific queue within a messaging system.",
-    "question": "What is the trend of dead letters over the past hour?",
-    "query": "",
-    "metrics": [
-      "dead_letters_total"
-    ]
-  },
-  {
-    "id": "15171e99-31b2-4f42-b898-6fd9c6ec2b2b",
-    "name": "Dead Letters queue",
-    "description": "The PromQL query measures the number of dead letters in a specific queue within a messaging system.",
-    "question": "Which queue has the highest number of dead letters?",
-    "query": "",
-    "metrics": [
-      "dead_letters_total"
-    ]
-  },
-  {
-    "id": "9a67831c-5781-4c56-8da8-ac60f78d53f1",
+    "id": "97fb473c-680d-4925-8003-55407fc7b93d",
     "name": "Unhanded messages",
-    "description": "The PromQL query measures the number of unhandled messages within a system over a specific time range.",
-    "question": "How many unhandled messages were there in the system?",
+    "description": "This PromQL query measures the number of unhandled messages in a system.",
+    "question": "How many unhandled messages are there?",
     "query": "",
     "metrics": [
       "unhandled_messages"
     ]
   },
   {
-    "id": "669c7ef8-fe35-49ca-8b34-3f41bf2d9967",
+    "id": "603703da-8e1e-48c7-91fe-7bf6f0e0044b",
     "name": "Unhanded messages",
-    "description": "The PromQL query measures the number of unhandled messages within a system over a specific time range.",
-    "question": "What is the trend of unhandled messages over time?",
+    "description": "This PromQL query measures the number of unhandled messages in a system.",
+    "question": "What is the trend of unhandled messages?",
     "query": "",
     "metrics": [
       "unhandled_messages"
     ]
   },
   {
-    "id": "66d63365-abd0-4759-a626-82ec4c65f93e",
+    "id": "333bd5c1-129d-4cd7-b130-40b5772683b3",
     "name": "Unhanded messages",
-    "description": "The PromQL query measures the number of unhandled messages within a system over a specific time range.",
+    "description": "This PromQL query measures the number of unhandled messages in a system.",
     "question": "Which component has the highest number of unhandled messages?",
     "query": "",
     "metrics": [
@@ -90,93 +60,33 @@
     ]
   },
   {
-    "id": "9bbb2d8e-1756-4c7f-a0e4-49fb26d233e8",
+    "id": "1029b938-0653-491b-910f-42b59fa86e8b",
     "name": "Avg Active Actors",
-    "description": "This PromQL query calculates the average count of active actors in the system over a specific time range.",
-    "question": "What is the average count of active actors in the system?",
+    "description": "This PromQL query calculates the average count of actors in the system.",
+    "question": "What is the average count of actors in the system?",
     "query": "",
     "metrics": [
       "actors"
     ]
   },
   {
-    "id": "a2152f1f-3fb1-405c-912a-ce825407acb3",
+    "id": "d7857742-4e8f-4efc-840d-e92e97f213f2",
     "name": "Avg Active Actors",
-    "description": "This PromQL query calculates the average count of active actors in the system over a specific time range.",
-    "question": "How does the number of active actors fluctuate over time?",
+    "description": "This PromQL query calculates the average count of actors in the system.",
+    "question": "How many actors are typically active at any given time?",
     "query": "",
     "metrics": [
       "actors"
     ]
   },
   {
-    "id": "d2030425-7e4e-4748-8ea9-d6e05faf9c3e",
+    "id": "2498d30f-477d-4e54-81fc-b8a11c5589cf",
     "name": "Avg Active Actors",
-    "description": "This PromQL query calculates the average count of active actors in the system over a specific time range.",
-    "question": "Is there a correlation between the number of active actors and any other system metric?",
+    "description": "This PromQL query calculates the average count of actors in the system.",
+    "question": "What is the average number of actors present in the system?",
     "query": "",
     "metrics": [
       "actors"
-    ]
-  },
-  {
-    "id": "c6f44e13-cb2c-43e7-ac1a-1c00dd174533",
-    "name": "Threads count",
-    "description": "This PromQL query measures the count of threads being used.",
-    "question": "What is the current count of threads in use?",
-    "query": "",
-    "metrics": [
-      "threads"
-    ]
-  },
-  {
-    "id": "4c395afb-8810-4dc9-abd6-5fdf14bd1eae",
-    "name": "Threads count",
-    "description": "This PromQL query measures the count of threads being used.",
-    "question": "How is the thread count changing over time?",
-    "query": "",
-    "metrics": [
-      "threads"
-    ]
-  },
-  {
-    "id": "dcd1cd95-ec6c-42c6-94ab-d6335889841c",
-    "name": "Threads count",
-    "description": "This PromQL query measures the count of threads being used.",
-    "question": "Which component or service is consuming the most threads?",
-    "query": "",
-    "metrics": [
-      "threads"
-    ]
-  },
-  {
-    "id": "1ca07536-6b53-4191-aa45-5940f79c68bc",
-    "name": "Executor tasks",
-    "description": "The PromQL query tracks the number of tasks processed by the executor service over a specified time range.",
-    "question": "How many tasks have been processed by the executor service?",
-    "query": "",
-    "metrics": [
-      "executor_tasks_processed_total"
-    ]
-  },
-  {
-    "id": "b25ca505-b4a9-4d92-8cef-a3045c6e7003",
-    "name": "Executor tasks",
-    "description": "The PromQL query tracks the number of tasks processed by the executor service over a specified time range.",
-    "question": "What is the trend in the number of tasks processed by the executor service?",
-    "query": "",
-    "metrics": [
-      "executor_tasks_processed_total"
-    ]
-  },
-  {
-    "id": "bdca68e9-8a54-42a9-a08a-db65530ed0f3",
-    "name": "Executor tasks",
-    "description": "The PromQL query tracks the number of tasks processed by the executor service over a specified time range.",
-    "question": "Are there any spikes or anomalies in the number of tasks processed by the executor service?",
-    "query": "",
-    "metrics": [
-      "executor_tasks_processed_total"
     ]
   }
 ]

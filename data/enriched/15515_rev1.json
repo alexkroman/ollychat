@@ -1,0 +1,92 @@
+[
+  {
+    "id": "67e97c11-25c4-447a-923d-ce54d11da85c",
+    "name": "Flows processed Per Node",
+    "description": "Measures the number of flows processed per node over time",
+    "question": "How many flows have been processed by each node?",
+    "query": "",
+    "metrics": [
+      "flows_processed"
+    ]
+  },
+  {
+    "id": "54d9cdfa-0995-4f5c-8fe6-818285d4a292",
+    "name": "Flows processed Per Node",
+    "description": "Measures the number of flows processed per node over time",
+    "question": "Which node has processed the highest number of flows?",
+    "query": "",
+    "metrics": [
+      "flows_processed"
+    ]
+  },
+  {
+    "id": "648ba26c-e576-4955-935f-d182b7259f11",
+    "name": "Flows processed Per Node",
+    "description": "Measures the number of flows processed per node over time",
+    "question": "Is there a trend in the flow processing activity across nodes?",
+    "query": "",
+    "metrics": [
+      "flows_processed"
+    ]
+  },
+  {
+    "id": "57446fa3-3847-478c-8732-93d0cd46adb4",
+    "name": "Flows Types",
+    "description": "This PromQL query measures the total number of flow types recorded over a specific time period.",
+    "question": "How many flow types were recorded?",
+    "query": "",
+    "metrics": [
+      "flow_types_total"
+    ]
+  },
+  {
+    "id": "61038851-2b13-4a89-946b-f41ab4b78a22",
+    "name": "Flows Types",
+    "description": "This PromQL query measures the total number of flow types recorded over a specific time period.",
+    "question": "What is the total count of flow types?",
+    "query": "",
+    "metrics": [
+      "flow_types_total"
+    ]
+  },
+  {
+    "id": "29002d83-5b1b-488e-b802-53bb7e55cebd",
+    "name": "Flows Types",
+    "description": "This PromQL query measures the total number of flow types recorded over a specific time period.",
+    "question": "Which flow types were observed?",
+    "query": "",
+    "metrics": [
+      "flow_types_total"
+    ]
+  },
+  {
+    "id": "239b9a6c-50e4-4321-b9ae-d678e13e644b",
+    "name": "HTTP responses",
+    "description": "This PromQL query measures the HTTP responses for a specific service or endpoint.",
+    "question": "What is the total number of HTTP responses?",
+    "query": "",
+    "metrics": [
+      "http_responses"
+    ]
+  },
+  {
+    "id": "070df9d4-ae25-4356-b5a6-d16356a7c3fb",
+    "name": "HTTP responses",
+    "description": "This PromQL query measures the HTTP responses for a specific service or endpoint.",
+    "question": "What is the rate of HTTP responses over a specific time period?",
+    "query": "",
+    "metrics": [
+      "http_responses"
+    ]
+  },
+  {
+    "id": "b7d25388-fc63-403a-991d-559325b69708",
+    "name": "HTTP responses",
+    "description": "This PromQL query measures the HTTP responses for a specific service or endpoint.",
+    "question": "How many successful HTTP responses were received?",
+    "query": "",
+    "metrics": [
+      "http_responses"
+    ]
+  }
+]

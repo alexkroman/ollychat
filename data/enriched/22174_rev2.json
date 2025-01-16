@@ -1,18 +1,18 @@
 [
   {
-    "id": "dbe9894e-13bf-493d-8774-d3c4f6549bcf",
+    "id": "19bcb7b0-9328-41d2-b413-d78536d4f971",
     "name": "Total Nodes",
-    "description": "This PromQL query measures the total number of nodes being monitored in the system.",
-    "question": "How many nodes are currently being monitored?",
+    "description": "This PromQL query measures the total number of nodes in a system.",
+    "question": "How many nodes are currently active?",
     "query": "",
     "metrics": [
       "node"
     ]
   },
   {
-    "id": "3fd8e6e6-350d-4b79-af22-11a54764bfba",
+    "id": "013ca15c-c9ac-4e58-a165-e0b7c41feb7f",
     "name": "Total Nodes",
-    "description": "This PromQL query measures the total number of nodes being monitored in the system.",
+    "description": "This PromQL query measures the total number of nodes in a system.",
     "question": "What is the total count of nodes in the system?",
     "query": "",
     "metrics": [
@@ -20,69 +20,29 @@
     ]
   },
   {
-    "id": "003dfd9c-36d5-4cb5-84f7-39927a534e21",
+    "id": "99e6995f-e53b-4984-ab26-f72bd83d388f",
     "name": "Total Nodes",
-    "description": "This PromQL query measures the total number of nodes being monitored in the system.",
-    "question": "How many nodes are reporting metrics?",
+    "description": "This PromQL query measures the total number of nodes in a system.",
+    "question": "Are there any new nodes added to the system?",
     "query": "",
     "metrics": [
       "node"
     ]
   },
   {
-    "id": "f55e6448-bb39-4c84-998a-8949656f879a",
+    "id": "b18d1f57-647d-43b9-9b7b-046546db7cfb",
     "name": "Max Nodes",
-    "description": "This PromQL query measures the maximum number of nodes in a system at a particular point in time.",
-    "question": "What is the maximum number of nodes currently in the system?",
-    "query": "",
-    "metrics": [
-      "node"
-    ]
-  },
-  {
-    "id": "ed529998-f3ce-4c96-93d2-2c7089e49d1b",
-    "name": "Max Nodes",
-    "description": "This PromQL query measures the maximum number of nodes in a system at a particular point in time.",
-    "question": "How many nodes have reached their peak count?",
-    "query": "",
-    "metrics": [
-      "node"
-    ]
-  },
-  {
-    "id": "e8ecead4-9caf-4f50-815a-f76010d0028e",
-    "name": "Max Nodes",
-    "description": "This PromQL query measures the maximum number of nodes in a system at a particular point in time.",
-    "question": "Which node has the highest count among all nodes?",
-    "query": "",
-    "metrics": [
-      "node"
-    ]
-  },
-  {
-    "id": "58b0b988-422d-4172-a183-6442fc44f7d7",
-    "name": "Node Groups",
-    "description": "This PromQL query measures the total CPU usage in seconds across all nodes over a 5-minute window.",
-    "question": "What is the total CPU usage across all nodes?",
+    "description": "This PromQL query measures the maximum number of nodes over a specific time period.",
+    "question": "What is the maximum number of nodes in the cluster?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "9ed90a65-1af4-41a0-8189-0ffa7cc09505",
-    "name": "Node Groups",
-    "description": "This PromQL query measures the total CPU usage in seconds across all nodes over a 5-minute window.",
-    "question": "How has the CPU usage changed over the past 5 minutes?",
-    "query": "",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "5340e526-7b78-418b-abc3-71df9461fccf",
-    "name": "Node Groups",
-    "description": "This PromQL query measures the total CPU usage in seconds across all nodes over a 5-minute window.",
+    "id": "c515c132-8457-49b4-be84-18d69f28948d",
+    "name": "Max Nodes",
+    "description": "This PromQL query measures the maximum number of nodes over a specific time period.",
     "question": "Which node has the highest CPU usage?",
     "query": "",
     "metrics": [
@@ -90,33 +50,103 @@
     ]
   },
   {
-    "id": "ce091a96-d68f-44d6-a7e6-d8a8c2769848",
-    "name": "Healthy Nodes",
-    "description": "This PromQL query measures the total number of healthy nodes in the system at a given point in time.",
-    "question": "How many healthy nodes are currently operational?",
+    "id": "e480a508-d81b-428f-a747-a5b96e1af4ca",
+    "name": "Max Nodes",
+    "description": "This PromQL query measures the maximum number of nodes over a specific time period.",
+    "question": "What is the peak CPU utilization across all nodes?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "ee49d913-ffaa-44c9-8ca4-7cf0e7987cc4",
-    "name": "Healthy Nodes",
-    "description": "This PromQL query measures the total number of healthy nodes in the system at a given point in time.",
-    "question": "Which nodes are considered healthy based on the provided metric?",
+    "id": "054e9ed6-ad04-44a5-87c6-e7910e1a31ea",
+    "name": "Node Groups",
+    "description": "This PromQL query measures the total CPU usage of nodes over a 5-minute window.",
+    "question": "What is the total CPU usage of nodes?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "ea54034b-7c1a-4f87-90b8-b68b609e46ca",
-    "name": "Healthy Nodes",
-    "description": "This PromQL query measures the total number of healthy nodes in the system at a given point in time.",
-    "question": "Is there a trend in the number of healthy nodes over time?",
+    "id": "2587433f-53a3-4e08-b8a2-d40e1ce593fd",
+    "name": "Node Groups",
+    "description": "This PromQL query measures the total CPU usage of nodes over a 5-minute window.",
+    "question": "How does the CPU usage of nodes change over time?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f7a74156-35b5-4e08-9cc0-e15b8994e7a1",
+    "name": "Node Groups",
+    "description": "This PromQL query measures the total CPU usage of nodes over a 5-minute window.",
+    "question": "Which nodes have the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "7baed999-3cbc-49a1-999d-ecb7de332639",
+    "name": "Healthy Nodes",
+    "description": "This PromQL query measures the total number of healthy nodes in the system over a specific time period.",
+    "question": "How many nodes are currently healthy?",
+    "query": "",
+    "metrics": [
+      "node_health_status"
+    ]
+  },
+  {
+    "id": "49c2f3f0-7578-49aa-920d-00e204f5fe7a",
+    "name": "Healthy Nodes",
+    "description": "This PromQL query measures the total number of healthy nodes in the system over a specific time period.",
+    "question": "Which nodes are considered healthy?",
+    "query": "",
+    "metrics": [
+      "node_health_status"
+    ]
+  },
+  {
+    "id": "889ca840-aca7-4d19-b5bc-192aee4ef861",
+    "name": "Healthy Nodes",
+    "description": "This PromQL query measures the total number of healthy nodes in the system over a specific time period.",
+    "question": "What is the trend of node health status over time?",
+    "query": "",
+    "metrics": [
+      "node_health_status"
+    ]
+  },
+  {
+    "id": "571f23fe-3ed3-4f00-bdfb-4bab2c9ac002",
+    "name": "Safe To Scale",
+    "description": "This PromQL query measures the total number of requests served by a web server over the last 5 minutes.",
+    "question": "How many requests were served by the web server?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "c297486f-4f49-4697-a1d9-1c50e82b58bb",
+    "name": "Safe To Scale",
+    "description": "This PromQL query measures the total number of requests served by a web server over the last 5 minutes.",
+    "question": "What is the total count of HTTP requests?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "fc8c64f0-fd4d-439c-b880-a7f9627adf06",
+    "name": "Safe To Scale",
+    "description": "This PromQL query measures the total number of requests served by a web server over the last 5 minutes.",
+    "question": "How many requests have been processed by the server?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
     ]
   }
 ]

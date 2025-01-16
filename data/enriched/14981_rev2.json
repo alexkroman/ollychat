@@ -1,0 +1,122 @@
+[
+  {
+    "id": "5b0fd2f0-181c-4841-bd50-451fc5dc220e",
+    "name": "Requests (by instance)",
+    "description": "This PromQL query measures the number of requests made to each instance in the system.",
+    "question": "What is the total CPU time consumed by each instance?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f3d7db94-de98-43bf-a355-598c16dd6f3a",
+    "name": "Requests (by instance)",
+    "description": "This PromQL query measures the number of requests made to each instance in the system.",
+    "question": "How many requests have been processed by each instance?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "d4f8825a-0c92-4ba0-87ca-d7891bdd02f9",
+    "name": "Requests (by instance)",
+    "description": "This PromQL query measures the number of requests made to each instance in the system.",
+    "question": "Which instance has the highest number of requests?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "48763e4c-d881-40e3-a8ad-7b9911f08e1f",
+    "name": "Version",
+    "description": "This PromQL query measures the total count of a specific metric over a defined time range.",
+    "question": "What is the total count of node CPU seconds?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9a59a4e5-23fa-4a8a-b626-13bd4adb527e",
+    "name": "Version",
+    "description": "This PromQL query measures the total count of a specific metric over a defined time range.",
+    "question": "How many node CPU seconds have been recorded over a period of time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "91dfebee-73fd-4426-8789-ecc4602fecfe",
+    "name": "Version",
+    "description": "This PromQL query measures the total count of a specific metric over a defined time range.",
+    "question": "Which metric tracks the total CPU seconds consumed by nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f28dbf06-15f5-4fcf-a335-4ce19a0b816d",
+    "name": "Upstream Health Check Fails",
+    "description": "This PromQL query measures the health status of the upstream services by monitoring the failures in their health check mechanisms.",
+    "question": "What is the current count of upstream health check failures?",
+    "query": "",
+    "metrics": [
+      "upstream_health_check_fails"
+    ]
+  },
+  {
+    "id": "9b067469-3f4d-488c-9313-25f7f4a57a8a",
+    "name": "Upstream Health Check Fails",
+    "description": "This PromQL query measures the health status of the upstream services by monitoring the failures in their health check mechanisms.",
+    "question": "Are there any recent issues with the health checks of upstream services?",
+    "query": "",
+    "metrics": [
+      "upstream_health_check_fails"
+    ]
+  },
+  {
+    "id": "10495449-d956-431a-bc36-a75c50c9e9b4",
+    "name": "Upstream Health Check Fails",
+    "description": "This PromQL query measures the health status of the upstream services by monitoring the failures in their health check mechanisms.",
+    "question": "Which upstream services are experiencing health check failures?",
+    "query": "",
+    "metrics": [
+      "upstream_health_check_fails"
+    ]
+  },
+  {
+    "id": "8c6df63f-bf22-44d4-8a99-bc3661bff533",
+    "name": "Upstream Rejected Queries",
+    "description": "This PromQL query measures the number of queries that were rejected by the upstream service.",
+    "question": "How many queries were rejected by the upstream service?",
+    "query": "",
+    "metrics": [
+      "upstream_rejected_queries"
+    ]
+  },
+  {
+    "id": "b3d9c451-5284-4265-b791-900c9b9cb013",
+    "name": "Upstream Rejected Queries",
+    "description": "This PromQL query measures the number of queries that were rejected by the upstream service.",
+    "question": "What is the trend of rejected queries by the upstream service?",
+    "query": "",
+    "metrics": [
+      "upstream_rejected_queries"
+    ]
+  },
+  {
+    "id": "edbc5040-9058-492b-a713-b502f3e647b6",
+    "name": "Upstream Rejected Queries",
+    "description": "This PromQL query measures the number of queries that were rejected by the upstream service.",
+    "question": "Are there any specific patterns in rejected queries by the upstream service?",
+    "query": "",
+    "metrics": [
+      "upstream_rejected_queries"
+    ]
+  }
+]

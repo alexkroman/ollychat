@@ -1,0 +1,152 @@
+[
+  {
+    "id": "57c642a8-c311-4d6a-a710-8f4a15201450",
+    "name": "Current Memory HEAP",
+    "description": "This PromQL query measures the current memory HEAP usage.",
+    "question": "What is the current memory HEAP usage?",
+    "query": "",
+    "metrics": [
+      "memory_HEAP"
+    ]
+  },
+  {
+    "id": "acf8b026-3180-4564-83f5-aad782c34e6f",
+    "name": "Current Memory HEAP",
+    "description": "This PromQL query measures the current memory HEAP usage.",
+    "question": "How much memory is being used by HEAP?",
+    "query": "",
+    "metrics": [
+      "memory_HEAP"
+    ]
+  },
+  {
+    "id": "863882b6-589a-4e80-b60d-5ea0b56015c6",
+    "name": "Current Memory HEAP",
+    "description": "This PromQL query measures the current memory HEAP usage.",
+    "question": "Is the memory HEAP usage within acceptable limits?",
+    "query": "",
+    "metrics": [
+      "memory_HEAP"
+    ]
+  },
+  {
+    "id": "a676c8a1-f0c8-4129-a071-e83ba0c3db5e",
+    "name": "Current Memory nonHEAP",
+    "description": "This PromQL query measures the current memory usage of the non-heap memory in the system.",
+    "question": "What is the current memory usage of the non-heap memory?",
+    "query": "",
+    "metrics": [
+      "current_memory_nonHEAP"
+    ]
+  },
+  {
+    "id": "16dbb263-4322-49b0-8372-6eb5afdf9d45",
+    "name": "Current Memory nonHEAP",
+    "description": "This PromQL query measures the current memory usage of the non-heap memory in the system.",
+    "question": "How much non-heap memory is being utilized at present?",
+    "query": "",
+    "metrics": [
+      "current_memory_nonHEAP"
+    ]
+  },
+  {
+    "id": "2d0e37a0-3c95-41f5-8b61-5933873a46da",
+    "name": "Current Memory nonHEAP",
+    "description": "This PromQL query measures the current memory usage of the non-heap memory in the system.",
+    "question": "What is the current non-heap memory consumption?",
+    "query": "",
+    "metrics": [
+      "current_memory_nonHEAP"
+    ]
+  },
+  {
+    "id": "f66dcc6a-5d45-4672-98b2-341c339134bb",
+    "name": "Memory Usage",
+    "description": "This PromQL query measures the memory usage of a system over time.",
+    "question": "What is the current memory usage of the system?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "50a3bf1d-25d7-48d6-9be2-b70bd6fc1722",
+    "name": "Memory Usage",
+    "description": "This PromQL query measures the memory usage of a system over time.",
+    "question": "How has memory usage changed over the last 24 hours?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "60e11214-32d8-496b-9ae9-2fa07e00ccca",
+    "name": "Memory Usage",
+    "description": "This PromQL query measures the memory usage of a system over time.",
+    "question": "Which processes are consuming the most memory?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "69a63f65-8e4b-4ecb-ac2b-1f7653f4bbcf",
+    "name": "Logins Per REALM for past 24h",
+    "description": "This PromQL query measures the number of logins per realm over the past 24 hours.",
+    "question": "How many logins occurred per realm?",
+    "query": "",
+    "metrics": [
+      "logins"
+    ]
+  },
+  {
+    "id": "aa7ff388-d5cc-4033-94c9-f088d19b5d49",
+    "name": "Logins Per REALM for past 24h",
+    "description": "This PromQL query measures the number of logins per realm over the past 24 hours.",
+    "question": "Which realm had the highest number of logins?",
+    "query": "",
+    "metrics": [
+      "logins"
+    ]
+  },
+  {
+    "id": "65408ddf-f47c-47b5-b075-e76520aa3ec1",
+    "name": "Logins Per REALM for past 24h",
+    "description": "This PromQL query measures the number of logins per realm over the past 24 hours.",
+    "question": "Are there any realms with zero logins?",
+    "query": "",
+    "metrics": [
+      "logins"
+    ]
+  },
+  {
+    "id": "a489e344-a560-4da7-9c1c-e240163b7a89",
+    "name": "Registrations Per REALM for past 24h",
+    "description": "This PromQL query measures the number of registrations per REALM over the past 24 hours.",
+    "question": "How many registrations were made per REALM?",
+    "query": "",
+    "metrics": [
+      "registrations"
+    ]
+  },
+  {
+    "id": "2f227550-2ee0-4d78-829e-ea20c99cb6f2",
+    "name": "Registrations Per REALM for past 24h",
+    "description": "This PromQL query measures the number of registrations per REALM over the past 24 hours.",
+    "question": "Which REALM had the highest number of registrations?",
+    "query": "",
+    "metrics": [
+      "registrations"
+    ]
+  },
+  {
+    "id": "39a67f7b-76a3-4aed-be30-09d42b4b7522",
+    "name": "Registrations Per REALM for past 24h",
+    "description": "This PromQL query measures the number of registrations per REALM over the past 24 hours.",
+    "question": "Are there any unusual patterns in registrations across different REALMs?",
+    "query": "",
+    "metrics": [
+      "registrations"
+    ]
+  }
+]

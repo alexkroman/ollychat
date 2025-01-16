@@ -1,0 +1,122 @@
+[
+  {
+    "id": "9094830d-f1f2-4dbf-a807-c9c0bc642a51",
+    "name": "Avg. Active Workers",
+    "description": "The PromQL query measures the average number of active workers over a certain time period.",
+    "question": "What is the average number of active workers?",
+    "query": "",
+    "metrics": [
+      "active_workers"
+    ]
+  },
+  {
+    "id": "bd047f40-a673-4fd0-82f3-7f567f9fb4d1",
+    "name": "Avg. Active Workers",
+    "description": "The PromQL query measures the average number of active workers over a certain time period.",
+    "question": "How many workers are currently active on average?",
+    "query": "",
+    "metrics": [
+      "active_workers"
+    ]
+  },
+  {
+    "id": "3dd07012-659e-4557-8458-0aa87f31b6b6",
+    "name": "Avg. Active Workers",
+    "description": "The PromQL query measures the average number of active workers over a certain time period.",
+    "question": "What is the average workload of workers in the system?",
+    "query": "",
+    "metrics": [
+      "active_workers"
+    ]
+  },
+  {
+    "id": "3c4a0820-3f37-4bfc-839b-b37a8ecb1e83",
+    "name": "Avg. Queued Size",
+    "description": "The PromQL query measures the average size of the queued items over a specific time period.",
+    "question": "What is the average size of the queued items?",
+    "query": "",
+    "metrics": [
+      "queued_size"
+    ]
+  },
+  {
+    "id": "65477f61-7091-465e-b1ec-e5edb5496a60",
+    "name": "Avg. Queued Size",
+    "description": "The PromQL query measures the average size of the queued items over a specific time period.",
+    "question": "How does the queued size vary over time?",
+    "query": "",
+    "metrics": [
+      "queued_size"
+    ]
+  },
+  {
+    "id": "34331383-676b-48e7-8dd7-9ab29a61f6fb",
+    "name": "Avg. Queued Size",
+    "description": "The PromQL query measures the average size of the queued items over a specific time period.",
+    "question": "Is there a pattern in the queued size fluctuations?",
+    "query": "",
+    "metrics": [
+      "queued_size"
+    ]
+  },
+  {
+    "id": "9a29e273-c4ed-4fb3-85a0-482c73b61621",
+    "name": "Avg. Queued Objects",
+    "description": "The PromQL query measures the average number of objects queued over a specific time period.",
+    "question": "What is the average number of objects queued?",
+    "query": "",
+    "metrics": [
+      "queued_objects"
+    ]
+  },
+  {
+    "id": "b5be43a0-c5dd-4cd8-8894-f83dd9217fb6",
+    "name": "Avg. Queued Objects",
+    "description": "The PromQL query measures the average number of objects queued over a specific time period.",
+    "question": "How many objects are waiting in the queue on average?",
+    "query": "",
+    "metrics": [
+      "queued_objects"
+    ]
+  },
+  {
+    "id": "f63fbf5b-fd9c-46f0-837f-304341418c43",
+    "name": "Avg. Queued Objects",
+    "description": "The PromQL query measures the average number of objects queued over a specific time period.",
+    "question": "What is the average queue size for objects?",
+    "query": "",
+    "metrics": [
+      "queued_objects"
+    ]
+  },
+  {
+    "id": "f36014ed-52b5-4b6e-9e49-dfb5f4a0217b",
+    "name": "Avg. Transfer Rate (bytes/s)",
+    "description": "This PromQL query measures the average transfer rate in bytes per second.",
+    "question": "What is the average transfer rate in bytes per second?",
+    "query": "",
+    "metrics": [
+      "rate"
+    ]
+  },
+  {
+    "id": "3cbb1eb2-ca72-4356-ad27-bcab28f72b38",
+    "name": "Avg. Transfer Rate (bytes/s)",
+    "description": "This PromQL query measures the average transfer rate in bytes per second.",
+    "question": "How fast are bytes being transferred on average?",
+    "query": "",
+    "metrics": [
+      "rate"
+    ]
+  },
+  {
+    "id": "a30054ea-1f3a-4173-9aea-c3555304de09",
+    "name": "Avg. Transfer Rate (bytes/s)",
+    "description": "This PromQL query measures the average transfer rate in bytes per second.",
+    "question": "What is the rate of data transfer in bytes per second?",
+    "query": "",
+    "metrics": [
+      "rate"
+    ]
+  }
+]

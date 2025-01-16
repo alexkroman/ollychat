@@ -1,0 +1,215 @@
+[
+  {
+    "id": "47c6ca6c-58a9-46c0-b05f-b63216671a8f",
+    "name": "CPU  Usage",
+    "description": "This PromQL query measures the CPU usage over a specific time range.",
+    "question": "What is the total CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "ede7d899-00cf-4dbb-bdf2-39c22e245c46",
+    "name": "CPU  Usage",
+    "description": "This PromQL query measures the CPU usage over a specific time range.",
+    "question": "How has the CPU usage changed over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "466093ca-3a2d-4a5a-8656-04ebc7484d26",
+    "name": "CPU  Usage",
+    "description": "This PromQL query measures the CPU usage over a specific time range.",
+    "question": "Which nodes have the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9af972cf-f5d9-41b8-bfb4-593a3143e9dd",
+    "name": "RAM Usage",
+    "description": "This PromQL query measures the RAM usage of a system over time.",
+    "question": "What is the total memory available on the system?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "12607e72-2496-4746-99c2-853b8d91e2cd",
+    "name": "RAM Usage",
+    "description": "This PromQL query measures the RAM usage of a system over time.",
+    "question": "How much free memory is currently available on the system?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "53d5d2e2-3c63-415f-a9aa-a1067bb1b91e",
+    "name": "RAM Usage",
+    "description": "This PromQL query measures the RAM usage of a system over time.",
+    "question": "What is the percentage of used memory on the system?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "79c7f7ce-b63b-4a93-84cc-e2d3e5eb0c00",
+    "name": "Pods on node",
+    "description": "This PromQL query measures the number of pods running on a specific node.",
+    "question": "How many pods are running on a specific node?",
+    "query": "",
+    "metrics": [
+      "pods"
+    ]
+  },
+  {
+    "id": "e8cdfb9b-5dea-4a0b-8aaf-97a91a033f23",
+    "name": "Pods on node",
+    "description": "This PromQL query measures the number of pods running on a specific node.",
+    "question": "Which node has the highest number of pods?",
+    "query": "",
+    "metrics": [
+      "pods"
+    ]
+  },
+  {
+    "id": "58f3bb80-0d85-46ba-af46-967a0c43e7e9",
+    "name": "Pods on node",
+    "description": "This PromQL query measures the number of pods running on a specific node.",
+    "question": "Are there any nodes with no pods running?",
+    "query": "",
+    "metrics": [
+      "pods"
+    ]
+  },
+  {
+    "id": "bb5b8c8e-4335-472b-9180-46c49c7244ec",
+    "name": "List of pods on node ($node)",
+    "description": "This PromQL query measures the list of pods running on a specific node.",
+    "question": "How many pods are running on a specific node?",
+    "query": "",
+    "metrics": [
+      "pod"
+    ]
+  },
+  {
+    "id": "937c3ed2-5119-4fb2-b6f2-e5d5110adcd3",
+    "name": "List of pods on node ($node)",
+    "description": "This PromQL query measures the list of pods running on a specific node.",
+    "question": "Which pods are currently scheduled on a specific node?",
+    "query": "",
+    "metrics": [
+      "pod"
+    ]
+  },
+  {
+    "id": "9691409a-7c18-419d-a987-16b4525f0399",
+    "name": "List of pods on node ($node)",
+    "description": "This PromQL query measures the list of pods running on a specific node.",
+    "question": "What is the list of pods running on a particular node?",
+    "query": "",
+    "metrics": [
+      "pod"
+    ]
+  },
+  {
+    "id": "fdf45997-eb27-4d26-b509-f1f7866f15d2",
+    "name": "CPU Used",
+    "description": "This PromQL query measures the total CPU usage over a specific time range.",
+    "question": "What is the total CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "569899db-c591-4eb2-8764-a320c77dc221",
+    "name": "CPU Used",
+    "description": "This PromQL query measures the total CPU usage over a specific time range.",
+    "question": "Which node has the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "6720b14d-2ae2-498d-bbb0-2f0f3fa81194",
+    "name": "CPU Used",
+    "description": "This PromQL query measures the total CPU usage over a specific time range.",
+    "question": "How has the CPU usage changed over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "cee3bfec-34c6-4aa9-b039-ca6ac8c9fe7e",
+    "name": "TCP Currently Established",
+    "description": "This PromQL query measures the number of TCP connections that are currently established.",
+    "question": "How many TCP connections are currently established?",
+    "query": "",
+    "metrics": [
+      "TCP"
+    ]
+  },
+  {
+    "id": "2ea4e69c-6552-4fe0-9d36-8294b498a3ad",
+    "name": "TCP Currently Established",
+    "description": "This PromQL query measures the number of TCP connections that are currently established.",
+    "question": "What is the current number of established TCP connections?",
+    "query": "",
+    "metrics": [
+      "TCP"
+    ]
+  },
+  {
+    "id": "6293f2a1-9b74-4749-8788-d01c48eea3c1",
+    "name": "TCP Currently Established",
+    "description": "This PromQL query measures the number of TCP connections that are currently established.",
+    "question": "How many active TCP connections exist?",
+    "query": "",
+    "metrics": [
+      "TCP"
+    ]
+  },
+  {
+    "id": "9f0ef736-70eb-4108-bec9-a7e6e714b0ba",
+    "name": "FS - Device Errors",
+    "description": "This PromQL query measures the device errors for a file system.",
+    "question": "How many device errors have occurred in the file system?",
+    "query": "",
+    "metrics": [
+      "device_errors"
+    ]
+  },
+  {
+    "id": "ce598543-1e7c-41a8-ae14-d9d03b7b4aec",
+    "name": "FS - Device Errors",
+    "description": "This PromQL query measures the device errors for a file system.",
+    "question": "What is the trend of device errors over a specific time period?",
+    "query": "",
+    "metrics": [
+      "device_errors"
+    ]
+  },
+  {
+    "id": "7547dab6-d759-48b5-aec8-d7165ffd2942",
+    "name": "FS - Device Errors",
+    "description": "This PromQL query measures the device errors for a file system.",
+    "question": "Which device has the highest number of errors in the file system?",
+    "query": "",
+    "metrics": [
+      "device_errors"
+    ]
+  }
+]

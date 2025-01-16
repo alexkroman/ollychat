@@ -1,8 +1,8 @@
 [
   {
-    "id": "6b3143be-e0f5-4bf5-a382-eca5dba657f8",
+    "id": "04734c37-48e2-48b7-aa44-0649625b3d79",
     "name": "$service return code",
-    "description": "This PromQL query measures the return code of a specific service over time.",
+    "description": "This PromQL query measures the return code of a service.",
     "question": "What is the return code of the service?",
     "query": "",
     "metrics": [
@@ -10,83 +10,143 @@
     ]
   },
   {
-    "id": "f2049d48-f534-40ad-a09b-7b5732f0f6fe",
+    "id": "0b40e6ef-254f-4ec3-b59e-c80b433b5986",
     "name": "$service return code",
-    "description": "This PromQL query measures the return code of a specific service over time.",
-    "question": "How does the return code of the service change over time?",
+    "description": "This PromQL query measures the return code of a service.",
+    "question": "How many times did the service return a specific code?",
     "query": "",
     "metrics": [
       "$service"
     ]
   },
   {
-    "id": "d6db2f9c-bc32-42e3-83d4-fba17737afb9",
+    "id": "db6d17b3-90c2-4a20-aee5-ad4ddc064d75",
     "name": "$service return code",
-    "description": "This PromQL query measures the return code of a specific service over time.",
-    "question": "Is there a pattern in the return code values of the service?",
+    "description": "This PromQL query measures the return code of a service.",
+    "question": "Which return code is the most common for the service?",
     "query": "",
     "metrics": [
       "$service"
     ]
   },
   {
-    "id": "fd616676-3228-4cbb-b4d9-1f9a7bfdc8c0",
+    "id": "673f8102-2c22-435a-8f30-bc120e56fe32",
     "name": "$service response time",
-    "description": "This PromQL query measures the response time of a service over a specified time range.",
+    "description": "Measures the response time of the specified service",
     "question": "What is the average response time of the service?",
     "query": "",
     "metrics": [
-      "$service"
+      "serviceName"
     ]
   },
   {
-    "id": "8133f62b-3cf9-4131-8192-45a359924b51",
+    "id": "57210210-4422-4c06-afa1-80b4ace5f0fc",
     "name": "$service response time",
-    "description": "This PromQL query measures the response time of a service over a specified time range.",
-    "question": "How does the response time of the service change over different time intervals?",
+    "description": "Measures the response time of the specified service",
+    "question": "How does the response time vary over different time intervals?",
     "query": "",
     "metrics": [
-      "$service"
+      "serviceName"
     ]
   },
   {
-    "id": "b237753e-817a-4551-8896-347d45214815",
+    "id": "3624a30b-ee25-4704-b962-d2f5898a43bd",
     "name": "$service response time",
-    "description": "This PromQL query measures the response time of a service over a specified time range.",
-    "question": "Is there a correlation between the response time of the service and any specific events or metrics?",
+    "description": "Measures the response time of the specified service",
+    "question": "Which service has the highest response time?",
     "query": "",
     "metrics": [
-      "$service"
+      "serviceName"
     ]
   },
   {
-    "id": "ccc00b42-338e-44a4-a401-f9ecbcc36f20",
+    "id": "9fb8b624-f9bc-43c3-bdad-abe7fdeb300f",
     "name": "Total requests over 5min $service",
-    "description": "This PromQL query measures the total number of requests made to the service over a 5-minute period.",
-    "question": "What is the total number of requests made to the service?",
+    "description": "This PromQL query measures the total number of requests made to the specified service over the past 5 minutes.",
+    "question": "How many requests were made to the service?",
     "query": "",
     "metrics": [
       "total_requests"
     ]
   },
   {
-    "id": "35cff8ac-010a-4b8b-bba8-c276a42c1fb4",
+    "id": "f063f63b-bf31-4cbf-ac87-f10df823d0e5",
     "name": "Total requests over 5min $service",
-    "description": "This PromQL query measures the total number of requests made to the service over a 5-minute period.",
-    "question": "How many requests were processed by the service in the last 5 minutes?",
+    "description": "This PromQL query measures the total number of requests made to the specified service over the past 5 minutes.",
+    "question": "What is the total number of requests made within the last 5 minutes?",
     "query": "",
     "metrics": [
       "total_requests"
     ]
   },
   {
-    "id": "eb2687c4-ab21-4df4-b743-4a713b7a3f97",
+    "id": "1de6f9b4-7f6a-4afb-a825-55269f15fe5c",
     "name": "Total requests over 5min $service",
-    "description": "This PromQL query measures the total number of requests made to the service over a 5-minute period.",
-    "question": "What is the overall request load on the service?",
+    "description": "This PromQL query measures the total number of requests made to the specified service over the past 5 minutes.",
+    "question": "Which service has the highest number of requests?",
     "query": "",
     "metrics": [
       "total_requests"
+    ]
+  },
+  {
+    "id": "2eddfd63-763e-4dae-aa64-4bf2667d4fe4",
+    "name": "Status code 200 over 5min",
+    "description": "This PromQL query measures the count of HTTP status code 200 responses over a 5-minute period.",
+    "question": "How many HTTP status code 200 responses were recorded?",
+    "query": "",
+    "metrics": [
+      "http_status_code"
+    ]
+  },
+  {
+    "id": "89d031fa-8811-4d4a-81ca-e044a3abbd65",
+    "name": "Status code 200 over 5min",
+    "description": "This PromQL query measures the count of HTTP status code 200 responses over a 5-minute period.",
+    "question": "What is the count of successful HTTP responses?",
+    "query": "",
+    "metrics": [
+      "http_status_code"
+    ]
+  },
+  {
+    "id": "dea5f3e4-782e-4c8b-b3f8-47578c725e6b",
+    "name": "Status code 200 over 5min",
+    "description": "This PromQL query measures the count of HTTP status code 200 responses over a 5-minute period.",
+    "question": "How many times was the HTTP status code 200 returned?",
+    "query": "",
+    "metrics": [
+      "http_status_code"
+    ]
+  },
+  {
+    "id": "578752f0-352d-4c71-9b21-3891b081eb7a",
+    "name": "Others status code over 5min",
+    "description": "This PromQL query measures the status codes that are outside the normal range over a 5-minute period.",
+    "question": "What are the status codes that deviate from the normal range?",
+    "query": "",
+    "metrics": [
+      "status_code"
+    ]
+  },
+  {
+    "id": "0117b22c-47a1-4a9a-b146-ce7cf1fca104",
+    "name": "Others status code over 5min",
+    "description": "This PromQL query measures the status codes that are outside the normal range over a 5-minute period.",
+    "question": "Which endpoints are returning status codes outside the expected values?",
+    "query": "",
+    "metrics": [
+      "status_code"
+    ]
+  },
+  {
+    "id": "d90f833d-b926-40d3-8765-5831b030f0a6",
+    "name": "Others status code over 5min",
+    "description": "This PromQL query measures the status codes that are outside the normal range over a 5-minute period.",
+    "question": "How often do status codes exceed the threshold?",
+    "query": "",
+    "metrics": [
+      "status_code"
     ]
   }
 ]

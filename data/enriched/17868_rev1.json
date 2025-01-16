@@ -1,9 +1,9 @@
 [
   {
-    "id": "f16b8dab-9637-46f2-8227-ae22bbd91d20",
+    "id": "58a53599-08b5-4277-8f58-94a1117bc786",
     "name": "Spans Accepted vs Refused /Second",
-    "description": "This PromQL query measures the rate of spans successfully accepted vs refused per second.",
-    "question": "What is the rate of accepted spans per second?",
+    "description": "Measures the rate of spans successfully accepted versus refused per second.",
+    "question": "How many spans are being accepted per second?",
     "query": "",
     "metrics": [
       "spans_accepted",
@@ -11,10 +11,10 @@
     ]
   },
   {
-    "id": "596c1106-f880-4742-befe-26caf2738e7c",
+    "id": "bc4af844-2de3-49ab-9b1d-30e4a2268c15",
     "name": "Spans Accepted vs Refused /Second",
-    "description": "This PromQL query measures the rate of spans successfully accepted vs refused per second.",
-    "question": "What is the rate of refused spans per second?",
+    "description": "Measures the rate of spans successfully accepted versus refused per second.",
+    "question": "How many spans are being refused per second?",
     "query": "",
     "metrics": [
       "spans_accepted",
@@ -22,10 +22,10 @@
     ]
   },
   {
-    "id": "d6943000-5309-483c-9d3c-89f0c0c8e981",
+    "id": "60af7c46-18dc-48da-bcaa-4152b837706e",
     "name": "Spans Accepted vs Refused /Second",
-    "description": "This PromQL query measures the rate of spans successfully accepted vs refused per second.",
-    "question": "How do the rates of accepted and refused spans compare?",
+    "description": "Measures the rate of spans successfully accepted versus refused per second.",
+    "question": "What is the ratio of accepted spans to refused spans per second?",
     "query": "",
     "metrics": [
       "spans_accepted",
@@ -33,9 +33,9 @@
     ]
   },
   {
-    "id": "8a4c706d-46c4-41f6-9040-8d77009474fa",
+    "id": "e4ad37fb-a4e8-4473-b885-e37a85e50d96",
     "name": "Metrics Accepted vs Refused Received/Second",
-    "description": "The PromQL query measures the rate at which metrics are being accepted and refused per second.",
+    "description": "This PromQL query measures the rate of metrics being accepted successfully versus refused per second.",
     "question": "What is the rate of accepted metrics per second?",
     "query": "",
     "metrics": [
@@ -44,9 +44,9 @@
     ]
   },
   {
-    "id": "ce4c732a-55e8-4f2e-a083-54a3fcbb453c",
+    "id": "59e495f1-d5c3-4f25-9c8c-5e3b6124fc5c",
     "name": "Metrics Accepted vs Refused Received/Second",
-    "description": "The PromQL query measures the rate at which metrics are being accepted and refused per second.",
+    "description": "This PromQL query measures the rate of metrics being accepted successfully versus refused per second.",
     "question": "What is the rate of refused metrics per second?",
     "query": "",
     "metrics": [
@@ -55,14 +55,107 @@
     ]
   },
   {
-    "id": "220ba96b-a9fb-4be3-a271-76d9bd9207a3",
+    "id": "d643cb41-ed67-4753-9aa9-bb98f404f015",
     "name": "Metrics Accepted vs Refused Received/Second",
-    "description": "The PromQL query measures the rate at which metrics are being accepted and refused per second.",
+    "description": "This PromQL query measures the rate of metrics being accepted successfully versus refused per second.",
     "question": "How do the rates of accepted and refused metrics compare?",
     "query": "",
     "metrics": [
       "metrics_accepted",
       "metrics_refused"
+    ]
+  },
+  {
+    "id": "45c1528d-9354-465f-b645-b89df675ffd4",
+    "name": "Logs Accepted vs Refused Received/Second",
+    "description": "This PromQL query measures the rate at which metrics are being accepted successfully versus refused per second.",
+    "question": "What is the rate of accepted metrics per second?",
+    "query": "",
+    "metrics": [
+      "accepted",
+      "refused"
+    ]
+  },
+  {
+    "id": "f01f33b5-d9a7-4685-8408-8570a65c5cee",
+    "name": "Logs Accepted vs Refused Received/Second",
+    "description": "This PromQL query measures the rate at which metrics are being accepted successfully versus refused per second.",
+    "question": "What is the rate of refused metrics per second?",
+    "query": "",
+    "metrics": [
+      "accepted",
+      "refused"
+    ]
+  },
+  {
+    "id": "056defed-99b8-48e8-a8dd-25d125cd2b91",
+    "name": "Logs Accepted vs Refused Received/Second",
+    "description": "This PromQL query measures the rate at which metrics are being accepted successfully versus refused per second.",
+    "question": "How does the acceptance rate compare to the refusal rate?",
+    "query": "",
+    "metrics": [
+      "accepted",
+      "refused"
+    ]
+  },
+  {
+    "id": "2221e077-639e-4ed0-9bb9-c132e61b2c66",
+    "name": "Spans Exported vs Failed / Second",
+    "description": "This PromQL query measures the rate of spans successfully exported vs failed per second.",
+    "question": "What is the rate of spans successfully exported per second?",
+    "query": "",
+    "metrics": [
+      "spans"
+    ]
+  },
+  {
+    "id": "3f27e271-bd8a-4ec8-a885-c1782eade5bd",
+    "name": "Spans Exported vs Failed / Second",
+    "description": "This PromQL query measures the rate of spans successfully exported vs failed per second.",
+    "question": "What is the rate of spans failed per second?",
+    "query": "",
+    "metrics": [
+      "spans"
+    ]
+  },
+  {
+    "id": "72f7f442-ff5e-493a-ad63-c77e36a6d550",
+    "name": "Spans Exported vs Failed / Second",
+    "description": "This PromQL query measures the rate of spans successfully exported vs failed per second.",
+    "question": "How many spans are being exported successfully compared to failed?",
+    "query": "",
+    "metrics": [
+      "spans"
+    ]
+  },
+  {
+    "id": "3ff24751-036d-4a82-900d-28e69e5aef94",
+    "name": "Metrics Exported vs failed /Second",
+    "description": "Measures the rate of timeseries that are successfully exported per second",
+    "question": "How many timeseries are successfully exported?",
+    "query": "",
+    "metrics": [
+      "timeseries"
+    ]
+  },
+  {
+    "id": "42799b87-5304-4768-b519-9649cfa19168",
+    "name": "Metrics Exported vs failed /Second",
+    "description": "Measures the rate of timeseries that are successfully exported per second",
+    "question": "What is the rate of successful timeseries export?",
+    "query": "",
+    "metrics": [
+      "timeseries"
+    ]
+  },
+  {
+    "id": "4e9e3875-a24a-4e4a-bde2-9846f64dd7c8",
+    "name": "Metrics Exported vs failed /Second",
+    "description": "Measures the rate of timeseries that are successfully exported per second",
+    "question": "Is the export rate of timeseries per second consistent?",
+    "query": "",
+    "metrics": [
+      "timeseries"
     ]
   }
 ]

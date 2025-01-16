@@ -1,0 +1,125 @@
+[
+  {
+    "id": "1e9ba805-75ef-4e45-b9da-54d6b7969661",
+    "name": "Instance",
+    "description": "This PromQL query measures the total number of seconds the CPU has spent in each mode (e.g., user, system, idle) over a 5-minute window.",
+    "question": "What is the total number of seconds the CPU has spent in different modes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "8df2d8cf-ad3b-449f-b032-37cca1099861",
+    "name": "Instance",
+    "description": "This PromQL query measures the total number of seconds the CPU has spent in each mode (e.g., user, system, idle) over a 5-minute window.",
+    "question": "How does the CPU usage vary over the specified 5-minute window?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "363cb9ac-6f14-4b7c-ae7d-80bb77b5993d",
+    "name": "Instance",
+    "description": "This PromQL query measures the total number of seconds the CPU has spent in each mode (e.g., user, system, idle) over a 5-minute window.",
+    "question": "Which CPU modes contribute the most to the total CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "00d8c937-1d7c-44a3-bb65-47aaa4cdfb5c",
+    "name": "Cpu",
+    "description": "This PromQL query measures the CPU usage in seconds of the otelcol process.",
+    "question": "What is the CPU usage in seconds of the otelcol process?",
+    "query": "",
+    "metrics": [
+      "otelcol_process_cpu_seconds"
+    ]
+  },
+  {
+    "id": "5d8ba61f-bc35-4be5-adf7-f3a0faa9fa0a",
+    "name": "Cpu",
+    "description": "This PromQL query measures the CPU usage in seconds of the otelcol process.",
+    "question": "How much CPU time has the otelcol process consumed?",
+    "query": "",
+    "metrics": [
+      "otelcol_process_cpu_seconds"
+    ]
+  },
+  {
+    "id": "f7c233de-8660-49b3-88b5-fb68dae4f9dc",
+    "name": "Cpu",
+    "description": "This PromQL query measures the CPU usage in seconds of the otelcol process.",
+    "question": "What is the total CPU time used by the otelcol process?",
+    "query": "",
+    "metrics": [
+      "otelcol_process_cpu_seconds"
+    ]
+  },
+  {
+    "id": "f13dfd49-07c8-4b8f-b65d-bf41ebb10a3f",
+    "name": "Memory",
+    "description": "The PromQL query measures the average memory Resident Set Size (RSS) of the processes running on each instance.",
+    "question": "What is the average memory RSS of processes on each instance?",
+    "query": "",
+    "metrics": [
+      "otelcol_process_memory_rss"
+    ]
+  },
+  {
+    "id": "78897990-2d6a-4c1b-8724-d0f6ae6c98c8",
+    "name": "Memory",
+    "description": "The PromQL query measures the average memory Resident Set Size (RSS) of the processes running on each instance.",
+    "question": "Which instance has the highest memory RSS on average?",
+    "query": "",
+    "metrics": [
+      "otelcol_process_memory_rss"
+    ]
+  },
+  {
+    "id": "a80754bb-af53-4be0-a8fe-365d03f9dc1e",
+    "name": "Memory",
+    "description": "The PromQL query measures the average memory Resident Set Size (RSS) of the processes running on each instance.",
+    "question": "How does the memory RSS distribution vary across different instances?",
+    "query": "",
+    "metrics": [
+      "otelcol_process_memory_rss"
+    ]
+  },
+  {
+    "id": "90b5f82b-8025-4d82-b1ef-984c20e7c22d",
+    "name": "Export Ratio",
+    "description": "Calculates the export ratio by dividing the average rate of sent spans by the average rate of accepted spans per job",
+    "question": "What is the average rate of sent spans per job?",
+    "query": "",
+    "metrics": [
+      "otelcol_exporter_sent_spans",
+      "otelcol_receiver_accepted_spans"
+    ]
+  },
+  {
+    "id": "c0e6843d-123f-480e-bdb0-d07769af5ded",
+    "name": "Export Ratio",
+    "description": "Calculates the export ratio by dividing the average rate of sent spans by the average rate of accepted spans per job",
+    "question": "What is the average rate of accepted spans per job?",
+    "query": "",
+    "metrics": [
+      "otelcol_exporter_sent_spans",
+      "otelcol_receiver_accepted_spans"
+    ]
+  },
+  {
+    "id": "5ce21283-0f94-4023-9dbe-72a5a8c06ae2",
+    "name": "Export Ratio",
+    "description": "Calculates the export ratio by dividing the average rate of sent spans by the average rate of accepted spans per job",
+    "question": "How do the rates of sent spans compare to the rates of accepted spans across different jobs?",
+    "query": "",
+    "metrics": [
+      "otelcol_exporter_sent_spans",
+      "otelcol_receiver_accepted_spans"
+    ]
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "id": "74260daa-f413-4bf2-8c05-19191d341d58",
+    "name": "Cluster Pod Usage",
+    "description": "The PromQL query measures the current CPU usage of pods in the cluster.",
+    "question": "What is the total CPU usage of containers in the cluster?",
+    "query": "",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "2d5935a1-ce9c-43fc-a70a-952b9f550ac7",
+    "name": "Cluster Pod Usage",
+    "description": "The PromQL query measures the current CPU usage of pods in the cluster.",
+    "question": "Which pods are currently running in the cluster?",
+    "query": "",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "cbedf82b-ad8a-4ea3-ad9c-19a9a07070c2",
+    "name": "Cluster Pod Usage",
+    "description": "The PromQL query measures the current CPU usage of pods in the cluster.",
+    "question": "How much CPU time has been used by pods in the cluster?",
+    "query": "",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "5a3ce5e3-d966-44cc-b54a-3d19978fad4e",
+    "name": "Cluster CPU Usage",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the cluster over a specified time range.",
+    "question": "What is the total CPU usage across all nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a0c26635-3441-4fd8-bbc2-0076b28a3136",
+    "name": "Cluster CPU Usage",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the cluster over a specified time range.",
+    "question": "How has the CPU usage trended over the specified time range?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "d92bfbd0-6141-4fa0-a7cc-9d3c67390b28",
+    "name": "Cluster CPU Usage",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the cluster over a specified time range.",
+    "question": "Which node has the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "198d98a4-9aa8-4f1d-b98b-079139dd3c78",
+    "name": "Cluster Memory Usage",
+    "description": "This PromQL query measures the memory usage of a cluster.",
+    "question": "What is the current memory usage of the cluster?",
+    "query": "",
+    "metrics": [
+      "cluster_memory_usage"
+    ]
+  },
+  {
+    "id": "0e03d861-d9fa-4c4e-98ec-b2b5ab9d76e9",
+    "name": "Cluster Memory Usage",
+    "description": "This PromQL query measures the memory usage of a cluster.",
+    "question": "How has the memory usage of the cluster changed over time?",
+    "query": "",
+    "metrics": [
+      "cluster_memory_usage"
+    ]
+  },
+  {
+    "id": "15e3cb18-1249-459d-af38-3d3327617371",
+    "name": "Cluster Memory Usage",
+    "description": "This PromQL query measures the memory usage of a cluster.",
+    "question": "Which components in the cluster are consuming the most memory?",
+    "query": "",
+    "metrics": [
+      "cluster_memory_usage"
+    ]
+  },
+  {
+    "id": "675f0c48-7be4-4612-9d80-c9e560bfec56",
+    "name": "Cluster Disk Usage",
+    "description": "This PromQL query measures the disk usage of the cluster.",
+    "question": "What is the current disk usage of the cluster?",
+    "query": "",
+    "metrics": [
+      "cluster_disk_usage"
+    ]
+  },
+  {
+    "id": "891b6377-d2d7-4415-98bb-2a43157624fb",
+    "name": "Cluster Disk Usage",
+    "description": "This PromQL query measures the disk usage of the cluster.",
+    "question": "How has the disk usage of the cluster changed over time?",
+    "query": "",
+    "metrics": [
+      "cluster_disk_usage"
+    ]
+  },
+  {
+    "id": "498a051d-487d-4d3c-944e-107233662950",
+    "name": "Cluster Disk Usage",
+    "description": "This PromQL query measures the disk usage of the cluster.",
+    "question": "Which node in the cluster has the highest disk usage?",
+    "query": "",
+    "metrics": [
+      "cluster_disk_usage"
+    ]
+  },
+  {
+    "id": "112e08c6-2996-4e72-ac71-f66f29fdddda",
+    "name": "Jobs Failed",
+    "description": "Measures the number of failed jobs over a specific time period",
+    "question": "How many jobs have failed?",
+    "query": "",
+    "metrics": [
+      "jobs_failed"
+    ]
+  },
+  {
+    "id": "cf3a9e6b-2ecd-4c37-9b5c-6db05b16acd6",
+    "name": "Jobs Failed",
+    "description": "Measures the number of failed jobs over a specific time period",
+    "question": "What is the trend of failed jobs?",
+    "query": "",
+    "metrics": [
+      "jobs_failed"
+    ]
+  },
+  {
+    "id": "d0032962-ac1b-4926-8c32-7cc00b859937",
+    "name": "Jobs Failed",
+    "description": "Measures the number of failed jobs over a specific time period",
+    "question": "Which job has the highest failure rate?",
+    "query": "",
+    "metrics": [
+      "jobs_failed"
+    ]
+  }
+]

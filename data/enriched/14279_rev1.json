@@ -1,68 +1,98 @@
 [
   {
-    "id": "d83abab6-1a14-41b7-8156-489b07b4e715",
+    "id": "8891aedf-cf6e-4c17-b84b-8463d5aa7789",
     "name": "Total number of CronJobs",
-    "description": "The PromQL query measures the total number of CronJobs currently present in the system.",
-    "question": "What is the total number of CronJobs?",
+    "description": "The PromQL query measures the total number of CronJobs currently active in the system.",
+    "question": "What is the total number of active CronJobs?",
     "query": "",
     "metrics": [
       "count"
     ]
   },
   {
-    "id": "52d53da4-d744-470b-baaa-bb7dae63f9aa",
+    "id": "7abbfeb5-5982-4b28-847f-6afa0887c122",
     "name": "Total number of CronJobs",
-    "description": "The PromQL query measures the total number of CronJobs currently present in the system.",
-    "question": "How many CronJobs are currently active?",
+    "description": "The PromQL query measures the total number of CronJobs currently active in the system.",
+    "question": "How many CronJobs are currently running in the system?",
     "query": "",
     "metrics": [
       "count"
     ]
   },
   {
-    "id": "7499be07-15f0-46be-86db-639b9de2ed81",
+    "id": "61cab2e7-4f28-4bd4-af24-cba3768bae17",
     "name": "Total number of CronJobs",
-    "description": "The PromQL query measures the total number of CronJobs currently present in the system.",
-    "question": "What is the overall count of CronJobs in the system?",
+    "description": "The PromQL query measures the total number of CronJobs currently active in the system.",
+    "question": "What is the aggregate count of CronJobs?",
     "query": "",
     "metrics": [
       "count"
     ]
   },
   {
-    "id": "fb98d4a8-767b-4001-bae3-94505823c888",
+    "id": "eb279655-a220-44ba-b55c-c1b85a8fcf5c",
     "name": "Number of Suspended CronJobs",
-    "description": "This PromQL query measures the number of CronJobs that are currently suspended.",
-    "question": "How many CronJobs are currently suspended?",
+    "description": "This PromQL query measures the number of Suspended CronJobs that are currently equal to zero.",
+    "question": "How many Suspended CronJobs are currently equal to zero?",
     "query": "",
     "metrics": [
       "suspended_cronjobs"
     ]
   },
   {
-    "id": "697c97bc-ad2b-4dea-9abe-768c638f2dd1",
+    "id": "7cc93f63-95f3-4808-b339-42da276ca524",
     "name": "Number of Suspended CronJobs",
-    "description": "This PromQL query measures the number of CronJobs that are currently suspended.",
-    "question": "Are there any CronJobs in a suspended state?",
+    "description": "This PromQL query measures the number of Suspended CronJobs that are currently equal to zero.",
+    "question": "What is the count of Suspended CronJobs that are in a suspended state?",
     "query": "",
     "metrics": [
       "suspended_cronjobs"
     ]
   },
   {
-    "id": "430962d9-f2e2-4be9-802a-6f27528e4d2b",
+    "id": "d5e6c083-59cf-4b0c-83a7-e483275b38a9",
     "name": "Number of Suspended CronJobs",
-    "description": "This PromQL query measures the number of CronJobs that are currently suspended.",
-    "question": "What is the count of CronJobs that are not running?",
+    "description": "This PromQL query measures the number of Suspended CronJobs that are currently equal to zero.",
+    "question": "Are there any CronJobs currently suspended?",
     "query": "",
     "metrics": [
       "suspended_cronjobs"
     ]
   },
   {
-    "id": "8e2dcf66-eeb6-464a-ac12-dffbdd8de534",
+    "id": "c9beef86-9a68-4e5d-9430-a231cf3f8131",
+    "name": "Active jobs",
+    "description": "This query measures the total number of active jobs currently running on the system.",
+    "question": "How many active jobs are currently running?",
+    "query": "",
+    "metrics": [
+      "active_jobs_total"
+    ]
+  },
+  {
+    "id": "b1bab1df-7a1c-4701-9b5c-c065275b6b24",
+    "name": "Active jobs",
+    "description": "This query measures the total number of active jobs currently running on the system.",
+    "question": "What is the total count of active jobs?",
+    "query": "",
+    "metrics": [
+      "active_jobs_total"
+    ]
+  },
+  {
+    "id": "91eed3e6-582a-400c-83d8-56f71c4a5f8d",
+    "name": "Active jobs",
+    "description": "This query measures the total number of active jobs currently running on the system.",
+    "question": "Which jobs are currently in progress?",
+    "query": "",
+    "metrics": [
+      "active_jobs_total"
+    ]
+  },
+  {
+    "id": "69d67227-6ce7-44f0-8c52-162900284573",
     "name": "Failed jobs",
-    "description": "The PromQL query measures the count of failed jobs over a specific time range.",
+    "description": "This PromQL query measures the number of failed jobs within a specified time range.",
     "question": "How many failed jobs occurred?",
     "query": "",
     "metrics": [
@@ -70,9 +100,9 @@
     ]
   },
   {
-    "id": "37b4dfb2-4c97-4f30-8e08-8afd5c9c4c41",
+    "id": "e883a3e4-cb1b-45c8-9cc3-d84bd18c1114",
     "name": "Failed jobs",
-    "description": "The PromQL query measures the count of failed jobs over a specific time range.",
+    "description": "This PromQL query measures the number of failed jobs within a specified time range.",
     "question": "What is the trend of failed jobs over time?",
     "query": "",
     "metrics": [
@@ -80,9 +110,9 @@
     ]
   },
   {
-    "id": "b48630da-5a30-46e5-9516-4cee95df3aa9",
+    "id": "6bf34781-8796-4785-985c-6b9f6ad082e9",
     "name": "Failed jobs",
-    "description": "The PromQL query measures the count of failed jobs over a specific time range.",
+    "description": "This PromQL query measures the number of failed jobs within a specified time range.",
     "question": "Which job has the highest number of failures?",
     "query": "",
     "metrics": [
@@ -90,33 +120,63 @@
     ]
   },
   {
-    "id": "5b6a7ddb-bfaa-41e4-a0eb-8a46c30cbae7",
+    "id": "8e0283a1-59f6-47a7-acb6-d5153f1f68fe",
     "name": "Succeeded jobs",
-    "description": "The PromQL query measures the number of successfully completed jobs.",
-    "question": "How many jobs have succeeded?",
+    "description": "This query measures the number of succeeded jobs.",
+    "question": "What is the total number of succeeded jobs?",
     "query": "",
     "metrics": [
       "succeeded_jobs"
     ]
   },
   {
-    "id": "f6c23eb6-c74f-425f-8ebc-55a3e9d31b88",
+    "id": "9aafcdff-cb8c-44db-b6d1-a8a73ab946ab",
     "name": "Succeeded jobs",
-    "description": "The PromQL query measures the number of successfully completed jobs.",
-    "question": "What is the total count of successful job executions?",
+    "description": "This query measures the number of succeeded jobs.",
+    "question": "How many succeeded jobs were completed within a specific time range?",
     "query": "",
     "metrics": [
       "succeeded_jobs"
     ]
   },
   {
-    "id": "a26e00e4-f2b1-455e-a2ae-003fd9d672bd",
+    "id": "830a62dd-e1cc-410d-9ffb-0951fb8298a2",
     "name": "Succeeded jobs",
-    "description": "The PromQL query measures the number of successfully completed jobs.",
-    "question": "Which jobs have completed successfully?",
+    "description": "This query measures the number of succeeded jobs.",
+    "question": "What is the trend of succeeded jobs over a period?",
     "query": "",
     "metrics": [
       "succeeded_jobs"
+    ]
+  },
+  {
+    "id": "50e7bc7e-8419-4cf5-81bf-cc43979cd851",
+    "name": "Last Scheddule",
+    "description": "The PromQL query measures the last scheduled occurrence of a specific event or task.",
+    "question": "What was the last scheduled occurrence of the CPU usage metric?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "35718da6-27d6-4790-84c9-210310c03a82",
+    "name": "Last Scheddule",
+    "description": "The PromQL query measures the last scheduled occurrence of a specific event or task.",
+    "question": "When did the last scheduling event happen for CPU seconds total?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "c7c3a845-e456-4f67-95ee-c4a0ee0fd904",
+    "name": "Last Scheddule",
+    "description": "The PromQL query measures the last scheduled occurrence of a specific event or task.",
+    "question": "What is the most recent schedule for the CPU seconds total metric?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
     ]
   }
 ]

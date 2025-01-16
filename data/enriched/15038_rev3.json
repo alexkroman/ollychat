@@ -1,152 +1,62 @@
 [
   {
-    "id": "c36348ef-a98f-4437-9664-ecffbff3c2b7",
+    "id": "67c28b52-93f3-456c-ad4d-5c4de246491c",
     "name": "Number of Endpoints in the registry",
-    "description": "The PromQL query measures the total number of endpoints currently registered in the registry.",
-    "question": "How many endpoints are currently registered in the registry?",
-    "query": "",
-    "metrics": [
-      "count"
-    ]
-  },
-  {
-    "id": "74906c91-9085-4522-a116-a2af3ab19ba4",
-    "name": "Number of Endpoints in the registry",
-    "description": "The PromQL query measures the total number of endpoints currently registered in the registry.",
-    "question": "What is the total count of endpoints in the registry?",
-    "query": "",
-    "metrics": [
-      "count"
-    ]
-  },
-  {
-    "id": "db567818-dd63-434c-8a7e-aabbd28dcf3e",
-    "name": "Number of Endpoints in the registry",
-    "description": "The PromQL query measures the total number of endpoints currently registered in the registry.",
-    "question": "How many endpoints are being monitored?",
-    "query": "",
-    "metrics": [
-      "count"
-    ]
-  },
-  {
-    "id": "4093c00b-1406-49cd-a0d5-cec0d68c52c8",
-    "name": "Number of Endpoints in all sources",
-    "description": "This PromQL query measures the total number of endpoints across all data sources.",
-    "question": "How many endpoints are there in total from all sources?",
+    "description": "This PromQL query measures the total number of endpoints currently registered in the system's registry.",
+    "question": "What is the total count of registered endpoints?",
     "query": "",
     "metrics": [
       "Number of Endpoints"
     ]
   },
   {
-    "id": "28a2edab-60a9-480e-857b-636f9ffc3d23",
-    "name": "Number of Endpoints in all sources",
-    "description": "This PromQL query measures the total number of endpoints across all data sources.",
-    "question": "What is the cumulative count of endpoints across all sources?",
+    "id": "cd14fbf1-8df2-4e38-bf1d-af17185a1801",
+    "name": "Number of Endpoints in the registry",
+    "description": "This PromQL query measures the total number of endpoints currently registered in the system's registry.",
+    "question": "How many endpoints are currently active in the system?",
     "query": "",
     "metrics": [
       "Number of Endpoints"
     ]
   },
   {
-    "id": "0ada9e3c-fda6-444d-abb6-453746714a8b",
-    "name": "Number of Endpoints in all sources",
-    "description": "This PromQL query measures the total number of endpoints across all data sources.",
-    "question": "How many endpoints exist collectively from all data sources?",
+    "id": "9529fedb-4364-4f61-806a-05fd5f888e42",
+    "name": "Number of Endpoints in the registry",
+    "description": "This PromQL query measures the total number of endpoints currently registered in the system's registry.",
+    "question": "What is the overall number of endpoints in the registry?",
     "query": "",
     "metrics": [
       "Number of Endpoints"
     ]
   },
   {
-    "id": "448ffe60-03b4-4c47-89d9-1a29a6222959",
-    "name": "Timestamp of last attempted sync with the DNS provider",
-    "description": "The PromQL query measures the timestamp of the last attempted synchronization with the DNS provider.",
-    "question": "When was the last attempted sync with the DNS provider?",
+    "id": "91f84083-c279-4a61-b273-7ba635536f49",
+    "name": "Number of Endpoints in all sources",
+    "description": "The PromQL query counts the total number of endpoints across all data sources.",
+    "question": "How many endpoints are available in all sources?",
     "query": "",
     "metrics": [
-      "timestamp"
+      "endpoints"
     ]
   },
   {
-    "id": "7580e3a7-edb1-45b5-8be9-81288975a69e",
-    "name": "Timestamp of last attempted sync with the DNS provider",
-    "description": "The PromQL query measures the timestamp of the last attempted synchronization with the DNS provider.",
-    "question": "How frequently are sync attempts made with the DNS provider?",
+    "id": "3d24b83b-0136-4b51-bba7-8a00ee325bd4",
+    "name": "Number of Endpoints in all sources",
+    "description": "The PromQL query counts the total number of endpoints across all data sources.",
+    "question": "What is the total count of endpoints across all data sources?",
     "query": "",
     "metrics": [
-      "timestamp"
+      "endpoints"
     ]
   },
   {
-    "id": "ed113c0a-a410-4f5f-98e6-faf4f8c3e6e2",
-    "name": "Timestamp of last attempted sync with the DNS provider",
-    "description": "The PromQL query measures the timestamp of the last attempted synchronization with the DNS provider.",
-    "question": "Is there a pattern in the sync attempts with the DNS provider?",
+    "id": "5d98f18b-f59d-40bc-9cf5-68bc2fea0e55",
+    "name": "Number of Endpoints in all sources",
+    "description": "The PromQL query counts the total number of endpoints across all data sources.",
+    "question": "How many endpoints are being monitored in all sources?",
     "query": "",
     "metrics": [
-      "timestamp"
-    ]
-  },
-  {
-    "id": "e94b4220-7235-4201-b09a-51438bf2a8ca",
-    "name": "Timestamp of last successful sync with the DNS provider",
-    "description": "The PromQL query measures the timestamp of the last successful synchronization with the DNS provider.",
-    "question": "When was the last successful sync with the DNS provider?",
-    "query": "",
-    "metrics": [
-      "timestamp"
-    ]
-  },
-  {
-    "id": "3cc3430f-0eae-4e66-9b35-231d00826f3a",
-    "name": "Timestamp of last successful sync with the DNS provider",
-    "description": "The PromQL query measures the timestamp of the last successful synchronization with the DNS provider.",
-    "question": "How often are successful syncs performed with the DNS provider?",
-    "query": "",
-    "metrics": [
-      "timestamp"
-    ]
-  },
-  {
-    "id": "d377455e-f292-41a8-a911-12f04ce587c1",
-    "name": "Timestamp of last successful sync with the DNS provider",
-    "description": "The PromQL query measures the timestamp of the last successful synchronization with the DNS provider.",
-    "question": "Is there any pattern in the timestamps of successful syncs with the DNS provider?",
-    "query": "",
-    "metrics": [
-      "timestamp"
-    ]
-  },
-  {
-    "id": "1668240f-c820-4e22-905c-818c8fd84a08",
-    "name": "External-dns controller no_op runs total",
-    "description": "This PromQL query measures the total number of no_op runs performed by the External-dns controller.",
-    "question": "How many total no_op runs have been executed by the External-dns controller?",
-    "query": "",
-    "metrics": [
-      "External-dns_controller_no_op_runs_total"
-    ]
-  },
-  {
-    "id": "2d925950-f238-4c8b-8a07-eab45e755532",
-    "name": "External-dns controller no_op runs total",
-    "description": "This PromQL query measures the total number of no_op runs performed by the External-dns controller.",
-    "question": "What is the cumulative count of no_op runs performed by the External-dns controller?",
-    "query": "",
-    "metrics": [
-      "External-dns_controller_no_op_runs_total"
-    ]
-  },
-  {
-    "id": "4b555756-32ef-4d9e-87a8-846d00b2cdb0",
-    "name": "External-dns controller no_op runs total",
-    "description": "This PromQL query measures the total number of no_op runs performed by the External-dns controller.",
-    "question": "How many times has the External-dns controller executed a no_op operation in total?",
-    "query": "",
-    "metrics": [
-      "External-dns_controller_no_op_runs_total"
+      "endpoints"
     ]
   }
 ]

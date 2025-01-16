@@ -1,0 +1,152 @@
+[
+  {
+    "id": "759f3c50-4f04-4150-97d0-1ec66c9421a7",
+    "name": "Start Time",
+    "description": "This PromQL query measures the start time of a process.",
+    "question": "What is the start time of the process?",
+    "query": "",
+    "metrics": [
+      "start_time"
+    ]
+  },
+  {
+    "id": "1c9d6594-52df-4756-a91b-81fc9282083f",
+    "name": "Start Time",
+    "description": "This PromQL query measures the start time of a process.",
+    "question": "Is the process already started?",
+    "query": "",
+    "metrics": [
+      "start_time"
+    ]
+  },
+  {
+    "id": "d48b5fe7-d719-458f-9684-1c4cdbf68e18",
+    "name": "Start Time",
+    "description": "This PromQL query measures the start time of a process.",
+    "question": "When did the process begin?",
+    "query": "",
+    "metrics": [
+      "start_time"
+    ]
+  },
+  {
+    "id": "c867911a-4eb0-42d8-a1a2-649e60197c08",
+    "name": "Total Cache Requests",
+    "description": "This PromQL query measures the total number of cache requests received over time.",
+    "question": "What is the total number of cache requests received?",
+    "query": "",
+    "metrics": [
+      "cache_requests"
+    ]
+  },
+  {
+    "id": "b8756b1b-3f16-4fe5-8a4c-e79dbb1d93af",
+    "name": "Total Cache Requests",
+    "description": "This PromQL query measures the total number of cache requests received over time.",
+    "question": "How many cache requests were made within a specific time range?",
+    "query": "",
+    "metrics": [
+      "cache_requests"
+    ]
+  },
+  {
+    "id": "28607f15-da52-4f9d-bf7a-2d2bfa7aed85",
+    "name": "Total Cache Requests",
+    "description": "This PromQL query measures the total number of cache requests received over time.",
+    "question": "Which component or service generated the highest number of cache requests?",
+    "query": "",
+    "metrics": [
+      "cache_requests"
+    ]
+  },
+  {
+    "id": "bcfc283d-f9f5-4004-b2f5-dc1410f08e36",
+    "name": "Total Hit Cache Requests",
+    "description": "The PromQL query measures the total number of cache requests that were successfully served (hits).",
+    "question": "How many cache requests were successfully served?",
+    "query": "",
+    "metrics": [
+      "cache_request_total"
+    ]
+  },
+  {
+    "id": "d611090f-0ad5-493f-a10a-8950b82cd94f",
+    "name": "Total Hit Cache Requests",
+    "description": "The PromQL query measures the total number of cache requests that were successfully served (hits).",
+    "question": "What is the total number of cache hits?",
+    "query": "",
+    "metrics": [
+      "cache_request_total"
+    ]
+  },
+  {
+    "id": "81b076c2-7907-4f76-b7a5-bde669c158b5",
+    "name": "Total Hit Cache Requests",
+    "description": "The PromQL query measures the total number of cache requests that were successfully served (hits).",
+    "question": "How many cache requests received a positive response?",
+    "query": "",
+    "metrics": [
+      "cache_request_total"
+    ]
+  },
+  {
+    "id": "40be3d99-e097-4e07-bfca-5e3f3248463a",
+    "name": "Total Missed Cache Requests",
+    "description": "The PromQL query measures the total number of cache requests that were received and missed.",
+    "question": "What is the total number of cache requests received?",
+    "query": "",
+    "metrics": [
+      "cache_request_total"
+    ]
+  },
+  {
+    "id": "9708630e-d340-42f3-9292-ccac63f54001",
+    "name": "Total Missed Cache Requests",
+    "description": "The PromQL query measures the total number of cache requests that were received and missed.",
+    "question": "How many cache requests were missed?",
+    "query": "",
+    "metrics": [
+      "cache_request_total"
+    ]
+  },
+  {
+    "id": "3b3bc341-a22b-401e-a8f3-5f0ac4119c4d",
+    "name": "Total Missed Cache Requests",
+    "description": "The PromQL query measures the total number of cache requests that were received and missed.",
+    "question": "What is the overall cache request count?",
+    "query": "",
+    "metrics": [
+      "cache_request_total"
+    ]
+  },
+  {
+    "id": "3ca1ab26-6f2d-4d77-8e56-f1a401b0bc54",
+    "name": "Resident Memory Usage",
+    "description": "This PromQL query measures the resident memory usage of a process.",
+    "question": "What is the current resident memory usage of the process?",
+    "query": "",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "e10e408d-b34a-4988-8dca-d33ead4201c8",
+    "name": "Resident Memory Usage",
+    "description": "This PromQL query measures the resident memory usage of a process.",
+    "question": "How has the resident memory usage of the process changed over time?",
+    "query": "",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "3d208e61-b762-4e4b-b30c-af732b923ea2",
+    "name": "Resident Memory Usage",
+    "description": "This PromQL query measures the resident memory usage of a process.",
+    "question": "Which process has the highest resident memory usage?",
+    "query": "",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  }
+]

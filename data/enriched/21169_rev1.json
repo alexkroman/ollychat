@@ -1,89 +1,119 @@
 [
   {
-    "id": "21e8ef36-5775-44f3-8542-9cf21af017f3",
+    "id": "00846b6a-9540-4792-bef8-267cb779152f",
     "name": "Container Memory in Crossplane Namespace by Pod",
-    "description": "The PromQL query measures the memory usage of containers within Crossplane namespaces, grouped by pods.",
-    "question": "What is the total memory usage of containers within Crossplane namespaces by pod?",
+    "description": "This PromQL query measures the memory usage of containers within the Crossplane namespace, grouped by the corresponding pods.",
+    "question": "What is the memory usage of containers in the Crossplane namespace?",
     "query": "",
     "metrics": [
       "container_memory_usage_bytes"
     ]
   },
   {
-    "id": "0afd41d8-0f15-447c-9397-2ba198a2e0e9",
+    "id": "b23a3993-a4e1-41a9-90fe-e41d57e21aa7",
     "name": "Container Memory in Crossplane Namespace by Pod",
-    "description": "The PromQL query measures the memory usage of containers within Crossplane namespaces, grouped by pods.",
-    "question": "Which pod has the highest memory usage within Crossplane namespaces?",
+    "description": "This PromQL query measures the memory usage of containers within the Crossplane namespace, grouped by the corresponding pods.",
+    "question": "Which pods in the Crossplane namespace are consuming the most memory?",
     "query": "",
     "metrics": [
       "container_memory_usage_bytes"
     ]
   },
   {
-    "id": "950403ab-6688-4360-9b7a-84b4498b79fd",
+    "id": "fcd73288-c96c-469a-a125-e814b2e03a5e",
     "name": "Container Memory in Crossplane Namespace by Pod",
-    "description": "The PromQL query measures the memory usage of containers within Crossplane namespaces, grouped by pods.",
-    "question": "How does the memory usage vary across different pods within Crossplane namespaces?",
+    "description": "This PromQL query measures the memory usage of containers within the Crossplane namespace, grouped by the corresponding pods.",
+    "question": "How does the memory usage vary across different containers in the Crossplane namespace?",
     "query": "",
     "metrics": [
       "container_memory_usage_bytes"
     ]
   },
   {
-    "id": "84556ba8-f1bd-464b-9777-bbac6ca47821",
+    "id": "4689d0d9-2aaf-45d1-98f5-7dd82513dd3e",
     "name": "Container CPU in Crossplane Namespace by Pod",
-    "description": "This PromQL query measures the CPU usage of containers in Crossplane namespaces at the pod level.",
-    "question": "What is the total CPU usage of containers in Crossplane namespaces by pod?",
+    "description": "The PromQL query measures the CPU usage of containers within the Crossplane namespace, grouped by pod.",
+    "question": "What is the total CPU usage of containers in the Crossplane namespace by pod?",
     "query": "",
     "metrics": [
       "container_cpu_usage_seconds_total"
     ]
   },
   {
-    "id": "d67ee78a-a67e-423d-ae1c-36294bee342b",
+    "id": "33c4213e-dc6a-4c14-878d-cd9dda866bd5",
     "name": "Container CPU in Crossplane Namespace by Pod",
-    "description": "This PromQL query measures the CPU usage of containers in Crossplane namespaces at the pod level.",
-    "question": "Which pods in Crossplane namespaces are consuming the most CPU?",
+    "description": "The PromQL query measures the CPU usage of containers within the Crossplane namespace, grouped by pod.",
+    "question": "Which pods in the Crossplane namespace are consuming the most CPU?",
     "query": "",
     "metrics": [
       "container_cpu_usage_seconds_total"
     ]
   },
   {
-    "id": "064549a3-6bee-477c-96f9-aee409186b0d",
+    "id": "e733c877-1e1b-4b71-8673-afa7035c16a4",
     "name": "Container CPU in Crossplane Namespace by Pod",
-    "description": "This PromQL query measures the CPU usage of containers in Crossplane namespaces at the pod level.",
-    "question": "How does the CPU usage of containers in Crossplane namespaces change over time?",
+    "description": "The PromQL query measures the CPU usage of containers within the Crossplane namespace, grouped by pod.",
+    "question": "How does the CPU usage of containers vary across different pods in the Crossplane namespace?",
     "query": "",
     "metrics": [
       "container_cpu_usage_seconds_total"
     ]
   },
   {
-    "id": "ee67e7f3-dbdf-46d7-9952-d7693a3f6f3e",
+    "id": "8edacdbe-78d6-4706-9d8e-1b99fd4f2dac",
+    "name": "Reconciles by Controller (Top 10)",
+    "description": "This PromQL query measures the number of reconciles performed by each controller in the system, showing the top 10 controllers with the highest reconcile counts.",
+    "question": "Which controllers have the highest number of reconciles?",
+    "query": "",
+    "metrics": [
+      "reconciles_total"
+    ]
+  },
+  {
+    "id": "94866cb6-af3a-4dfc-8d50-b2d17a8da8ef",
+    "name": "Reconciles by Controller (Top 10)",
+    "description": "This PromQL query measures the number of reconciles performed by each controller in the system, showing the top 10 controllers with the highest reconcile counts.",
+    "question": "How do reconcile counts vary across different controllers?",
+    "query": "",
+    "metrics": [
+      "reconciles_total"
+    ]
+  },
+  {
+    "id": "b38efdac-057a-42f2-8394-44941afb6653",
+    "name": "Reconciles by Controller (Top 10)",
+    "description": "This PromQL query measures the number of reconciles performed by each controller in the system, showing the top 10 controllers with the highest reconcile counts.",
+    "question": "What are the top 10 controllers ranked by the number of reconciles?",
+    "query": "",
+    "metrics": [
+      "reconciles_total"
+    ]
+  },
+  {
+    "id": "17be7fba-ff2d-479c-b141-288a575ccb7a",
     "name": "Workqueue Depth by Controller (Top 10)",
-    "description": "This PromQL query measures the depth of workqueues for the top 10 controllers in the system, indicating the number of pending tasks each controller has in its queue.",
-    "question": "Which controllers have the highest number of pending tasks in their workqueue?",
+    "description": "This PromQL query measures the depth of the workqueue for each controller in the system, showing the top 10 controllers with the highest workqueue depth.",
+    "question": "Which controllers have the highest workqueue depth?",
     "query": "",
     "metrics": [
       "workqueue_depth"
     ]
   },
   {
-    "id": "634813d0-ea76-47d0-ac08-1b4d15ab6fb5",
+    "id": "d884c162-3b1c-40d3-8e95-cd8cc932d10a",
     "name": "Workqueue Depth by Controller (Top 10)",
-    "description": "This PromQL query measures the depth of workqueues for the top 10 controllers in the system, indicating the number of pending tasks each controller has in its queue.",
+    "description": "This PromQL query measures the depth of the workqueue for each controller in the system, showing the top 10 controllers with the highest workqueue depth.",
+    "question": "What is the current depth of the workqueue for each controller?",
+    "query": "",
+    "metrics": [
+      "workqueue_depth"
+    ]
+  },
+  {
+    "id": "2097575c-bec0-4662-9dfe-87470fc060c5",
+    "name": "Workqueue Depth by Controller (Top 10)",
+    "description": "This PromQL query measures the depth of the workqueue for each controller in the system, showing the top 10 controllers with the highest workqueue depth.",
     "question": "How does the workqueue depth vary across different controllers?",
-    "query": "",
-    "metrics": [
-      "workqueue_depth"
-    ]
-  },
-  {
-    "id": "4c6f6169-2bf6-4e13-99d6-87a3c4bb4ff0",
-    "name": "Workqueue Depth by Controller (Top 10)",
-    "description": "This PromQL query measures the depth of workqueues for the top 10 controllers in the system, indicating the number of pending tasks each controller has in its queue.",
-    "question": "Are there any controllers that consistently maintain a low workqueue depth?",
     "query": "",
     "metrics": [
       "workqueue_depth"

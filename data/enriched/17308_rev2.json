@@ -1,26 +1,125 @@
 [
   {
-    "id": "4a1a4623-932d-4f09-8e14-264cd367405f",
+    "id": "a8bf542d-e11a-4561-8b6b-d2a383c7547e",
     "name": "Queues",
-    "description": "The PromQL query measures the current status of various queues in the system, providing insights into the queue length, queue depth, or queue processing time.",
-    "question": "What is the current length of the queues?",
+    "description": "The PromQL query measures the total number of queues in the system over time.",
+    "question": "What is the current total number of queues?",
     "query": "",
-    "metrics": []
+    "metrics": [
+      "queues_total"
+    ]
   },
   {
-    "id": "8f511af3-d1f1-4d23-8194-a6651d8171d5",
+    "id": "0f98f4be-040c-49dd-9958-78e8796f2a04",
     "name": "Queues",
-    "description": "The PromQL query measures the current status of various queues in the system, providing insights into the queue length, queue depth, or queue processing time.",
-    "question": "How has the queue depth changed over the last 1 hour?",
+    "description": "The PromQL query measures the total number of queues in the system over time.",
+    "question": "How have the queues evolved over the past 24 hours?",
     "query": "",
-    "metrics": []
+    "metrics": [
+      "queues_total"
+    ]
   },
   {
-    "id": "5f20af79-f9b5-49f1-9a28-e41e01176bc2",
+    "id": "cb88998a-0e84-4bfa-914c-8e548ecc44e8",
     "name": "Queues",
-    "description": "The PromQL query measures the current status of various queues in the system, providing insights into the queue length, queue depth, or queue processing time.",
-    "question": "Which queue has the highest processing time?",
+    "description": "The PromQL query measures the total number of queues in the system over time.",
+    "question": "Which period had the highest number of queues?",
     "query": "",
-    "metrics": []
+    "metrics": [
+      "queues_total"
+    ]
+  },
+  {
+    "id": "6697af40-8dcf-4162-afba-2766d903f861",
+    "name": "Queues with Messages Ready",
+    "description": "This PromQL query measures the number of messages ready in different queues.",
+    "question": "How many messages are ready in the queues?",
+    "query": "",
+    "metrics": [
+      "messages_ready"
+    ]
+  },
+  {
+    "id": "2f407c4e-8d18-4983-83cc-4c3b87179673",
+    "name": "Queues with Messages Ready",
+    "description": "This PromQL query measures the number of messages ready in different queues.",
+    "question": "Which queue has the highest number of messages ready?",
+    "query": "",
+    "metrics": [
+      "messages_ready"
+    ]
+  },
+  {
+    "id": "d3f80a4d-f070-4a8b-856f-32d8b8c65d74",
+    "name": "Queues with Messages Ready",
+    "description": "This PromQL query measures the number of messages ready in different queues.",
+    "question": "Are there any queues with no messages ready?",
+    "query": "",
+    "metrics": [
+      "messages_ready"
+    ]
+  },
+  {
+    "id": "2618864f-7abf-4b3e-b12c-e71d61c95dbe",
+    "name": "Queues with Messages Unacked",
+    "description": "The PromQL query measures the number of messages that are currently unacknowledged in various queues.",
+    "question": "How many unacknowledged messages are there in the queues?",
+    "query": "",
+    "metrics": [
+      "queues_messages_unacked"
+    ]
+  },
+  {
+    "id": "5783744a-b912-414f-aff4-3fe1574ee896",
+    "name": "Queues with Messages Unacked",
+    "description": "The PromQL query measures the number of messages that are currently unacknowledged in various queues.",
+    "question": "Which queues have the highest number of unacknowledged messages?",
+    "query": "",
+    "metrics": [
+      "queues_messages_unacked"
+    ]
+  },
+  {
+    "id": "90b4165c-c250-478d-be9b-50780690f0d3",
+    "name": "Queues with Messages Unacked",
+    "description": "The PromQL query measures the number of messages that are currently unacknowledged in various queues.",
+    "question": "Are there any queues with no unacknowledged messages?",
+    "query": "",
+    "metrics": [
+      "queues_messages_unacked"
+    ]
+  },
+  {
+    "id": "ba899c0b-a41e-4a41-8797-bf2fa9f54a60",
+    "name": "Virtual Host Ready & Unacked Messages",
+    "description": "This PromQL query measures the number of ready and unacknowledged messages for virtual hosts.",
+    "question": "How many ready messages do virtual hosts currently have?",
+    "query": "",
+    "metrics": [
+      "ready_messages",
+      "unacked_messages"
+    ]
+  },
+  {
+    "id": "ac2860be-91f4-44e5-ae06-c269859178e7",
+    "name": "Virtual Host Ready & Unacked Messages",
+    "description": "This PromQL query measures the number of ready and unacknowledged messages for virtual hosts.",
+    "question": "What is the count of unacknowledged messages for virtual hosts?",
+    "query": "",
+    "metrics": [
+      "ready_messages",
+      "unacked_messages"
+    ]
+  },
+  {
+    "id": "92106627-cbed-4f37-923d-a3be8a793849",
+    "name": "Virtual Host Ready & Unacked Messages",
+    "description": "This PromQL query measures the number of ready and unacknowledged messages for virtual hosts.",
+    "question": "Which virtual hosts have the highest number of ready messages?",
+    "query": "",
+    "metrics": [
+      "ready_messages",
+      "unacked_messages"
+    ]
   }
 ]

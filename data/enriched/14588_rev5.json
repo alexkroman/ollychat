@@ -1,104 +1,101 @@
 [
   {
-    "id": "dc692237-59be-4dc2-8b10-da7a31f92092",
+    "id": "193710dc-3faf-4f08-ad67-5b139121e8ee",
     "name": "Memory Target vs Memory Usage",
-    "description": "The PromQL query compares the recommendations provided by the Vertical Pod Autoscaler (VPA) for memory target usage with the actual memory usage of each container.",
-    "question": "What are the recommended memory target usage values provided by the VPA?",
+    "description": "This PromQL query compares the memory target usage recommendations provided by the Vertical Pod Autoscaler (VPA) with the actual memory usage of each container.",
+    "question": "What is the target memory usage recommended by the VPA for each container?",
     "query": "",
     "metrics": [
-      "vpa_recommendation_memory_bytes",
-      "container_memory_usage_bytes"
+      "container_memory_working_set_bytes",
+      "vpa_recommendation_container_memory_limit_bytes"
     ]
   },
   {
-    "id": "708d096b-91f7-4ade-89e0-8553a8bbb0f9",
+    "id": "bfb02f34-d92f-469b-976e-3d229a6864ed",
     "name": "Memory Target vs Memory Usage",
-    "description": "The PromQL query compares the recommendations provided by the Vertical Pod Autoscaler (VPA) for memory target usage with the actual memory usage of each container.",
-    "question": "How does the actual memory usage of each container compare to the recommended target usage?",
+    "description": "This PromQL query compares the memory target usage recommendations provided by the Vertical Pod Autoscaler (VPA) with the actual memory usage of each container.",
+    "question": "How does the actual memory usage of each container compare to the recommended target?",
     "query": "",
     "metrics": [
-      "vpa_recommendation_memory_bytes",
-      "container_memory_usage_bytes"
+      "container_memory_working_set_bytes",
+      "vpa_recommendation_container_memory_limit_bytes"
     ]
   },
   {
-    "id": "55290bde-e67f-4657-b5ae-c775afee85fe",
+    "id": "3e011bdc-d447-4212-9c9b-1f4bce6ee58c",
     "name": "Memory Target vs Memory Usage",
-    "description": "The PromQL query compares the recommendations provided by the Vertical Pod Autoscaler (VPA) for memory target usage with the actual memory usage of each container.",
-    "question": "Are there any containers exceeding the recommended memory target usage?",
+    "description": "This PromQL query compares the memory target usage recommendations provided by the Vertical Pod Autoscaler (VPA) with the actual memory usage of each container.",
+    "question": "Are the containers exceeding or falling short of the memory target set by the VPA?",
     "query": "",
     "metrics": [
-      "vpa_recommendation_memory_bytes",
-      "container_memory_usage_bytes"
-    ]
-  },
-  {
-    "id": "bb485529-136d-416f-987d-c6a00286e3ba",
-    "name": "VPA Memory Recommendations vs Requests and Limits",
-    "description": "The PromQL query measures the memory recommendations provided by the Vertical Pod Autoscaler (VPA) and compares them to the memory requests and limits of all containers in a pod.",
-    "question": "How does the memory recommendation from VPA compare to the memory requests of containers?",
-    "query": "",
-    "metrics": [
-      "vpa_recommended_memory_bytes",
       "container_memory_working_set_bytes",
-      "container_memory_working_set_bytes"
+      "vpa_recommendation_container_memory_limit_bytes"
     ]
   },
   {
-    "id": "8bc7f82c-c5db-4470-8d38-2ad5be33bb99",
+    "id": "8c0a87d3-2524-4f53-a64a-beaf4d01f6ba",
     "name": "VPA Memory Recommendations vs Requests and Limits",
-    "description": "The PromQL query measures the memory recommendations provided by the Vertical Pod Autoscaler (VPA) and compares them to the memory requests and limits of all containers in a pod.",
-    "question": "Are there any containers in the pod that have memory limits set lower than the VPA recommendation?",
+    "description": "This PromQL query measures the recommendation of the Vertical Pod Autoscaler (VPA) and compares it to the requests and limits of all containers in a pod.",
+    "question": "What is the recommended memory for containers by the Vertical Pod Autoscaler?",
     "query": "",
     "metrics": [
-      "vpa_recommended_memory_bytes",
-      "container_memory_working_set_bytes",
-      "container_memory_working_set_bytes"
+      "vpa_recommended_container_memory_bytes",
+      "kube_pod_container_resource_limits_memory_bytes",
+      "kube_pod_container_resource_requests_memory_bytes"
     ]
   },
   {
-    "id": "b6cb2abf-98d3-4062-bd14-69c613f806f3",
+    "id": "38988aca-c1d1-4a2b-a292-290e3f2a41b6",
     "name": "VPA Memory Recommendations vs Requests and Limits",
-    "description": "The PromQL query measures the memory recommendations provided by the Vertical Pod Autoscaler (VPA) and compares them to the memory requests and limits of all containers in a pod.",
-    "question": "Which containers in the pod have the highest difference between memory requests and VPA recommendations?",
+    "description": "This PromQL query measures the recommendation of the Vertical Pod Autoscaler (VPA) and compares it to the requests and limits of all containers in a pod.",
+    "question": "What are the memory limits set for containers in a pod?",
     "query": "",
     "metrics": [
-      "vpa_recommended_memory_bytes",
-      "container_memory_working_set_bytes",
-      "container_memory_working_set_bytes"
+      "vpa_recommended_container_memory_bytes",
+      "kube_pod_container_resource_limits_memory_bytes",
+      "kube_pod_container_resource_requests_memory_bytes"
     ]
   },
   {
-    "id": "1840a20b-6a47-4a40-ab92-4acf0c36b812",
+    "id": "e4f216d8-66b6-4ae5-99ad-b254b9e97f17",
+    "name": "VPA Memory Recommendations vs Requests and Limits",
+    "description": "This PromQL query measures the recommendation of the Vertical Pod Autoscaler (VPA) and compares it to the requests and limits of all containers in a pod.",
+    "question": "What are the memory requests specified for containers in a pod?",
+    "query": "",
+    "metrics": [
+      "vpa_recommended_container_memory_bytes",
+      "kube_pod_container_resource_limits_memory_bytes",
+      "kube_pod_container_resource_requests_memory_bytes"
+    ]
+  },
+  {
+    "id": "d9e798db-259b-4622-aa6a-71bf2b87defa",
     "name": "CPU Target vs CPU Usage",
     "description": "This PromQL query measures the target CPU usage recommendations provided by the Vertical Pod Autoscaler (VPA) alongside the actual CPU usage of each container.",
-    "question": "What are the target CPU usage recommendations suggested by the VPA?",
+    "question": "What are the target CPU usage recommendations from the VPA?",
     "query": "",
     "metrics": [
-      "container_cpu_usage_seconds_total",
-      "vpa_recommendation_cpu_cores"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "2a3200ce-8d8a-4b79-995d-66e4e9cc6db7",
+    "id": "d353b90c-ff17-4a37-a02b-43cf4996d853",
     "name": "CPU Target vs CPU Usage",
     "description": "This PromQL query measures the target CPU usage recommendations provided by the Vertical Pod Autoscaler (VPA) alongside the actual CPU usage of each container.",
-    "question": "How does the actual CPU usage of each container compare to the recommended target usage?",
+    "question": "How does the actual CPU usage of each container compare to the recommended target?",
     "query": "",
     "metrics": [
-      "container_cpu_usage_seconds_total",
-      "vpa_recommendation_cpu_cores"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "d080c9bb-e72b-463b-92b9-d21674a53bcc",
+    "id": "46efdab5-d836-48b6-8162-65f566dc5a2b",
     "name": "CPU Target vs CPU Usage",
     "description": "This PromQL query measures the target CPU usage recommendations provided by the Vertical Pod Autoscaler (VPA) alongside the actual CPU usage of each container.",
-    "question": "Which containers are exceeding the recommended CPU usage levels?",
+    "question": "Are there any containers exceeding the recommended CPU usage?",
     "query": "",
     "metrics": [
-      "container_cpu_usage_seconds_total",
-      "vpa_recommendation_cpu_cores"
+      "node_cpu_seconds_total"
     ]
   }
 ]

@@ -1,152 +1,125 @@
 [
   {
-    "id": "645598ce-af06-4ef7-9b34-17096c78689c",
+    "id": "1dbd0e1e-a2dc-4c13-ba52-0f1a889c3ce4",
     "name": "Status",
-    "description": "The PromQL query measures the total number of CPU seconds consumed by a node over the last 5 minutes.",
-    "question": "What is the total number of CPU seconds consumed by a node?",
+    "description": "This PromQL query measures the status of a specific metric over a certain time range.",
+    "question": "What is the total CPU usage on a node?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "16a6fb7a-6849-432c-b223-a891cbd58186",
+    "id": "85de15a9-cbc1-472f-ad3c-75e94ace3e65",
     "name": "Status",
-    "description": "The PromQL query measures the total number of CPU seconds consumed by a node over the last 5 minutes.",
-    "question": "How has the CPU consumption changed over the last 5 minutes?",
+    "description": "This PromQL query measures the status of a specific metric over a certain time range.",
+    "question": "How many seconds has the CPU been running on a node?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "5263d88b-40ec-4ef9-8b2f-011d21f07532",
+    "id": "d13d6231-caad-46e6-baf2-925dbf036a1a",
     "name": "Status",
-    "description": "The PromQL query measures the total number of CPU seconds consumed by a node over the last 5 minutes.",
-    "question": "Which node has consumed the most CPU seconds recently?",
+    "description": "This PromQL query measures the status of a specific metric over a certain time range.",
+    "question": "What is the status of CPU seconds on a node?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "08d3e890-8bd1-42eb-a2d1-19e2d506e673",
+    "id": "0b70268b-5d23-4746-8b20-e075429b88a8",
     "name": "Available",
-    "description": "This PromQL query measures the availability of a specific service or resource over a period of time.",
-    "question": "What is the availability percentage of the service/resource?",
+    "description": "This PromQL query measures the availability of a specific resource or service over time.",
+    "question": "What is the total CPU usage on a node?",
     "query": "",
-    "metrics": []
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
   },
   {
-    "id": "26c5ec30-2a73-4ccb-81b4-483805930725",
+    "id": "6bbeabf4-608f-4130-89b6-ed9733d25c86",
     "name": "Available",
-    "description": "This PromQL query measures the availability of a specific service or resource over a period of time.",
-    "question": "Is the service/resource currently available?",
+    "description": "This PromQL query measures the availability of a specific resource or service over time.",
+    "question": "How many seconds has the CPU been active on a node?",
     "query": "",
-    "metrics": []
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
   },
   {
-    "id": "162d66d7-0921-4769-8ead-c14f210a8bce",
+    "id": "f4c54c6b-3b36-4fd6-bdbb-6b3d2846590a",
     "name": "Available",
-    "description": "This PromQL query measures the availability of a specific service or resource over a period of time.",
-    "question": "How has the availability trended over the past hour?",
+    "description": "This PromQL query measures the availability of a specific resource or service over time.",
+    "question": "What is the total CPU time consumed on a node?",
     "query": "",
-    "metrics": []
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
   },
   {
-    "id": "62ea8c09-c6fc-4412-9adc-3f074364c8a3",
+    "id": "5d4e5b99-a63f-40e0-a839-3d00efd3a6ce",
     "name": "Total OSDs",
-    "description": "The PromQL query counts the total number of OSDs (Object Storage Daemons) in the cluster.",
-    "question": "How many OSDs are currently running in the cluster?",
+    "description": "This PromQL query measures the total number of OSDs (Object Storage Daemons) in a Ceph cluster.",
+    "question": "What is the total number of OSDs currently up in the Ceph cluster?",
     "query": "",
     "metrics": [
-      "osd",
-      "count"
+      "ceph_osd_up"
     ]
   },
   {
-    "id": "1c4235fb-c759-4295-be35-da6a445563f9",
+    "id": "2ea84206-07a4-46d8-aeb4-67aa8a06dc27",
     "name": "Total OSDs",
-    "description": "The PromQL query counts the total number of OSDs (Object Storage Daemons) in the cluster.",
-    "question": "What is the total count of Object Storage Daemons in the system?",
+    "description": "This PromQL query measures the total number of OSDs (Object Storage Daemons) in a Ceph cluster.",
+    "question": "How many OSDs are in a working state?",
     "query": "",
     "metrics": [
-      "osd",
-      "count"
+      "ceph_osd_up"
     ]
   },
   {
-    "id": "31b8fffc-9d66-4aa6-946e-73edbedd01b9",
+    "id": "65e8a1dc-9183-4599-9a7a-1556ec15064c",
     "name": "Total OSDs",
-    "description": "The PromQL query counts the total number of OSDs (Object Storage Daemons) in the cluster.",
-    "question": "How many OSD instances are being monitored by the system?",
+    "description": "This PromQL query measures the total number of OSDs (Object Storage Daemons) in a Ceph cluster.",
+    "question": "What is the overall count of OSDs running in the cluster?",
     "query": "",
     "metrics": [
-      "osd",
-      "count"
+      "ceph_osd_up"
     ]
   },
   {
-    "id": "e4794c35-d740-4985-9ae3-2d92cbe0b2e1",
+    "id": "4f2b7f09-6507-47f4-8d0d-822a6f3c80b1",
     "name": "PGs",
-    "description": "This PromQL query measures the number of PGs (Placement Groups) in a Ceph storage cluster at a specific point in time.",
-    "question": "How many active PGs are there in the Ceph cluster?",
+    "description": "This PromQL query measures the number of PGs (Placement Groups) within a storage cluster.",
+    "question": "How many PGs are currently active?",
     "query": "",
     "metrics": [
-      "ceph_pg_state"
+      "count_over_time",
+      "ceph_pg_stat"
     ]
   },
   {
-    "id": "0bbb2748-c85d-4bfd-95ba-513565ea6f80",
+    "id": "b94911e9-6d27-452d-8361-a78462cfa9fd",
     "name": "PGs",
-    "description": "This PromQL query measures the number of PGs (Placement Groups) in a Ceph storage cluster at a specific point in time.",
-    "question": "What is the distribution of PGs by state in the Ceph cluster?",
+    "description": "This PromQL query measures the number of PGs (Placement Groups) within a storage cluster.",
+    "question": "What is the distribution of PGs across different OSDs?",
     "query": "",
     "metrics": [
-      "ceph_pg_state"
+      "count_over_time",
+      "ceph_pg_stat"
     ]
   },
   {
-    "id": "110b441e-2b45-4744-8303-c4e8571159d6",
+    "id": "df208a66-02a7-4563-9f2c-64cd12571f9b",
     "name": "PGs",
-    "description": "This PromQL query measures the number of PGs (Placement Groups) in a Ceph storage cluster at a specific point in time.",
-    "question": "Are there any stuck PGs in the Ceph cluster?",
+    "description": "This PromQL query measures the number of PGs (Placement Groups) within a storage cluster.",
+    "question": "Are there any under-replicated PGs in the cluster?",
     "query": "",
     "metrics": [
-      "ceph_pg_state"
-    ]
-  },
-  {
-    "id": "3e3f3802-1a3f-4d7e-9aa5-5da3887b017d",
-    "name": "OSD Storage",
-    "description": "The PromQL query measures the disk storage utilization of OSDs (Object Storage Daemons) in a Ceph cluster.",
-    "question": "What is the current disk usage of OSDs in the Ceph cluster?",
-    "query": "",
-    "metrics": [
-      "osd_disk_usage",
-      "osd_disk_capacity"
-    ]
-  },
-  {
-    "id": "0489a5cc-aaf7-456e-8a0e-4862fc605f54",
-    "name": "OSD Storage",
-    "description": "The PromQL query measures the disk storage utilization of OSDs (Object Storage Daemons) in a Ceph cluster.",
-    "question": "What is the total disk capacity of OSDs in the Ceph cluster?",
-    "query": "",
-    "metrics": [
-      "osd_disk_usage",
-      "osd_disk_capacity"
-    ]
-  },
-  {
-    "id": "771a29f7-6d44-4151-bdd6-5bfda9462b56",
-    "name": "OSD Storage",
-    "description": "The PromQL query measures the disk storage utilization of OSDs (Object Storage Daemons) in a Ceph cluster.",
-    "question": "Which OSD has the highest disk utilization?",
-    "query": "",
-    "metrics": [
-      "osd_disk_usage",
-      "osd_disk_capacity"
+      "count_over_time",
+      "ceph_pg_stat"
     ]
   }
 ]

@@ -1,59 +1,59 @@
 [
   {
-    "id": "b10605f4-ee59-4df4-8260-f834f5b61e00",
+    "id": "32a44442-9096-4e93-86e4-796628bc68e1",
     "name": "",
-    "description": "This PromQL query measures the rate of increase of a specific metric over a 5-minute window.",
-    "question": "What is the rate of increase of node CPU seconds total over the past 5 minutes?",
+    "description": "This PromQL query measures the rate of a specific metric over a 5-minute interval.",
+    "question": "What is the rate of node CPU seconds total?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "03fadab1-b341-494a-8c88-3adbe6c95697",
+    "id": "7105a9a6-aa38-4f42-be0d-eecb1d2a8d00",
     "name": "",
-    "description": "This PromQL query measures the rate of increase of a specific metric over a 5-minute window.",
-    "question": "How has the node CPU seconds total metric changed over the last 5 minutes?",
+    "description": "This PromQL query measures the rate of a specific metric over a 5-minute interval.",
+    "question": "How has the node CPU seconds total metric changed recently?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "cc4ad63a-8b38-41b6-9af1-205f854fe427",
+    "id": "385dbe37-e662-42ac-8157-8bc374d5f89f",
     "name": "",
-    "description": "This PromQL query measures the rate of increase of a specific metric over a 5-minute window.",
-    "question": "Is there a trend in the node CPU seconds total metric over a 5-minute period?",
+    "description": "This PromQL query measures the rate of a specific metric over a 5-minute interval.",
+    "question": "Is there a trend in the node CPU seconds total metric over the last 5 minutes?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "6ec19a52-7a07-4142-9480-ba87f7f79e06",
+    "id": "70103ccf-9ab5-421e-9040-f34b0eabb976",
     "name": "",
-    "description": "This PromQL query measures the average CPU utilization across all nodes in the cluster over the last 5 minutes.",
-    "question": "What is the average CPU utilization across all nodes?",
+    "description": "This PromQL query measures the rate of change of a specific metric over a 5-minute interval.",
+    "question": "What is the rate of change of node CPU seconds total?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "698bcfa0-f9da-4fe4-865e-73b1d484400d",
+    "id": "a8f69579-d32b-4ed2-be28-b4955f5ce40b",
     "name": "",
-    "description": "This PromQL query measures the average CPU utilization across all nodes in the cluster over the last 5 minutes.",
-    "question": "Is there any sudden spike in CPU usage across the cluster?",
+    "description": "This PromQL query measures the rate of change of a specific metric over a 5-minute interval.",
+    "question": "How has the node CPU seconds total metric been trending?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "14f0ff60-1713-4a39-bbdc-f2b726b2291e",
+    "id": "b90e3447-4859-418a-bf5a-b274f72f08ba",
     "name": "",
-    "description": "This PromQL query measures the average CPU utilization across all nodes in the cluster over the last 5 minutes.",
-    "question": "How does the CPU utilization trend change over time?",
+    "description": "This PromQL query measures the rate of change of a specific metric over a 5-minute interval.",
+    "question": "Is there any sudden increase or decrease in node CPU seconds total?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"

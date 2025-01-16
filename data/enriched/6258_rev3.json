@@ -1,32 +1,32 @@
 [
   {
-    "id": "d3da12b6-8d27-4e96-b730-d6db8e42c610",
+    "id": "87250703-db60-4333-b9df-a2cd74bd00e9",
     "name": "Failing or dead nodes",
-    "description": "The PromQL query measures the number of nodes that are failing or dead based on certain metrics.",
-    "question": "How many nodes are failing?",
+    "description": "The PromQL query measures the number of failing or dead nodes in the system.",
+    "question": "How many nodes are currently failing?",
     "query": "",
     "metrics": [
-      "node_cpu_seconds_total"
+      "node"
     ]
   },
   {
-    "id": "aaa70b12-3272-4397-b03f-bf0019416c8b",
+    "id": "85da9ccb-b2a8-425e-a931-c1b6f49fcb47",
     "name": "Failing or dead nodes",
-    "description": "The PromQL query measures the number of nodes that are failing or dead based on certain metrics.",
-    "question": "Which nodes are considered dead?",
+    "description": "The PromQL query measures the number of failing or dead nodes in the system.",
+    "question": "Which nodes are dead?",
     "query": "",
     "metrics": [
-      "node_cpu_seconds_total"
+      "node"
     ]
   },
   {
-    "id": "63a927a3-3a40-4ef1-a8eb-a043578b9c1e",
+    "id": "0ca9a6b3-1b0f-40ab-b45c-cf4e05a832b4",
     "name": "Failing or dead nodes",
-    "description": "The PromQL query measures the number of nodes that are failing or dead based on certain metrics.",
-    "question": "What is the trend of failing nodes over time?",
+    "description": "The PromQL query measures the number of failing or dead nodes in the system.",
+    "question": "Are there any nodes experiencing issues?",
     "query": "",
     "metrics": [
-      "node_cpu_seconds_total"
+      "node"
     ]
   }
 ]

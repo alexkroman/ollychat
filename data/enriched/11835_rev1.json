@@ -1,98 +1,101 @@
 [
   {
-    "id": "ac180e1a-d364-473c-936f-dbfcd5735abd",
+    "id": "ea9d2ac5-dd23-45ac-b004-01539c86ea7c",
     "name": "Clients",
-    "description": "The PromQL query measures the total number of clients connected to a specific service over a specified time range.",
-    "question": "How many clients are currently connected to the service?",
+    "description": "The PromQL query measures the total number of clients connected to a specific service or application over a specific time period.",
+    "question": "How many clients are currently connected?",
     "query": "",
     "metrics": [
-      "clients"
+      "clients_total"
     ]
   },
   {
-    "id": "a149004b-d47d-42c9-96a2-e3f44d72cd59",
+    "id": "567e2949-17d7-4e30-be02-f17fef5abb71",
     "name": "Clients",
-    "description": "The PromQL query measures the total number of clients connected to a specific service over a specified time range.",
-    "question": "What is the trend of client connections over the past 5 minutes?",
+    "description": "The PromQL query measures the total number of clients connected to a specific service or application over a specific time period.",
+    "question": "What is the trend in the number of clients over the past hour?",
     "query": "",
     "metrics": [
-      "clients"
+      "clients_total"
     ]
   },
   {
-    "id": "45e13dae-a01c-4d9c-93d7-a7f9ca06b251",
+    "id": "d2b998b9-bff3-4bb7-8662-5d6c9db2a68f",
     "name": "Clients",
-    "description": "The PromQL query measures the total number of clients connected to a specific service over a specified time range.",
-    "question": "Are there any spikes or drops in client connections that need investigation?",
+    "description": "The PromQL query measures the total number of clients connected to a specific service or application over a specific time period.",
+    "question": "Which service has the highest number of clients connected?",
     "query": "",
     "metrics": [
-      "clients"
+      "clients_total"
     ]
   },
   {
-    "id": "862a7c53-e6b2-4c3b-983c-cd6492cb784d",
+    "id": "34a0b118-f61b-4fe2-8a96-b80c3418682e",
     "name": "Memory Usage",
-    "description": "The PromQL query measures the memory usage of a specific system component over a specified time period.",
-    "question": "What is the current memory usage of the system component?",
+    "description": "This PromQL query measures the memory usage of a system or application over a specific time period.",
+    "question": "What is the total memory available in the system?",
     "query": "",
     "metrics": [
-      "memory_usage"
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "a0b9e2fd-671c-4db1-9996-7ec8e7def8ff",
+    "id": "294d8e3c-d084-4a0a-95cb-767d80a1fe9e",
     "name": "Memory Usage",
-    "description": "The PromQL query measures the memory usage of a specific system component over a specified time period.",
-    "question": "How has the memory usage of the system component changed over time?",
+    "description": "This PromQL query measures the memory usage of a system or application over a specific time period.",
+    "question": "How much free memory is currently available?",
     "query": "",
     "metrics": [
-      "memory_usage"
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "1f32aa44-02fd-432b-86a9-2a8510bb44c6",
+    "id": "1a9f5b36-30b2-4f05-90e3-04c999b131cd",
     "name": "Memory Usage",
-    "description": "The PromQL query measures the memory usage of a specific system component over a specified time period.",
-    "question": "Is the memory usage of the system component within acceptable limits?",
+    "description": "This PromQL query measures the memory usage of a system or application over a specific time period.",
+    "question": "What is the memory usage percentage?",
     "query": "",
     "metrics": [
-      "memory_usage"
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "4967b6ec-2943-4f7f-a2b4-6e0616bdc1da",
+    "id": "18c8736c-d9b7-4a29-b489-da619c58c9c0",
     "name": "Commands Executed / sec",
-    "description": "This PromQL query measures the rate at which commands are being executed per second.",
-    "question": "How many commands are being executed per second?",
+    "description": "This PromQL query measures the rate at which commands are executed per second.",
+    "question": "How many commands are executed per second?",
     "query": "",
     "metrics": [
       "commands_executed"
     ]
   },
   {
-    "id": "daef9d46-7bb0-4727-96dc-0bc5d57506fc",
+    "id": "578af7c1-e5c1-4bd5-8300-f437ff59a612",
     "name": "Commands Executed / sec",
-    "description": "This PromQL query measures the rate at which commands are being executed per second.",
-    "question": "Is there a noticeable increase or decrease in the rate of commands being executed?",
+    "description": "This PromQL query measures the rate at which commands are executed per second.",
+    "question": "What is the rate of command execution?",
     "query": "",
     "metrics": [
       "commands_executed"
     ]
   },
   {
-    "id": "fcf566b8-b58e-46b7-98fe-86364dda63b1",
+    "id": "faab2e94-d478-4761-835a-27d12c9c81b8",
     "name": "Commands Executed / sec",
-    "description": "This PromQL query measures the rate at which commands are being executed per second.",
-    "question": "What is the average rate of commands execution over a specific time period?",
+    "description": "This PromQL query measures the rate at which commands are executed per second.",
+    "question": "How frequently are commands being executed?",
     "query": "",
     "metrics": [
       "commands_executed"
     ]
   },
   {
-    "id": "08419483-edf4-43c3-9184-3e04bc9ac9cb",
+    "id": "81514e8b-2185-402e-b54e-419b446efdf5",
     "name": "Hits / Misses per Sec",
-    "description": "This PromQL query measures the rate at which hits and misses occur per second.",
+    "description": "Measures the rate of hits and misses per second",
     "question": "What is the rate of hits per second?",
     "query": "",
     "metrics": [
@@ -101,9 +104,9 @@
     ]
   },
   {
-    "id": "b3751c9a-cd6a-4bd1-8bd5-61c2733356a5",
+    "id": "9938c5ad-8d69-4f95-9a81-def17c816bb2",
     "name": "Hits / Misses per Sec",
-    "description": "This PromQL query measures the rate at which hits and misses occur per second.",
+    "description": "Measures the rate of hits and misses per second",
     "question": "What is the rate of misses per second?",
     "query": "",
     "metrics": [
@@ -112,14 +115,77 @@
     ]
   },
   {
-    "id": "5d5d910b-045b-4156-b465-d51b94180000",
+    "id": "5726de36-719f-4310-883f-8bdd3ab0d86c",
     "name": "Hits / Misses per Sec",
-    "description": "This PromQL query measures the rate at which hits and misses occur per second.",
-    "question": "How do hits and misses compare in terms of occurrence frequency?",
+    "description": "Measures the rate of hits and misses per second",
+    "question": "How many hits and misses are occurring per second?",
     "query": "",
     "metrics": [
       "hits",
       "misses"
+    ]
+  },
+  {
+    "id": "0acd33b3-b455-461a-bd80-dc2a5691349e",
+    "name": "Expiring vs Not-Expiring Keys",
+    "description": "This PromQL query measures the comparison between expiring and not-expiring keys.",
+    "question": "How many expiring keys are there?",
+    "query": "",
+    "metrics": [
+      "Expiring_Keys",
+      "Not_Expiring_Keys"
+    ]
+  },
+  {
+    "id": "d8fa1fdf-b2ce-422e-9301-0894dc2dd9f6",
+    "name": "Expiring vs Not-Expiring Keys",
+    "description": "This PromQL query measures the comparison between expiring and not-expiring keys.",
+    "question": "How many not-expiring keys are there?",
+    "query": "",
+    "metrics": [
+      "Expiring_Keys",
+      "Not_Expiring_Keys"
+    ]
+  },
+  {
+    "id": "bf1266cb-bba0-4907-8136-9d12f50af2fb",
+    "name": "Expiring vs Not-Expiring Keys",
+    "description": "This PromQL query measures the comparison between expiring and not-expiring keys.",
+    "question": "What is the ratio of expiring keys to not-expiring keys?",
+    "query": "",
+    "metrics": [
+      "Expiring_Keys",
+      "Not_Expiring_Keys"
+    ]
+  },
+  {
+    "id": "692dc80a-80ac-47a0-bf5b-c3d7b7d12775",
+    "name": "Redis connected clients",
+    "description": "The PromQL query measures the number of clients currently connected to a Redis server.",
+    "question": "How many clients are currently connected to the Redis server?",
+    "query": "",
+    "metrics": [
+      "redis_connected_clients"
+    ]
+  },
+  {
+    "id": "183a87bb-ab23-424c-8956-cd2aa266bfdc",
+    "name": "Redis connected clients",
+    "description": "The PromQL query measures the number of clients currently connected to a Redis server.",
+    "question": "What is the total number of active connections to the Redis server?",
+    "query": "",
+    "metrics": [
+      "redis_connected_clients"
+    ]
+  },
+  {
+    "id": "4be34f9e-9f7f-4bc0-809a-73b84b8c4f56",
+    "name": "Redis connected clients",
+    "description": "The PromQL query measures the number of clients currently connected to a Redis server.",
+    "question": "How many clients are currently communicating with the Redis server?",
+    "query": "",
+    "metrics": [
+      "redis_connected_clients"
     ]
   }
 ]

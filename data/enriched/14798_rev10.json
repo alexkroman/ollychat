@@ -1,152 +1,122 @@
 [
   {
-    "id": "00a49b38-565a-43ff-b42c-fa52dc67d3ef",
+    "id": "036f603c-38a8-42c1-9846-9bbbf7349e08",
     "name": "Stream publishers",
-    "description": "This PromQL query measures the number of stream publishers currently active in the system.",
-    "question": "How many stream publishers are currently active?",
+    "description": "This PromQL query measures the total count of stream publishers over a specific time period.",
+    "question": "How many stream publishers are there?",
     "query": "",
     "metrics": [
-      "stream_publishers"
+      "stream_publishers_total"
     ]
   },
   {
-    "id": "fa716c53-6078-4370-8cf5-0d3ed71e287a",
+    "id": "bef41b21-83c5-4f8d-bf1f-ebb499887e4d",
     "name": "Stream publishers",
-    "description": "This PromQL query measures the number of stream publishers currently active in the system.",
-    "question": "What is the trend of stream publishers over the last 24 hours?",
+    "description": "This PromQL query measures the total count of stream publishers over a specific time period.",
+    "question": "What is the total count of stream publishers?",
     "query": "",
     "metrics": [
-      "stream_publishers"
+      "stream_publishers_total"
     ]
   },
   {
-    "id": "9ddfdc6a-ae38-4efd-9236-e499e92dbc28",
+    "id": "05c68f8b-ec59-48c5-9ed3-7cccf1767492",
     "name": "Stream publishers",
-    "description": "This PromQL query measures the number of stream publishers currently active in the system.",
-    "question": "Which stream publisher had the highest activity in the past hour?",
+    "description": "This PromQL query measures the total count of stream publishers over a specific time period.",
+    "question": "Which publishers have contributed to the stream?",
     "query": "",
     "metrics": [
-      "stream_publishers"
+      "stream_publishers_total"
     ]
   },
   {
-    "id": "1ddb63aa-610a-47e6-b34a-cacf33cf438c",
+    "id": "bb42f66d-8dc5-4666-aed9-207dcc9606c0",
     "name": "Stream messages received / s",
-    "description": "This PromQL query measures the rate at which stream messages are received per second.",
-    "question": "How many stream messages are received per second?",
+    "description": "Measures the rate at which messages are received by a stream",
+    "question": "What is the current rate of messages being received by the stream?",
     "query": "",
     "metrics": [
       "stream_messages_received"
     ]
   },
   {
-    "id": "ab3e2e2a-0309-4586-af50-be31e5c8de72",
+    "id": "d22fbcb6-8366-492f-9966-292667969c02",
     "name": "Stream messages received / s",
-    "description": "This PromQL query measures the rate at which stream messages are received per second.",
-    "question": "What is the rate of stream message reception?",
+    "description": "Measures the rate at which messages are received by a stream",
+    "question": "How has the message reception rate varied over a specific time period?",
     "query": "",
     "metrics": [
       "stream_messages_received"
     ]
   },
   {
-    "id": "057d0059-61c4-4a14-acec-ff33106ad507",
+    "id": "c9aa697b-6540-4499-b02d-fd4fb86f405b",
     "name": "Stream messages received / s",
-    "description": "This PromQL query measures the rate at which stream messages are received per second.",
-    "question": "Is there a trend in the number of stream messages received over time?",
+    "description": "Measures the rate at which messages are received by a stream",
+    "question": "Which time intervals show the highest and lowest message reception rates?",
     "query": "",
     "metrics": [
       "stream_messages_received"
     ]
   },
   {
-    "id": "f9409e39-f3c1-48cd-990f-321ff9f1bda3",
+    "id": "0b212b30-bcfb-40e0-aaf4-0ca783baeee5",
     "name": "Stream messages confirmed to publishers / s",
-    "description": "This PromQL query measures the rate at which messages are confirmed by publishers in a streaming system.",
-    "question": "How many messages are confirmed by publishers per second?",
+    "description": "This PromQL query measures the rate at which stream messages are confirmed to publishers per second.",
+    "question": "How many stream messages are confirmed to publishers?",
     "query": "",
     "metrics": [
       "stream_messages_confirmed"
     ]
   },
   {
-    "id": "79ead1d2-9c51-4edc-bb2a-869f55b4c52e",
+    "id": "0d6c39e8-3609-454a-ac97-98685364ade0",
     "name": "Stream messages confirmed to publishers / s",
-    "description": "This PromQL query measures the rate at which messages are confirmed by publishers in a streaming system.",
-    "question": "What is the rate of message confirmations to publishers?",
+    "description": "This PromQL query measures the rate at which stream messages are confirmed to publishers per second.",
+    "question": "What is the rate of stream message confirmations?",
     "query": "",
     "metrics": [
       "stream_messages_confirmed"
     ]
   },
   {
-    "id": "fd7a573a-971c-424a-8420-a0adf65986f3",
+    "id": "28c00f9f-13b2-4158-be5d-e77309fa4609",
     "name": "Stream messages confirmed to publishers / s",
-    "description": "This PromQL query measures the rate at which messages are confirmed by publishers in a streaming system.",
-    "question": "How is the confirmation rate of messages by publishers changing over time?",
+    "description": "This PromQL query measures the rate at which stream messages are confirmed to publishers per second.",
+    "question": "Which entity is responsible for confirming stream messages?",
     "query": "",
     "metrics": [
       "stream_messages_confirmed"
     ]
   },
   {
-    "id": "52459461-4d80-4b24-8413-20bfbcaaa05b",
+    "id": "682b951f-a51d-413e-8a0d-f234f149ec82",
     "name": "Stream consumers",
-    "description": "This PromQL query measures the total number of stream consumers at a given time.",
-    "question": "How many stream consumers are currently active?",
+    "description": "This PromQL query measures the total number of events processed by stream consumers over a specific time period.",
+    "question": "What is the total number of events processed by stream consumers?",
     "query": "",
     "metrics": [
       "stream_consumers_total"
     ]
   },
   {
-    "id": "bad15d82-c9ea-42a6-a912-3eba6e3861df",
+    "id": "a03cc9a0-456a-458e-ad67-e63fce00af62",
     "name": "Stream consumers",
-    "description": "This PromQL query measures the total number of stream consumers at a given time.",
-    "question": "What is the trend in stream consumer count over the past 24 hours?",
+    "description": "This PromQL query measures the total number of events processed by stream consumers over a specific time period.",
+    "question": "How many events have been consumed by stream consumers?",
     "query": "",
     "metrics": [
       "stream_consumers_total"
     ]
   },
   {
-    "id": "216e9189-5590-46f3-92fd-2b59ec944098",
+    "id": "df363cc9-1980-467f-8f4a-a7a4f5e6d1fd",
     "name": "Stream consumers",
-    "description": "This PromQL query measures the total number of stream consumers at a given time.",
-    "question": "Which stream consumer has the highest utilization?",
+    "description": "This PromQL query measures the total number of events processed by stream consumers over a specific time period.",
+    "question": "What is the aggregate count of events processed by stream consumers?",
     "query": "",
     "metrics": [
       "stream_consumers_total"
-    ]
-  },
-  {
-    "id": "7275538f-c83f-45f9-8e36-8670faacd870",
-    "name": "Stream messages delivered / s",
-    "description": "This PromQL query measures the rate at which messages are being delivered per second in a streaming system.",
-    "question": "How many messages are being delivered per second?",
-    "query": "",
-    "metrics": [
-      "stream_messages_delivered"
-    ]
-  },
-  {
-    "id": "74074496-cb08-4dc1-b1ff-46ceef3862d4",
-    "name": "Stream messages delivered / s",
-    "description": "This PromQL query measures the rate at which messages are being delivered per second in a streaming system.",
-    "question": "What is the current delivery rate of messages in the stream?",
-    "query": "",
-    "metrics": [
-      "stream_messages_delivered"
-    ]
-  },
-  {
-    "id": "53ef8043-f7b3-4169-ac50-2bc0891380a6",
-    "name": "Stream messages delivered / s",
-    "description": "This PromQL query measures the rate at which messages are being delivered per second in a streaming system.",
-    "question": "Is the message delivery rate increasing or decreasing?",
-    "query": "",
-    "metrics": [
-      "stream_messages_delivered"
     ]
   }
 ]

@@ -1,92 +1,122 @@
 [
   {
-    "id": "8541d92f-6b98-4d58-8e3e-a65aef702b80",
+    "id": "1095b9e8-37c2-4c99-9894-636cbd0734d2",
     "name": "Time Left",
-    "description": "This PromQL query measures the remaining time left for a certain event or resource based on a specific metric.",
-    "question": "What is the total CPU usage in seconds for a node?",
+    "description": "This PromQL query measures the remaining time or duration of a certain event or process based on the provided metrics.",
+    "question": "What is the total CPU seconds for the node?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "9434e9f9-536e-4fbc-a25d-3912b4540c16",
+    "id": "913e6abc-de55-4663-a035-af03f7f13adb",
     "name": "Time Left",
-    "description": "This PromQL query measures the remaining time left for a certain event or resource based on a specific metric.",
-    "question": "How has the CPU usage trend been over the last 5 minutes?",
+    "description": "This PromQL query measures the remaining time or duration of a certain event or process based on the provided metrics.",
+    "question": "How much time is left for the current process to complete?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "3339e93b-7ec7-4e92-bc87-ad4896d26522",
+    "id": "51c2b3a0-5e4c-46ca-9bf5-ef78754bf29d",
     "name": "Time Left",
-    "description": "This PromQL query measures the remaining time left for a certain event or resource based on a specific metric.",
-    "question": "Is the node CPU consumption increasing or decreasing recently?",
+    "description": "This PromQL query measures the remaining time or duration of a certain event or process based on the provided metrics.",
+    "question": "What is the remaining duration for the event based on CPU usage?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "65b6cd63-16dd-4f7b-9244-3da620102246",
+    "id": "b3f24a61-c1a2-4c0e-9ce6-cf9911a9c83f",
     "name": "Certificate Ready Status",
-    "description": "The PromQL query measures the status of certificates being ready, indicating whether they are valid and available for use.",
-    "question": "What is the current status of certificates being ready?",
+    "description": "This PromQL query measures the status of certificates indicating whether they are ready or not.",
+    "question": "What is the current status of the certificate readiness?",
     "query": "",
     "metrics": [
       "certificate_ready_status"
     ]
   },
   {
-    "id": "edcbfa93-b6bb-4a81-8e26-406761e1eb82",
+    "id": "0368b7a2-4eba-4adf-8481-3962c1b6a911",
     "name": "Certificate Ready Status",
-    "description": "The PromQL query measures the status of certificates being ready, indicating whether they are valid and available for use.",
-    "question": "How many certificates are currently valid and ready for use?",
+    "description": "This PromQL query measures the status of certificates indicating whether they are ready or not.",
+    "question": "Are there any certificates that are not ready?",
     "query": "",
     "metrics": [
       "certificate_ready_status"
     ]
   },
   {
-    "id": "e32a785c-e219-493a-b895-7697bd5b9170",
+    "id": "2ee5ff1a-33da-48f7-9ce5-d5d3544d602e",
     "name": "Certificate Ready Status",
-    "description": "The PromQL query measures the status of certificates being ready, indicating whether they are valid and available for use.",
-    "question": "Are there any certificates that are not ready at the moment?",
+    "description": "This PromQL query measures the status of certificates indicating whether they are ready or not.",
+    "question": "How many certificates are in a ready state?",
     "query": "",
     "metrics": [
       "certificate_ready_status"
     ]
   },
   {
-    "id": "e12cc048-3243-45d3-bfba-19c7b83e74e5",
+    "id": "2e457972-6308-40bc-a2c8-6853aba4397e",
     "name": "Time Left",
-    "description": "The PromQL query measures the remaining time until a certain event occurs based on the provided metrics.",
-    "question": "How much CPU time has been consumed?",
+    "description": "This PromQL query measures the remaining time or duration of a specific process, event, or resource.",
+    "question": "What is the total CPU seconds used by a node?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "9dc1a57e-315c-4aa2-bb1b-9e241a403422",
+    "id": "f68e5894-3e7b-4af0-a29f-3f43c2dfcb09",
     "name": "Time Left",
-    "description": "The PromQL query measures the remaining time until a certain event occurs based on the provided metrics.",
-    "question": "What is the total CPU usage of the node?",
+    "description": "This PromQL query measures the remaining time or duration of a specific process, event, or resource.",
+    "question": "How many CPU seconds have been consumed by a specific process?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "f258744e-924f-4baa-a79a-fdf834c45d01",
+    "id": "5771185b-6f15-457e-b395-a590f41f2fc4",
     "name": "Time Left",
-    "description": "The PromQL query measures the remaining time until a certain event occurs based on the provided metrics.",
-    "question": "Is the CPU usage increasing or decreasing over the past 5 minutes?",
+    "description": "This PromQL query measures the remaining time or duration of a specific process, event, or resource.",
+    "question": "What is the cumulative CPU time spent by all processes on a node?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "1c079d84-6b17-4b53-baff-19dffea77718",
+    "name": "Overall requests per 2m",
+    "description": "This PromQL query measures the overall number of requests received over a 2-minute interval.",
+    "question": "What is the total number of requests received?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "1b5dd1cd-34f9-445c-b070-1c06917de3a3",
+    "name": "Overall requests per 2m",
+    "description": "This PromQL query measures the overall number of requests received over a 2-minute interval.",
+    "question": "How many requests were made in the last 2 minutes?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "26806037-1b2c-41b2-9a5a-ca16e124f603",
+    "name": "Overall requests per 2m",
+    "description": "This PromQL query measures the overall number of requests received over a 2-minute interval.",
+    "question": "What is the request volume within a 2-minute timeframe?",
+    "query": "",
+    "metrics": [
+      "requests"
     ]
   }
 ]

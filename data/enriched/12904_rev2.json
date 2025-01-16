@@ -1,0 +1,122 @@
+[
+  {
+    "id": "125048c4-9d4d-4814-bd2f-21626766abfa",
+    "name": "Healthy Status",
+    "description": "This PromQL query measures the total number of healthy status metrics.",
+    "question": "How many healthy status metrics are currently being monitored?",
+    "query": "",
+    "metrics": [
+      "healthy_status"
+    ]
+  },
+  {
+    "id": "2bef5deb-9586-4e5f-ad2e-f1a6c4a7fb89",
+    "name": "Healthy Status",
+    "description": "This PromQL query measures the total number of healthy status metrics.",
+    "question": "What is the trend of healthy status metrics over time?",
+    "query": "",
+    "metrics": [
+      "healthy_status"
+    ]
+  },
+  {
+    "id": "0605928b-bf78-452c-818f-9462b07a9779",
+    "name": "Healthy Status",
+    "description": "This PromQL query measures the total number of healthy status metrics.",
+    "question": "Are there any specific patterns or anomalies in the healthy status metrics data?",
+    "query": "",
+    "metrics": [
+      "healthy_status"
+    ]
+  },
+  {
+    "id": "0a46ae35-74eb-4b31-bd57-e0105959b596",
+    "name": "Secrets",
+    "description": "This PromQL query measures the total number of secrets stored in a system.",
+    "question": "How many secrets are currently stored?",
+    "query": "",
+    "metrics": [
+      "secrets_total"
+    ]
+  },
+  {
+    "id": "7e0d9aa4-2b33-414c-9adb-29cb1e71de08",
+    "name": "Secrets",
+    "description": "This PromQL query measures the total number of secrets stored in a system.",
+    "question": "What is the historical trend of total secrets stored?",
+    "query": "",
+    "metrics": [
+      "secrets_total"
+    ]
+  },
+  {
+    "id": "8460ac66-6604-4485-bdb9-443f8dd7ab50",
+    "name": "Secrets",
+    "description": "This PromQL query measures the total number of secrets stored in a system.",
+    "question": "Are there any sudden spikes or drops in the number of stored secrets?",
+    "query": "",
+    "metrics": [
+      "secrets_total"
+    ]
+  },
+  {
+    "id": "18682b1e-f75d-4399-8c8a-8338a6faf3e2",
+    "name": "Number of Identity Entities",
+    "description": "This PromQL query measures the number of identity entities over time.",
+    "question": "What is the total number of identity entities?",
+    "query": "",
+    "metrics": [
+      "identity_entities"
+    ]
+  },
+  {
+    "id": "d24649b7-4afd-4c75-aacb-0857e57cea50",
+    "name": "Number of Identity Entities",
+    "description": "This PromQL query measures the number of identity entities over time.",
+    "question": "How is the number of identity entities changing?",
+    "query": "",
+    "metrics": [
+      "identity_entities"
+    ]
+  },
+  {
+    "id": "683edfe3-ee17-48c8-ac27-aead389c95ce",
+    "name": "Number of Identity Entities",
+    "description": "This PromQL query measures the number of identity entities over time.",
+    "question": "Are there any spikes in the number of identity entities?",
+    "query": "",
+    "metrics": [
+      "identity_entities"
+    ]
+  },
+  {
+    "id": "a48b5c1e-30f3-4395-b705-f704c64eeadf",
+    "name": "Identity Entities Aliases by Method",
+    "description": "This PromQL query measures the number of identity entities aliases grouped by method.",
+    "question": "What is the total number of identity entities aliases grouped by method?",
+    "query": "",
+    "metrics": [
+      "identity_entities_aliases"
+    ]
+  },
+  {
+    "id": "dde80a79-e1ce-4e3f-ac2f-35e400c8009e",
+    "name": "Identity Entities Aliases by Method",
+    "description": "This PromQL query measures the number of identity entities aliases grouped by method.",
+    "question": "Which method has the highest number of identity entities aliases?",
+    "query": "",
+    "metrics": [
+      "identity_entities_aliases"
+    ]
+  },
+  {
+    "id": "13af75fe-0d7c-4d1f-91ea-f2dd54341c1e",
+    "name": "Identity Entities Aliases by Method",
+    "description": "This PromQL query measures the number of identity entities aliases grouped by method.",
+    "question": "How do the identity entities aliases distribute across different methods?",
+    "query": "",
+    "metrics": [
+      "identity_entities_aliases"
+    ]
+  }
+]

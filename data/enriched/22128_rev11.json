@@ -1,122 +1,152 @@
 [
   {
-    "id": "1409ef69-75e6-4dda-9c1a-8c369452e5d8",
+    "id": "f48b761f-39d6-46a0-ae9c-058206241083",
     "name": "Target Metric ($hpa)",
-    "description": "This PromQL query measures the target metric using a specified horizontal pod autoscaler ($hpa).",
-    "question": "What is the current value of the target metric for the horizontal pod autoscaler?",
+    "description": "This PromQL query measures the average value of a target metric over a specific time period.",
+    "question": "What is the average value of the target metric?",
     "query": "",
     "metrics": [
-      "$hpa"
+      "target_metric"
     ]
   },
   {
-    "id": "dd4d38cf-fe9e-457d-8dd2-5c9f40f0be0d",
+    "id": "3adb7ded-36f8-4d50-921b-cad157fc0ec3",
     "name": "Target Metric ($hpa)",
-    "description": "This PromQL query measures the target metric using a specified horizontal pod autoscaler ($hpa).",
-    "question": "How does the target metric vary over time for the horizontal pod autoscaler?",
+    "description": "This PromQL query measures the average value of a target metric over a specific time period.",
+    "question": "How does the target metric fluctuate over time?",
     "query": "",
     "metrics": [
-      "$hpa"
+      "target_metric"
     ]
   },
   {
-    "id": "62462522-b55a-4e95-a2f0-340b7fbc34cf",
+    "id": "971d6e9a-6095-4176-b467-1c7fba9068a4",
     "name": "Target Metric ($hpa)",
-    "description": "This PromQL query measures the target metric using a specified horizontal pod autoscaler ($hpa).",
-    "question": "Is the target metric meeting the threshold set for the horizontal pod autoscaler?",
+    "description": "This PromQL query measures the average value of a target metric over a specific time period.",
+    "question": "Is there any correlation between the target metric and other metrics?",
     "query": "",
     "metrics": [
-      "$hpa"
+      "target_metric"
     ]
   },
   {
-    "id": "afa2b19b-4416-40e4-a0d7-df3ad124035b",
+    "id": "3cfdb30a-6e14-4399-b521-f48744a71332",
     "name": "Replicas ($hpa)",
     "description": "This PromQL query measures the current number of replicas managed by the Horizontal Pod Autoscaler (HPA) in a Kubernetes cluster.",
-    "question": "How many replicas are currently managed by the HPA?",
+    "question": "What is the current number of replicas managed by the HPA?",
     "query": "",
     "metrics": [
       "replicas"
     ]
   },
   {
-    "id": "4bd1d299-ccdc-4725-8cbf-e44f719c15c5",
+    "id": "ae646b22-7d41-4ca3-8b7f-18ef5d4f0f14",
     "name": "Replicas ($hpa)",
     "description": "This PromQL query measures the current number of replicas managed by the Horizontal Pod Autoscaler (HPA) in a Kubernetes cluster.",
-    "question": "What is the current scaling level of the HPA in terms of replicas?",
+    "question": "How many replicas are currently in the autoscaling group?",
     "query": "",
     "metrics": [
       "replicas"
     ]
   },
   {
-    "id": "f29dc41a-9548-4d1f-887e-fa45e15b5bf5",
+    "id": "7783365e-a47b-4608-a0e7-46106c80465d",
     "name": "Replicas ($hpa)",
     "description": "This PromQL query measures the current number of replicas managed by the Horizontal Pod Autoscaler (HPA) in a Kubernetes cluster.",
-    "question": "Are there any fluctuations in the number of replicas controlled by the HPA?",
+    "question": "What is the total count of replicas under HPA control?",
     "query": "",
     "metrics": [
       "replicas"
     ]
   },
   {
-    "id": "2379e80a-420a-4e17-9067-3ac22b7bee51",
+    "id": "4c8c1f95-4f25-40da-adc1-407fcb46cb6d",
     "name": "Max Replicas",
-    "description": "This PromQL query measures the maximum number of replicas used by a specific resource or service over a specified time range.",
-    "question": "What was the peak number of replicas used?",
+    "description": "The PromQL query measures the maximum number of replicas over a specified time range.",
+    "question": "What is the maximum number of replicas?",
     "query": "",
     "metrics": [
-      "max_replicas"
+      "replicas"
     ]
   },
   {
-    "id": "e5e1b105-88d0-424a-8222-a43e0cc90887",
+    "id": "5afd2a0a-9883-42d1-9740-f111497be743",
     "name": "Max Replicas",
-    "description": "This PromQL query measures the maximum number of replicas used by a specific resource or service over a specified time range.",
-    "question": "At what point did the resource/service require the most replicas?",
+    "description": "The PromQL query measures the maximum number of replicas over a specified time range.",
+    "question": "When did the highest number of replicas occur?",
     "query": "",
     "metrics": [
-      "max_replicas"
+      "replicas"
     ]
   },
   {
-    "id": "d6eec38e-d8fb-4706-a998-cfd69a27cad2",
+    "id": "20ae1fd6-07bf-43ba-a64d-39f517e55bd0",
     "name": "Max Replicas",
-    "description": "This PromQL query measures the maximum number of replicas used by a specific resource or service over a specified time range.",
-    "question": "What is the highest number of replicas observed within the specified time range?",
+    "description": "The PromQL query measures the maximum number of replicas over a specified time range.",
+    "question": "How many replicas were running at peak load?",
     "query": "",
     "metrics": [
-      "max_replicas"
+      "replicas"
     ]
   },
   {
-    "id": "8471cfee-6e68-4ac7-a87d-6957fec57bbb",
+    "id": "86abea08-b3a3-4f01-b034-c2c44686e636",
     "name": "Current Replicas",
-    "description": "This PromQL query measures the current number of replicas running in a Kubernetes cluster.",
+    "description": "This PromQL query measures the current number of replicas for a given resource.",
     "question": "How many replicas are currently running?",
     "query": "",
     "metrics": [
-      "current_replicas"
+      "replicas"
     ]
   },
   {
-    "id": "5346a844-f29e-46a2-ac6b-41281bcbec6d",
+    "id": "24eba198-bcc9-446d-bdce-302697b9d119",
     "name": "Current Replicas",
-    "description": "This PromQL query measures the current number of replicas running in a Kubernetes cluster.",
-    "question": "What is the current replica count?",
+    "description": "This PromQL query measures the current number of replicas for a given resource.",
+    "question": "What is the current replica count for the resource?",
     "query": "",
     "metrics": [
-      "current_replicas"
+      "replicas"
     ]
   },
   {
-    "id": "07c0df14-25dd-4fe7-b843-d9cba7ec4151",
+    "id": "3bec26ea-4cf9-479c-9e0d-023cccad6a3e",
     "name": "Current Replicas",
-    "description": "This PromQL query measures the current number of replicas running in a Kubernetes cluster.",
-    "question": "How many instances of the application are currently deployed?",
+    "description": "This PromQL query measures the current number of replicas for a given resource.",
+    "question": "How many instances of the resource are currently active?",
     "query": "",
     "metrics": [
-      "current_replicas"
+      "replicas"
+    ]
+  },
+  {
+    "id": "d425f267-fed6-42b1-b2a1-7e8c2c44ffe6",
+    "name": "Min Replicas",
+    "description": "This PromQL query measures the minimum number of replicas configured for a specific resource in the system.",
+    "question": "What is the minimum number of replicas configured for a specific resource?",
+    "query": "",
+    "metrics": [
+      "min_replicas"
+    ]
+  },
+  {
+    "id": "7c8373d1-c262-4011-ac16-523ef905aacd",
+    "name": "Min Replicas",
+    "description": "This PromQL query measures the minimum number of replicas configured for a specific resource in the system.",
+    "question": "Is the number of replicas below the defined minimum threshold?",
+    "query": "",
+    "metrics": [
+      "min_replicas"
+    ]
+  },
+  {
+    "id": "882f3712-26cf-47db-8806-600a611639a8",
+    "name": "Min Replicas",
+    "description": "This PromQL query measures the minimum number of replicas configured for a specific resource in the system.",
+    "question": "How many replicas are currently running compared to the minimum required?",
+    "query": "",
+    "metrics": [
+      "min_replicas"
     ]
   }
 ]

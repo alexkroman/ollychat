@@ -1,152 +1,122 @@
 [
   {
-    "id": "3d7dda83-8c91-40f1-91c8-ce3008fbec0c",
+    "id": "1cac2785-bffb-4506-957d-11776aff348a",
     "name": "Cluster Pod Requested",
-    "description": "This PromQL query measures the total number of requested pods in a cluster.",
-    "question": "What is the total number of requested pods in the cluster?",
+    "description": "The PromQL query measures the total number of requests made to pods within the cluster over a specific time period.",
+    "question": "How many requests were made to pods within the cluster?",
     "query": "",
     "metrics": [
       "cluster_pod_requested"
     ]
   },
   {
-    "id": "9c89b31a-8e80-4268-b49d-32e6bc27e4a4",
+    "id": "3e57e103-7114-45c7-a340-168569639099",
     "name": "Cluster Pod Requested",
-    "description": "This PromQL query measures the total number of requested pods in a cluster.",
-    "question": "How does the number of requested pods change over time?",
+    "description": "The PromQL query measures the total number of requests made to pods within the cluster over a specific time period.",
+    "question": "What is the total number of requests made to cluster pods?",
     "query": "",
     "metrics": [
       "cluster_pod_requested"
     ]
   },
   {
-    "id": "da571c92-e105-442a-af4a-258de09f0372",
+    "id": "e92348e6-c412-42af-b827-e798fbd5f02e",
     "name": "Cluster Pod Requested",
-    "description": "This PromQL query measures the total number of requested pods in a cluster.",
-    "question": "Which namespace has the highest number of requested pods?",
+    "description": "The PromQL query measures the total number of requests made to pods within the cluster over a specific time period.",
+    "question": "Which pods received requests within the cluster?",
     "query": "",
     "metrics": [
       "cluster_pod_requested"
     ]
   },
   {
-    "id": "880b802f-21db-4b0b-8969-6519cab142e2",
+    "id": "0f285c3e-8e28-471f-b0a6-e0823fe4c6e7",
     "name": "Cluster CPU Requested",
-    "description": "This PromQL query measures the CPU resources that have been requested by the nodes in the cluster.",
-    "question": "How much CPU has been requested by the cluster nodes?",
+    "description": "This PromQL query measures the CPU usage requested by the cluster.",
+    "question": "How much CPU is being requested by the cluster?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "fe3298cb-9b64-43bd-9de2-9ea7f9de2ff7",
+    "id": "f4539eb3-d26b-4a15-b239-b39f83f56631",
     "name": "Cluster CPU Requested",
-    "description": "This PromQL query measures the CPU resources that have been requested by the nodes in the cluster.",
-    "question": "Which nodes in the cluster have requested the most CPU resources?",
+    "description": "This PromQL query measures the CPU usage requested by the cluster.",
+    "question": "Which nodes are contributing to the total CPU requested by the cluster?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "88f763fe-bcee-40e4-8f1b-da007d592e90",
+    "id": "4a67bb6d-d083-44bd-80be-d97ff44374b0",
     "name": "Cluster CPU Requested",
-    "description": "This PromQL query measures the CPU resources that have been requested by the nodes in the cluster.",
-    "question": "What is the total CPU request across all nodes in the cluster?",
+    "description": "This PromQL query measures the CPU usage requested by the cluster.",
+    "question": "Is the CPU request by the cluster increasing or decreasing over time?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "3d007c32-d425-4bde-98e4-65905e642afa",
+    "id": "46dfb105-1aff-4803-b16a-5bc806c2ddc5",
     "name": "Cluster Memory  Requested",
-    "description": "This PromQL query measures the amount of memory requested by the cluster.",
+    "description": "This PromQL query measures the total memory requested by a cluster.",
     "question": "What is the total memory requested by the cluster?",
     "query": "",
     "metrics": [
-      "cluster_memory_requested"
+      "memory_requested"
     ]
   },
   {
-    "id": "6cd5adcb-00db-4f25-a50a-04b58e58dbd2",
+    "id": "fa8fd061-d0d1-4165-bc3d-d28c046eca81",
     "name": "Cluster Memory  Requested",
-    "description": "This PromQL query measures the amount of memory requested by the cluster.",
-    "question": "Which components are consuming the most memory in the cluster?",
+    "description": "This PromQL query measures the total memory requested by a cluster.",
+    "question": "How does the memory requested by the cluster change over time?",
     "query": "",
     "metrics": [
-      "cluster_memory_requested"
+      "memory_requested"
     ]
   },
   {
-    "id": "f683a4fd-c8ae-4349-a574-9016138373ea",
+    "id": "c3688481-31a7-4772-aaf1-c5f51ef8ed9e",
     "name": "Cluster Memory  Requested",
-    "description": "This PromQL query measures the amount of memory requested by the cluster.",
-    "question": "Is the memory request increasing or decreasing over time?",
+    "description": "This PromQL query measures the total memory requested by a cluster.",
+    "question": "Which components in the cluster contribute the most to the memory requested?",
     "query": "",
     "metrics": [
-      "cluster_memory_requested"
+      "memory_requested"
     ]
   },
   {
-    "id": "e28a6e85-7063-42cf-8c25-4dc937e4174b",
+    "id": "bebf9ae8-b8cd-4111-bf77-78e216886829",
     "name": "Cluster Pod Capacity",
-    "description": "The PromQL query measures the current capacity of pods in a cluster.",
-    "question": "What is the total capacity of pods in the cluster?",
+    "description": "This PromQL query measures the capacity of pods within a cluster.",
+    "question": "What is the current capacity of pods in the cluster?",
     "query": "",
     "metrics": [
       "cluster_pod_capacity"
     ]
   },
   {
-    "id": "e0dc45ac-e0b7-49e9-81ad-4e67b495d175",
+    "id": "9830fbd1-247f-4654-b0dc-335668dbc8f4",
     "name": "Cluster Pod Capacity",
-    "description": "The PromQL query measures the current capacity of pods in a cluster.",
-    "question": "How many pods can the cluster currently accommodate?",
+    "description": "This PromQL query measures the capacity of pods within a cluster.",
+    "question": "Are there any pods reaching their capacity limit?",
     "query": "",
     "metrics": [
       "cluster_pod_capacity"
     ]
   },
   {
-    "id": "07f41c53-ec3c-48db-b658-2126355b5aff",
+    "id": "2eaf9b97-41e0-46f1-bbf2-91b5f11bcb63",
     "name": "Cluster Pod Capacity",
-    "description": "The PromQL query measures the current capacity of pods in a cluster.",
-    "question": "Is the cluster reaching its pod capacity limit?",
+    "description": "This PromQL query measures the capacity of pods within a cluster.",
+    "question": "How much available capacity is left for new pods in the cluster?",
     "query": "",
     "metrics": [
       "cluster_pod_capacity"
-    ]
-  },
-  {
-    "id": "d90ea9b5-2565-43eb-bce7-29f76dcb78b8",
-    "name": "Cluster CPU Capacity",
-    "description": "This PromQL query measures the current CPU capacity of a cluster.",
-    "question": "What is the total CPU usage on the cluster?",
-    "query": "",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "a73e056b-11d7-4da3-aeb7-ddc7c3262c8f",
-    "name": "Cluster CPU Capacity",
-    "description": "This PromQL query measures the current CPU capacity of a cluster.",
-    "question": "Which nodes are experiencing the highest CPU load?",
-    "query": "",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "0c2081a9-23a0-4083-9b5d-f2b831c8c3c4",
-    "name": "Cluster CPU Capacity",
-    "description": "This PromQL query measures the current CPU capacity of a cluster.",
-    "question": "Is the cluster CPU capacity sufficient to handle the current workload?",
-    "query": "",
-    "metrics": [
-      "node_cpu_seconds_total"
     ]
   }
 ]

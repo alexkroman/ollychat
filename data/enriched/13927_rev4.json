@@ -1,38 +1,38 @@
 [
   {
-    "id": "0231324f-81f3-4e0c-a191-77d0c4fee610",
+    "id": "40bf2976-4ed3-4fee-b3a5-3349c38ad22a",
     "name": "WF Pending",
-    "description": "This PromQL query measures the number of pending workflow tasks.",
-    "question": "How many workflow tasks are currently pending?",
+    "description": "This PromQL query measures the number of pending workflow instances in the system.",
+    "question": "How many workflow instances are currently pending?",
     "query": "",
     "metrics": [
-      "workflow_tasks_pending"
+      "workflow_instances_pending"
     ]
   },
   {
-    "id": "5bfb87ff-7565-43b0-89e6-c564dd60aef9",
+    "id": "3c74a904-f643-4464-ad57-56f640fa96d9",
     "name": "WF Pending",
-    "description": "This PromQL query measures the number of pending workflow tasks.",
-    "question": "What is the trend of pending workflow tasks over time?",
+    "description": "This PromQL query measures the number of pending workflow instances in the system.",
+    "question": "What is the trend of pending workflow instances over a specific period?",
     "query": "",
     "metrics": [
-      "workflow_tasks_pending"
+      "workflow_instances_pending"
     ]
   },
   {
-    "id": "381c817c-9a03-43b2-8150-b4fae5e4330f",
+    "id": "62a54f7e-a77e-4250-ac7a-90d602e50582",
     "name": "WF Pending",
-    "description": "This PromQL query measures the number of pending workflow tasks.",
-    "question": "Are there any specific patterns or spikes in pending workflow tasks?",
+    "description": "This PromQL query measures the number of pending workflow instances in the system.",
+    "question": "Which workflow has the highest number of pending instances?",
     "query": "",
     "metrics": [
-      "workflow_tasks_pending"
+      "workflow_instances_pending"
     ]
   },
   {
-    "id": "73c14ef8-0881-4cbe-bb96-2779bf4199fc",
+    "id": "f2d808e1-17b4-4561-beb2-4b9cbdbbe9b3",
     "name": "WF Running",
-    "description": "The PromQL query measures the total number of workflows currently running in the system.",
+    "description": "This PromQL query measures the total number of workflows currently running.",
     "question": "How many workflows are currently running?",
     "query": "",
     "metrics": [
@@ -40,9 +40,9 @@
     ]
   },
   {
-    "id": "8e091891-e1f4-4aba-9ba1-5d7eae9b06a6",
+    "id": "0a2abee1-0468-472d-841e-5a204e5c28c4",
     "name": "WF Running",
-    "description": "The PromQL query measures the total number of workflows currently running in the system.",
+    "description": "This PromQL query measures the total number of workflows currently running.",
     "question": "What is the total count of active workflows?",
     "query": "",
     "metrics": [
@@ -50,9 +50,9 @@
     ]
   },
   {
-    "id": "f2881dfa-5d78-4ef1-bf56-f8d1572ac160",
+    "id": "124e05fe-7a96-4c32-852b-d32b3bf2c637",
     "name": "WF Running",
-    "description": "The PromQL query measures the total number of workflows currently running in the system.",
+    "description": "This PromQL query measures the total number of workflows currently running.",
     "question": "How many workflows are in progress?",
     "query": "",
     "metrics": [
@@ -60,69 +60,69 @@
     ]
   },
   {
-    "id": "fb2668ef-f541-4758-b8f1-cc0346ef3928",
+    "id": "2c9cf176-05cb-4159-a5d4-0523e311fa27",
     "name": "WF Errors",
-    "description": "This PromQL query measures the number of errors that occurred in a specific workflow.",
-    "question": "How many errors were encountered in the workflow?",
+    "description": "This PromQL query measures the number of errors in a specific workflow over a period of time.",
+    "question": "How many errors occurred in the workflow?",
     "query": "",
     "metrics": [
-      "<insert metric name here>"
+      "workflow_errors_total"
     ]
   },
   {
-    "id": "0d94395b-4501-4f2f-b986-0f4b07ac7641",
+    "id": "fc8265e6-268e-4602-96fe-aaebcb22dde7",
     "name": "WF Errors",
-    "description": "This PromQL query measures the number of errors that occurred in a specific workflow.",
-    "question": "What is the error rate in the workflow?",
+    "description": "This PromQL query measures the number of errors in a specific workflow over a period of time.",
+    "question": "What is the trend of errors in the workflow?",
     "query": "",
     "metrics": [
-      "<insert metric name here>"
+      "workflow_errors_total"
     ]
   },
   {
-    "id": "3dd4ce1f-51a5-4890-baac-519369f8c081",
+    "id": "57db0607-93cc-4c61-9291-c1c8db73a7ff",
     "name": "WF Errors",
-    "description": "This PromQL query measures the number of errors that occurred in a specific workflow.",
-    "question": "Are there any specific components in the workflow that are experiencing a higher error count?",
+    "description": "This PromQL query measures the number of errors in a specific workflow over a period of time.",
+    "question": "Which components of the workflow are experiencing the most errors?",
     "query": "",
     "metrics": [
-      "<insert metric name here>"
+      "workflow_errors_total"
     ]
   },
   {
-    "id": "7217a3fc-0039-4443-ace3-4c38f1800bd1",
+    "id": "fed38787-872e-472a-bd28-fef73dda69fd",
     "name": "WF Failed",
-    "description": "This PromQL query measures the number of workflow failures in a system over a specific time period.",
-    "question": "How many workflow failures occurred in the system?",
+    "description": "This PromQL query measures the total count of failed workflow executions.",
+    "question": "What is the total count of failed workflow executions?",
     "query": "",
     "metrics": [
-      "workflow_failures"
+      "workflow_executions_failed_total"
     ]
   },
   {
-    "id": "d69989d9-1b23-470e-835e-a63c90ad03ff",
+    "id": "9b70f01d-93f7-4356-b76a-35f6534fb8d7",
     "name": "WF Failed",
-    "description": "This PromQL query measures the number of workflow failures in a system over a specific time period.",
-    "question": "What is the trend of workflow failures over time?",
+    "description": "This PromQL query measures the total count of failed workflow executions.",
+    "question": "How many workflow executions have failed?",
     "query": "",
     "metrics": [
-      "workflow_failures"
+      "workflow_executions_failed_total"
     ]
   },
   {
-    "id": "891fccf9-8686-49ac-9b44-8004fb83b346",
+    "id": "60b7cffa-928a-4cd9-a2c3-d2269f2cb7e0",
     "name": "WF Failed",
-    "description": "This PromQL query measures the number of workflow failures in a system over a specific time period.",
-    "question": "Which component or service had the highest number of workflow failures?",
+    "description": "This PromQL query measures the total count of failed workflow executions.",
+    "question": "What is the cumulative number of failed workflow executions?",
     "query": "",
     "metrics": [
-      "workflow_failures"
+      "workflow_executions_failed_total"
     ]
   },
   {
-    "id": "9b3b29a2-349f-4bc6-ba30-f2e47f8aed82",
+    "id": "fb1b0de2-052a-43e9-ab28-930c77481770",
     "name": "WF Skipped",
-    "description": "This PromQL query measures the number of workflow executions that were skipped or not processed in the system.",
+    "description": "This PromQL query measures the count of workflow executions that were skipped.",
     "question": "How many workflow executions were skipped?",
     "query": "",
     "metrics": [
@@ -130,20 +130,20 @@
     ]
   },
   {
-    "id": "82885766-6ba8-4f1e-b80a-2a32bdd9fb49",
+    "id": "a834312e-8597-40dd-bfb0-8c1b7352318c",
     "name": "WF Skipped",
-    "description": "This PromQL query measures the number of workflow executions that were skipped or not processed in the system.",
-    "question": "What is the total count of workflow executions that did not get processed?",
+    "description": "This PromQL query measures the count of workflow executions that were skipped.",
+    "question": "What is the total count of skipped workflow executions?",
     "query": "",
     "metrics": [
       "workflow_executions_skipped"
     ]
   },
   {
-    "id": "791d5edf-8de8-465a-97d7-f09ab74019aa",
+    "id": "972a8078-ec94-49e3-afe0-513b91d2b7b3",
     "name": "WF Skipped",
-    "description": "This PromQL query measures the number of workflow executions that were skipped or not processed in the system.",
-    "question": "Is there a trend in the number of skipped workflow executions over time?",
+    "description": "This PromQL query measures the count of workflow executions that were skipped.",
+    "question": "Are there any instances where workflow executions were skipped?",
     "query": "",
     "metrics": [
       "workflow_executions_skipped"

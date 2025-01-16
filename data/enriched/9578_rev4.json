@@ -1,48 +1,38 @@
 [
   {
-    "id": "b25d40ef-8499-4577-9e7f-7288ad74ef36",
+    "id": "f5063103-2973-4e1b-bc71-1bbfd0ae4a54",
     "name": "Number of instances",
-    "description": "The PromQL query measures the total number of instances currently running in the system.",
-    "question": "How many instances are currently running?",
+    "description": "This PromQL query measures the total number of instances currently running in the system.",
+    "question": "What is the current total number of running instances?",
     "query": "",
     "metrics": [
       "instance"
     ]
   },
   {
-    "id": "12755346-a0fb-4003-9fff-c95b52d1614c",
+    "id": "0fa6e6e3-0585-4080-842c-298b04ef4454",
     "name": "Number of instances",
-    "description": "The PromQL query measures the total number of instances currently running in the system.",
-    "question": "What is the total count of instances?",
+    "description": "This PromQL query measures the total number of instances currently running in the system.",
+    "question": "How many instances are active?",
     "query": "",
     "metrics": [
       "instance"
     ]
   },
   {
-    "id": "fee62fd9-454a-4b9d-8dff-1fed8d216b45",
+    "id": "057f14a8-2098-4e81-bb60-cd835bed5b64",
     "name": "Number of instances",
-    "description": "The PromQL query measures the total number of instances currently running in the system.",
-    "question": "Are there any instances running at the moment?",
+    "description": "This PromQL query measures the total number of instances currently running in the system.",
+    "question": "What is the count of instances at the moment?",
     "query": "",
     "metrics": [
       "instance"
     ]
   },
   {
-    "id": "8c2c220d-65d3-4027-813a-1419735a7ee7",
+    "id": "8c974095-e000-434d-a615-bffc480e4782",
     "name": "Cluster size",
-    "description": "The PromQL query counts the number of peers in the Alertmanager cluster.",
-    "question": "How many peers are currently in the Alertmanager cluster?",
-    "query": "",
-    "metrics": [
-      "count"
-    ]
-  },
-  {
-    "id": "41e4cb2c-f4d1-4f3d-bc0d-84a50da148f1",
-    "name": "Cluster size",
-    "description": "The PromQL query counts the number of peers in the Alertmanager cluster.",
+    "description": "The PromQL query measures the current number of peers in the Alertmanager cluster.",
     "question": "What is the total count of peers in the Alertmanager cluster?",
     "query": "",
     "metrics": [
@@ -50,73 +40,53 @@
     ]
   },
   {
-    "id": "40331679-169c-44ae-aca8-15ff248fe341",
+    "id": "ead339fc-770a-4bde-8a98-f35764bcd779",
     "name": "Cluster size",
-    "description": "The PromQL query counts the number of peers in the Alertmanager cluster.",
-    "question": "How many instances are part of the Alertmanager cluster?",
+    "description": "The PromQL query measures the current number of peers in the Alertmanager cluster.",
+    "question": "How many nodes are currently part of the Alertmanager cluster?",
     "query": "",
     "metrics": [
       "count"
     ]
   },
   {
-    "id": "affc42a2-3154-4176-a414-f91439206bf9",
+    "id": "2d452d51-f8eb-4f9a-a466-e0517e6074f4",
+    "name": "Cluster size",
+    "description": "The PromQL query measures the current number of peers in the Alertmanager cluster.",
+    "question": "What is the overall size of the Alertmanager cluster in terms of peers?",
+    "query": "",
+    "metrics": [
+      "count"
+    ]
+  },
+  {
+    "id": "da80b9be-016f-48e9-bf83-8248b6fda0a6",
     "name": "Number of active alerts",
-    "description": "This PromQL query measures the current number of active alerts being triggered in the monitoring system.",
-    "question": "How many active alerts are currently triggered?",
+    "description": "This PromQL query measures the current number of active alerts in the monitoring system.",
+    "question": "What is the current number of active alerts?",
     "query": "",
     "metrics": [
       "active_alerts"
     ]
   },
   {
-    "id": "c694936b-68cd-45c2-943a-e5b61a0fd9ce",
+    "id": "b431aeb5-e036-42e3-9dcf-021978387704",
     "name": "Number of active alerts",
-    "description": "This PromQL query measures the current number of active alerts being triggered in the monitoring system.",
-    "question": "What is the total count of alerts that are currently active?",
+    "description": "This PromQL query measures the current number of active alerts in the monitoring system.",
+    "question": "How many alerts are currently active?",
     "query": "",
     "metrics": [
       "active_alerts"
     ]
   },
   {
-    "id": "7f8633db-8895-465a-a3ad-b622eec418c7",
+    "id": "8d316701-06f5-482a-8eff-2b3553ca4214",
     "name": "Number of active alerts",
-    "description": "This PromQL query measures the current number of active alerts being triggered in the monitoring system.",
-    "question": "Are there any alerts currently firing?",
+    "description": "This PromQL query measures the current number of active alerts in the monitoring system.",
+    "question": "What is the total count of active alerts?",
     "query": "",
     "metrics": [
       "active_alerts"
-    ]
-  },
-  {
-    "id": "1aff517c-0ebb-4ba4-b7fd-3bc21d587d65",
-    "name": "Number of suppressed alerts",
-    "description": "The PromQL query measures the current number of suppressed alerts in the monitoring system.",
-    "question": "How many alerts are currently being suppressed?",
-    "query": "",
-    "metrics": [
-      "suppressed_alerts"
-    ]
-  },
-  {
-    "id": "ab9d187e-dc9e-4a7f-8c28-3b10c8bef3cb",
-    "name": "Number of suppressed alerts",
-    "description": "The PromQL query measures the current number of suppressed alerts in the monitoring system.",
-    "question": "What is the count of suppressed alerts at this moment?",
-    "query": "",
-    "metrics": [
-      "suppressed_alerts"
-    ]
-  },
-  {
-    "id": "4b88dd8f-536c-4bc6-9fd4-234b527ac679",
-    "name": "Number of suppressed alerts",
-    "description": "The PromQL query measures the current number of suppressed alerts in the monitoring system.",
-    "question": "How many alerts have been marked as suppressed?",
-    "query": "",
-    "metrics": [
-      "suppressed_alerts"
     ]
   }
 ]

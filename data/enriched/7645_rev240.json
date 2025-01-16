@@ -1,46 +1,46 @@
 [
   {
-    "id": "32c437a3-d5fd-4241-a8c9-d219ea10b57b",
+    "id": "c422148d-2f4b-45d9-a53f-2f3f559337b5",
     "name": "Pilot Versions",
     "description": "This PromQL query measures the version number of each running instance.",
     "question": "What are the version numbers of the running instances?",
     "query": "",
     "metrics": [
-      "version"
+      "instance"
     ]
   },
   {
-    "id": "04cd2300-e68e-4cdc-8991-f5b0bc9a4a6a",
+    "id": "7c7961c5-fa02-4d69-acd9-45519cebe0f9",
     "name": "Pilot Versions",
     "description": "This PromQL query measures the version number of each running instance.",
-    "question": "How many unique version numbers are present in the running instances?",
+    "question": "How many running instances have a specific version number?",
     "query": "",
     "metrics": [
-      "version"
+      "instance"
     ]
   },
   {
-    "id": "b6d2d956-7b2c-4868-8e1b-7488a09f9c12",
+    "id": "749e7b15-c587-46ba-8907-e896ce258335",
     "name": "Pilot Versions",
     "description": "This PromQL query measures the version number of each running instance.",
     "question": "Which instance has the highest version number?",
     "query": "",
     "metrics": [
-      "version"
+      "instance"
     ]
   },
   {
-    "id": "5c7448c5-d070-4c62-a65a-2c8a296b977e",
+    "id": "8566cb2e-1d63-4923-9fd2-0a61ec354ada",
     "name": "Memory Usage",
     "description": "The PromQL query measures the memory usage of each running instance.",
-    "question": "What is the current memory usage of each running instance?",
+    "question": "What is the memory usage of each running instance?",
     "query": "",
     "metrics": [
       "memory_usage"
     ]
   },
   {
-    "id": "ed8b0a6b-cc76-4c26-acb6-580adddfe278",
+    "id": "11c85075-ddc9-4a2a-aeb1-1fd14c39f847",
     "name": "Memory Usage",
     "description": "The PromQL query measures the memory usage of each running instance.",
     "question": "Which instance has the highest memory usage?",
@@ -50,63 +50,70 @@
     ]
   },
   {
-    "id": "f824c5aa-fab7-4276-a45f-205de79ae3f1",
+    "id": "81877ed7-fa74-4e48-9810-9dfb3f41d7f2",
     "name": "Memory Usage",
     "description": "The PromQL query measures the memory usage of each running instance.",
-    "question": "Are there any instances approaching their memory limits?",
+    "question": "How does memory usage vary across different instances?",
     "query": "",
     "metrics": [
       "memory_usage"
     ]
   },
   {
-    "id": "52087155-8ac9-4634-ab65-e550cf63ad06",
+    "id": "b8ed0c35-aa10-412b-80a3-966f88f9aa14",
     "name": "Memory Allocations",
-    "description": "The PromQL query measures the details about memory allocations in the system.",
-    "question": "What is the total memory allocated in bytes?",
+    "description": "This PromQL query measures the memory allocations within a system.",
+    "question": "What is the total memory available?",
     "query": "",
     "metrics": [
       "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes",
-      "node_memory_Cached_bytes"
+      "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "f5848feb-14e2-4bb4-b02c-9f8795bcebfa",
+    "id": "4fb400d9-772b-4ec8-8cd9-98ea10c76995",
     "name": "Memory Allocations",
-    "description": "The PromQL query measures the details about memory allocations in the system.",
-    "question": "How much free memory is available in bytes?",
+    "description": "This PromQL query measures the memory allocations within a system.",
+    "question": "How much memory is currently free?",
     "query": "",
     "metrics": [
       "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes",
-      "node_memory_Cached_bytes"
+      "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "2c3e5edd-75c2-4b32-9839-f193593d5f19",
+    "id": "fb891b5f-9446-4845-85dc-31260c7c75b0",
     "name": "Memory Allocations",
-    "description": "The PromQL query measures the details about memory allocations in the system.",
-    "question": "What is the amount of memory cached in bytes?",
+    "description": "This PromQL query measures the memory allocations within a system.",
+    "question": "What is the memory allocation trend?",
     "query": "",
     "metrics": [
       "node_memory_MemTotal_bytes",
-      "node_memory_MemFree_bytes",
-      "node_memory_Cached_bytes"
+      "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "6725204c-afda-43f7-9594-4abec0bbf8bc",
+    "id": "c3b2e0b9-41af-4279-bb59-315acc79cb8b",
     "name": "CPU Usage",
     "description": "The PromQL query measures the CPU usage of each running instance by querying the metric related to CPU usage.",
-    "question": "What is the total CPU usage of all running instances?",
+    "question": "What is the total CPU time consumed by each running instance?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "75ecc1f2-9b26-49a7-88a9-452e98dab193",
+    "id": "d1d721b5-bf09-4009-a655-d6bcae2941d5",
+    "name": "CPU Usage",
+    "description": "The PromQL query measures the CPU usage of each running instance by querying the metric related to CPU usage.",
+    "question": "How is the CPU usage distributed across different instances?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "4b39cf26-0970-4d29-8572-569f298e0e7a",
     "name": "CPU Usage",
     "description": "The PromQL query measures the CPU usage of each running instance by querying the metric related to CPU usage.",
     "question": "Which instance has the highest CPU usage?",
@@ -116,13 +123,33 @@
     ]
   },
   {
-    "id": "f164e977-d45d-41ba-ba98-169f36746551",
-    "name": "CPU Usage",
-    "description": "The PromQL query measures the CPU usage of each running instance by querying the metric related to CPU usage.",
-    "question": "How has the CPU usage trend changed over the past 5 minutes?",
+    "id": "cbf29909-d50a-4b59-b5cc-4e90ee0c0223",
+    "name": "Goroutines",
+    "description": "This PromQL query measures the count of goroutines for each running instance.",
+    "question": "What is the current count of goroutines for each running instance?",
     "query": "",
     "metrics": [
-      "node_cpu_seconds_total"
+      "goroutine_count"
+    ]
+  },
+  {
+    "id": "e643fdbc-5757-4b05-8fb3-6b7b8197c9ff",
+    "name": "Goroutines",
+    "description": "This PromQL query measures the count of goroutines for each running instance.",
+    "question": "Which instance has the highest number of goroutines?",
+    "query": "",
+    "metrics": [
+      "goroutine_count"
+    ]
+  },
+  {
+    "id": "bed4ad18-86b7-4af0-87cf-630f9ccd8308",
+    "name": "Goroutines",
+    "description": "This PromQL query measures the count of goroutines for each running instance.",
+    "question": "How do the goroutine counts vary across different instances?",
+    "query": "",
+    "metrics": [
+      "goroutine_count"
     ]
   }
 ]

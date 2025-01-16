@@ -1,39 +1,9 @@
 [
   {
-    "id": "0e701545-94b5-46f4-a61a-4dabfee0492a",
-    "name": "All HTTP responses",
-    "description": "This PromQL query measures the total count of all HTTP responses recorded by the system.",
-    "question": "How many HTTP responses have been recorded?",
-    "query": "",
-    "metrics": [
-      "http_responses_total"
-    ]
-  },
-  {
-    "id": "daa648ee-ba28-42da-bc1d-6f3c265215af",
-    "name": "All HTTP responses",
-    "description": "This PromQL query measures the total count of all HTTP responses recorded by the system.",
-    "question": "What is the total count of HTTP responses?",
-    "query": "",
-    "metrics": [
-      "http_responses_total"
-    ]
-  },
-  {
-    "id": "36f9bed9-abc6-41eb-9eef-1fe4396654e1",
-    "name": "All HTTP responses",
-    "description": "This PromQL query measures the total count of all HTTP responses recorded by the system.",
-    "question": "How many total HTTP responses were received?",
-    "query": "",
-    "metrics": [
-      "http_responses_total"
-    ]
-  },
-  {
-    "id": "363203be-b845-4d3e-ad13-cc78786a7873",
+    "id": "e04d8e56-7081-46f6-bbb9-bc98e2e496b5",
     "name": "Incoming / Outgoing bytes",
-    "description": "The PromQL query measures the incoming and outgoing bytes of a system or network interface.",
-    "question": "What is the total incoming bytes on the system or network interface?",
+    "description": "This PromQL query measures the incoming and outgoing bytes of a specific network interface.",
+    "question": "What are the incoming bytes of the network interface?",
     "query": "",
     "metrics": [
       "incoming_bytes",
@@ -41,10 +11,10 @@
     ]
   },
   {
-    "id": "af4a01b7-ecf3-4749-b59c-6b5b835120d3",
+    "id": "4568eecb-5700-4a8b-8ece-c88cee79abc9",
     "name": "Incoming / Outgoing bytes",
-    "description": "The PromQL query measures the incoming and outgoing bytes of a system or network interface.",
-    "question": "What is the total outgoing bytes on the system or network interface?",
+    "description": "This PromQL query measures the incoming and outgoing bytes of a specific network interface.",
+    "question": "What are the outgoing bytes of the network interface?",
     "query": "",
     "metrics": [
       "incoming_bytes",
@@ -52,10 +22,10 @@
     ]
   },
   {
-    "id": "e092a0c2-264b-46cf-badc-f8b667fec8c9",
+    "id": "c6652033-8db0-4655-a803-492638f49489",
     "name": "Incoming / Outgoing bytes",
-    "description": "The PromQL query measures the incoming and outgoing bytes of a system or network interface.",
-    "question": "How do the incoming and outgoing bytes compare over a specific time range?",
+    "description": "This PromQL query measures the incoming and outgoing bytes of a specific network interface.",
+    "question": "What is the total bytes transferred through the network interface?",
     "query": "",
     "metrics": [
       "incoming_bytes",
@@ -63,72 +33,69 @@
     ]
   },
   {
-    "id": "e1ee5cba-bf32-40e4-925b-5a8d6be8c186",
+    "id": "431a5289-2c70-4169-a6cb-77ad8a59a1da",
     "name": "Number of connections",
-    "description": "The PromQL query measures the number of connections to a specific service or resource over a given time period.",
-    "question": "How many connections were established in the last 5 minutes?",
+    "description": "The PromQL query measures the total number of connections to a specific service or resource over a given time period.",
+    "question": "What is the total number of connections to the service?",
     "query": "",
     "metrics": [
       "number_of_connections"
     ]
   },
   {
-    "id": "4d486c15-2798-4fe1-ae23-c95ba417d54d",
+    "id": "9d835aa9-4c91-4b7c-8889-352869337bda",
     "name": "Number of connections",
-    "description": "The PromQL query measures the number of connections to a specific service or resource over a given time period.",
-    "question": "What is the average number of connections per minute?",
+    "description": "The PromQL query measures the total number of connections to a specific service or resource over a given time period.",
+    "question": "How many connections were established within a specific time frame?",
     "query": "",
     "metrics": [
       "number_of_connections"
     ]
   },
   {
-    "id": "46584dcf-385f-45d5-80df-dedc3dd754af",
+    "id": "15b70e86-2216-4a61-9879-0fffd1c59d16",
     "name": "Number of connections",
-    "description": "The PromQL query measures the number of connections to a specific service or resource over a given time period.",
-    "question": "Are there any spikes in the number of connections during peak hours?",
+    "description": "The PromQL query measures the total number of connections to a specific service or resource over a given time period.",
+    "question": "What is the trend of connection numbers over time?",
     "query": "",
     "metrics": [
       "number_of_connections"
     ]
   },
   {
-    "id": "6cdc3007-82f3-4a40-8031-56241580e3f2",
+    "id": "e639ad1d-e62b-4be3-a99c-9c8f789d579c",
     "name": "Requests and Responses",
     "description": "This PromQL query measures the rate of requests and responses over a specific time window.",
-    "question": "What is the average rate of requests?",
+    "question": "How many requests were processed?",
     "query": "",
     "metrics": [
-      "requests_total",
-      "responses_total"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "2c3d05c9-8e4d-4034-a332-531e5ce2a306",
+    "id": "dc5f5712-601c-4316-8d2d-bba888822655",
     "name": "Requests and Responses",
     "description": "This PromQL query measures the rate of requests and responses over a specific time window.",
-    "question": "How many responses were received in the last hour?",
+    "question": "What is the response rate?",
     "query": "",
     "metrics": [
-      "requests_total",
-      "responses_total"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "93e1f715-ae91-4d6b-ac23-1aeb14ca7424",
+    "id": "6d0913ee-f878-40ee-b517-a705495154d6",
     "name": "Requests and Responses",
     "description": "This PromQL query measures the rate of requests and responses over a specific time window.",
-    "question": "Is there a correlation between the number of requests and responses?",
+    "question": "Are there any spikes in requests or responses?",
     "query": "",
     "metrics": [
-      "requests_total",
-      "responses_total"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "1eb6f5ec-96d9-4773-8ac3-48a0f5b56757",
+    "id": "8aef3251-a245-4f8b-9ba1-32c3e4830037",
     "name": "Active sessions",
-    "description": "The PromQL query measures the number of active sessions currently being handled by the system.",
+    "description": "The PromQL query measures the number of active sessions currently running in the system.",
     "question": "What is the current number of active sessions?",
     "query": "",
     "metrics": [
@@ -136,20 +103,20 @@
     ]
   },
   {
-    "id": "1b4829a1-1fca-4a9e-9b87-bfd6a1fc66f3",
+    "id": "345e8668-d531-4f6a-ae41-2ec87abe95f8",
     "name": "Active sessions",
-    "description": "The PromQL query measures the number of active sessions currently being handled by the system.",
-    "question": "How does the number of active sessions vary over time?",
+    "description": "The PromQL query measures the number of active sessions currently running in the system.",
+    "question": "How have active sessions fluctuated over the monitoring period?",
     "query": "",
     "metrics": [
       "active_sessions"
     ]
   },
   {
-    "id": "4788f310-4437-42be-825d-e0bde9308eae",
+    "id": "c9b87ce2-736d-4246-9446-9aa47a4e4b4f",
     "name": "Active sessions",
-    "description": "The PromQL query measures the number of active sessions currently being handled by the system.",
-    "question": "What is the peak number of active sessions observed?",
+    "description": "The PromQL query measures the number of active sessions currently running in the system.",
+    "question": "Which service or component has the highest number of active sessions?",
     "query": "",
     "metrics": [
       "active_sessions"

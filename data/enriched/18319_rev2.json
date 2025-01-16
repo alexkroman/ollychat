@@ -1,8 +1,8 @@
 [
   {
-    "id": "eb71bbcb-2021-4c95-9218-2972758557a5",
+    "id": "665621ca-c02c-4422-9250-404e99168291",
     "name": "Controller State",
-    "description": "The PromQL query measures the current state of a controller in the system.",
+    "description": "The PromQL query measures the current state of the controller",
     "question": "What is the current state of the controller?",
     "query": "",
     "metrics": [
@@ -10,9 +10,9 @@
     ]
   },
   {
-    "id": "68c33670-0bcc-45ad-b09c-647124743b8d",
+    "id": "c6505a80-3936-4929-a8e8-c93a4a994324",
     "name": "Controller State",
-    "description": "The PromQL query measures the current state of a controller in the system.",
+    "description": "The PromQL query measures the current state of the controller",
     "question": "Is the controller operational?",
     "query": "",
     "metrics": [
@@ -20,133 +20,133 @@
     ]
   },
   {
-    "id": "03527094-cb77-44bc-8287-5e696a38a337",
+    "id": "876fcef8-7087-408f-b97f-2d08e59e8677",
     "name": "Controller State",
-    "description": "The PromQL query measures the current state of a controller in the system.",
-    "question": "Is the controller in a healthy state?",
+    "description": "The PromQL query measures the current state of the controller",
+    "question": "What is the status of the controller?",
     "query": "",
     "metrics": [
       "controller_state"
     ]
   },
   {
-    "id": "733c88d8-2fb6-4296-9058-7c1dfa88e3d6",
+    "id": "16c68ab8-a34f-41af-b4b1-4ec5ceab2cc7",
     "name": "Controller Reconcile Rate",
-    "description": "This PromQL query measures the rate at which controllers reconcile resources in the system.",
-    "question": "What is the current rate at which controllers reconcile resources?",
+    "description": "This PromQL query measures the rate at which controllers are reconciling operations within the system.",
+    "question": "What is the current reconciliation rate of controllers?",
     "query": "",
     "metrics": [
       "controller_reconcile_rate"
     ]
   },
   {
-    "id": "89b04775-ba84-4376-9e51-c39e9ddde3dd",
+    "id": "98464c35-1b85-4f65-97ef-63be8d1b7946",
     "name": "Controller Reconcile Rate",
-    "description": "This PromQL query measures the rate at which controllers reconcile resources in the system.",
-    "question": "Are there any spikes in the reconciliation rate of controllers?",
+    "description": "This PromQL query measures the rate at which controllers are reconciling operations within the system.",
+    "question": "Are controllers processing reconciliations at a consistent rate?",
     "query": "",
     "metrics": [
       "controller_reconcile_rate"
     ]
   },
   {
-    "id": "0445614a-0514-4221-8b68-508c64cf3d38",
+    "id": "06735ad4-dce8-4633-828b-242b72354615",
     "name": "Controller Reconcile Rate",
-    "description": "This PromQL query measures the rate at which controllers reconcile resources in the system.",
-    "question": "How does the reconciliation rate of controllers change over different time intervals?",
+    "description": "This PromQL query measures the rate at which controllers are reconciling operations within the system.",
+    "question": "Which controller has the highest reconciliation rate?",
     "query": "",
     "metrics": [
       "controller_reconcile_rate"
     ]
   },
   {
-    "id": "924f19af-d630-4c9c-9343-9febe43f721c",
+    "id": "7e3040e7-554e-4e1b-98bc-c3b382a38a99",
     "name": "Controller Reconcile Duration",
-    "description": "The PromQL query measures the duration in seconds taken by the controller to reconcile the desired state of a resource with the current state.",
-    "question": "What is the average reconcile duration of the controller?",
+    "description": "Measures the duration taken by the controller to perform reconciliation tasks",
+    "question": "What is the duration taken by the controller for reconciliation?",
     "query": "",
     "metrics": [
-      "controller_reconcile_duration_seconds"
+      "controller_reconcile_duration"
     ]
   },
   {
-    "id": "971cb109-cbd8-4729-ad2b-4fcda53b1801",
+    "id": "0e257f50-a4d5-4548-8cb3-75277431f274",
     "name": "Controller Reconcile Duration",
-    "description": "The PromQL query measures the duration in seconds taken by the controller to reconcile the desired state of a resource with the current state.",
-    "question": "Is there a correlation between the reconcile duration and the number of resource updates?",
+    "description": "Measures the duration taken by the controller to perform reconciliation tasks",
+    "question": "How long does it take for the controller to reconcile tasks?",
     "query": "",
     "metrics": [
-      "controller_reconcile_duration_seconds"
+      "controller_reconcile_duration"
     ]
   },
   {
-    "id": "1dd33961-109b-4241-95c2-74113dce108f",
+    "id": "02dfdba9-5425-4285-b3e8-3b4eb69a26a5",
     "name": "Controller Reconcile Duration",
-    "description": "The PromQL query measures the duration in seconds taken by the controller to reconcile the desired state of a resource with the current state.",
-    "question": "What is the maximum reconcile duration observed during peak load?",
+    "description": "Measures the duration taken by the controller to perform reconciliation tasks",
+    "question": "What is the reconciliation duration of the controller?",
     "query": "",
     "metrics": [
-      "controller_reconcile_duration_seconds"
+      "controller_reconcile_duration"
     ]
   },
   {
-    "id": "fc079945-68b1-4235-a26f-f121c13ddf26",
+    "id": "923eaf73-34f8-48ca-a653-b2a7aa32f0ab",
     "name": "Controller Max Concurrent Reconciles",
-    "description": "This PromQL query measures the maximum number of concurrent reconciles happening in the controller at any given time.",
-    "question": "What is the peak number of concurrent reconciles in the controller?",
+    "description": "This PromQL query measures the maximum number of concurrent reconciliation operations happening in the controller.",
+    "question": "What is the maximum number of concurrent reconciliation operations in the controller?",
     "query": "",
     "metrics": [
       "controller_max_concurrent_reconciles"
     ]
   },
   {
-    "id": "364d5324-4ffa-45ee-84ef-85b79450e055",
+    "id": "1097eded-e53b-497b-a9f3-6c2a885b6274",
     "name": "Controller Max Concurrent Reconciles",
-    "description": "This PromQL query measures the maximum number of concurrent reconciles happening in the controller at any given time.",
-    "question": "How many reconciles are happening simultaneously in the controller?",
+    "description": "This PromQL query measures the maximum number of concurrent reconciliation operations happening in the controller.",
+    "question": "How many reconciliation operations are happening concurrently at peak?",
     "query": "",
     "metrics": [
       "controller_max_concurrent_reconciles"
     ]
   },
   {
-    "id": "172860c7-412a-4753-ade8-b05794f2e5fb",
+    "id": "2a5f93f8-f884-4149-be9d-032e2987021d",
     "name": "Controller Max Concurrent Reconciles",
-    "description": "This PromQL query measures the maximum number of concurrent reconciles happening in the controller at any given time.",
-    "question": "At what point do we reach the maximum concurrent reconciles in the controller?",
+    "description": "This PromQL query measures the maximum number of concurrent reconciliation operations happening in the controller.",
+    "question": "What is the highest number of reconciliation activities occurring simultaneously?",
     "query": "",
     "metrics": [
       "controller_max_concurrent_reconciles"
     ]
   },
   {
-    "id": "3f17122d-4cfc-4cd0-8263-0dfbc38ef2b0",
+    "id": "57347696-186b-4c02-9f08-7f6f390a219c",
     "name": "Controller Reconcile Errors Rate",
     "description": "This PromQL query measures the rate of errors occurring during the reconciliation process in the controller component.",
-    "question": "What is the current rate of errors during controller reconciliation?",
+    "question": "What is the rate of errors during controller reconciliation?",
     "query": "",
     "metrics": [
-      "Controller_Reconcile_Errors_Rate"
+      "controller_reconcile_errors"
     ]
   },
   {
-    "id": "1c5e843d-f223-47e6-ae0e-628acbfb5752",
+    "id": "15381fa6-40a8-47ee-937e-15b93b9eb455",
     "name": "Controller Reconcile Errors Rate",
     "description": "This PromQL query measures the rate of errors occurring during the reconciliation process in the controller component.",
-    "question": "Is the error rate increasing or decreasing over time?",
+    "question": "Are there any spikes in errors during the reconciliation process?",
     "query": "",
     "metrics": [
-      "Controller_Reconcile_Errors_Rate"
+      "controller_reconcile_errors"
     ]
   },
   {
-    "id": "82f81829-fc5e-4efc-9c40-0a07eac0035f",
+    "id": "e50bd383-097b-4e12-aace-4db5551f90a6",
     "name": "Controller Reconcile Errors Rate",
     "description": "This PromQL query measures the rate of errors occurring during the reconciliation process in the controller component.",
-    "question": "Which controller component has the highest error reconciliation rate?",
+    "question": "How has the error rate trended over time in the controller reconciliation?",
     "query": "",
     "metrics": [
-      "Controller_Reconcile_Errors_Rate"
+      "controller_reconcile_errors"
     ]
   }
 ]

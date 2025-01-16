@@ -1,86 +1,152 @@
 [
   {
-    "id": "c1917ce0-4076-4959-bdb1-7b07c46d8c26",
+    "id": "a16bb5c4-2daa-4af6-bdbf-b806754d78d1",
     "name": "Uptime",
-    "description": "The PromQL query measures the uptime of a system or service over a specific time period.",
-    "question": "What is the overall uptime of the system?",
+    "description": "The PromQL query measures the uptime of a specific system or service over a given time period.",
+    "question": "What is the total CPU usage of the node?",
     "query": "",
-    "metrics": []
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
   },
   {
-    "id": "7e69abee-34a4-4e5e-8d80-d9fa0286a7b6",
+    "id": "70713624-3cc8-4bba-9014-ec30f606d5c5",
     "name": "Uptime",
-    "description": "The PromQL query measures the uptime of a system or service over a specific time period.",
-    "question": "How has the uptime trended over the past week?",
+    "description": "The PromQL query measures the uptime of a specific system or service over a given time period.",
+    "question": "How many seconds has the CPU been active on the node?",
     "query": "",
-    "metrics": []
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
   },
   {
-    "id": "ee9a027c-e93d-4266-b171-7246e4bd64e7",
+    "id": "0385fe83-1724-4291-9051-ba18dceace06",
     "name": "Uptime",
-    "description": "The PromQL query measures the uptime of a system or service over a specific time period.",
-    "question": "Is there a correlation between uptime and the number of requests received?",
+    "description": "The PromQL query measures the uptime of a specific system or service over a given time period.",
+    "question": "What is the cumulative CPU time consumed by the node?",
     "query": "",
-    "metrics": []
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
   },
   {
-    "id": "41fa7c9c-b89f-4ed1-9558-493428922f87",
+    "id": "1ca556c9-cb88-4161-8910-3f13643f5303",
     "name": "Clusters",
-    "description": "This PromQL query measures the total number of clusters in a system over a specific time range.",
-    "question": "How many clusters are currently active?",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the cluster over a 5-minute time window.",
+    "question": "What is the total CPU usage across all nodes?",
     "query": "",
     "metrics": [
-      "clusters_total"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "d8a16acc-d668-4346-be31-1395a24afe83",
+    "id": "dd993eee-76e5-4dae-bc15-5bb2676fd8a8",
     "name": "Clusters",
-    "description": "This PromQL query measures the total number of clusters in a system over a specific time range.",
-    "question": "What is the trend in the number of clusters over time?",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the cluster over a 5-minute time window.",
+    "question": "How does the CPU usage trend change over a 5-minute interval?",
     "query": "",
     "metrics": [
-      "clusters_total"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "5c8fe770-cbc1-4066-8d34-9514dc22ba85",
+    "id": "6575bbfd-cb0f-4337-be3e-a720c6493c1c",
     "name": "Clusters",
-    "description": "This PromQL query measures the total number of clusters in a system over a specific time range.",
-    "question": "Which cluster has the highest resource utilization?",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the cluster over a 5-minute time window.",
+    "question": "Which nodes are contributing the most to the total CPU usage?",
     "query": "",
     "metrics": [
-      "clusters_total"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "811ab380-1cab-4f16-9768-55cb070a8879",
+    "id": "c40a7f35-1ffa-4e07-b267-dc688031b9af",
     "name": "Applications",
-    "description": "This PromQL query measures the total number of application instances running across all servers.",
-    "question": "How many application instances are currently running?",
+    "description": "This PromQL query measures the total number of CPU seconds consumed by the applications over a 5-minute interval.",
+    "question": "What is the total number of CPU seconds consumed by the applications?",
     "query": "",
     "metrics": [
-      "application_instances_total"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "f98df3dc-e4b4-468a-80c5-718e59c5fcce",
+    "id": "1339f94a-7ddf-4237-9a57-3931cb2f0e81",
     "name": "Applications",
-    "description": "This PromQL query measures the total number of application instances running across all servers.",
-    "question": "What is the total count of application instances across all servers?",
+    "description": "This PromQL query measures the total number of CPU seconds consumed by the applications over a 5-minute interval.",
+    "question": "How has the CPU usage of the applications changed over the last 5 minutes?",
     "query": "",
     "metrics": [
-      "application_instances_total"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "68e242b0-174a-492e-bcf5-305fc116d7d7",
+    "id": "01b349f9-5c7d-4995-ba07-41290a06d583",
     "name": "Applications",
-    "description": "This PromQL query measures the total number of application instances running across all servers.",
-    "question": "Are there any spikes in the number of application instances?",
+    "description": "This PromQL query measures the total number of CPU seconds consumed by the applications over a 5-minute interval.",
+    "question": "Which application has consumed the most CPU seconds recently?",
     "query": "",
     "metrics": [
-      "application_instances_total"
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "8efe0dbd-e016-407b-80ac-b63ce5acd646",
+    "name": "Repositories",
+    "description": "This PromQL query measures the total number of repositories in a system over a specific time range.",
+    "question": "What is the total number of repositories?",
+    "query": "",
+    "metrics": [
+      "repositories_total"
+    ]
+  },
+  {
+    "id": "dfac776d-aaa2-4fb3-a43b-5edda091b3ee",
+    "name": "Repositories",
+    "description": "This PromQL query measures the total number of repositories in a system over a specific time range.",
+    "question": "How many repositories exist in the system?",
+    "query": "",
+    "metrics": [
+      "repositories_total"
+    ]
+  },
+  {
+    "id": "2796fde1-3d2d-429b-a6ed-c9db02aa77b6",
+    "name": "Repositories",
+    "description": "This PromQL query measures the total number of repositories in a system over a specific time range.",
+    "question": "What is the overall count of repositories?",
+    "query": "",
+    "metrics": [
+      "repositories_total"
+    ]
+  },
+  {
+    "id": "06607f73-a11b-4673-8f90-a22bea941fab",
+    "name": "Operations",
+    "description": "This PromQL query measures the total number of operations performed by a specific service within a given time frame.",
+    "question": "What is the total number of operations performed?",
+    "query": "",
+    "metrics": [
+      "operations_total"
+    ]
+  },
+  {
+    "id": "75e461f1-9c7d-4bc3-ae9e-7200ab59c149",
+    "name": "Operations",
+    "description": "This PromQL query measures the total number of operations performed by a specific service within a given time frame.",
+    "question": "How many operations have been executed?",
+    "query": "",
+    "metrics": [
+      "operations_total"
+    ]
+  },
+  {
+    "id": "908d0ec5-1d7b-41a5-ac88-b0c03bb195cf",
+    "name": "Operations",
+    "description": "This PromQL query measures the total number of operations performed by a specific service within a given time frame.",
+    "question": "What is the cumulative count of operations?",
+    "query": "",
+    "metrics": [
+      "operations_total"
     ]
   }
 ]

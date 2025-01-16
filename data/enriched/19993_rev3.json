@@ -1,0 +1,122 @@
+[
+  {
+    "id": "35045e69-a308-41a6-9c86-7a726e42eda8",
+    "name": "Clusters",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the clusters over a 5-minute window.",
+    "question": "What is the total CPU usage across all nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "53d98327-e3e5-46fd-a1b6-7b142bbd9fa6",
+    "name": "Clusters",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the clusters over a 5-minute window.",
+    "question": "How has the CPU usage trend changed over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "42cd0537-7ebc-47a5-926b-1b551a9109b3",
+    "name": "Clusters",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the clusters over a 5-minute window.",
+    "question": "Which node has the highest CPU consumption?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f50dd8b3-90b0-47ba-b9a9-6652b462e17b",
+    "name": "Repositories",
+    "description": "This PromQL query measures the total number of repositories over time.",
+    "question": "What is the total number of repositories?",
+    "query": "",
+    "metrics": [
+      "repositories"
+    ]
+  },
+  {
+    "id": "8c6bea83-83a5-4453-a50f-fcb0115e1e77",
+    "name": "Repositories",
+    "description": "This PromQL query measures the total number of repositories over time.",
+    "question": "How has the number of repositories changed over time?",
+    "query": "",
+    "metrics": [
+      "repositories"
+    ]
+  },
+  {
+    "id": "3c5eb832-9940-4cf5-b4ce-c7c78924c4f0",
+    "name": "Repositories",
+    "description": "This PromQL query measures the total number of repositories over time.",
+    "question": "Which repository has the highest number of commits?",
+    "query": "",
+    "metrics": [
+      "repositories"
+    ]
+  },
+  {
+    "id": "c2b6da52-785e-4e98-b8a0-92086139cd3a",
+    "name": "Applications",
+    "description": "The PromQL query measures the total number of CPU seconds used by the application over a 5-minute period.",
+    "question": "What is the total CPU usage of the application?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "52d70b9b-a7a2-4a36-9a27-16ebc521b5b5",
+    "name": "Applications",
+    "description": "The PromQL query measures the total number of CPU seconds used by the application over a 5-minute period.",
+    "question": "How many CPU seconds has the application consumed?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "97b378e8-c0a6-4361-a42c-d1066ae992b8",
+    "name": "Applications",
+    "description": "The PromQL query measures the total number of CPU seconds used by the application over a 5-minute period.",
+    "question": "What is the trend of CPU usage by the application?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a7649374-39cc-4985-bb01-822cda37b167",
+    "name": "Health Status",
+    "description": "The PromQL query measures the total number of requests handled by a specific service over a specified time period.",
+    "question": "What is the total number of HTTP requests handled by the service?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "cdef278a-ee81-40da-8804-18747375b94d",
+    "name": "Health Status",
+    "description": "The PromQL query measures the total number of requests handled by a specific service over a specified time period.",
+    "question": "How many requests have been processed by the service?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "427edb04-fe80-443f-99db-9ccb24e47e1f",
+    "name": "Health Status",
+    "description": "The PromQL query measures the total number of requests handled by a specific service over a specified time period.",
+    "question": "What is the overall request volume for the service?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  }
+]

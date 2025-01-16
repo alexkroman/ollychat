@@ -1,8 +1,68 @@
 [
   {
-    "id": "11a06916-0dba-49ad-9cf8-361ce5cc6f93",
+    "id": "294265ce-1178-4cc9-a83c-e1bfb73d9865",
+    "name": "Consumergroup => Topic Lag",
+    "description": "Measures the lag of consumer groups for a specific topic",
+    "question": "What is the maximum lag of the consumer group for a specific topic?",
+    "query": "",
+    "metrics": [
+      "kafka_consumergroup_maxlag"
+    ]
+  },
+  {
+    "id": "0dd24072-7295-4108-bb72-bc44825f8224",
+    "name": "Consumergroup => Topic Lag",
+    "description": "Measures the lag of consumer groups for a specific topic",
+    "question": "How much lag is being experienced by the consumer group for a specific topic?",
+    "query": "",
+    "metrics": [
+      "kafka_consumergroup_maxlag"
+    ]
+  },
+  {
+    "id": "bb9a8786-792e-4b45-a713-e8a5f287589d",
+    "name": "Consumergroup => Topic Lag",
+    "description": "Measures the lag of consumer groups for a specific topic",
+    "question": "Which consumer group has the highest lag for a specific topic?",
+    "query": "",
+    "metrics": [
+      "kafka_consumergroup_maxlag"
+    ]
+  },
+  {
+    "id": "f9aec9aa-2428-48f9-93c7-b3c9b24a32f3",
+    "name": "Offset Commit Rate",
+    "description": "The PromQL query measures the rate at which offsets are committed in a system.",
+    "question": "What is the rate of offset commits?",
+    "query": "",
+    "metrics": [
+      "offset_commit_rate"
+    ]
+  },
+  {
+    "id": "a35faa9d-e9b4-4618-be2f-b24f1bb43521",
+    "name": "Offset Commit Rate",
+    "description": "The PromQL query measures the rate at which offsets are committed in a system.",
+    "question": "How frequently are offsets being committed?",
+    "query": "",
+    "metrics": [
+      "offset_commit_rate"
+    ]
+  },
+  {
+    "id": "00186d36-1eef-436c-91c1-87dcd5216ce3",
+    "name": "Offset Commit Rate",
+    "description": "The PromQL query measures the rate at which offsets are committed in a system.",
+    "question": "Is there a trend in the offset commit rate?",
+    "query": "",
+    "metrics": [
+      "offset_commit_rate"
+    ]
+  },
+  {
+    "id": "7244c6f7-9262-4bf5-8fca-84872b3eba05",
     "name": "Topic Lag",
-    "description": "The PromQL query measures the lag of a specific topic in a messaging system, indicating the delay between the latest message produced and the latest message consumed.",
+    "description": "The PromQL query measures the lag of a specific topic in a messaging system.",
     "question": "What is the current lag of the topic?",
     "query": "",
     "metrics": [
@@ -10,56 +70,56 @@
     ]
   },
   {
-    "id": "31f5ddb1-2961-4592-ad29-78ee4954cbbc",
+    "id": "d12bda28-33ea-4bd4-92e3-df8e0ade2637",
     "name": "Topic Lag",
-    "description": "The PromQL query measures the lag of a specific topic in a messaging system, indicating the delay between the latest message produced and the latest message consumed.",
-    "question": "How has the topic lag changed over time?",
+    "description": "The PromQL query measures the lag of a specific topic in a messaging system.",
+    "question": "How has the topic lag trended over the specified time range?",
     "query": "",
     "metrics": [
       "topic_lag"
     ]
   },
   {
-    "id": "7c0767da-49ca-40ec-8861-f4adf044cbcd",
+    "id": "2a02e0fc-f61c-4f14-8004-37cef6cc4192",
     "name": "Topic Lag",
-    "description": "The PromQL query measures the lag of a specific topic in a messaging system, indicating the delay between the latest message produced and the latest message consumed.",
-    "question": "Which consumer group has the highest lag on the topic?",
+    "description": "The PromQL query measures the lag of a specific topic in a messaging system.",
+    "question": "Is the topic lag increasing or decreasing recently?",
     "query": "",
     "metrics": [
       "topic_lag"
     ]
   },
   {
-    "id": "7ae27617-3b34-49f6-9a4b-26b13d316323",
+    "id": "dfd615dd-92f4-4245-9f91-3bfa10fce610",
     "name": "Messages In vs Consumed",
-    "description": "This PromQL query measures the comparison between the total number of messages received and the total number of messages consumed.",
-    "question": "What is the total number of messages received?",
+    "description": "This PromQL query measures the comparison between the number of incoming messages and the number of consumed messages over a specific time period.",
+    "question": "What is the trend of incoming messages?",
     "query": "",
     "metrics": [
-      "Messages In",
-      "Messages Consumed"
+      "incoming_messages",
+      "consumed_messages"
     ]
   },
   {
-    "id": "fe4deb8d-fe00-4b53-8b92-de669214d494",
+    "id": "5a754041-750c-47a0-ae68-8badea9922e3",
     "name": "Messages In vs Consumed",
-    "description": "This PromQL query measures the comparison between the total number of messages received and the total number of messages consumed.",
-    "question": "How many messages have been consumed?",
+    "description": "This PromQL query measures the comparison between the number of incoming messages and the number of consumed messages over a specific time period.",
+    "question": "How does the consumption rate compare to the incoming message rate?",
     "query": "",
     "metrics": [
-      "Messages In",
-      "Messages Consumed"
+      "incoming_messages",
+      "consumed_messages"
     ]
   },
   {
-    "id": "2699b33f-0002-42b2-8f22-d1d9241dac39",
+    "id": "7f577d99-5708-4b67-b459-283c04dc4ec4",
     "name": "Messages In vs Consumed",
-    "description": "This PromQL query measures the comparison between the total number of messages received and the total number of messages consumed.",
-    "question": "Is there a difference between the number of messages received and consumed?",
+    "description": "This PromQL query measures the comparison between the number of incoming messages and the number of consumed messages over a specific time period.",
+    "question": "Are there any spikes or drops in the number of consumed messages?",
     "query": "",
     "metrics": [
-      "Messages In",
-      "Messages Consumed"
+      "incoming_messages",
+      "consumed_messages"
     ]
   }
 ]

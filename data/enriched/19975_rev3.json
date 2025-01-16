@@ -1,38 +1,38 @@
 [
   {
-    "id": "edcff497-e2c5-4dd2-9c7d-8cbbcc7275cf",
+    "id": "8cf25aa1-e0e0-49c6-ab02-fba0dfdc5c23",
+    "name": "Notification Deliveries",
+    "description": "The PromQL query measures the total number of notification deliveries over a specific time period.",
+    "question": "What is the total number of notification deliveries?",
+    "query": "",
+    "metrics": [
+      "notification_deliveries_total"
+    ]
+  },
+  {
+    "id": "29769e18-e448-4f6f-abf9-c756fa68ed20",
     "name": "Notification Deliveries",
     "description": "The PromQL query measures the total number of notification deliveries over a specific time period.",
     "question": "How many notification deliveries occurred?",
     "query": "",
     "metrics": [
-      "notification_deliveries"
+      "notification_deliveries_total"
     ]
   },
   {
-    "id": "f963d1d9-1da3-4eee-8408-482dbf39f2ae",
+    "id": "fa3d6aa7-c9aa-441b-bcae-ed0e52433472",
     "name": "Notification Deliveries",
     "description": "The PromQL query measures the total number of notification deliveries over a specific time period.",
-    "question": "What is the trend of notification deliveries?",
+    "question": "Which metric represents the total notification deliveries?",
     "query": "",
     "metrics": [
-      "notification_deliveries"
+      "notification_deliveries_total"
     ]
   },
   {
-    "id": "ffaab7cd-bcb5-4a39-8662-0e5d6d8f9428",
-    "name": "Notification Deliveries",
-    "description": "The PromQL query measures the total number of notification deliveries over a specific time period.",
-    "question": "Are there any spikes or drops in notification deliveries?",
-    "query": "",
-    "metrics": [
-      "notification_deliveries"
-    ]
-  },
-  {
-    "id": "960361d3-116a-421a-9cc1-5f1f2d81a064",
+    "id": "4c04e6be-c9d9-495d-bbfa-4e36f1f31737",
     "name": "Trigger Evaluations",
-    "description": "The PromQL query measures the number of trigger evaluations that occur within a specified time range.",
+    "description": "The PromQL query measures the number of trigger evaluations over time.",
     "question": "How many trigger evaluations occurred?",
     "query": "",
     "metrics": [
@@ -40,20 +40,20 @@
     ]
   },
   {
-    "id": "86656027-5a21-4eb1-81c8-3a270d74d600",
+    "id": "56c9021b-0747-4e89-8a0b-da33c4bcc0be",
     "name": "Trigger Evaluations",
-    "description": "The PromQL query measures the number of trigger evaluations that occur within a specified time range.",
-    "question": "What is the rate of trigger evaluations?",
+    "description": "The PromQL query measures the number of trigger evaluations over time.",
+    "question": "What is the trend of trigger evaluations?",
     "query": "",
     "metrics": [
       "trigger_evaluations"
     ]
   },
   {
-    "id": "6ac2fb39-47d3-4252-94b0-5e6bf8faabe7",
+    "id": "2c2640ed-bc63-4dba-a743-3a5b9bbcc166",
     "name": "Trigger Evaluations",
-    "description": "The PromQL query measures the number of trigger evaluations that occur within a specified time range.",
-    "question": "Are there any patterns or anomalies in trigger evaluations?",
+    "description": "The PromQL query measures the number of trigger evaluations over time.",
+    "question": "Which triggers are being evaluated most frequently?",
     "query": "",
     "metrics": [
       "trigger_evaluations"

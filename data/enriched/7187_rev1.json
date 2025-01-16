@@ -1,6 +1,6 @@
 [
   {
-    "id": "00e74b87-1ee2-412f-8681-65dc16e9a9a6",
+    "id": "3f6c8288-0332-4413-ad70-92a52e5712fc",
     "name": "CPU Cores",
     "description": "This PromQL query measures the total CPU resource requests in the cluster and compares it with the total allocatable CPU cores.",
     "question": "What is the total CPU resource requests in the cluster?",
@@ -10,83 +10,119 @@
     ]
   },
   {
-    "id": "869cc590-02bb-426e-b6ac-26dd8f6e66cb",
+    "id": "b996a623-f1e1-42d4-997b-8fe3c21cb59d",
     "name": "CPU Cores",
     "description": "This PromQL query measures the total CPU resource requests in the cluster and compares it with the total allocatable CPU cores.",
-    "question": "What is the total allocatable CPU cores?",
+    "question": "How does the total CPU resource requests compare with the total allocatable CPU cores?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "da2afded-d668-4d63-a9ff-8c122f169c8b",
+    "id": "6ba1d7f3-15cc-4f5b-ad48-baafb2ebfbbd",
     "name": "CPU Cores",
     "description": "This PromQL query measures the total CPU resource requests in the cluster and compares it with the total allocatable CPU cores.",
-    "question": "How do the CPU resource requests compare to the total allocatable CPU cores?",
+    "question": "Which metric is used to track CPU resource requests in the cluster?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "2a6e1bfb-3f9c-4a77-8973-aa837aaefc9c",
+    "id": "63a599b5-bb41-40a5-a6b8-b9d63f719029",
     "name": "CPU Cores",
-    "description": "This PromQL query measures the total number of CPU cores available on a system.",
-    "question": "How many CPU cores are available on the system?",
+    "description": "This PromQL query measures the total number of CPU cores available on the system.",
+    "question": "What is the total number of CPU cores available?",
     "query": "",
     "metrics": [
       "cpu_cores"
     ]
   },
   {
-    "id": "b07d5cc0-4446-4ac8-baab-ee7d030530e9",
+    "id": "16a548c4-66b7-46b7-abb0-9abe782c92ce",
     "name": "CPU Cores",
-    "description": "This PromQL query measures the total number of CPU cores available on a system.",
-    "question": "What is the total count of CPU cores?",
+    "description": "This PromQL query measures the total number of CPU cores available on the system.",
+    "question": "How many CPU cores are currently in use?",
     "query": "",
     "metrics": [
       "cpu_cores"
     ]
   },
   {
-    "id": "0494ed29-022c-4931-9c56-972589050f24",
+    "id": "eba3f6d2-10a7-41bf-9f97-ebe722e4631b",
     "name": "CPU Cores",
-    "description": "This PromQL query measures the total number of CPU cores available on a system.",
-    "question": "How many CPU cores does the system have?",
+    "description": "This PromQL query measures the total number of CPU cores available on the system.",
+    "question": "What is the maximum number of CPU cores that can be utilized?",
     "query": "",
     "metrics": [
       "cpu_cores"
     ]
   },
   {
-    "id": "4f6f13ed-f54b-4b17-9a94-cea9ae91cacf",
+    "id": "dd21ec7d-31db-4643-95da-191c50edc32f",
     "name": "Memory",
-    "description": "This PromQL query measures the total memory resource requests in the cluster and compares it with the total allocatable memory.",
+    "description": "This PromQL query measures the total memory resource requests in the cluster along with the total allocatable memory.",
     "question": "What is the total memory resource requests in the cluster?",
     "query": "",
     "metrics": [
-      "memory"
+      "memory",
+      "node_memory_MemTotal"
     ]
   },
   {
-    "id": "32234c36-c1a5-405d-8e7f-c97498f36ba1",
+    "id": "6b8b9ca2-77ca-4dcb-982b-dce10f1e1f93",
     "name": "Memory",
-    "description": "This PromQL query measures the total memory resource requests in the cluster and compares it with the total allocatable memory.",
-    "question": "What is the total allocatable memory in the cluster?",
+    "description": "This PromQL query measures the total memory resource requests in the cluster along with the total allocatable memory.",
+    "question": "What is the total allocatable memory?",
     "query": "",
     "metrics": [
-      "memory"
+      "memory",
+      "node_memory_MemTotal"
     ]
   },
   {
-    "id": "6c6e22c3-74a4-4471-8345-a43d2c4b346f",
+    "id": "8ffbf129-462f-44ae-b0b5-77159ffed428",
     "name": "Memory",
-    "description": "This PromQL query measures the total memory resource requests in the cluster and compares it with the total allocatable memory.",
+    "description": "This PromQL query measures the total memory resource requests in the cluster along with the total allocatable memory.",
     "question": "How does the total memory resource requests compare to the total allocatable memory?",
     "query": "",
     "metrics": [
-      "memory"
+      "memory",
+      "node_memory_MemTotal"
+    ]
+  },
+  {
+    "id": "63ad9900-5a29-4aa1-aef7-a690fa8ca065",
+    "name": "Memory",
+    "description": "The PromQL query measures the total memory usage of a system over a specific period of time.",
+    "question": "What is the total memory capacity of the system?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal",
+      "node_memory_MemFree"
+    ]
+  },
+  {
+    "id": "c7487166-29fb-4606-86a2-ae6ec370c7b3",
+    "name": "Memory",
+    "description": "The PromQL query measures the total memory usage of a system over a specific period of time.",
+    "question": "How much memory is currently free on the system?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal",
+      "node_memory_MemFree"
+    ]
+  },
+  {
+    "id": "e8d17a3e-482d-44c8-8eba-a9104175cda0",
+    "name": "Memory",
+    "description": "The PromQL query measures the total memory usage of a system over a specific period of time.",
+    "question": "What is the percentage of memory utilization on the system?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal",
+      "node_memory_MemFree"
     ]
   }
 ]

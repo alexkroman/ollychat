@@ -1,8 +1,8 @@
 [
   {
-    "id": "a7d8b648-2a0d-4389-9952-034c4ab609fa",
+    "id": "40ffecba-ba56-4ab5-92d7-ac0015aeb162",
     "name": "Process CPU Usage",
-    "description": "The PromQL query measures the CPU usage of a specific process running on a system.",
+    "description": "The PromQL query measures the CPU usage of a specific process over time.",
     "question": "What is the CPU usage of the process?",
     "query": "",
     "metrics": [
@@ -10,140 +10,140 @@
     ]
   },
   {
-    "id": "eb59153d-e590-4085-afa8-2622d759ec7b",
+    "id": "e09e1b3c-81d4-4856-8363-c51a6b227f8d",
     "name": "Process CPU Usage",
-    "description": "The PromQL query measures the CPU usage of a specific process running on a system.",
-    "question": "How has the CPU usage of the process changed over time?",
+    "description": "The PromQL query measures the CPU usage of a specific process over time.",
+    "question": "How has the CPU usage of the process changed?",
     "query": "",
     "metrics": [
       "process_cpu_usage"
     ]
   },
   {
-    "id": "62dc7cf8-b696-4bc7-b265-7c80d1c8da3f",
+    "id": "413790d7-5f90-4053-8a89-aeefdb0a2425",
     "name": "Process CPU Usage",
-    "description": "The PromQL query measures the CPU usage of a specific process running on a system.",
-    "question": "Is the CPU usage of the process within acceptable limits?",
+    "description": "The PromQL query measures the CPU usage of a specific process over time.",
+    "question": "Is the CPU usage of the process increasing or decreasing?",
     "query": "",
     "metrics": [
       "process_cpu_usage"
     ]
   },
   {
-    "id": "90b4e640-29ab-48d6-9557-b765fb673c2d",
+    "id": "706eca88-b437-40a6-9f69-e6780045965d",
     "name": "Event Loop Lag",
-    "description": "This PromQL query measures the lag in event loop processing time, which indicates how far behind the system is in handling events compared to the desired processing speed.",
-    "question": "How much lag is there in event loop processing time?",
+    "description": "The PromQL query measures the lag in event loop processing time within the system.",
+    "question": "What is the total CPU seconds for the node?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "df7d84b5-dd0d-42bf-91a6-b8f506ae8a03",
+    "id": "a190dc8f-f5ca-42f3-8cb7-8d616b2a48a3",
     "name": "Event Loop Lag",
-    "description": "This PromQL query measures the lag in event loop processing time, which indicates how far behind the system is in handling events compared to the desired processing speed.",
-    "question": "Is the system able to keep up with the desired processing speed for events?",
+    "description": "The PromQL query measures the lag in event loop processing time within the system.",
+    "question": "What is the rate of CPU seconds for the node over a 5 minute period?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "febac0fc-7c66-49d8-988d-581b532e2f51",
+    "id": "3450e3c8-e6b9-431a-983b-c75e716d6a44",
     "name": "Event Loop Lag",
-    "description": "This PromQL query measures the lag in event loop processing time, which indicates how far behind the system is in handling events compared to the desired processing speed.",
-    "question": "What is the impact of event loop processing lag on system performance?",
+    "description": "The PromQL query measures the lag in event loop processing time within the system.",
+    "question": "What is the lag in event loop processing time?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "6f354c19-f277-4119-9656-a38c51834980",
+    "id": "f467ab2a-5e86-4a97-b303-89360568fc4e",
     "name": "Node.js Version",
-    "description": "This PromQL query measures the version of Node.js running on the monitored servers.",
-    "question": "What is the current version of Node.js across all servers?",
+    "description": "This PromQL query measures the version of Node.js running on the monitored instances.",
+    "question": "What is the current version of Node.js?",
     "query": "",
     "metrics": [
-      "nodejs_version"
+      "node_js_version"
     ]
   },
   {
-    "id": "6eacac39-4093-4fb2-a830-d30e594ffd72",
+    "id": "ffde288a-0597-478d-9200-171000b8299c",
     "name": "Node.js Version",
-    "description": "This PromQL query measures the version of Node.js running on the monitored servers.",
-    "question": "Which servers are running a specific version of Node.js?",
+    "description": "This PromQL query measures the version of Node.js running on the monitored instances.",
+    "question": "How many instances are running a specific version of Node.js?",
     "query": "",
     "metrics": [
-      "nodejs_version"
+      "node_js_version"
     ]
   },
   {
-    "id": "30630896-286b-4e4e-a36d-2ba6853e71e9",
+    "id": "b0e329f3-cd5b-4bdd-bcf2-efb1986f08f9",
     "name": "Node.js Version",
-    "description": "This PromQL query measures the version of Node.js running on the monitored servers.",
-    "question": "How has the distribution of Node.js versions changed over time?",
+    "description": "This PromQL query measures the version of Node.js running on the monitored instances.",
+    "question": "Is there a variation in Node.js versions across instances?",
     "query": "",
     "metrics": [
-      "nodejs_version"
+      "node_js_version"
     ]
   },
   {
-    "id": "757edbaf-101e-4014-8e15-7f54e82b0d41",
+    "id": "5281b6e3-749b-447f-b8a6-e5c2f784019e",
     "name": "Process Restart Times",
-    "description": "The PromQL query measures the times at which processes are restarted within the monitored system.",
-    "question": "How many times have processes been restarted?",
+    "description": "The PromQL query measures the times when a specific process restarts within a given time range.",
+    "question": "How many times did the process restart?",
     "query": "",
     "metrics": [
       "process_restart_times"
     ]
   },
   {
-    "id": "8ad03a89-355c-4af6-8078-e02a8f46d487",
+    "id": "815bfbe9-7155-4b9c-b596-5498c0cfc117",
     "name": "Process Restart Times",
-    "description": "The PromQL query measures the times at which processes are restarted within the monitored system.",
-    "question": "Which processes have been restarted the most?",
+    "description": "The PromQL query measures the times when a specific process restarts within a given time range.",
+    "question": "What is the average time between process restarts?",
     "query": "",
     "metrics": [
       "process_restart_times"
     ]
   },
   {
-    "id": "c59c0a3f-7452-416f-83c3-2766c547463f",
+    "id": "704f3777-07cb-4053-bc0d-a66337105793",
     "name": "Process Restart Times",
-    "description": "The PromQL query measures the times at which processes are restarted within the monitored system.",
-    "question": "Is there any pattern in the times at which processes are restarted?",
+    "description": "The PromQL query measures the times when a specific process restarts within a given time range.",
+    "question": "Are there any patterns in the process restart times?",
     "query": "",
     "metrics": [
       "process_restart_times"
     ]
   },
   {
-    "id": "b48448c8-1dbd-4b6f-b7be-e9adac761870",
+    "id": "916d8e33-da3f-49a4-b01b-8a3196a73c36",
     "name": "Process Memory Usage",
-    "description": "The PromQL query measures the memory usage of a specific process over time.",
-    "question": "What is the memory usage of the process over time?",
+    "description": "This PromQL query measures the memory usage of a specific process.",
+    "question": "What is the memory usage of the process?",
     "query": "",
     "metrics": [
       "process_memory_usage"
     ]
   },
   {
-    "id": "90629d86-43c2-4a6b-92cb-f1d496fa5a2c",
+    "id": "f1e99976-8179-4a3a-bf71-5d907744126c",
     "name": "Process Memory Usage",
-    "description": "The PromQL query measures the memory usage of a specific process over time.",
-    "question": "How does the memory consumption of the process change during peak usage hours?",
+    "description": "This PromQL query measures the memory usage of a specific process.",
+    "question": "How has the memory usage of the process changed over time?",
     "query": "",
     "metrics": [
       "process_memory_usage"
     ]
   },
   {
-    "id": "ebcaa6d6-214a-48a3-8e72-9ba6ba603535",
+    "id": "310582a3-66cc-4677-b2a0-09ff9e91a034",
     "name": "Process Memory Usage",
-    "description": "The PromQL query measures the memory usage of a specific process over time.",
-    "question": "Is there any correlation between the memory usage of the process and the number of requests it handles?",
+    "description": "This PromQL query measures the memory usage of a specific process.",
+    "question": "Is the memory usage of the process exceeding a certain threshold?",
     "query": "",
     "metrics": [
       "process_memory_usage"

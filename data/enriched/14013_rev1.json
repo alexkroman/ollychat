@@ -1,9 +1,9 @@
 [
   {
-    "id": "3d401bbb-8920-46d2-98b0-ccbdf197b7cf",
+    "id": "3caeb5ee-2906-4f5d-b271-31a4fa7aff4e",
     "name": "Message count",
-    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It provides an aggregated count of messages based on the differences in watermarks.",
-    "question": "How many messages have been produced to the topic?",
+    "description": "This PromQL query measures the summed delta between High and Low watermark of all partitions in the given topic, excluding compacted records.",
+    "question": "What is the total delta between the High watermark and Low watermark of all partitions?",
     "query": "",
     "metrics": [
       "High",
@@ -11,10 +11,10 @@
     ]
   },
   {
-    "id": "074094da-5d67-4d15-99da-f89e8074876c",
+    "id": "ced8778e-10c9-492b-8db0-51abbdd0def1",
     "name": "Message count",
-    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It provides an aggregated count of messages based on the differences in watermarks.",
-    "question": "What is the difference between the highest and lowest watermark of partitions in the topic?",
+    "description": "This PromQL query measures the summed delta between High and Low watermark of all partitions in the given topic, excluding compacted records.",
+    "question": "How much difference exists between the highest and lowest watermarks of partitions in the topic?",
     "query": "",
     "metrics": [
       "High",
@@ -22,10 +22,10 @@
     ]
   },
   {
-    "id": "66932eba-f1cc-4279-af11-90eadca2b4ee",
+    "id": "da0a0f9c-9927-4d26-a772-1310ec6d8a57",
     "name": "Message count",
-    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It provides an aggregated count of messages based on the differences in watermarks.",
-    "question": "How has the message count changed over a specific time period?",
+    "description": "This PromQL query measures the summed delta between High and Low watermark of all partitions in the given topic, excluding compacted records.",
+    "question": "What is the combined difference in watermark values across all partitions?",
     "query": "",
     "metrics": [
       "High",
@@ -33,66 +33,33 @@
     ]
   },
   {
-    "id": "b6fa6616-cdf4-4281-b51d-805b680515cf",
-    "name": "Cleanup Policy",
-    "description": "This PromQL query measures the rate at which cleanup operations are being performed over a 5-minute window.",
-    "question": "How many cleanup operations are being performed?",
+    "id": "8988c4c9-77b1-432b-938c-b3fe54e27c2b",
+    "name": "Partition Count",
+    "description": "The PromQL query measures the count of partitions in a system or database.",
+    "question": "What is the current number of partitions in the system?",
     "query": "",
     "metrics": [
-      "cleanup_operations_total"
+      "partition_count"
     ]
   },
   {
-    "id": "d79670d8-89af-4c59-a7f7-b96b73dc9664",
-    "name": "Cleanup Policy",
-    "description": "This PromQL query measures the rate at which cleanup operations are being performed over a 5-minute window.",
-    "question": "What is the rate of cleanup operations?",
+    "id": "ff89da81-36b3-4844-aa1e-51014bac2deb",
+    "name": "Partition Count",
+    "description": "The PromQL query measures the count of partitions in a system or database.",
+    "question": "How many partitions have been created?",
     "query": "",
     "metrics": [
-      "cleanup_operations_total"
+      "partition_count"
     ]
   },
   {
-    "id": "364ccf02-d8f7-49ad-9f92-9101bcc153e7",
-    "name": "Cleanup Policy",
-    "description": "This PromQL query measures the rate at which cleanup operations are being performed over a 5-minute window.",
-    "question": "Is the cleanup activity increasing or decreasing?",
+    "id": "428dbed0-04ec-4107-b0e7-0bd458ddf0e9",
+    "name": "Partition Count",
+    "description": "The PromQL query measures the count of partitions in a system or database.",
+    "question": "What is the total count of partitions?",
     "query": "",
     "metrics": [
-      "cleanup_operations_total"
-    ]
-  },
-  {
-    "id": "62609d66-1edb-4079-b92c-7d73444223a0",
-    "name": "Messages in/sec",
-    "description": "This PromQL query calculates the total rate of messages being produced per second by summing the difference between the high and low watermark values of all partitions in the specified topic. It may not provide accurate results for compacted topics containing compacted records.",
-    "question": "What is the total rate of messages being produced per second in the specified topic?",
-    "query": "",
-    "metrics": [
-      "High",
-      "Low"
-    ]
-  },
-  {
-    "id": "10b3dc8b-d4c3-436d-b3d6-23fb3622fcc0",
-    "name": "Messages in/sec",
-    "description": "This PromQL query calculates the total rate of messages being produced per second by summing the difference between the high and low watermark values of all partitions in the specified topic. It may not provide accurate results for compacted topics containing compacted records.",
-    "question": "How much do the high watermark values contribute to the total message rate?",
-    "query": "",
-    "metrics": [
-      "High",
-      "Low"
-    ]
-  },
-  {
-    "id": "e5e1e7e8-46be-47df-ab8a-8d2bd8a82a57",
-    "name": "Messages in/sec",
-    "description": "This PromQL query calculates the total rate of messages being produced per second by summing the difference between the high and low watermark values of all partitions in the specified topic. It may not provide accurate results for compacted topics containing compacted records.",
-    "question": "What is the difference between the high and low watermark values for all partitions in the topic?",
-    "query": "",
-    "metrics": [
-      "High",
-      "Low"
+      "partition_count"
     ]
   }
 ]

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "3b502308-31c5-4771-bdb8-4afa3aebf93a",
+    "name": "Cluster health",
+    "description": "This PromQL query measures the total number of requests received by the cluster over a 5-minute window.",
+    "question": "What is the total number of HTTP requests received by the cluster?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "2e5ccc66-e779-4791-95ac-afe422a9599c",
+    "name": "Cluster health",
+    "description": "This PromQL query measures the total number of requests received by the cluster over a 5-minute window.",
+    "question": "How many requests have been processed by the cluster recently?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "9210dfa3-5df7-435f-acc6-269a7e98342c",
+    "name": "Cluster health",
+    "description": "This PromQL query measures the total number of requests received by the cluster over a 5-minute window.",
+    "question": "What is the request rate experienced by the cluster?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "95cf3280-75a7-4af0-848a-7ba1fbb1c6aa",
+    "name": "Tripped for breakers",
+    "description": "This query measures the number of breakers that have tripped based on a specific condition or threshold.",
+    "question": "How many breakers have tripped?",
+    "query": "",
+    "metrics": [
+      "breakers_tripped"
+    ]
+  },
+  {
+    "id": "f60757ce-321b-4320-abae-67be02818d4c",
+    "name": "Tripped for breakers",
+    "description": "This query measures the number of breakers that have tripped based on a specific condition or threshold.",
+    "question": "Which breakers are currently tripped?",
+    "query": "",
+    "metrics": [
+      "breakers_tripped"
+    ]
+  },
+  {
+    "id": "8c95f1f3-36e0-451c-8dc5-bbe4a82f3841",
+    "name": "Tripped for breakers",
+    "description": "This query measures the number of breakers that have tripped based on a specific condition or threshold.",
+    "question": "What is the trend of breaker tripping over a period of time?",
+    "query": "",
+    "metrics": [
+      "breakers_tripped"
+    ]
+  },
+  {
+    "id": "e6d4ea37-5b75-48e3-ab7b-5af4973f0187",
+    "name": "CPU usage Avg.",
+    "description": "This PromQL query measures the average CPU usage over a specific time period.",
+    "question": "What is the average CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "2a2a3e3c-df3e-4174-b508-a55ae0fbf9a5",
+    "name": "CPU usage Avg.",
+    "description": "This PromQL query measures the average CPU usage over a specific time period.",
+    "question": "Which node has the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "4899d1f6-68da-4b51-ae8f-d0b681cd76a2",
+    "name": "CPU usage Avg.",
+    "description": "This PromQL query measures the average CPU usage over a specific time period.",
+    "question": "Is there a sudden increase in CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9097d896-2dda-45ca-b15f-1936b48686e7",
+    "name": "JVM memory used Avg.",
+    "description": "The PromQL query measures the average JVM memory usage over a specific time period.",
+    "question": "What is the average JVM memory usage?",
+    "query": "",
+    "metrics": [
+      "jvm_memory_used"
+    ]
+  },
+  {
+    "id": "f32ef4dd-743e-404f-b3fd-770ec83f9e8a",
+    "name": "JVM memory used Avg.",
+    "description": "The PromQL query measures the average JVM memory usage over a specific time period.",
+    "question": "How much memory is currently being used by the JVM?",
+    "query": "",
+    "metrics": [
+      "jvm_memory_used"
+    ]
+  },
+  {
+    "id": "4a737578-a43d-451c-8f79-288a20ea90a2",
+    "name": "JVM memory used Avg.",
+    "description": "The PromQL query measures the average JVM memory usage over a specific time period.",
+    "question": "What is the average memory consumption of the JVM?",
+    "query": "",
+    "metrics": [
+      "jvm_memory_used"
+    ]
+  },
+  {
+    "id": "4201942e-078c-4757-b7a0-868ec30ebe16",
+    "name": "Nodes",
+    "description": "This PromQL query measures the total number of nodes in the cluster at the current moment.",
+    "question": "How many nodes are currently in the cluster?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "b5f3cf83-6de1-449e-8cc6-c1564845ab55",
+    "name": "Nodes",
+    "description": "This PromQL query measures the total number of nodes in the cluster at the current moment.",
+    "question": "What is the total count of nodes in the cluster?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "eb939201-e409-4a7d-b56b-f6ca9b271ad2",
+    "name": "Nodes",
+    "description": "This PromQL query measures the total number of nodes in the cluster at the current moment.",
+    "question": "How many nodes are active in the cluster?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  }
+]

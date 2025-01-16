@@ -1,8 +1,8 @@
 [
   {
-    "id": "3f24a2b0-6f38-4b1c-a9a2-7e24727d4990",
+    "id": "6b1d8a4b-cba1-41f3-aa2f-994400d3e2b9",
     "name": "Requests received by controller",
-    "description": "This PromQL query measures the total count of requests received by a specific controller, including both successful and failed requests.",
+    "description": "This PromQL query measures the total number of requests received by a controller, regardless of whether they were successful or failed.",
     "question": "How many requests were received by the controller?",
     "query": "",
     "metrics": [
@@ -10,9 +10,9 @@
     ]
   },
   {
-    "id": "5d18563a-5b33-4d64-9532-ea90fc585a1a",
+    "id": "862c0953-f7bc-463a-89bd-da35b8473699",
     "name": "Requests received by controller",
-    "description": "This PromQL query measures the total count of requests received by a specific controller, including both successful and failed requests.",
+    "description": "This PromQL query measures the total number of requests received by a controller, regardless of whether they were successful or failed.",
     "question": "What is the total count of requests processed by the controller?",
     "query": "",
     "metrics": [
@@ -20,103 +20,133 @@
     ]
   },
   {
-    "id": "c6441cf6-9fc8-4736-9509-e89b93e7e617",
+    "id": "971e05a7-de2f-4676-8f86-b7987f34395b",
     "name": "Requests received by controller",
-    "description": "This PromQL query measures the total count of requests received by a specific controller, including both successful and failed requests.",
-    "question": "How many requests, including successful and failed, were handled by the controller?",
+    "description": "This PromQL query measures the total number of requests received by a controller, regardless of whether they were successful or failed.",
+    "question": "How many requests did the controller handle?",
     "query": "",
     "metrics": [
       "requests_received_by_controller"
     ]
   },
   {
-    "id": "4c563f9d-aaa5-471a-a66b-b1a6fb3e7c3f",
+    "id": "5ebadeba-027b-41d7-994f-984b59145ae4",
     "name": "Total req/s",
-    "description": "This PromQL query measures the total number of requests per second over a specific time range.",
-    "question": "What is the total number of requests per second currently?",
+    "description": "Measures the total number of requests per second",
+    "question": "How many requests are being processed per second?",
     "query": "",
     "metrics": [
       "total_requests"
     ]
   },
   {
-    "id": "de3ff7e7-09ca-4ad5-be8b-4aaf85fbbe32",
+    "id": "39194d2a-5452-46e9-99a2-2bbb261dbe72",
     "name": "Total req/s",
-    "description": "This PromQL query measures the total number of requests per second over a specific time range.",
-    "question": "How has the request rate trend changed over the last hour?",
+    "description": "Measures the total number of requests per second",
+    "question": "What is the rate of incoming requests?",
     "query": "",
     "metrics": [
       "total_requests"
     ]
   },
   {
-    "id": "3b63b370-b475-4f4c-8d13-236e0e50e74c",
+    "id": "53326989-11e3-4ece-9146-f5e5b672a57e",
     "name": "Total req/s",
-    "description": "This PromQL query measures the total number of requests per second over a specific time range.",
-    "question": "Are there any spikes in the total request rate during peak hours?",
+    "description": "Measures the total number of requests per second",
+    "question": "How is the request traffic fluctuating?",
     "query": "",
     "metrics": [
       "total_requests"
     ]
   },
   {
-    "id": "9ea1e1e6-b67a-461a-8353-162b70a92ac4",
+    "id": "4e3878d3-e124-4d8f-b277-e5f386962de4",
     "name": "In progress (global)",
-    "description": "This PromQL query measures the current number of in-progress operations across all controllers globally.",
-    "question": "How many in-progress operations are there across all controllers globally?",
+    "description": "This PromQL query measures the total count of in-progress operations across all controllers globally.",
+    "question": "What is the total count of in-progress operations across all controllers globally?",
     "query": "",
     "metrics": [
-      "in_progress"
+      "in_progress_total"
     ]
   },
   {
-    "id": "935d83b2-0f67-41fc-b0aa-95b6922483b8",
+    "id": "83758603-8ce3-40d3-b690-cb40ef3fc87f",
     "name": "In progress (global)",
-    "description": "This PromQL query measures the current number of in-progress operations across all controllers globally.",
-    "question": "Which controller has the highest number of in-progress operations globally?",
+    "description": "This PromQL query measures the total count of in-progress operations across all controllers globally.",
+    "question": "How many ongoing tasks are currently being executed across all controllers worldwide?",
     "query": "",
     "metrics": [
-      "in_progress"
+      "in_progress_total"
     ]
   },
   {
-    "id": "a63e0dc6-74f3-4509-a255-9680523d7172",
+    "id": "929dce63-0cb2-461a-a0a6-7f832a70b5b4",
     "name": "In progress (global)",
-    "description": "This PromQL query measures the current number of in-progress operations across all controllers globally.",
-    "question": "What is the trend of in-progress operations across all controllers globally?",
+    "description": "This PromQL query measures the total count of in-progress operations across all controllers globally.",
+    "question": "What is the aggregate number of operations that are currently in progress on all controllers globally?",
     "query": "",
     "metrics": [
-      "in_progress"
+      "in_progress_total"
     ]
   },
   {
-    "id": "fa8ef804-4511-4e35-b661-b894fe29d300",
+    "id": "cfba51f6-0210-4ea6-8192-fc501383541c",
     "name": "Request duration (controller-handled requests only)",
-    "description": "This PromQL query measures the duration of requests that are handled by ASP.NET Core controllers, excluding any requests that were not mapped to a controller.",
+    "description": "Measures the duration of requests that are handled by ASP.NET Core controllers only, excluding requests that were not mapped to a controller.",
     "question": "What is the average duration of requests handled by ASP.NET Core controllers?",
     "query": "",
     "metrics": [
-      "http_request_duration_seconds"
+      "controller_request_duration_seconds"
     ]
   },
   {
-    "id": "77eb25b9-878e-4797-956b-2a2ddd32f197",
+    "id": "b0f872aa-6f56-4f4d-9a17-f4427d746df1",
     "name": "Request duration (controller-handled requests only)",
-    "description": "This PromQL query measures the duration of requests that are handled by ASP.NET Core controllers, excluding any requests that were not mapped to a controller.",
-    "question": "What is the maximum duration of requests handled by ASP.NET Core controllers?",
+    "description": "Measures the duration of requests that are handled by ASP.NET Core controllers only, excluding requests that were not mapped to a controller.",
+    "question": "Which controller has the longest request duration?",
     "query": "",
     "metrics": [
-      "http_request_duration_seconds"
+      "controller_request_duration_seconds"
     ]
   },
   {
-    "id": "188473e2-a46d-474d-8c62-77fff69a9c1c",
+    "id": "4bdd0b42-fd00-46f5-ad45-a730bb1556b3",
     "name": "Request duration (controller-handled requests only)",
-    "description": "This PromQL query measures the duration of requests that are handled by ASP.NET Core controllers, excluding any requests that were not mapped to a controller.",
-    "question": "How many requests handled by ASP.NET Core controllers have a duration exceeding a certain threshold?",
+    "description": "Measures the duration of requests that are handled by ASP.NET Core controllers only, excluding requests that were not mapped to a controller.",
+    "question": "How has the request duration trend changed over the last hour?",
     "query": "",
     "metrics": [
-      "http_request_duration_seconds"
+      "controller_request_duration_seconds"
+    ]
+  },
+  {
+    "id": "1d932648-5633-4b3e-8b19-af10d14ec382",
+    "name": "Error rate by controller",
+    "description": "This PromQL query measures the error rate for HTTP requests by filtering out 4xx and 5xx status codes.",
+    "question": "What is the error rate for HTTP requests with 4xx status codes?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "14d1901e-ba40-418a-abc0-6884a708ec0a",
+    "name": "Error rate by controller",
+    "description": "This PromQL query measures the error rate for HTTP requests by filtering out 4xx and 5xx status codes.",
+    "question": "What is the error rate for HTTP requests with 5xx status codes?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "8592d936-5a9a-4188-9ecc-84fabd3627cc",
+    "name": "Error rate by controller",
+    "description": "This PromQL query measures the error rate for HTTP requests by filtering out 4xx and 5xx status codes.",
+    "question": "How many HTTP requests resulted in errors?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
     ]
   }
 ]

@@ -1,8 +1,8 @@
 [
   {
-    "id": "7aed904f-d8bb-4a30-bb40-eebdb238175a",
+    "id": "933303ae-a275-4136-b5ca-09a9513205e3",
     "name": "$service Nodejs Version",
-    "description": "This PromQL query measures the current version of Node.js running on the specified service.",
+    "description": "This PromQL query measures the version of Node.js running on the specified service.",
     "question": "What is the version of Node.js running on the service?",
     "query": "",
     "metrics": [
@@ -10,59 +10,59 @@
     ]
   },
   {
-    "id": "56e79ae1-58fa-4d3b-8b1b-8743b6a23ffb",
+    "id": "6e3a0df7-f0f2-4cf2-a2bc-71a4641c8899",
     "name": "$service Nodejs Version",
-    "description": "This PromQL query measures the current version of Node.js running on the specified service.",
-    "question": "Is the Node.js version of the service consistent?",
+    "description": "This PromQL query measures the version of Node.js running on the specified service.",
+    "question": "How many instances of the specified service are running different versions of Node.js?",
     "query": "",
     "metrics": [
       "nodejs_version"
     ]
   },
   {
-    "id": "72c2a85c-dc86-474c-94f1-221c6871c1d6",
+    "id": "338e68b2-591e-4be5-975d-2a7f422f508b",
     "name": "$service Nodejs Version",
-    "description": "This PromQL query measures the current version of Node.js running on the specified service.",
-    "question": "Are there any updates to the Node.js version on the service?",
+    "description": "This PromQL query measures the version of Node.js running on the specified service.",
+    "question": "Is the Node.js version on the service up to date?",
     "query": "",
     "metrics": [
       "nodejs_version"
     ]
   },
   {
-    "id": "0ab3ea94-6fca-4095-8869-5d3218c761ab",
+    "id": "739e456c-4a83-4393-9dbe-2603467f1e7d",
     "name": "Active Requests",
-    "description": "This PromQL query measures the number of active requests currently being processed by the system.",
-    "question": "How many active requests are currently being processed?",
+    "description": "This PromQL query measures the number of active requests currently being served by the system.",
+    "question": "How many active requests are currently being served?",
     "query": "",
     "metrics": [
-      "active_requests_total"
+      "active_requests"
     ]
   },
   {
-    "id": "53484fa6-fb78-4e00-a145-a8c99f2953cd",
+    "id": "f46369c7-e64c-41b2-8a0c-a5a33d0d84d7",
     "name": "Active Requests",
-    "description": "This PromQL query measures the number of active requests currently being processed by the system.",
-    "question": "What is the total count of active requests?",
+    "description": "This PromQL query measures the number of active requests currently being served by the system.",
+    "question": "What is the trend of active requests over the last 24 hours?",
     "query": "",
     "metrics": [
-      "active_requests_total"
+      "active_requests"
     ]
   },
   {
-    "id": "5e16f6a2-6beb-4ac3-8467-ac7bfef4a240",
+    "id": "48fde81f-76c5-4db0-aa11-4c6c1a0f4d25",
     "name": "Active Requests",
-    "description": "This PromQL query measures the number of active requests currently being processed by the system.",
+    "description": "This PromQL query measures the number of active requests currently being served by the system.",
     "question": "Are there any spikes in the number of active requests?",
     "query": "",
     "metrics": [
-      "active_requests_total"
+      "active_requests"
     ]
   },
   {
-    "id": "b747f419-eb32-48a5-a434-2e970fb13437",
+    "id": "3f3ed856-cbe5-436e-8e6a-a72a6e87c868",
     "name": "Active Handles",
-    "description": "This PromQL query measures the number of active handles currently in use.",
+    "description": "This PromQL query measures the total number of active handles at a given point in time.",
     "question": "How many active handles are currently in use?",
     "query": "",
     "metrics": [
@@ -70,80 +70,50 @@
     ]
   },
   {
-    "id": "aefe92a6-f3ab-40d6-80e0-56d209eea3ca",
+    "id": "13fc8cbe-362c-4049-b913-b39add57b787",
     "name": "Active Handles",
-    "description": "This PromQL query measures the number of active handles currently in use.",
-    "question": "What is the trend of active handles over the last hour?",
+    "description": "This PromQL query measures the total number of active handles at a given point in time.",
+    "question": "What is the total count of active handles?",
     "query": "",
     "metrics": [
       "active_handles"
     ]
   },
   {
-    "id": "01bba2f9-7e8f-4131-9856-401dd51b8bee",
+    "id": "1442ef69-0c0f-4cc3-b8b5-bb065d6e0e8d",
     "name": "Active Handles",
-    "description": "This PromQL query measures the number of active handles currently in use.",
-    "question": "Which component has the highest number of active handles?",
+    "description": "This PromQL query measures the total number of active handles at a given point in time.",
+    "question": "Are there any spikes in the number of active handles?",
     "query": "",
     "metrics": [
       "active_handles"
     ]
   },
   {
-    "id": "c1fb9e61-39cf-431e-9a56-0067545e7ada",
+    "id": "f0562f13-86a7-4e92-8589-7e4381caec43",
     "name": "$service Process Heap",
-    "description": "This PromQL query measures the heap memory usage of the specified service process over time.",
-    "question": "What is the current heap memory usage of the $service process?",
+    "description": "This PromQL query measures the heap memory usage of the specified service.",
+    "question": "What is the current heap memory usage of the service?",
     "query": "",
     "metrics": [
       "$service"
     ]
   },
   {
-    "id": "bbe4d676-ff51-40d0-9446-da195e66c3b4",
+    "id": "c2f31f63-c332-46b3-b6e2-fe0d23830051",
     "name": "$service Process Heap",
-    "description": "This PromQL query measures the heap memory usage of the specified service process over time.",
-    "question": "How has the heap memory usage of the $service process changed over the last hour?",
+    "description": "This PromQL query measures the heap memory usage of the specified service.",
+    "question": "How has the heap memory usage of the service changed over time?",
     "query": "",
     "metrics": [
       "$service"
     ]
   },
   {
-    "id": "e8fa84be-6662-46e4-b85f-e50578a42412",
+    "id": "a912f372-a223-459a-9dbf-40a41162c4a2",
     "name": "$service Process Heap",
-    "description": "This PromQL query measures the heap memory usage of the specified service process over time.",
-    "question": "Is the heap memory usage of the $service process trending upwards or downwards?",
-    "query": "",
-    "metrics": [
-      "$service"
-    ]
-  },
-  {
-    "id": "152f1285-f55a-4075-aca9-cceeb7cca8b6",
-    "name": "$service Process start time",
-    "description": "This PromQL query measures the start time of a specific $service process.",
-    "question": "What is the start time of the $service process?",
-    "query": "",
-    "metrics": [
-      "$service"
-    ]
-  },
-  {
-    "id": "1b1a7da4-3863-4d0a-8d9a-1a0a1e51a2ec",
-    "name": "$service Process start time",
-    "description": "This PromQL query measures the start time of a specific $service process.",
-    "question": "How long has the $service process been running?",
-    "query": "",
-    "metrics": [
-      "$service"
-    ]
-  },
-  {
-    "id": "c60ac7cd-d812-4516-98ef-8a13ebf1685f",
-    "name": "$service Process start time",
-    "description": "This PromQL query measures the start time of a specific $service process.",
-    "question": "Is the $service process running within the expected start time?",
+    "description": "This PromQL query measures the heap memory usage of the specified service.",
+    "question": "Is the heap memory usage of the service exceeding a certain threshold?",
     "query": "",
     "metrics": [
       "$service"

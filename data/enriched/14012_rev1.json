@@ -1,9 +1,9 @@
 [
   {
-    "id": "f9dcd896-2a7c-4386-ae47-3534e79d1ba5",
+    "id": "f1342852-efea-4ba1-b558-a68acd10d210",
     "name": "Messages in/sec",
-    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It is not accurate for compacted topics that contain compacted records.",
-    "question": "What is the total delta between the High and Low watermark of partitions in the given topic?",
+    "description": "Measures the summed delta between High and Low watermark of all partitions in the given topic, excluding accuracy for compacted topics.",
+    "question": "What is the difference between the High watermark and Low watermark of all partitions in the given topic?",
     "query": "",
     "metrics": [
       "High",
@@ -11,10 +11,10 @@
     ]
   },
   {
-    "id": "f23c89c8-bae2-4e71-9f66-d593443b8eff",
+    "id": "5e9be992-31ac-4f14-981b-fb6a57cb9799",
     "name": "Messages in/sec",
-    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It is not accurate for compacted topics that contain compacted records.",
-    "question": "How can we monitor the rate of change in the High watermark of partitions in the given topic?",
+    "description": "Measures the summed delta between High and Low watermark of all partitions in the given topic, excluding accuracy for compacted topics.",
+    "question": "How do the High and Low watermark values change over time for all partitions in the given topic?",
     "query": "",
     "metrics": [
       "High",
@@ -22,10 +22,10 @@
     ]
   },
   {
-    "id": "2a591b39-b4fc-41f2-b814-d8669de8617a",
+    "id": "208e2270-33bf-488a-a9e4-876650b8ab54",
     "name": "Messages in/sec",
-    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It is not accurate for compacted topics that contain compacted records.",
-    "question": "Which partitions in the given topic have the largest difference between High and Low watermark?",
+    "description": "Measures the summed delta between High and Low watermark of all partitions in the given topic, excluding accuracy for compacted topics.",
+    "question": "Which partitions in the given topic have the largest difference between their High and Low watermark values?",
     "query": "",
     "metrics": [
       "High",
@@ -33,9 +33,9 @@
     ]
   },
   {
-    "id": "ba62c6a0-c464-4d9e-89c8-208da9b8571c",
+    "id": "a46326ea-40b6-4d62-b69c-65a54bf55563",
     "name": "Cluster Version",
-    "description": "This PromQL query measures the version of the cluster software running on the monitored instances.",
+    "description": "This PromQL query measures the version of the cluster software running on the monitored hosts.",
     "question": "What is the current version of the cluster software?",
     "query": "",
     "metrics": [
@@ -43,83 +43,113 @@
     ]
   },
   {
-    "id": "f85d6c37-587a-4045-82ef-2cdbb7f75b48",
+    "id": "262dd3d7-a094-440e-98b4-94c035c98562",
     "name": "Cluster Version",
-    "description": "This PromQL query measures the version of the cluster software running on the monitored instances.",
-    "question": "Are there any instances running an outdated cluster version?",
+    "description": "This PromQL query measures the version of the cluster software running on the monitored hosts.",
+    "question": "How many hosts are running each version of the cluster software?",
     "query": "",
     "metrics": [
       "cluster_version"
     ]
   },
   {
-    "id": "b3015ba4-2db6-44be-b138-6117ed3c29bc",
+    "id": "b3f149e7-709e-4a87-84c7-8406478e030c",
     "name": "Cluster Version",
-    "description": "This PromQL query measures the version of the cluster software running on the monitored instances.",
-    "question": "How has the cluster version distribution changed over time?",
+    "description": "This PromQL query measures the version of the cluster software running on the monitored hosts.",
+    "question": "Is there any host running an outdated version of the cluster software?",
     "query": "",
     "metrics": [
       "cluster_version"
     ]
   },
   {
-    "id": "fba8f95a-4dbb-4fc9-8ca7-4cf7ccf44af9",
+    "id": "6e89f8e4-a55b-47e5-a92d-5aa77571e615",
     "name": "Brokers",
-    "description": "The PromQL query measures the total number of brokers in the system.",
+    "description": "This PromQL query measures the total number of brokers in the system.",
     "question": "How many brokers are currently active?",
     "query": "",
     "metrics": [
-      "brokers_total"
+      "brokers"
     ]
   },
   {
-    "id": "95510ae1-b997-40c6-9abe-60c403748ba7",
+    "id": "e6906bd9-5258-42e1-ad5b-5e82a1671a63",
     "name": "Brokers",
-    "description": "The PromQL query measures the total number of brokers in the system.",
+    "description": "This PromQL query measures the total number of brokers in the system.",
     "question": "What is the total count of brokers in the system?",
     "query": "",
     "metrics": [
-      "brokers_total"
+      "brokers"
     ]
   },
   {
-    "id": "35a67f41-c36d-4a63-b760-e2ce1e4a2ef6",
+    "id": "b967a52e-e6ad-4239-a497-4c2623bbf8f7",
     "name": "Brokers",
-    "description": "The PromQL query measures the total number of brokers in the system.",
-    "question": "Are there any changes in the number of brokers over time?",
+    "description": "This PromQL query measures the total number of brokers in the system.",
+    "question": "Are there any fluctuations in the number of brokers over time?",
     "query": "",
     "metrics": [
-      "brokers_total"
+      "brokers"
     ]
   },
   {
-    "id": "24afe6b2-0a0e-40c4-9bf4-cec7fdab771c",
+    "id": "2c210044-7537-4e53-bf9b-328cdc645ee3",
     "name": "Brokers Online",
-    "description": "This PromQL query measures the number of brokers that are currently online in the system.",
-    "question": "How many brokers are currently online?",
+    "description": "This PromQL query measures the number of brokers that are currently online.",
+    "question": "What is the current number of brokers that are online?",
     "query": "",
     "metrics": [
       "brokers_online"
     ]
   },
   {
-    "id": "8801ff04-4bdb-4a56-91aa-1b432f4e62dc",
+    "id": "51affdac-b0f3-4c4a-af4b-610d8525700f",
     "name": "Brokers Online",
-    "description": "This PromQL query measures the number of brokers that are currently online in the system.",
-    "question": "What is the status of brokers in the system?",
+    "description": "This PromQL query measures the number of brokers that are currently online.",
+    "question": "Which brokers are currently active?",
     "query": "",
     "metrics": [
       "brokers_online"
     ]
   },
   {
-    "id": "c310d7c6-d0fd-4dff-a425-91b5f77f4163",
+    "id": "df7c71e9-b573-4f61-b2c3-838f6ba0c2fa",
     "name": "Brokers Online",
-    "description": "This PromQL query measures the number of brokers that are currently online in the system.",
-    "question": "Are there any brokers offline?",
+    "description": "This PromQL query measures the number of brokers that are currently online.",
+    "question": "How many brokers are available for handling requests?",
     "query": "",
     "metrics": [
       "brokers_online"
+    ]
+  },
+  {
+    "id": "fad58b4f-df09-4831-b402-8fc31a518c1d",
+    "name": "Log Dir Size by Broker",
+    "description": "This PromQL query measures the size of log directories across all log dirs, topics, and partitions for a specific broker.",
+    "question": "What is the total size of log directories for a given broker?",
+    "query": "",
+    "metrics": [
+      "log_dir_size"
+    ]
+  },
+  {
+    "id": "eca8661d-9076-4915-876b-fc23913d469d",
+    "name": "Log Dir Size by Broker",
+    "description": "This PromQL query measures the size of log directories across all log dirs, topics, and partitions for a specific broker.",
+    "question": "How does the size of log directories vary across different topics for a specific broker?",
+    "query": "",
+    "metrics": [
+      "log_dir_size"
+    ]
+  },
+  {
+    "id": "3a8475a0-88a8-45ae-b340-87253af789fc",
+    "name": "Log Dir Size by Broker",
+    "description": "This PromQL query measures the size of log directories across all log dirs, topics, and partitions for a specific broker.",
+    "question": "Which log dir has the largest size for a particular broker?",
+    "query": "",
+    "metrics": [
+      "log_dir_size"
     ]
   }
 ]

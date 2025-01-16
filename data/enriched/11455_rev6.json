@@ -1,92 +1,92 @@
 [
   {
-    "id": "1f47432b-82d4-49f3-a410-5b7bcc8f2d10",
+    "id": "a67be15b-630d-4764-96a8-6077bc93b26b",
     "name": "Volumes Full in Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the rate at which volumes are filling up based on the daily use rate over the past week.",
-    "question": "What is the daily rate at which volumes are filling up over the past week?",
+    "description": "This PromQL query measures the rate at which storage volumes are expected to be full in a week based on the daily usage rate.",
+    "question": "What is the projected volume usage rate for the upcoming week?",
     "query": "",
     "metrics": [
-      "volumes_full"
+      "volume_usage_rate"
     ]
   },
   {
-    "id": "90b74b4c-ea53-496e-a054-f33897c0e7c0",
+    "id": "f5dea979-d3fa-40d7-9a68-d947340dd5bb",
     "name": "Volumes Full in Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the rate at which volumes are filling up based on the daily use rate over the past week.",
-    "question": "Are there any abnormal spikes in volume filling rate over the past week?",
+    "description": "This PromQL query measures the rate at which storage volumes are expected to be full in a week based on the daily usage rate.",
+    "question": "How fast are the storage volumes filling up based on the daily rate?",
     "query": "",
     "metrics": [
-      "volumes_full"
+      "volume_usage_rate"
     ]
   },
   {
-    "id": "586772a4-a5f8-4110-842d-404af4001213",
+    "id": "97d114f9-e790-404c-9541-be84f5df897f",
     "name": "Volumes Full in Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the rate at which volumes are filling up based on the daily use rate over the past week.",
-    "question": "How does the current volume filling rate compare to the average rate over the past week?",
+    "description": "This PromQL query measures the rate at which storage volumes are expected to be full in a week based on the daily usage rate.",
+    "question": "What is the estimated storage volume capacity needed for the next week?",
     "query": "",
     "metrics": [
-      "volumes_full"
+      "volume_usage_rate"
     ]
   },
   {
-    "id": "8579496d-fccb-4e22-be15-df9bfe48646b",
+    "id": "e387912d-cabf-4478-a256-75b40cddd7ad",
     "name": "Running PVCs Above % Used Warning Threshold",
-    "description": "This PromQL query measures the number of Persistent Volume Claims (PVCs) that are currently utilizing storage above a specified warning threshold percentage.",
-    "question": "How many PVCs are currently using storage above the warning threshold?",
+    "description": "This PromQL query measures the number of Persistent Volume Claims (PVCs) that are currently utilizing storage capacity above the defined warning threshold percentage.",
+    "question": "How many Persistent Volume Claims are using storage capacity above the warning threshold?",
     "query": "",
     "metrics": [
-      "Persistent Volume Claims"
+      "Running PVCs"
     ]
   },
   {
-    "id": "88aa5fe1-0507-4b78-b2df-d06f48d17f5a",
+    "id": "c7e47459-1239-42bd-ae87-7b3c4e1e1586",
     "name": "Running PVCs Above % Used Warning Threshold",
-    "description": "This PromQL query measures the number of Persistent Volume Claims (PVCs) that are currently utilizing storage above a specified warning threshold percentage.",
-    "question": "Which PVCs are consuming storage beyond the warning threshold?",
+    "description": "This PromQL query measures the number of Persistent Volume Claims (PVCs) that are currently utilizing storage capacity above the defined warning threshold percentage.",
+    "question": "Which PVCs have storage capacity utilization exceeding the warning threshold?",
     "query": "",
     "metrics": [
-      "Persistent Volume Claims"
+      "Running PVCs"
     ]
   },
   {
-    "id": "d6cf26b2-15af-4511-bf3d-0662925c0667",
+    "id": "47d1fa92-1c0c-45a3-8818-2cd1809800c8",
     "name": "Running PVCs Above % Used Warning Threshold",
-    "description": "This PromQL query measures the number of Persistent Volume Claims (PVCs) that are currently utilizing storage above a specified warning threshold percentage.",
-    "question": "What is the total storage utilization percentage of PVCs above the warning threshold?",
+    "description": "This PromQL query measures the number of Persistent Volume Claims (PVCs) that are currently utilizing storage capacity above the defined warning threshold percentage.",
+    "question": "What is the total count of PVCs with storage capacity utilization above the warning threshold?",
     "query": "",
     "metrics": [
-      "Persistent Volume Claims"
+      "Running PVCs"
     ]
   },
   {
-    "id": "9a234400-28e4-4bc7-825e-29eeae2d194e",
+    "id": "81110985-01b9-4c47-bf93-6cdf35b40565",
     "name": "Unbound PVCs",
-    "description": "This PromQL query measures the number of PVCs (Persistent Volume Claims) that are unbound in the Kubernetes cluster.",
-    "question": "How many PVCs are currently unbound in the cluster?",
+    "description": "This PromQL query measures the number of Unbound Persistent Volume Claims (PVCs) in the system.",
+    "question": "How many Unbound PVCs are currently present?",
     "query": "",
     "metrics": [
-      "kube_persistentvolumeclaim_info"
+      "unbound_pvc_count"
     ]
   },
   {
-    "id": "4da0f13b-6d74-4275-b276-26428e5889b1",
+    "id": "acc47de3-77eb-4302-b76d-583c489ca292",
     "name": "Unbound PVCs",
-    "description": "This PromQL query measures the number of PVCs (Persistent Volume Claims) that are unbound in the Kubernetes cluster.",
-    "question": "Which namespaces have unbound PVCs?",
+    "description": "This PromQL query measures the number of Unbound Persistent Volume Claims (PVCs) in the system.",
+    "question": "What is the total count of Unbound PVCs?",
     "query": "",
     "metrics": [
-      "kube_persistentvolumeclaim_info"
+      "unbound_pvc_count"
     ]
   },
   {
-    "id": "ff3435b4-1f60-49a0-a39f-8cb250b6c8da",
+    "id": "b5d3350f-c815-432e-8ea0-452db3d0307a",
     "name": "Unbound PVCs",
-    "description": "This PromQL query measures the number of PVCs (Persistent Volume Claims) that are unbound in the Kubernetes cluster.",
-    "question": "Are there any specific storage classes with a high number of unbound PVCs?",
+    "description": "This PromQL query measures the number of Unbound Persistent Volume Claims (PVCs) in the system.",
+    "question": "Are there any Unbound PVCs that need attention?",
     "query": "",
     "metrics": [
-      "kube_persistentvolumeclaim_info"
+      "unbound_pvc_count"
     ]
   }
 ]

@@ -1,8 +1,8 @@
 [
   {
-    "id": "d197b4b2-feb9-4c5f-842a-c46f665a6066",
+    "id": "90529a34-c691-421f-b517-f08d1f6ca3fb",
     "name": "Failing Policies by Namespace",
-    "description": "This PromQL query measures the number of failing policies grouped by namespace.",
+    "description": "This PromQL query measures the count of failing policies grouped by namespace.",
     "question": "How many failing policies are there in each namespace?",
     "query": "",
     "metrics": [
@@ -10,29 +10,29 @@
     ]
   },
   {
-    "id": "a196bbef-a007-46fd-a296-d6a1da67382d",
+    "id": "18db62ab-869b-4901-be6d-9cafee671f45",
     "name": "Failing Policies by Namespace",
-    "description": "This PromQL query measures the number of failing policies grouped by namespace.",
-    "question": "Which namespace has the highest number of failing policies?",
+    "description": "This PromQL query measures the count of failing policies grouped by namespace.",
+    "question": "Which namespace has the highest count of failing policies?",
     "query": "",
     "metrics": [
       "failing_policies"
     ]
   },
   {
-    "id": "9e64509c-4fc3-40db-9a38-3c61efbb9693",
+    "id": "301a3de5-4d19-4cd4-8d5f-69db44c3a23c",
     "name": "Failing Policies by Namespace",
-    "description": "This PromQL query measures the number of failing policies grouped by namespace.",
-    "question": "Are there any namespaces with no failing policies?",
+    "description": "This PromQL query measures the count of failing policies grouped by namespace.",
+    "question": "Is there any particular namespace with a significant increase in failing policies?",
     "query": "",
     "metrics": [
       "failing_policies"
     ]
   },
   {
-    "id": "a786da97-0055-4b40-a9be-3a488e8edb9b",
+    "id": "d7a41749-a2dd-4459-a7a0-3a275054bf0c",
     "name": "Failing ClusterPolicies",
-    "description": "The PromQL query measures the number of failing ClusterPolicies in the system.",
+    "description": "This PromQL query measures the number of failing ClusterPolicies in the system.",
     "question": "How many ClusterPolicies are currently failing?",
     "query": "",
     "metrics": [
@@ -40,59 +40,59 @@
     ]
   },
   {
-    "id": "b5d8f84f-1639-4474-b93c-502585785112",
+    "id": "635bd502-9859-471d-aeed-64b334bc5868",
     "name": "Failing ClusterPolicies",
-    "description": "The PromQL query measures the number of failing ClusterPolicies in the system.",
-    "question": "What is the trend of failing ClusterPolicies over the last hour?",
+    "description": "This PromQL query measures the number of failing ClusterPolicies in the system.",
+    "question": "Which ClusterPolicies are failing?",
     "query": "",
     "metrics": [
       "failing_clusterpolicies"
     ]
   },
   {
-    "id": "16a8f7c3-7d26-4068-9fef-362ea38b54e2",
+    "id": "bc4e37b9-2045-4e62-b6ed-619d78ccb7ef",
     "name": "Failing ClusterPolicies",
-    "description": "The PromQL query measures the number of failing ClusterPolicies in the system.",
-    "question": "Which namespaces have the highest number of failing ClusterPolicies?",
+    "description": "This PromQL query measures the number of failing ClusterPolicies in the system.",
+    "question": "Is the number of failing ClusterPolicies increasing over time?",
     "query": "",
     "metrics": [
       "failing_clusterpolicies"
     ]
   },
   {
-    "id": "3611f4b1-6847-4f4c-9cb5-a06a8180d215",
+    "id": "5cdf85b8-2c8c-48b4-b1fd-7a2dac5cdac4",
     "name": "Failing Policies Graph",
-    "description": "This PromQL query measures the number of failing policies over a specific time period.",
-    "question": "How many failing policies were detected?",
+    "description": "This PromQL query measures the count of failing policies over a specific time period.",
+    "question": "What is the current count of failing policies?",
     "query": "",
     "metrics": [
-      "failing_policies"
+      "failing_policies_count"
     ]
   },
   {
-    "id": "b606cfa9-39ac-496a-973e-880310c5f040",
+    "id": "2009fd9b-62a1-43ce-925d-276c5c937452",
     "name": "Failing Policies Graph",
-    "description": "This PromQL query measures the number of failing policies over a specific time period.",
-    "question": "What is the trend of failing policies over time?",
+    "description": "This PromQL query measures the count of failing policies over a specific time period.",
+    "question": "How has the count of failing policies changed over time?",
     "query": "",
     "metrics": [
-      "failing_policies"
+      "failing_policies_count"
     ]
   },
   {
-    "id": "a6e3220d-3f8c-40e2-aa9a-0f43b287aa67",
+    "id": "6a4dbdd3-0838-448c-89f5-c205fcc1314a",
     "name": "Failing Policies Graph",
-    "description": "This PromQL query measures the number of failing policies over a specific time period.",
-    "question": "Which components are associated with failing policies?",
+    "description": "This PromQL query measures the count of failing policies over a specific time period.",
+    "question": "Which time period had the highest count of failing policies?",
     "query": "",
     "metrics": [
-      "failing_policies"
+      "failing_policies_count"
     ]
   },
   {
-    "id": "d6df63bf-79ae-44a2-9d1e-6e9cb00a6a3d",
+    "id": "9d3ac150-191a-410b-a26b-0eea3af63e9b",
     "name": "Failing PolicyRules",
-    "description": "The PromQL query measures the number of failing PolicyRules in the system.",
+    "description": "This PromQL query measures the number of failing PolicyRules over a specific time period.",
     "question": "How many PolicyRules are currently failing?",
     "query": "",
     "metrics": [
@@ -100,53 +100,23 @@
     ]
   },
   {
-    "id": "6730d298-689d-4a29-b326-a22bd18334d0",
+    "id": "6be6c54c-6532-436a-b9d0-dbaf5225cefc",
     "name": "Failing PolicyRules",
-    "description": "The PromQL query measures the number of failing PolicyRules in the system.",
-    "question": "What is the trend of failing PolicyRules over the last 1 hour?",
+    "description": "This PromQL query measures the number of failing PolicyRules over a specific time period.",
+    "question": "What is the trend of failing PolicyRules over the past hour?",
     "query": "",
     "metrics": [
       "failing_PolicyRules"
     ]
   },
   {
-    "id": "194ec6d1-baa9-41b9-be98-24ac74da9723",
+    "id": "d21c21af-f8b1-419a-a836-7542c6895a0e",
     "name": "Failing PolicyRules",
-    "description": "The PromQL query measures the number of failing PolicyRules in the system.",
-    "question": "Which PolicyRules have the highest failure rate?",
+    "description": "This PromQL query measures the number of failing PolicyRules over a specific time period.",
+    "question": "Which PolicyRule has the highest failure rate?",
     "query": "",
     "metrics": [
       "failing_PolicyRules"
-    ]
-  },
-  {
-    "id": "6f4051f3-5be2-42dd-9227-4929e43fc259",
-    "name": "Failing ClusterPolicyRules",
-    "description": "The PromQL query measures the number of failing ClusterPolicyRules in the system.",
-    "question": "How many ClusterPolicyRules are currently failing?",
-    "query": "",
-    "metrics": [
-      "failing_ClusterPolicyRules"
-    ]
-  },
-  {
-    "id": "3e0a81e6-79cf-45c6-ac95-c98b9b80314a",
-    "name": "Failing ClusterPolicyRules",
-    "description": "The PromQL query measures the number of failing ClusterPolicyRules in the system.",
-    "question": "Which ClusterPolicyRules are failing the most?",
-    "query": "",
-    "metrics": [
-      "failing_ClusterPolicyRules"
-    ]
-  },
-  {
-    "id": "7e8669f9-01d7-4bd7-9d0b-79f69f1d1031",
-    "name": "Failing ClusterPolicyRules",
-    "description": "The PromQL query measures the number of failing ClusterPolicyRules in the system.",
-    "question": "Is there a trend in the number of failing ClusterPolicyRules over time?",
-    "query": "",
-    "metrics": [
-      "failing_ClusterPolicyRules"
     ]
   }
 ]

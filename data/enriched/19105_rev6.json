@@ -1,0 +1,152 @@
+[
+  {
+    "id": "914134c5-67d4-4e1d-888d-8f009ad42f52",
+    "name": "Prometheus version",
+    "description": "This PromQL query measures the current version of Prometheus running in the system.",
+    "question": "What is the current version of Prometheus?",
+    "query": "",
+    "metrics": [
+      "prometheus"
+    ]
+  },
+  {
+    "id": "c3ca3f99-93bd-47b7-9b84-05b615218bc2",
+    "name": "Prometheus version",
+    "description": "This PromQL query measures the current version of Prometheus running in the system.",
+    "question": "Which Prometheus version is currently running?",
+    "query": "",
+    "metrics": [
+      "prometheus"
+    ]
+  },
+  {
+    "id": "e77ee945-df18-447a-a394-dcef27c34f3a",
+    "name": "Prometheus version",
+    "description": "This PromQL query measures the current version of Prometheus running in the system.",
+    "question": "What is the version of Prometheus being used?",
+    "query": "",
+    "metrics": [
+      "prometheus"
+    ]
+  },
+  {
+    "id": "d40b8b51-7178-45e5-8bdc-a037149cc503",
+    "name": "Instance Down",
+    "description": "This PromQL query measures the instances that are currently down based on a specific condition or criteria.",
+    "question": "How many instances are currently down?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "8752198d-1f56-448f-b574-245522adc9e9",
+    "name": "Instance Down",
+    "description": "This PromQL query measures the instances that are currently down based on a specific condition or criteria.",
+    "question": "Which instances are experiencing issues?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "dfe11e95-a08c-43e8-9d83-8c43f3d2aa7b",
+    "name": "Instance Down",
+    "description": "This PromQL query measures the instances that are currently down based on a specific condition or criteria.",
+    "question": "What is the total downtime for instances?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "654f29a2-ac5d-4cca-8280-514841f7bbd1",
+    "name": "TSDB Head Series",
+    "description": "This PromQL query measures the time series data stored in the TSDB head",
+    "question": "What is the current value of the TSDB head series?",
+    "query": "",
+    "metrics": [
+      "TSDB_head_series"
+    ]
+  },
+  {
+    "id": "7587b55d-f08d-40ca-b804-7ce1b09dd5fd",
+    "name": "TSDB Head Series",
+    "description": "This PromQL query measures the time series data stored in the TSDB head",
+    "question": "How has the TSDB head series data evolved over time?",
+    "query": "",
+    "metrics": [
+      "TSDB_head_series"
+    ]
+  },
+  {
+    "id": "b098a77e-67c0-426a-bc84-76a97723150c",
+    "name": "TSDB Head Series",
+    "description": "This PromQL query measures the time series data stored in the TSDB head",
+    "question": "Are there any anomalies or trends in the TSDB head series?",
+    "query": "",
+    "metrics": [
+      "TSDB_head_series"
+    ]
+  },
+  {
+    "id": "81a1e3fe-ed6a-4fe3-b9de-6e44343e7264",
+    "name": "Discovered Targets",
+    "description": "The PromQL query measures the total number of discovered targets in the system.",
+    "question": "How many targets have been discovered?",
+    "query": "",
+    "metrics": [
+      "discovered_targets"
+    ]
+  },
+  {
+    "id": "7dda58ed-17da-41b9-9bbe-f2723ce8cac7",
+    "name": "Discovered Targets",
+    "description": "The PromQL query measures the total number of discovered targets in the system.",
+    "question": "What is the total count of discovered targets?",
+    "query": "",
+    "metrics": [
+      "discovered_targets"
+    ]
+  },
+  {
+    "id": "c1399ec3-fa67-4b01-a468-f26723de0e78",
+    "name": "Discovered Targets",
+    "description": "The PromQL query measures the total number of discovered targets in the system.",
+    "question": "Which metric represents the number of discovered targets?",
+    "query": "",
+    "metrics": [
+      "discovered_targets"
+    ]
+  },
+  {
+    "id": "967f1504-60a9-4b35-86f2-bb204b1828d4",
+    "name": "Liveness by pod",
+    "description": "The PromQL query measures the liveness status of pods in the Kubernetes cluster.",
+    "question": "What is the current liveness status of pods?",
+    "query": "",
+    "metrics": [
+      "pod_liveness_status"
+    ]
+  },
+  {
+    "id": "f0309459-da23-4a09-9e9f-7bd76cf2dc78",
+    "name": "Liveness by pod",
+    "description": "The PromQL query measures the liveness status of pods in the Kubernetes cluster.",
+    "question": "Which pods are currently alive?",
+    "query": "",
+    "metrics": [
+      "pod_liveness_status"
+    ]
+  },
+  {
+    "id": "dbc9d823-5d2b-4455-ab14-7ecb5496d01a",
+    "name": "Liveness by pod",
+    "description": "The PromQL query measures the liveness status of pods in the Kubernetes cluster.",
+    "question": "Are there any pods experiencing liveness issues?",
+    "query": "",
+    "metrics": [
+      "pod_liveness_status"
+    ]
+  }
+]

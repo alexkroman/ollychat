@@ -1,0 +1,152 @@
+[
+  {
+    "id": "8331b149-3803-4178-b341-2af10fa239fc",
+    "name": "",
+    "description": "This PromQL query measures the total number of CPU seconds consumed by a node over a specified time range.",
+    "question": "What is the total number of CPU seconds consumed by the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a86867c5-6907-4508-a19e-1eb38cf70648",
+    "name": "",
+    "description": "This PromQL query measures the total number of CPU seconds consumed by a node over a specified time range.",
+    "question": "How has the CPU usage changed over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "dbfc663d-80fc-42c2-9d17-db21aa691f91",
+    "name": "",
+    "description": "This PromQL query measures the total number of CPU seconds consumed by a node over a specified time range.",
+    "question": "Which node has the highest CPU consumption?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "0221e646-6bae-4cd4-b72c-72724768e10c",
+    "name": "Total Metrics Series",
+    "description": "This PromQL query measures the total count or sum of a specific metric over a period of time.",
+    "question": "What is the total count of CPU seconds?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9e21a578-d6b1-4157-8cbe-01a42e7d451a",
+    "name": "Total Metrics Series",
+    "description": "This PromQL query measures the total count or sum of a specific metric over a period of time.",
+    "question": "What is the total sum of CPU seconds?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "cdb9dcbe-04e1-4636-b801-a2c52fc2a367",
+    "name": "Total Metrics Series",
+    "description": "This PromQL query measures the total count or sum of a specific metric over a period of time.",
+    "question": "What is the total metric value for CPU seconds?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "476053c1-c068-4ef4-ab87-8856f383056c",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase over time for a specific metric.",
+    "question": "What is the rate of increase for node CPU seconds total?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "2f11c7e7-fc84-4dc6-8d46-d7203c739799",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase over time for a specific metric.",
+    "question": "How has the metric node CPU seconds total changed over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f7610546-f091-4aa9-a5af-dad18ba32b4a",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase over time for a specific metric.",
+    "question": "Is there a trend in the node CPU seconds total metric?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "2d307a3f-25ff-4c76-a969-d1aa8bd76ad5",
+    "name": "Total Logs Usage",
+    "description": "Measures the total usage of logs over a specific time period.",
+    "question": "What is the total usage of logs?",
+    "query": "",
+    "metrics": [
+      "logs_total"
+    ]
+  },
+  {
+    "id": "33b0e306-e9a2-40a5-a11c-ac4c12eaf061",
+    "name": "Total Logs Usage",
+    "description": "Measures the total usage of logs over a specific time period.",
+    "question": "How has the log usage changed over time?",
+    "query": "",
+    "metrics": [
+      "logs_total"
+    ]
+  },
+  {
+    "id": "5085bebb-6f53-46fb-aa97-b27bd0e38fbd",
+    "name": "Total Logs Usage",
+    "description": "Measures the total usage of logs over a specific time period.",
+    "question": "Which component is generating the highest amount of logs?",
+    "query": "",
+    "metrics": [
+      "logs_total"
+    ]
+  },
+  {
+    "id": "35b0ff10-c996-4713-a5f9-275cf3d523bd",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase of CPU usage over a 5-minute window.",
+    "question": "What is the rate of increase of CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "83ae5565-7723-4ab7-988c-c5c5d4a637d4",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase of CPU usage over a 5-minute window.",
+    "question": "Which node has the highest CPU usage rate?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "012d6618-42b2-4bd2-af3b-94b5b1d56dd6",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase of CPU usage over a 5-minute window.",
+    "question": "How does CPU usage change over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

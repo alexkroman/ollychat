@@ -1,0 +1,98 @@
+[
+  {
+    "id": "3c61a0ca-ce88-4ea1-b85d-1fa026c55b80",
+    "name": "Flows processed Per Node",
+    "description": "This PromQL query measures the number of flows processed per node over a specific time range.",
+    "question": "How many flows were processed by each node?",
+    "query": "",
+    "metrics": [
+      "flows_processed"
+    ]
+  },
+  {
+    "id": "a42fdb5b-d418-45dd-bd08-c97f57235628",
+    "name": "Flows processed Per Node",
+    "description": "This PromQL query measures the number of flows processed per node over a specific time range.",
+    "question": "Which node processed the highest number of flows?",
+    "query": "",
+    "metrics": [
+      "flows_processed"
+    ]
+  },
+  {
+    "id": "389835bc-3e48-4dd3-bffb-25609308e405",
+    "name": "Flows processed Per Node",
+    "description": "This PromQL query measures the number of flows processed per node over a specific time range.",
+    "question": "Are there any nodes that did not process any flows?",
+    "query": "",
+    "metrics": [
+      "flows_processed"
+    ]
+  },
+  {
+    "id": "3f725f0f-4eb8-424e-ad38-a742c5660e13",
+    "name": "Flows Types",
+    "description": "This PromQL query measures the different types of flows in the system.",
+    "question": "How many flows of each type are currently active?",
+    "query": "",
+    "metrics": [
+      "flow_type",
+      "flow_count",
+      "flow_duration_seconds"
+    ]
+  },
+  {
+    "id": "4dd0a4de-578a-45f0-80d1-568ca6d40ba0",
+    "name": "Flows Types",
+    "description": "This PromQL query measures the different types of flows in the system.",
+    "question": "What is the average duration of flows for each type?",
+    "query": "",
+    "metrics": [
+      "flow_type",
+      "flow_count",
+      "flow_duration_seconds"
+    ]
+  },
+  {
+    "id": "b7896ed6-ec4d-470f-9607-f891f2e81a12",
+    "name": "Flows Types",
+    "description": "This PromQL query measures the different types of flows in the system.",
+    "question": "Which flow type has the highest count?",
+    "query": "",
+    "metrics": [
+      "flow_type",
+      "flow_count",
+      "flow_duration_seconds"
+    ]
+  },
+  {
+    "id": "87a60013-6f0a-464e-9b7e-dc2ccabbac75",
+    "name": "DNS Errors",
+    "description": "This PromQL query measures the count of DNS errors over a specific time range.",
+    "question": "What is the total count of DNS errors?",
+    "query": "",
+    "metrics": [
+      "dns_errors"
+    ]
+  },
+  {
+    "id": "25af9bdf-464a-483b-b489-d949f6893d2b",
+    "name": "DNS Errors",
+    "description": "This PromQL query measures the count of DNS errors over a specific time range.",
+    "question": "How many DNS errors occurred?",
+    "query": "",
+    "metrics": [
+      "dns_errors"
+    ]
+  },
+  {
+    "id": "e016c8d4-bc18-4ce6-a7ec-50cf5247ec19",
+    "name": "DNS Errors",
+    "description": "This PromQL query measures the count of DNS errors over a specific time range.",
+    "question": "What is the frequency of DNS errors?",
+    "query": "",
+    "metrics": [
+      "dns_errors"
+    ]
+  }
+]

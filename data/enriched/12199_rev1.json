@@ -1,98 +1,98 @@
 [
   {
-    "id": "64473976-aef0-4ccd-aeee-af3e849d66ac",
+    "id": "eefab531-af9d-40b3-8764-675ea842015a",
     "name": "Epoch",
-    "description": "This PromQL query measures the total number of events or occurrences within a specific time range.",
-    "question": "What is the total CPU consumption over the last 5 minutes?",
+    "description": "The PromQL query measures the total CPU usage in seconds per core over a 5-minute window",
+    "question": "What is the total CPU usage per core over the last 5 minutes?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "df479665-ccc8-41b5-a15d-84c3f1b367db",
+    "id": "c5ca2599-cc01-4fdb-bf4b-d3d43017c39e",
     "name": "Epoch",
-    "description": "This PromQL query measures the total number of events or occurrences within a specific time range.",
-    "question": "How many CPU seconds have been used by a specific node?",
+    "description": "The PromQL query measures the total CPU usage in seconds per core over a 5-minute window",
+    "question": "How is the CPU usage distributed across different cores?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "2a5ac725-d92c-48f0-af67-9638eb3a2381",
+    "id": "085b54d2-59a9-4279-907a-a46f20cedd44",
     "name": "Epoch",
-    "description": "This PromQL query measures the total number of events or occurrences within a specific time range.",
-    "question": "What is the cumulative CPU usage across all nodes?",
+    "description": "The PromQL query measures the total CPU usage in seconds per core over a 5-minute window",
+    "question": "Is there any abnormal spike in CPU usage on any core?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "4bc178b0-f3ff-4a26-9e0c-bedd37c9d555",
+    "id": "e3c09991-a681-4ead-a076-48e2ee80002c",
     "name": "Slot",
-    "description": "The PromQL query measures the utilization of available processing slots over a specified time period.",
-    "question": "What is the current utilization of processing slots?",
+    "description": "This PromQL query measures the number of available time slots for a specific resource.",
+    "question": "How many available time slots are there?",
     "query": "",
     "metrics": [
-      "slot"
+      "Slot"
     ]
   },
   {
-    "id": "f72995ea-4566-47a7-979b-4c33c4df7304",
+    "id": "f295ea7a-79ff-4856-9a90-c4aa79e1aa64",
     "name": "Slot",
-    "description": "The PromQL query measures the utilization of available processing slots over a specified time period.",
-    "question": "How does the slot usage vary over time?",
+    "description": "This PromQL query measures the number of available time slots for a specific resource.",
+    "question": "What is the current availability of time slots?",
     "query": "",
     "metrics": [
-      "slot"
+      "Slot"
     ]
   },
   {
-    "id": "03f2fabe-d8b7-4418-86c6-4767587354ea",
+    "id": "95b41741-2694-48fc-8d4b-0d612e22b22d",
     "name": "Slot",
-    "description": "The PromQL query measures the utilization of available processing slots over a specified time period.",
-    "question": "Are there any spikes in slot utilization?",
+    "description": "This PromQL query measures the number of available time slots for a specific resource.",
+    "question": "Are there any time slots left for allocation?",
     "query": "",
     "metrics": [
-      "slot"
+      "Slot"
     ]
   },
   {
-    "id": "7ea7ddcf-61e8-4877-8e72-32336d6adccd",
+    "id": "3917e829-2b18-452c-b5a0-bb64da784ced",
     "name": "Peers",
-    "description": "The PromQL query measures the number of peers that are currently connected.",
+    "description": "The PromQL query counts the number of peers currently connected.",
     "question": "How many peers are currently connected?",
     "query": "",
     "metrics": [
-      "peer_count"
+      "count"
     ]
   },
   {
-    "id": "3000336e-493e-48d9-acf0-b7511f5708f1",
+    "id": "9686f89a-c449-459c-9b21-e0d16c99ab0e",
     "name": "Peers",
-    "description": "The PromQL query measures the number of peers that are currently connected.",
-    "question": "What is the total number of peer connections?",
+    "description": "The PromQL query counts the number of peers currently connected.",
+    "question": "What is the total count of connected peers?",
     "query": "",
     "metrics": [
-      "peer_count"
+      "count"
     ]
   },
   {
-    "id": "0b1938d9-8506-42d2-8e3b-c2e51f9e6832",
+    "id": "b5e3cf84-2286-4e81-a5fb-ae1015e9a4b0",
     "name": "Peers",
-    "description": "The PromQL query measures the number of peers that are currently connected.",
-    "question": "How many active peer connections exist?",
+    "description": "The PromQL query counts the number of peers currently connected.",
+    "question": "How many active peer connections are there?",
     "query": "",
     "metrics": [
-      "peer_count"
+      "count"
     ]
   },
   {
-    "id": "55fee446-8e77-4b90-ad55-e7de293f57ef",
+    "id": "65ab3a4c-7661-4498-a84b-bf981ed96d58",
     "name": "CPU",
-    "description": "This PromQL query measures the total CPU usage over a specific time range.",
+    "description": "This PromQL query measures the total CPU usage over a specified time range.",
     "question": "What is the total CPU usage?",
     "query": "",
     "metrics": [
@@ -100,9 +100,19 @@
     ]
   },
   {
-    "id": "0542bd3f-26e7-45cc-bd8c-4f88d31744dc",
+    "id": "380bc856-62df-4d57-9448-b47fa7e6ae28",
     "name": "CPU",
-    "description": "This PromQL query measures the total CPU usage over a specific time range.",
+    "description": "This PromQL query measures the total CPU usage over a specified time range.",
+    "question": "How does the CPU usage change over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a3150804-4113-4c7a-b413-3838bef1fabc",
+    "name": "CPU",
+    "description": "This PromQL query measures the total CPU usage over a specified time range.",
     "question": "Which node has the highest CPU consumption?",
     "query": "",
     "metrics": [
@@ -110,40 +120,30 @@
     ]
   },
   {
-    "id": "c90aae1a-a8ce-4a58-843a-dfb28705796c",
-    "name": "CPU",
-    "description": "This PromQL query measures the total CPU usage over a specific time range.",
-    "question": "Is there any sudden spike in CPU usage?",
-    "query": "",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "daa42e20-31f9-4bc1-90c0-4a1b07d93966",
+    "id": "d3e78eb1-d5f9-46c7-a276-f713b4b08a76",
     "name": "Memory Used",
-    "description": "The PromQL query measures the amount of memory being used by a specific resource or system over a period of time.",
-    "question": "What is the current memory usage of the system?",
+    "description": "This PromQL query measures the amount of memory being used by a specific system resource.",
+    "question": "What is the current memory usage?",
     "query": "",
     "metrics": [
       "memory_used"
     ]
   },
   {
-    "id": "1c86bc82-2ee4-4d80-84c1-ddae6119d45d",
+    "id": "b47459a2-b337-49ff-a7b0-297f44ff4254",
     "name": "Memory Used",
-    "description": "The PromQL query measures the amount of memory being used by a specific resource or system over a period of time.",
-    "question": "How has memory usage trended over the past hour?",
+    "description": "This PromQL query measures the amount of memory being used by a specific system resource.",
+    "question": "How much memory is being utilized?",
     "query": "",
     "metrics": [
       "memory_used"
     ]
   },
   {
-    "id": "3583d655-d0a1-4452-9a6e-09279756fb49",
+    "id": "116d6d24-401b-477f-ab34-0dbb74c1b189",
     "name": "Memory Used",
-    "description": "The PromQL query measures the amount of memory being used by a specific resource or system over a period of time.",
-    "question": "Which resource is consuming the most memory?",
+    "description": "This PromQL query measures the amount of memory being used by a specific system resource.",
+    "question": "What is the memory consumption of the system?",
     "query": "",
     "metrics": [
       "memory_used"

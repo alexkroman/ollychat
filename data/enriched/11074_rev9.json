@@ -1,0 +1,164 @@
+[
+  {
+    "id": "06c893e2-8900-4da6-9d4a-3e8bda3dd78d",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "The PromQL query measures the number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "question": "How many TCP connections are currently in the ESTABLISHED or CLOSE-WAIT state?",
+    "query": "",
+    "metrics": [
+      "CurrEstab"
+    ]
+  },
+  {
+    "id": "8adab1ea-09a0-4b26-9653-ff11fc462852",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "The PromQL query measures the number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "question": "What is the total count of established and close-wait TCP connections?",
+    "query": "",
+    "metrics": [
+      "CurrEstab"
+    ]
+  },
+  {
+    "id": "b9a5f78d-99b2-43d5-b710-924af06337d4",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "The PromQL query measures the number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "question": "Which connections are in the ESTABLISHED or CLOSE-WAIT status?",
+    "query": "",
+    "metrics": [
+      "CurrEstab"
+    ]
+  },
+  {
+    "id": "48da6504-15e9-4c15-a7b2-819933497e21",
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "description": "This PromQL query measures the overall 5-minute load and the average CPU usage percentage.",
+    "question": "What is the overall total 5-minute load?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "b254947d-73be-4452-b911-b354d2ffc428",
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "description": "This PromQL query measures the overall 5-minute load and the average CPU usage percentage.",
+    "question": "What is the average CPU usage percentage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "84dd280b-d073-482c-a27c-0030284a9c95",
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "description": "This PromQL query measures the overall 5-minute load and the average CPU usage percentage.",
+    "question": "How do the CPU seconds total relate to the average CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "da8014ff-d073-449f-b92d-ef82021c393c",
+    "name": "$job：Overall total memory & average memory used%",
+    "description": "This PromQL query measures the overall total memory and average memory used percentage.",
+    "question": "What is the total memory of the node?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "07efa815-a1a2-4bf1-a871-282573d179d3",
+    "name": "$job：Overall total memory & average memory used%",
+    "description": "This PromQL query measures the overall total memory and average memory used percentage.",
+    "question": "How much memory is currently free on the node?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "8a57f318-2f50-42a7-98cb-504698af88eb",
+    "name": "$job：Overall total memory & average memory used%",
+    "description": "This PromQL query measures the overall total memory and average memory used percentage.",
+    "question": "What percentage of memory is being utilized on the node?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "611cdc9b-f569-4a05-a0a8-74555db0227d",
+    "name": "$job：Overall total disk & average disk used%",
+    "description": "This PromQL query measures the overall total disk space and the average percentage of disk space used across all instances.",
+    "question": "What is the total disk space across all instances?",
+    "query": "",
+    "metrics": [
+      "node_disk_space_total",
+      "node_disk_space_used"
+    ]
+  },
+  {
+    "id": "8ba32002-3956-460b-9a97-3c3c33820c21",
+    "name": "$job：Overall total disk & average disk used%",
+    "description": "This PromQL query measures the overall total disk space and the average percentage of disk space used across all instances.",
+    "question": "What is the average disk space used percentage across all instances?",
+    "query": "",
+    "metrics": [
+      "node_disk_space_total",
+      "node_disk_space_used"
+    ]
+  },
+  {
+    "id": "dd485cae-9717-4a16-b6f0-da8075986671",
+    "name": "$job：Overall total disk & average disk used%",
+    "description": "This PromQL query measures the overall total disk space and the average percentage of disk space used across all instances.",
+    "question": "How does disk space usage vary across different instances?",
+    "query": "",
+    "metrics": [
+      "node_disk_space_total",
+      "node_disk_space_used"
+    ]
+  },
+  {
+    "id": "a8b9d801-e6d5-43a6-ae32-f422993b88b0",
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "description": "This PromQL query measures the correlation between the number of open file descriptors and context switches.",
+    "question": "How do open file descriptors relate to context switches?",
+    "query": "",
+    "metrics": [
+      "open_file_descriptor",
+      "context_switches"
+    ]
+  },
+  {
+    "id": "0972dd60-9e9e-4b4e-a168-37131cb38c17",
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "description": "This PromQL query measures the correlation between the number of open file descriptors and context switches.",
+    "question": "Is there a noticeable pattern between open file descriptors and context switches?",
+    "query": "",
+    "metrics": [
+      "open_file_descriptor",
+      "context_switches"
+    ]
+  },
+  {
+    "id": "4a5823b9-afae-4f83-87a4-06bce719cf75",
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "description": "This PromQL query measures the correlation between the number of open file descriptors and context switches.",
+    "question": "Are there any spikes or dips in the relationship between open file descriptors and context switches?",
+    "query": "",
+    "metrics": [
+      "open_file_descriptor",
+      "context_switches"
+    ]
+  }
+]

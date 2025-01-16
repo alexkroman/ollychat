@@ -1,38 +1,38 @@
 [
   {
-    "id": "f07efeb1-921d-45e7-b880-ab71a9a633a6",
+    "id": "4355addd-65c8-412c-a1e9-4f887d47bb81",
     "name": "Valid Certificates",
-    "description": "This PromQL query measures the number of available certificates.",
-    "question": "How many valid certificates are currently available?",
+    "description": "The PromQL query measures the number of available certificates.",
+    "question": "How many certificates are currently available?",
     "query": "",
     "metrics": [
       "available_certificates"
     ]
   },
   {
-    "id": "b0bb8cf8-32ae-4f9a-bcf9-98338f4d220f",
+    "id": "d9ed6997-1eec-48a2-8663-d0109cde7fec",
     "name": "Valid Certificates",
-    "description": "This PromQL query measures the number of available certificates.",
-    "question": "What is the total count of certificates that are valid?",
+    "description": "The PromQL query measures the number of available certificates.",
+    "question": "What is the total count of valid certificates?",
     "query": "",
     "metrics": [
       "available_certificates"
     ]
   },
   {
-    "id": "2150bef6-398a-4692-88d1-2d55181b7a71",
+    "id": "d8eced0c-1b42-4443-b9d8-5d28b7636460",
     "name": "Valid Certificates",
-    "description": "This PromQL query measures the number of available certificates.",
-    "question": "Is the number of available certificates increasing or decreasing?",
+    "description": "The PromQL query measures the number of available certificates.",
+    "question": "How many certificates can be used at the moment?",
     "query": "",
     "metrics": [
       "available_certificates"
     ]
   },
   {
-    "id": "0e5b2be3-0d68-48a0-a493-3a1be2f5e60b",
+    "id": "2039304e-4091-4910-a893-76cc2eafdd04",
     "name": "Expiring Certificates",
-    "description": "The PromQL query measures the number of certificates that are set to expire within the next 14 days.",
+    "description": "The query measures the number of certificates that are set to expire within the next 14 days.",
     "question": "How many certificates will expire within the next 14 days?",
     "query": "",
     "metrics": [
@@ -40,116 +40,83 @@
     ]
   },
   {
-    "id": "be96d327-b270-4867-a252-e6f14b5f0d68",
+    "id": "69dc2b14-8ffa-4b98-a0d8-790aa660341c",
     "name": "Expiring Certificates",
-    "description": "The PromQL query measures the number of certificates that are set to expire within the next 14 days.",
-    "question": "What is the total count of certificates that are close to expiration?",
+    "description": "The query measures the number of certificates that are set to expire within the next 14 days.",
+    "question": "What is the count of certificates with an upcoming expiration within 14 days?",
     "query": "",
     "metrics": [
       "certificates"
     ]
   },
   {
-    "id": "1c5401d4-0a3a-4b14-9dcb-f436efb17ddb",
+    "id": "6f108e71-4aa8-4112-95c9-8c4173b5e284",
     "name": "Expiring Certificates",
-    "description": "The PromQL query measures the number of certificates that are set to expire within the next 14 days.",
-    "question": "Which certificates need to be renewed within the next 14 days?",
+    "description": "The query measures the number of certificates that are set to expire within the next 14 days.",
+    "question": "Which certificates are close to expiring in the next two weeks?",
     "query": "",
     "metrics": [
       "certificates"
     ]
   },
   {
-    "id": "aa14880b-469a-40f9-840f-7b8c700ba288",
+    "id": "6542d05f-e29f-4c1b-852e-73a5935f54f3",
     "name": "Total ACME Requests",
-    "description": "This PromQL query measures the total number of HTTP requests made within the specified time range.",
-    "question": "How many total ACME requests were made?",
+    "description": "This PromQL query measures the total number of HTTP requests within the selected time range.",
+    "question": "What is the total number of HTTP requests?",
     "query": "",
     "metrics": [
-      "total_acme_requests"
+      "HTTP requests"
     ]
   },
   {
-    "id": "677d1b47-310c-43a7-8b93-8eaa410a525f",
+    "id": "5df58fd2-bce7-4032-8a6b-439305c03e00",
     "name": "Total ACME Requests",
-    "description": "This PromQL query measures the total number of HTTP requests made within the specified time range.",
-    "question": "What is the cumulative count of ACME requests?",
+    "description": "This PromQL query measures the total number of HTTP requests within the selected time range.",
+    "question": "How many HTTP requests were made?",
     "query": "",
     "metrics": [
-      "total_acme_requests"
+      "HTTP requests"
     ]
   },
   {
-    "id": "627f472e-fd11-48cc-9ca1-3694b3b94fcc",
+    "id": "02c9d004-5f73-4700-8092-2511f8fed2c8",
     "name": "Total ACME Requests",
-    "description": "This PromQL query measures the total number of HTTP requests made within the specified time range.",
-    "question": "What is the aggregate number of ACME requests?",
+    "description": "This PromQL query measures the total number of HTTP requests within the selected time range.",
+    "question": "What is the overall count of HTTP requests?",
     "query": "",
     "metrics": [
-      "total_acme_requests"
+      "HTTP requests"
     ]
   },
   {
-    "id": "c642a27b-524e-428e-adc7-dd546a68871c",
+    "id": "0fcfbd92-f4ef-4163-aa0f-3e0e19f07bc4",
     "name": "Time to Expiration (<45 days)",
-    "description": "This PromQL query measures the time remaining before the expiration of certificates that are set to expire within the next 45 days.",
-    "question": "How much time is left before certificates expire within 45 days?",
+    "description": "Measures the time remaining before the certificates expire, showing only certificates that will expire within the next 45 days.",
+    "question": "How many certificates are expiring within the next 45 days?",
     "query": "",
     "metrics": [
-      "certificate_expiration_timestamp",
-      "time()"
+      "certificate_expiration_timestamp"
     ]
   },
   {
-    "id": "c4013e0e-23b9-4566-b46e-5eb686cd6b88",
+    "id": "9bf42019-13d3-460f-b745-a5f1e20ef748",
     "name": "Time to Expiration (<45 days)",
-    "description": "This PromQL query measures the time remaining before the expiration of certificates that are set to expire within the next 45 days.",
-    "question": "Which certificates are expiring soon within 45 days?",
+    "description": "Measures the time remaining before the certificates expire, showing only certificates that will expire within the next 45 days.",
+    "question": "Which certificates need to be renewed soon?",
     "query": "",
     "metrics": [
-      "certificate_expiration_timestamp",
-      "time()"
+      "certificate_expiration_timestamp"
     ]
   },
   {
-    "id": "abeefd4f-fa23-4a47-8ffd-21e3f70dfbc5",
+    "id": "c71bd1b0-d507-4a91-97cc-8125e4712b4d",
     "name": "Time to Expiration (<45 days)",
-    "description": "This PromQL query measures the time remaining before the expiration of certificates that are set to expire within the next 45 days.",
-    "question": "What is the trend of certificate expirations within the next 45 days?",
+    "description": "Measures the time remaining before the certificates expire, showing only certificates that will expire within the next 45 days.",
+    "question": "What is the remaining validity period for certificates in the system?",
     "query": "",
     "metrics": [
-      "certificate_expiration_timestamp",
-      "time()"
-    ]
-  },
-  {
-    "id": "0731b021-6ebe-4c4a-9d47-6bd4cb0f6bd2",
-    "name": "Time to Automatic Renewal (<45 days)",
-    "description": "This PromQL query measures the time remaining before the certificates are automatically renewed, specifically targeting certificates that have less than 45 days until renewal.",
-    "question": "What is the remaining time before certificates are automatically renewed?",
-    "query": "",
-    "metrics": [
-      "time_to_automatic_renewal"
-    ]
-  },
-  {
-    "id": "7d49bb0e-a74b-4032-b54c-139b60779798",
-    "name": "Time to Automatic Renewal (<45 days)",
-    "description": "This PromQL query measures the time remaining before the certificates are automatically renewed, specifically targeting certificates that have less than 45 days until renewal.",
-    "question": "How many certificates have less than 45 days until renewal?",
-    "query": "",
-    "metrics": [
-      "time_to_automatic_renewal"
-    ]
-  },
-  {
-    "id": "c8aa513d-3c82-42a2-8d81-9eb55d47701d",
-    "name": "Time to Automatic Renewal (<45 days)",
-    "description": "This PromQL query measures the time remaining before the certificates are automatically renewed, specifically targeting certificates that have less than 45 days until renewal.",
-    "question": "Which certificates need to be renewed soon based on the defined threshold?",
-    "query": "",
-    "metrics": [
-      "time_to_automatic_renewal"
+      "certificate_expiration_timestamp"
     ]
   }
 ]

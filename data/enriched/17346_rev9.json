@@ -1,8 +1,8 @@
 [
   {
-    "id": "ef41e413-a1eb-495d-a8b2-25324f2cc840",
+    "id": "0e2bebc6-4f67-4dc8-be2b-91a44c2be00d",
     "name": "Traefik Instances",
-    "description": "This PromQL query measures the total number of Traefik instances running in the system.",
+    "description": "This PromQL query measures the total number of instances of Traefik running in the system.",
     "question": "How many Traefik instances are currently running?",
     "query": "",
     "metrics": [
@@ -10,89 +10,59 @@
     ]
   },
   {
-    "id": "df8a3ef8-313e-4faf-8f4d-e34eecedda00",
+    "id": "a4aa1380-86e6-4566-8807-04ce9967881f",
     "name": "Traefik Instances",
-    "description": "This PromQL query measures the total number of Traefik instances running in the system.",
-    "question": "Is the number of Traefik instances increasing or decreasing?",
+    "description": "This PromQL query measures the total number of instances of Traefik running in the system.",
+    "question": "What is the total count of Traefik instances?",
     "query": "",
     "metrics": [
       "traefik_instances"
     ]
   },
   {
-    "id": "dbb4946b-b486-43f8-aa1b-9e56db3d7d53",
+    "id": "b0b37cb0-a443-46c5-ae95-ac9a2886b8c0",
     "name": "Traefik Instances",
-    "description": "This PromQL query measures the total number of Traefik instances running in the system.",
-    "question": "What is the total count of Traefik instances over the last 24 hours?",
+    "description": "This PromQL query measures the total number of instances of Traefik running in the system.",
+    "question": "Are there any spikes in the number of Traefik instances?",
     "query": "",
     "metrics": [
       "traefik_instances"
     ]
   },
   {
-    "id": "f8aa1c77-783f-4dbe-af3d-61ab091c0d2b",
+    "id": "646c77d0-dd11-4c18-9ac6-b84195a75f08",
     "name": "Requests per Entrypoint",
-    "description": "This PromQL query measures the number of requests per entrypoint over a specific time range.",
-    "question": "How many total requests were made to each entrypoint?",
+    "description": "This PromQL query measures the number of requests per entrypoint over a specific time period.",
+    "question": "What is the total number of requests per entrypoint?",
     "query": "",
     "metrics": [
       "requests_total"
     ]
   },
   {
-    "id": "45a0ac50-37d2-44d4-b47d-81d91666bffd",
+    "id": "788c1549-2373-4c09-a4e2-2ca9d195a07c",
     "name": "Requests per Entrypoint",
-    "description": "This PromQL query measures the number of requests per entrypoint over a specific time range.",
-    "question": "Which entrypoint received the highest number of requests?",
+    "description": "This PromQL query measures the number of requests per entrypoint over a specific time period.",
+    "question": "Which entrypoint has the highest number of requests?",
     "query": "",
     "metrics": [
       "requests_total"
     ]
   },
   {
-    "id": "57057937-3041-4729-95bd-8cca4b90cb5c",
+    "id": "65bbe91c-5bf1-41d9-a4ce-893d45df18e1",
     "name": "Requests per Entrypoint",
-    "description": "This PromQL query measures the number of requests per entrypoint over a specific time range.",
-    "question": "Are there any entrypoints experiencing a sudden surge in requests?",
+    "description": "This PromQL query measures the number of requests per entrypoint over a specific time period.",
+    "question": "Are there any entrypoints experiencing a sudden spike in requests?",
     "query": "",
     "metrics": [
       "requests_total"
     ]
   },
   {
-    "id": "6eabb795-0bce-4b99-b573-4b85c37a131e",
-    "name": "Apdex score",
-    "description": "The PromQL query measures the Apdex score, which is a way to measure user satisfaction with the responsiveness of a service based on a defined threshold for acceptable response times. It calculates a ratio of satisfied, tolerating, and frustrated requests within a specific time window.",
-    "question": "What is the current Apdex score for the system?",
-    "query": "",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "52f423a6-9ac7-4117-87a8-5013be4b9795",
-    "name": "Apdex score",
-    "description": "The PromQL query measures the Apdex score, which is a way to measure user satisfaction with the responsiveness of a service based on a defined threshold for acceptable response times. It calculates a ratio of satisfied, tolerating, and frustrated requests within a specific time window.",
-    "question": "How many requests are considered satisfied based on the defined threshold?",
-    "query": "",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "daf03a07-cfd7-4382-95c4-164dd043349d",
-    "name": "Apdex score",
-    "description": "The PromQL query measures the Apdex score, which is a way to measure user satisfaction with the responsiveness of a service based on a defined threshold for acceptable response times. It calculates a ratio of satisfied, tolerating, and frustrated requests within a specific time window.",
-    "question": "What percentage of requests fall under the tolerating category?",
-    "query": "",
-    "metrics": [
-      "node_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "6d55e343-b9c8-43f2-9010-21c710bbdb3c",
+    "id": "5da717d8-3678-424f-8f7b-fd49fc6b4f9d",
     "name": "Http Code ",
-    "description": "The PromQL query measures the mean distribution of HTTP response codes over a specified time period.",
+    "description": "The PromQL query measures the mean distribution of HTTP response codes.",
     "question": "What is the mean distribution of HTTP response codes?",
     "query": "",
     "metrics": [
@@ -100,23 +70,53 @@
     ]
   },
   {
-    "id": "cadd4317-a608-42c4-a956-444d3d2f7c62",
+    "id": "c668e9ce-4c25-4fee-b2ee-a73038f5fe71",
     "name": "Http Code ",
-    "description": "The PromQL query measures the mean distribution of HTTP response codes over a specified time period.",
-    "question": "How are HTTP response codes distributed over time?",
+    "description": "The PromQL query measures the mean distribution of HTTP response codes.",
+    "question": "How are HTTP response codes distributed on average?",
     "query": "",
     "metrics": [
       "http_requests_total"
     ]
   },
   {
-    "id": "1b6151f1-7b1c-4d7f-ba23-4dad80380837",
+    "id": "2e5e8d4f-f27c-4885-a100-20bde9ef77ab",
     "name": "Http Code ",
-    "description": "The PromQL query measures the mean distribution of HTTP response codes over a specified time period.",
-    "question": "Which HTTP response code has the highest mean value?",
+    "description": "The PromQL query measures the mean distribution of HTTP response codes.",
+    "question": "Which HTTP response codes are most commonly seen in the distribution?",
     "query": "",
     "metrics": [
       "http_requests_total"
+    ]
+  },
+  {
+    "id": "6135ea6c-83b1-44a7-a292-72882048642c",
+    "name": "Top slow services",
+    "description": "This PromQL query measures the top slow services based on a certain metric.",
+    "question": "Which services are experiencing the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "44a58164-7eb0-4152-8596-703d2de80bd6",
+    "name": "Top slow services",
+    "description": "This PromQL query measures the top slow services based on a certain metric.",
+    "question": "What are the slowest services in terms of CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "976ad168-10de-4d29-8a2b-cfdf4c35e66b",
+    "name": "Top slow services",
+    "description": "This PromQL query measures the top slow services based on a certain metric.",
+    "question": "Which services are consuming the most CPU resources?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
     ]
   }
 ]

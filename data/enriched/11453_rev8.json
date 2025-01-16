@@ -1,119 +1,113 @@
 [
   {
-    "id": "7c0d2e03-3a82-4a95-bb1f-b0b21f0c56ac",
+    "id": "4a2583e6-90b5-45b7-b6d1-dbda12bcda5e",
     "name": "Heketi Status",
-    "description": "The PromQL query measures the current status of the Heketi service by querying relevant metrics.",
+    "description": "This PromQL query measures the current status of the Heketi service.",
     "question": "What is the current status of the Heketi service?",
     "query": "",
-    "metrics": [
-      "Heketi_Status"
-    ]
+    "metrics": []
   },
   {
-    "id": "9c5eefe4-a77b-428e-83a1-b8995159f7c4",
+    "id": "995c1ecc-4dae-4f6a-b9d0-c08efce7de9d",
     "name": "Heketi Status",
-    "description": "The PromQL query measures the current status of the Heketi service by querying relevant metrics.",
+    "description": "This PromQL query measures the current status of the Heketi service.",
     "question": "Is the Heketi service operational?",
     "query": "",
-    "metrics": [
-      "Heketi_Status"
-    ]
+    "metrics": []
   },
   {
-    "id": "ed230e2d-1ef7-42a3-b738-8b49b4a0ec8f",
+    "id": "48721f7e-6ce8-40cd-b64d-a2f7e6df4ae2",
     "name": "Heketi Status",
-    "description": "The PromQL query measures the current status of the Heketi service by querying relevant metrics.",
-    "question": "Are there any issues with the Heketi service?",
+    "description": "This PromQL query measures the current status of the Heketi service.",
+    "question": "Is the Heketi service experiencing any issues?",
     "query": "",
-    "metrics": [
-      "Heketi_Status"
-    ]
+    "metrics": []
   },
   {
-    "id": "95d87d8e-8a05-4493-bde7-50433994ead9",
+    "id": "c1aacc35-161f-403f-a2a5-db90e3dcdec3",
     "name": "Available Capacity in a Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the available capacity over a week period based on the daily use rate of a specific metric.",
-    "question": "What is the available capacity over a week based on the daily use rate of node_cpu_seconds_total?",
+    "description": "This PromQL query measures the available capacity over a week based on the daily use rate of a specific resource.",
+    "question": "What is the total CPU usage over a week?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "297ff102-f734-443d-866c-faf134de6534",
+    "id": "ffc7e76e-45d5-4ccc-8f35-95bb83c22f9b",
     "name": "Available Capacity in a Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the available capacity over a week period based on the daily use rate of a specific metric.",
-    "question": "How does the daily use rate of node_cpu_seconds_total impact the available capacity over a week?",
+    "description": "This PromQL query measures the available capacity over a week based on the daily use rate of a specific resource.",
+    "question": "How does the daily CPU usage impact the available capacity over time?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "c0934cc2-430b-404c-a21f-3ad05aac9eb9",
+    "id": "2dfd887a-db96-46a6-afbc-8fe0611b38f6",
     "name": "Available Capacity in a Week Based on Daily Use Rate",
-    "description": "This PromQL query measures the available capacity over a week period based on the daily use rate of a specific metric.",
-    "question": "Is there a trend in the available capacity over a week based on the daily use rate of node_cpu_seconds_total?",
+    "description": "This PromQL query measures the available capacity over a week based on the daily use rate of a specific resource.",
+    "question": "What is the trend of available capacity based on the daily CPU usage rate?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "3d046ec0-57d4-458a-b9f5-d4125abcf0c8",
+    "id": "f8aac118-b124-4f9f-83f3-b520a7581386",
     "name": "Available Capacity",
-    "description": "The PromQL query measures the available capacity of a resource based on certain metrics.",
-    "question": "What is the available CPU capacity?",
+    "description": "This PromQL query measures the available capacity of a specific resource over time.",
+    "question": "What is the current available capacity of the resource?",
     "query": "",
     "metrics": [
-      "node_cpu_seconds_total"
+      "available_capacity"
     ]
   },
   {
-    "id": "5f2495bb-10ba-4a58-aa42-12915caa7494",
+    "id": "e406e0e8-a238-460d-9d04-6a56aa3a15b8",
     "name": "Available Capacity",
-    "description": "The PromQL query measures the available capacity of a resource based on certain metrics.",
-    "question": "How much CPU time has been consumed?",
+    "description": "This PromQL query measures the available capacity of a specific resource over time.",
+    "question": "How has the available capacity trended over the specified time range?",
     "query": "",
     "metrics": [
-      "node_cpu_seconds_total"
+      "available_capacity"
     ]
   },
   {
-    "id": "fef51794-f2e3-4d38-972d-3e23e4f99a13",
+    "id": "8431dbe7-a298-4a14-b153-872839983714",
     "name": "Available Capacity",
-    "description": "The PromQL query measures the available capacity of a resource based on certain metrics.",
-    "question": "What is the current CPU utilization?",
+    "description": "This PromQL query measures the available capacity of a specific resource over time.",
+    "question": "Is there a pattern in the available capacity that repeats periodically?",
     "query": "",
     "metrics": [
-      "node_cpu_seconds_total"
+      "available_capacity"
     ]
   },
   {
-    "id": "f3e5a599-352f-4ccf-9095-ea33cb0af152",
+    "id": "c781bbbd-f515-46b0-ba61-38693c8f081b",
     "name": "Available Capacity in a Week Based on Daily Use Rate",
     "description": "This PromQL query measures the available capacity over a week based on the daily use rate.",
-    "question": "What is the estimated available capacity for the upcoming week based on the current daily use rate?",
+    "question": "What is the daily use rate of node_cpu_seconds_total?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "00eaa2cc-90fe-4e37-983f-13f03344a452",
+    "id": "0b9fb2d0-6edd-4229-8554-8cabd94b3df2",
     "name": "Available Capacity in a Week Based on Daily Use Rate",
     "description": "This PromQL query measures the available capacity over a week based on the daily use rate.",
-    "question": "How does the daily use rate impact the available capacity over a week?",
+    "question": "How does the available capacity change over a week based on the daily use rate of node_cpu_seconds_total?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "39aa77c1-600b-44c0-997a-2044203ab13f",
+    "id": "fa8dd056-2f07-46f8-9b00-4a881eeefce5",
     "name": "Available Capacity in a Week Based on Daily Use Rate",
     "description": "This PromQL query measures the available capacity over a week based on the daily use rate.",
-    "question": "Is there a trend in available capacity over a week based on the daily use rate?",
+    "question": "Is there a trend in the available capacity in a week based on the daily use rate of node_cpu_seconds_total?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"

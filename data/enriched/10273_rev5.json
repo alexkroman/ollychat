@@ -1,38 +1,38 @@
 [
   {
-    "id": "031435c3-9af6-44cc-9fe3-81602ac27db0",
+    "id": "233f6f76-9fa3-4735-a868-67a7ac54a524",
     "name": "Overview",
-    "description": "This PromQL query measures the rate of change over a 5-minute window for a specific metric related to CPU usage on nodes.",
-    "question": "What is the rate of change in CPU usage on nodes?",
+    "description": "This PromQL query measures the total CPU usage in seconds over a specified time range.",
+    "question": "What is the total CPU usage?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "5f83cd6c-49b6-440d-a8d4-c2f35510fe0b",
+    "id": "349d7234-ed1e-416b-ba0f-5e4e675331a6",
     "name": "Overview",
-    "description": "This PromQL query measures the rate of change over a 5-minute window for a specific metric related to CPU usage on nodes.",
-    "question": "Which nodes are experiencing the highest increase in CPU usage?",
+    "description": "This PromQL query measures the total CPU usage in seconds over a specified time range.",
+    "question": "How has the CPU usage changed over time?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "a61573ab-7c16-4929-b25c-169577625ce1",
+    "id": "53e1d398-940d-4566-93aa-2ad58f36c901",
     "name": "Overview",
-    "description": "This PromQL query measures the rate of change over a 5-minute window for a specific metric related to CPU usage on nodes.",
-    "question": "How does the CPU usage trend vary across different time periods?",
+    "description": "This PromQL query measures the total CPU usage in seconds over a specified time range.",
+    "question": "Which node has the highest CPU usage?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "24738b02-25ed-4931-9740-bf53e732d723",
+    "id": "920b691c-65ea-4074-9bf4-d4c9c4627fc8",
     "name": "Fast Sync Progress",
-    "description": "This PromQL query measures the progress of a fast synchronization process.",
+    "description": "The PromQL query measures the progress of a fast synchronization process.",
     "question": "What is the current progress of the fast synchronization process?",
     "query": "",
     "metrics": [
@@ -40,50 +40,80 @@
     ]
   },
   {
-    "id": "3b350954-c2dc-4f57-ab62-c406fcf95d8a",
+    "id": "c84e6d7b-d7c2-4db9-ba83-f8af0fd666f0",
     "name": "Fast Sync Progress",
-    "description": "This PromQL query measures the progress of a fast synchronization process.",
-    "question": "How fast is the synchronization progressing?",
+    "description": "The PromQL query measures the progress of a fast synchronization process.",
+    "question": "How much time has been spent on the fast synchronization process?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "aebaad38-bad8-435c-9e6c-66f98ca28c60",
+    "id": "fe75b388-22fd-4b99-99b3-5145f3295217",
     "name": "Fast Sync Progress",
-    "description": "This PromQL query measures the progress of a fast synchronization process.",
-    "question": "Is the synchronization process completing quickly?",
+    "description": "The PromQL query measures the progress of a fast synchronization process.",
+    "question": "What is the rate of progress for the fast synchronization process?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "3269fac8-d2e2-48c6-ab55-ee3a4718f067",
+    "id": "f992eec9-d924-4228-98ea-7c2b99efacce",
+    "name": "Block Time",
+    "description": "This PromQL query measures the average block time of a blockchain network over a specific time period.",
+    "question": "What is the average block time of the blockchain network?",
+    "query": "",
+    "metrics": [
+      "block_time"
+    ]
+  },
+  {
+    "id": "e5ca9217-2e61-424c-8317-1f6dd805cbbc",
+    "name": "Block Time",
+    "description": "This PromQL query measures the average block time of a blockchain network over a specific time period.",
+    "question": "How does the block time fluctuate over time?",
+    "query": "",
+    "metrics": [
+      "block_time"
+    ]
+  },
+  {
+    "id": "6881e027-0999-467c-bbde-64d853e0abc1",
+    "name": "Block Time",
+    "description": "This PromQL query measures the average block time of a blockchain network over a specific time period.",
+    "question": "Is there a correlation between block time and network activity?",
+    "query": "",
+    "metrics": [
+      "block_time"
+    ]
+  },
+  {
+    "id": "3b628b4e-4ebf-4622-ac26-9fca61a92718",
     "name": "Blocks Behind",
-    "description": "The PromQL query measures the number of blocks behind in a blockchain network, indicating the delay in processing new blocks compared to the real-time updates.",
-    "question": "How many blocks behind is the network currently?",
+    "description": "This PromQL query measures the number of blocks behind in a system.",
+    "question": "How many blocks are behind in the system?",
     "query": "",
     "metrics": [
       "blocks_behind"
     ]
   },
   {
-    "id": "812144d0-62f1-4673-8f59-2e99ae757905",
+    "id": "4b49cf52-87c3-4eb0-81a6-916589a8aee9",
     "name": "Blocks Behind",
-    "description": "The PromQL query measures the number of blocks behind in a blockchain network, indicating the delay in processing new blocks compared to the real-time updates.",
-    "question": "What is the delay in block processing?",
+    "description": "This PromQL query measures the number of blocks behind in a system.",
+    "question": "What is the current backlog of blocks?",
     "query": "",
     "metrics": [
       "blocks_behind"
     ]
   },
   {
-    "id": "950461b8-26fe-479f-9309-22b508302d2e",
+    "id": "1b22bb75-35ea-4cab-a0ed-0140517f9b62",
     "name": "Blocks Behind",
-    "description": "The PromQL query measures the number of blocks behind in a blockchain network, indicating the delay in processing new blocks compared to the real-time updates.",
-    "question": "Is the network catching up with real-time block updates?",
+    "description": "This PromQL query measures the number of blocks behind in a system.",
+    "question": "Are there any delays in processing blocks?",
     "query": "",
     "metrics": [
       "blocks_behind"

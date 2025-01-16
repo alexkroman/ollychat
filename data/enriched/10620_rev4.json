@@ -1,149 +1,119 @@
 [
   {
-    "id": "334bfe79-a2f1-49ac-b6e1-afde4f73495d",
+    "id": "adaeef7c-f5bf-432e-b720-e595bab482ad",
     "name": "PIPELINES #",
-    "description": "This PromQL query measures the total number of pipelines running in the system.",
-    "question": "How many pipelines are currently running?",
+    "description": "This PromQL query measures the total number of pipeline executions over time.",
+    "question": "What is the total number of pipeline executions?",
     "query": "",
     "metrics": [
-      "pipelines_total"
+      "pipeline_executions_total"
     ]
   },
   {
-    "id": "207ababf-f45f-43fb-a5c7-51cfde32168e",
+    "id": "37df9d2b-c4c6-4879-80b1-d2354396f4ad",
     "name": "PIPELINES #",
-    "description": "This PromQL query measures the total number of pipelines running in the system.",
-    "question": "What is the total count of pipelines in the system?",
+    "description": "This PromQL query measures the total number of pipeline executions over time.",
+    "question": "How has the pipeline execution count changed over time?",
     "query": "",
     "metrics": [
-      "pipelines_total"
+      "pipeline_executions_total"
     ]
   },
   {
-    "id": "fe24b136-34d7-41ff-ad7f-76e851e1398f",
+    "id": "cd2d1300-7c94-42e9-a95a-a95875e0637b",
     "name": "PIPELINES #",
-    "description": "This PromQL query measures the total number of pipelines running in the system.",
-    "question": "Are there any spikes in pipeline activity?",
+    "description": "This PromQL query measures the total number of pipeline executions over time.",
+    "question": "Which pipeline has the highest number of executions?",
     "query": "",
     "metrics": [
-      "pipelines_total"
+      "pipeline_executions_total"
     ]
   },
   {
-    "id": "de90e52a-e9d8-4309-954a-39759de8021f",
-    "name": "FAILED PIPELINES #",
-    "description": "This PromQL query measures the number of failed pipelines.",
-    "question": "How many pipelines have failed?",
-    "query": "",
-    "metrics": [
-      "FAILED_PIPELINES"
-    ]
-  },
-  {
-    "id": "e63cb65a-2fc3-4bf9-94a7-452fc33a462d",
-    "name": "FAILED PIPELINES #",
-    "description": "This PromQL query measures the number of failed pipelines.",
-    "question": "What is the current count of failed pipelines?",
-    "query": "",
-    "metrics": [
-      "FAILED_PIPELINES"
-    ]
-  },
-  {
-    "id": "38d75dd1-8699-4b8c-a5e0-243d80545fe3",
-    "name": "FAILED PIPELINES #",
-    "description": "This PromQL query measures the number of failed pipelines.",
-    "question": "Are there any pipelines that failed recently?",
-    "query": "",
-    "metrics": [
-      "FAILED_PIPELINES"
-    ]
-  },
-  {
-    "id": "806fdea3-c614-4dda-87fa-f7e309ceac62",
+    "id": "0b55ba35-d83f-43ff-abbf-0e1be1463b36",
     "name": "RUNS # (in the last hour)",
-    "description": "This PromQL query measures the total number of runs that occurred within the last hour.",
-    "question": "How many runs have occurred in the last hour?",
+    "description": "This PromQL query measures the number of runs that occurred in the system within the last hour.",
+    "question": "How many runs have occurred in the system?",
     "query": "",
     "metrics": [
-      "RUNS"
+      "runs"
     ]
   },
   {
-    "id": "c7c60d8c-7634-4bcc-b8d1-fef6c26ab631",
+    "id": "d35524b7-c71c-4718-aa15-fb42605bafb5",
     "name": "RUNS # (in the last hour)",
-    "description": "This PromQL query measures the total number of runs that occurred within the last hour.",
-    "question": "What is the total count of runs in the recent past hour?",
+    "description": "This PromQL query measures the number of runs that occurred in the system within the last hour.",
+    "question": "What is the total number of runs within the last hour?",
     "query": "",
     "metrics": [
-      "RUNS"
+      "runs"
     ]
   },
   {
-    "id": "e1376db6-6be1-443a-bc09-8b1576667bfa",
+    "id": "76070206-bd8e-4f1f-8075-0b1bc63f884f",
     "name": "RUNS # (in the last hour)",
-    "description": "This PromQL query measures the total number of runs that occurred within the last hour.",
-    "question": "How many executions have taken place within the previous hour?",
+    "description": "This PromQL query measures the number of runs that occurred in the system within the last hour.",
+    "question": "Are there any spikes in the number of runs recently?",
     "query": "",
     "metrics": [
-      "RUNS"
+      "runs"
     ]
   },
   {
-    "id": "744c27c2-ab28-4f9c-a2d0-375f5e6efef9",
+    "id": "14801d0a-d678-43d1-a7eb-488039574a54",
     "name": "",
-    "description": "This PromQL query measures the rate of increase in CPU seconds consumed by a specific node over a 5-minute window.",
-    "question": "What is the rate of increase in CPU seconds consumed by the node?",
+    "description": "This PromQL query measures the rate of a specific metric over a 5-minute window.",
+    "question": "What is the rate of node CPU seconds total?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "b740ce8c-365f-489e-a474-c622601ec0e4",
+    "id": "afcf8b2c-4cdd-4736-a437-93ee7bcc9b5f",
     "name": "",
-    "description": "This PromQL query measures the rate of increase in CPU seconds consumed by a specific node over a 5-minute window.",
-    "question": "How much CPU time has been consumed by the node?",
+    "description": "This PromQL query measures the rate of a specific metric over a 5-minute window.",
+    "question": "How has the node CPU seconds total metric changed over the last 5 minutes?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "44bedd4a-88fd-4279-8fb0-42e911e4415d",
+    "id": "63170e17-c711-4ebb-9932-f102c56b515e",
     "name": "",
-    "description": "This PromQL query measures the rate of increase in CPU seconds consumed by a specific node over a 5-minute window.",
-    "question": "Is the CPU consumption by the node increasing or decreasing?",
+    "description": "This PromQL query measures the rate of a specific metric over a 5-minute window.",
+    "question": "Which nodes have the highest rate of CPU seconds total?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "20b37fc3-9365-4f67-88d2-0aa21700d18a",
+    "id": "ffae3433-6bbd-4a70-8b7d-63ba902335e2",
     "name": "Average Pipeline Run Frequency",
-    "description": "The PromQL query measures the average frequency at which a pipeline runs over a specific time period.",
-    "question": "What is the average frequency of pipeline runs?",
+    "description": "This PromQL query measures the average frequency at which a specific pipeline is being run over a period of time.",
+    "question": "What is the average frequency of the pipeline runs?",
     "query": "",
     "metrics": [
       "pipeline_run_frequency"
     ]
   },
   {
-    "id": "4bed39fe-5dc6-4fde-81f1-8f376aa00588",
+    "id": "e521d0f3-a774-4c9f-bba7-0362dac98dfc",
     "name": "Average Pipeline Run Frequency",
-    "description": "The PromQL query measures the average frequency at which a pipeline runs over a specific time period.",
-    "question": "How often does the pipeline execute on average?",
+    "description": "This PromQL query measures the average frequency at which a specific pipeline is being run over a period of time.",
+    "question": "Is there any noticeable trend in the pipeline run frequency?",
     "query": "",
     "metrics": [
       "pipeline_run_frequency"
     ]
   },
   {
-    "id": "c0752964-83a8-4dc3-9d4f-4423dc8f721b",
+    "id": "e981a71e-6c04-40ff-91d6-2203dbdc2a0f",
     "name": "Average Pipeline Run Frequency",
-    "description": "The PromQL query measures the average frequency at which a pipeline runs over a specific time period.",
-    "question": "What is the mean interval between successive pipeline runs?",
+    "description": "This PromQL query measures the average frequency at which a specific pipeline is being run over a period of time.",
+    "question": "How does the pipeline run frequency vary over different time intervals?",
     "query": "",
     "metrics": [
       "pipeline_run_frequency"

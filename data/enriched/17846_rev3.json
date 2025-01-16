@@ -1,0 +1,152 @@
+[
+  {
+    "id": "3ab55aa2-5a7f-4831-8217-557699073f86",
+    "name": "Consensus",
+    "description": "This PromQL query measures the total consensus reached by a group of nodes over a period of time.",
+    "question": "What is the total consensus reached by the nodes?",
+    "query": "",
+    "metrics": [
+      "consensus_total"
+    ]
+  },
+  {
+    "id": "77b14c5b-de6d-48fe-acae-f2eb4c5e7259",
+    "name": "Consensus",
+    "description": "This PromQL query measures the total consensus reached by a group of nodes over a period of time.",
+    "question": "How does the consensus metric change over time?",
+    "query": "",
+    "metrics": [
+      "consensus_total"
+    ]
+  },
+  {
+    "id": "241c290c-2e98-4801-9626-4048d9207d99",
+    "name": "Consensus",
+    "description": "This PromQL query measures the total consensus reached by a group of nodes over a period of time.",
+    "question": "Which node contributes the most to the overall consensus?",
+    "query": "",
+    "metrics": [
+      "consensus_total"
+    ]
+  },
+  {
+    "id": "f47e93ed-d166-4318-a743-7fa466667e6b",
+    "name": "Execution",
+    "description": "This PromQL query measures the rate of a specific metric over a 5-minute time window.",
+    "question": "What is the rate of node_cpu_seconds_total?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "4f5e8167-85b7-4f47-85a2-f3a3fffbd67c",
+    "name": "Execution",
+    "description": "This PromQL query measures the rate of a specific metric over a 5-minute time window.",
+    "question": "How has the rate of node_cpu_seconds_total changed over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "38e9f615-c9a7-4b2a-8331-2dd626f871ff",
+    "name": "Execution",
+    "description": "This PromQL query measures the rate of a specific metric over a 5-minute time window.",
+    "question": "Is there any anomaly in the rate of node_cpu_seconds_total?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "118004eb-72f4-4866-99d2-fe2a88a1d196",
+    "name": "ETH",
+    "description": "This PromQL query measures the total amount of ETH (Ethereum) transactions per minute.",
+    "question": "How many total ETH transactions occurred?",
+    "query": "",
+    "metrics": [
+      "eth_transactions_total"
+    ]
+  },
+  {
+    "id": "2c9d50f0-6314-4ef9-a460-44adb81ff416",
+    "name": "ETH",
+    "description": "This PromQL query measures the total amount of ETH (Ethereum) transactions per minute.",
+    "question": "What is the rate of ETH transactions?",
+    "query": "",
+    "metrics": [
+      "eth_transactions_total"
+    ]
+  },
+  {
+    "id": "e94a9181-6d8d-48e8-a461-da96637aaf53",
+    "name": "ETH",
+    "description": "This PromQL query measures the total amount of ETH (Ethereum) transactions per minute.",
+    "question": "Which time range is considered for ETH transactions?",
+    "query": "",
+    "metrics": [
+      "eth_transactions_total"
+    ]
+  },
+  {
+    "id": "e31450d9-7dc6-4245-8cd7-c8a376760a02",
+    "name": "Validators",
+    "description": "This PromQL query measures the total number of validators participating in a network.",
+    "question": "What is the current total number of validators in the network?",
+    "query": "",
+    "metrics": [
+      "validators_total"
+    ]
+  },
+  {
+    "id": "73887f19-fb2e-450c-a565-f94f25691c81",
+    "name": "Validators",
+    "description": "This PromQL query measures the total number of validators participating in a network.",
+    "question": "How many validators are actively participating?",
+    "query": "",
+    "metrics": [
+      "validators_total"
+    ]
+  },
+  {
+    "id": "d2d37d4e-fa01-49ab-b508-9e34fdb25669",
+    "name": "Validators",
+    "description": "This PromQL query measures the total number of validators participating in a network.",
+    "question": "What is the overall count of validators in the system?",
+    "query": "",
+    "metrics": [
+      "validators_total"
+    ]
+  },
+  {
+    "id": "ebfe3786-0008-4ac3-827c-f20ef82b3fa2",
+    "name": "Missed Attestations",
+    "description": "This PromQL query measures the number of missed attestations over a specific time period.",
+    "question": "How many missed attestations occurred?",
+    "query": "",
+    "metrics": [
+      "missed_attestations"
+    ]
+  },
+  {
+    "id": "c94bdd86-d9af-4fee-ba2a-bf38fe5fcbae",
+    "name": "Missed Attestations",
+    "description": "This PromQL query measures the number of missed attestations over a specific time period.",
+    "question": "What is the trend of missed attestations?",
+    "query": "",
+    "metrics": [
+      "missed_attestations"
+    ]
+  },
+  {
+    "id": "aa0cdc79-4d39-416f-9170-2ecd5a229f30",
+    "name": "Missed Attestations",
+    "description": "This PromQL query measures the number of missed attestations over a specific time period.",
+    "question": "Which validators had the highest number of missed attestations?",
+    "query": "",
+    "metrics": [
+      "missed_attestations"
+    ]
+  }
+]

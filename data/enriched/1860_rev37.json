@@ -1,8 +1,38 @@
 [
   {
-    "id": "97a301f1-188e-4e02-a5e9-418c88864e02",
+    "id": "7bddf2f8-c239-48d0-a521-85be814531ca",
+    "name": "Pressure",
+    "description": "This PromQL query measures the resource pressure in pounds per square inch (PSI) in the system.",
+    "question": "What is the total CPU usage in the system?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "caf7acd4-276e-4486-99f8-ad4fe897f7ec",
+    "name": "Pressure",
+    "description": "This PromQL query measures the resource pressure in pounds per square inch (PSI) in the system.",
+    "question": "How does the CPU usage change over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "df6ddbe9-d478-4d37-a6b4-e1839bc35208",
+    "name": "Pressure",
+    "description": "This PromQL query measures the resource pressure in pounds per square inch (PSI) in the system.",
+    "question": "Which nodes have the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "5d22cd0a-65ee-4bc9-b218-a4faddc8f680",
     "name": "CPU Busy",
-    "description": "This PromQL query measures the combined busy state of all CPU cores over a specific time period.",
+    "description": "This PromQL query measures the combined busy state of all CPU cores.",
     "question": "What is the total CPU busy state across all cores?",
     "query": "",
     "metrics": [
@@ -10,95 +40,89 @@
     ]
   },
   {
-    "id": "3df9dc63-7de2-4fe6-aa2e-6ded90d313cf",
+    "id": "4685b2c3-bd1e-402f-a1de-cf7591081c3a",
     "name": "CPU Busy",
-    "description": "This PromQL query measures the combined busy state of all CPU cores over a specific time period.",
-    "question": "How has the CPU workload been distributed among all cores?",
+    "description": "This PromQL query measures the combined busy state of all CPU cores.",
+    "question": "How has the CPU busy state changed over the past 5 minutes?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "c05c0840-526d-4602-b949-437e04059721",
+    "id": "542db51b-0207-4d5a-a693-881a7bde2814",
     "name": "CPU Busy",
-    "description": "This PromQL query measures the combined busy state of all CPU cores over a specific time period.",
-    "question": "Is there a spike in CPU usage across all cores?",
+    "description": "This PromQL query measures the combined busy state of all CPU cores.",
+    "question": "Is there a correlation between CPU busy state and any other metric?",
     "query": "",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "27c0eb1c-fa36-405a-8cbd-2e1f4d1bdce0",
+    "id": "12a560ae-e05c-4911-af21-04f674c24225",
     "name": "Sys Load",
-    "description": "This PromQL query measures the system load over all CPU cores combined.",
-    "question": "What is the current system load?",
+    "description": "The PromQL query measures the system load over all CPU cores combined.",
+    "question": "What is the total system load over all CPU cores?",
     "query": "",
     "metrics": [
-      "node_load1",
-      "node_load5",
-      "node_load15"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "a24c73d2-c309-430a-bd5f-ebe954388898",
+    "id": "5c97ca76-0e9e-4fd5-bd60-010c64efece1",
     "name": "Sys Load",
-    "description": "This PromQL query measures the system load over all CPU cores combined.",
-    "question": "How has the system load changed over the last 5 minutes?",
+    "description": "The PromQL query measures the system load over all CPU cores combined.",
+    "question": "How does the system load change over time?",
     "query": "",
     "metrics": [
-      "node_load1",
-      "node_load5",
-      "node_load15"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "ebbd8e9b-8fd0-4cb4-afea-5d047a6bd1c8",
+    "id": "8b8aefeb-6b6c-4293-b424-07a34b2560f0",
     "name": "Sys Load",
-    "description": "This PromQL query measures the system load over all CPU cores combined.",
-    "question": "Is the system load within acceptable limits?",
+    "description": "The PromQL query measures the system load over all CPU cores combined.",
+    "question": "Which processes are contributing the most to the system load?",
     "query": "",
     "metrics": [
-      "node_load1",
-      "node_load5",
-      "node_load15"
+      "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "fc453276-59d1-4b00-b4ff-15e9fff2d40f",
+    "id": "6027cde1-a509-43a8-93b5-b920d507ad29",
     "name": "RAM Used",
-    "description": "This PromQL query measures the amount of used RAM memory that is currently not available for use.",
-    "question": "What is the current amount of RAM memory that is not available for use?",
+    "description": "This PromQL query measures the amount of non available RAM memory.",
+    "question": "What is the current amount of non available RAM memory?",
     "query": "",
     "metrics": [
-      "ram_used"
+      "non_available_RAM_memory"
     ]
   },
   {
-    "id": "4f3832cc-c4af-4240-ad8f-b20067e7a9de",
+    "id": "dfaef2e6-938a-4ae9-9f6e-0a69265b7b97",
     "name": "RAM Used",
-    "description": "This PromQL query measures the amount of used RAM memory that is currently not available for use.",
-    "question": "How much RAM memory is being used and not available?",
+    "description": "This PromQL query measures the amount of non available RAM memory.",
+    "question": "How much RAM memory is not available?",
     "query": "",
     "metrics": [
-      "ram_used"
+      "non_available_RAM_memory"
     ]
   },
   {
-    "id": "da320c45-132f-4a0b-997a-3f4074b13f25",
+    "id": "47c544cb-6af8-4a84-890d-80729e44408f",
     "name": "RAM Used",
-    "description": "This PromQL query measures the amount of used RAM memory that is currently not available for use.",
-    "question": "What is the unavailable RAM memory usage?",
+    "description": "This PromQL query measures the amount of non available RAM memory.",
+    "question": "Is there any non available RAM memory currently?",
     "query": "",
     "metrics": [
-      "ram_used"
+      "non_available_RAM_memory"
     ]
   },
   {
-    "id": "7b5778c3-ee6d-404b-a63e-9a91103953f3",
+    "id": "89593bfd-3e4f-4937-9bd7-26ca53d40444",
     "name": "SWAP Used",
-    "description": "This PromQL query measures the amount of swap space that is currently being utilized on the system.",
+    "description": "The PromQL query measures the amount of swap space that is currently being used on the system.",
     "question": "What is the current amount of swap space being used?",
     "query": "",
     "metrics": [
@@ -106,9 +130,9 @@
     ]
   },
   {
-    "id": "1f4ef8f2-36ce-41c6-8161-e090dad2edf7",
+    "id": "2a41195c-8817-487f-a4c0-a7b1122b89e3",
     "name": "SWAP Used",
-    "description": "This PromQL query measures the amount of swap space that is currently being utilized on the system.",
+    "description": "The PromQL query measures the amount of swap space that is currently being used on the system.",
     "question": "How much swap space is being utilized?",
     "query": "",
     "metrics": [
@@ -116,10 +140,10 @@
     ]
   },
   {
-    "id": "67dbb6d6-4b22-4034-93eb-21421f6eb2ac",
+    "id": "6fa98001-2721-4540-ba7e-2fba1b711dfe",
     "name": "SWAP Used",
-    "description": "This PromQL query measures the amount of swap space that is currently being utilized on the system.",
-    "question": "What is the level of swap space usage?",
+    "description": "The PromQL query measures the amount of swap space that is currently being used on the system.",
+    "question": "What is the level of swap usage?",
     "query": "",
     "metrics": [
       "swap_used"

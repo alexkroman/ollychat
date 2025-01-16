@@ -1,0 +1,182 @@
+[
+  {
+    "id": "312991d0-a635-4d0a-a4e1-8edb33588641",
+    "name": "Application Health Status",
+    "description": "This PromQL query measures the total number of HTTP requests made to the application over the last 5 minutes.",
+    "question": "What is the total number of HTTP requests made to the application?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "b292c5b3-8387-4ad7-ad89-85aee038b4e0",
+    "name": "Application Health Status",
+    "description": "This PromQL query measures the total number of HTTP requests made to the application over the last 5 minutes.",
+    "question": "What is the rate of HTTP requests being made to the application?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "8e7e4335-3bf4-4649-bc2d-c1cb3130ec2f",
+    "name": "Application Health Status",
+    "description": "This PromQL query measures the total number of HTTP requests made to the application over the last 5 minutes.",
+    "question": "How many HTTP requests have been processed by the application?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "bbecff0a-50ed-4fe8-a57e-5209c5da2a95",
+    "name": "Application Sync Status",
+    "description": "The PromQL query measures the status of application synchronization.",
+    "question": "What is the total CPU time consumed by the nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "63a48d57-b552-41e5-91ee-0b0c5d92257e",
+    "name": "Application Sync Status",
+    "description": "The PromQL query measures the status of application synchronization.",
+    "question": "How is the CPU usage distributed across different nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "3cc89d69-41ee-4adb-b176-da1f47c05382",
+    "name": "Application Sync Status",
+    "description": "The PromQL query measures the status of application synchronization.",
+    "question": "Are there any spikes in CPU usage that could indicate performance issues?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "0643e52f-c95e-4f79-8e0f-f59b3ea92c0f",
+    "name": "Application Syncs",
+    "description": "This PromQL query measures the frequency of application syncs over a specific time period.",
+    "question": "How many application syncs occurred?",
+    "query": "",
+    "metrics": [
+      "application_syncs"
+    ]
+  },
+  {
+    "id": "b56a578a-e179-4bdf-9599-bde4ad18f288",
+    "name": "Application Syncs",
+    "description": "This PromQL query measures the frequency of application syncs over a specific time period.",
+    "question": "What is the rate of application syncs?",
+    "query": "",
+    "metrics": [
+      "application_syncs"
+    ]
+  },
+  {
+    "id": "2fac987e-802b-42dd-ba4c-126cbe63e94a",
+    "name": "Application Syncs",
+    "description": "This PromQL query measures the frequency of application syncs over a specific time period.",
+    "question": "Are there any patterns or anomalies in application syncs?",
+    "query": "",
+    "metrics": [
+      "application_syncs"
+    ]
+  },
+  {
+    "id": "4789d48e-0bad-474c-9ca6-9cc4bf822bc1",
+    "name": "Application Auto Sync Enabled",
+    "description": "This PromQL query measures the status of application auto sync functionality.",
+    "question": "What is the current status of application auto sync?",
+    "query": "",
+    "metrics": [
+      "application_auto_sync_enabled"
+    ]
+  },
+  {
+    "id": "376fea62-9885-4410-919b-2b67bcf5ad03",
+    "name": "Application Auto Sync Enabled",
+    "description": "This PromQL query measures the status of application auto sync functionality.",
+    "question": "Is the application auto sync feature enabled?",
+    "query": "",
+    "metrics": [
+      "application_auto_sync_enabled"
+    ]
+  },
+  {
+    "id": "d14b811d-9ceb-4770-b21c-52e18123f0a1",
+    "name": "Application Auto Sync Enabled",
+    "description": "This PromQL query measures the status of application auto sync functionality.",
+    "question": "Is the auto sync functionality operational?",
+    "query": "",
+    "metrics": [
+      "application_auto_sync_enabled"
+    ]
+  },
+  {
+    "id": "88cfa815-1d37-4dcc-a15c-1b56c4a2a8d8",
+    "name": "Applications Unhealthy",
+    "description": "This PromQL query measures the number of unhealthy applications in the system.",
+    "question": "How many applications are currently unhealthy?",
+    "query": "",
+    "metrics": [
+      "unhealthy_applications"
+    ]
+  },
+  {
+    "id": "4597d645-656b-48ee-b9bd-9abd6d3fcf55",
+    "name": "Applications Unhealthy",
+    "description": "This PromQL query measures the number of unhealthy applications in the system.",
+    "question": "Which application has the highest number of failures?",
+    "query": "",
+    "metrics": [
+      "unhealthy_applications"
+    ]
+  },
+  {
+    "id": "f43be87f-2543-4086-82f7-92c368718355",
+    "name": "Applications Unhealthy",
+    "description": "This PromQL query measures the number of unhealthy applications in the system.",
+    "question": "What is the trend of unhealthy applications over time?",
+    "query": "",
+    "metrics": [
+      "unhealthy_applications"
+    ]
+  },
+  {
+    "id": "705bb2b7-92d6-4db2-bd1f-c07c6491b9fa",
+    "name": "Application Sync Result",
+    "description": "The PromQL query measures the result of application synchronization process.",
+    "question": "What is the result of the application synchronization process?",
+    "query": "",
+    "metrics": [
+      "application_sync_result"
+    ]
+  },
+  {
+    "id": "3911c434-3357-43a4-a387-38fcd8cfce55",
+    "name": "Application Sync Result",
+    "description": "The PromQL query measures the result of application synchronization process.",
+    "question": "Is the application synchronization successful?",
+    "query": "",
+    "metrics": [
+      "application_sync_result"
+    ]
+  },
+  {
+    "id": "6a812b7c-bc26-4814-8e5f-3cceb2e5d967",
+    "name": "Application Sync Result",
+    "description": "The PromQL query measures the result of application synchronization process.",
+    "question": "What are the outcomes of the application sync?",
+    "query": "",
+    "metrics": [
+      "application_sync_result"
+    ]
+  }
+]
