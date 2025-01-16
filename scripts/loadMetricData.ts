@@ -4,6 +4,7 @@ import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { Document } from "@langchain/core/documents";
 import { ChromaClient } from "chromadb";
+import { normalizeQuestion } from '../src/tools/normalize.js';
 
 import * as dotenv from 'dotenv';
 dotenv.config();
@@ -20,7 +21,7 @@ if (!Array.isArray(inputData)) {
 // Transform the data into the desired format
 const transformedData: Document[] = inputData.map((item: any) => ({
   id: item.id,
-  pageContent: `${item.name}: ${item.help}`,
+  pageContent: `${normalizeQuestion(item.name)}: ${normalizeQuestion(item.help)}`,
   metadata: {
     name: item.name,
     help: item.help

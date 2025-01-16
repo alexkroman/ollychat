@@ -7,10 +7,10 @@ dotenv.config();
 const logging = !process.execArgv.includes('--no-warnings');
 
 const customHandler = {
-  handleLLMStart: async (llm: any, prompts: string[]) => {
+  handleLLMStart: async (llm: any, promptValue: string[]) => {
     if (logging) {
       // Log the exact prompt text sent to the LLM
-      //console.log("Prompt sent to LLM:", prompts.join("\n---\n"));
+      console.log("Prompt sent to LLM:", promptValue.join("\n---\n"));
     }
   },
 };

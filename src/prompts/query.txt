@@ -16,6 +16,9 @@ Sufficient Context:
 Query Validity:
 - Use relevant example queries whenever possible.
 - Ensure the output is syntactically valid and can be run in a Prometheus-compatible environment.
+- Only reference the following available Prometheus metrics:
+
+{metrics}
 
 Reference Examples
 
