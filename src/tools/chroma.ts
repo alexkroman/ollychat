@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const embeddings = new OpenAIEmbeddings({
-    model: "text-embedding-ada-002",
+    model: process.env.OPENAI_EMBEDDINGS || "text-embedding-ada-002",
 });
 
 export const vectorStore = new Chroma(embeddings, {

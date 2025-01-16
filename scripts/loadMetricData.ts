@@ -2,10 +2,10 @@
 import fs from 'fs';
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
-import * as dotenv from 'dotenv';
 import { Document } from "@langchain/core/documents";
 import { ChromaClient } from "chromadb";
 
+import * as dotenv from 'dotenv';
 dotenv.config();
 
 // Read and parse the JSON file
@@ -28,7 +28,7 @@ const transformedData: Document[] = inputData.map((item: any) => ({
 }));
 
 const embeddings = new OpenAIEmbeddings({
-  model: "text-embedding-ada-002",
+  model: process.env.OPENAI_EMBEDDINGS || "text-embedding-ada-002",
 });
 
 const vectorStore = new Chroma(embeddings, {
