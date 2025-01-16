@@ -40,10 +40,10 @@
     "start:cli": "npm run build && node --no-warnings dist/ui/cli.js",
     "dev:slack": "node --watch --loader ts-node/esm src/ui/slack.ts",
     "start:slack": "npm run build && node dist/ui/slack.js",
-    "dashboards:import": "node --loader ts-node/esm scripts/importDashboards.ts",
-    "data:enrich": "node --loader ts-node/esm scripts/enrichExampleData.ts",
-    "metrics:import": "node --loader ts-node/esm scripts/importMetrics.ts",
-    "examples:load": "node --loader ts-node/esm scripts/loadExampleData.ts",
-    "metrics:load": "node --loader ts-node/esm scripts/loadMetricData.ts"
+    "dashboards:import": "node --loader ts-node/esm src/scripts/importDashboards.ts",
+    "data:enrich": "node --loader ts-node/esm src/scripts/enrichExampleData.ts",
+    "metrics:import": "node --loader ts-node/esm src/scripts/importMetrics.ts",
+    "examples:load": "node --loader ts-node/esm src/scripts/loadExampleData.ts",
+    "metrics:load": "node --loader ts-node/esm src/scripts/loadMetricData.ts"
   }
 }

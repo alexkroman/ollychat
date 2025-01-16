@@ -4,7 +4,7 @@
     "target": "ES2020",                        // Modern JavaScript output (adjust based on your needs)
     "module": "esnext",                        // Node.js module resolution
     "outDir": "./dist",                        // Output folder for compiled files
-    "rootDir": "",                            // Root folder for TypeScript files
+    "rootDir": "src/",                            // Root folder for TypeScript files
     "strict": true,                            // Enable all strict type-checking options
     "esModuleInterop": true,                   // Support for CommonJS and ES modules
     "forceConsistentCasingInFileNames": true,  // Ensure consistent file casing
@@ -34,7 +34,7 @@
     "experimentalDecorators": true,           // Enable decorators (if using frameworks like NestJS)
     "emitDecoratorMetadata": true ,           // Emit metadata for decorators
   },
-  "include": ["src/**/*", "scripts/**/*"],
+  "include": ["src/**/*"],
   "incremental": true,
   "tsBuildInfoFile": "./.tsbuildinfo",
   "exclude": ["node_modules", "dist"]         // Exclude build and dependency directories
