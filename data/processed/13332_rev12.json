@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Cluster Pod Requested",
+    "description": "",
+    "queries": [
+      "sum(kube_pod_info{cluster=~\"$cluster\",node=~\"$node\"}) / sum(kube_node_status_allocatable{cluster=~\"$cluster\",resource=\"pods\",node=~\"$node\"})"
+    ]
+  },
+  {
+    "name": "Cluster CPU Requested",
+    "description": "",
+    "queries": [
+      "sum(kube_pod_container_resource_requests{cluster=~\"$cluster\",resource=\"cpu\",node=~\"$node\"})/ sum(kube_node_status_allocatable{node=~\"$node\",cluster=~\"$cluster\",resource=\"cpu\"})"
+    ]
+  },
+  {
+    "name": "Cluster Memory  Requested",
+    "description": "",
+    "queries": [
+      "sum(kube_pod_container_resource_requests{cluster=~\"$cluster\",resource=\"memory\",node=~\"$node\"}) / sum(kube_node_status_allocatable{node=~\"$node\",cluster=~\"$cluster\",resource=\"memory\"})"
+    ]
+  },
+  {
+    "name": "Cluster Pod Capacity",
+    "description": "",
+    "queries": [
+      "sum(kube_node_status_allocatable{cluster=~\"$cluster\",resource=\"pods\",node=~\"$node\"})",
+      "sum(kube_pod_info{node=~\"$node\",cluster=~\"$cluster\"})"
+    ]
+  },
+  {
+    "name": "Cluster CPU Capacity",
+    "description": "",
+    "queries": [
+      "sum(kube_node_status_capacity{node=~\"$node\",cluster=~\"$cluster\",resource=\"cpu\"})",
+      "sum(kube_node_status_allocatable{node=~\"$node\",cluster=~\"$cluster\",resource=\"cpu\"})",
+      "sum(kube_pod_container_resource_requests{cluster=~\"$cluster\",resource=\"cpu\",node=~\"$node\"})",
+      "sum(kube_pod_container_resource_limits{cluster=~\"$cluster\",resource=\"cpu\",node=~\"$node\"})"
+    ]
+  },
+  {
+    "name": "Cluster Mem Capacity",
+    "description": "",
+    "queries": [
+      "sum(kube_node_status_allocatable{node=~\"$node\",cluster=~\"$cluster\",resource=\"memory\"})",
+      "sum(kube_node_status_capacity{node=~\"$node\",cluster=~\"$cluster\",resource=\"memory\"})",
+      "sum(kube_pod_container_resource_requests{cluster=~\"$cluster\",resource=\"memory\",node=~\"$node\"})",
+      "sum(kube_pod_container_resource_limits{cluster=~\"$cluster\",resource=\"memory\",node=~\"$node\"})"
+    ]
+  }
+]

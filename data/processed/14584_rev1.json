@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Uptime",
+    "description": "",
+    "queries": [
+      "time() - max(process_start_time_seconds{job=\"argocd-server-metrics\",namespace=~\"$namespace\"})"
+    ]
+  },
+  {
+    "name": "Clusters",
+    "description": "",
+    "queries": [
+      "count(count by (server) (argocd_cluster_info{namespace=~\"$namespace\"}))"
+    ]
+  },
+  {
+    "name": "Applications",
+    "description": "",
+    "queries": [
+      "sum(argocd_app_info{namespace=~\"$namespace\",dest_server=~\"$cluster\",health_status=~\"$health_status\",sync_status=~\"$sync_status\"})"
+    ]
+  },
+  {
+    "name": "Repositories",
+    "description": "",
+    "queries": [
+      "count(count by (repo) (argocd_app_info{namespace=~\"$namespace\"}))"
+    ]
+  },
+  {
+    "name": "Operations",
+    "description": "",
+    "queries": [
+      "sum(argocd_app_info{namespace=~\"$namespace\",dest_server=~\"$cluster\",operation!=\"\"})"
+    ]
+  },
+  {
+    "name": "Applications",
+    "description": "",
+    "queries": [
+      "sum(argocd_app_info{namespace=~\"$namespace\",dest_server=~\"$cluster\",health_status=~\"$health_status\",sync_status=~\"$sync_status\"}) by (namespace)"
+    ]
+  }
+]

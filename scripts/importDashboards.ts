@@ -57,15 +57,21 @@ function transformFile(inputPath: string, outputPath: string): void {
     };
   }).filter((entry: VectorEntry) => {
     if (entry === null) return false; // Exclude invalid panels
-    if (entry.queries.length == 1 && entry.queries.some(query => query.trim() === "")) {
+    if (entry.queries.every(query => query.trim() === "")) {
       console.warn(`Panel "${entry.name}" has no valid queries and will be excluded.`);
       return false; // Exclude panels with no valid queries
     }
     return true;
   });
 
-  fs.writeFileSync(outputPath, JSON.stringify(vectorData, null, 2), 'utf-8');
-  console.log(`Processed: ${inputPath} -> ${outputPath}`);
+  // Only write the file if vectorData is valid and not empty
+  if (vectorData && Array.isArray(vectorData) && vectorData.length > 0) {
+    fs.writeFileSync(outputPath, JSON.stringify(vectorData, null, 2), 'utf-8');
+    console.log(`File written successfully to ${outputPath}`);
+  } else {
+    console.warn(`No valid vector data to write. Skipping file creation.`);
+  }
+
 }
 
 // Process all JSON files in the input directory

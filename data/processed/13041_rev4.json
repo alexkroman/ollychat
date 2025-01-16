@@ -1,0 +1,110 @@
+[
+  {
+    "name": "HTTP status code",
+    "description": "",
+    "queries": [
+      "probe_http_status_code{instance=\"$target\"}"
+    ]
+  },
+  {
+    "name": "SSL",
+    "description": "",
+    "queries": [
+      "probe_http_ssl{instance=\"$target\"}"
+    ]
+  },
+  {
+    "name": "Certificate validity",
+    "description": "",
+    "queries": [
+      "(probe_ssl_earliest_cert_expiry{instance=\"$target\"} - time()) / (60*60*24)"
+    ]
+  },
+  {
+    "name": "TLS version",
+    "description": "",
+    "queries": [
+      "probe_tls_version_info{instance=\"$target\"}"
+    ]
+  },
+  {
+    "name": "DNS lookup time",
+    "description": "",
+    "queries": [
+      "probe_dns_lookup_time_seconds{instance=\"$target\",job=\"$http_job\"}"
+    ]
+  },
+  {
+    "name": "HTTP version",
+    "description": "",
+    "queries": [
+      "probe_http_version{instance=\"$target\"}"
+    ]
+  },
+  {
+    "name": "Redirect(s)",
+    "description": "",
+    "queries": [
+      "probe_http_redirects{instance=\"$target\"}"
+    ]
+  },
+  {
+    "name": "ICMP",
+    "description": "",
+    "queries": [
+      "probe_success{job=\"$icmp_job\",instance=\"$target\"}"
+    ]
+  },
+  {
+    "name": "Availability",
+    "description": "",
+    "queries": [
+      "avg_over_time(probe_success{job=\"$http_job\",instance=\"$target\"}[$__interval]) * 100"
+    ]
+  },
+  {
+    "name": "Availability",
+    "description": "",
+    "queries": [
+      "avg_over_time(probe_success{job=\"$http_job\",instance=\"$target\"}[$__interval]) * 100"
+    ]
+  },
+  {
+    "name": "Availability",
+    "description": "",
+    "queries": [
+      "avg_over_time(probe_success{job=\"$http_job\",instance=\"$target\"}[$__interval]) * 100"
+    ]
+  },
+  {
+    "name": "HTTP probe duration / status code",
+    "description": "",
+    "queries": [
+      "probe_duration_seconds{instance=\"$target\",job=\"$http_job\"}",
+      "probe_http_status_code{instance=\"$target\"} == 200",
+      "probe_http_status_code{instance=\"$target\"} != 200"
+    ]
+  },
+  {
+    "name": "ICMP probe duration / failure",
+    "description": "Display only ICMP failures",
+    "queries": [
+      "probe_duration_seconds{instance=\"$target\",job=\"$icmp_job\"}",
+      "probe_success{job=\"$icmp_job\",instance=\"$target\"} == 0"
+    ]
+  },
+  {
+    "name": "HTTP probe (by phase)",
+    "description": "",
+    "queries": [
+      "probe_http_duration_seconds{instance=\"$target\"}"
+    ]
+  },
+  {
+    "name": "ICMP probe (by phase)",
+    "description": "",
+    "queries": [
+      "probe_icmp_duration_seconds{instance=\"$target\"}"
+    ]
+  }
+]

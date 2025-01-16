@@ -1,0 +1,91 @@
+[
+  {
+    "name": "Uptime",
+    "description": "",
+    "queries": [
+      "max(max_over_time(redis_uptime_in_seconds{instance=~\"$instance\"}[$__interval]))"
+    ]
+  },
+  {
+    "name": "Clients",
+    "description": "",
+    "queries": [
+      "redis_connected_clients{instance=~\"$instance\"}"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "",
+    "queries": [
+      "100 * (redis_memory_used_bytes{instance=~\"$instance\"}  / redis_memory_max_bytes{instance=~\"$instance\"} )"
+    ]
+  },
+  {
+    "name": "Commands Executed / sec",
+    "description": "",
+    "queries": [
+      "rate(redis_commands_processed_total{instance=~\"$instance\"}[1m])"
+    ]
+  },
+  {
+    "name": "Hits / Misses per Sec",
+    "description": "",
+    "queries": [
+      "irate(redis_keyspace_hits_total{instance=~\"$instance\"}[5m])",
+      "irate(redis_keyspace_misses_total{instance=~\"$instance\"}[5m])"
+    ]
+  },
+  {
+    "name": "Total Memory Usage",
+    "description": "",
+    "queries": [
+      "redis_memory_used_bytes{instance=~\"$instance\"} ",
+      "redis_memory_max_bytes{instance=~\"$instance\"} "
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "",
+    "queries": [
+      "rate(redis_net_input_bytes_total{instance=~\"$instance\"}[5m])",
+      "rate(redis_net_output_bytes_total{instance=~\"$instance\"}[5m])"
+    ]
+  },
+  {
+    "name": "Total Items per DB",
+    "description": "",
+    "queries": [
+      "sum (redis_db_keys{instance=~\"$instance\"}) by (db)"
+    ]
+  },
+  {
+    "name": "Expiring vs Not-Expiring Keys",
+    "description": "",
+    "queries": [
+      "sum (redis_db_keys{instance=~\"$instance\"}) - sum (redis_db_keys_expiring{instance=~\"$instance\"}) ",
+      "sum (redis_db_keys_expiring{instance=~\"$instance\"}) "
+    ]
+  },
+  {
+    "name": "Expired / Evicted",
+    "description": "",
+    "queries": [
+      "sum(rate(redis_expired_keys_total{instance=~\"$instance\"}[5m])) by (instance)",
+      "sum(rate(redis_evicted_keys_total{instance=~\"$instance\"}[5m])) by (instance)"
+    ]
+  },
+  {
+    "name": "Command Calls / sec",
+    "description": "",
+    "queries": [
+      "topk(5, irate(redis_commands_total{instance=~\"$instance\"} [1m]))"
+    ]
+  },
+  {
+    "name": "Redis connected clients",
+    "description": "",
+    "queries": [
+      "redis_connected_clients{instance=\"$instance\"}"
+    ]
+  }
+]

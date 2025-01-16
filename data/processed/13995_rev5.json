@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Policy Pass Status",
+    "description": "",
+    "queries": [
+      "sum(policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", namespace=~\"$namespace\", status=\"pass\" } > 0) by (namespace)"
+    ]
+  },
+  {
+    "name": "Policy Fail Status",
+    "description": "",
+    "queries": [
+      "sum(policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", namespace=~\"$namespace\", status=\"fail\" } > 0) by (namespace)"
+    ]
+  },
+  {
+    "name": "Policy Warning Status",
+    "description": "",
+    "queries": [
+      "sum(policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", namespace=~\"$namespace\", status=\"warn\" } > 0) by (namespace)"
+    ]
+  },
+  {
+    "name": "Policy Error Status",
+    "description": "",
+    "queries": [
+      "sum(policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", namespace=~\"$namespace\", status=\"error\" } > 0) by (namespace)"
+    ]
+  },
+  {
+    "name": "Status Timeline",
+    "description": "",
+    "queries": [
+      "sum(policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", namespace=~\"$namespace\" } > 0) by (status, namespace)"
+    ]
+  },
+  {
+    "name": "Passed Resources",
+    "description": "",
+    "queries": [
+      "sum(policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", namespace=~\"$namespace\", status=\"pass\" }) by (namespace,category,policy,rule,kind,name,severity,status,source )"
+    ]
+  },
+  {
+    "name": "Failed Resources",
+    "description": "",
+    "queries": [
+      "sum(policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", namespace=~\"$namespace\", status=\"fail\" }) by (namespace,category,policy,rule,kind,name,severity,status,source)"
+    ]
+  },
+  {
+    "name": "Warning Resources",
+    "description": "",
+    "queries": [
+      "sum(policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", namespace=~\"$namespace\", status=\"warn\" }) by (namespace,category,policy,rule,kind,name,severity,status,source )"
+    ]
+  },
+  {
+    "name": "Errored Resources",
+    "description": "",
+    "queries": [
+      "sum(policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", namespace=~\"$namespace\", status=\"error\" }) by (namespace,category,policy,rule,kind,name,severity,status,source )"
+    ]
+  }
+]

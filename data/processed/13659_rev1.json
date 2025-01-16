@@ -1,0 +1,22 @@
+[
+  {
+    "name": "HTTP Probe Overview",
+    "description": "",
+    "queries": [
+      "probe_success{job=~\"$job\", instance=~\"$instance\"}",
+      "probe_http_ssl{job=~\"$job\", instance=~\"$instance\"} > 0",
+      "(probe_ssl_earliest_cert_expiry{job=~\"$job\", instance=~\"$instance\"} - time()) / 3600 / 24",
+      "probe_http_status_code{job=~\"$job\", instance=~\"$instance\"} > 0",
+      "avg_over_time(probe_duration_seconds{job=~\"$job\", instance=~\"$instance\"}[1m])",
+      "probe_tls_version_info{job=~\"$job\", instance=~\"$instance\"}",
+      "avg_over_time(probe_dns_lookup_time_seconds{job=~\"$job\", instance=~\"$instance\"}[1m])"
+    ]
+  },
+  {
+    "name": "HTTP Probe Duration",
+    "description": "Returns how long the probe took to complete in seconds",
+    "queries": [
+      "sum(probe_http_duration_seconds{job=~\"$job\", instance=~\"$instance\"}) by (instance)"
+    ]
+  }
+]
