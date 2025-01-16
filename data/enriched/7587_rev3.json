@@ -1,0 +1,146 @@
+[
+  {
+    "id": "7e591d82-58db-4d87-9106-e59455bb7620",
+    "name": "Global Probe Duration",
+    "description": "The PromQL query measures the average duration of global probes across all monitored targets.",
+    "question": "What is the average duration of global probes?",
+    "query": "",
+    "metrics": [
+      "global_probe_duration"
+    ]
+  },
+  {
+    "id": "9cb7a51f-d9ab-4d45-a96f-23d839ff0e5d",
+    "name": "Global Probe Duration",
+    "description": "The PromQL query measures the average duration of global probes across all monitored targets.",
+    "question": "How does the duration of global probes vary over time?",
+    "query": "",
+    "metrics": [
+      "global_probe_duration"
+    ]
+  },
+  {
+    "id": "de0ec32b-c599-4f63-be9b-06ecc17305f9",
+    "name": "Global Probe Duration",
+    "description": "The PromQL query measures the average duration of global probes across all monitored targets.",
+    "question": "Which targets have the longest global probe duration?",
+    "query": "",
+    "metrics": [
+      "global_probe_duration"
+    ]
+  },
+  {
+    "id": "afaeea44-8537-41ad-b541-43cceca53611",
+    "name": "Status",
+    "description": "This PromQL query measures the status of a specific metric over a certain time range.",
+    "question": "What is the current status of the metric?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "2662e83b-09e0-45f4-9b7f-aef658832d24",
+    "name": "Status",
+    "description": "This PromQL query measures the status of a specific metric over a certain time range.",
+    "question": "Is the metric within expected thresholds?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "38856cdb-a234-4611-a48a-7e7ecb62d548",
+    "name": "Status",
+    "description": "This PromQL query measures the status of a specific metric over a certain time range.",
+    "question": "How has the metric's status changed over time?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "bf7c6bc7-a8a3-429c-86c7-a65d506ca7e6",
+    "name": "HTTP Duration",
+    "description": "The PromQL query measures the duration of HTTP requests in a system or application.",
+    "question": "What is the average duration of HTTP requests?",
+    "query": "",
+    "metrics": [
+      "http_duration"
+    ]
+  },
+  {
+    "id": "2b74f920-703a-4429-a5c9-322d968f2b62",
+    "name": "HTTP Duration",
+    "description": "The PromQL query measures the duration of HTTP requests in a system or application.",
+    "question": "How many HTTP requests exceeded a certain duration threshold?",
+    "query": "",
+    "metrics": [
+      "http_duration"
+    ]
+  },
+  {
+    "id": "ced9e718-aa7b-494b-95db-d4bad669b298",
+    "name": "HTTP Duration",
+    "description": "The PromQL query measures the duration of HTTP requests in a system or application.",
+    "question": "What is the maximum duration of HTTP requests?",
+    "query": "",
+    "metrics": [
+      "http_duration"
+    ]
+  },
+  {
+    "id": "87b6ea26-80fb-4ad9-9dab-8fdf151ddac0",
+    "name": "Probe Duration",
+    "description": "This PromQL query measures the duration of probes in the system.",
+    "question": "What is the average duration of probes?",
+    "query": "",
+    "metrics": [
+      "probe_duration"
+    ]
+  },
+  {
+    "id": "9cb23934-570e-4a17-9553-589957c417e7",
+    "name": "Probe Duration",
+    "description": "This PromQL query measures the duration of probes in the system.",
+    "question": "Which probe took the longest duration?",
+    "query": "",
+    "metrics": [
+      "probe_duration"
+    ]
+  },
+  {
+    "id": "f1700ccc-088b-4f4f-8b4f-60c023825581",
+    "name": "Probe Duration",
+    "description": "This PromQL query measures the duration of probes in the system.",
+    "question": "How does probe duration change over time?",
+    "query": "",
+    "metrics": [
+      "probe_duration"
+    ]
+  },
+  {
+    "id": "5ab2e7f5-3316-4a7e-9318-cf776b5847af",
+    "name": "HTTP Status Code",
+    "description": "This PromQL query measures the count of HTTP status codes recorded by the system.",
+    "question": "What is the total count of HTTP status codes?",
+    "query": "",
+    "metrics": [
+      "http_status_code"
+    ]
+  },
+  {
+    "id": "dbe4c428-fcb0-40ed-ba3e-96625f4287b5",
+    "name": "HTTP Status Code",
+    "description": "This PromQL query measures the count of HTTP status codes recorded by the system.",
+    "question": "How many requests returned a specific HTTP status code?",
+    "query": "",
+    "metrics": [
+      "http_status_code"
+    ]
+  },
+  {
+    "id": "bcf21607-a838-4815-b270-b97159f2e259",
+    "name": "HTTP Status Code",
+    "description": "This PromQL query measures the count of HTTP status codes recorded by the system.",
+    "question": "Which HTTP status codes are most frequently encountered?",
+    "query": "",
+    "metrics": [
+      "http_status_code"
+    ]
+  }
+]

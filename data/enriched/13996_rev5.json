@@ -1,0 +1,146 @@
+[
+  {
+    "id": "a5f94782-ea08-4c01-a86d-6775cdcdeeff",
+    "name": "Policy Pass Status",
+    "description": "This PromQL query measures the pass status of a policy by querying relevant metrics.",
+    "question": "What is the pass status of the policy?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "1e18a23e-8955-4d27-9bea-d90eef8b8115",
+    "name": "Policy Pass Status",
+    "description": "This PromQL query measures the pass status of a policy by querying relevant metrics.",
+    "question": "Is the policy currently passing?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "e36f45cb-a07b-400c-8653-e61c6d83346f",
+    "name": "Policy Pass Status",
+    "description": "This PromQL query measures the pass status of a policy by querying relevant metrics.",
+    "question": "How many times has the policy passed?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "8af74e52-55aa-4a1c-8577-a98ea1e0e027",
+    "name": "Policy Warning Status",
+    "description": "This PromQL query measures the status of policies that are in a warning state.",
+    "question": "How many policies are currently in a warning state?",
+    "query": "",
+    "metrics": [
+      "policy_warning_status"
+    ]
+  },
+  {
+    "id": "bcb83334-e375-4b0d-87d1-967a717b3ef5",
+    "name": "Policy Warning Status",
+    "description": "This PromQL query measures the status of policies that are in a warning state.",
+    "question": "Which policies have warning statuses?",
+    "query": "",
+    "metrics": [
+      "policy_warning_status"
+    ]
+  },
+  {
+    "id": "98d42716-83d7-4022-aea1-78ce6ac545e8",
+    "name": "Policy Warning Status",
+    "description": "This PromQL query measures the status of policies that are in a warning state.",
+    "question": "What is the trend of policy warning statuses over time?",
+    "query": "",
+    "metrics": [
+      "policy_warning_status"
+    ]
+  },
+  {
+    "id": "fb3964bc-dbb5-42fe-ab19-a6ec23ef2bad",
+    "name": "Policy Fail Status",
+    "description": "This PromQL query measures the status of policy failures within the monitored system.",
+    "question": "How many policy failures have occurred?",
+    "query": "",
+    "metrics": [
+      "policy_failures"
+    ]
+  },
+  {
+    "id": "bf953a63-a164-4122-a914-1f0a0b10723d",
+    "name": "Policy Fail Status",
+    "description": "This PromQL query measures the status of policy failures within the monitored system.",
+    "question": "What is the trend of policy failures over time?",
+    "query": "",
+    "metrics": [
+      "policy_failures"
+    ]
+  },
+  {
+    "id": "4e6713c3-e0aa-47ab-996e-cc503e6eb9db",
+    "name": "Policy Fail Status",
+    "description": "This PromQL query measures the status of policy failures within the monitored system.",
+    "question": "Which components are experiencing the most policy failures?",
+    "query": "",
+    "metrics": [
+      "policy_failures"
+    ]
+  },
+  {
+    "id": "00977696-c1d1-441c-bc2b-ca4160c1184e",
+    "name": "Policy Error Status",
+    "description": "The PromQL query measures the status of policy errors in the system.",
+    "question": "How many policy errors were encountered?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "5f08add4-acfc-46d6-8200-824cea599c75",
+    "name": "Policy Error Status",
+    "description": "The PromQL query measures the status of policy errors in the system.",
+    "question": "What is the rate of policy errors over a specific time period?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "8b353bb9-efdc-43b4-a7d5-dd9f407f7ae1",
+    "name": "Policy Error Status",
+    "description": "The PromQL query measures the status of policy errors in the system.",
+    "question": "Are there any specific patterns or trends in policy errors?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "ab1e65e9-5cac-42d7-9fac-d3ff5df61b79",
+    "name": "Status Timeline",
+    "description": "This PromQL query measures the status timeline of a specific metric over a period of time.",
+    "question": "What is the status timeline of node_cpu_seconds_total?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "76b4bda3-8207-4dcb-8db6-1eb2434f5609",
+    "name": "Status Timeline",
+    "description": "This PromQL query measures the status timeline of a specific metric over a period of time.",
+    "question": "How does the status of node_cpu_seconds_total change over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "468ce997-bebc-404a-9767-4549a9a57ad9",
+    "name": "Status Timeline",
+    "description": "This PromQL query measures the status timeline of a specific metric over a period of time.",
+    "question": "Is there any pattern in the status timeline of node_cpu_seconds_total?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

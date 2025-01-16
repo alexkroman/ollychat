@@ -1,0 +1,158 @@
+[
+  {
+    "id": "76fd44cf-d5bb-49ef-83e6-c9818986dff3",
+    "name": "Rows",
+    "description": "This PromQL query measures the number of rows returned by a specific data source or database query over a given time period.",
+    "question": "How many CPU seconds have been consumed by the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "92aeba4b-507c-4870-a41c-8aaf839eba35",
+    "name": "Rows",
+    "description": "This PromQL query measures the number of rows returned by a specific data source or database query over a given time period.",
+    "question": "What is the total CPU usage in seconds for the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a7724864-a9d3-4fff-8818-671965260056",
+    "name": "Rows",
+    "description": "This PromQL query measures the number of rows returned by a specific data source or database query over a given time period.",
+    "question": "How many CPU seconds have been recorded by the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "7c941179-83d6-45ec-9468-ddc34d3c5db2",
+    "name": "QPS",
+    "description": "This PromQL query measures the queries per second (QPS) metric for a specific service or component over a 5-minute window.",
+    "question": "What is the average QPS for the service in the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "queries_per_second"
+    ]
+  },
+  {
+    "id": "41e57e9e-10cf-4b33-8b8d-bd507da19f76",
+    "name": "QPS",
+    "description": "This PromQL query measures the queries per second (QPS) metric for a specific service or component over a 5-minute window.",
+    "question": "Is there any significant increase or decrease in QPS compared to the previous time period?",
+    "query": "",
+    "metrics": [
+      "queries_per_second"
+    ]
+  },
+  {
+    "id": "446d92f1-2f3b-455a-b067-1c967b0a3fc5",
+    "name": "QPS",
+    "description": "This PromQL query measures the queries per second (QPS) metric for a specific service or component over a 5-minute window.",
+    "question": "How does the QPS trend change during different times of the day?",
+    "query": "",
+    "metrics": [
+      "queries_per_second"
+    ]
+  },
+  {
+    "id": "7663dd79-9266-4d18-9ab2-40b87ce4f9fc",
+    "name": "Buffers",
+    "description": "The PromQL query measures the usage of buffers in a system, providing insights into how buffer resources are being utilized over time.",
+    "question": "What is the current usage of buffers?",
+    "query": "",
+    "metrics": [
+      "buffers"
+    ]
+  },
+  {
+    "id": "2454d996-8eee-42b1-b509-e66ab0fbf6c9",
+    "name": "Buffers",
+    "description": "The PromQL query measures the usage of buffers in a system, providing insights into how buffer resources are being utilized over time.",
+    "question": "How have buffer resources changed over the past hour?",
+    "query": "",
+    "metrics": [
+      "buffers"
+    ]
+  },
+  {
+    "id": "74e63033-2760-4d6b-926a-f03b95406435",
+    "name": "Buffers",
+    "description": "The PromQL query measures the usage of buffers in a system, providing insights into how buffer resources are being utilized over time.",
+    "question": "Which components are consuming the most buffer resources?",
+    "query": "",
+    "metrics": [
+      "buffers"
+    ]
+  },
+  {
+    "id": "82a23222-b9e9-4b4d-8c18-37560b55e0d9",
+    "name": "Conflicts/Deadlocks",
+    "description": "This PromQL query measures the number of conflicts and deadlocks occurring within a system over a specific time period.",
+    "question": "How many conflicts have occurred?",
+    "query": "",
+    "metrics": [
+      "conflicts_total",
+      "deadlocks_total"
+    ]
+  },
+  {
+    "id": "7a24718c-91bc-4824-b78c-e481d64b54bb",
+    "name": "Conflicts/Deadlocks",
+    "description": "This PromQL query measures the number of conflicts and deadlocks occurring within a system over a specific time period.",
+    "question": "What is the total number of deadlocks?",
+    "query": "",
+    "metrics": [
+      "conflicts_total",
+      "deadlocks_total"
+    ]
+  },
+  {
+    "id": "5178fb00-f1dd-4d49-b725-cefd965aa80f",
+    "name": "Conflicts/Deadlocks",
+    "description": "This PromQL query measures the number of conflicts and deadlocks occurring within a system over a specific time period.",
+    "question": "Are there any spikes in conflict or deadlock occurrences?",
+    "query": "",
+    "metrics": [
+      "conflicts_total",
+      "deadlocks_total"
+    ]
+  },
+  {
+    "id": "1d2fee07-b75b-4598-9888-cbd472e3ed55",
+    "name": "Cache hit ratio",
+    "description": "The PromQL query measures the cache hit ratio, which is the ratio of cache hits to total cache lookups in a system.",
+    "question": "What is the cache hit ratio in the system?",
+    "query": "",
+    "metrics": [
+      "cache_hit",
+      "cache_lookup"
+    ]
+  },
+  {
+    "id": "b2b567ad-08ca-42c2-bb61-61ef410c1127",
+    "name": "Cache hit ratio",
+    "description": "The PromQL query measures the cache hit ratio, which is the ratio of cache hits to total cache lookups in a system.",
+    "question": "How effective is the cache in serving requests?",
+    "query": "",
+    "metrics": [
+      "cache_hit",
+      "cache_lookup"
+    ]
+  },
+  {
+    "id": "bc6ad88f-335b-4280-a801-fd90c7d8950f",
+    "name": "Cache hit ratio",
+    "description": "The PromQL query measures the cache hit ratio, which is the ratio of cache hits to total cache lookups in a system.",
+    "question": "Is the cache improving performance by reducing cache lookups?",
+    "query": "",
+    "metrics": [
+      "cache_hit",
+      "cache_lookup"
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "49930cce-20c8-4f89-aeb3-b452f13f508e",
+    "name": "process memory",
+    "description": "The PromQL query measures the memory usage of a specific process over a period of time.",
+    "question": "What is the current memory usage of the process?",
+    "query": "",
+    "metrics": [
+      "process_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "9c41b713-1356-4bec-9c3f-c5a4579d4249",
+    "name": "process memory",
+    "description": "The PromQL query measures the memory usage of a specific process over a period of time.",
+    "question": "How has the memory usage of the process changed over the last hour?",
+    "query": "",
+    "metrics": [
+      "process_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "3b3a4b8b-b16f-4817-90a7-b8bc76a1e1ae",
+    "name": "process memory",
+    "description": "The PromQL query measures the memory usage of a specific process over a period of time.",
+    "question": "Is the memory usage of the process trending upwards or downwards?",
+    "query": "",
+    "metrics": [
+      "process_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "3b5883d8-8958-4279-8cff-01104545bd86",
+    "name": "process memory deriv",
+    "description": "The PromQL query measures the rate of change in process memory usage over time.",
+    "question": "How fast is the process memory usage changing?",
+    "query": "",
+    "metrics": [
+      "process_memory"
+    ]
+  },
+  {
+    "id": "0fc84057-4e21-43fb-b2c8-4016f9b32183",
+    "name": "process memory deriv",
+    "description": "The PromQL query measures the rate of change in process memory usage over time.",
+    "question": "What is the trend in process memory usage over the specified time range?",
+    "query": "",
+    "metrics": [
+      "process_memory"
+    ]
+  },
+  {
+    "id": "0a8cda4b-6e7b-4972-8410-9ba8693e77f4",
+    "name": "process memory deriv",
+    "description": "The PromQL query measures the rate of change in process memory usage over time.",
+    "question": "Is there any significant increase or decrease in process memory consumption?",
+    "query": "",
+    "metrics": [
+      "process_memory"
+    ]
+  },
+  {
+    "id": "138ec253-2065-4fe2-999b-e963f9d8d53a",
+    "name": "go memstats deriv",
+    "description": "The PromQL query measures the derivative (rate of change over time) of memory statistics (memstats) related to a Go application.",
+    "question": "What is the rate of change in memory statistics for the Go application?",
+    "query": "",
+    "metrics": [
+      "go_memstats"
+    ]
+  },
+  {
+    "id": "f3cc6d14-14ee-4063-b3da-f2135e1862c5",
+    "name": "go memstats deriv",
+    "description": "The PromQL query measures the derivative (rate of change over time) of memory statistics (memstats) related to a Go application.",
+    "question": "How are memory statistics evolving over time for the Go application?",
+    "query": "",
+    "metrics": [
+      "go_memstats"
+    ]
+  },
+  {
+    "id": "09829497-8cd2-4929-b4fa-997c6eb460a4",
+    "name": "go memstats deriv",
+    "description": "The PromQL query measures the derivative (rate of change over time) of memory statistics (memstats) related to a Go application.",
+    "question": "Are there any spikes or drops in memory usage statistics for the Go application?",
+    "query": "",
+    "metrics": [
+      "go_memstats"
+    ]
+  }
+]

@@ -42,7 +42,7 @@
     "dev:slack": "node --watch --loader ts-node/esm src/ui/slack.ts",
     "start:slack": "npm run build && node dist/ui/slack.js",
     "dashboards:import": "node --loader ts-node/esm scripts/importDashboards.ts",
-    "data:refine": "node --loader ts-node/esm scripts/enrichExampleData.ts",
+    "data:enrich": "node --loader ts-node/esm scripts/enrichExampleData.ts",
     "metrics:import": "node --loader ts-node/esm scripts/importMetrics.ts",
     "examples:load": "node --loader ts-node/esm scripts/loadExampleData.ts",
     "metrics:load": "node --loader ts-node/esm scripts/loadMetricData.ts"

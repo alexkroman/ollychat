@@ -1,0 +1,125 @@
+[
+  {
+    "id": "ac180e1a-d364-473c-936f-dbfcd5735abd",
+    "name": "Clients",
+    "description": "The PromQL query measures the total number of clients connected to a specific service over a specified time range.",
+    "question": "How many clients are currently connected to the service?",
+    "query": "",
+    "metrics": [
+      "clients"
+    ]
+  },
+  {
+    "id": "a149004b-d47d-42c9-96a2-e3f44d72cd59",
+    "name": "Clients",
+    "description": "The PromQL query measures the total number of clients connected to a specific service over a specified time range.",
+    "question": "What is the trend of client connections over the past 5 minutes?",
+    "query": "",
+    "metrics": [
+      "clients"
+    ]
+  },
+  {
+    "id": "45e13dae-a01c-4d9c-93d7-a7f9ca06b251",
+    "name": "Clients",
+    "description": "The PromQL query measures the total number of clients connected to a specific service over a specified time range.",
+    "question": "Are there any spikes or drops in client connections that need investigation?",
+    "query": "",
+    "metrics": [
+      "clients"
+    ]
+  },
+  {
+    "id": "862a7c53-e6b2-4c3b-983c-cd6492cb784d",
+    "name": "Memory Usage",
+    "description": "The PromQL query measures the memory usage of a specific system component over a specified time period.",
+    "question": "What is the current memory usage of the system component?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "a0b9e2fd-671c-4db1-9996-7ec8e7def8ff",
+    "name": "Memory Usage",
+    "description": "The PromQL query measures the memory usage of a specific system component over a specified time period.",
+    "question": "How has the memory usage of the system component changed over time?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "1f32aa44-02fd-432b-86a9-2a8510bb44c6",
+    "name": "Memory Usage",
+    "description": "The PromQL query measures the memory usage of a specific system component over a specified time period.",
+    "question": "Is the memory usage of the system component within acceptable limits?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "4967b6ec-2943-4f7f-a2b4-6e0616bdc1da",
+    "name": "Commands Executed / sec",
+    "description": "This PromQL query measures the rate at which commands are being executed per second.",
+    "question": "How many commands are being executed per second?",
+    "query": "",
+    "metrics": [
+      "commands_executed"
+    ]
+  },
+  {
+    "id": "daef9d46-7bb0-4727-96dc-0bc5d57506fc",
+    "name": "Commands Executed / sec",
+    "description": "This PromQL query measures the rate at which commands are being executed per second.",
+    "question": "Is there a noticeable increase or decrease in the rate of commands being executed?",
+    "query": "",
+    "metrics": [
+      "commands_executed"
+    ]
+  },
+  {
+    "id": "fcf566b8-b58e-46b7-98fe-86364dda63b1",
+    "name": "Commands Executed / sec",
+    "description": "This PromQL query measures the rate at which commands are being executed per second.",
+    "question": "What is the average rate of commands execution over a specific time period?",
+    "query": "",
+    "metrics": [
+      "commands_executed"
+    ]
+  },
+  {
+    "id": "08419483-edf4-43c3-9184-3e04bc9ac9cb",
+    "name": "Hits / Misses per Sec",
+    "description": "This PromQL query measures the rate at which hits and misses occur per second.",
+    "question": "What is the rate of hits per second?",
+    "query": "",
+    "metrics": [
+      "hits",
+      "misses"
+    ]
+  },
+  {
+    "id": "b3751c9a-cd6a-4bd1-8bd5-61c2733356a5",
+    "name": "Hits / Misses per Sec",
+    "description": "This PromQL query measures the rate at which hits and misses occur per second.",
+    "question": "What is the rate of misses per second?",
+    "query": "",
+    "metrics": [
+      "hits",
+      "misses"
+    ]
+  },
+  {
+    "id": "5d5d910b-045b-4156-b465-d51b94180000",
+    "name": "Hits / Misses per Sec",
+    "description": "This PromQL query measures the rate at which hits and misses occur per second.",
+    "question": "How do hits and misses compare in terms of occurrence frequency?",
+    "query": "",
+    "metrics": [
+      "hits",
+      "misses"
+    ]
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1409ef69-75e6-4dda-9c1a-8c369452e5d8",
+    "name": "Target Metric ($hpa)",
+    "description": "This PromQL query measures the target metric using a specified horizontal pod autoscaler ($hpa).",
+    "question": "What is the current value of the target metric for the horizontal pod autoscaler?",
+    "query": "",
+    "metrics": [
+      "$hpa"
+    ]
+  },
+  {
+    "id": "dd4d38cf-fe9e-457d-8dd2-5c9f40f0be0d",
+    "name": "Target Metric ($hpa)",
+    "description": "This PromQL query measures the target metric using a specified horizontal pod autoscaler ($hpa).",
+    "question": "How does the target metric vary over time for the horizontal pod autoscaler?",
+    "query": "",
+    "metrics": [
+      "$hpa"
+    ]
+  },
+  {
+    "id": "62462522-b55a-4e95-a2f0-340b7fbc34cf",
+    "name": "Target Metric ($hpa)",
+    "description": "This PromQL query measures the target metric using a specified horizontal pod autoscaler ($hpa).",
+    "question": "Is the target metric meeting the threshold set for the horizontal pod autoscaler?",
+    "query": "",
+    "metrics": [
+      "$hpa"
+    ]
+  },
+  {
+    "id": "afa2b19b-4416-40e4-a0d7-df3ad124035b",
+    "name": "Replicas ($hpa)",
+    "description": "This PromQL query measures the current number of replicas managed by the Horizontal Pod Autoscaler (HPA) in a Kubernetes cluster.",
+    "question": "How many replicas are currently managed by the HPA?",
+    "query": "",
+    "metrics": [
+      "replicas"
+    ]
+  },
+  {
+    "id": "4bd1d299-ccdc-4725-8cbf-e44f719c15c5",
+    "name": "Replicas ($hpa)",
+    "description": "This PromQL query measures the current number of replicas managed by the Horizontal Pod Autoscaler (HPA) in a Kubernetes cluster.",
+    "question": "What is the current scaling level of the HPA in terms of replicas?",
+    "query": "",
+    "metrics": [
+      "replicas"
+    ]
+  },
+  {
+    "id": "f29dc41a-9548-4d1f-887e-fa45e15b5bf5",
+    "name": "Replicas ($hpa)",
+    "description": "This PromQL query measures the current number of replicas managed by the Horizontal Pod Autoscaler (HPA) in a Kubernetes cluster.",
+    "question": "Are there any fluctuations in the number of replicas controlled by the HPA?",
+    "query": "",
+    "metrics": [
+      "replicas"
+    ]
+  },
+  {
+    "id": "2379e80a-420a-4e17-9067-3ac22b7bee51",
+    "name": "Max Replicas",
+    "description": "This PromQL query measures the maximum number of replicas used by a specific resource or service over a specified time range.",
+    "question": "What was the peak number of replicas used?",
+    "query": "",
+    "metrics": [
+      "max_replicas"
+    ]
+  },
+  {
+    "id": "e5e1b105-88d0-424a-8222-a43e0cc90887",
+    "name": "Max Replicas",
+    "description": "This PromQL query measures the maximum number of replicas used by a specific resource or service over a specified time range.",
+    "question": "At what point did the resource/service require the most replicas?",
+    "query": "",
+    "metrics": [
+      "max_replicas"
+    ]
+  },
+  {
+    "id": "d6eec38e-d8fb-4706-a998-cfd69a27cad2",
+    "name": "Max Replicas",
+    "description": "This PromQL query measures the maximum number of replicas used by a specific resource or service over a specified time range.",
+    "question": "What is the highest number of replicas observed within the specified time range?",
+    "query": "",
+    "metrics": [
+      "max_replicas"
+    ]
+  },
+  {
+    "id": "8471cfee-6e68-4ac7-a87d-6957fec57bbb",
+    "name": "Current Replicas",
+    "description": "This PromQL query measures the current number of replicas running in a Kubernetes cluster.",
+    "question": "How many replicas are currently running?",
+    "query": "",
+    "metrics": [
+      "current_replicas"
+    ]
+  },
+  {
+    "id": "5346a844-f29e-46a2-ac6b-41281bcbec6d",
+    "name": "Current Replicas",
+    "description": "This PromQL query measures the current number of replicas running in a Kubernetes cluster.",
+    "question": "What is the current replica count?",
+    "query": "",
+    "metrics": [
+      "current_replicas"
+    ]
+  },
+  {
+    "id": "07c0df14-25dd-4fe7-b843-d9cba7ec4151",
+    "name": "Current Replicas",
+    "description": "This PromQL query measures the current number of replicas running in a Kubernetes cluster.",
+    "question": "How many instances of the application are currently deployed?",
+    "query": "",
+    "metrics": [
+      "current_replicas"
+    ]
+  }
+]

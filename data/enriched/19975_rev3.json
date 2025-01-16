@@ -1,0 +1,62 @@
+[
+  {
+    "id": "edcff497-e2c5-4dd2-9c7d-8cbbcc7275cf",
+    "name": "Notification Deliveries",
+    "description": "The PromQL query measures the total number of notification deliveries over a specific time period.",
+    "question": "How many notification deliveries occurred?",
+    "query": "",
+    "metrics": [
+      "notification_deliveries"
+    ]
+  },
+  {
+    "id": "f963d1d9-1da3-4eee-8408-482dbf39f2ae",
+    "name": "Notification Deliveries",
+    "description": "The PromQL query measures the total number of notification deliveries over a specific time period.",
+    "question": "What is the trend of notification deliveries?",
+    "query": "",
+    "metrics": [
+      "notification_deliveries"
+    ]
+  },
+  {
+    "id": "ffaab7cd-bcb5-4a39-8662-0e5d6d8f9428",
+    "name": "Notification Deliveries",
+    "description": "The PromQL query measures the total number of notification deliveries over a specific time period.",
+    "question": "Are there any spikes or drops in notification deliveries?",
+    "query": "",
+    "metrics": [
+      "notification_deliveries"
+    ]
+  },
+  {
+    "id": "960361d3-116a-421a-9cc1-5f1f2d81a064",
+    "name": "Trigger Evaluations",
+    "description": "The PromQL query measures the number of trigger evaluations that occur within a specified time range.",
+    "question": "How many trigger evaluations occurred?",
+    "query": "",
+    "metrics": [
+      "trigger_evaluations"
+    ]
+  },
+  {
+    "id": "86656027-5a21-4eb1-81c8-3a270d74d600",
+    "name": "Trigger Evaluations",
+    "description": "The PromQL query measures the number of trigger evaluations that occur within a specified time range.",
+    "question": "What is the rate of trigger evaluations?",
+    "query": "",
+    "metrics": [
+      "trigger_evaluations"
+    ]
+  },
+  {
+    "id": "6ac2fb39-47d3-4252-94b0-5e6bf8faabe7",
+    "name": "Trigger Evaluations",
+    "description": "The PromQL query measures the number of trigger evaluations that occur within a specified time range.",
+    "question": "Are there any patterns or anomalies in trigger evaluations?",
+    "query": "",
+    "metrics": [
+      "trigger_evaluations"
+    ]
+  }
+]

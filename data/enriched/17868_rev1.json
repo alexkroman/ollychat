@@ -1,0 +1,68 @@
+[
+  {
+    "id": "f16b8dab-9637-46f2-8227-ae22bbd91d20",
+    "name": "Spans Accepted vs Refused /Second",
+    "description": "This PromQL query measures the rate of spans successfully accepted vs refused per second.",
+    "question": "What is the rate of accepted spans per second?",
+    "query": "",
+    "metrics": [
+      "spans_accepted",
+      "spans_refused"
+    ]
+  },
+  {
+    "id": "596c1106-f880-4742-befe-26caf2738e7c",
+    "name": "Spans Accepted vs Refused /Second",
+    "description": "This PromQL query measures the rate of spans successfully accepted vs refused per second.",
+    "question": "What is the rate of refused spans per second?",
+    "query": "",
+    "metrics": [
+      "spans_accepted",
+      "spans_refused"
+    ]
+  },
+  {
+    "id": "d6943000-5309-483c-9d3c-89f0c0c8e981",
+    "name": "Spans Accepted vs Refused /Second",
+    "description": "This PromQL query measures the rate of spans successfully accepted vs refused per second.",
+    "question": "How do the rates of accepted and refused spans compare?",
+    "query": "",
+    "metrics": [
+      "spans_accepted",
+      "spans_refused"
+    ]
+  },
+  {
+    "id": "8a4c706d-46c4-41f6-9040-8d77009474fa",
+    "name": "Metrics Accepted vs Refused Received/Second",
+    "description": "The PromQL query measures the rate at which metrics are being accepted and refused per second.",
+    "question": "What is the rate of accepted metrics per second?",
+    "query": "",
+    "metrics": [
+      "metrics_accepted",
+      "metrics_refused"
+    ]
+  },
+  {
+    "id": "ce4c732a-55e8-4f2e-a083-54a3fcbb453c",
+    "name": "Metrics Accepted vs Refused Received/Second",
+    "description": "The PromQL query measures the rate at which metrics are being accepted and refused per second.",
+    "question": "What is the rate of refused metrics per second?",
+    "query": "",
+    "metrics": [
+      "metrics_accepted",
+      "metrics_refused"
+    ]
+  },
+  {
+    "id": "220ba96b-a9fb-4be3-a271-76d9bd9207a3",
+    "name": "Metrics Accepted vs Refused Received/Second",
+    "description": "The PromQL query measures the rate at which metrics are being accepted and refused per second.",
+    "question": "How do the rates of accepted and refused metrics compare?",
+    "query": "",
+    "metrics": [
+      "metrics_accepted",
+      "metrics_refused"
+    ]
+  }
+]

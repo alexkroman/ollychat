@@ -1,0 +1,122 @@
+[
+  {
+    "id": "6d6f3cdc-151d-4269-8f59-45fcafa1e89a",
+    "name": "apiserver request rate",
+    "description": "This PromQL query measures the request rate of the APIserver component over a specific time range.",
+    "question": "What is the current request rate of the APIserver component?",
+    "query": "",
+    "metrics": [
+      "apiserver_request_rate"
+    ]
+  },
+  {
+    "id": "a02c8ec8-dad3-4b78-8f4a-fd11ab2a90fc",
+    "name": "apiserver request rate",
+    "description": "This PromQL query measures the request rate of the APIserver component over a specific time range.",
+    "question": "How has the request rate of the APIserver changed over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "apiserver_request_rate"
+    ]
+  },
+  {
+    "id": "d0b2797e-0089-4d7d-908e-3c51484f2934",
+    "name": "apiserver request rate",
+    "description": "This PromQL query measures the request rate of the APIserver component over a specific time range.",
+    "question": "Is there a trend in the request rate of the APIserver component over time?",
+    "query": "",
+    "metrics": [
+      "apiserver_request_rate"
+    ]
+  },
+  {
+    "id": "2f8e5bf2-7455-4c04-866e-87461a984f72",
+    "name": "workqueue service time",
+    "description": "The PromQL query measures the service time of the workqueue in the system.",
+    "question": "What is the current service time of the workqueue?",
+    "query": "",
+    "metrics": [
+      "workqueue_service_time"
+    ]
+  },
+  {
+    "id": "16ac5b00-a864-4e2a-a35a-bfad9c193fd4",
+    "name": "workqueue service time",
+    "description": "The PromQL query measures the service time of the workqueue in the system.",
+    "question": "How has the service time of the workqueue changed over the last hour?",
+    "query": "",
+    "metrics": [
+      "workqueue_service_time"
+    ]
+  },
+  {
+    "id": "6bf6d768-10ec-4a3c-b67c-a7cf6865ea7f",
+    "name": "workqueue service time",
+    "description": "The PromQL query measures the service time of the workqueue in the system.",
+    "question": "Is there any correlation between the workqueue service time and the overall system performance?",
+    "query": "",
+    "metrics": [
+      "workqueue_service_time"
+    ]
+  },
+  {
+    "id": "0d26310c-bf34-40b7-ad14-7fc3df9a0a6f",
+    "name": "apiserver request latency",
+    "description": "This PromQL query measures the 95th percentile request latency for the Kubernetes apiserver component, indicating the value below which 95% of the latencies fall.",
+    "question": "What is the 95th percentile request latency for the Kubernetes apiserver component?",
+    "query": "",
+    "metrics": [
+      "apiserver_request_latency"
+    ]
+  },
+  {
+    "id": "e3880e80-ec25-4334-9296-74ec72b24ad5",
+    "name": "apiserver request latency",
+    "description": "This PromQL query measures the 95th percentile request latency for the Kubernetes apiserver component, indicating the value below which 95% of the latencies fall.",
+    "question": "How is the latency distribution skewed towards higher values for the apiserver component?",
+    "query": "",
+    "metrics": [
+      "apiserver_request_latency"
+    ]
+  },
+  {
+    "id": "6bd1cce4-6a5d-43f7-92e3-49357f76398c",
+    "name": "apiserver request latency",
+    "description": "This PromQL query measures the 95th percentile request latency for the Kubernetes apiserver component, indicating the value below which 95% of the latencies fall.",
+    "question": "Which requests experience latency higher than the 95th percentile for the Kubernetes apiserver?",
+    "query": "",
+    "metrics": [
+      "apiserver_request_latency"
+    ]
+  },
+  {
+    "id": "8196bd10-a4bb-4461-b3b2-ae359c0e1487",
+    "name": "etcd helper cache hit ratio",
+    "description": "The PromQL query measures the cache hit ratio of the etcd helper, which indicates the percentage of successful cache lookups compared to the total number of cache lookups.",
+    "question": "What is the current cache hit ratio of the etcd helper?",
+    "query": "",
+    "metrics": [
+      "etcd_helper_cache_hit_ratio"
+    ]
+  },
+  {
+    "id": "b70dad4c-978f-4972-bf6f-f6fe454bbba3",
+    "name": "etcd helper cache hit ratio",
+    "description": "The PromQL query measures the cache hit ratio of the etcd helper, which indicates the percentage of successful cache lookups compared to the total number of cache lookups.",
+    "question": "How has the cache hit ratio of the etcd helper changed over time?",
+    "query": "",
+    "metrics": [
+      "etcd_helper_cache_hit_ratio"
+    ]
+  },
+  {
+    "id": "4dca1eb2-c188-41df-8092-579608825076",
+    "name": "etcd helper cache hit ratio",
+    "description": "The PromQL query measures the cache hit ratio of the etcd helper, which indicates the percentage of successful cache lookups compared to the total number of cache lookups.",
+    "question": "Is the cache hit ratio of the etcd helper meeting the defined threshold?",
+    "query": "",
+    "metrics": [
+      "etcd_helper_cache_hit_ratio"
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "47be35f6-5225-4031-94b0-09b8b79afbd1",
+    "name": "HTTP Probe Overview",
+    "description": "The PromQL query measures the overall availability and response status of HTTP probes across monitored endpoints.",
+    "question": "What is the total number of HTTP probes that were successful?",
+    "query": "",
+    "metrics": [
+      "http_probe_success",
+      "http_probe_total",
+      "http_probe_latency"
+    ]
+  },
+  {
+    "id": "65286a99-45d0-4455-8dd7-c8ccb7bde9a0",
+    "name": "HTTP Probe Overview",
+    "description": "The PromQL query measures the overall availability and response status of HTTP probes across monitored endpoints.",
+    "question": "How many HTTP probes were executed in total?",
+    "query": "",
+    "metrics": [
+      "http_probe_success",
+      "http_probe_total",
+      "http_probe_latency"
+    ]
+  },
+  {
+    "id": "23d981f3-f630-42f8-b3cf-8deeedb519ea",
+    "name": "HTTP Probe Overview",
+    "description": "The PromQL query measures the overall availability and response status of HTTP probes across monitored endpoints.",
+    "question": "What is the average latency of HTTP probes?",
+    "query": "",
+    "metrics": [
+      "http_probe_success",
+      "http_probe_total",
+      "http_probe_latency"
+    ]
+  },
+  {
+    "id": "42391831-1eb9-45a5-a750-98d6bd6c1b4e",
+    "name": "HTTP Probe Duration",
+    "description": "The PromQL query measures the duration in seconds that the HTTP probe took to complete.",
+    "question": "What is the duration of the HTTP probe?",
+    "query": "",
+    "metrics": [
+      "http_probe_duration"
+    ]
+  },
+  {
+    "id": "6eddb34b-7363-47e8-b3be-79bd370baebc",
+    "name": "HTTP Probe Duration",
+    "description": "The PromQL query measures the duration in seconds that the HTTP probe took to complete.",
+    "question": "How long did the HTTP probe take to complete?",
+    "query": "",
+    "metrics": [
+      "http_probe_duration"
+    ]
+  },
+  {
+    "id": "ec7bdd9c-361c-4c74-a005-44729ff6cadd",
+    "name": "HTTP Probe Duration",
+    "description": "The PromQL query measures the duration in seconds that the HTTP probe took to complete.",
+    "question": "What is the time taken by the HTTP probe?",
+    "query": "",
+    "metrics": [
+      "http_probe_duration"
+    ]
+  }
+]

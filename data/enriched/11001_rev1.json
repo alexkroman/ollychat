@@ -1,0 +1,92 @@
+[
+  {
+    "id": "8541d92f-6b98-4d58-8e3e-a65aef702b80",
+    "name": "Time Left",
+    "description": "This PromQL query measures the remaining time left for a certain event or resource based on a specific metric.",
+    "question": "What is the total CPU usage in seconds for a node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9434e9f9-536e-4fbc-a25d-3912b4540c16",
+    "name": "Time Left",
+    "description": "This PromQL query measures the remaining time left for a certain event or resource based on a specific metric.",
+    "question": "How has the CPU usage trend been over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "3339e93b-7ec7-4e92-bc87-ad4896d26522",
+    "name": "Time Left",
+    "description": "This PromQL query measures the remaining time left for a certain event or resource based on a specific metric.",
+    "question": "Is the node CPU consumption increasing or decreasing recently?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "65b6cd63-16dd-4f7b-9244-3da620102246",
+    "name": "Certificate Ready Status",
+    "description": "The PromQL query measures the status of certificates being ready, indicating whether they are valid and available for use.",
+    "question": "What is the current status of certificates being ready?",
+    "query": "",
+    "metrics": [
+      "certificate_ready_status"
+    ]
+  },
+  {
+    "id": "edcbfa93-b6bb-4a81-8e26-406761e1eb82",
+    "name": "Certificate Ready Status",
+    "description": "The PromQL query measures the status of certificates being ready, indicating whether they are valid and available for use.",
+    "question": "How many certificates are currently valid and ready for use?",
+    "query": "",
+    "metrics": [
+      "certificate_ready_status"
+    ]
+  },
+  {
+    "id": "e32a785c-e219-493a-b895-7697bd5b9170",
+    "name": "Certificate Ready Status",
+    "description": "The PromQL query measures the status of certificates being ready, indicating whether they are valid and available for use.",
+    "question": "Are there any certificates that are not ready at the moment?",
+    "query": "",
+    "metrics": [
+      "certificate_ready_status"
+    ]
+  },
+  {
+    "id": "e12cc048-3243-45d3-bfba-19c7b83e74e5",
+    "name": "Time Left",
+    "description": "The PromQL query measures the remaining time until a certain event occurs based on the provided metrics.",
+    "question": "How much CPU time has been consumed?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9dc1a57e-315c-4aa2-bb1b-9e241a403422",
+    "name": "Time Left",
+    "description": "The PromQL query measures the remaining time until a certain event occurs based on the provided metrics.",
+    "question": "What is the total CPU usage of the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f258744e-924f-4baa-a79a-fdf834c45d01",
+    "name": "Time Left",
+    "description": "The PromQL query measures the remaining time until a certain event occurs based on the provided metrics.",
+    "question": "Is the CPU usage increasing or decreasing over the past 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

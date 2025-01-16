@@ -1,0 +1,125 @@
+[
+  {
+    "id": "f9dcd896-2a7c-4386-ae47-3534e79d1ba5",
+    "name": "Messages in/sec",
+    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It is not accurate for compacted topics that contain compacted records.",
+    "question": "What is the total delta between the High and Low watermark of partitions in the given topic?",
+    "query": "",
+    "metrics": [
+      "High",
+      "Low"
+    ]
+  },
+  {
+    "id": "f23c89c8-bae2-4e71-9f66-d593443b8eff",
+    "name": "Messages in/sec",
+    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It is not accurate for compacted topics that contain compacted records.",
+    "question": "How can we monitor the rate of change in the High watermark of partitions in the given topic?",
+    "query": "",
+    "metrics": [
+      "High",
+      "Low"
+    ]
+  },
+  {
+    "id": "2a591b39-b4fc-41f2-b814-d8669de8617a",
+    "name": "Messages in/sec",
+    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It is not accurate for compacted topics that contain compacted records.",
+    "question": "Which partitions in the given topic have the largest difference between High and Low watermark?",
+    "query": "",
+    "metrics": [
+      "High",
+      "Low"
+    ]
+  },
+  {
+    "id": "ba62c6a0-c464-4d9e-89c8-208da9b8571c",
+    "name": "Cluster Version",
+    "description": "This PromQL query measures the version of the cluster software running on the monitored instances.",
+    "question": "What is the current version of the cluster software?",
+    "query": "",
+    "metrics": [
+      "cluster_version"
+    ]
+  },
+  {
+    "id": "f85d6c37-587a-4045-82ef-2cdbb7f75b48",
+    "name": "Cluster Version",
+    "description": "This PromQL query measures the version of the cluster software running on the monitored instances.",
+    "question": "Are there any instances running an outdated cluster version?",
+    "query": "",
+    "metrics": [
+      "cluster_version"
+    ]
+  },
+  {
+    "id": "b3015ba4-2db6-44be-b138-6117ed3c29bc",
+    "name": "Cluster Version",
+    "description": "This PromQL query measures the version of the cluster software running on the monitored instances.",
+    "question": "How has the cluster version distribution changed over time?",
+    "query": "",
+    "metrics": [
+      "cluster_version"
+    ]
+  },
+  {
+    "id": "fba8f95a-4dbb-4fc9-8ca7-4cf7ccf44af9",
+    "name": "Brokers",
+    "description": "The PromQL query measures the total number of brokers in the system.",
+    "question": "How many brokers are currently active?",
+    "query": "",
+    "metrics": [
+      "brokers_total"
+    ]
+  },
+  {
+    "id": "95510ae1-b997-40c6-9abe-60c403748ba7",
+    "name": "Brokers",
+    "description": "The PromQL query measures the total number of brokers in the system.",
+    "question": "What is the total count of brokers in the system?",
+    "query": "",
+    "metrics": [
+      "brokers_total"
+    ]
+  },
+  {
+    "id": "35a67f41-c36d-4a63-b760-e2ce1e4a2ef6",
+    "name": "Brokers",
+    "description": "The PromQL query measures the total number of brokers in the system.",
+    "question": "Are there any changes in the number of brokers over time?",
+    "query": "",
+    "metrics": [
+      "brokers_total"
+    ]
+  },
+  {
+    "id": "24afe6b2-0a0e-40c4-9bf4-cec7fdab771c",
+    "name": "Brokers Online",
+    "description": "This PromQL query measures the number of brokers that are currently online in the system.",
+    "question": "How many brokers are currently online?",
+    "query": "",
+    "metrics": [
+      "brokers_online"
+    ]
+  },
+  {
+    "id": "8801ff04-4bdb-4a56-91aa-1b432f4e62dc",
+    "name": "Brokers Online",
+    "description": "This PromQL query measures the number of brokers that are currently online in the system.",
+    "question": "What is the status of brokers in the system?",
+    "query": "",
+    "metrics": [
+      "brokers_online"
+    ]
+  },
+  {
+    "id": "c310d7c6-d0fd-4dff-a425-91b5f77f4163",
+    "name": "Brokers Online",
+    "description": "This PromQL query measures the number of brokers that are currently online in the system.",
+    "question": "Are there any brokers offline?",
+    "query": "",
+    "metrics": [
+      "brokers_online"
+    ]
+  }
+]

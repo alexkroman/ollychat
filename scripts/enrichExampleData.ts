@@ -57,6 +57,7 @@ async function enrichMetricData(
 
   3. questions: Guess 3 different questions that this PromQL query is answering.
     - Return just the questions without any additional explanation
+    - Do not say "This Prom query is answering..." or similar phrases
     - Do not reference time in the question
   
 Format the response as a JSON object with these exact keys: description, and questions (as an array).`;
@@ -130,9 +131,6 @@ Format the response as a JSON object with these exact keys: description, and que
     console.log(`Processed: ${inputPath} -> ${outputPath}`);
   }
   
-
-
-// Process all JSON files in the input directory
 fs.readdir(inputDir, (err, files) => {
   if (err) {
     console.error('Error reading input directory:', err);

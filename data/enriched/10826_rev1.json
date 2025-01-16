@@ -1,0 +1,152 @@
+[
+  {
+    "id": "8cc8aa7d-5301-401d-889a-7916a109436b",
+    "name": "Memory in Off-Heap",
+    "description": "This PromQL query measures the amount of memory being utilized in off-heap storage by the system.",
+    "question": "What is the current off-heap memory usage?",
+    "query": "",
+    "metrics": [
+      "memory_off_heap_usage"
+    ]
+  },
+  {
+    "id": "d83618eb-348d-477a-9d52-1a395879cb65",
+    "name": "Memory in Off-Heap",
+    "description": "This PromQL query measures the amount of memory being utilized in off-heap storage by the system.",
+    "question": "How has the off-heap memory utilization changed over time?",
+    "query": "",
+    "metrics": [
+      "memory_off_heap_usage"
+    ]
+  },
+  {
+    "id": "2ea8c9c5-2d25-4eda-bc3d-f43d4670cbff",
+    "name": "Memory in Off-Heap",
+    "description": "This PromQL query measures the amount of memory being utilized in off-heap storage by the system.",
+    "question": "Which components are contributing the most to off-heap memory consumption?",
+    "query": "",
+    "metrics": [
+      "memory_off_heap_usage"
+    ]
+  },
+  {
+    "id": "a5610195-77ab-4984-810c-9f7740d44c3b",
+    "name": "Memory in Heap",
+    "description": "This PromQL query measures the memory usage in the heap of a system or application.",
+    "question": "What is the current memory usage in the heap?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "b7e86c01-597d-4ea9-8ac5-3dbeb4027534",
+    "name": "Memory in Heap",
+    "description": "This PromQL query measures the memory usage in the heap of a system or application.",
+    "question": "How has the memory usage in the heap changed over time?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "c9044a89-3c3a-43c2-98b6-3766cee92798",
+    "name": "Memory in Heap",
+    "description": "This PromQL query measures the memory usage in the heap of a system or application.",
+    "question": "Is there any correlation between memory usage in the heap and other metrics?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "885601a9-3591-4f71-8e75-5818bb7e8d9c",
+    "name": "Memory in Stack",
+    "description": "This PromQL query measures the memory usage in a stack by querying the metrics related to memory consumption.",
+    "question": "What is the current memory usage in the stack?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "82305469-1c02-402e-91f4-5129e6e7eb56",
+    "name": "Memory in Stack",
+    "description": "This PromQL query measures the memory usage in a stack by querying the metrics related to memory consumption.",
+    "question": "Which component in the stack is consuming the most memory?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "4196389c-ca1e-4e41-bcbc-0d6f8fa86df9",
+    "name": "Memory in Stack",
+    "description": "This PromQL query measures the memory usage in a stack by querying the metrics related to memory consumption.",
+    "question": "Is the memory usage trending upwards or downwards in the stack?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "4a348636-f91d-447e-bcbb-8460ff8d7b53",
+    "name": "Total Used Memory",
+    "description": "The query measures the total used memory across a specified time range.",
+    "question": "What is the total used memory in the system?",
+    "query": "",
+    "metrics": [
+      "total_used_memory"
+    ]
+  },
+  {
+    "id": "20a38a57-5b51-4ef0-b10d-f89ad544a613",
+    "name": "Total Used Memory",
+    "description": "The query measures the total used memory across a specified time range.",
+    "question": "How does the total used memory change over time?",
+    "query": "",
+    "metrics": [
+      "total_used_memory"
+    ]
+  },
+  {
+    "id": "6e6888b4-23dc-447e-ba87-e0c877bb71f2",
+    "name": "Total Used Memory",
+    "description": "The query measures the total used memory across a specified time range.",
+    "question": "Which components are contributing the most to the total used memory?",
+    "query": "",
+    "metrics": [
+      "total_used_memory"
+    ]
+  },
+  {
+    "id": "4f03102c-ee7b-4092-9fd9-641c2f7228b4",
+    "name": "Number of Live Objects",
+    "description": "The PromQL query measures the current number of live objects in the system.",
+    "question": "How many live objects are currently present in the system?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "d2c5020b-8768-405f-9215-e096245f5fc7",
+    "name": "Number of Live Objects",
+    "description": "The PromQL query measures the current number of live objects in the system.",
+    "question": "What is the total count of live objects at this moment?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "b8aa1616-e4a2-458b-9912-fece9fd11f8e",
+    "name": "Number of Live Objects",
+    "description": "The PromQL query measures the current number of live objects in the system.",
+    "question": "Which metric provides information about the number of live objects?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

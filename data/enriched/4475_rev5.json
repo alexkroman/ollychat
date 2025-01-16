@@ -1,0 +1,92 @@
+[
+  {
+    "id": "6b3143be-e0f5-4bf5-a382-eca5dba657f8",
+    "name": "$service return code",
+    "description": "This PromQL query measures the return code of a specific service over time.",
+    "question": "What is the return code of the service?",
+    "query": "",
+    "metrics": [
+      "$service"
+    ]
+  },
+  {
+    "id": "f2049d48-f534-40ad-a09b-7b5732f0f6fe",
+    "name": "$service return code",
+    "description": "This PromQL query measures the return code of a specific service over time.",
+    "question": "How does the return code of the service change over time?",
+    "query": "",
+    "metrics": [
+      "$service"
+    ]
+  },
+  {
+    "id": "d6db2f9c-bc32-42e3-83d4-fba17737afb9",
+    "name": "$service return code",
+    "description": "This PromQL query measures the return code of a specific service over time.",
+    "question": "Is there a pattern in the return code values of the service?",
+    "query": "",
+    "metrics": [
+      "$service"
+    ]
+  },
+  {
+    "id": "fd616676-3228-4cbb-b4d9-1f9a7bfdc8c0",
+    "name": "$service response time",
+    "description": "This PromQL query measures the response time of a service over a specified time range.",
+    "question": "What is the average response time of the service?",
+    "query": "",
+    "metrics": [
+      "$service"
+    ]
+  },
+  {
+    "id": "8133f62b-3cf9-4131-8192-45a359924b51",
+    "name": "$service response time",
+    "description": "This PromQL query measures the response time of a service over a specified time range.",
+    "question": "How does the response time of the service change over different time intervals?",
+    "query": "",
+    "metrics": [
+      "$service"
+    ]
+  },
+  {
+    "id": "b237753e-817a-4551-8896-347d45214815",
+    "name": "$service response time",
+    "description": "This PromQL query measures the response time of a service over a specified time range.",
+    "question": "Is there a correlation between the response time of the service and any specific events or metrics?",
+    "query": "",
+    "metrics": [
+      "$service"
+    ]
+  },
+  {
+    "id": "ccc00b42-338e-44a4-a401-f9ecbcc36f20",
+    "name": "Total requests over 5min $service",
+    "description": "This PromQL query measures the total number of requests made to the service over a 5-minute period.",
+    "question": "What is the total number of requests made to the service?",
+    "query": "",
+    "metrics": [
+      "total_requests"
+    ]
+  },
+  {
+    "id": "35cff8ac-010a-4b8b-bba8-c276a42c1fb4",
+    "name": "Total requests over 5min $service",
+    "description": "This PromQL query measures the total number of requests made to the service over a 5-minute period.",
+    "question": "How many requests were processed by the service in the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "total_requests"
+    ]
+  },
+  {
+    "id": "eb2687c4-ab21-4df4-b743-4a713b7a3f97",
+    "name": "Total requests over 5min $service",
+    "description": "This PromQL query measures the total number of requests made to the service over a 5-minute period.",
+    "question": "What is the overall request load on the service?",
+    "query": "",
+    "metrics": [
+      "total_requests"
+    ]
+  }
+]

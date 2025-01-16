@@ -1,0 +1,95 @@
+[
+  {
+    "id": "f7c69747-aa4b-4d71-b5be-be81be3a203f",
+    "name": "Memory",
+    "description": "The PromQL query measures the memory usage of a specific system component over a given time period.",
+    "question": "What is the total memory capacity of the system component being monitored?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "98f1993e-b002-43c8-acb6-cd6d4624d1c3",
+    "name": "Memory",
+    "description": "The PromQL query measures the memory usage of a specific system component over a given time period.",
+    "question": "How much free memory is available in the system component?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "c06a894d-7850-44ff-a3bd-71ad884ba194",
+    "name": "Memory",
+    "description": "The PromQL query measures the memory usage of a specific system component over a given time period.",
+    "question": "What is the memory utilization percentage of the system component?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "75f9890d-00aa-4fd7-a652-bec795c59942",
+    "name": "Memory write cache",
+    "description": "The PromQL query measures the amount of memory being used by the write cache in the system.",
+    "question": "What is the current memory usage of the write cache?",
+    "query": "",
+    "metrics": [
+      "memory_write_cache"
+    ]
+  },
+  {
+    "id": "510af054-fac8-4e3b-b350-e855b67aa77d",
+    "name": "Memory write cache",
+    "description": "The PromQL query measures the amount of memory being used by the write cache in the system.",
+    "question": "How has the memory write cache usage changed over the last 24 hours?",
+    "query": "",
+    "metrics": [
+      "memory_write_cache"
+    ]
+  },
+  {
+    "id": "21834d68-25d3-4e94-9a08-637cf881bac7",
+    "name": "Memory write cache",
+    "description": "The PromQL query measures the amount of memory being used by the write cache in the system.",
+    "question": "Which components are contributing the most to the memory write cache usage?",
+    "query": "",
+    "metrics": [
+      "memory_write_cache"
+    ]
+  },
+  {
+    "id": "b8877b65-1b3f-4f19-99b0-8b4abccffe33",
+    "name": "IO Wait per core",
+    "description": "The PromQL query measures the input/output (I/O) wait time per core of a system, indicating the amount of time a CPU core spends waiting for I/O operations to complete.",
+    "question": "What is the average I/O wait time per core over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "49d33e89-098e-4051-a5c7-4ab6216c8762",
+    "name": "IO Wait per core",
+    "description": "The PromQL query measures the input/output (I/O) wait time per core of a system, indicating the amount of time a CPU core spends waiting for I/O operations to complete.",
+    "question": "Which CPU core has the highest I/O wait time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "93f70f8b-33d5-4348-a50d-9b7680751f4b",
+    "name": "IO Wait per core",
+    "description": "The PromQL query measures the input/output (I/O) wait time per core of a system, indicating the amount of time a CPU core spends waiting for I/O operations to complete.",
+    "question": "How does the I/O wait time per core change during peak usage hours?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

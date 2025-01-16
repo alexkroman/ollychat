@@ -1,0 +1,62 @@
+[
+  {
+    "id": "b10605f4-ee59-4df4-8260-f834f5b61e00",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase of a specific metric over a 5-minute window.",
+    "question": "What is the rate of increase of node CPU seconds total over the past 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "03fadab1-b341-494a-8c88-3adbe6c95697",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase of a specific metric over a 5-minute window.",
+    "question": "How has the node CPU seconds total metric changed over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "cc4ad63a-8b38-41b6-9af1-205f854fe427",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase of a specific metric over a 5-minute window.",
+    "question": "Is there a trend in the node CPU seconds total metric over a 5-minute period?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "6ec19a52-7a07-4142-9480-ba87f7f79e06",
+    "name": "",
+    "description": "This PromQL query measures the average CPU utilization across all nodes in the cluster over the last 5 minutes.",
+    "question": "What is the average CPU utilization across all nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "698bcfa0-f9da-4fe4-865e-73b1d484400d",
+    "name": "",
+    "description": "This PromQL query measures the average CPU utilization across all nodes in the cluster over the last 5 minutes.",
+    "question": "Is there any sudden spike in CPU usage across the cluster?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "14f0ff60-1713-4a39-bbdc-f2b726b2291e",
+    "name": "",
+    "description": "This PromQL query measures the average CPU utilization across all nodes in the cluster over the last 5 minutes.",
+    "question": "How does the CPU utilization trend change over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

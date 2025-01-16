@@ -1,0 +1,146 @@
+[
+  {
+    "id": "824d3da5-94aa-42d0-9230-b65319095eb3",
+    "name": "Current Connections",
+    "description": "This PromQL query measures the current number of connections to a specific service or server.",
+    "question": "How many current connections are established?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "8aed12f8-cd61-4416-bfa6-831340dbed29",
+    "name": "Current Connections",
+    "description": "This PromQL query measures the current number of connections to a specific service or server.",
+    "question": "What is the total number of active connections?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "22c45c7d-9759-4505-9149-6eec0309e80d",
+    "name": "Current Connections",
+    "description": "This PromQL query measures the current number of connections to a specific service or server.",
+    "question": "Are there any spikes in the number of connections?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "c4666737-5394-4552-8877-9adb887f9f84",
+    "name": "Least CPU Idle",
+    "description": "This PromQL query measures the least CPU idle percentage across all instances over a specified time range.",
+    "question": "Which instance has the least CPU idle percentage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "baab6871-e453-49e5-9ffb-856831b5a764",
+    "name": "Least CPU Idle",
+    "description": "This PromQL query measures the least CPU idle percentage across all instances over a specified time range.",
+    "question": "What is the minimum CPU idle percentage across all instances?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "bdebc49f-34ef-4960-bd2b-9872dc31e261",
+    "name": "Least CPU Idle",
+    "description": "This PromQL query measures the least CPU idle percentage across all instances over a specified time range.",
+    "question": "How does the CPU idle percentage vary among different instances?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "5b982722-e125-4038-af80-6ccf4ee97461",
+    "name": "Min Space",
+    "description": "This PromQL query measures the minimum available disk space across all storage volumes in a given system.",
+    "question": "What is the minimum available disk space across all storage volumes?",
+    "query": "",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "5b0c7d17-c699-4599-a621-167f16f6a293",
+    "name": "Min Space",
+    "description": "This PromQL query measures the minimum available disk space across all storage volumes in a given system.",
+    "question": "Which storage volume has the least amount of available space?",
+    "query": "",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "ad5a4b4c-a8d4-4a01-b44e-0c33fb447684",
+    "name": "Min Space",
+    "description": "This PromQL query measures the minimum available disk space across all storage volumes in a given system.",
+    "question": "Is any storage volume reaching a critical low level of available space?",
+    "query": "",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "aa093855-c80c-497c-b345-1f3c5669f38d",
+    "name": "Min Mem",
+    "description": "This PromQL query measures the minimum value of memory usage over a specified time period.",
+    "question": "What is the minimum memory usage recorded?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "8d4c2a89-83ed-4139-a6bf-424b18fc996f",
+    "name": "Min Mem",
+    "description": "This PromQL query measures the minimum value of memory usage over a specified time period.",
+    "question": "Which entity has the lowest memory usage?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "4834d3eb-774e-4535-9caa-c3551ce73057",
+    "name": "Min Mem",
+    "description": "This PromQL query measures the minimum value of memory usage over a specified time period.",
+    "question": "When did the memory usage reach its minimum value?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "aa465ea6-125d-43d2-a456-08dbb6c12812",
+    "name": "Request Time",
+    "description": "The PromQL query measures the average request time of a specific service over a 5-minute interval.",
+    "question": "What is the average request time of the service?",
+    "query": "",
+    "metrics": [
+      "request_time"
+    ]
+  },
+  {
+    "id": "2f471bdc-1669-4a1d-9afe-a64b8e71cc19",
+    "name": "Request Time",
+    "description": "The PromQL query measures the average request time of a specific service over a 5-minute interval.",
+    "question": "How does the request time vary over the past 5 minutes?",
+    "query": "",
+    "metrics": [
+      "request_time"
+    ]
+  },
+  {
+    "id": "9ab29e72-3df7-45fd-ae98-6bc0753af89f",
+    "name": "Request Time",
+    "description": "The PromQL query measures the average request time of a specific service over a 5-minute interval.",
+    "question": "Is there any significant change in the request time compared to the previous interval?",
+    "query": "",
+    "metrics": [
+      "request_time"
+    ]
+  }
+]

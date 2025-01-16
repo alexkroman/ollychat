@@ -1,0 +1,158 @@
+[
+  {
+    "id": "578fb812-412e-437c-ae61-b546a448ed7a",
+    "name": "Pool Storage",
+    "description": "The PromQL query measures the storage utilization of a pool over a specified time period.",
+    "question": "What is the current storage utilization of the pool?",
+    "query": "",
+    "metrics": [
+      "pool_storage_utilization",
+      "pool_capacity",
+      "pool_used_space"
+    ]
+  },
+  {
+    "id": "2ddac4b0-2314-490f-818b-6f9485e42d19",
+    "name": "Pool Storage",
+    "description": "The PromQL query measures the storage utilization of a pool over a specified time period.",
+    "question": "How much capacity is remaining in the pool?",
+    "query": "",
+    "metrics": [
+      "pool_storage_utilization",
+      "pool_capacity",
+      "pool_used_space"
+    ]
+  },
+  {
+    "id": "e9e7ca6c-bc8c-4dda-8dbf-aa2e52c29409",
+    "name": "Pool Storage",
+    "description": "The PromQL query measures the storage utilization of a pool over a specified time period.",
+    "question": "What percentage of the pool's storage space is currently being used?",
+    "query": "",
+    "metrics": [
+      "pool_storage_utilization",
+      "pool_capacity",
+      "pool_used_space"
+    ]
+  },
+  {
+    "id": "46a17e12-3978-4a71-aa17-d87cb88eb382",
+    "name": "Usage",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the cluster over a specified time range.",
+    "question": "What is the total CPU usage across all nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a497e9f3-76d1-4bcc-b727-8f1fe7103d50",
+    "name": "Usage",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the cluster over a specified time range.",
+    "question": "How has the CPU usage changed over the specified time range?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "ffedd2c8-3358-49be-b889-44ad68716666",
+    "name": "Usage",
+    "description": "This PromQL query measures the total CPU usage across all nodes in the cluster over a specified time range.",
+    "question": "Which node has the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "390f1fcd-c007-4687-af94-f50717ebe146",
+    "name": "Objects in Pool",
+    "description": "The PromQL query measures the total number of objects currently present in a specified pool or resource.",
+    "question": "How many objects are currently in the pool?",
+    "query": "",
+    "metrics": [
+      "objects_in_pool"
+    ]
+  },
+  {
+    "id": "59237ba9-42ae-4e09-aadf-573fc8a3100d",
+    "name": "Objects in Pool",
+    "description": "The PromQL query measures the total number of objects currently present in a specified pool or resource.",
+    "question": "What is the total count of objects in the pool?",
+    "query": "",
+    "metrics": [
+      "objects_in_pool"
+    ]
+  },
+  {
+    "id": "7ddfabc6-f595-41f6-a42d-cb99468526de",
+    "name": "Objects in Pool",
+    "description": "The PromQL query measures the total number of objects currently present in a specified pool or resource.",
+    "question": "Is the number of objects in the pool increasing or decreasing?",
+    "query": "",
+    "metrics": [
+      "objects_in_pool"
+    ]
+  },
+  {
+    "id": "09b262c4-8ef4-4cc5-9059-569bfb7ef52c",
+    "name": "IOPS",
+    "description": "This PromQL query measures the Input/Output Operations Per Second (IOPS) of a specific system or service.",
+    "question": "What is the current IOPS value?",
+    "query": "",
+    "metrics": [
+      "IOPS"
+    ]
+  },
+  {
+    "id": "cca98274-806f-4406-b113-377c61610ad8",
+    "name": "IOPS",
+    "description": "This PromQL query measures the Input/Output Operations Per Second (IOPS) of a specific system or service.",
+    "question": "How has the IOPS trend changed over the last hour?",
+    "query": "",
+    "metrics": [
+      "IOPS"
+    ]
+  },
+  {
+    "id": "9029d820-bec8-48f3-8022-a5274129e8f5",
+    "name": "IOPS",
+    "description": "This PromQL query measures the Input/Output Operations Per Second (IOPS) of a specific system or service.",
+    "question": "Which component is generating the highest IOPS load?",
+    "query": "",
+    "metrics": [
+      "IOPS"
+    ]
+  },
+  {
+    "id": "b3d4238a-d1ea-4ab0-af31-ab459bffb3f4",
+    "name": "Throughput",
+    "description": "This PromQL query measures the throughput of a system by tracking the rate of a specific metric over a certain time period.",
+    "question": "What is the average throughput of the CPU over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "167f9620-1ca9-406f-89c3-7923a04427ff",
+    "name": "Throughput",
+    "description": "This PromQL query measures the throughput of a system by tracking the rate of a specific metric over a certain time period.",
+    "question": "How has the throughput of the CPU changed over the past hour?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "10f95819-ebc5-4b6e-a930-cd2d0b8375d7",
+    "name": "Throughput",
+    "description": "This PromQL query measures the throughput of a system by tracking the rate of a specific metric over a certain time period.",
+    "question": "What is the peak throughput of the CPU during the last day?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

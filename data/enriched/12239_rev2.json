@@ -1,0 +1,62 @@
+[
+  {
+    "id": "0fcc7a79-bc53-4053-9055-ca32163660fe",
+    "name": "GPU Temperature",
+    "description": "This PromQL query measures the temperature of the GPU hardware in the monitored system.",
+    "question": "What is the current temperature of the GPU hardware?",
+    "query": "",
+    "metrics": [
+      "gpu_temperature"
+    ]
+  },
+  {
+    "id": "f66422b7-34fc-4ec8-884f-2b99b84b33c8",
+    "name": "GPU Temperature",
+    "description": "This PromQL query measures the temperature of the GPU hardware in the monitored system.",
+    "question": "Is the GPU temperature within the normal operating range?",
+    "query": "",
+    "metrics": [
+      "gpu_temperature"
+    ]
+  },
+  {
+    "id": "e1d1a546-97ec-4066-8e58-f4c5a136b007",
+    "name": "GPU Temperature",
+    "description": "This PromQL query measures the temperature of the GPU hardware in the monitored system.",
+    "question": "How does the GPU temperature change over time?",
+    "query": "",
+    "metrics": [
+      "gpu_temperature"
+    ]
+  },
+  {
+    "id": "06da4018-af23-40c0-b04d-5500d3b84fa3",
+    "name": "GPU Power Usage",
+    "description": "This PromQL query measures the power usage of GPU devices in the system.",
+    "question": "What is the current power usage of all GPU devices?",
+    "query": "",
+    "metrics": [
+      "gpu_power_usage"
+    ]
+  },
+  {
+    "id": "033d18e4-a4f3-4a6c-91e8-9a7d4a4bd2c8",
+    "name": "GPU Power Usage",
+    "description": "This PromQL query measures the power usage of GPU devices in the system.",
+    "question": "Which GPU device is consuming the most power?",
+    "query": "",
+    "metrics": [
+      "gpu_power_usage"
+    ]
+  },
+  {
+    "id": "831c8bce-4386-457b-b2c5-9c33727dc685",
+    "name": "GPU Power Usage",
+    "description": "This PromQL query measures the power usage of GPU devices in the system.",
+    "question": "How has the total power usage of GPU devices changed over the last hour?",
+    "query": "",
+    "metrics": [
+      "gpu_power_usage"
+    ]
+  }
+]

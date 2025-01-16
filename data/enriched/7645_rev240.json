@@ -1,0 +1,128 @@
+[
+  {
+    "id": "32c437a3-d5fd-4241-a8c9-d219ea10b57b",
+    "name": "Pilot Versions",
+    "description": "This PromQL query measures the version number of each running instance.",
+    "question": "What are the version numbers of the running instances?",
+    "query": "",
+    "metrics": [
+      "version"
+    ]
+  },
+  {
+    "id": "04cd2300-e68e-4cdc-8991-f5b0bc9a4a6a",
+    "name": "Pilot Versions",
+    "description": "This PromQL query measures the version number of each running instance.",
+    "question": "How many unique version numbers are present in the running instances?",
+    "query": "",
+    "metrics": [
+      "version"
+    ]
+  },
+  {
+    "id": "b6d2d956-7b2c-4868-8e1b-7488a09f9c12",
+    "name": "Pilot Versions",
+    "description": "This PromQL query measures the version number of each running instance.",
+    "question": "Which instance has the highest version number?",
+    "query": "",
+    "metrics": [
+      "version"
+    ]
+  },
+  {
+    "id": "5c7448c5-d070-4c62-a65a-2c8a296b977e",
+    "name": "Memory Usage",
+    "description": "The PromQL query measures the memory usage of each running instance.",
+    "question": "What is the current memory usage of each running instance?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "ed8b0a6b-cc76-4c26-acb6-580adddfe278",
+    "name": "Memory Usage",
+    "description": "The PromQL query measures the memory usage of each running instance.",
+    "question": "Which instance has the highest memory usage?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "f824c5aa-fab7-4276-a45f-205de79ae3f1",
+    "name": "Memory Usage",
+    "description": "The PromQL query measures the memory usage of each running instance.",
+    "question": "Are there any instances approaching their memory limits?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "52087155-8ac9-4634-ab65-e550cf63ad06",
+    "name": "Memory Allocations",
+    "description": "The PromQL query measures the details about memory allocations in the system.",
+    "question": "What is the total memory allocated in bytes?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "f5848feb-14e2-4bb4-b02c-9f8795bcebfa",
+    "name": "Memory Allocations",
+    "description": "The PromQL query measures the details about memory allocations in the system.",
+    "question": "How much free memory is available in bytes?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "2c3e5edd-75c2-4b32-9839-f193593d5f19",
+    "name": "Memory Allocations",
+    "description": "The PromQL query measures the details about memory allocations in the system.",
+    "question": "What is the amount of memory cached in bytes?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "6725204c-afda-43f7-9594-4abec0bbf8bc",
+    "name": "CPU Usage",
+    "description": "The PromQL query measures the CPU usage of each running instance by querying the metric related to CPU usage.",
+    "question": "What is the total CPU usage of all running instances?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "75ecc1f2-9b26-49a7-88a9-452e98dab193",
+    "name": "CPU Usage",
+    "description": "The PromQL query measures the CPU usage of each running instance by querying the metric related to CPU usage.",
+    "question": "Which instance has the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f164e977-d45d-41ba-ba98-169f36746551",
+    "name": "CPU Usage",
+    "description": "The PromQL query measures the CPU usage of each running instance by querying the metric related to CPU usage.",
+    "question": "How has the CPU usage trend changed over the past 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "4a1a4623-932d-4f09-8e14-264cd367405f",
+    "name": "Queues",
+    "description": "The PromQL query measures the current status of various queues in the system, providing insights into the queue length, queue depth, or queue processing time.",
+    "question": "What is the current length of the queues?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "8f511af3-d1f1-4d23-8194-a6651d8171d5",
+    "name": "Queues",
+    "description": "The PromQL query measures the current status of various queues in the system, providing insights into the queue length, queue depth, or queue processing time.",
+    "question": "How has the queue depth changed over the last 1 hour?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "5f20af79-f9b5-49f1-9a28-e41e01176bc2",
+    "name": "Queues",
+    "description": "The PromQL query measures the current status of various queues in the system, providing insights into the queue length, queue depth, or queue processing time.",
+    "question": "Which queue has the highest processing time?",
+    "query": "",
+    "metrics": []
+  }
+]

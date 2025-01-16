@@ -1,0 +1,95 @@
+[
+  {
+    "id": "372ffeeb-5d48-4602-874b-90f27f5ca0bb",
+    "name": "Cluster memory usage",
+    "description": "The PromQL query measures the memory usage of a cluster.",
+    "question": "What is the total memory available in the cluster?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "81786d26-be9e-439f-80d7-02a8ab00e011",
+    "name": "Cluster memory usage",
+    "description": "The PromQL query measures the memory usage of a cluster.",
+    "question": "How much memory is currently free in the cluster?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "2c8e7279-157d-4108-bed2-95a6158b4bf0",
+    "name": "Cluster memory usage",
+    "description": "The PromQL query measures the memory usage of a cluster.",
+    "question": "What is the percentage of memory used in the cluster?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "ac4a046f-4d19-4c0b-b589-6555ec397887",
+    "name": "Cluster CPU usage ($interval avg)",
+    "description": "This PromQL query measures the average CPU usage across the entire cluster over a specified time interval.",
+    "question": "What is the average CPU usage of the cluster?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "b15ce798-cc72-4ee6-93ec-6bb7b8fec3f8",
+    "name": "Cluster CPU usage ($interval avg)",
+    "description": "This PromQL query measures the average CPU usage across the entire cluster over a specified time interval.",
+    "question": "Which nodes in the cluster are contributing the most to the overall CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "ea39fc54-9fd7-4bb2-b033-4e7e11ee01ff",
+    "name": "Cluster CPU usage ($interval avg)",
+    "description": "This PromQL query measures the average CPU usage across the entire cluster over a specified time interval.",
+    "question": "Is the cluster CPU usage increasing or decreasing over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "d4e4f40e-ddb8-460b-b9d9-934622c23d16",
+    "name": "Used",
+    "description": "This PromQL query measures the amount of a specific resource or metric that is currently in use.",
+    "question": "What is the current utilization of the metric_name?",
+    "query": "",
+    "metrics": [
+      "metric_name"
+    ]
+  },
+  {
+    "id": "170b254b-1249-4621-a580-1a1bf27929ca",
+    "name": "Used",
+    "description": "This PromQL query measures the amount of a specific resource or metric that is currently in use.",
+    "question": "How has the usage of metric_name changed over the specified time range?",
+    "query": "",
+    "metrics": [
+      "metric_name"
+    ]
+  },
+  {
+    "id": "9c146890-1f6f-4a09-8a23-f28661ccd20d",
+    "name": "Used",
+    "description": "This PromQL query measures the amount of a specific resource or metric that is currently in use.",
+    "question": "Which component or instance is consuming the most of metric_name?",
+    "query": "",
+    "metrics": [
+      "metric_name"
+    ]
+  }
+]

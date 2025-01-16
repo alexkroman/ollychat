@@ -1,0 +1,158 @@
+[
+  {
+    "id": "0e701545-94b5-46f4-a61a-4dabfee0492a",
+    "name": "All HTTP responses",
+    "description": "This PromQL query measures the total count of all HTTP responses recorded by the system.",
+    "question": "How many HTTP responses have been recorded?",
+    "query": "",
+    "metrics": [
+      "http_responses_total"
+    ]
+  },
+  {
+    "id": "daa648ee-ba28-42da-bc1d-6f3c265215af",
+    "name": "All HTTP responses",
+    "description": "This PromQL query measures the total count of all HTTP responses recorded by the system.",
+    "question": "What is the total count of HTTP responses?",
+    "query": "",
+    "metrics": [
+      "http_responses_total"
+    ]
+  },
+  {
+    "id": "36f9bed9-abc6-41eb-9eef-1fe4396654e1",
+    "name": "All HTTP responses",
+    "description": "This PromQL query measures the total count of all HTTP responses recorded by the system.",
+    "question": "How many total HTTP responses were received?",
+    "query": "",
+    "metrics": [
+      "http_responses_total"
+    ]
+  },
+  {
+    "id": "363203be-b845-4d3e-ad13-cc78786a7873",
+    "name": "Incoming / Outgoing bytes",
+    "description": "The PromQL query measures the incoming and outgoing bytes of a system or network interface.",
+    "question": "What is the total incoming bytes on the system or network interface?",
+    "query": "",
+    "metrics": [
+      "incoming_bytes",
+      "outgoing_bytes"
+    ]
+  },
+  {
+    "id": "af4a01b7-ecf3-4749-b59c-6b5b835120d3",
+    "name": "Incoming / Outgoing bytes",
+    "description": "The PromQL query measures the incoming and outgoing bytes of a system or network interface.",
+    "question": "What is the total outgoing bytes on the system or network interface?",
+    "query": "",
+    "metrics": [
+      "incoming_bytes",
+      "outgoing_bytes"
+    ]
+  },
+  {
+    "id": "e092a0c2-264b-46cf-badc-f8b667fec8c9",
+    "name": "Incoming / Outgoing bytes",
+    "description": "The PromQL query measures the incoming and outgoing bytes of a system or network interface.",
+    "question": "How do the incoming and outgoing bytes compare over a specific time range?",
+    "query": "",
+    "metrics": [
+      "incoming_bytes",
+      "outgoing_bytes"
+    ]
+  },
+  {
+    "id": "e1ee5cba-bf32-40e4-925b-5a8d6be8c186",
+    "name": "Number of connections",
+    "description": "The PromQL query measures the number of connections to a specific service or resource over a given time period.",
+    "question": "How many connections were established in the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "number_of_connections"
+    ]
+  },
+  {
+    "id": "4d486c15-2798-4fe1-ae23-c95ba417d54d",
+    "name": "Number of connections",
+    "description": "The PromQL query measures the number of connections to a specific service or resource over a given time period.",
+    "question": "What is the average number of connections per minute?",
+    "query": "",
+    "metrics": [
+      "number_of_connections"
+    ]
+  },
+  {
+    "id": "46584dcf-385f-45d5-80df-dedc3dd754af",
+    "name": "Number of connections",
+    "description": "The PromQL query measures the number of connections to a specific service or resource over a given time period.",
+    "question": "Are there any spikes in the number of connections during peak hours?",
+    "query": "",
+    "metrics": [
+      "number_of_connections"
+    ]
+  },
+  {
+    "id": "6cdc3007-82f3-4a40-8031-56241580e3f2",
+    "name": "Requests and Responses",
+    "description": "This PromQL query measures the rate of requests and responses over a specific time window.",
+    "question": "What is the average rate of requests?",
+    "query": "",
+    "metrics": [
+      "requests_total",
+      "responses_total"
+    ]
+  },
+  {
+    "id": "2c3d05c9-8e4d-4034-a332-531e5ce2a306",
+    "name": "Requests and Responses",
+    "description": "This PromQL query measures the rate of requests and responses over a specific time window.",
+    "question": "How many responses were received in the last hour?",
+    "query": "",
+    "metrics": [
+      "requests_total",
+      "responses_total"
+    ]
+  },
+  {
+    "id": "93e1f715-ae91-4d6b-ac23-1aeb14ca7424",
+    "name": "Requests and Responses",
+    "description": "This PromQL query measures the rate of requests and responses over a specific time window.",
+    "question": "Is there a correlation between the number of requests and responses?",
+    "query": "",
+    "metrics": [
+      "requests_total",
+      "responses_total"
+    ]
+  },
+  {
+    "id": "1eb6f5ec-96d9-4773-8ac3-48a0f5b56757",
+    "name": "Active sessions",
+    "description": "The PromQL query measures the number of active sessions currently being handled by the system.",
+    "question": "What is the current number of active sessions?",
+    "query": "",
+    "metrics": [
+      "active_sessions"
+    ]
+  },
+  {
+    "id": "1b4829a1-1fca-4a9e-9b87-bfd6a1fc66f3",
+    "name": "Active sessions",
+    "description": "The PromQL query measures the number of active sessions currently being handled by the system.",
+    "question": "How does the number of active sessions vary over time?",
+    "query": "",
+    "metrics": [
+      "active_sessions"
+    ]
+  },
+  {
+    "id": "4788f310-4437-42be-825d-e0bde9308eae",
+    "name": "Active sessions",
+    "description": "The PromQL query measures the number of active sessions currently being handled by the system.",
+    "question": "What is the peak number of active sessions observed?",
+    "query": "",
+    "metrics": [
+      "active_sessions"
+    ]
+  }
+]

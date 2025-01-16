@@ -1,0 +1,98 @@
+[
+  {
+    "id": "3d401bbb-8920-46d2-98b0-ccbdf197b7cf",
+    "name": "Message count",
+    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It provides an aggregated count of messages based on the differences in watermarks.",
+    "question": "How many messages have been produced to the topic?",
+    "query": "",
+    "metrics": [
+      "High",
+      "Low"
+    ]
+  },
+  {
+    "id": "074094da-5d67-4d15-99da-f89e8074876c",
+    "name": "Message count",
+    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It provides an aggregated count of messages based on the differences in watermarks.",
+    "question": "What is the difference between the highest and lowest watermark of partitions in the topic?",
+    "query": "",
+    "metrics": [
+      "High",
+      "Low"
+    ]
+  },
+  {
+    "id": "66932eba-f1cc-4279-af11-90eadca2b4ee",
+    "name": "Message count",
+    "description": "The PromQL query measures the summed delta between the High and Low watermark of all partitions in the given topic. It provides an aggregated count of messages based on the differences in watermarks.",
+    "question": "How has the message count changed over a specific time period?",
+    "query": "",
+    "metrics": [
+      "High",
+      "Low"
+    ]
+  },
+  {
+    "id": "b6fa6616-cdf4-4281-b51d-805b680515cf",
+    "name": "Cleanup Policy",
+    "description": "This PromQL query measures the rate at which cleanup operations are being performed over a 5-minute window.",
+    "question": "How many cleanup operations are being performed?",
+    "query": "",
+    "metrics": [
+      "cleanup_operations_total"
+    ]
+  },
+  {
+    "id": "d79670d8-89af-4c59-a7f7-b96b73dc9664",
+    "name": "Cleanup Policy",
+    "description": "This PromQL query measures the rate at which cleanup operations are being performed over a 5-minute window.",
+    "question": "What is the rate of cleanup operations?",
+    "query": "",
+    "metrics": [
+      "cleanup_operations_total"
+    ]
+  },
+  {
+    "id": "364ccf02-d8f7-49ad-9f92-9101bcc153e7",
+    "name": "Cleanup Policy",
+    "description": "This PromQL query measures the rate at which cleanup operations are being performed over a 5-minute window.",
+    "question": "Is the cleanup activity increasing or decreasing?",
+    "query": "",
+    "metrics": [
+      "cleanup_operations_total"
+    ]
+  },
+  {
+    "id": "62609d66-1edb-4079-b92c-7d73444223a0",
+    "name": "Messages in/sec",
+    "description": "This PromQL query calculates the total rate of messages being produced per second by summing the difference between the high and low watermark values of all partitions in the specified topic. It may not provide accurate results for compacted topics containing compacted records.",
+    "question": "What is the total rate of messages being produced per second in the specified topic?",
+    "query": "",
+    "metrics": [
+      "High",
+      "Low"
+    ]
+  },
+  {
+    "id": "10b3dc8b-d4c3-436d-b3d6-23fb3622fcc0",
+    "name": "Messages in/sec",
+    "description": "This PromQL query calculates the total rate of messages being produced per second by summing the difference between the high and low watermark values of all partitions in the specified topic. It may not provide accurate results for compacted topics containing compacted records.",
+    "question": "How much do the high watermark values contribute to the total message rate?",
+    "query": "",
+    "metrics": [
+      "High",
+      "Low"
+    ]
+  },
+  {
+    "id": "e5e1e7e8-46be-47df-ab8a-8d2bd8a82a57",
+    "name": "Messages in/sec",
+    "description": "This PromQL query calculates the total rate of messages being produced per second by summing the difference between the high and low watermark values of all partitions in the specified topic. It may not provide accurate results for compacted topics containing compacted records.",
+    "question": "What is the difference between the high and low watermark values for all partitions in the topic?",
+    "query": "",
+    "metrics": [
+      "High",
+      "Low"
+    ]
+  }
+]

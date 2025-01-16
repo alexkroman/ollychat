@@ -1,0 +1,122 @@
+[
+  {
+    "id": "dbe9894e-13bf-493d-8774-d3c4f6549bcf",
+    "name": "Total Nodes",
+    "description": "This PromQL query measures the total number of nodes being monitored in the system.",
+    "question": "How many nodes are currently being monitored?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "3fd8e6e6-350d-4b79-af22-11a54764bfba",
+    "name": "Total Nodes",
+    "description": "This PromQL query measures the total number of nodes being monitored in the system.",
+    "question": "What is the total count of nodes in the system?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "003dfd9c-36d5-4cb5-84f7-39927a534e21",
+    "name": "Total Nodes",
+    "description": "This PromQL query measures the total number of nodes being monitored in the system.",
+    "question": "How many nodes are reporting metrics?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "f55e6448-bb39-4c84-998a-8949656f879a",
+    "name": "Max Nodes",
+    "description": "This PromQL query measures the maximum number of nodes in a system at a particular point in time.",
+    "question": "What is the maximum number of nodes currently in the system?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "ed529998-f3ce-4c96-93d2-2c7089e49d1b",
+    "name": "Max Nodes",
+    "description": "This PromQL query measures the maximum number of nodes in a system at a particular point in time.",
+    "question": "How many nodes have reached their peak count?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "e8ecead4-9caf-4f50-815a-f76010d0028e",
+    "name": "Max Nodes",
+    "description": "This PromQL query measures the maximum number of nodes in a system at a particular point in time.",
+    "question": "Which node has the highest count among all nodes?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "58b0b988-422d-4172-a183-6442fc44f7d7",
+    "name": "Node Groups",
+    "description": "This PromQL query measures the total CPU usage in seconds across all nodes over a 5-minute window.",
+    "question": "What is the total CPU usage across all nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9ed90a65-1af4-41a0-8189-0ffa7cc09505",
+    "name": "Node Groups",
+    "description": "This PromQL query measures the total CPU usage in seconds across all nodes over a 5-minute window.",
+    "question": "How has the CPU usage changed over the past 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "5340e526-7b78-418b-abc3-71df9461fccf",
+    "name": "Node Groups",
+    "description": "This PromQL query measures the total CPU usage in seconds across all nodes over a 5-minute window.",
+    "question": "Which node has the highest CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "ce091a96-d68f-44d6-a7e6-d8a8c2769848",
+    "name": "Healthy Nodes",
+    "description": "This PromQL query measures the total number of healthy nodes in the system at a given point in time.",
+    "question": "How many healthy nodes are currently operational?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "ee49d913-ffaa-44c9-8ca4-7cf0e7987cc4",
+    "name": "Healthy Nodes",
+    "description": "This PromQL query measures the total number of healthy nodes in the system at a given point in time.",
+    "question": "Which nodes are considered healthy based on the provided metric?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "ea54034b-7c1a-4f87-90b8-b68b609e46ca",
+    "name": "Healthy Nodes",
+    "description": "This PromQL query measures the total number of healthy nodes in the system at a given point in time.",
+    "question": "Is there a trend in the number of healthy nodes over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

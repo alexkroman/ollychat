@@ -1,0 +1,65 @@
+[
+  {
+    "id": "11a06916-0dba-49ad-9cf8-361ce5cc6f93",
+    "name": "Topic Lag",
+    "description": "The PromQL query measures the lag of a specific topic in a messaging system, indicating the delay between the latest message produced and the latest message consumed.",
+    "question": "What is the current lag of the topic?",
+    "query": "",
+    "metrics": [
+      "topic_lag"
+    ]
+  },
+  {
+    "id": "31f5ddb1-2961-4592-ad29-78ee4954cbbc",
+    "name": "Topic Lag",
+    "description": "The PromQL query measures the lag of a specific topic in a messaging system, indicating the delay between the latest message produced and the latest message consumed.",
+    "question": "How has the topic lag changed over time?",
+    "query": "",
+    "metrics": [
+      "topic_lag"
+    ]
+  },
+  {
+    "id": "7c0767da-49ca-40ec-8861-f4adf044cbcd",
+    "name": "Topic Lag",
+    "description": "The PromQL query measures the lag of a specific topic in a messaging system, indicating the delay between the latest message produced and the latest message consumed.",
+    "question": "Which consumer group has the highest lag on the topic?",
+    "query": "",
+    "metrics": [
+      "topic_lag"
+    ]
+  },
+  {
+    "id": "7ae27617-3b34-49f6-9a4b-26b13d316323",
+    "name": "Messages In vs Consumed",
+    "description": "This PromQL query measures the comparison between the total number of messages received and the total number of messages consumed.",
+    "question": "What is the total number of messages received?",
+    "query": "",
+    "metrics": [
+      "Messages In",
+      "Messages Consumed"
+    ]
+  },
+  {
+    "id": "fe4deb8d-fe00-4b53-8b92-de669214d494",
+    "name": "Messages In vs Consumed",
+    "description": "This PromQL query measures the comparison between the total number of messages received and the total number of messages consumed.",
+    "question": "How many messages have been consumed?",
+    "query": "",
+    "metrics": [
+      "Messages In",
+      "Messages Consumed"
+    ]
+  },
+  {
+    "id": "2699b33f-0002-42b2-8f22-d1d9241dac39",
+    "name": "Messages In vs Consumed",
+    "description": "This PromQL query measures the comparison between the total number of messages received and the total number of messages consumed.",
+    "question": "Is there a difference between the number of messages received and consumed?",
+    "query": "",
+    "metrics": [
+      "Messages In",
+      "Messages Consumed"
+    ]
+  }
+]

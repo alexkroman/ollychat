@@ -1,0 +1,182 @@
+[
+  {
+    "id": "5a736e72-c048-47ba-9e8a-5b1a0902d633",
+    "name": "CPU Count",
+    "description": "This PromQL query measures the total count of CPU cores available in the system.",
+    "question": "What is the total count of CPU cores in the system?",
+    "query": "",
+    "metrics": [
+      "count"
+    ]
+  },
+  {
+    "id": "e55789a9-0595-4a17-a38c-8eb9c734268c",
+    "name": "CPU Count",
+    "description": "This PromQL query measures the total count of CPU cores available in the system.",
+    "question": "How many CPU cores are available for processing?",
+    "query": "",
+    "metrics": [
+      "count"
+    ]
+  },
+  {
+    "id": "33d16f67-b789-41f7-884e-de23de8d45d0",
+    "name": "CPU Count",
+    "description": "This PromQL query measures the total count of CPU cores available in the system.",
+    "question": "What is the overall CPU core count in the system?",
+    "query": "",
+    "metrics": [
+      "count"
+    ]
+  },
+  {
+    "id": "92cd5f4e-9755-4278-acf4-b6294999a574",
+    "name": "Status",
+    "description": "This PromQL query measures the total number of status changes over a specific time range.",
+    "question": "How many status changes occurred?",
+    "query": "",
+    "metrics": [
+      "status_changes_total"
+    ]
+  },
+  {
+    "id": "5746b8da-f928-4a77-a1ac-fe486216cb77",
+    "name": "Status",
+    "description": "This PromQL query measures the total number of status changes over a specific time range.",
+    "question": "What is the total count of status changes?",
+    "query": "",
+    "metrics": [
+      "status_changes_total"
+    ]
+  },
+  {
+    "id": "afc4ef22-69ee-419f-9ce0-fc54c120f42c",
+    "name": "Status",
+    "description": "This PromQL query measures the total number of status changes over a specific time range.",
+    "question": "Is there any trend in the status changes?",
+    "query": "",
+    "metrics": [
+      "status_changes_total"
+    ]
+  },
+  {
+    "id": "cdd87a11-5c22-48a2-b270-294dc4ddf5c9",
+    "name": "Firmware Version",
+    "description": "This PromQL query measures the current firmware version of a system.",
+    "question": "What is the current firmware version?",
+    "query": "",
+    "metrics": [
+      "firmware_version"
+    ]
+  },
+  {
+    "id": "81e174b1-24ca-4db7-a067-9c47ab42fa6c",
+    "name": "Firmware Version",
+    "description": "This PromQL query measures the current firmware version of a system.",
+    "question": "How many systems are running a specific firmware version?",
+    "query": "",
+    "metrics": [
+      "firmware_version"
+    ]
+  },
+  {
+    "id": "e867b18c-1c93-4082-a397-b60f795988d2",
+    "name": "Firmware Version",
+    "description": "This PromQL query measures the current firmware version of a system.",
+    "question": "Are there any systems with outdated firmware?",
+    "query": "",
+    "metrics": [
+      "firmware_version"
+    ]
+  },
+  {
+    "id": "3b06e256-864c-4322-9344-af853431ec63",
+    "name": "PSU Capacity",
+    "description": "The PromQL query measures the capacity of the Power Supply Unit (PSU) in a system.",
+    "question": "What is the current capacity of the Power Supply Unit?",
+    "query": "",
+    "metrics": [
+      "PSU_capacity"
+    ]
+  },
+  {
+    "id": "f66cc395-f40c-425b-b58b-14079803b7d6",
+    "name": "PSU Capacity",
+    "description": "The PromQL query measures the capacity of the Power Supply Unit (PSU) in a system.",
+    "question": "Is the Power Supply Unit operating at maximum capacity?",
+    "query": "",
+    "metrics": [
+      "PSU_capacity"
+    ]
+  },
+  {
+    "id": "3d305244-3d6c-4087-97fa-b4cbe66a278f",
+    "name": "PSU Capacity",
+    "description": "The PromQL query measures the capacity of the Power Supply Unit (PSU) in a system.",
+    "question": "How much headroom is available in the Power Supply Unit?",
+    "query": "",
+    "metrics": [
+      "PSU_capacity"
+    ]
+  },
+  {
+    "id": "d5709eed-20e4-421e-ab54-0a88699e8c3d",
+    "name": "PSU Power Output",
+    "description": "The PromQL query measures the power output of the PSU (Power Supply Unit) in a system.",
+    "question": "What is the current power output of the PSU?",
+    "query": "",
+    "metrics": [
+      "PSU_power_output"
+    ]
+  },
+  {
+    "id": "37f30c09-d730-4a32-9626-a83d91c956c1",
+    "name": "PSU Power Output",
+    "description": "The PromQL query measures the power output of the PSU (Power Supply Unit) in a system.",
+    "question": "Is the PSU power output within the expected range?",
+    "query": "",
+    "metrics": [
+      "PSU_power_output"
+    ]
+  },
+  {
+    "id": "b615db2d-b133-4e7f-a886-df811fdb9c3f",
+    "name": "PSU Power Output",
+    "description": "The PromQL query measures the power output of the PSU (Power Supply Unit) in a system.",
+    "question": "How does the PSU power output change over time?",
+    "query": "",
+    "metrics": [
+      "PSU_power_output"
+    ]
+  },
+  {
+    "id": "93e2a241-14ea-4b20-83ef-16fb65c921f9",
+    "name": "Current Fan Usage",
+    "description": "This PromQL query measures the current usage of fan(s) in the system.",
+    "question": "What is the current fan usage?",
+    "query": "",
+    "metrics": [
+      "fan_usage"
+    ]
+  },
+  {
+    "id": "a3211525-d707-4f06-8ad9-1412a0ebd6d8",
+    "name": "Current Fan Usage",
+    "description": "This PromQL query measures the current usage of fan(s) in the system.",
+    "question": "Is the fan usage within normal operating range?",
+    "query": "",
+    "metrics": [
+      "fan_usage"
+    ]
+  },
+  {
+    "id": "a5b461d7-79e9-4411-b103-301e82b6cd3a",
+    "name": "Current Fan Usage",
+    "description": "This PromQL query measures the current usage of fan(s) in the system.",
+    "question": "Which component is causing high fan usage?",
+    "query": "",
+    "metrics": [
+      "fan_usage"
+    ]
+  }
+]

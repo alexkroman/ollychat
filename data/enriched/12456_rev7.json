@@ -1,0 +1,152 @@
+[
+  {
+    "id": "d0e05a5d-61a4-4092-9381-8a23d6b60e8f",
+    "name": "Number of live nodes",
+    "description": "The PromQL query counts the number of live nodes based on a specific criteria or condition.",
+    "question": "How many live nodes are currently active?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "62dfb596-0e34-43ee-bf58-353aaefde48f",
+    "name": "Number of live nodes",
+    "description": "The PromQL query counts the number of live nodes based on a specific criteria or condition.",
+    "question": "What is the total count of nodes meeting the criteria?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "5ec6514d-f120-49ca-aab3-e3fc702067ff",
+    "name": "Number of live nodes",
+    "description": "The PromQL query counts the number of live nodes based on a specific criteria or condition.",
+    "question": "Which nodes are considered live based on the condition?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "4638efc0-73d9-425e-94ab-d3f04e0219fd",
+    "name": "Zookeepers",
+    "description": "This PromQL query measures the total count of Zookeepers in the system.",
+    "question": "What is the current total count of Zookeepers?",
+    "query": "",
+    "metrics": [
+      "zookeeper_count"
+    ]
+  },
+  {
+    "id": "8b0632f7-cafb-4e20-bee5-5f3407343957",
+    "name": "Zookeepers",
+    "description": "This PromQL query measures the total count of Zookeepers in the system.",
+    "question": "Is the number of Zookeepers increasing or decreasing?",
+    "query": "",
+    "metrics": [
+      "zookeeper_count"
+    ]
+  },
+  {
+    "id": "ee82688b-f80a-442b-a32f-f53fa72c5c34",
+    "name": "Zookeepers",
+    "description": "This PromQL query measures the total count of Zookeepers in the system.",
+    "question": "How does the count of Zookeepers vary over time?",
+    "query": "",
+    "metrics": [
+      "zookeeper_count"
+    ]
+  },
+  {
+    "id": "db3d5fdc-0ffe-4a31-86ba-43d2caaa7053",
+    "name": "Shard leaders",
+    "description": "The PromQL query measures the number of shard leaders in a distributed system at a given point in time.",
+    "question": "How many shard leaders are currently active?",
+    "query": "",
+    "metrics": [
+      "shard_leaders"
+    ]
+  },
+  {
+    "id": "6ae99adc-8431-49a3-8912-284832b83892",
+    "name": "Shard leaders",
+    "description": "The PromQL query measures the number of shard leaders in a distributed system at a given point in time.",
+    "question": "Which shard has the highest number of leaders?",
+    "query": "",
+    "metrics": [
+      "shard_leaders"
+    ]
+  },
+  {
+    "id": "ec613cde-db07-4eae-85f5-8211f856ee99",
+    "name": "Shard leaders",
+    "description": "The PromQL query measures the number of shard leaders in a distributed system at a given point in time.",
+    "question": "Are there any shards without a leader?",
+    "query": "",
+    "metrics": [
+      "shard_leaders"
+    ]
+  },
+  {
+    "id": "f2a4a60e-d1b0-4129-b672-7a121dde0106",
+    "name": "Number of collections",
+    "description": "The PromQL query measures the number of collections performed by a specific service or component over a given time period.",
+    "question": "How many collections were performed by the service/component?",
+    "query": "",
+    "metrics": [
+      "number_of_collections"
+    ]
+  },
+  {
+    "id": "703a67ce-603a-4620-bf77-8a34463ea452",
+    "name": "Number of collections",
+    "description": "The PromQL query measures the number of collections performed by a specific service or component over a given time period.",
+    "question": "What is the total count of collections executed?",
+    "query": "",
+    "metrics": [
+      "number_of_collections"
+    ]
+  },
+  {
+    "id": "e53a70dc-77ce-476d-82c5-1d82a0355b4b",
+    "name": "Number of collections",
+    "description": "The PromQL query measures the number of collections performed by a specific service or component over a given time period.",
+    "question": "Is there a trend in the number of collections over time?",
+    "query": "",
+    "metrics": [
+      "number_of_collections"
+    ]
+  },
+  {
+    "id": "5f2f8e2b-68f2-4180-8cfa-942c56a9d3ca",
+    "name": "Current replica state",
+    "description": "This PromQL query measures the current state of replicas for a specific resource or service.",
+    "question": "How many replicas are currently running?",
+    "query": "",
+    "metrics": [
+      "replica_state"
+    ]
+  },
+  {
+    "id": "ca572db4-0ab4-446c-8cef-5c815bd15426",
+    "name": "Current replica state",
+    "description": "This PromQL query measures the current state of replicas for a specific resource or service.",
+    "question": "What is the status of the replicas?",
+    "query": "",
+    "metrics": [
+      "replica_state"
+    ]
+  },
+  {
+    "id": "4479c331-53eb-4346-91a7-7ed249c66563",
+    "name": "Current replica state",
+    "description": "This PromQL query measures the current state of replicas for a specific resource or service.",
+    "question": "Are there any replicas in a failed state?",
+    "query": "",
+    "metrics": [
+      "replica_state"
+    ]
+  }
+]

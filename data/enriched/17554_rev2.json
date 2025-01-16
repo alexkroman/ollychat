@@ -1,0 +1,155 @@
+[
+  {
+    "id": "ced1e40d-e4db-4992-bf94-f6e8d5881412",
+    "name": "Repository Check",
+    "description": "This PromQL query measures the total number of repository check events recorded over a specific time range.",
+    "question": "How many repository check events were recorded?",
+    "query": "",
+    "metrics": [
+      "repository_check_events_total"
+    ]
+  },
+  {
+    "id": "c5668959-7998-43ca-96ca-bdf13fd46f3a",
+    "name": "Repository Check",
+    "description": "This PromQL query measures the total number of repository check events recorded over a specific time range.",
+    "question": "What is the trend of repository check events over time?",
+    "query": "",
+    "metrics": [
+      "repository_check_events_total"
+    ]
+  },
+  {
+    "id": "9cddc227-10be-4471-a2a1-6ef6ca574b6b",
+    "name": "Repository Check",
+    "description": "This PromQL query measures the total number of repository check events recorded over a specific time range.",
+    "question": "Which repositories have the highest number of check events?",
+    "query": "",
+    "metrics": [
+      "repository_check_events_total"
+    ]
+  },
+  {
+    "id": "00750efb-4deb-4738-9315-628cef3f67d6",
+    "name": "Repository Locks",
+    "description": "The PromQL query measures the number of locks on repositories in the system.",
+    "question": "How many locks are currently active on repositories?",
+    "query": "",
+    "metrics": [
+      "repository_locks"
+    ]
+  },
+  {
+    "id": "4aaf738d-62c4-4ac8-9e43-095a1bb5e209",
+    "name": "Repository Locks",
+    "description": "The PromQL query measures the number of locks on repositories in the system.",
+    "question": "What is the trend of repository locks over the past hour?",
+    "query": "",
+    "metrics": [
+      "repository_locks"
+    ]
+  },
+  {
+    "id": "44ad561f-f1e4-40d1-978e-44a627c78f37",
+    "name": "Repository Locks",
+    "description": "The PromQL query measures the number of locks on repositories in the system.",
+    "question": "Which repositories have the highest number of locks?",
+    "query": "",
+    "metrics": [
+      "repository_locks"
+    ]
+  },
+  {
+    "id": "f92a91dd-1ff5-4af6-b80b-655298d53593",
+    "name": "Last backup",
+    "description": "The PromQL query measures the time of the last backup completion in the system.",
+    "question": "What is the timestamp of the last backup completion?",
+    "query": "",
+    "metrics": [
+      "last_backup_time"
+    ]
+  },
+  {
+    "id": "3c22cf76-542a-4b2a-8a95-18a21c1ef4ea",
+    "name": "Last backup",
+    "description": "The PromQL query measures the time of the last backup completion in the system.",
+    "question": "How frequently are backups being completed?",
+    "query": "",
+    "metrics": [
+      "last_backup_time"
+    ]
+  },
+  {
+    "id": "ba7d42eb-1587-4c86-9f6d-2576ae839648",
+    "name": "Last backup",
+    "description": "The PromQL query measures the time of the last backup completion in the system.",
+    "question": "Is there a trend in the time taken for the last backup completion?",
+    "query": "",
+    "metrics": [
+      "last_backup_time"
+    ]
+  },
+  {
+    "id": "7d535b7e-cefe-4213-83dc-3014a56ccb4e",
+    "name": "Total snapshot count",
+    "description": "The PromQL query measures the total count of snapshots taken in the system.",
+    "question": "What is the total count of snapshots taken?",
+    "query": "",
+    "metrics": [
+      "snapshot_count"
+    ]
+  },
+  {
+    "id": "59b8a490-a7aa-48b9-bb47-d52ac4c65d70",
+    "name": "Total snapshot count",
+    "description": "The PromQL query measures the total count of snapshots taken in the system.",
+    "question": "How many snapshots have been captured in the system?",
+    "query": "",
+    "metrics": [
+      "snapshot_count"
+    ]
+  },
+  {
+    "id": "734f61f6-df22-4072-87c1-36895810fa40",
+    "name": "Total snapshot count",
+    "description": "The PromQL query measures the total count of snapshots taken in the system.",
+    "question": "What is the overall snapshot count?",
+    "query": "",
+    "metrics": [
+      "snapshot_count"
+    ]
+  },
+  {
+    "id": "ffbb0cd4-dc19-45d8-b6bf-37af7735ac6e",
+    "name": "Total backup size & files",
+    "description": "This PromQL query measures the total size and number of files in the backup system.",
+    "question": "What is the current total size of the backup?",
+    "query": "",
+    "metrics": [
+      "total_backup_size",
+      "total_backup_files"
+    ]
+  },
+  {
+    "id": "5e9e3cbe-ac08-466e-85c3-22359668cc57",
+    "name": "Total backup size & files",
+    "description": "This PromQL query measures the total size and number of files in the backup system.",
+    "question": "How many files are included in the backup?",
+    "query": "",
+    "metrics": [
+      "total_backup_size",
+      "total_backup_files"
+    ]
+  },
+  {
+    "id": "df6afd5c-7325-4169-b9b0-6f8acdda654e",
+    "name": "Total backup size & files",
+    "description": "This PromQL query measures the total size and number of files in the backup system.",
+    "question": "Has the total size of the backup increased over time?",
+    "query": "",
+    "metrics": [
+      "total_backup_size",
+      "total_backup_files"
+    ]
+  }
+]

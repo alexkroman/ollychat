@@ -1,0 +1,128 @@
+[
+  {
+    "id": "a16c6ba0-05a5-40e7-b223-0969247106b9",
+    "name": "Number of Pods",
+    "description": "The PromQL query measures the total number of pods currently running in the Kubernetes cluster.",
+    "question": "How many pods are currently running in the Kubernetes cluster?",
+    "query": "",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "5e84825c-ce6c-4927-8249-b964b86557bc",
+    "name": "Number of Pods",
+    "description": "The PromQL query measures the total number of pods currently running in the Kubernetes cluster.",
+    "question": "What is the total count of pods in the cluster?",
+    "query": "",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "495e0c8a-a659-467a-8c7b-49b8e58404e6",
+    "name": "Number of Pods",
+    "description": "The PromQL query measures the total number of pods currently running in the Kubernetes cluster.",
+    "question": "How many pod instances are active at the moment?",
+    "query": "",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "6933ba79-3026-4dfe-bdf4-5e6addfd4885",
+    "name": "CPU Core Usage vs. Requested",
+    "description": "The PromQL query measures the comparison between CPU core usage and requested CPU resources.",
+    "question": "What is the current CPU core usage?",
+    "query": "",
+    "metrics": [
+      "CPU Core Usage",
+      "Requested"
+    ]
+  },
+  {
+    "id": "ce7d78dd-08f8-41e3-ac16-28a65748e6b3",
+    "name": "CPU Core Usage vs. Requested",
+    "description": "The PromQL query measures the comparison between CPU core usage and requested CPU resources.",
+    "question": "What are the requested CPU resources?",
+    "query": "",
+    "metrics": [
+      "CPU Core Usage",
+      "Requested"
+    ]
+  },
+  {
+    "id": "18deafd4-2105-427b-b1e7-903e1097be7e",
+    "name": "CPU Core Usage vs. Requested",
+    "description": "The PromQL query measures the comparison between CPU core usage and requested CPU resources.",
+    "question": "How does the CPU core usage compare to the requested resources?",
+    "query": "",
+    "metrics": [
+      "CPU Core Usage",
+      "Requested"
+    ]
+  },
+  {
+    "id": "568888f6-29fe-4840-a757-280f3c808527",
+    "name": "Memory Usage v. Limit",
+    "description": "This PromQL query measures the memory usage compared to the memory limit set for a specific resource or group of resources.",
+    "question": "What is the current memory usage of the resource?",
+    "query": "",
+    "metrics": [
+      "memory_usage",
+      "memory_limit"
+    ]
+  },
+  {
+    "id": "fc964f2b-0011-4380-89d5-679250476441",
+    "name": "Memory Usage v. Limit",
+    "description": "This PromQL query measures the memory usage compared to the memory limit set for a specific resource or group of resources.",
+    "question": "What is the memory limit set for the resource?",
+    "query": "",
+    "metrics": [
+      "memory_usage",
+      "memory_limit"
+    ]
+  },
+  {
+    "id": "8a1b3dd3-e70e-43cd-a097-de7eab4dacf4",
+    "name": "Memory Usage v. Limit",
+    "description": "This PromQL query measures the memory usage compared to the memory limit set for a specific resource or group of resources.",
+    "question": "How does the memory usage compare to the memory limit?",
+    "query": "",
+    "metrics": [
+      "memory_usage",
+      "memory_limit"
+    ]
+  },
+  {
+    "id": "82547efe-7619-4a84-b3e6-2a4ee8aba2eb",
+    "name": "Last Terminated Reason",
+    "description": "This PromQL query measures the last reason for termination of a specific resource or process.",
+    "question": "What was the last reason for termination?",
+    "query": "",
+    "metrics": [
+      "last_terminated_reason"
+    ]
+  },
+  {
+    "id": "c0bebcaa-e2f3-4635-beb1-ffb5c72a39f0",
+    "name": "Last Terminated Reason",
+    "description": "This PromQL query measures the last reason for termination of a specific resource or process.",
+    "question": "Which resource/process was recently terminated and for what reason?",
+    "query": "",
+    "metrics": [
+      "last_terminated_reason"
+    ]
+  },
+  {
+    "id": "79258584-3e26-472f-a10a-cf5270c51bf4",
+    "name": "Last Terminated Reason",
+    "description": "This PromQL query measures the last reason for termination of a specific resource or process.",
+    "question": "Is there a pattern in the termination reasons of the monitored resources?",
+    "query": "",
+    "metrics": [
+      "last_terminated_reason"
+    ]
+  }
+]

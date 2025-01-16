@@ -1,0 +1,128 @@
+[
+  {
+    "id": "ff7af0fb-c492-4a7d-a5f0-4a0abc2c2c3f",
+    "name": " Overall core usage ",
+    "description": "This PromQL query measures the overall usage of CPU cores on a system by calculating the total CPU time spent in seconds across all cores within a specified time range.",
+    "question": "What is the total CPU time spent across all cores?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "7cc8888b-3556-4032-a7e2-d0ce5b040741",
+    "name": " Overall core usage ",
+    "description": "This PromQL query measures the overall usage of CPU cores on a system by calculating the total CPU time spent in seconds across all cores within a specified time range.",
+    "question": "How has the overall CPU core usage changed over the specified time range?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "828d0393-0f52-4183-93a3-ae4b422e6c7a",
+    "name": " Overall core usage ",
+    "description": "This PromQL query measures the overall usage of CPU cores on a system by calculating the total CPU time spent in seconds across all cores within a specified time range.",
+    "question": "Which core has the highest usage based on total CPU time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9281eb00-9804-40e3-af35-4f4f34aced51",
+    "name": " container CPU proportion ",
+    "description": "This PromQL query measures the proportion of CPU usage for containers in a given environment.",
+    "question": "What is the current CPU usage proportion of containers?",
+    "query": "",
+    "metrics": [
+      "container_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "94e2ec6f-0050-422f-b8ba-6065852175b9",
+    "name": " container CPU proportion ",
+    "description": "This PromQL query measures the proportion of CPU usage for containers in a given environment.",
+    "question": "Which containers are consuming the most CPU?",
+    "query": "",
+    "metrics": [
+      "container_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "20135d08-fe07-4c6d-80f0-53befd0cc912",
+    "name": " container CPU proportion ",
+    "description": "This PromQL query measures the proportion of CPU usage for containers in a given environment.",
+    "question": "How has the CPU proportion of containers changed over time?",
+    "query": "",
+    "metrics": [
+      "container_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "06e9966f-f2d3-4fcc-9188-281beac3b9dc",
+    "name": " microservice Pod",
+    "description": "This PromQL query measures the memory request rate, CPU core usage, and disk usage of a specific microservice Pod in a Kubernetes cluster.",
+    "question": "What is the rate at which memory is being requested by the microservice Pod?",
+    "query": "",
+    "metrics": [
+      "memory_request_rate",
+      "container_pod_core",
+      "container_pod_disk"
+    ]
+  },
+  {
+    "id": "aaf62494-f1d4-4135-a9f0-2201856fe99b",
+    "name": " microservice Pod",
+    "description": "This PromQL query measures the memory request rate, CPU core usage, and disk usage of a specific microservice Pod in a Kubernetes cluster.",
+    "question": "How much CPU core is the microservice Pod currently utilizing?",
+    "query": "",
+    "metrics": [
+      "memory_request_rate",
+      "container_pod_core",
+      "container_pod_disk"
+    ]
+  },
+  {
+    "id": "c00f892b-c9c6-400e-b748-8a4d43878d68",
+    "name": " microservice Pod",
+    "description": "This PromQL query measures the memory request rate, CPU core usage, and disk usage of a specific microservice Pod in a Kubernetes cluster.",
+    "question": "What is the disk usage of the microservice Pod?",
+    "query": "",
+    "metrics": [
+      "memory_request_rate",
+      "container_pod_core",
+      "container_pod_disk"
+    ]
+  },
+  {
+    "id": "c650a9e8-72a5-46dd-97d5-b36433bb3a66",
+    "name": " average memory ",
+    "description": "This PromQL query calculates the average memory usage over a specific time range.",
+    "question": "What is the average memory usage?",
+    "query": "",
+    "metrics": [
+      "memory"
+    ]
+  },
+  {
+    "id": "bb019d32-aa4e-4f73-9906-87a2200a7c89",
+    "name": " average memory ",
+    "description": "This PromQL query calculates the average memory usage over a specific time range.",
+    "question": "How does the memory usage trend over time?",
+    "query": "",
+    "metrics": [
+      "memory"
+    ]
+  },
+  {
+    "id": "78b1c724-ddd1-4224-ae31-d98cff79e29e",
+    "name": " average memory ",
+    "description": "This PromQL query calculates the average memory usage over a specific time range.",
+    "question": "Which system components contribute the most to memory usage?",
+    "query": "",
+    "metrics": [
+      "memory"
+    ]
+  }
+]

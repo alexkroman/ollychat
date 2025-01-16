@@ -1,0 +1,92 @@
+[
+  {
+    "id": "00e74b87-1ee2-412f-8681-65dc16e9a9a6",
+    "name": "CPU Cores",
+    "description": "This PromQL query measures the total CPU resource requests in the cluster and compares it with the total allocatable CPU cores.",
+    "question": "What is the total CPU resource requests in the cluster?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "869cc590-02bb-426e-b6ac-26dd8f6e66cb",
+    "name": "CPU Cores",
+    "description": "This PromQL query measures the total CPU resource requests in the cluster and compares it with the total allocatable CPU cores.",
+    "question": "What is the total allocatable CPU cores?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "da2afded-d668-4d63-a9ff-8c122f169c8b",
+    "name": "CPU Cores",
+    "description": "This PromQL query measures the total CPU resource requests in the cluster and compares it with the total allocatable CPU cores.",
+    "question": "How do the CPU resource requests compare to the total allocatable CPU cores?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "2a6e1bfb-3f9c-4a77-8973-aa837aaefc9c",
+    "name": "CPU Cores",
+    "description": "This PromQL query measures the total number of CPU cores available on a system.",
+    "question": "How many CPU cores are available on the system?",
+    "query": "",
+    "metrics": [
+      "cpu_cores"
+    ]
+  },
+  {
+    "id": "b07d5cc0-4446-4ac8-baab-ee7d030530e9",
+    "name": "CPU Cores",
+    "description": "This PromQL query measures the total number of CPU cores available on a system.",
+    "question": "What is the total count of CPU cores?",
+    "query": "",
+    "metrics": [
+      "cpu_cores"
+    ]
+  },
+  {
+    "id": "0494ed29-022c-4931-9c56-972589050f24",
+    "name": "CPU Cores",
+    "description": "This PromQL query measures the total number of CPU cores available on a system.",
+    "question": "How many CPU cores does the system have?",
+    "query": "",
+    "metrics": [
+      "cpu_cores"
+    ]
+  },
+  {
+    "id": "4f6f13ed-f54b-4b17-9a94-cea9ae91cacf",
+    "name": "Memory",
+    "description": "This PromQL query measures the total memory resource requests in the cluster and compares it with the total allocatable memory.",
+    "question": "What is the total memory resource requests in the cluster?",
+    "query": "",
+    "metrics": [
+      "memory"
+    ]
+  },
+  {
+    "id": "32234c36-c1a5-405d-8e7f-c97498f36ba1",
+    "name": "Memory",
+    "description": "This PromQL query measures the total memory resource requests in the cluster and compares it with the total allocatable memory.",
+    "question": "What is the total allocatable memory in the cluster?",
+    "query": "",
+    "metrics": [
+      "memory"
+    ]
+  },
+  {
+    "id": "6c6e22c3-74a4-4471-8345-a43d2c4b346f",
+    "name": "Memory",
+    "description": "This PromQL query measures the total memory resource requests in the cluster and compares it with the total allocatable memory.",
+    "question": "How does the total memory resource requests compare to the total allocatable memory?",
+    "query": "",
+    "metrics": [
+      "memory"
+    ]
+  }
+]

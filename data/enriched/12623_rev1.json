@@ -1,0 +1,122 @@
+[
+  {
+    "id": "b13568e2-4351-4df4-98ff-d25f54665281",
+    "name": "Total nodes",
+    "description": "This PromQL query measures the total number of nodes in a system at a given point in time.",
+    "question": "How many nodes are currently active?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "b4d2151a-ddde-48d5-9a1a-909583aee468",
+    "name": "Total nodes",
+    "description": "This PromQL query measures the total number of nodes in a system at a given point in time.",
+    "question": "What is the total count of nodes in the system?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "891895ba-43b2-4848-b679-44c9370a1387",
+    "name": "Total nodes",
+    "description": "This PromQL query measures the total number of nodes in a system at a given point in time.",
+    "question": "How many nodes are being monitored?",
+    "query": "",
+    "metrics": [
+      "node"
+    ]
+  },
+  {
+    "id": "9e447ec7-3bf1-486a-8f49-153b5865409c",
+    "name": "Nodes available",
+    "description": "The PromQL query measures the percentage of nodes that are in a ready state out of the total number of nodes.",
+    "question": "What percentage of nodes are currently ready?",
+    "query": "",
+    "metrics": [
+      "nodes"
+    ]
+  },
+  {
+    "id": "3b6ba9cd-c56d-40ae-9cfd-9e94486e8594",
+    "name": "Nodes available",
+    "description": "The PromQL query measures the percentage of nodes that are in a ready state out of the total number of nodes.",
+    "question": "How many nodes are in a ready state?",
+    "query": "",
+    "metrics": [
+      "nodes"
+    ]
+  },
+  {
+    "id": "9add9897-855a-4284-86df-efcb680944ef",
+    "name": "Nodes available",
+    "description": "The PromQL query measures the percentage of nodes that are in a ready state out of the total number of nodes.",
+    "question": "What is the ratio of ready nodes to total nodes?",
+    "query": "",
+    "metrics": [
+      "nodes"
+    ]
+  },
+  {
+    "id": "44e1e6d6-395e-411d-aadf-0d3a0d94be70",
+    "name": "Number of unscheduled pods",
+    "description": "This PromQL query measures the number of unscheduled pods in a Kubernetes cluster at the current moment.",
+    "question": "How many unscheduled pods are there currently?",
+    "query": "",
+    "metrics": [
+      "unscheduled_pods"
+    ]
+  },
+  {
+    "id": "8fb036d5-2a69-4957-8e61-33ad9e076127",
+    "name": "Number of unscheduled pods",
+    "description": "This PromQL query measures the number of unscheduled pods in a Kubernetes cluster at the current moment.",
+    "question": "Are there any pods waiting to be scheduled?",
+    "query": "",
+    "metrics": [
+      "unscheduled_pods"
+    ]
+  },
+  {
+    "id": "d6972023-9977-4386-8a11-75e8d7b21ad1",
+    "name": "Number of unscheduled pods",
+    "description": "This PromQL query measures the number of unscheduled pods in a Kubernetes cluster at the current moment.",
+    "question": "Is the number of unscheduled pods increasing or decreasing?",
+    "query": "",
+    "metrics": [
+      "unscheduled_pods"
+    ]
+  },
+  {
+    "id": "ef9d9694-806c-4bf9-ae20-ac5544d503a9",
+    "name": "Last scaleDown activity",
+    "description": "This PromQL query measures the last instance of a scaleDown activity in the system.",
+    "question": "How many scaleDown activities occurred recently?",
+    "query": "",
+    "metrics": [
+      "scaleDown"
+    ]
+  },
+  {
+    "id": "a153e8cc-25db-44b9-84c7-68f05029a37b",
+    "name": "Last scaleDown activity",
+    "description": "This PromQL query measures the last instance of a scaleDown activity in the system.",
+    "question": "When was the last scaleDown activity recorded?",
+    "query": "",
+    "metrics": [
+      "scaleDown"
+    ]
+  },
+  {
+    "id": "daa00998-d185-4583-b463-4984e88b407f",
+    "name": "Last scaleDown activity",
+    "description": "This PromQL query measures the last instance of a scaleDown activity in the system.",
+    "question": "Which component triggered the last scaleDown activity?",
+    "query": "",
+    "metrics": [
+      "scaleDown"
+    ]
+  }
+]

@@ -1,0 +1,125 @@
+[
+  {
+    "id": "74059b52-d356-48cf-be17-54eb6e0aad0c",
+    "name": "Total  Count of logs",
+    "description": "This PromQL query measures the total count of log lines in the specified time range.",
+    "question": "What is the total count of log lines?",
+    "query": "",
+    "metrics": [
+      "Total"
+    ]
+  },
+  {
+    "id": "3d57a981-01e6-48c3-b5ff-db492b287807",
+    "name": "Total  Count of logs",
+    "description": "This PromQL query measures the total count of log lines in the specified time range.",
+    "question": "How many log lines were recorded?",
+    "query": "",
+    "metrics": [
+      "Total"
+    ]
+  },
+  {
+    "id": "86222d74-5e5f-40a3-b7ca-9d9556e047ab",
+    "name": "Total  Count of logs",
+    "description": "This PromQL query measures the total count of log lines in the specified time range.",
+    "question": "What is the cumulative count of logs?",
+    "query": "",
+    "metrics": [
+      "Total"
+    ]
+  },
+  {
+    "id": "1382174d-d4f7-47e2-9687-8507c4cbaa5b",
+    "name": "Total Count: of $searchable_pattern",
+    "description": "This PromQL query measures the total count of a specific pattern specified by the variable $searchable_pattern within the specified time range.",
+    "question": "What is the total count of the specified pattern?",
+    "query": "",
+    "metrics": [
+      "$searchable_pattern"
+    ]
+  },
+  {
+    "id": "7d3475b5-27b7-40a6-8644-d4c281a2fe80",
+    "name": "Total Count: of $searchable_pattern",
+    "description": "This PromQL query measures the total count of a specific pattern specified by the variable $searchable_pattern within the specified time range.",
+    "question": "How many occurrences of the specified pattern are there?",
+    "query": "",
+    "metrics": [
+      "$searchable_pattern"
+    ]
+  },
+  {
+    "id": "db1088f4-6c7d-4a3b-a357-feeb5c5c56fc",
+    "name": "Total Count: of $searchable_pattern",
+    "description": "This PromQL query measures the total count of a specific pattern specified by the variable $searchable_pattern within the specified time range.",
+    "question": "What is the aggregate count of the pattern?",
+    "query": "",
+    "metrics": [
+      "$searchable_pattern"
+    ]
+  },
+  {
+    "id": "ffd14552-98c3-4569-ae2d-1902a7e5fbb8",
+    "name": "Live logs",
+    "description": "The PromQL query measures the real-time streaming of logs data, similar to the 'tail -f' command, providing a continuous feed of log events as they occur.",
+    "question": "How many log events are being streamed currently?",
+    "query": "",
+    "metrics": [
+      "live_logs"
+    ]
+  },
+  {
+    "id": "af4aee8a-8db7-41aa-b363-ef18312ff3ac",
+    "name": "Live logs",
+    "description": "The PromQL query measures the real-time streaming of logs data, similar to the 'tail -f' command, providing a continuous feed of log events as they occur.",
+    "question": "What is the trend in log events over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "live_logs"
+    ]
+  },
+  {
+    "id": "c0903d65-f092-441a-84ff-4512c46e0fed",
+    "name": "Live logs",
+    "description": "The PromQL query measures the real-time streaming of logs data, similar to the 'tail -f' command, providing a continuous feed of log events as they occur.",
+    "question": "Which log event has the highest occurrence in the streaming data?",
+    "query": "",
+    "metrics": [
+      "live_logs"
+    ]
+  },
+  {
+    "id": "bcb050b5-f9c2-465a-b08c-35e6d9e27641",
+    "name": "Total count of stderr / stdout pie",
+    "description": "This PromQL query measures the total count of stderr and stdout logs, presenting the data in a pie chart.",
+    "question": "What is the total count of stderr logs?",
+    "query": "",
+    "metrics": [
+      "stderr",
+      "stdout"
+    ]
+  },
+  {
+    "id": "8d6246f2-cce5-4718-8f15-a282241b97b3",
+    "name": "Total count of stderr / stdout pie",
+    "description": "This PromQL query measures the total count of stderr and stdout logs, presenting the data in a pie chart.",
+    "question": "What is the total count of stdout logs?",
+    "query": "",
+    "metrics": [
+      "stderr",
+      "stdout"
+    ]
+  },
+  {
+    "id": "ba1a13e8-719b-4980-96ae-57b9599e180e",
+    "name": "Total count of stderr / stdout pie",
+    "description": "This PromQL query measures the total count of stderr and stdout logs, presenting the data in a pie chart.",
+    "question": "How does the distribution of stderr and stdout logs compare?",
+    "query": "",
+    "metrics": [
+      "stderr",
+      "stdout"
+    ]
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "4a40841c-4422-4fb8-820d-bca94431b643",
+    "name": "Query Operations",
+    "description": "This PromQL query measures the rate of increase over time of a specific metric in the last 5 minutes.",
+    "question": "What is the rate of increase of node_cpu_seconds_total?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "5a380305-3007-43c0-9035-be5d93b72c3c",
+    "name": "Query Operations",
+    "description": "This PromQL query measures the rate of increase over time of a specific metric in the last 5 minutes.",
+    "question": "How has the metric node_cpu_seconds_total changed recently?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f61f7a7c-1ee7-4fdc-827e-c1c7955d25c5",
+    "name": "Query Operations",
+    "description": "This PromQL query measures the rate of increase over time of a specific metric in the last 5 minutes.",
+    "question": "Is there a trend in the node_cpu_seconds_total metric over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a56ea5e3-0ee6-4297-a9e8-9c92b138e064",
+    "name": "Document Operations",
+    "description": "This PromQL query measures the rate of document operations over a specified time range.",
+    "question": "How many document operations occurred?",
+    "query": "",
+    "metrics": [
+      "document_operations_total"
+    ]
+  },
+  {
+    "id": "9f620f58-8e78-4fb4-b909-b60493508ad7",
+    "name": "Document Operations",
+    "description": "This PromQL query measures the rate of document operations over a specified time range.",
+    "question": "What is the rate of document operations?",
+    "query": "",
+    "metrics": [
+      "document_operations_total"
+    ]
+  },
+  {
+    "id": "9ac64619-43b1-4b82-a93c-c67efd584ee3",
+    "name": "Document Operations",
+    "description": "This PromQL query measures the rate of document operations over a specified time range.",
+    "question": "Are there any spikes in document operations?",
+    "query": "",
+    "metrics": [
+      "document_operations_total"
+    ]
+  },
+  {
+    "id": "04a24a00-00d1-4525-95df-dfbfb6e41085",
+    "name": "Document Query Executor",
+    "description": "This PromQL query measures the rate of document queries executed by the Document Query Executor component.",
+    "question": "How many document queries were executed by the Document Query Executor?",
+    "query": "",
+    "metrics": [
+      "document_query_executor_total"
+    ]
+  },
+  {
+    "id": "8a8a4ffd-04d0-42d8-9874-cd87daee5d7e",
+    "name": "Document Query Executor",
+    "description": "This PromQL query measures the rate of document queries executed by the Document Query Executor component.",
+    "question": "What is the trend of document query executions over the specified time range?",
+    "query": "",
+    "metrics": [
+      "document_query_executor_total"
+    ]
+  },
+  {
+    "id": "f22333fd-768a-423f-8d3e-e154797dfab7",
+    "name": "Document Query Executor",
+    "description": "This PromQL query measures the rate of document queries executed by the Document Query Executor component.",
+    "question": "Are there any spikes in document query executions that need further investigation?",
+    "query": "",
+    "metrics": [
+      "document_query_executor_total"
+    ]
+  },
+  {
+    "id": "f83815f3-41a3-495a-8697-d6d11952673d",
+    "name": "Member Health",
+    "description": "The PromQL query measures the health status of members based on various metrics collected from the system.",
+    "question": "What is the total CPU usage of the nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "3a03e235-883f-4d60-9836-9c4bce4624dd",
+    "name": "Member Health",
+    "description": "The PromQL query measures the health status of members based on various metrics collected from the system.",
+    "question": "Are there any spikes in the CPU usage of the nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "94cad9a5-7343-48a3-9ae0-0dfa0faaec55",
+    "name": "Member Health",
+    "description": "The PromQL query measures the health status of members based on various metrics collected from the system.",
+    "question": "How is the CPU usage distributed among different nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9c71ffad-9b4b-49af-b239-2bf312f83c2e",
+    "name": "Member State",
+    "description": "The PromQL query measures the current state of members, indicating which node is currently acting as the primary, secondary, or other roles.",
+    "question": "Which node is currently acting as the primary?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "065f53ec-4d8b-425f-9e22-d042e7f106b1",
+    "name": "Member State",
+    "description": "The PromQL query measures the current state of members, indicating which node is currently acting as the primary, secondary, or other roles.",
+    "question": "Which node is currently acting as the secondary?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "30c01d52-7201-423d-bd4a-6fdd49da9911",
+    "name": "Member State",
+    "description": "The PromQL query measures the current state of members, indicating which node is currently acting as the primary, secondary, or other roles.",
+    "question": "Which node is currently in an idle state?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

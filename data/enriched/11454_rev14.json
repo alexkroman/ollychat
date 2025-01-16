@@ -1,0 +1,92 @@
+[
+  {
+    "id": "599ef748-95e2-409f-9914-00c7755bc4a3",
+    "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
+    "description": "This PromQL query measures the daily usage rate of storage volumes within a specific infrastructure namespace over the past week, indicating when these volumes reach full capacity.",
+    "question": "How has the daily use rate of storage volumes in the infrastructure namespace changed over the past week?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "377e815b-46e5-4bf8-acca-4e5eb69db09f",
+    "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
+    "description": "This PromQL query measures the daily usage rate of storage volumes within a specific infrastructure namespace over the past week, indicating when these volumes reach full capacity.",
+    "question": "Which days experienced the highest storage volume usage within the infrastructure namespace over the past week?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "0ea47f24-f1d6-4cef-b98b-32baf0c2450e",
+    "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
+    "description": "This PromQL query measures the daily usage rate of storage volumes within a specific infrastructure namespace over the past week, indicating when these volumes reach full capacity.",
+    "question": "Are there any storage volumes within the infrastructure namespace that have consistently high usage rates throughout the week?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "862f1a7e-7385-4458-8eec-6b7ea8c8bace",
+    "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
+    "description": "This PromQL query measures the rate at which user namespace volumes become full over the past week, based on their daily use rate.",
+    "question": "What is the rate at which user namespace volumes become full over the past week?",
+    "query": "",
+    "metrics": [
+      "user_namespace_volumes_full"
+    ]
+  },
+  {
+    "id": "6befd47b-12bd-4a7b-9163-774c395b79b1",
+    "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
+    "description": "This PromQL query measures the rate at which user namespace volumes become full over the past week, based on their daily use rate.",
+    "question": "Which user namespace volumes have experienced the highest daily use rate?",
+    "query": "",
+    "metrics": [
+      "user_namespace_volumes_full"
+    ]
+  },
+  {
+    "id": "6f2a77d7-914d-4626-980f-53247301bdc3",
+    "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
+    "description": "This PromQL query measures the rate at which user namespace volumes become full over the past week, based on their daily use rate.",
+    "question": "Are there any user namespace volumes that have consistently remained full over the past week?",
+    "query": "",
+    "metrics": [
+      "user_namespace_volumes_full"
+    ]
+  },
+  {
+    "id": "c690ccf5-1114-462d-aa16-fd114d7695fb",
+    "name": "Unbound PVCs",
+    "description": "The PromQL query measures the number of Unbound Persistent Volume Claims (PVCs) in the system.",
+    "question": "How many Unbound PVCs are currently present?",
+    "query": "",
+    "metrics": [
+      "unbound_pvc_count"
+    ]
+  },
+  {
+    "id": "60fb966e-42a0-4721-88ad-8fb69014675b",
+    "name": "Unbound PVCs",
+    "description": "The PromQL query measures the number of Unbound Persistent Volume Claims (PVCs) in the system.",
+    "question": "What is the total count of Unbound PVCs?",
+    "query": "",
+    "metrics": [
+      "unbound_pvc_count"
+    ]
+  },
+  {
+    "id": "5afe9088-7afb-44af-b130-b3d1cb8d7dfc",
+    "name": "Unbound PVCs",
+    "description": "The PromQL query measures the number of Unbound Persistent Volume Claims (PVCs) in the system.",
+    "question": "Are there any Unbound PVCs without associated storage?",
+    "query": "",
+    "metrics": [
+      "unbound_pvc_count"
+    ]
+  }
+]

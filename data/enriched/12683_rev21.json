@@ -1,0 +1,185 @@
+[
+  {
+    "id": "f0267b06-20bb-427f-b8d2-86e4110edd3d",
+    "name": "Samples scraped/s",
+    "description": "The PromQL query measures the rate of samples scraped from configured targets over a specified time range.",
+    "question": "What is the rate of samples being scraped from configured targets?",
+    "query": "",
+    "metrics": [
+      "samples"
+    ]
+  },
+  {
+    "id": "87a9b3f5-a019-4f09-8c91-7fc67639a933",
+    "name": "Samples scraped/s",
+    "description": "The PromQL query measures the rate of samples scraped from configured targets over a specified time range.",
+    "question": "How many samples are being scraped per second?",
+    "query": "",
+    "metrics": [
+      "samples"
+    ]
+  },
+  {
+    "id": "5c9b7051-33be-419c-88cc-b1d0594a7b12",
+    "name": "Samples scraped/s",
+    "description": "The PromQL query measures the rate of samples scraped from configured targets over a specified time range.",
+    "question": "What is the sampling rate from the configured targets?",
+    "query": "",
+    "metrics": [
+      "samples"
+    ]
+  },
+  {
+    "id": "06e405be-80ad-49dd-8612-483bfa85beae",
+    "name": "Samples ingested/s",
+    "description": "This PromQL query measures the rate at which samples are ingested over a certain time period.",
+    "question": "What is the rate of samples being ingested?",
+    "query": "",
+    "metrics": [
+      "samples"
+    ]
+  },
+  {
+    "id": "c440d472-abd2-4861-87fa-c3fecf432de7",
+    "name": "Samples ingested/s",
+    "description": "This PromQL query measures the rate at which samples are ingested over a certain time period.",
+    "question": "How many samples are being ingested per second?",
+    "query": "",
+    "metrics": [
+      "samples"
+    ]
+  },
+  {
+    "id": "5a56e5a2-5abc-4d42-b4d5-40d0aa0fe145",
+    "name": "Samples ingested/s",
+    "description": "This PromQL query measures the rate at which samples are ingested over a certain time period.",
+    "question": "Is there a trend in the ingestion rate of samples?",
+    "query": "",
+    "metrics": [
+      "samples"
+    ]
+  },
+  {
+    "id": "ccba7024-dcc6-4c51-b3ae-d1291e8cbe5b",
+    "name": "Targets scraped/s",
+    "description": "The PromQL query measures the rate at which targets are being scraped per second.",
+    "question": "How many targets are being scraped per second?",
+    "query": "",
+    "metrics": [
+      "targets_scraped"
+    ]
+  },
+  {
+    "id": "36cb5807-b90a-44a2-a169-fb91fd1f1978",
+    "name": "Targets scraped/s",
+    "description": "The PromQL query measures the rate at which targets are being scraped per second.",
+    "question": "What is the rate of target scraping?",
+    "query": "",
+    "metrics": [
+      "targets_scraped"
+    ]
+  },
+  {
+    "id": "7e7e954f-ad5f-4673-aaef-54f2b95ead12",
+    "name": "Targets scraped/s",
+    "description": "The PromQL query measures the rate at which targets are being scraped per second.",
+    "question": "How often are targets being updated?",
+    "query": "",
+    "metrics": [
+      "targets_scraped"
+    ]
+  },
+  {
+    "id": "c5106c5d-4a40-48c2-8335-4e6c937c1b3e",
+    "name": "Scrape targets",
+    "description": "This PromQL query measures the total number of all configured scrape targets that are in state 'up' or 'down'.",
+    "question": "How many scrape targets are currently up?",
+    "query": "",
+    "metrics": [
+      "up",
+      "down"
+    ]
+  },
+  {
+    "id": "921b462a-38b4-4be2-8abf-d4d820238a78",
+    "name": "Scrape targets",
+    "description": "This PromQL query measures the total number of all configured scrape targets that are in state 'up' or 'down'.",
+    "question": "How many scrape targets are currently down?",
+    "query": "",
+    "metrics": [
+      "up",
+      "down"
+    ]
+  },
+  {
+    "id": "f400c88c-91d8-4fc0-9f96-1f079cb76004",
+    "name": "Scrape targets",
+    "description": "This PromQL query measures the total number of all configured scrape targets that are in state 'up' or 'down'.",
+    "question": "What is the total number of configured scrape targets?",
+    "query": "",
+    "metrics": [
+      "up",
+      "down"
+    ]
+  },
+  {
+    "id": "c03f6c41-7f17-43e8-ad1e-03a98fd2d502",
+    "name": "Log errors (30m)",
+    "description": "This PromQL query measures the number of generated error messages in logs over the last 30 minutes. A non-zero value may indicate potential connectivity or misconfiguration errors.",
+    "question": "How many error messages were generated in the logs in the last 30 minutes?",
+    "query": "",
+    "metrics": [
+      "error_messages"
+    ]
+  },
+  {
+    "id": "0b56c769-d866-4e48-9f95-fbc0283a13f9",
+    "name": "Log errors (30m)",
+    "description": "This PromQL query measures the number of generated error messages in logs over the last 30 minutes. A non-zero value may indicate potential connectivity or misconfiguration errors.",
+    "question": "Are there any recent spikes in error messages in the logs?",
+    "query": "",
+    "metrics": [
+      "error_messages"
+    ]
+  },
+  {
+    "id": "11de7532-dbac-4995-888c-098acb5bdc94",
+    "name": "Log errors (30m)",
+    "description": "This PromQL query measures the number of generated error messages in logs over the last 30 minutes. A non-zero value may indicate potential connectivity or misconfiguration errors.",
+    "question": "Is the rate of error messages increasing or decreasing over time?",
+    "query": "",
+    "metrics": [
+      "error_messages"
+    ]
+  },
+  {
+    "id": "53be4bda-2ec9-4850-aba1-8ef1a066721d",
+    "name": "Uptime",
+    "description": "The PromQL query measures the uptime of a system or service by querying metrics related to its availability over a specific time range.",
+    "question": "What is the average CPU uptime over the past 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "c1a70a18-6a55-42a2-a533-0e9868f98671",
+    "name": "Uptime",
+    "description": "The PromQL query measures the uptime of a system or service by querying metrics related to its availability over a specific time range.",
+    "question": "How does the CPU uptime compare to a specific threshold?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "d12c32a2-9b8a-434f-ba61-1b28ab6a5483",
+    "name": "Uptime",
+    "description": "The PromQL query measures the uptime of a system or service by querying metrics related to its availability over a specific time range.",
+    "question": "Which nodes have experienced the highest uptime during the monitoring period?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "3eacf488-c2f0-4006-9eb9-7e18be65f18a",
+    "name": "Total Requests",
+    "description": "The PromQL query measures the total number of requests made to a specific service or endpoint over a certain time period.",
+    "question": "How many requests were made to the service in the last hour?",
+    "query": "",
+    "metrics": [
+      "total_requests"
+    ]
+  },
+  {
+    "id": "5e9cc014-36a9-4c89-92ca-5052ac7716d4",
+    "name": "Total Requests",
+    "description": "The PromQL query measures the total number of requests made to a specific service or endpoint over a certain time period.",
+    "question": "What is the average number of requests per minute to the endpoint?",
+    "query": "",
+    "metrics": [
+      "total_requests"
+    ]
+  },
+  {
+    "id": "af140109-d11f-4f51-acd9-fc9b61b22f6a",
+    "name": "Total Requests",
+    "description": "The PromQL query measures the total number of requests made to a specific service or endpoint over a certain time period.",
+    "question": "What is the peak request count observed in a day?",
+    "query": "",
+    "metrics": [
+      "total_requests"
+    ]
+  },
+  {
+    "id": "0259068d-6c00-463d-b724-ffbce8a859c2",
+    "name": "Requests Count",
+    "description": "This PromQL query measures the count of requests received by a specific service or endpoint over a specified time period.",
+    "question": "How many requests were received by the service?",
+    "query": "",
+    "metrics": [
+      "requests_total"
+    ]
+  },
+  {
+    "id": "1a2e1dfe-07be-4fab-b06e-0b02ee46fcfa",
+    "name": "Requests Count",
+    "description": "This PromQL query measures the count of requests received by a specific service or endpoint over a specified time period.",
+    "question": "What is the total count of requests handled?",
+    "query": "",
+    "metrics": [
+      "requests_total"
+    ]
+  },
+  {
+    "id": "97b1a175-3546-4abe-be91-45e24f26aecf",
+    "name": "Requests Count",
+    "description": "This PromQL query measures the count of requests received by a specific service or endpoint over a specified time period.",
+    "question": "Which endpoint received the most requests?",
+    "query": "",
+    "metrics": [
+      "requests_total"
+    ]
+  },
+  {
+    "id": "e47140b3-d8c2-4e87-91f7-fdcb02a64a7c",
+    "name": "Requests Average Duration",
+    "description": "This PromQL query measures the average duration of requests over a specified time range.",
+    "question": "What is the average duration of requests?",
+    "query": "",
+    "metrics": [
+      "requests_duration"
+    ]
+  },
+  {
+    "id": "d49a5248-bac1-4aae-a305-509f9cf27982",
+    "name": "Requests Average Duration",
+    "description": "This PromQL query measures the average duration of requests over a specified time range.",
+    "question": "How does the request duration vary over time?",
+    "query": "",
+    "metrics": [
+      "requests_duration"
+    ]
+  },
+  {
+    "id": "846aba5d-f8f2-4fce-a8d5-7e0fe2224784",
+    "name": "Requests Average Duration",
+    "description": "This PromQL query measures the average duration of requests over a specified time range.",
+    "question": "Is there any correlation between request duration and other metrics?",
+    "query": "",
+    "metrics": [
+      "requests_duration"
+    ]
+  },
+  {
+    "id": "e0ec6c76-21ee-4dd8-8a5b-926f679b39aa",
+    "name": "Total Exceptions",
+    "description": "This PromQL query measures the total number of exceptions occurred in the system over a specific time period.",
+    "question": "What is the total number of exceptions thrown in the system?",
+    "query": "",
+    "metrics": [
+      "total_exceptions"
+    ]
+  },
+  {
+    "id": "83ead641-b5c8-4a42-bc06-b32a777cac0d",
+    "name": "Total Exceptions",
+    "description": "This PromQL query measures the total number of exceptions occurred in the system over a specific time period.",
+    "question": "How many exceptions have occurred in the system so far?",
+    "query": "",
+    "metrics": [
+      "total_exceptions"
+    ]
+  },
+  {
+    "id": "5850a01a-c466-4304-8ef2-010955effcc0",
+    "name": "Total Exceptions",
+    "description": "This PromQL query measures the total number of exceptions occurred in the system over a specific time period.",
+    "question": "What is the overall count of exceptions in the system?",
+    "query": "",
+    "metrics": [
+      "total_exceptions"
+    ]
+  },
+  {
+    "id": "dd5d7798-2565-456e-a952-40182044513c",
+    "name": "Percent of 2xx Requests",
+    "description": "The PromQL query measures the percentage of successful (2xx) HTTP requests out of all HTTP requests made to the system.",
+    "question": "What is the percentage of successful HTTP requests out of all HTTP requests?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "ed75d0cc-30e2-4564-9cdd-d9b4187b8d4c",
+    "name": "Percent of 2xx Requests",
+    "description": "The PromQL query measures the percentage of successful (2xx) HTTP requests out of all HTTP requests made to the system.",
+    "question": "How are successful HTTP requests trending over time?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "8cb7b540-f43a-4a89-82e5-3d0ecf11b397",
+    "name": "Percent of 2xx Requests",
+    "description": "The PromQL query measures the percentage of successful (2xx) HTTP requests out of all HTTP requests made to the system.",
+    "question": "Are there any patterns or anomalies in the success rate of HTTP requests?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  }
+]

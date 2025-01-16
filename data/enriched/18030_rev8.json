@@ -1,0 +1,116 @@
+[
+  {
+    "id": "01e2e0be-7ac3-4f2c-8b31-40d2ca278a22",
+    "name": "Performance Overview",
+    "description": "This PromQL query measures the total CPU usage in seconds over a 5-minute rate interval.",
+    "question": "What is the total CPU usage over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "efb5b9c3-c46e-47ef-8a44-41511b84ac55",
+    "name": "Performance Overview",
+    "description": "This PromQL query measures the total CPU usage in seconds over a 5-minute rate interval.",
+    "question": "Which node has the highest CPU usage over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "52687752-a0cb-422e-b167-d816c4f745da",
+    "name": "Performance Overview",
+    "description": "This PromQL query measures the total CPU usage in seconds over a 5-minute rate interval.",
+    "question": "How does the CPU usage compare across different nodes over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "9e525177-eb36-4107-9bdc-8cfe0fe31073",
+    "name": "HTTP requests",
+    "description": "This PromQL query measures the total number of HTTP requests made to a specific endpoint over a certain time period.",
+    "question": "How many HTTP requests were made to the endpoint in the last hour?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "aa1795cf-a36e-45b8-9dfc-bc7a6937e4a8",
+    "name": "HTTP requests",
+    "description": "This PromQL query measures the total number of HTTP requests made to a specific endpoint over a certain time period.",
+    "question": "What is the average number of HTTP requests per minute to the endpoint?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "416ce4c9-a061-405e-b667-029488d77a9f",
+    "name": "HTTP requests",
+    "description": "This PromQL query measures the total number of HTTP requests made to a specific endpoint over a certain time period.",
+    "question": "Are there any spikes in HTTP requests to the endpoint during peak hours?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "57654de2-ebfe-43ce-814b-6233dd070e6c",
+    "name": "HTTP request failures",
+    "description": "The PromQL query measures the number of HTTP request failures over a specific time period.",
+    "question": "How many HTTP request failures occurred?",
+    "query": "",
+    "metrics": [
+      "http_request_failures"
+    ]
+  },
+  {
+    "id": "60ed4b9b-43e5-4834-8539-c1c10b0bfdaa",
+    "name": "HTTP request failures",
+    "description": "The PromQL query measures the number of HTTP request failures over a specific time period.",
+    "question": "What is the trend of HTTP request failures?",
+    "query": "",
+    "metrics": [
+      "http_request_failures"
+    ]
+  },
+  {
+    "id": "615cd2b3-ee55-40c4-928b-508e59af825c",
+    "name": "HTTP request failures",
+    "description": "The PromQL query measures the number of HTTP request failures over a specific time period.",
+    "question": "Which endpoints have the highest number of HTTP request failures?",
+    "query": "",
+    "metrics": [
+      "http_request_failures"
+    ]
+  },
+  {
+    "id": "5be35c6b-f633-463a-898c-8aacb6c9eded",
+    "name": "Peak RPS",
+    "description": "This PromQL query measures the peak Requests per Second (RPS) over a specific time range.",
+    "question": "What was the peak Requests per Second (RPS) in the last hour?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "f4c4aab5-5cdd-473c-a759-cd9b2d3814b0",
+    "name": "Peak RPS",
+    "description": "This PromQL query measures the peak Requests per Second (RPS) over a specific time range.",
+    "question": "What was the peak Requests per Second (RPS) in the last day?",
+    "query": "",
+    "metrics": []
+  },
+  {
+    "id": "05d84aea-1686-4e89-800e-1e2aeed24eeb",
+    "name": "Peak RPS",
+    "description": "This PromQL query measures the peak Requests per Second (RPS) over a specific time range.",
+    "question": "What was the peak Requests per Second (RPS) in the last week?",
+    "query": "",
+    "metrics": []
+  }
+]

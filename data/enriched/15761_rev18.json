@@ -1,0 +1,158 @@
+[
+  {
+    "id": "33c2b96d-a9f8-45c2-a4a2-576edc9e3514",
+    "name": "API Server - Health Status",
+    "description": "The PromQL query measures the health status of the API server by monitoring various metrics such as latency, error rates, and uptime.",
+    "question": "What is the current latency of the API server?",
+    "query": "",
+    "metrics": [
+      "latency",
+      "error_rate",
+      "uptime"
+    ]
+  },
+  {
+    "id": "f0dbf941-0a9a-41ef-ab40-7d64c8342274",
+    "name": "API Server - Health Status",
+    "description": "The PromQL query measures the health status of the API server by monitoring various metrics such as latency, error rates, and uptime.",
+    "question": "How frequently are errors occurring on the API server?",
+    "query": "",
+    "metrics": [
+      "latency",
+      "error_rate",
+      "uptime"
+    ]
+  },
+  {
+    "id": "3a4d73e2-909c-4b77-a595-d380c0a69dd5",
+    "name": "API Server - Health Status",
+    "description": "The PromQL query measures the health status of the API server by monitoring various metrics such as latency, error rates, and uptime.",
+    "question": "Is the API server experiencing any downtime?",
+    "query": "",
+    "metrics": [
+      "latency",
+      "error_rate",
+      "uptime"
+    ]
+  },
+  {
+    "id": "db4802ba-5b94-4daa-bfde-09dc3f2759e5",
+    "name": "Deprecated Kubernetes Resources",
+    "description": "This PromQL query measures the count of Kubernetes resources that are deprecated within the cluster.",
+    "question": "How many Kubernetes resources are deprecated?",
+    "query": "",
+    "metrics": [
+      "count"
+    ]
+  },
+  {
+    "id": "947b93ae-35b9-4bc1-a9d1-cbb609a63642",
+    "name": "Deprecated Kubernetes Resources",
+    "description": "This PromQL query measures the count of Kubernetes resources that are deprecated within the cluster.",
+    "question": "Which Kubernetes resources are marked as deprecated?",
+    "query": "",
+    "metrics": [
+      "count"
+    ]
+  },
+  {
+    "id": "ec1e5e90-1b89-40bd-ae97-e68e9275c006",
+    "name": "Deprecated Kubernetes Resources",
+    "description": "This PromQL query measures the count of Kubernetes resources that are deprecated within the cluster.",
+    "question": "Is the count of deprecated Kubernetes resources increasing over time?",
+    "query": "",
+    "metrics": [
+      "count"
+    ]
+  },
+  {
+    "id": "472e6b6e-ec4a-4f7e-b0fe-74d51ffa0d5e",
+    "name": "API Server - HTTP Requests by code",
+    "description": "This PromQL query measures the count of HTTP requests grouped by their response code on the API server.",
+    "question": "How many HTTP requests with response code 2xx were made to the API server?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "c25b3f16-08c7-48b7-b7e4-e70768ad080b",
+    "name": "API Server - HTTP Requests by code",
+    "description": "This PromQL query measures the count of HTTP requests grouped by their response code on the API server.",
+    "question": "What is the total count of HTTP requests with response code 4xx on the API server?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "0b4a7d74-e6bc-4801-b4b0-66c6c9f4fde0",
+    "name": "API Server - HTTP Requests by code",
+    "description": "This PromQL query measures the count of HTTP requests grouped by their response code on the API server.",
+    "question": "Which response code has the highest number of HTTP requests on the API server?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "5a76eeb1-d7c1-4686-8e9f-deed15ab8b29",
+    "name": "API Server - HTTP Requests by verb",
+    "description": "This PromQL query measures the count of HTTP requests by verb (GET, POST, PUT, etc.) hitting the API server.",
+    "question": "How many GET requests were made to the API server?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "dca35c4a-8444-44ed-ba5f-7864d9b0d6be",
+    "name": "API Server - HTTP Requests by verb",
+    "description": "This PromQL query measures the count of HTTP requests by verb (GET, POST, PUT, etc.) hitting the API server.",
+    "question": "What is the distribution of HTTP request verbs hitting the API server?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "2c68eccb-b192-4d82-8d9f-5a683b98e1f0",
+    "name": "API Server - HTTP Requests by verb",
+    "description": "This PromQL query measures the count of HTTP requests by verb (GET, POST, PUT, etc.) hitting the API server.",
+    "question": "Which HTTP request verb has the highest count hitting the API server?",
+    "query": "",
+    "metrics": [
+      "http_requests_total"
+    ]
+  },
+  {
+    "id": "f1326c02-6e67-407c-9980-392f0f3afe2e",
+    "name": "API Server - HTTP Requests Latency by instance",
+    "description": "The PromQL query measures the latency of HTTP requests handled by each instance of the API server.",
+    "question": "What is the average latency of HTTP requests for each instance?",
+    "query": "",
+    "metrics": [
+      "http_requests_latency"
+    ]
+  },
+  {
+    "id": "85a7c95c-4cf0-4762-a5c1-8225347a1977",
+    "name": "API Server - HTTP Requests Latency by instance",
+    "description": "The PromQL query measures the latency of HTTP requests handled by each instance of the API server.",
+    "question": "Which instance has the highest latency for HTTP requests?",
+    "query": "",
+    "metrics": [
+      "http_requests_latency"
+    ]
+  },
+  {
+    "id": "cbac174e-5e81-4b9a-8f5e-0483daed3596",
+    "name": "API Server - HTTP Requests Latency by instance",
+    "description": "The PromQL query measures the latency of HTTP requests handled by each instance of the API server.",
+    "question": "How does the latency of HTTP requests vary across different instances?",
+    "query": "",
+    "metrics": [
+      "http_requests_latency"
+    ]
+  }
+]

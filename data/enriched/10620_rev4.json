@@ -1,0 +1,152 @@
+[
+  {
+    "id": "334bfe79-a2f1-49ac-b6e1-afde4f73495d",
+    "name": "PIPELINES #",
+    "description": "This PromQL query measures the total number of pipelines running in the system.",
+    "question": "How many pipelines are currently running?",
+    "query": "",
+    "metrics": [
+      "pipelines_total"
+    ]
+  },
+  {
+    "id": "207ababf-f45f-43fb-a5c7-51cfde32168e",
+    "name": "PIPELINES #",
+    "description": "This PromQL query measures the total number of pipelines running in the system.",
+    "question": "What is the total count of pipelines in the system?",
+    "query": "",
+    "metrics": [
+      "pipelines_total"
+    ]
+  },
+  {
+    "id": "fe24b136-34d7-41ff-ad7f-76e851e1398f",
+    "name": "PIPELINES #",
+    "description": "This PromQL query measures the total number of pipelines running in the system.",
+    "question": "Are there any spikes in pipeline activity?",
+    "query": "",
+    "metrics": [
+      "pipelines_total"
+    ]
+  },
+  {
+    "id": "de90e52a-e9d8-4309-954a-39759de8021f",
+    "name": "FAILED PIPELINES #",
+    "description": "This PromQL query measures the number of failed pipelines.",
+    "question": "How many pipelines have failed?",
+    "query": "",
+    "metrics": [
+      "FAILED_PIPELINES"
+    ]
+  },
+  {
+    "id": "e63cb65a-2fc3-4bf9-94a7-452fc33a462d",
+    "name": "FAILED PIPELINES #",
+    "description": "This PromQL query measures the number of failed pipelines.",
+    "question": "What is the current count of failed pipelines?",
+    "query": "",
+    "metrics": [
+      "FAILED_PIPELINES"
+    ]
+  },
+  {
+    "id": "38d75dd1-8699-4b8c-a5e0-243d80545fe3",
+    "name": "FAILED PIPELINES #",
+    "description": "This PromQL query measures the number of failed pipelines.",
+    "question": "Are there any pipelines that failed recently?",
+    "query": "",
+    "metrics": [
+      "FAILED_PIPELINES"
+    ]
+  },
+  {
+    "id": "806fdea3-c614-4dda-87fa-f7e309ceac62",
+    "name": "RUNS # (in the last hour)",
+    "description": "This PromQL query measures the total number of runs that occurred within the last hour.",
+    "question": "How many runs have occurred in the last hour?",
+    "query": "",
+    "metrics": [
+      "RUNS"
+    ]
+  },
+  {
+    "id": "c7c60d8c-7634-4bcc-b8d1-fef6c26ab631",
+    "name": "RUNS # (in the last hour)",
+    "description": "This PromQL query measures the total number of runs that occurred within the last hour.",
+    "question": "What is the total count of runs in the recent past hour?",
+    "query": "",
+    "metrics": [
+      "RUNS"
+    ]
+  },
+  {
+    "id": "e1376db6-6be1-443a-bc09-8b1576667bfa",
+    "name": "RUNS # (in the last hour)",
+    "description": "This PromQL query measures the total number of runs that occurred within the last hour.",
+    "question": "How many executions have taken place within the previous hour?",
+    "query": "",
+    "metrics": [
+      "RUNS"
+    ]
+  },
+  {
+    "id": "744c27c2-ab28-4f9c-a2d0-375f5e6efef9",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase in CPU seconds consumed by a specific node over a 5-minute window.",
+    "question": "What is the rate of increase in CPU seconds consumed by the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "b740ce8c-365f-489e-a474-c622601ec0e4",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase in CPU seconds consumed by a specific node over a 5-minute window.",
+    "question": "How much CPU time has been consumed by the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "44bedd4a-88fd-4279-8fb0-42e911e4415d",
+    "name": "",
+    "description": "This PromQL query measures the rate of increase in CPU seconds consumed by a specific node over a 5-minute window.",
+    "question": "Is the CPU consumption by the node increasing or decreasing?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "20b37fc3-9365-4f67-88d2-0aa21700d18a",
+    "name": "Average Pipeline Run Frequency",
+    "description": "The PromQL query measures the average frequency at which a pipeline runs over a specific time period.",
+    "question": "What is the average frequency of pipeline runs?",
+    "query": "",
+    "metrics": [
+      "pipeline_run_frequency"
+    ]
+  },
+  {
+    "id": "4bed39fe-5dc6-4fde-81f1-8f376aa00588",
+    "name": "Average Pipeline Run Frequency",
+    "description": "The PromQL query measures the average frequency at which a pipeline runs over a specific time period.",
+    "question": "How often does the pipeline execute on average?",
+    "query": "",
+    "metrics": [
+      "pipeline_run_frequency"
+    ]
+  },
+  {
+    "id": "c0752964-83a8-4dc3-9d4f-4423dc8f721b",
+    "name": "Average Pipeline Run Frequency",
+    "description": "The PromQL query measures the average frequency at which a pipeline runs over a specific time period.",
+    "question": "What is the mean interval between successive pipeline runs?",
+    "query": "",
+    "metrics": [
+      "pipeline_run_frequency"
+    ]
+  }
+]

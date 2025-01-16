@@ -1,0 +1,152 @@
+[
+  {
+    "id": "da66fab5-7b06-4e26-86d8-7ce0db7cd3af",
+    "name": "CoreDNS Version",
+    "description": "This PromQL query measures the version of CoreDNS running in the system.",
+    "question": "What is the current version of CoreDNS?",
+    "query": "",
+    "metrics": [
+      "coredns_version"
+    ]
+  },
+  {
+    "id": "29283afe-f251-4c42-b059-b06edd52cae8",
+    "name": "CoreDNS Version",
+    "description": "This PromQL query measures the version of CoreDNS running in the system.",
+    "question": "How many instances of CoreDNS with different versions are running?",
+    "query": "",
+    "metrics": [
+      "coredns_version"
+    ]
+  },
+  {
+    "id": "5b58a2d2-faf2-4d1a-bdac-f2981257fca9",
+    "name": "CoreDNS Version",
+    "description": "This PromQL query measures the version of CoreDNS running in the system.",
+    "question": "Which CoreDNS version has the highest request count?",
+    "query": "",
+    "metrics": [
+      "coredns_version"
+    ]
+  },
+  {
+    "id": "58d68385-76da-4080-ad49-d105edde6a61",
+    "name": "Requests (total)",
+    "description": "This PromQL query measures the total number of requests made to a specific endpoint or service over a certain time period.",
+    "question": "How many requests were made to the endpoint/service?",
+    "query": "",
+    "metrics": [
+      "requests_total"
+    ]
+  },
+  {
+    "id": "39aa6668-8825-4810-9d04-87966912bd09",
+    "name": "Requests (total)",
+    "description": "This PromQL query measures the total number of requests made to a specific endpoint or service over a certain time period.",
+    "question": "What is the total count of requests received?",
+    "query": "",
+    "metrics": [
+      "requests_total"
+    ]
+  },
+  {
+    "id": "f05380fa-fd6a-4fcb-bb78-584d17a8addc",
+    "name": "Requests (total)",
+    "description": "This PromQL query measures the total number of requests made to a specific endpoint or service over a certain time period.",
+    "question": "How many requests have been processed by the endpoint/service?",
+    "query": "",
+    "metrics": [
+      "requests_total"
+    ]
+  },
+  {
+    "id": "2bf06e23-0252-41c8-941a-af94718cf5b9",
+    "name": "Requests (by qtype)",
+    "description": "This PromQL query measures the number of requests grouped by query type (qtype). It provides insights into the distribution of request types over time.",
+    "question": "What is the total number of requests by query type?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "5b91abb6-c97e-4cc3-b187-c4ac0f69e089",
+    "name": "Requests (by qtype)",
+    "description": "This PromQL query measures the number of requests grouped by query type (qtype). It provides insights into the distribution of request types over time.",
+    "question": "Which query type has the highest number of requests?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "368186e5-4f2c-4dd4-9f2c-0b694c5536fd",
+    "name": "Requests (by qtype)",
+    "description": "This PromQL query measures the number of requests grouped by query type (qtype). It provides insights into the distribution of request types over time.",
+    "question": "How has the distribution of request types changed over the monitoring period?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "4307a3d3-c67e-474f-a870-f0d8a99b87bd",
+    "name": "Requests (by zone)",
+    "description": "This PromQL query measures the number of requests grouped by different zones.",
+    "question": "How many requests were made in each zone?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "cdf81384-46a7-49dd-86e2-599d9b69add7",
+    "name": "Requests (by zone)",
+    "description": "This PromQL query measures the number of requests grouped by different zones.",
+    "question": "Which zone has the highest number of requests?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "6a35304f-ee0b-43c7-9b93-73e6b89cbdd6",
+    "name": "Requests (by zone)",
+    "description": "This PromQL query measures the number of requests grouped by different zones.",
+    "question": "Is there a significant difference in request count between different zones?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "d3e49021-f91f-45a4-a65d-4b8da1d7c9b2",
+    "name": "Requests (DO bit)",
+    "description": "This PromQL query measures the rate of requests processed by the system based on a specific data object (DO bit).",
+    "question": "How many requests were processed by the system for the specified data object?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "d3fdba53-d0b7-4087-b113-f969d5e47427",
+    "name": "Requests (DO bit)",
+    "description": "This PromQL query measures the rate of requests processed by the system based on a specific data object (DO bit).",
+    "question": "Is there a trend in the request processing rate for the specific data object?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  },
+  {
+    "id": "1061cc3d-90c6-41c6-b29f-e1ac02c52e34",
+    "name": "Requests (DO bit)",
+    "description": "This PromQL query measures the rate of requests processed by the system based on a specific data object (DO bit).",
+    "question": "Are there any spikes or drops in the rate of requests for the specified data object?",
+    "query": "",
+    "metrics": [
+      "requests"
+    ]
+  }
+]

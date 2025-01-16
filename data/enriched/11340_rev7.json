@@ -1,0 +1,62 @@
+[
+  {
+    "id": "3d9c3059-14b2-4de8-a425-74b733e3e1a7",
+    "name": "Log entries committed / s",
+    "description": "This PromQL query measures the rate of Raft log operations committed, including all queue operations such as publishes and consumer acknowledgements. It tracks the progress of the Raft commit index on all members, including followers. RabbitMQ nodes that do not run a Raft member will not report any entries committed.",
+    "question": "What is the rate of Raft log operations committed?",
+    "query": "",
+    "metrics": [
+      "raft_log_operations_committed"
+    ]
+  },
+  {
+    "id": "09645fd0-83db-4fdc-adee-94018467ce2b",
+    "name": "Log entries committed / s",
+    "description": "This PromQL query measures the rate of Raft log operations committed, including all queue operations such as publishes and consumer acknowledgements. It tracks the progress of the Raft commit index on all members, including followers. RabbitMQ nodes that do not run a Raft member will not report any entries committed.",
+    "question": "How many queue operations are included in the committed log entries?",
+    "query": "",
+    "metrics": [
+      "raft_log_operations_committed"
+    ]
+  },
+  {
+    "id": "03dfaa69-5e93-47dd-8bfe-71f8cfc947c5",
+    "name": "Log entries committed / s",
+    "description": "This PromQL query measures the rate of Raft log operations committed, including all queue operations such as publishes and consumer acknowledgements. It tracks the progress of the Raft commit index on all members, including followers. RabbitMQ nodes that do not run a Raft member will not report any entries committed.",
+    "question": "Does the metric track the progress of the Raft commit index on followers as well?",
+    "query": "",
+    "metrics": [
+      "raft_log_operations_committed"
+    ]
+  },
+  {
+    "id": "6d3d259a-0558-4103-be1c-50a06b7e7c05",
+    "name": "Uncommitted log entries",
+    "description": "This PromQL query measures the number of Raft log entries that have been written but not yet committed, which can indicate a potential issue if the values are high and growing.",
+    "question": "How many Raft log entries are currently uncommitted?",
+    "query": "",
+    "metrics": [
+      "Pending Raft log entries"
+    ]
+  },
+  {
+    "id": "c80bb94a-659e-4195-889e-c6f50de3b345",
+    "name": "Uncommitted log entries",
+    "description": "This PromQL query measures the number of Raft log entries that have been written but not yet committed, which can indicate a potential issue if the values are high and growing.",
+    "question": "Are there any trends indicating a potential issue with Raft log commitments?",
+    "query": "",
+    "metrics": [
+      "Pending Raft log entries"
+    ]
+  },
+  {
+    "id": "9634c369-99ae-474c-b124-c7fe5e347bf3",
+    "name": "Uncommitted log entries",
+    "description": "This PromQL query measures the number of Raft log entries that have been written but not yet committed, which can indicate a potential issue if the values are high and growing.",
+    "question": "Is there a correlation between uncommitted Raft log entries and system availability?",
+    "query": "",
+    "metrics": [
+      "Pending Raft log entries"
+    ]
+  }
+]

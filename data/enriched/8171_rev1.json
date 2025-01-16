@@ -1,0 +1,155 @@
+[
+  {
+    "id": "57054984-ff7f-4474-a761-bb43012aa3e8",
+    "name": "Idle CPU",
+    "description": "This PromQL query measures the percentage of idle CPU time over a specified time range.",
+    "question": "What is the current percentage of idle CPU time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "25985375-50d3-4685-9780-24e9e22d9ab5",
+    "name": "Idle CPU",
+    "description": "This PromQL query measures the percentage of idle CPU time over a specified time range.",
+    "question": "Is the idle CPU time increasing or decreasing?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "6194a8dc-9890-4ce1-823a-938ea7afbb0c",
+    "name": "Idle CPU",
+    "description": "This PromQL query measures the percentage of idle CPU time over a specified time range.",
+    "question": "How does the idle CPU time compare across different nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "cb019e85-4494-48ef-97ad-5437cf90232b",
+    "name": "System Load",
+    "description": "The PromQL query measures the system load on a particular host by querying the average CPU usage over the last 5 minutes.",
+    "question": "What is the average CPU usage over the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "64d46a29-181c-4911-bfe6-15008f4ac3c3",
+    "name": "System Load",
+    "description": "The PromQL query measures the system load on a particular host by querying the average CPU usage over the last 5 minutes.",
+    "question": "How does the CPU load vary over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f003a798-8057-4f33-aca9-2eeccea077af",
+    "name": "System Load",
+    "description": "The PromQL query measures the system load on a particular host by querying the average CPU usage over the last 5 minutes.",
+    "question": "Which processes are consuming the most CPU?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "3b50b5d0-8928-4704-8a80-c92a52433fb1",
+    "name": "Memory Usage",
+    "description": "The PromQL query measures the memory usage of a system or application over a specific time range.",
+    "question": "What is the current memory usage of the system?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "5784f48d-9521-4ca5-b583-1e5394f94ccd",
+    "name": "Memory Usage",
+    "description": "The PromQL query measures the memory usage of a system or application over a specific time range.",
+    "question": "How has the memory usage trend changed over the last 24 hours?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "53dc431c-2a18-443b-a22d-40d0868f3ca0",
+    "name": "Memory Usage",
+    "description": "The PromQL query measures the memory usage of a system or application over a specific time range.",
+    "question": "Which application is consuming the most memory?",
+    "query": "",
+    "metrics": [
+      "memory_usage"
+    ]
+  },
+  {
+    "id": "937248a5-986c-4c5d-b9fc-58087f6c8940",
+    "name": "Memory Usage",
+    "description": "This PromQL query measures the memory usage of a system or application over a certain period of time.",
+    "question": "What is the total memory available on the system?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal",
+      "node_memory_MemFree"
+    ]
+  },
+  {
+    "id": "fa448016-61f3-4542-961e-0f72c42b55f1",
+    "name": "Memory Usage",
+    "description": "This PromQL query measures the memory usage of a system or application over a certain period of time.",
+    "question": "How much free memory is currently available?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal",
+      "node_memory_MemFree"
+    ]
+  },
+  {
+    "id": "56497eec-a220-4bdc-becf-789725981bf0",
+    "name": "Memory Usage",
+    "description": "This PromQL query measures the memory usage of a system or application over a certain period of time.",
+    "question": "What is the percentage of memory usage on the system?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemTotal",
+      "node_memory_MemFree"
+    ]
+  },
+  {
+    "id": "f3e18e86-5945-444d-b609-ff76ea90789f",
+    "name": "Disk I/O",
+    "description": "The PromQL query measures the disk input/output (I/O) operations on a system over a specific time range.",
+    "question": "How many disk I/O operations have been performed?",
+    "query": "",
+    "metrics": [
+      "disk_io_operations_total"
+    ]
+  },
+  {
+    "id": "5a845445-c85b-4e7e-b689-eba48cb996fa",
+    "name": "Disk I/O",
+    "description": "The PromQL query measures the disk input/output (I/O) operations on a system over a specific time range.",
+    "question": "What is the rate of disk I/O operations?",
+    "query": "",
+    "metrics": [
+      "disk_io_operations_total"
+    ]
+  },
+  {
+    "id": "10852de6-6ad3-4d73-adf0-83045e2d01a9",
+    "name": "Disk I/O",
+    "description": "The PromQL query measures the disk input/output (I/O) operations on a system over a specific time range.",
+    "question": "Which disks are experiencing the highest I/O activity?",
+    "query": "",
+    "metrics": [
+      "disk_io_operations_total"
+    ]
+  }
+]

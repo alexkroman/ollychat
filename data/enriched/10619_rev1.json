@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1abce857-9649-4ddd-838b-3dcdf2e277a1",
+    "name": "CPU Usage on Node",
+    "description": "This PromQL query measures the CPU usage on a specific node over a specified time period.",
+    "question": "What is the total CPU usage on the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "7c816506-d478-4b7e-90c6-6adc7d27b8e6",
+    "name": "CPU Usage on Node",
+    "description": "This PromQL query measures the CPU usage on a specific node over a specified time period.",
+    "question": "How has the CPU usage trend on the node changed over time?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "0d1f3942-7842-4fcd-a23a-19f739f86434",
+    "name": "CPU Usage on Node",
+    "description": "This PromQL query measures the CPU usage on a specific node over a specified time period.",
+    "question": "Which processes are consuming the most CPU on the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "8b7c5903-85e1-4cc3-b94f-291d474856ee",
+    "name": "Free and Used Disk Space on Node",
+    "description": "This PromQL query measures the free and used disk space on a node.",
+    "question": "What is the current amount of free disk space on the node?",
+    "query": "",
+    "metrics": [
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes",
+      "node_filesystem_used_bytes"
+    ]
+  },
+  {
+    "id": "b666b95e-98e6-4127-83ec-80c4d601aebb",
+    "name": "Free and Used Disk Space on Node",
+    "description": "This PromQL query measures the free and used disk space on a node.",
+    "question": "What is the total size of the disk space on the node?",
+    "query": "",
+    "metrics": [
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes",
+      "node_filesystem_used_bytes"
+    ]
+  },
+  {
+    "id": "f1d564a3-5300-4b23-9313-b8b0e69c37ef",
+    "name": "Free and Used Disk Space on Node",
+    "description": "This PromQL query measures the free and used disk space on a node.",
+    "question": "How much disk space is currently being used on the node?",
+    "query": "",
+    "metrics": [
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes",
+      "node_filesystem_used_bytes"
+    ]
+  },
+  {
+    "id": "973064ed-934a-4898-b287-9835738bd127",
+    "name": "Available Memory on Node",
+    "description": "This PromQL query measures the available memory on a specific node by querying the relevant metric from the monitoring system.",
+    "question": "What is the current available memory on the node?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "e9266e3a-8562-407f-b9a2-5cee33cf6912",
+    "name": "Available Memory on Node",
+    "description": "This PromQL query measures the available memory on a specific node by querying the relevant metric from the monitoring system.",
+    "question": "How has the available memory on the node changed over time?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "00d408d0-2065-4050-baec-1d3326e3d532",
+    "name": "Available Memory on Node",
+    "description": "This PromQL query measures the available memory on a specific node by querying the relevant metric from the monitoring system.",
+    "question": "Which node has the highest available memory?",
+    "query": "",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  }
+]

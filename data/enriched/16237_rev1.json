@@ -1,0 +1,122 @@
+[
+  {
+    "id": "eb17b000-bb86-4089-8971-3d6dbbe646b1",
+    "name": "Node Utilization",
+    "description": "The PromQL query measures the utilization of nodes in the system over a specified time range.",
+    "question": "What is the overall CPU utilization of the nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "8e66b94b-6c1d-43a5-bf9a-4c7acfb5b1ea",
+    "name": "Node Utilization",
+    "description": "The PromQL query measures the utilization of nodes in the system over a specified time range.",
+    "question": "Which node has the highest CPU utilization?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "56e35e70-5979-44fd-af5f-7b1d34fe55f3",
+    "name": "Node Utilization",
+    "description": "The PromQL query measures the utilization of nodes in the system over a specified time range.",
+    "question": "How has the node utilization trend changed over the past 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f21a377a-7a4b-4e25-84cb-2e547b397266",
+    "name": "Node Overcommitment",
+    "description": "The PromQL query measures the degree of overcommitment of resources on a node, indicating the extent to which more resources have been allocated to containers or pods than are physically available on the node.",
+    "question": "What is the total CPU usage on the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "4f31fa7d-a86e-4a35-9424-0161e29a22b4",
+    "name": "Node Overcommitment",
+    "description": "The PromQL query measures the degree of overcommitment of resources on a node, indicating the extent to which more resources have been allocated to containers or pods than are physically available on the node.",
+    "question": "How much CPU time has been consumed by all processes on the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "75f28d50-ccb0-443c-bb19-36d52c6ca618",
+    "name": "Node Overcommitment",
+    "description": "The PromQL query measures the degree of overcommitment of resources on a node, indicating the extent to which more resources have been allocated to containers or pods than are physically available on the node.",
+    "question": "What is the cumulative CPU time consumed by all containers or pods running on the node?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "2d7b3a7b-fcd6-4dbc-808c-48bea240697e",
+    "name": "Cluster Residual Capacity",
+    "description": "The PromQL query measures the remaining capacity or available resources within a cluster, indicating how much more workload the cluster can handle before reaching its limit.",
+    "question": "What is the current residual capacity of the cluster in terms of CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "031aed2d-1950-4525-ad8a-565322bb7cbc",
+    "name": "Cluster Residual Capacity",
+    "description": "The PromQL query measures the remaining capacity or available resources within a cluster, indicating how much more workload the cluster can handle before reaching its limit.",
+    "question": "How much more workload can the cluster handle before reaching its CPU capacity limit?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "64615cb9-c075-46c3-89d9-94f635f4efd3",
+    "name": "Cluster Residual Capacity",
+    "description": "The PromQL query measures the remaining capacity or available resources within a cluster, indicating how much more workload the cluster can handle before reaching its limit.",
+    "question": "Is there sufficient cluster capacity available to accommodate additional services or applications?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "e21b7742-016f-40f0-b974-54f722a57530",
+    "name": "Current Node Metrics",
+    "description": "This PromQL query measures the total CPU usage across all nodes over a 5-minute window.",
+    "question": "What is the total CPU usage across all nodes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "4ef11b6c-d2be-47f6-8ee4-c9d4b24c8924",
+    "name": "Current Node Metrics",
+    "description": "This PromQL query measures the total CPU usage across all nodes over a 5-minute window.",
+    "question": "How has the CPU usage trend been in the last 5 minutes?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "54636334-61d6-4495-856e-7039861ddd8d",
+    "name": "Current Node Metrics",
+    "description": "This PromQL query measures the total CPU usage across all nodes over a 5-minute window.",
+    "question": "Which nodes are contributing the most to the overall CPU usage?",
+    "query": "",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  }
+]

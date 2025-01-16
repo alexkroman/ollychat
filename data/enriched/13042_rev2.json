@@ -1,0 +1,128 @@
+[
+  {
+    "id": "9e07b8e2-f655-4766-b568-aa0415bac16f",
+    "name": "Fluentd output error/retry rate",
+    "description": "This PromQL query measures the error and retry rate of the Fluentd output, indicating the frequency at which errors occur and how often data is retried for processing.",
+    "question": "What is the error rate of Fluentd output?",
+    "query": "",
+    "metrics": [
+      "fluentd_output_error_rate",
+      "fluentd_output_retry_rate"
+    ]
+  },
+  {
+    "id": "895de27e-105f-47a8-bce7-3c88424b46c2",
+    "name": "Fluentd output error/retry rate",
+    "description": "This PromQL query measures the error and retry rate of the Fluentd output, indicating the frequency at which errors occur and how often data is retried for processing.",
+    "question": "How frequently does data processing in Fluentd encounter errors?",
+    "query": "",
+    "metrics": [
+      "fluentd_output_error_rate",
+      "fluentd_output_retry_rate"
+    ]
+  },
+  {
+    "id": "e7ca59f5-019a-49f9-899e-4f56ef1b58dc",
+    "name": "Fluentd output error/retry rate",
+    "description": "This PromQL query measures the error and retry rate of the Fluentd output, indicating the frequency at which errors occur and how often data is retried for processing.",
+    "question": "What is the rate at which data is retried for processing in Fluentd output?",
+    "query": "",
+    "metrics": [
+      "fluentd_output_error_rate",
+      "fluentd_output_retry_rate"
+    ]
+  },
+  {
+    "id": "0b5a44f0-c753-46d0-a85f-57b4fcc0302b",
+    "name": "Input /  output rate",
+    "description": "This PromQL query measures the total input and output rates over a specified time range.",
+    "question": "What is the total input rate?",
+    "query": "",
+    "metrics": [
+      "input",
+      "output"
+    ]
+  },
+  {
+    "id": "ed3c44fd-b07d-484b-99a6-57e6d91d556b",
+    "name": "Input /  output rate",
+    "description": "This PromQL query measures the total input and output rates over a specified time range.",
+    "question": "What is the total output rate?",
+    "query": "",
+    "metrics": [
+      "input",
+      "output"
+    ]
+  },
+  {
+    "id": "3607bb74-e6c5-4299-8def-4138c5d39262",
+    "name": "Input /  output rate",
+    "description": "This PromQL query measures the total input and output rates over a specified time range.",
+    "question": "How do input and output rates compare over time?",
+    "query": "",
+    "metrics": [
+      "input",
+      "output"
+    ]
+  },
+  {
+    "id": "bdc52087-a9de-4a1b-8802-d2053bcf1eeb",
+    "name": "fluentd output status buffer available space ratio",
+    "description": "This PromQL query measures the ratio of available space in the buffer used by the fluentd output status. A value of 0 indicates that logs may be blocked from processing or dropped.",
+    "question": "What is the current ratio of available space in the fluentd output status buffer?",
+    "query": "",
+    "metrics": [
+      "fluentd_output_status_buffer_available_space_ratio"
+    ]
+  },
+  {
+    "id": "3c0f5321-85ed-4775-bbde-7b5a45ce4abf",
+    "name": "fluentd output status buffer available space ratio",
+    "description": "This PromQL query measures the ratio of available space in the buffer used by the fluentd output status. A value of 0 indicates that logs may be blocked from processing or dropped.",
+    "question": "Is the available space in the fluentd output status buffer decreasing over time?",
+    "query": "",
+    "metrics": [
+      "fluentd_output_status_buffer_available_space_ratio"
+    ]
+  },
+  {
+    "id": "99ae55c9-c75f-460e-937b-3d37d7464204",
+    "name": "fluentd output status buffer available space ratio",
+    "description": "This PromQL query measures the ratio of available space in the buffer used by the fluentd output status. A value of 0 indicates that logs may be blocked from processing or dropped.",
+    "question": "Is the fluentd output status buffer at risk of logs being blocked or dropped based on the available space ratio?",
+    "query": "",
+    "metrics": [
+      "fluentd_output_status_buffer_available_space_ratio"
+    ]
+  },
+  {
+    "id": "6e082d6d-5c82-45c0-b086-f842761dcd9d",
+    "name": "fluentd output status flush time count rate",
+    "description": "This PromQL query measures the total flush time for fluentd output status.",
+    "question": "What is the total flush time for fluentd output status?",
+    "query": "",
+    "metrics": [
+      "fluentd_output_status_flush_time_count_rate"
+    ]
+  },
+  {
+    "id": "522d5d5e-f4eb-47f1-b25c-8e8c2b3f40bd",
+    "name": "fluentd output status flush time count rate",
+    "description": "This PromQL query measures the total flush time for fluentd output status.",
+    "question": "How many flush events have occurred for fluentd output status?",
+    "query": "",
+    "metrics": [
+      "fluentd_output_status_flush_time_count_rate"
+    ]
+  },
+  {
+    "id": "4ad3e11c-a2c4-402a-8b9e-b1d7f3a9b462",
+    "name": "fluentd output status flush time count rate",
+    "description": "This PromQL query measures the total flush time for fluentd output status.",
+    "question": "What is the rate at which flush time is counted for fluentd output status?",
+    "query": "",
+    "metrics": [
+      "fluentd_output_status_flush_time_count_rate"
+    ]
+  }
+]
