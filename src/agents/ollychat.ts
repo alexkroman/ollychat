@@ -9,11 +9,11 @@ import { metricsExampleSelector } from '../tools/getMetrics.js';
 import { loadPromptFromFile, loadFile } from '../tools/loadPrompts.js';
 import { exampleSelector } from '../tools/getQueryExamples.js';
 import { formatExamples } from '../tools/formatExamples.js';
+import { normalizeQuestion } from '../tools/normalize.js';
 
 const getQueryExamples = async (state: typeof StateAnnotation.State) => {
-  const examples = await exampleSelector.invoke(state.question);
+  const examples = await exampleSelector.invoke(normalizeQuestion(state.question));
   const combinedExamples = await formatExamples(examples, 'example', ['question', 'query']);
-  console.log(combinedExamples);
   return { examples: combinedExamples };
 };
 
@@ -39,9 +39,16 @@ const executeQuery = async (state: typeof StateAnnotation.State) => {
 };
 
 const generateAnswer = async (state: typeof StateAnnotation.State) => {
-  const promptValue = loadFile('answerPrompt');
-  const response = await model.invoke(promptValue);
-  return { answer: response.content };
+  const answerPromptTemplate = loadPromptFromFile('answerPrompt');
+  const answerPromptValue = await answerPromptTemplate.invoke({
+    question: state.question,
+    query: state.query,
+    result: state.result,
+  });
+
+  const result = await model.invoke(answerPromptValue);
+  return { answer: result.content };
+
 };
 
 const StateAnnotation = Annotation.Root({

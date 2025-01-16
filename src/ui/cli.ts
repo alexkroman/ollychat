@@ -2,7 +2,6 @@ import chalk from 'chalk';
 import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
 import { answerQuestion } from "../agents/ollychat.js";
-import ora from 'ora';
 
 interface Command {
     name: string;
@@ -17,8 +16,8 @@ export class CLI {
     private prompt: string;
     private isRunning: boolean = true;
 
-    constructor(promptText: string = 'you >> ') {
-        this.prompt = chalk.blue(promptText);
+    constructor(promptText: string = '❱ ') {
+        this.prompt = chalk.magenta.bold(promptText);
 
         this.rl = createInterface({
             input: process.stdin,
@@ -32,33 +31,29 @@ export class CLI {
             const messageText = input.trim();
             if (!messageText) return;
 
-            chalk.green('Processing your input...')
+            console.log(chalk.green('\nQuerying...'));
             
             const result = await answerQuestion({ question: messageText });
-
-            console.log(chalk.magenta("ollychat >> ") + chalk.cyan(result.answer));
+            console.log(chalk.bold.cyan("🔍 Query: ") + chalk.yellow(result.query));
+            console.log(chalk.bold.green("✅ Answer: ") + chalk.magenta(result.answer) + "\n");
 
         } catch (error) {
             if (logging === true) {
                 console.error(chalk.red('Error processing input:'), error);
             } else {
-                console.log(chalk.magenta("ollychat >> ") + chalk.red("Sorry I ran into an issue."));
+                console.log(chalk.red("Sorry I ran into an issue."));
             }
         }
     }
 
     public async start() {
-        console.log(chalk.cyan('══════════════════════════════════════════════'));
-        console.log(chalk.bold.rgb(255, 165, 0)('💬🤖  Welcome to OLLYCHAT 🚀✨'));
-        console.log(chalk.cyan('══════════════════════════════════════════════'));
-        
-        console.log(chalk.green('\n💡 Tips:'));
-        console.log(chalk.green('- Type your questions below and press Enter'));
-        console.log(chalk.green('- Ctrl-C to quit'));
-        
-        console.log(chalk.magentaBright('\n🔥🐶🔥 Everything is Fine 🔥🐶🔥'));
-        
-        console.log(chalk.cyan('\n══════════════════════════════════════════════'));
+
+// ASCII Art Title
+console.log(chalk.cyan('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
+console.log(chalk.bold.rgb(255, 165, 0)('💬🤖  Welcome to OLLYCHAT 🚀✨'));
+console.log(chalk.green('- Just type your questions and hit Enter. OLLY will do the rest.'));
+console.log(chalk.green('- Ctrl-C to exit'));
+console.log(chalk.cyan('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'));
 
         this.rl.prompt();
 

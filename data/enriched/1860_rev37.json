@@ -1,152 +1,824 @@
 [
   {
-    "id": "7bddf2f8-c239-48d0-a521-85be814531ca",
+    "id": "aed22086-b47c-4b1f-b767-754eecf975c7",
     "name": "Pressure",
-    "description": "This PromQL query measures the resource pressure in pounds per square inch (PSI) in the system.",
-    "question": "What is the total CPU usage in the system?",
-    "query": "",
+    "question": "What is the rate of waiting CPU pressure on nodes?",
+    "query": "irate(node_pressure_cpu_waiting_seconds_total[30m])",
     "metrics": [
-      "node_cpu_seconds_total"
+      "node_pressure_cpu_waiting_seconds_total"
     ]
   },
   {
-    "id": "caf7acd4-276e-4486-99f8-ad4fe897f7ec",
+    "id": "eef5c6cb-6306-4da9-89a9-b8f0dcd61b7f",
     "name": "Pressure",
-    "description": "This PromQL query measures the resource pressure in pounds per square inch (PSI) in the system.",
-    "question": "How does the CPU usage change over the last 5 minutes?",
-    "query": "",
+    "question": "How is CPU pressure impacting resources?",
+    "query": "irate(node_pressure_cpu_waiting_seconds_total[30m])",
     "metrics": [
-      "node_cpu_seconds_total"
+      "node_pressure_cpu_waiting_seconds_total"
     ]
   },
   {
-    "id": "df6ddbe9-d478-4d37-a6b4-e1839bc35208",
+    "id": "d58e8832-24bc-40b0-82c2-d5253645f6d8",
     "name": "Pressure",
-    "description": "This PromQL query measures the resource pressure in pounds per square inch (PSI) in the system.",
-    "question": "Which nodes have the highest CPU usage?",
-    "query": "",
+    "question": "Which nodes are experiencing CPU pressure?",
+    "query": "irate(node_pressure_cpu_waiting_seconds_total[30m])",
     "metrics": [
-      "node_cpu_seconds_total"
+      "node_pressure_cpu_waiting_seconds_total"
     ]
   },
   {
-    "id": "5d22cd0a-65ee-4bc9-b218-a4faddc8f680",
+    "id": "c6cb6f2a-f8a1-4f95-a375-06b9a9f471bd",
+    "name": "Pressure",
+    "question": "What is the rate of memory pressure waiting time?",
+    "query": "irate(node_pressure_memory_waiting_seconds_total[30m])",
+    "metrics": [
+      "node_pressure_memory_waiting_seconds_total"
+    ]
+  },
+  {
+    "id": "d4f0cded-93fe-4b14-a889-09f5118906c5",
+    "name": "Pressure",
+    "question": "How is the memory resource pressure changing over time?",
+    "query": "irate(node_pressure_memory_waiting_seconds_total[30m])",
+    "metrics": [
+      "node_pressure_memory_waiting_seconds_total"
+    ]
+  },
+  {
+    "id": "3e8687fd-ad3d-4717-97d6-2efa4d8bc109",
+    "name": "Pressure",
+    "question": "Which node is experiencing the highest memory pressure waiting time?",
+    "query": "irate(node_pressure_memory_waiting_seconds_total[30m])",
+    "metrics": [
+      "node_pressure_memory_waiting_seconds_total"
+    ]
+  },
+  {
+    "id": "58dda929-6cb1-4945-a90b-b7085b2b2db5",
+    "name": "Pressure",
+    "question": "What is the rate of IO waiting time for a node?",
+    "query": "irate(node_pressure_io_waiting_seconds_total[30m])",
+    "metrics": [
+      "node_pressure_io_waiting_seconds_total"
+    ]
+  },
+  {
+    "id": "5d5fe1b5-1814-45a8-92e3-f95312d6fccb",
+    "name": "Pressure",
+    "question": "How is the resource pressure measured in PSI?",
+    "query": "irate(node_pressure_io_waiting_seconds_total[30m])",
+    "metrics": [
+      "node_pressure_io_waiting_seconds_total"
+    ]
+  },
+  {
+    "id": "50c509a3-e114-425e-ac59-f69d529cdc22",
+    "name": "Pressure",
+    "question": "Which metric tracks the total IO waiting time for a node?",
+    "query": "irate(node_pressure_io_waiting_seconds_total[30m])",
+    "metrics": [
+      "node_pressure_io_waiting_seconds_total"
+    ]
+  },
+  {
+    "id": "ca80e3f2-3bc7-45ad-a7ff-7e59c0c8fdab",
     "name": "CPU Busy",
-    "description": "This PromQL query measures the combined busy state of all CPU cores.",
-    "question": "What is the total CPU busy state across all cores?",
-    "query": "",
+    "question": "What is the average rate of CPU busy state?",
+    "query": "100 * (1 - avg(rate(node_cpu_seconds_total[30m])))",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "4685b2c3-bd1e-402f-a1de-cf7591081c3a",
+    "id": "a1be489c-abdf-4652-ac75-6e7d478e6315",
     "name": "CPU Busy",
-    "description": "This PromQL query measures the combined busy state of all CPU cores.",
-    "question": "How has the CPU busy state changed over the past 5 minutes?",
-    "query": "",
+    "question": "How much percentage of CPU cores are busy on average?",
+    "query": "100 * (1 - avg(rate(node_cpu_seconds_total[30m])))",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "542db51b-0207-4d5a-a693-881a7bde2814",
+    "id": "46cdbae1-d240-4d5b-8c47-c5e5b75f2354",
     "name": "CPU Busy",
-    "description": "This PromQL query measures the combined busy state of all CPU cores.",
-    "question": "Is there a correlation between CPU busy state and any other metric?",
-    "query": "",
+    "question": "What is the average CPU busyness across all cores?",
+    "query": "100 * (1 - avg(rate(node_cpu_seconds_total[30m])))",
     "metrics": [
       "node_cpu_seconds_total"
     ]
   },
   {
-    "id": "12a560ae-e05c-4911-af21-04f674c24225",
+    "id": "24d119d6-834b-4ef8-a5ad-0e310e4c9e6b",
     "name": "Sys Load",
-    "description": "The PromQL query measures the system load over all CPU cores combined.",
-    "question": "What is the total system load over all CPU cores?",
-    "query": "",
+    "question": "What is the system load over all CPU cores together?",
+    "query": "scalar(node_load1) * 100 / count(count(node_cpu_seconds_total) by (cpu))",
     "metrics": [
-      "node_cpu_seconds_total"
+      "node_load1",
+      "node_cpu_seconds_total",
+      "cpu"
     ]
   },
   {
-    "id": "5c97ca76-0e9e-4fd5-bd60-010c64efece1",
+    "id": "2160c752-3cd6-41b4-a3ae-ae639766ded9",
     "name": "Sys Load",
-    "description": "The PromQL query measures the system load over all CPU cores combined.",
-    "question": "How does the system load change over time?",
-    "query": "",
+    "question": "How does the system load correlate with the count of CPU cores?",
+    "query": "scalar(node_load1) * 100 / count(count(node_cpu_seconds_total) by (cpu))",
     "metrics": [
-      "node_cpu_seconds_total"
+      "node_load1",
+      "node_cpu_seconds_total",
+      "cpu"
     ]
   },
   {
-    "id": "8b8aefeb-6b6c-4293-b424-07a34b2560f0",
+    "id": "3273b499-3177-40c4-9c07-5d25a89097c4",
     "name": "Sys Load",
-    "description": "The PromQL query measures the system load over all CPU cores combined.",
-    "question": "Which processes are contributing the most to the system load?",
-    "query": "",
+    "question": "What is the percentage of system load per CPU core?",
+    "query": "scalar(node_load1) * 100 / count(count(node_cpu_seconds_total) by (cpu))",
     "metrics": [
-      "node_cpu_seconds_total"
+      "node_load1",
+      "node_cpu_seconds_total",
+      "cpu"
     ]
   },
   {
-    "id": "6027cde1-a509-43a8-93b5-b920d507ad29",
+    "id": "3b9e93c4-c736-43e9-b171-4e40bcab35ce",
     "name": "RAM Used",
-    "description": "This PromQL query measures the amount of non available RAM memory.",
-    "question": "What is the current amount of non available RAM memory?",
-    "query": "",
+    "question": "What is the percentage of used RAM memory?",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / node_memory_MemTotal_bytes) * 100",
     "metrics": [
-      "non_available_RAM_memory"
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "dfaef2e6-938a-4ae9-9f6e-0a69265b7b97",
+    "id": "a85204a0-2757-4e51-b654-bfdaac6d1b06",
     "name": "RAM Used",
-    "description": "This PromQL query measures the amount of non available RAM memory.",
-    "question": "How much RAM memory is not available?",
-    "query": "",
+    "question": "How much RAM memory is currently in use?",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / node_memory_MemTotal_bytes) * 100",
     "metrics": [
-      "non_available_RAM_memory"
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "47c544cb-6af8-4a84-890d-80729e44408f",
+    "id": "a55f1e8e-5a1b-4a74-8f1b-8220db5d0432",
     "name": "RAM Used",
-    "description": "This PromQL query measures the amount of non available RAM memory.",
-    "question": "Is there any non available RAM memory currently?",
-    "query": "",
+    "question": "What is the utilization of RAM memory?",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / node_memory_MemTotal_bytes) * 100",
     "metrics": [
-      "non_available_RAM_memory"
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes"
     ]
   },
   {
-    "id": "89593bfd-3e4f-4937-9bd7-26ca53d40444",
-    "name": "SWAP Used",
-    "description": "The PromQL query measures the amount of swap space that is currently being used on the system.",
-    "question": "What is the current amount of swap space being used?",
-    "query": "",
+    "id": "22860dfb-c278-4cf3-8e22-e838759d3954",
+    "name": "RAM Used",
+    "question": "What is the percentage of non available RAM memory?",
+    "query": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
     "metrics": [
-      "swap_used"
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
     ]
   },
   {
-    "id": "2a41195c-8817-487f-a4c0-a7b1122b89e3",
-    "name": "SWAP Used",
-    "description": "The PromQL query measures the amount of swap space that is currently being used on the system.",
-    "question": "How much swap space is being utilized?",
-    "query": "",
+    "id": "4a6a1b91-a9d3-4240-8722-3d222889b5e5",
+    "name": "RAM Used",
+    "question": "How much RAM memory is being used?",
+    "query": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
     "metrics": [
-      "swap_used"
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
     ]
   },
   {
-    "id": "6fa98001-2721-4540-ba7e-2fba1b711dfe",
-    "name": "SWAP Used",
-    "description": "The PromQL query measures the amount of swap space that is currently being used on the system.",
-    "question": "What is the level of swap usage?",
-    "query": "",
+    "id": "f670ddcf-1517-4fc6-9a65-b1f475ce08dc",
+    "name": "RAM Used",
+    "question": "What is the percentage of used RAM memory?",
+    "query": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
     "metrics": [
-      "swap_used"
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "dffe7b0b-7ddd-4c35-aba6-fbf204304e9d",
+    "name": "SWAP Used",
+    "question": "What is the percentage of used swap memory?",
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes)) * 100",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "fa6f50a4-c9ac-4fc0-820c-837c92af1f92",
+    "name": "SWAP Used",
+    "question": "How much swap memory is currently being utilized?",
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes)) * 100",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "2bf1b2be-487c-46fb-8af4-b2639412ede3",
+    "name": "SWAP Used",
+    "question": "What is the percentage of swap memory that is in use?",
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes)) * 100",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "25555207-77d3-4215-92fd-367a64375448",
+    "name": "Root FS Used",
+    "question": "What is the percentage of used root filesystem?",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "2742a2da-d4cb-4284-826f-3550074cea78",
+    "name": "Root FS Used",
+    "question": "What is the percentage of available root filesystem?",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "bde4c5c5-cf0e-4de3-91cf-520f5ce4c03e",
+    "name": "Root FS Used",
+    "question": "What is the percentage of total root filesystem size?",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "38a3415a-c850-4d62-9ee2-309011275f7e",
+    "name": "CPU Cores",
+    "question": "How many CPU cores are available?",
+    "query": "count(count(node_cpu_seconds_total) by (cpu))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "480e55cf-bfd0-46f2-87d3-22f6cfeb3dc9",
+    "name": "CPU Cores",
+    "question": "What is the count of CPU seconds total per CPU core?",
+    "query": "count(count(node_cpu_seconds_total) by (cpu))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "bfe0a8f7-5cbe-4306-b085-4d446c543d3f",
+    "name": "CPU Cores",
+    "question": "How many different CPUs are contributing to the total CPU seconds?",
+    "query": "count(count(node_cpu_seconds_total) by (cpu))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "afe08ae0-274b-43c8-80bd-5f8b3cbca95c",
+    "name": "Uptime",
+    "question": "What is the system uptime?",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_time_seconds",
+      "node_boot_time_seconds"
+    ]
+  },
+  {
+    "id": "f440f30b-518b-4a77-ae79-cf30f93afd07",
+    "name": "Uptime",
+    "question": "How much time has passed since the node was last booted?",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_time_seconds",
+      "node_boot_time_seconds"
+    ]
+  },
+  {
+    "id": "ec0bd1e7-fb8a-4145-a51f-548d8e0bb820",
+    "name": "Uptime",
+    "question": "What is the difference in time between the node time and boot time?",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_time_seconds",
+      "node_boot_time_seconds"
+    ]
+  },
+  {
+    "id": "140728bd-f536-47e4-ba3c-73d9ec7abb3d",
+    "name": "RootFS Total",
+    "question": "What is the total size of the RootFS?",
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "4bd59ab7-e749-40a1-8dc2-14fd60eae141",
+    "name": "RootFS Total",
+    "question": "How much disk space is allocated for the RootFS?",
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "e4860606-676c-48a3-998f-998377c4e5cd",
+    "name": "RootFS Total",
+    "question": "What is the capacity of the RootFS?",
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "0ee895a2-ee5b-420f-b039-5acb2b06f604",
+    "name": "RAM Total",
+    "question": "What is the total RAM available on the node?",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "ef523dbe-28e6-41bf-b198-8a6b71a66619",
+    "name": "RAM Total",
+    "question": "What is the overall memory capacity of the system?",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "661d7589-f130-4c43-9f9a-e2b0d12a9915",
+    "name": "RAM Total",
+    "question": "How much memory does the node have in total?",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "30262124-4558-4ff1-ba4d-428b7f128760",
+    "name": "SWAP Total",
+    "question": "What is the total SWAP memory in bytes?",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "ec5c4e3d-0bf2-43e1-896d-3d44883e28bf",
+    "name": "SWAP Total",
+    "question": "How much total SWAP memory does the node have?",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "f9fac640-bd47-482a-8eb8-5c0ef15f67e8",
+    "name": "SWAP Total",
+    "question": "What is the total amount of SWAP memory available?",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "29692906-05a3-4c5a-8b98-f1b7eb5201e3",
+    "name": "CPU Basic",
+    "question": "What is the average CPU usage across all CPUs?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "72f49ac9-98ce-419f-b35d-3df2a63ebc3c",
+    "name": "CPU Basic",
+    "question": "How many CPU cores are being monitored?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "82882a95-b339-4c41-a99f-23855c2b0dcf",
+    "name": "CPU Basic",
+    "question": "What is the rate of CPU usage change over the past 30 minutes?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "eca5bb3b-0eba-4eac-ae09-b21c0b4c8019",
+    "name": "CPU Basic",
+    "question": "What is the average CPU usage per CPU core over the last 30 minutes?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "3ec2595c-bcbd-47b4-9288-946641fba09f",
+    "name": "CPU Basic",
+    "question": "How many CPU cores are reporting CPU usage?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "ef2a3246-3f99-459d-abe4-cf25b210283e",
+    "name": "CPU Basic",
+    "question": "What is the total CPU usage across all cores over the last 30 minutes?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "f31685ed-b512-48b9-a043-fd59a18c0dee",
+    "name": "CPU Basic",
+    "question": "What is the average CPU usage across all CPUs?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "8df0e0ed-2ee2-43cd-95b8-439bcb329d50",
+    "name": "CPU Basic",
+    "question": "How many different CPUs are reporting CPU seconds total?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "23902ac4-633d-44f3-b237-7161d0f53ab5",
+    "name": "CPU Basic",
+    "question": "What is the ratio of CPU seconds total to the count of CPUs?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "c45eb2a1-a9bf-4cb4-b226-71094c13a7d9",
+    "name": "CPU Basic",
+    "question": "What is the average CPU usage per CPU core?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "0c100b1b-1024-4feb-ac9d-8d15a53be741",
+    "name": "CPU Basic",
+    "question": "How many CPU cores are active?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "e31ba9bf-e91e-4a81-99f1-90327d75c7e2",
+    "name": "CPU Basic",
+    "question": "What is the total CPU usage across all cores?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "ee95acd9-97f2-41cc-bb08-7bcfb05a6b73",
+    "name": "CPU Basic",
+    "question": "What is the average CPU usage per CPU core?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "c628059c-46ba-4191-a82f-5443d48fca35",
+    "name": "CPU Basic",
+    "question": "How many CPU cores are currently active?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "601189bb-087f-471c-8ea4-47f099db7a11",
+    "name": "CPU Basic",
+    "question": "What is the total rate of CPU usage over the past 30 minutes?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "c1abcb2d-1236-468b-9ee0-7c62592c3578",
+    "name": "CPU Basic",
+    "question": "What is the average CPU usage over a specific time period?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "8f8c33c1-bde1-4ff0-9dd7-eab1f9a963cc",
+    "name": "CPU Basic",
+    "question": "How many CPUs are present in the system?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "c6178275-6a4e-4cce-a4b6-45227a42fc2a",
+    "name": "CPU Basic",
+    "question": "What is the ratio of CPU seconds total to the count of CPUs?",
+    "query": "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+    "metrics": [
+      "node_cpu_seconds_total",
+      "cpu"
+    ]
+  },
+  {
+    "id": "b2989d09-7fd3-4604-b9a3-1b8045ac508e",
+    "name": "Memory Basic",
+    "question": "What is the total memory available on the node?",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "40f5db27-91d5-43e2-8fa4-cb4c6473b54a",
+    "name": "Memory Basic",
+    "question": "How much memory is installed on the node?",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "8931c8d1-ec39-44e2-bad6-1692df9297bb",
+    "name": "Memory Basic",
+    "question": "What is the capacity of the node's memory?",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "c633197d-d643-455b-8103-573d35773062",
+    "name": "Memory Basic",
+    "question": "What is the total memory on the node?",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_SReclaimable_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_Buffers_bytes",
+      "node_memory_SReclaimable_bytes"
+    ]
+  },
+  {
+    "id": "9925d2e4-41fb-4813-8b9e-d1625356bc98",
+    "name": "Memory Basic",
+    "question": "How much memory is currently free on the node?",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_SReclaimable_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_Buffers_bytes",
+      "node_memory_SReclaimable_bytes"
+    ]
+  },
+  {
+    "id": "9c1b5c73-dc26-48e6-9dea-c9cad3614982",
+    "name": "Memory Basic",
+    "question": "What is the total cached memory on the node?",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_SReclaimable_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_Buffers_bytes",
+      "node_memory_SReclaimable_bytes"
+    ]
+  },
+  {
+    "id": "96ae8e76-015f-489a-afe7-e0e3dc28e207",
+    "name": "Memory Basic",
+    "question": "What is the total cached memory?",
+    "query": "node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_SReclaimable_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes",
+      "node_memory_Buffers_bytes",
+      "node_memory_SReclaimable_bytes"
+    ]
+  },
+  {
+    "id": "eb64a00e-77bd-4ae8-9a01-4135eaef81d8",
+    "name": "Memory Basic",
+    "question": "How much memory is used for buffering?",
+    "query": "node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_SReclaimable_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes",
+      "node_memory_Buffers_bytes",
+      "node_memory_SReclaimable_bytes"
+    ]
+  },
+  {
+    "id": "252c7289-55a3-4579-bc75-3440a64e8ad6",
+    "name": "Memory Basic",
+    "question": "What is the amount of reclaimable memory?",
+    "query": "node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_SReclaimable_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes",
+      "node_memory_Buffers_bytes",
+      "node_memory_SReclaimable_bytes"
+    ]
+  },
+  {
+    "id": "0487c981-b528-49d8-8556-5b568c53971a",
+    "name": "Memory Basic",
+    "question": "What is the current value of free memory on the node?",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "d99689b7-2029-4390-870f-7e3120a2d82c",
+    "name": "Memory Basic",
+    "question": "How much memory is available for usage on the node?",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "a6b09692-961f-459d-b85e-91c032130ddb",
+    "name": "Memory Basic",
+    "question": "What is the amount of free memory available on the node?",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "5e4d6165-5b3a-4556-9e18-138e6c79e790",
+    "name": "Memory Basic",
+    "question": "What is the total swap memory available?",
+    "query": "(node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes)",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "a85b1b7c-96ce-4000-8fd1-d1f7a08219d0",
+    "name": "Memory Basic",
+    "question": "What is the amount of free swap memory?",
+    "query": "(node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes)",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "197f3b5b-b942-4c88-8949-4ae7220b3f76",
+    "name": "Memory Basic",
+    "question": "What is the used swap memory?",
+    "query": "(node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes)",
+    "metrics": [
+      "node_memory_SwapTotal_bytes",
+      "node_memory_SwapFree_bytes"
+    ]
+  },
+  {
+    "id": "b3357a5d-aedf-4f13-81f7-e05abedcc685",
+    "name": "Network Traffic Basic",
+    "question": "What is the rate of network data received per interface?",
+    "query": "irate(node_network_receive_bytes_total[30m])*8",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "c239ab0e-870c-4ee3-9b42-8e48d2541d8f",
+    "name": "Network Traffic Basic",
+    "question": "How much network data is being received?",
+    "query": "irate(node_network_receive_bytes_total[30m])*8",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "095936b0-9540-4497-9c4f-8a487c27eea1",
+    "name": "Network Traffic Basic",
+    "question": "What is the total amount of network data received?",
+    "query": "irate(node_network_receive_bytes_total[30m])*8",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "aab3b03a-fb8e-47d2-aa4e-c2247a29c02e",
+    "name": "Network Traffic Basic",
+    "question": "What is the current network traffic rate for transmitting bytes?",
+    "query": "irate(node_network_transmit_bytes_total[30m])*8",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "d1957719-2f79-42c2-8efe-7f465f4359ba",
+    "name": "Network Traffic Basic",
+    "question": "How much data is being transmitted per second on each network interface?",
+    "query": "irate(node_network_transmit_bytes_total[30m])*8",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "63aeea3c-42a6-40d5-8360-a271dccbe7f1",
+    "name": "Network Traffic Basic",
+    "question": "What is the rate of network traffic in terms of bytes being transmitted?",
+    "query": "irate(node_network_transmit_bytes_total[30m])*8",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "5bae06b7-0b29-4f41-92c6-ccac700e790c",
+    "name": "Disk Space Used Basic",
+    "question": "What is the percentage of disk space used of all filesystems mounted?",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "8e3b31fd-62f2-4682-a584-846d3279f17b",
+    "name": "Disk Space Used Basic",
+    "question": "How much disk space is available on all filesystems mounted?",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "84cd53c2-05f6-416b-9e19-a1b77e612cf3",
+    "name": "Disk Space Used Basic",
+    "question": "What is the total size of all filesystems mounted?",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
     ]
   }
 ]

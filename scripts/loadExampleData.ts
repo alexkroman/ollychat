@@ -3,6 +3,7 @@ import path from 'path';
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { ChromaClient } from "chromadb";
+import { normalizeQuestion } from '../src/tools/normalize.js';
 
 import * as dotenv from 'dotenv';
 dotenv.config();
@@ -23,14 +24,18 @@ async function processFile(filePath: string) {
 
     const documents = inputData.map((item: any) => ({
       id: item.id,
-      pageContent: `${item.question} ${item.name} ${item.description} ${item.metrics.join(', ')}`,
+      pageContent: normalizeQuestion(item.question),
       metadata: { question: item.question, metrics: item.metrics.join(', '), query: item.query },
     }));
 
     await vectorStore.addDocuments(documents);
     console.log(`Added documents from ${filePath}`);
   } catch (error) {
-    console.error(`Error processing file ${filePath}:`, error.message);
+    if (error instanceof Error) {
+      console.error(`Error processing file ${filePath}:`, error.message);
+    } else {
+      console.error(`Uknown Error processing file ${filePath}:`, error);
+    }
   }
 }
 
@@ -53,6 +58,10 @@ async function processAllFiles() {
     await client.deleteCollection({ name: process.env.CHROMA_INDEX });
     await processAllFiles();
   } catch (error) {
-    console.error("Error:", error.message);
+    if (error instanceof Error) {
+      console.error("Error:", error.message);
+    } else {
+      console.error("Unkonwn Error:", error);
+    }
   }
 })();
