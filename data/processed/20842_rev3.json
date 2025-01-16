@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Valid Certificates",
+    "description": "The number if available certificates",
+    "queries": [
+      "count(certmanager_certificate_ready_status)"
+    ]
+  },
+  {
+    "name": "Expiring Certificates",
+    "description": "The number of certificates that will expire within the next 14 days",
+    "queries": [
+      "count(certmanager_certificate_expiration_timestamp_seconds < (time()+(14*24*3600)))"
+    ]
+  },
+  {
+    "name": "Total ACME Requests",
+    "description": "Total number of HTTP requests, based on the selected time range",
+    "queries": [
+      "sum(increase(certmanager_http_acme_client_request_count[$__range]))"
+    ]
+  },
+  {
+    "name": "Time to Expiration (<45 days)",
+    "description": "Time before the certificates expire. Only shows certificates expiring within 45 days",
+    "queries": [
+      "sort(certmanager_certificate_expiration_timestamp_seconds - time()) < 45 * (24*3600)"
+    ]
+  },
+  {
+    "name": "Time to Automatic Renewal (<45 days)",
+    "description": "Time before the certificates are automatically renewed",
+    "queries": [
+      "sort(certmanager_certificate_renewal_timestamp_seconds - time()) < 45 * (24*3600)"
+    ]
+  },
+  {
+    "name": "Time to Expiration",
+    "description": "Time before the certificates expire",
+    "queries": [
+      "(certmanager_certificate_expiration_timestamp_seconds - time())/(24*3600)"
+    ]
+  },
+  {
+    "name": "Certificate Renewal Events",
+    "description": "Displays the timestamp of a renewal, based on the expiration time changing",
+    "queries": [
+      "changes(certmanager_certificate_renewal_timestamp_seconds[15m]) > 0"
+    ]
+  },
+  {
+    "name": "ACME Requests by Cluster",
+    "description": "Total number of HTTP requests, based on the selected range",
+    "queries": [
+      "sort_desc(sum by (cluster)(increase(certmanager_http_acme_client_request_count[$__range]))) > 0"
+    ]
+  }
+]

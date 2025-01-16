@@ -3,14 +3,14 @@
     "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
     "description": "",
     "queries": [
-      "(\n  count (\n    (kubelet_volume_stats_available_bytes {namespace=~\"(openshift-.*|kube-.*|default|logging)\"})\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes {namespace=~\"(openshift-.*|kube-.*|default|logging)\"}[1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)"
+      "(\n  count (\n    (kubelet_volume_stats_available_bytes )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes [1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)"
     ]
   },
   {
     "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
     "description": "",
     "queries": [
-      "(\n  count (\n    (\n      (kubelet_volume_stats_available_bytes {namespace!~\"(openshift-.*|kube-.*|default|logging)\"})\n    )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes[1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)"
+      "(\n  count (\n    (\n      (kubelet_volume_stats_available_bytes )\n    )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes[1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)"
     ]
   },
   {

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Total  Count of logs",
+    "description": "Total  Count of log lines in the specified time range",
+    "queries": [
+      "sum(count_over_time(()[$__interval]))"
+    ]
+  },
+  {
+    "name": "Total Count: of $searchable_pattern",
+    "description": "Total Count: of $searchable_pattern in the specified time range",
+    "queries": [
+      "sum(count_over_time(( |~ \"(?i)$searchable_pattern\")[$__interval]))"
+    ]
+  },
+  {
+    "name": "Live logs",
+    "description": "Live logs is a like 'tail -f' in a real time",
+    "queries": [
+      " |~ \"(?i)$searchable_pattern\" "
+    ]
+  },
+  {
+    "name": "Total count of stderr / stdout pie",
+    "description": "",
+    "queries": [
+      "sum(count_over_time(()[$__interval])) by (stream)"
+    ]
+  },
+  {
+    "name": "Matched word: \"$searchable_pattern\" donut",
+    "description": "",
+    "queries": [
+      "sum(count_over_time(( |~ \"(?i)$searchable_pattern\")[$__interval])) by (pod)"
+    ]
+  },
+  {
+    "name": "\"$searchable_pattern\" Percentage for specified time",
+    "description": "",
+    "queries": [
+      "sum(count_over_time(( |~ \"(?i)$searchable_pattern\")[$__interval])) * 100 / sum(count_over_time(()[$__interval]))"
+    ]
+  },
+  {
+    "name": "Matched word: \"$searchable_pattern\" historical",
+    "description": "",
+    "queries": [
+      "sum(count_over_time(( |~ \"(?i)$searchable_pattern\")[$__interval])) by (pod)"
+    ]
+  },
+  {
+    "name": "\"$searchable_pattern\" Rate per Pod",
+    "description": "",
+    "queries": [
+      "sum(rate(( |~ \"(?i)$searchable_pattern\")[30s])) by (pod)"
+    ]
+  },
+  {
+    "name": "Count of stderr / stdout historical",
+    "description": "",
+    "queries": [
+      "sum(count_over_time(()[$__interval])) by (stream)"
+    ]
+  }
+]

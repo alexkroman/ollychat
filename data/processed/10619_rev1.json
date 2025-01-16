@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Running containers",
+    "description": "",
+    "queries": [
+      "count(container_last_seen)"
+    ]
+  },
+  {
+    "name": "CPU Usage on Node",
+    "description": "",
+    "queries": [
+      "sum(rate(container_cpu_system_seconds_total[1m]))",
+      "sum(rate(container_cpu_system_seconds_total[1m]))",
+      "sum(rate(container_cpu_system_seconds_total[1m]))",
+      "sum(rate(process_cpu_seconds_total[$interval])) * 100",
+      "sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(process_cpu_seconds_total[1m]))"
+    ]
+  },
+  {
+    "name": "Free and Used Disk Space on Node",
+    "description": "",
+    "queries": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes - node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "name": "Available Memory on Node",
+    "description": "",
+    "queries": [
+      "container_memory_rss",
+      "sum(container_memory_rss)",
+      "container_memory_usage_bytes",
+      "container_memory_rss",
+      "sum(container_memory_rss)",
+      "node_memory_Buffers",
+      "node_memory_MemFree",
+      "node_memory_MemAvailable",
+      "node_memory_MemTotal - node_memory_MemAvailable",
+      "node_memory_Inactive",
+      "node_memory_KernelStack",
+      "node_memory_Active",
+      "node_memory_MemTotal - (node_memory_Active + node_memory_MemFree + node_memory_Inactive)",
+      "node_memory_MemFree + node_memory_Inactive ",
+      "container_memory_rss",
+      "node_memory_Inactive + node_memory_MemFree + node_memory_MemAvailable"
+    ]
+  },
+  {
+    "name": "Disk I/O on Node",
+    "description": "",
+    "queries": [
+      "sum(rate(node_disk_bytes_read[$interval])) by (device)",
+      "sum(rate(node_disk_bytes_written[$interval])) by (device)",
+      ""
+    ]
+  },
+  {
+    "name": "Network Traffic on Node",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_bytes_total[$interval])) by (id)",
+      "- sum(rate(container_network_transmit_bytes_total[$interval])) by (id)"
+    ]
+  },
+  {
+    "name": "CPU Usage per Container (Stacked)",
+    "description": "",
+    "queries": [
+      "sum(rate(container_cpu_usage_seconds_total[$interval])) by (name) * 100"
+    ]
+  },
+  {
+    "name": "Memory Usage per Container (Stacked)",
+    "description": "",
+    "queries": [
+      "sum(container_memory_rss) by (name)",
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "name": "Sent Network Traffic per Container",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_transmit_bytes_total[$interval])) by (name)",
+      "rate(container_network_transmit_bytes_total[$interval])"
+    ]
+  },
+  {
+    "name": "Cached Memory per Container (Stacked)",
+    "description": "",
+    "queries": [
+      "container_memory_rss",
+      "container_memory_usage_bytes",
+      "sum(container_memory_cache) by (name)"
+    ]
+  },
+  {
+    "name": "Received Network Traffic per Container",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_bytes_total[$interval])) by (name)",
+      "- rate(container_network_transmit_bytes_total[$interval])"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "cadvisor_version_info",
+      "prometheus_build_info",
+      "node_exporter_build_info",
+      "cadvisor_version_info",
+      "cadvisor_version_info",
+      "cadvisor_version_info"
+    ]
+  }
+]

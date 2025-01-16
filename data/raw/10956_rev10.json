@@ -1,0 +1,2700 @@
+{
+  "__inputs": [],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "barchart",
+      "name": "Bar chart",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.1.8.1"
+    },
+    {
+      "type": "datasource",
+      "id": "grafana-azure-monitor-datasource",
+      "name": "Azure Monitor",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
+  "description": "Azure Monitor - Container Insights metrics for Kubernetes clusters. Cluster utilization, namespace utilization, Node cpu & memory, Node disk usage & disk io, node network & kubelet docker operation metrics. Many more metrics that are queriable from the log analytics workspace used by Azure monitor for containers!",
+  "editable": true,
+  "gnetId": 10956,
+  "id": null,
+  "links": [
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [],
+      "targetBlank": true,
+      "title": "Azure Monitor - Container Insights",
+      "tooltip": "Click here to open Azure Monitor Ux for this cluster",
+      "type": "link",
+      "url": "https://portal.azure.com/#@microsoft.onmicrosoft.com/resource$clusterid/infrainsights"
+    }
+  ],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "datasource": {
+        "type": "geneva-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 44,
+      "panels": [],
+      "repeat": "clusterid",
+      "targets": [
+        {
+          "datasource": {
+            "type": "geneva-datasource",
+            "uid": "${ds}"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Cluster - Overview & utilization",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "grafana-azure-monitor-datasource",
+        "uid": "${ds}"
+      },
+      "description": "% Allocatable CPU used across all nodes in the cluster",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "id": 4,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "targets": [
+        {
+          "azureLogAnalytics": {
+            "query": "\rlet allocatable = Perf | where ObjectName == \"K8SNode\" | where CounterName == \"cpuCapacityNanoCores\" \r\n| where $__timeFilter(TimeGenerated) \r\n| where InstanceName startswith '$clusterid'\n| summarize arg_max(TimeGenerated, * ) by Computer\r\n| summarize a=toreal(sum(CounterValue) /1000000)\r\n| project a, b=\"abc\";\r\n\r\nallocatable \r\n| join kind=inner (\r\n    Perf | where ObjectName == \"K8SNode\" | where CounterName == \"cpuUsageNanoCores\" \r\n    | where $__timeFilter(TimeGenerated) \r\n    | where InstanceName startswith '$clusterid'\n    | summarize arg_max(TimeGenerated, * ) by Computer\r\n    | summarize x=toreal(sum(CounterValue) /1000000)\r\n    | project x,y=\"abc\"\r\n) on $left.b == $right.y\r\n|project now(), (x/a) * 100",
+            "resource": "$ws",
+            "resultFormat": "time_series"
+          },
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": ""
+        }
+      ],
+      "title": "Cluster CPU Utilization",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "grafana-azure-monitor-datasource",
+        "uid": "${ds}"
+      },
+      "description": "% Allocatable memory (workingset) used across all nodes in the cluster",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 1
+      },
+      "id": 5,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "targets": [
+        {
+          "azureLogAnalytics": {
+            "query": "\r\nlet allocatable = Perf | where ObjectName == \"K8SNode\" | where CounterName == \"memoryCapacityBytes\" \r\n| where $__timeFilter(TimeGenerated) \r\n| where InstanceName startswith '$clusterid'\n| summarize arg_max(TimeGenerated, * ) by Computer\r\n| summarize a=toreal(sum(CounterValue))\r\n| project a, b=\"abc\";\r\n\r\nallocatable \r\n| join kind=inner (\r\n    Perf | where ObjectName == \"K8SNode\" | where CounterName == \"memoryWorkingSetBytes\" \r\n    | where $__timeFilter(TimeGenerated) \r\n    | where InstanceName startswith '$clusterid'\n    | summarize arg_max(TimeGenerated, * ) by Computer\r\n    | summarize x=toreal(sum(CounterValue))\r\n    | project x,y=\"abc\"\r\n) on $left.b == $right.y\r\n|project now(), (x/a) * 100",
+            "resource": "$ws",
+            "resultFormat": "time_series"
+          },
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": ""
+        }
+      ],
+      "title": "Cluster Memory Utilization",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "grafana-azure-monitor-datasource",
+        "uid": "${ds}"
+      },
+      "description": "Number of nodes in the cluster grouped by status",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 0,
+        "y": 9
+      },
+      "id": 11,
+      "links": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "azureLogAnalytics": {
+            "query": "\r\nKubeNodeInventory\r\n| where ClusterId == '$clusterid'\n| where $__timeFilter(TimeGenerated)\n| summarize count() by bin(TimeGenerated, $__interval), Computer, Status\r\n| summarize arg_max(TimeGenerated, *) by Computer, Status\r\n| summarize nodecount=count() by Status\r\n| project nodecount, Status , now()",
+            "resource": "$ws",
+            "resultFormat": "time_series"
+          },
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": ""
+        }
+      ],
+      "title": "Node count by Status",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "grafana-azure-monitor-datasource",
+        "uid": "${ds}"
+      },
+      "description": "Pod count grouped by Pod Status",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "links": [
+            {
+              "title": "",
+              "url": ""
+            }
+          ],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 8,
+        "y": 9
+      },
+      "id": 12,
+      "links": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "azureLogAnalytics": {
+            "query": "KubePodInventory | where ClusterId == '$clusterid'\n| where $__timeFilter(TimeGenerated)\r\n| summarize count() by bin(TimeGenerated, $__interval), PodUid, PodStatus\r\n| summarize arg_max(TimeGenerated, *) by PodUid, PodStatus\r\n| summarize podCount = count() by PodStatus\r\n| project podCount, PodStatus , now() \r\n",
+            "resource": "$ws",
+            "resultFormat": "time_series"
+          },
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": ""
+        }
+      ],
+      "title": "Pod count by status",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "grafana-azure-monitor-datasource",
+        "uid": "${ds}"
+      },
+      "description": "Number of controllers in the cluster by Controller Kind",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 16,
+        "y": 9
+      },
+      "id": 16,
+      "links": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "azureLogAnalytics": {
+            "query": "\r\nKubePodInventory | where ClusterId == '$clusterid' | where $__timeFilter(TimeGenerated) \n| summarize count() by bin(TimeGenerated, $__interval), PodUid, ControllerKind\r\n| summarize arg_max(TimeGenerated, *) by PodUid, ControllerKind\r\n| summarize controllerCount = count() by ControllerKind\r\n| extend ControllerKind=iif(isempty(ControllerKind), \"None\", ControllerKind)\n| project ControllerKind, controllerCount , now() ",
+            "resource": "$ws",
+            "resultFormat": "time_series"
+          },
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": ""
+        }
+      ],
+      "title": "Controller count by Controller Kind",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "grafana-azure-monitor-datasource",
+        "uid": "${ds}"
+      },
+      "description": "% Used Disk grouped by Disk in each node where usage > 80%",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 18
+      },
+      "id": 6,
+      "links": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "targets": [
+        {
+          "azureLogAnalytics": {
+            "query": "\r\nInsightsMetrics\r\n| extend tags=todynamic(Tags) \r\n| where Name ==\"used_percent\"\r\n| where tags[\"container.azm.ms/clusterId\"] == '$clusterid'\r\n| where $__timeFilter(TimeGenerated) \r\n| extend hostName=tags.hostName\r\n| extend device=tags.device\r\n| extend disk=strcat(device, \"/\" , hostName) \r\n| summarize arg_max(TimeGenerated, *) by disk\r\n| where Val > 80.0\r\n| sort by Val desc\r\n| project Val, disk, now()",
+            "resource": "$ws",
+            "resultFormat": "table"
+          },
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": ""
+        }
+      ],
+      "title": "Node disks with > 80% used space",
+      "type": "barchart"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "geneva-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 42,
+      "panels": [
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Number of namespaces in the cluster",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "decimals": 0,
+              "mappings": [
+                {
+                  "options": {
+                    "match": "null",
+                    "result": {
+                      "text": "N/A"
+                    }
+                  },
+                  "type": "special"
+                }
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 3,
+            "x": 0,
+            "y": 2
+          },
+          "id": 7,
+          "links": [],
+          "maxDataPoints": 100,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "KubePodInventory | where ClusterId == '$clusterid' \r| where $__timeFilter(TimeGenerated)\n| summarize count() by bin(TimeGenerated, $__interval), Namespace\r\n| summarize arg_max(TimeGenerated, *) by Namespace\r\n| summarize namespaceCount = count()\r\n| project namespaceCount,now() ",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Kubernetes Namespace count",
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Number of pods per namespace",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 6,
+            "x": 3,
+            "y": 2
+          },
+          "id": 10,
+          "links": [],
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\rKubePodInventory \n\r| where ClusterId == '$clusterid'\n| where $__timeFilter(TimeGenerated)\n| summarize count() by bin(TimeGenerated, $__interval), PodUid, Namespace\r\n| summarize arg_max(TimeGenerated, *) by PodUid, Namespace\r\n| summarize namespaceCount = count() by Namespace\r\n| sort by namespaceCount desc\n| project namespaceCount, Namespace, now() ",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Pod count by Kubernetes Namespace",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Number of controllers per namespace",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 7,
+            "x": 9,
+            "y": 2
+          },
+          "id": 53,
+          "links": [],
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\rKubePodInventory \n\r| where ClusterId == '$clusterid'\n| where $__timeFilter(TimeGenerated)\n| summarize count() by bin(TimeGenerated, $__interval), PodUid, Namespace\r, ControllerKind\n| summarize arg_max(TimeGenerated, *) by PodUid, Namespace\r, ControllerKind\n| summarize controllerCountByNamespace = count() by Namespace\r, ControllerKind\n| sort by controllerCountByNamespace desc\n| project controllerCountByNamespace, Namespace, now() \n\n",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Controller count by Kubernetes Namespace",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Number of controllers per namespace per kind",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 2
+          },
+          "id": 54,
+          "links": [],
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\rKubePodInventory \n\r| where ClusterId == '$clusterid'\n| where $__timeFilter(TimeGenerated)\n| summarize count() by bin(TimeGenerated, $__interval), PodUid, Namespace\r, ControllerKind\n| summarize arg_max(TimeGenerated, *) by PodUid, nsc = strcat(Namespace\r,\"/\", ControllerKind)\n| summarize controllerCountByNamespace = count() by nsc\n| sort by controllerCountByNamespace desc\n| project controllerCountByNamespace, nsc, now() \n\n",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Controller Kind by Kubernetes Namespace (namespace/controllerkind)",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "CPU % utilized by each namespace",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 10
+          },
+          "id": 17,
+          "links": [],
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "let allocatable = Perf | where ObjectName == \"K8SNode\" | where CounterName == \"cpuCapacityNanoCores\" \r\n| where $__timeFilter(TimeGenerated) \r\n| where InstanceName startswith '$clusterid'\n| summarize arg_max(TimeGenerated, * ) by Computer\r\n| summarize a=toreal(sum(CounterValue))\r\n| project a, b=\"abc\";\r\n\r\nallocatable \r\n| join kind=inner (\r\n    Perf | where ObjectName == \"K8SContainer\" | where CounterName == \"cpuUsageNanoCores\" \r\n    | where $__timeFilter(TimeGenerated) \r\n    | where InstanceName startswith '$clusterid'\n    | extend cnameArr = split(InstanceName, \"/\")\r\n    | extend h=array_length(cnameArr)-1\r\n    | extend l=array_length(cnameArr)-2\r\n    | extend cname = strcat(cnameArr[l], \"/\", cnameArr[h])\r\n    | extend x= CounterValue \r\n    | summarize arg_max(TimeGenerated, * ) by cname // | summarize sum(x)\r\n    \r\n    //| summarize x=toreal(sum(CounterValue))\r\n    | project x,y=\"abc\", cname, TimeGenerated\r\n      | join kind=inner ( KubePodInventory\r\n      | where $__timeFilter(TimeGenerated) \r\n      | where ClusterId == '$clusterid'\n      | summarize arg_max(TimeGenerated, *) by ContainerName\r\n      | project ContainerName, Namespace\r\n      ) on $left.cname == $right.ContainerName//)\r\n) on $left.b == $right.y \r\n//| summarize v=arg_max(TimeGenerated,*) by cname,a, Namespace\r\n| summarize xyz= toreal(sum(x)) by a, Namespace\r\n| order by xyz desc\r\n|project now(), (xyz/a) * 100, Namespace \r\n",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Cluster CPU Utilization % by Kubernetes Namespace",
+          "type": "barchart"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Memory usage (working set) by namespace",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "fillOpacity": 80,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineWidth": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              },
+              "links": [
+                {
+                  "title": "",
+                  "url": ""
+                }
+              ],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 10
+          },
+          "id": 18,
+          "links": [],
+          "options": {
+            "barRadius": 0,
+            "barWidth": 0.97,
+            "groupWidth": 0.7,
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "orientation": "auto",
+            "showValue": "auto",
+            "stacking": "none",
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            },
+            "xTickLabelRotation": 0,
+            "xTickLabelSpacing": 0
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "let allocatable = Perf | where ObjectName == \"K8SNode\" | where CounterName == \"memoryCapacityBytes\" \r\n| where $__timeFilter(TimeGenerated) \r\n| where InstanceName startswith '$clusterid'\n| summarize arg_max(TimeGenerated, * ) by Computer\r\n| summarize a=toreal(sum(CounterValue))\r\n| project a, b=\"abc\";\r\n\r\nallocatable \r\n| join kind=inner (\r\n    Perf | where ObjectName == \"K8SContainer\" | where CounterName == \"memoryWorkingSetBytes\" \r\n    | where $__timeFilter(TimeGenerated) \r\n    | where InstanceName startswith '$clusterid'\n    | extend cnameArr = split(InstanceName, \"/\")\r\n    | extend h=array_length(cnameArr)-1\r\n    | extend l=array_length(cnameArr)-2\r\n    | extend cname = strcat(cnameArr[l], \"/\", cnameArr[h])\r\n    | extend x= CounterValue \r\n    | summarize arg_max(TimeGenerated, * ) by cname // | summarize sum(x)\r\n    \r\n    //| summarize x=toreal(sum(CounterValue))\r\n    | project x,y=\"abc\", cname, TimeGenerated\r\n      | join kind=inner ( KubePodInventory\r\n      | where $__timeFilter(TimeGenerated) \r\n      | where ClusterId == '$clusterid'\n      | summarize arg_max(TimeGenerated, *) by ContainerName\r\n      | project ContainerName, Namespace\r\n      ) on $left.cname == $right.ContainerName//)\r\n) on $left.b == $right.y \r\n//| summarize v=arg_max(TimeGenerated,*) by cname,a, Namespace\r\n| summarize xyz= toreal(sum(x)) by a, Namespace\r\n| order by xyz desc\r\n|project now(), (xyz/a) * 100, Namespace  ",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Cluster Memory Utilization % by Kubernetes Namespace",
+          "type": "barchart"
+        }
+      ],
+      "repeat": "clusterid",
+      "targets": [
+        {
+          "datasource": {
+            "type": "geneva-datasource",
+            "uid": "${ds}"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Cluster - Namespaces",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "geneva-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 27
+      },
+      "id": 40,
+      "panels": [
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 100,
+                "gradientMode": "opacity",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line+area"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 3
+          },
+          "id": 20,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "asc"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "let nodeCpuCapacity=Perf | where CounterName == \"cpuCapacityNanoCores\" | where ObjectName == \"K8SNode\" | where InstanceName startswith '$clusterid' | where $__timeFilter(TimeGenerated)| summarize arg_max(TimeGenerated, *) by Computer| project Computer , cpuCapacity=CounterValue; \n\nlet nodeCpuUsage=Perf | where CounterName == \"cpuUsageNanoCores\"| where ObjectName  == \"K8SNode\"| where InstanceName startswith '$clusterid'| where $__timeFilter(TimeGenerated) | summarize ptileCpuUsage=percentile(CounterValue, $ptile) by Computer, bin(TimeGenerated, $__interval);\n\nnodeCpuUsage|join kind=inner (nodeCpuCapacity) on $left.Computer == $right.Computer| extend ptileCpuUsagepercent=(ptileCpuUsage/cpuCapacity) * 100| order by TimeGenerated asc| project TimeGenerated, Computer, ptileCpuUsagepercent",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "$ptile-th Percentile % CPU usage by node",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 100,
+                "gradientMode": "opacity",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line+area"
+                }
+              },
+              "decimals": 0,
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 3
+          },
+          "id": 26,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "asc"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "let nodeMemoryCapacity=Perf| where CounterName == \"memoryCapacityBytes\"| where ObjectName == \"K8SNode\" | where InstanceName startswith '$clusterid'| where $__timeFilter(TimeGenerated)| summarize arg_max(TimeGenerated, *) by Computer| project Computer , memoryCapacity=CounterValue;\n\nlet nodeMemoryUsage= Perf | where CounterName == \"memoryRssBytes\"| where ObjectName  == \"K8SNode\"| where InstanceName startswith '$clusterid'| where $__timeFilter(TimeGenerated) | summarize ptileMemoryUsage=percentile(CounterValue, $ptile) by Computer, bin(TimeGenerated, $__interval);\n\nnodeMemoryUsage|join kind=inner (nodeMemoryCapacity) on $left.Computer == $right.Computer| extend ptileMemoryUsagepercent=(ptileMemoryUsage/memoryCapacity) * 100| order by TimeGenerated asc| project TimeGenerated, Computer, ptileMemoryUsagepercent",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "$ptile-th Percentile Memory (rss) usage by node",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "repeat": "clusterid",
+      "targets": [
+        {
+          "datasource": {
+            "type": "geneva-datasource",
+            "uid": "${ds}"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Node - CPU & Memory",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "geneva-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 28
+      },
+      "id": 38,
+      "panels": [
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "$ptile-th percentile, % Used Disk grouped by Disk in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line+area"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 4
+          },
+          "id": 28,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\rInsightsMetrics\r\n| extend tags=todynamic(Tags) \r\n| where Name ==\"used_percent\"\r\n| where tags[\"container.azm.ms/clusterId\"] == '$clusterid'\n| where $__timeFilter(TimeGenerated) \n| extend hostName=tags.hostName\r\n| extend device=tags.device\r\n| extend disk=strcat(device, \"/\" , hostName) \r\n| summarize ptileDiskUsagePercentagebyNodeDisk = percentile(Val,$ptile) by bin(TimeGenerated, $__interval), disk\r\n| order by TimeGenerated asc\n| project TimeGenerated, disk, ptileDiskUsagePercentagebyNodeDisk",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "% Used Disk ($ptile-th percentile) by Disk/Node",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "$ptile-th percentile iops in progress grouped by Disk in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red"
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 12,
+            "y": 4
+          },
+          "id": 30,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\rInsightsMetrics\r\n| extend tags=todynamic(Tags) \r\n| where Name ==\"iops_in_progress\"\r\n| where tags[\"container.azm.ms/clusterId\"] == '$clusterid'\r\n| where $__timeFilter(TimeGenerated) \n| extend hostName=tags.hostName\r\n| extend device=tags.name\n| extend disk=strcat(device, \"/\" , hostName) \r\n| summarize ptileDiskIopsInProgressbyNodeDisk = percentile(Val,$ptile) by bin(TimeGenerated, $__interval), disk\r\n| order by TimeGenerated asc\n| project TimeGenerated, disk, ptileDiskIopsInProgressbyNodeDisk",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "iops in progress ($ptile-th percentile) by Disk/Node",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Reads/sec ($ptile-th percentile) grouped by Disk in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line+area"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 11
+          },
+          "id": 32,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\r\nInsightsMetrics\r\n| where Origin == 'container.azm.ms/telegraf'\r\n| where Namespace == 'container.azm.ms/diskio'\r\n| where Name == 'reads'\r\n| where $__timeFilter(TimeGenerated) \r\n| extend Tags = todynamic(Tags)\r\n| extend HostName = tostring(Tags.hostName), Device = tostring(Tags.name)\r\n, clusterId = tostring(Tags[\"container.azm.ms/clusterId\"])\r\n| where clusterId == '$clusterid'\r\n| extend NodeDisk = strcat(Device, \"/\", HostName)\r\n| summarize Val=percentile(Val,$ptile) by NodeDisk, TimeGenerated=bin(TimeGenerated,$__interval)\r\n| order by NodeDisk asc, TimeGenerated asc\r\n| serialize\r\n| extend PrevVal = iif(prev(NodeDisk) != NodeDisk, 0.0, prev(Val)), PrevTimeGenerated = iif(prev(NodeDisk) != NodeDisk, datetime(null), prev(TimeGenerated))\r\n| where isnotnull(PrevTimeGenerated) and PrevTimeGenerated != TimeGenerated\r\n| extend Rate = iif(PrevVal > Val, Val / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1), iif(PrevVal == Val, 0.0, (Val - PrevVal) / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1)))\r\n| where isnotnull(Rate)\r\n| order by TimeGenerated asc\r\n| project TimeGenerated, NodeDisk, Rate\r\n|render timechart",
+                "resource": "$ws",
+                "resultFormat": "table"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Disk reads/sec ($ptile-th percentile) by disk/node",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Write bytes/sec ($ptile-th percentile) grouped by Disk in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line+area"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "Bps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 12,
+            "y": 11
+          },
+          "id": 34,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\r\nInsightsMetrics\r\n| where Origin == 'container.azm.ms/telegraf'\r\n| where Namespace == 'container.azm.ms/diskio'\r\n| where Name == 'write_bytes'\r\n| where $__timeFilter(TimeGenerated) \r\n| extend Tags = todynamic(Tags)\r\n| extend HostName = tostring(Tags.hostName), Device = tostring(Tags.name)\r\n, clusterId = tostring(Tags[\"container.azm.ms/clusterId\"])\r\n| where clusterId == '$clusterid'\r\n| extend NodeDisk = strcat(Device, \"/\", HostName)\r\n| summarize Val=percentile(Val,$ptile) by NodeDisk, TimeGenerated=bin(TimeGenerated,$__interval)\r\n| order by NodeDisk asc, TimeGenerated asc\r\n| serialize\r\n| extend PrevVal = iif(prev(NodeDisk) != NodeDisk, 0.0, prev(Val)), PrevTimeGenerated = iif(prev(NodeDisk) != NodeDisk, datetime(null), prev(TimeGenerated))\r\n| where isnotnull(PrevTimeGenerated) and PrevTimeGenerated != TimeGenerated\r\n| extend Rate = iif(PrevVal > Val, Val / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1), iif(PrevVal == Val, 0.0, (Val - PrevVal) / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1)))\r\n| where isnotnull(Rate)\r\n| order by TimeGenerated asc\r\n| project TimeGenerated, NodeDisk, Rate\r\n|render timechart",
+                "resource": "$ws",
+                "resultFormat": "table"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Disk write bytes/sec ($ptile-th percentile) by disk/node",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "geneva-datasource",
+            "uid": "${ds}"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Node - Disk Usage & IO",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "geneva-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 29
+      },
+      "id": 36,
+      "panels": [
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Sent bytes/sec ($ptile-th percentile) grouped by network interface in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line+area"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "Bps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 11,
+            "x": 0,
+            "y": 5
+          },
+          "id": 46,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\r\nInsightsMetrics\r\n| where Origin == 'container.azm.ms/telegraf'\r\n| where Namespace == 'container.azm.ms/net'\r\n| where Name == 'bytes_sent'\r\n| where $__timeFilter(TimeGenerated) \r\n| extend Tags = todynamic(Tags)\r\n| extend HostName = tostring(Tags.hostName), Interface = tostring(Tags.interface)\r\n, clusterId = tostring(Tags[\"container.azm.ms/clusterId\"])\r\n| where clusterId == '$clusterid'\r\n| extend NodeInterface = strcat(Interface, \"/\", HostName)\r\n| summarize Val=percentile(Val,$ptile) by NodeInterface, TimeGenerated=bin(TimeGenerated,$__interval)\r\n| order by NodeInterface asc, TimeGenerated asc\r\n| serialize\r\n| extend PrevVal = iif(prev(NodeInterface) != NodeInterface, 0.0, prev(Val)), PrevTimeGenerated = iif(prev(NodeInterface) != NodeInterface, datetime(null), prev(TimeGenerated))\r\n| where isnotnull(PrevTimeGenerated) and PrevTimeGenerated != TimeGenerated\r\n| extend Rate = iif(PrevVal > Val, Val / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1), iif(PrevVal == Val, 0.0, (Val - PrevVal) / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1)))\r\n| where isnotnull(Rate)\r\n| order by TimeGenerated asc\r\n| project TimeGenerated, NodeInterface, Rate\r\n|render timechart",
+                "resource": "$ws",
+                "resultFormat": "table"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Network sent bytes/sec ($ptile-th percentile) by interface/node",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Received bytes/sec ($ptile-th percentile) grouped by network interface in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line+area"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "Bps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 13,
+            "x": 11,
+            "y": 5
+          },
+          "id": 48,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\r\nInsightsMetrics\r\n| where Origin == 'container.azm.ms/telegraf'\r\n| where Namespace == 'container.azm.ms/net'\r\n| where Name == 'bytes_recv'\r\n| where $__timeFilter(TimeGenerated) \r\n| extend Tags = todynamic(Tags)\r\n| extend HostName = tostring(Tags.hostName), Interface = tostring(Tags.interface)\r\n, clusterId = tostring(Tags[\"container.azm.ms/clusterId\"])\r\n| where clusterId == '$clusterid'\r\n| extend NodeInterface = strcat(Interface, \"/\", HostName)\r\n| summarize Val=percentile(Val,$ptile) by NodeInterface, TimeGenerated=bin(TimeGenerated,$__interval)\r\n| order by NodeInterface asc, TimeGenerated asc\r\n| serialize\r\n| extend PrevVal = iif(prev(NodeInterface) != NodeInterface, 0.0, prev(Val)), PrevTimeGenerated = iif(prev(NodeInterface) != NodeInterface, datetime(null), prev(TimeGenerated))\r\n| where isnotnull(PrevTimeGenerated) and PrevTimeGenerated != TimeGenerated\r\n| extend Rate = iif(PrevVal > Val, Val / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1), iif(PrevVal == Val, 0.0, (Val - PrevVal) / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1)))\r\n| where isnotnull(Rate)\r\n| order by TimeGenerated asc\r\n| project TimeGenerated, NodeInterface, Rate\r\n|render timechart",
+                "resource": "$ws",
+                "resultFormat": "table"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Network received bytes/sec ($ptile-th percentile)  by interface/node",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Network send errors ($ptile-th percentile) grouped by interface in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line+area"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 11,
+            "x": 0,
+            "y": 12
+          },
+          "id": 50,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\rInsightsMetrics\r\n| extend tags=todynamic(Tags) \r\n| where Name ==\"err_out\"\r\n| where tags[\"container.azm.ms/clusterId\"] == '$clusterid'\n| where $__timeFilter(TimeGenerated) \n| extend hostName=tags.hostName\n| extend interface=tags.interface\n| extend nodeInterface=strcat(interface, \"/\" , hostName) \r\n| summarize ptileErrorsOutByNodeInterface = percentile(Val,$ptile) by bin(TimeGenerated, $__interval), nodeInterface\n| order by TimeGenerated asc\n| project TimeGenerated, nodeInterface, ptileErrorsOutByNodeInterface",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Network send errors ($ptile-th percentle) by Interface/Node",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Network receive errors ($ptile-th percentile) grouped by interface in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "line+area"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "transparent",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 13,
+            "x": 11,
+            "y": 12
+          },
+          "id": 52,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "\rInsightsMetrics\r\n| extend tags=todynamic(Tags) \r\n| where Name ==\"err_in\"\r\n| where tags[\"container.azm.ms/clusterId\"] == '$clusterid'\n| where $__timeFilter(TimeGenerated) \n| extend hostName=tags.hostName\n| extend interface=tags.interface\n| extend nodeInterface=strcat(interface, \"/\" , hostName) \r\n| summarize ptileErrorsInByNodeInterface = percentile(Val,$ptile) by bin(TimeGenerated, $__interval), nodeInterface\n| order by TimeGenerated asc\n| project TimeGenerated, nodeInterface, ptileErrorsInByNodeInterface",
+                "resource": "$ws",
+                "resultFormat": "time_series"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Network receive errors ($ptile-th percentle) by Interface/Node",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "repeat": "clusterid",
+      "targets": [
+        {
+          "datasource": {
+            "type": "geneva-datasource",
+            "uid": "${ds}"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Node - Network",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "geneva-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 30
+      },
+      "id": 22,
+      "panels": [
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Docker Operations/sec ($ptile-th percentile) grouped by operation in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 12,
+            "x": 0,
+            "y": 6
+          },
+          "id": 55,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "InsightsMetrics\r\n| where Origin == 'container.azm.ms/telegraf'\r\n| where Namespace == 'container.azm.ms/prometheus'\r\n| where Name == 'kubelet_runtime_operations_total'\r\n| where $__timeFilter(TimeGenerated) | extend Tags = todynamic(Tags)\r\n| extend HostName = tostring(Tags.hostName), optype = tostring(Tags.operation_type)\r\n, clusterId = tostring(Tags[\"container.azm.ms/clusterId\"])| where clusterId == '$clusterid'| extend NodeOp = strcat(optype, \"/\", HostName)\r\n| summarize Val=percentile(Val,$ptile) by NodeOp, TimeGenerated=bin(TimeGenerated,$__interval)\r\n| order by NodeOp asc, TimeGenerated asc\r\n| serialize\r\n| extend PrevVal = iif(prev(NodeOp) != NodeOp, 0.0, prev(Val)), PrevTimeGenerated = iif(prev(NodeOp) != NodeOp, datetime(null), prev(TimeGenerated))\r\n| where isnotnull(PrevTimeGenerated) and PrevTimeGenerated != TimeGenerated\r\n| extend Rate = iif(PrevVal > Val, Val / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1), iif(PrevVal == Val, 0.0, (Val - PrevVal) / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1)))\r\n| where isnotnull(Rate)\r\n| order by TimeGenerated asc\r\n| project TimeGenerated, NodeOp, Rate\r\n|render timechart",
+                "resource": "$ws",
+                "resultFormat": "table"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A",
+              "subscription": ""
+            }
+          ],
+          "title": "Kubelet Docker Ops/Sec ($ptile-th percentile) by operation/Node",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "grafana-azure-monitor-datasource",
+            "uid": "${ds}"
+          },
+          "description": "Docker Operation errors/sec ($ptile-th percentile) grouped by operation in each node",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 12,
+            "x": 12,
+            "y": 6
+          },
+          "id": 56,
+          "links": [],
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "targets": [
+            {
+              "azureLogAnalytics": {
+                "query": "InsightsMetrics\r\n| where Origin == 'container.azm.ms/telegraf'\r\n| where Namespace == 'container.azm.ms/prometheus'\r\n| where Name == 'kubelet_runtime_operations_errors'\r\n| where $__timeFilter(TimeGenerated) | extend Tags = todynamic(Tags)\r\n| extend HostName = tostring(Tags.hostName), optype = tostring(Tags.operation_type)\r\n, clusterId = tostring(Tags[\"container.azm.ms/clusterId\"])| where clusterId == '$clusterid'| extend NodeOp = strcat(optype, \"/\", HostName)\r\n| summarize Val=percentile(Val,$ptile) by NodeOp, TimeGenerated=bin(TimeGenerated,$__interval)\r\n| order by NodeOp asc, TimeGenerated asc\r\n| serialize\r\n| extend PrevVal = iif(prev(NodeOp) != NodeOp, 0.0, prev(Val)), PrevTimeGenerated = iif(prev(NodeOp) != NodeOp, datetime(null), prev(TimeGenerated))\r\n| where isnotnull(PrevTimeGenerated) and PrevTimeGenerated != TimeGenerated\r\n| extend Rate = iif(PrevVal > Val, Val / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1), iif(PrevVal == Val, 0.0, (Val - PrevVal) / (datetime_diff('Second', TimeGenerated, PrevTimeGenerated) * 1)))\r\n| where isnotnull(Rate)\r\n| order by TimeGenerated asc\r\n| project TimeGenerated, NodeOp, Rate\r\n|render timechart",
+                "resource": "$ws",
+                "resultFormat": "table"
+              },
+              "datasource": {
+                "type": "grafana-azure-monitor-datasource",
+                "uid": "${ds}"
+              },
+              "queryType": "Azure Log Analytics",
+              "refId": "A"
+            }
+          ],
+          "title": "Kubelet Docker operation errors/Sec ($ptile-th percentile) by operation/Node",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "repeat": "clusterid",
+      "targets": [
+        {
+          "datasource": {
+            "type": "geneva-datasource",
+            "uid": "${ds}"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Node - Kubelet Docker Operations",
+      "type": "row"
+    }
+  ],
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "Azure Monitor-Contoso",
+          "value": "Azure Monitor-Contoso"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Datasource",
+        "multi": false,
+        "name": "ds",
+        "options": [],
+        "query": "grafana-azure-monitor-datasource",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "grafana-azure-monitor-datasource",
+          "uid": "${ds}"
+        },
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Subscription",
+        "multi": false,
+        "name": "sub",
+        "options": [],
+        "query": {
+          "grafanaTemplateVariableFn": {
+            "kind": "SubscriptionsQuery",
+            "rawQuery": "Subscriptions()"
+          },
+          "queryType": "Grafana Template Variable Function",
+          "refId": "A",
+          "subscription": ""
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 5,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "grafana-azure-monitor-datasource",
+          "uid": "${ds}"
+        },
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Workspace",
+        "multi": false,
+        "name": "ws",
+        "options": [],
+        "query": {
+          "grafanaTemplateVariableFn": {
+            "kind": "WorkspacesQuery",
+            "rawQuery": "Workspaces($sub)",
+            "subscription": "$sub"
+          },
+          "queryType": "Grafana Template Variable Function",
+          "refId": "A",
+          "subscription": ""
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 5,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "grafana-azure-monitor-datasource",
+          "uid": "${ds}"
+        },
+        "definition": "KubePodInventory | summarize n=count() by ClusterId |project ClusterId ",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Cluster",
+        "multi": false,
+        "name": "clusterid",
+        "options": [],
+        "query": {
+          "azureLogAnalytics": {
+            "query": "workspace(\"$ws\").KubePodInventory | summarize n=count() by ClusterId |project ClusterId ",
+            "resource": "$ws"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": ""
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 5,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query"
+      },
+      {
+        "current": {
+          "tags": [],
+          "text": "99",
+          "value": "99"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Percentile (applicable for percentile charts)",
+        "multi": false,
+        "name": "ptile",
+        "options": [
+          {
+            "selected": false,
+            "text": "50",
+            "value": "50"
+          },
+          {
+            "selected": false,
+            "text": "75",
+            "value": "75"
+          },
+          {
+            "selected": false,
+            "text": "80",
+            "value": "80"
+          },
+          {
+            "selected": false,
+            "text": "85",
+            "value": "85"
+          },
+          {
+            "selected": false,
+            "text": "90",
+            "value": "90"
+          },
+          {
+            "selected": false,
+            "text": "95",
+            "value": "95"
+          },
+          {
+            "selected": false,
+            "text": "96",
+            "value": "96"
+          },
+          {
+            "selected": false,
+            "text": "97",
+            "value": "97"
+          },
+          {
+            "selected": false,
+            "text": "98",
+            "value": "98"
+          },
+          {
+            "selected": true,
+            "text": "99",
+            "value": "99"
+          },
+          {
+            "selected": false,
+            "text": "99.9",
+            "value": "99.9"
+          }
+        ],
+        "query": "50,75,80,85,90,95,96,97,98,99,99.9",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "hidden": false,
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Azure / Monitor for Containers - Metrics",
+  "uid": "vFsw3edZk",
+  "version": 2
+}

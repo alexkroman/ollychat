@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Requests received by controller",
+    "description": "Counts all requests, both successful and failed",
+    "queries": [
+      "sum(rate(http_requests_received_total[3m])) by (controller)",
+      "sum(rate(http_requests_received_total[3m]))"
+    ]
+  },
+  {
+    "name": "Total req/s",
+    "description": "",
+    "queries": [
+      "sum(rate(http_requests_received_total[3m]))"
+    ]
+  },
+  {
+    "name": "In progress (global)",
+    "description": "Across ALL controllers globally!",
+    "queries": [
+      "sum(http_requests_in_progress)"
+    ]
+  },
+  {
+    "name": "Request duration (controller-handled requests only)",
+    "description": "Does NOT include requests that were not mapped to an ASP.NET Core controller!",
+    "queries": [
+      "sum(increase(http_request_duration_seconds_bucket[$__interval])) by (le)"
+    ]
+  },
+  {
+    "name": "Error rate by controller",
+    "description": "4xx and 5xx status codes",
+    "queries": [
+      "sum(rate(http_requests_received_total[3m])) by (controller)",
+      "sum(rate(http_requests_received_total[3m])) by (controller)"
+    ]
+  }
+]

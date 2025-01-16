@@ -1,0 +1,174 @@
+[
+  {
+    "name": "Created by",
+    "description": "Panel only works when a single pod is selected.",
+    "queries": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "Running on",
+    "description": "Panel only works when a single pod is selected.",
+    "queries": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "Pod IP",
+    "description": "Panel only works when a single pod is selected.",
+    "queries": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "Priority Class",
+    "description": "Panel only works when a single pod is selected.",
+    "queries": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "QOS Class",
+    "description": "Panel only works when a single pod is selected.",
+    "queries": [
+      "kube_pod_status_qos_class > 0"
+    ]
+  },
+  {
+    "name": "Last Terminated Reason",
+    "description": "Panel only works when a single pod is selected.",
+    "queries": [
+      "kube_pod_container_status_last_terminated_reason"
+    ]
+  },
+  {
+    "name": "Last Terminated Exit Code",
+    "description": "Panel only works when a single pod is selected.",
+    "queries": [
+      "kube_pod_container_status_last_terminated_exitcode"
+    ]
+  },
+  {
+    "name": "Total pod CPU Requests usage",
+    "description": "",
+    "queries": [
+      "sum(rate(container_cpu_usage_seconds_total[30m])) / sum(kube_pod_container_resource_requests)"
+    ]
+  },
+  {
+    "name": "Total pod CPU Limits usage",
+    "description": "",
+    "queries": [
+      "sum(rate(container_cpu_usage_seconds_total[30m])) / sum(kube_pod_container_resource_limits)"
+    ]
+  },
+  {
+    "name": "Total pod RAM Requests usage",
+    "description": "",
+    "queries": [
+      "sum(container_memory_working_set_bytes) / sum(kube_pod_container_resource_requests)"
+    ]
+  },
+  {
+    "name": "Total pod RAM Limits usage",
+    "description": "",
+    "queries": [
+      "sum(container_memory_working_set_bytes) / sum(kube_pod_container_resource_limits) "
+    ]
+  },
+  {
+    "name": "Resources by container",
+    "description": "",
+    "queries": [
+      "sum(kube_pod_container_resource_requests) by (container)",
+      "sum(kube_pod_container_resource_limits) by (container)",
+      "sum(kube_pod_container_resource_requests) by (container)",
+      "sum(kube_pod_container_resource_limits) by (container)",
+      "sum(rate(container_cpu_usage_seconds_total[30m])) by (container)",
+      "sum(container_memory_working_set_bytes) by (container)"
+    ]
+  },
+  {
+    "name": "CPU Usage / Requests & Limits by container",
+    "description": "",
+    "queries": [
+      "sum(rate(container_cpu_usage_seconds_total[30m])) by (container) / sum(kube_pod_container_resource_requests) by (container)",
+      "sum(rate(container_cpu_usage_seconds_total[30m])) by (container) / sum(kube_pod_container_resource_limits) by (container)"
+    ]
+  },
+  {
+    "name": "Memory Usage / Requests & Limits by container",
+    "description": "",
+    "queries": [
+      "sum(container_memory_working_set_bytes) by (container) / sum(kube_pod_container_resource_requests) by (container)",
+      "sum(container_memory_working_set_bytes) by (container) / sum(kube_pod_container_resource_limits) by (container)"
+    ]
+  },
+  {
+    "name": "CPU Usage by container",
+    "description": "",
+    "queries": [
+      "sum(rate(container_cpu_usage_seconds_total[30m])) by (container, id)"
+    ]
+  },
+  {
+    "name": "Memory Usage by container",
+    "description": "",
+    "queries": [
+      "sum(container_memory_working_set_bytes) by (container, id)"
+    ]
+  },
+  {
+    "name": "CPU Throttled seconds by container",
+    "description": "",
+    "queries": [
+      "sum(rate(container_cpu_cfs_throttled_seconds_total[30m])) by (container)"
+    ]
+  },
+  {
+    "name": "OOM Events by container",
+    "description": "",
+    "queries": [
+      "sum(increase(container_oom_events_total\", pod=\"$\", container!=\"\", cluster=\"$cluster\"}[30m])) by (container)"
+    ]
+  },
+  {
+    "name": "Container Restarts by container",
+    "description": "",
+    "queries": [
+      "sum(increase(kube_pod_container_status_restarts_total\", pod=\"$\", container!=\"\", job=~\"$job\", cluster=\"$cluster\"}[30m])) by (container)"
+    ]
+  },
+  {
+    "name": "Network - Bandwidth",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_bytes_total[30m]))",
+      "- sum(rate(container_network_transmit_bytes_total[30m]))"
+    ]
+  },
+  {
+    "name": "Network - Packets Rate",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_packets_total[30m]))",
+      "- sum(rate(container_network_transmit_packets_total[30m]))"
+    ]
+  },
+  {
+    "name": "Network - Packets Dropped",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_packets_dropped_total[30m]))",
+      "- sum(rate(container_network_transmit_packets_dropped_total[30m]))"
+    ]
+  },
+  {
+    "name": "Network - Errors",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_errors_total[30m]))",
+      "- sum(rate(container_network_transmit_errors_total[30m]))"
+    ]
+  }
+]

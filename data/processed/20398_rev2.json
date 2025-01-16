@@ -1,0 +1,183 @@
+[
+  {
+    "name": "Cluster CPU Requests",
+    "description": "Total number of cpu resources requested by all pods on the current Nodepool",
+    "queries": [
+      "sum(karpenter_nodes_total_pod_requests)"
+    ]
+  },
+  {
+    "name": "Cluster Memory Requests",
+    "description": "Total number of memory resources requested by all pods on the current Nodepool",
+    "queries": [
+      "sum(karpenter_nodes_total_pod_requests)"
+    ]
+  },
+  {
+    "name": "Node  Distribution by AZ",
+    "description": "",
+    "queries": [
+      "count(karpenter_nodes_total_pod_requests) by (zone)"
+    ]
+  },
+  {
+    "name": "Node  Distribution by Nodepool",
+    "description": "",
+    "queries": [
+      "count(karpenter_nodes_total_pod_requests) by (nodepool)"
+    ]
+  },
+  {
+    "name": "Pod  Distribution by Aviability Zone",
+    "description": "",
+    "queries": [
+      "sum(karpenter_pods_state) by (zone)"
+    ]
+  },
+  {
+    "name": "Pod  Distribution by Nodepool",
+    "description": "",
+    "queries": [
+      "sum(karpenter_pods_state) by (nodepool)"
+    ]
+  },
+  {
+    "name": "Cluster CPU Allocation",
+    "description": "Percentage of resources requested by all pods from those available on the current Nodepool nodes",
+    "queries": [
+      "sum(karpenter_nodes_total_pod_requests) / sum(karpenter_nodes_allocatable)"
+    ]
+  },
+  {
+    "name": "Cluster Memory Allocation",
+    "description": "Percentage of resources requested by all pods from those available on the current Nodepool nodes",
+    "queries": [
+      "sum(karpenter_nodes_total_pod_requests) / sum(karpenter_nodes_allocatable)"
+    ]
+  },
+  {
+    "name": "Total number of Nodes",
+    "description": "",
+    "queries": [
+      "count(karpenter_nodes_allocatable)"
+    ]
+  },
+  {
+    "name": "Spot Node Percentage",
+    "description": "",
+    "queries": [
+      "(count(karpenter_nodes_allocatable) or vector(0)) / count(karpenter_nodes_allocatable)*100"
+    ]
+  },
+  {
+    "name": "Total number of pods",
+    "description": "",
+    "queries": [
+      "sum(karpenter_pods_state)"
+    ]
+  },
+  {
+    "name": "Nodepool usage percentage of limit",
+    "description": "Percentage of how many resources Karpenter launched from the total Nodepool limit",
+    "queries": [
+      "karpenter_nodepools_usage\", resource_type=~\"memory|cpu\"} / karpenter_nodepools_limit\",resource_type=~\"memory|cpu\"} * 100"
+    ]
+  },
+  {
+    "name": "Cluster CPU",
+    "description": "",
+    "queries": [
+      "sum(karpenter_nodes_allocatable)",
+      "sum(karpenter_nodes_total_pod_requests)"
+    ]
+  },
+  {
+    "name": "Cluster Memory",
+    "description": "",
+    "queries": [
+      "sum(karpenter_nodes_allocatable)",
+      "sum(karpenter_nodes_total_pod_requests)"
+    ]
+  },
+  {
+    "name": "Total number of errors returned from CloudProvider calls.",
+    "description": "",
+    "queries": [
+      "karpenter_cloudprovider_errors_total"
+    ]
+  },
+  {
+    "name": "Node Summary",
+    "description": "",
+    "queries": [
+      "((karpenter_nodes_total_daemon_requests or karpenter_nodes_allocatable*0) + \n(karpenter_nodes_total_pod_requests or karpenter_nodes_allocatable*0)) / \nkarpenter_nodes_allocatable",
+      "((karpenter_nodes_total_daemon_requests or karpenter_nodes_allocatable*0) + \n(karpenter_nodes_total_pod_requests or karpenter_nodes_allocatable*0)) / \nkarpenter_nodes_allocatable",
+      "karpenter_nodes_total_daemon_requests + \nkarpenter_nodes_total_pod_requests",
+      "label_replace(\n    sum by (node)(node_time_seconds) - sum by (node)(node_boot_time_seconds),\n    \"node_name\", \"$1\", \"node\", \"(.+)\"\n)"
+    ]
+  },
+  {
+    "name": "Node Activity",
+    "description": "",
+    "queries": [
+      "increase(karpenter_nodeclaims_created_total[5m])",
+      "- increase(karpenter_nodeclaims_terminated_total[5m])"
+    ]
+  },
+  {
+    "name": "Node AZ Distribution",
+    "description": "",
+    "queries": [
+      "count(karpenter_nodes_total_pod_requests) by (zone)"
+    ]
+  },
+  {
+    "name": "Node CPU Reservation",
+    "description": "",
+    "queries": [
+      "karpenter_nodes_total_pod_requests / karpenter_nodes_allocatable"
+    ]
+  },
+  {
+    "name": "Node Memory Reservation",
+    "description": "",
+    "queries": [
+      "karpenter_nodes_total_pod_requests / karpenter_nodes_allocatable"
+    ]
+  },
+  {
+    "name": "Interruption Messages",
+    "description": "",
+    "queries": [
+      "idelta(karpenter_interruption_received_messages_total[1m])"
+    ]
+  },
+  {
+    "name": "Deleted Interruption Messages",
+    "description": "",
+    "queries": [
+      "sum(idelta(karpenter_interruption_deleted_messages_total[1m]))"
+    ]
+  },
+  {
+    "name": "Total Number of Pods",
+    "description": "",
+    "queries": [
+      "sum(karpenter_pods_state)"
+    ]
+  },
+  {
+    "name": "Pod  Distribution by Availability zone",
+    "description": "",
+    "queries": [
+      "sum(karpenter_pods_state) by (zone)"
+    ]
+  },
+  {
+    "name": "Pod Skew By  Availability zone",
+    "description": "",
+    "queries": [
+      "max(sum(karpenter_pods_state) by (zone)) - min(sum(karpenter_pods_state) by (zone))"
+    ]
+  }
+]

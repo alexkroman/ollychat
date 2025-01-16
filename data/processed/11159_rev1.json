@@ -3,68 +3,68 @@
     "name": "Process CPU Usage",
     "description": "",
     "queries": [
-      "irate(process_cpu_user_seconds_total{instance=~\"$instance\"}[2m]) * 100",
-      "irate(process_cpu_system_seconds_total{instance=~\"$instance\"}[2m]) * 100"
+      "irate(process_cpu_user_seconds_total[2m]) * 100",
+      "irate(process_cpu_system_seconds_total[2m]) * 100"
     ]
   },
   {
     "name": "Event Loop Lag",
     "description": "",
     "queries": [
-      "nodejs_eventloop_lag_seconds{instance=~\"$instance\"}"
+      "nodejs_eventloop_lag_seconds"
     ]
   },
   {
     "name": "Node.js Version",
     "description": "",
     "queries": [
-      "sum(nodejs_version_info{instance=~\"$instance\"}) by (version)"
+      "sum(nodejs_version_info) by (version)"
     ]
   },
   {
     "name": "Process Restart Times",
     "description": "",
     "queries": [
-      "sum(changes(process_start_time_seconds{instance=~\"$instance\"}[1m]))"
+      "sum(changes(process_start_time_seconds[1m]))"
     ]
   },
   {
     "name": "Process Memory Usage",
     "description": "",
     "queries": [
-      "process_resident_memory_bytes{instance=~\"$instance\"}",
-      "nodejs_heap_size_total_bytes{instance=~\"$instance\"}",
-      "nodejs_heap_size_used_bytes{instance=~\"$instance\"}",
-      "nodejs_external_memory_bytes{instance=~\"$instance\"}"
+      "process_resident_memory_bytes",
+      "nodejs_heap_size_total_bytes",
+      "nodejs_heap_size_used_bytes",
+      "nodejs_external_memory_bytes"
     ]
   },
   {
     "name": "Active Handlers/Requests Total",
     "description": "",
     "queries": [
-      "nodejs_active_handles_total{instance=~\"$instance\"}",
-      "nodejs_active_requests_total{instance=~\"$instance\"}"
+      "nodejs_active_handles_total",
+      "nodejs_active_requests_total"
     ]
   },
   {
     "name": "Heap Total Detail",
     "description": "",
     "queries": [
-      "nodejs_heap_space_size_total_bytes{instance=~\"$instance\"}"
+      "nodejs_heap_space_size_total_bytes"
     ]
   },
   {
     "name": "Heap Used Detail",
     "description": "",
     "queries": [
-      "nodejs_heap_space_size_used_bytes{instance=~\"$instance\"}"
+      "nodejs_heap_space_size_used_bytes"
     ]
   },
   {
     "name": "Heap Available Detail",
     "description": "",
     "queries": [
-      "nodejs_heap_space_size_available_bytes{instance=~\"$instance\"}"
+      "nodejs_heap_space_size_available_bytes"
     ]
   }
 ]

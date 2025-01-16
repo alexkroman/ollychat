@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Traefik Instances",
+    "description": "",
+    "queries": [
+      "count(traefik_config_reloads_total)"
+    ]
+  },
+  {
+    "name": "Requests per Entrypoint",
+    "description": "",
+    "queries": [
+      "sum(rate(traefik_entrypoint_requests_total[$interval])) by (entrypoint)"
+    ]
+  },
+  {
+    "name": "Apdex score",
+    "description": "https://medium.com/@tristan_96324/prometheus-apdex-alerting-d17a065e39d0",
+    "queries": [
+      "(sum(rate(traefik_entrypoint_request_duration_seconds_bucket[$interval])) by (method) + \n sum(rate(traefik_entrypoint_request_duration_seconds_bucket[$interval])) by (method)) / 2 / \n sum(rate(traefik_entrypoint_request_duration_seconds_count[$interval])) by (method)\n"
+    ]
+  },
+  {
+    "name": "Http Code ",
+    "description": "Mean Distribution",
+    "queries": [
+      "sum(rate(traefik_service_requests_total[$interval])) by (method, code)"
+    ]
+  },
+  {
+    "name": "Top slow services",
+    "description": "",
+    "queries": [
+      "topk(15,\n    label_replace(\n        traefik_service_request_duration_seconds_sum / \n          traefik_service_request_duration_seconds_count,\n        \"service\", \"$1\", \"service\", \"([^-]+-[^-]+).*\")\n)\n\n"
+    ]
+  },
+  {
+    "name": "Most requested services",
+    "description": "",
+    "queries": [
+      "topk(15,\n    label_replace(\n        sum by (service,code) \n          (rate(traefik_service_requests_total[$interval])) > 0,\n        \"service\", \"$1\", \"service\", \"([^-]+-[^-]+).*\")\n)"
+    ]
+  }
+]

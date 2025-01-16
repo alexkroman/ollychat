@@ -21,14 +21,8 @@ function modifyPromQLQuery(query: string): string {
   // Set the time interval to 30m
   query = query.replace(/\[\$\__rate_interval\]/g, '[30m]');
 
-  // Remove $node and $job labels
-  query = query.replace(/\{[^}]*\}/g, match => {
-    return match
-      .replace(/instance="\$node",?\s*/g, '')
-      .replace(/job="\$job",?\s*/g, '')
-      .replace(/,\s*}/g, '}') // Handle trailing commas
-      .replace(/\{\s*}/g, '{}'); // Replace empty braces
-  });
+  // Remove braces
+  query = query.replace(/\{[^}]*\}/g, '');
 
   return query;
 }

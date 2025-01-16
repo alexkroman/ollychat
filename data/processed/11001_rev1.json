@@ -3,7 +3,7 @@
     "name": "Time Left",
     "description": "",
     "queries": [
-      "sort_desc( sum(certmanager_certificate_expiration_timestamp_seconds{exported_namespace=~\"$Namespace\"} - time()) BY (name,exported_namespace) )"
+      "sort_desc( sum(certmanager_certificate_expiration_timestamp_seconds - time()) BY (name,exported_namespace) )"
     ]
   },
   {
@@ -17,7 +17,7 @@
     "name": "Time Left",
     "description": "",
     "queries": [
-      "sum(certmanager_certificate_expiration_timestamp_seconds{exported_namespace=~\"$Namespace\"} - time()) BY (name,exported_namespace)"
+      "sum(certmanager_certificate_expiration_timestamp_seconds - time()) BY (name,exported_namespace)"
     ]
   },
   {
@@ -38,56 +38,56 @@
     "name": "/directory",
     "description": "",
     "queries": [
-      "sum(rate(certmanager_http_acme_client_request_count{path=\"/directory\"}[2m])) BY (status)"
+      "sum(rate(certmanager_http_acme_client_request_count[2m])) BY (status)"
     ]
   },
   {
     "name": "/acme/cert",
     "description": "",
     "queries": [
-      "sum(rate(certmanager_http_acme_client_request_count{path=\"/acme/cert\"}[2m])) BY (status)"
+      "sum(rate(certmanager_http_acme_client_request_count[2m])) BY (status)"
     ]
   },
   {
     "name": "/acme/new-acct",
     "description": "",
     "queries": [
-      "sum(rate(certmanager_http_acme_client_request_count{path=\"/acme/new-acct\"}[2m])) BY (status)"
+      "sum(rate(certmanager_http_acme_client_request_count[2m])) BY (status)"
     ]
   },
   {
     "name": "/acme/order",
     "description": "",
     "queries": [
-      "sum(rate(certmanager_http_acme_client_request_count{path=\"/acme/order\"}[2m])) BY (status)"
+      "sum(rate(certmanager_http_acme_client_request_count[2m])) BY (status)"
     ]
   },
   {
     "name": "/acme/new-order",
     "description": "",
     "queries": [
-      "sum(rate(certmanager_http_acme_client_request_count{path=\"/acme/new-order\"}[2m])) BY (status)"
+      "sum(rate(certmanager_http_acme_client_request_count[2m])) BY (status)"
     ]
   },
   {
     "name": "/acme/authz-v3",
     "description": "",
     "queries": [
-      "sum(rate(certmanager_http_acme_client_request_count{path=\"/acme/authz-v3\"}[2m])) BY (status)"
+      "sum(rate(certmanager_http_acme_client_request_count[2m])) BY (status)"
     ]
   },
   {
     "name": "/acme/chall-v3",
     "description": "",
     "queries": [
-      "sum(rate(certmanager_http_acme_client_request_count{path=\"/acme/chall-v3\"}[2m])) BY (status)"
+      "sum(rate(certmanager_http_acme_client_request_count[2m])) BY (status)"
     ]
   },
   {
     "name": "/acme/finalize",
     "description": "",
     "queries": [
-      "sum(rate(certmanager_http_acme_client_request_count{path=\"/acme/finalize\"}[2m])) BY (status)"
+      "sum(rate(certmanager_http_acme_client_request_count[2m])) BY (status)"
     ]
   }
 ]

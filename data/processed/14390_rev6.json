@@ -1,0 +1,268 @@
+[
+  {
+    "name": "Available Processors",
+    "description": "Displays the number of processors available to the Java virtual machine. This value may change during a particular invocation of the virtual machine.",
+    "queries": [
+      "base_cpu_availableProcessors"
+    ]
+  },
+  {
+    "name": "System CPU load",
+    "description": "Displays the \"recent cpu usage\" for the whole system. This value is a double in the [0.0,1.0] interval. A value of 0.0 means that all CPUs were idle during the recent period of time observed, while a value of 1.0 means that all CPUs were actively running 100% of the time during the recent period being observed. All values betweens 0.0 and 1.0 are possible depending of the activities going on in the system. If the system recent cpu usage is not available, the method returns a negative value.",
+    "queries": [
+      "system_cpu_usage"
+    ]
+  },
+  {
+    "name": "Process CPU load",
+    "description": "Displays  the \"recent cpu usage\" for the Java Virtual Machine process. This value is a double in the [0.0,1.0] interval. A value of 0.0 means that none of the CPUs were running threads from the JVM process during the recent period of time observed, while a value of 1.0 means that all CPUs were actively running threads from the JVM 100% of the time during the recent period being observed. Threads from the JVM include the application threads as well as the JVM internal threads. All values betweens 0.0 and 1.0 are possible depending of the activities going on in the JVM process and the whole system. If the Java Virtual Machine recent CPU usage is not available, the method returns a negative value.",
+    "queries": [
+      "base_cpu_processCpuLoad"
+    ]
+  },
+  {
+    "name": "System Load Average",
+    "description": "Displays the system load average for the last minute. The system load average is the sum of the number of runnable entities queued to the available processors and the number of runnable entities running on the available processors averaged over a period of time. The way in which the load average is calculated is operating system specific but is typically a damped time-dependent average. If the load average is not available, a negative value is displayed. This attribute is designed to provide a hint about the system load and may be queried frequently. The load average may be unavailable on some platforms where it is expensive to implement this method.",
+    "queries": [
+      "base_cpu_systemLoadAverage"
+    ]
+  },
+  {
+    "name": "Process CPU time",
+    "description": "Displays the CPU time used by the process on which the Java virtual machine is running in nanoseconds. The returned value is of nanoseconds precision but not necessarily nanoseconds accuracy. This method returns -1 if the the platform does not support this operation.",
+    "queries": [
+      "base_cpu_processCpuTime"
+    ]
+  },
+  {
+    "name": "JVM Uptime",
+    "description": "Displays the time from the start of the Java virtual machine in milliseconds.",
+    "queries": [
+      "base_jvm_uptime"
+    ]
+  },
+  {
+    "name": "Number active of connections",
+    "description": "Number active of connections.",
+    "queries": [
+      "agroal_active_count"
+    ]
+  },
+  {
+    "name": "Maximum number of connections active simultaneously",
+    "description": "Maximum number of connections active simultaneously.",
+    "queries": [
+      "agroal_max_used_count"
+    ]
+  },
+  {
+    "name": "Committed Heap Memory",
+    "description": "Displays the amount of memory in bytes that is committed for the Java virtual machine to use. This amount of memory is guaranteed for the Java virtual machine to use.",
+    "queries": [
+      "base_memory_committedHeap_bytes"
+    ]
+  },
+  {
+    "name": "Max Heap Memory",
+    "description": "Displays the maximum amount of heap memory in bytes that can be used for memory management. This attribute displays -1 if the maximum heap memory size is undefined. This amount of memory is not guaranteed to be available for memory management if it is greater than the amount of committed memory. The Java virtual machine may fail to allocate memory even if the amount of used memory does not exceed this maximum size.",
+    "queries": [
+      "base_memory_maxHeap_bytes"
+    ]
+  },
+  {
+    "name": "Total Loaded Class Count",
+    "description": "Displays the total number of classes that have been loaded since the Java virtual machine has started execution.",
+    "queries": [
+      "base_classloader_loadedClasses_total"
+    ]
+  },
+  {
+    "name": "Used Heap Memory",
+    "description": "Displays the amount of used heap memory in bytes.",
+    "queries": [
+      "base_memory_usedHeap_bytes"
+    ]
+  },
+  {
+    "name": "Garbage Collection Count",
+    "description": "Displays the total number of collections that have occurred. This attribute lists -1 if the collection count is undefined for this collector.",
+    "queries": [
+      "base_gc_total"
+    ]
+  },
+  {
+    "name": "Current Loaded Class Count",
+    "description": "Displays the number of classes that are currently loaded in the Java virtual machine.",
+    "queries": [
+      "base_classloader_loadedClasses_count"
+    ]
+  },
+  {
+    "name": "Total Unloaded Class Count",
+    "description": "Displays the total number of classes unloaded since the Java virtual machine has started execution.",
+    "queries": [
+      "base_classloader_unloadedClasses_total"
+    ]
+  },
+  {
+    "name": "Thread Count",
+    "description": "Displays the current number of live threads including both daemon and non-daemon threads",
+    "queries": [
+      "base_thread_count"
+    ]
+  },
+  {
+    "name": "Daemon Thread Count",
+    "description": "Displays the current number of live daemon threads.",
+    "queries": [
+      "base_thread_daemon_count"
+    ]
+  },
+  {
+    "name": "Peak Thread Count",
+    "description": "Displays the peak live thread count since the Java virtual machine started or peak was reset. This includes daemon and non-daemon threads.",
+    "queries": [
+      "base_thread_max_count"
+    ]
+  },
+  {
+    "name": "Committed Non Heap Memory",
+    "description": "Displays the amount of non heap memory in bytes that is committed for the Java virtual machine to use.",
+    "queries": [
+      "base_memory_committedNonHeap_bytes"
+    ]
+  },
+  {
+    "name": "Free physical memory size",
+    "description": "Displays the amount of free physical memory in bytes.",
+    "queries": [
+      "vendor_cache_container_health_free_memory_kb"
+    ]
+  },
+  {
+    "name": "Free memory host size",
+    "description": "Displays the amount of free memory (KB) in the host",
+    "queries": [
+      "vendor_cache_container_health_free_memory_kb"
+    ]
+  },
+  {
+    "name": "Peak usage of the memory pool denoted by the 'name' tag",
+    "description": "Peak usage of the memory pool denoted by the 'name' tag",
+    "queries": [
+      "vendor_memoryPool_Compressed_Class_Space_usage_max_bytes"
+    ]
+  },
+  {
+    "name": "Current usage of the memory pool",
+    "description": "Current usage of the memory pool",
+    "queries": [
+      "vendor_memoryPool_Compressed_Class_Space_usage_max_bytes"
+    ]
+  },
+  {
+    "name": "Number of times an acquire operation succeeded",
+    "description": "Number of times an acquire operation succeeded.",
+    "queries": [
+      "agroal_acquire_count_total"
+    ]
+  },
+  {
+    "name": "Number of connections removed from the pool, not counting invalid / idle",
+    "description": "Number of connections removed from the pool, not counting invalid / idle.",
+    "queries": [
+      "agroal_flush_count_total"
+    ]
+  },
+  {
+    "name": "Number of times a leak was detected",
+    "description": "Number of times a leak was detected.",
+    "queries": [
+      "agroal_leak_detection_count_total"
+    ]
+  },
+  {
+    "name": "Number of idle connections in the pool, available to be acquired",
+    "description": "Number of idle connections in the pool, available to be acquired.",
+    "queries": [
+      "agroal_available_count"
+    ]
+  },
+  {
+    "name": "Maximum time an application waited to acquire a connection",
+    "description": "Maximum time an application waited to acquire a connection.",
+    "queries": [
+      "agroal_blocking_time_max_milliseconds"
+    ]
+  },
+  {
+    "name": "Number of connections removed from the pool for being idle",
+    "description": "Number of connections removed from the pool for being idle.",
+    "queries": [
+      "agroal_reap_count_total"
+    ]
+  },
+  {
+    "name": "Number of connections removed from the pool for being invalid",
+    "description": "Number of connections removed from the pool for being invalid.",
+    "queries": [
+      "agroal_invalid_count_total"
+    ]
+  },
+  {
+    "name": "Number of created connections",
+    "description": "Number of created connections.",
+    "queries": [
+      "agroal_creation_count_total"
+    ]
+  },
+  {
+    "name": "Number of destroyed connections",
+    "description": "Number of destroyed connections.",
+    "queries": [
+      "agroal_destroy_count_total"
+    ]
+  },
+  {
+    "name": "Average time for a connection to be created",
+    "description": "Average time for a connection to be created.",
+    "queries": [
+      "agroal_creation_time_average_milliseconds"
+    ]
+  },
+  {
+    "name": "Maximum time for a connection to be created",
+    "description": "Maximum time for a connection to be created.",
+    "queries": [
+      "agroal_creation_time_max_milliseconds"
+    ]
+  },
+  {
+    "name": "Total time applications waited to acquire a connection",
+    "description": "Total time applications waited to acquire a connection.",
+    "queries": [
+      "agroal_blocking_time_total_milliseconds"
+    ]
+  },
+  {
+    "name": "Average time an application waited to acquire a connection",
+    "description": "Average time an application waited to acquire a connection.",
+    "queries": [
+      "agroal_blocking_time_average_milliseconds"
+    ]
+  },
+  {
+    "name": "Total time waiting for a connections to be created",
+    "description": "Total time waiting for a connections to be created.",
+    "queries": [
+      "agroal_creation_time_total_milliseconds"
+    ]
+  },
+  {
+    "name": "Approximate number of threads blocked, waiting to acquire a connection",
+    "description": "Approximate number of threads blocked, waiting to acquire a connection.",
+    "queries": [
+      "agroal_awaiting_count"
+    ]
+  }
+]

@@ -1,0 +1,604 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_AZURE_MONITOR - LOG ANALYTICS - MS TENANT",
+      "label": "Azure Monitor - Log Analytics - MS Tenant",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "grafana-azure-monitor-datasource",
+      "pluginName": "Azure Monitor"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.0.3"
+    },
+    {
+      "type": "datasource",
+      "id": "grafana-azure-monitor-datasource",
+      "name": "Azure Monitor",
+      "version": "0.3.0"
+    },
+    {
+      "type": "panel",
+      "id": "grafana-worldmap-panel",
+      "name": "Worldmap Panel",
+      "version": "0.3.2"
+    },
+    {
+      "type": "panel",
+      "id": "table-old",
+      "name": "Table (old)",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Azure Monitor Container Insights Global view for multiple AKS clusters",
+  "editable": true,
+  "gnetId": 12180,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "cacheTimeout": null,
+      "circleMaxSize": 30,
+      "circleMinSize": "20",
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": "${DS_AZURE_MONITOR - LOG ANALYTICS - MS TENANT}",
+      "decimals": 0,
+      "esGeoPoint": "",
+      "esLocationName": "",
+      "esMetric": "Count",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 19,
+        "w": 9,
+        "x": 0,
+        "y": 0
+      },
+      "hideEmpty": false,
+      "hideZero": false,
+      "id": 6,
+      "initialZoom": "4",
+      "jsonUrl": "https://liftrfiles.blob.core.windows.net/public/azure_regions.json",
+      "links": [],
+      "locationData": "table",
+      "mapCenter": "North America",
+      "mapCenterLatitude": 40,
+      "mapCenterLongitude": -100,
+      "maxDataPoints": 1,
+      "mouseWheelZoom": false,
+      "showLegend": true,
+      "stickyLabels": true,
+      "tableQueryOptions": {
+        "geohashField": "geohash",
+        "labelField": "regionDisplayName",
+        "latitudeField": "latitude",
+        "longitudeField": "longitude",
+        "metricField": "PodCount",
+        "queryType": "coordinates"
+      },
+      "targets": [
+        {
+          "appInsights": {
+            "dimension": "none",
+            "metricName": "select",
+            "rawQuery": false,
+            "rawQueryString": "",
+            "timeColumn": "timestamp",
+            "timeGrain": "auto",
+            "valueColumn": ""
+          },
+          "azureLogAnalytics": {
+            "query": "let regionCoordinate = datatable (ClusterRegion:string, regionDisplayName:string, latitude:double, longitude:double)\n[\"eastasia\", \"East Asia\", 22.267, 114.188,\n\"southeastasia\", \"Southeast Asia\", 1.283, 103.833,\n\"centralus\", \"Central US\", 41.5908, \"-93.6208\",\n\"eastus\", \"East US\", 37.3719, \"-79.8164\",\n\"eastus2\", \"East US 2\", 36.6681, \"-78.3889\",\n\"westus\", \"West US\", 37.783, \"-122.417\",\n\"westus2\", \"West US 2\", \"47.233\", \"-119.852\",\n\"westcentralus\", \"West Central US\", \"40.890\", \"-110.234\",\n\"northcentralus\", \"North Central US\", \"41.8819\", \"-87.6278\",\n\"southcentralus\", \"South Central US\", \"29.4167\", \"-98.5\",\n\"northeurope\", \"North Europe\", \"53.3478\", \"-6.2597\",\n\"westeurope\", \"West Europe\", \"52.3667\", \"4.9\",\n\"australiaeast\", \"Australia East\", \"-33.86\", \"151.2094\",\n\"australiasoutheast\", \"Australia Southeast\", \"-37.8136\", \"144.9631\",\n\"canadacentral\", \"Canada Central\", \"43.653\", \"-79.383\",\n\"canadaeast\", \"Canada East\", \"46.817\", \"-71.217\",\n\"uksouth\", \"UK South\", \"50.941\", \"-0.799\",\n\"ukwest\", \"UK West\", \"53.427\", \"-3.084\"];\nlet podTable = KubePodInventory\n| where $__timeFilter(TimeGenerated)  \n| where isnotempty(ClusterName)\n| where isnotempty(Namespace)\n| where isnotempty(Computer)\n| where Namespace != \"monitoring\" and Namespace != \"aad-pod-id\" and Namespace != \"kube-system\" \n| summarize arg_max(TimeGenerated, *) by Name\n| project TimeGenerated, PodName=Name, Node=Computer, PodType=ControllerKind, PodStatus, PodRestart=PodRestartCount, PodCreationTimeStamp, ClusterName, Namespace;\nlet clusterTable = KubeNodeInventory\n| where $__timeFilter(TimeGenerated) \n| summarize arg_max(TimeGenerated, *) by ClusterId\n| extend ClusterRegion = tostring(parse_json(Labels)[0].[\"topology.kubernetes.io/region\"])\n| project ClusterId, ClusterName, ClusterRegion;\nlet podCountTable = podTable\n| join kind=inner clusterTable on ClusterName\n| project Name=PodName, Status=PodStatus, ClusterRegion, ClusterName, Node, Restarts=PodRestart, Age=now()-PodCreationTimeStamp, Namespace, ClusterId, PodCreationTimeStamp, TimeGenerated\n| summarize PodCount=count() by ClusterRegion, Status, ClusterName;\npodCountTable\n| summarize TotalPodCount=sum(PodCount) by ClusterName\n| join kind=inner podCountTable on ClusterName\n| project-away ClusterName1\n| summarize PodNumber=sum(PodCount), Total=sum(TotalPodCount) by ClusterRegion, Status \n| where Status == \"Running\"\n| join kind=inner regionCoordinate on ClusterRegion\n| project PodCount=Total, latitude, longitude, regionDisplayName\n",
+            "resultFormat": "table",
+            "workspace": "361ee3fb-61db-4e4a-a0fb-215783eb1c14"
+          },
+          "azureMonitor": {
+            "aggOptions": [],
+            "dimensionFilter": "*",
+            "metricDefinition": "select",
+            "metricName": "select",
+            "metricNamespace": "select",
+            "resourceGroup": "select",
+            "resourceName": "select",
+            "timeGrain": "auto",
+            "timeGrains": [],
+            "top": "10"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": "eebfbfdb-4167-49f6-be43-466a6709609f"
+        }
+      ],
+      "thresholds": "0,10",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pod count by region",
+      "type": "grafana-worldmap-panel",
+      "unitPlural": "",
+      "unitSingle": "",
+      "valueName": "total"
+    },
+    {
+      "columns": [],
+      "datasource": "${DS_AZURE_MONITOR - LOG ANALYTICS - MS TENANT}",
+      "description": "List all the pods from multiple clusters and multiple regions.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 19,
+        "w": 15,
+        "x": 9,
+        "y": 0
+      },
+      "id": 2,
+      "pageSize": null,
+      "showHeader": true,
+      "sort": {
+        "col": 7,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Namespace",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "ClusterId",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "ClusterRegion",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "PodCreationTimeStamp",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": "cell",
+          "colors": [
+            "#73BF69",
+            "#FF9830",
+            "#F2495C"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Restarts",
+          "preserveFormat": false,
+          "rangeMaps": [],
+          "thresholds": [
+            "3",
+            "10"
+          ],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "TimeGenerated",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Node",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "appInsights": {
+            "dimension": "none",
+            "metricName": "select",
+            "rawQuery": false,
+            "rawQueryString": "",
+            "timeColumn": "timestamp",
+            "timeGrain": "auto",
+            "valueColumn": ""
+          },
+          "azureLogAnalytics": {
+            "query": "let podTable = KubePodInventory\r\n| where $__timeFilter(TimeGenerated)\n| where isnotempty(ClusterName)\r\n| where isnotempty(Namespace)\r\n| where isnotempty(Computer)\r\n| where Namespace != \"monitoring\" and Namespace != \"aad-pod-id\" and Namespace != \"kube-system\" \r\n| summarize arg_max(TimeGenerated, *) by Name\r\n| project TimeGenerated, PodName=Name, Node=Computer, PodType=ControllerKind, PodStatus, ContainerStatus, ContainerStatusReason, PodRestart=PodRestartCount, PodCreationTimeStamp, ClusterName, Namespace;\nlet clusterTable = KubeNodeInventory\n| where $__timeFilter(TimeGenerated) \n| summarize arg_max(TimeGenerated, *) by ClusterId\n| extend ClusterRegion = tostring(parse_json(Labels)[0].[\"topology.kubernetes.io/region\"])\n| project ClusterId, ClusterName, ClusterRegion;\npodTable\r\n| join kind=inner clusterTable on ClusterName\r\n| project PodName, ClusterName, PodStatus, ContainerStatus, ContainerStatusReason, ClusterRegion, Node, Restarts=PodRestart, Age=now()-PodCreationTimeStamp, Namespace, ClusterId, PodCreationTimeStamp, TimeGenerated",
+            "resultFormat": "table",
+            "workspace": "361ee3fb-61db-4e4a-a0fb-215783eb1c14"
+          },
+          "azureMonitor": {
+            "aggOptions": [],
+            "dimensionFilter": "*",
+            "metricDefinition": "select",
+            "metricName": "select",
+            "metricNamespace": "select",
+            "resourceGroup": "select",
+            "resourceName": "select",
+            "timeGrain": "auto",
+            "timeGrains": [],
+            "top": "10"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": "eebfbfdb-4167-49f6-be43-466a6709609f"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pods",
+      "transform": "table",
+      "type": "table-old"
+    },
+    {
+      "columns": [],
+      "datasource": "${DS_AZURE_MONITOR - LOG ANALYTICS - MS TENANT}",
+      "description": "List all the containers from multiple clusters and multiple regions",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 21,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "id": 4,
+      "pageSize": null,
+      "showHeader": true,
+      "sort": {
+        "col": 6,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "CreatedTime",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "FinishedTime",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "PodCreationTimeStamp",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "ClusterId",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "EnvironmentVar",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "ClusterRegion",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Repository",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Node",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "TimeGenerated",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "StartedTime",
+          "thresholds": [],
+          "type": "date",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "appInsights": {
+            "dimension": "none",
+            "metricName": "select",
+            "rawQuery": false,
+            "rawQueryString": "",
+            "timeColumn": "timestamp",
+            "timeGrain": "auto",
+            "valueColumn": ""
+          },
+          "azureLogAnalytics": {
+            "query": "let podTable = KubePodInventory\r\n| where $__timeFilter(TimeGenerated)\n| where isnotempty(ClusterName)\r\n| where isnotempty(Namespace)\r\n| where isnotempty(Computer)\r\n| where Namespace != \"monitoring\" and Namespace != \"aad-pod-id\" and Namespace != \"kube-system\" \r\n| summarize arg_max(TimeGenerated, *) by Name\r\n| project TimeGenerated, PodName=Name, Node=Computer, PodType=ControllerKind, PodStatus, PodRestart=PodRestartCount, PodCreationTimeStamp, ClusterName, Namespace;\r\nlet clusterTable = KubeNodeInventory\n| where $__timeFilter(TimeGenerated) \n| summarize arg_max(TimeGenerated, *) by ClusterId\n| extend ClusterRegion = tostring(parse_json(Labels)[0].[\"topology.kubernetes.io/region\"])\n| project ClusterId, ClusterName, ClusterRegion;\nlet podInfo = podTable\r\n| join kind=inner clusterTable on ClusterName\r\n| project PodName, PodStatus, ClusterRegion, ClusterName, Node, PodRestart, ClusterId, PodCreationTimeStamp;\r\nlet containerTable = \r\n(KubePodInventory\r\n| where $__timeFilter(TimeGenerated)\n| where isnotempty(ClusterName)\r\n| where isnotempty(Namespace)\r\n| where isnotempty(Computer)\r\n| where Namespace != \"monitoring\" and Namespace != \"aad-pod-id\" and Namespace != \"kube-system\" \r\n| summarize arg_max(TimeGenerated, *) by ContainerID\r\n| project ContainerID, PodUid, PodName=tostring(Name), Namespace)\r\n| join kind=inner\r\n(ContainerInventory\r\n| where $__timeFilter(TimeGenerated)\n| summarize arg_max(TimeGenerated, *) by ContainerID\r\n| extend ContainerName=Name) on ContainerID\r\n| project-away ContainerID1;\ncontainerTable\r\n| join kind=inner podInfo on PodName\r\n| project ContainerName, Status=ContainerState, Pod=PodName, Namespace, Image, ImageTag, ClusterName, CreatedTime, StartedTime, FinishedTime, PodCreationTimeStamp, ClusterRegion, Node, ClusterId, EnvironmentVar, Repository, TimeGenerated",
+            "resultFormat": "table",
+            "workspace": "361ee3fb-61db-4e4a-a0fb-215783eb1c14"
+          },
+          "azureMonitor": {
+            "aggOptions": [],
+            "dimensionFilter": "*",
+            "metricDefinition": "select",
+            "metricName": "select",
+            "metricNamespace": "select",
+            "resourceGroup": "select",
+            "resourceName": "select",
+            "timeGrain": "auto",
+            "timeGrains": [],
+            "top": "10"
+          },
+          "queryType": "Azure Log Analytics",
+          "refId": "A",
+          "subscription": "eebfbfdb-4167-49f6-be43-466a6709609f"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Containers",
+      "transform": "table",
+      "type": "table-old"
+    }
+  ],
+  "schemaVersion": 25,
+  "style": "dark",
+  "tags": [
+    "Azure Monitor",
+    "AKS",
+    "AKS Container Insights"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "AKS Container Insights",
+  "uid": "mBO8mWPWz",
+  "version": 1
+}

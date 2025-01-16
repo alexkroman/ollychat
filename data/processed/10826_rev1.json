@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Memory in Off-Heap",
+    "description": "",
+    "queries": [
+      "go_memstats_mspan_inuse_bytes",
+      "go_memstats_mspan_sys_bytes",
+      "go_memstats_mcache_inuse_bytes",
+      "go_memstats_mcache_sys_bytes",
+      "go_memstats_buck_hash_sys_bytes",
+      "go_memstats_gc_sys_bytes",
+      "go_memstats_other_sys_bytes - go_memstats_other_sys_bytes",
+      "go_memstats_next_gc_bytes"
+    ]
+  },
+  {
+    "name": "Memory in Heap",
+    "description": "",
+    "queries": [
+      "go_memstats_heap_alloc_bytes",
+      "go_memstats_heap_sys_bytes",
+      "go_memstats_heap_idle_bytes",
+      "go_memstats_heap_inuse_bytes",
+      "go_memstats_heap_released_bytes"
+    ]
+  },
+  {
+    "name": "Memory in Stack",
+    "description": "",
+    "queries": [
+      "go_memstats_stack_inuse_bytes",
+      "go_memstats_stack_sys_bytes"
+    ]
+  },
+  {
+    "name": "Total Used Memory",
+    "description": "",
+    "queries": [
+      "go_memstats_sys_bytes"
+    ]
+  },
+  {
+    "name": "Number of Live Objects",
+    "description": "",
+    "queries": [
+      "go_memstats_mallocs_total - go_memstats_frees_total"
+    ]
+  },
+  {
+    "name": "Rate of Objects Allocated",
+    "description": "shows how many heap objects are allocated. This is a counter value so you can use rate() to objects allocated/s.",
+    "queries": [
+      "rate(go_memstats_mallocs_total[1m])"
+    ]
+  },
+  {
+    "name": "Rate of a Pointer Dereferences",
+    "description": "go_memstats_lookups_total – counts how many pointer dereferences happened. This is a counter value so you can use rate() to lookups/s.",
+    "queries": [
+      "rate(go_memstats_lookups_total[1m])"
+    ]
+  },
+  {
+    "name": "Goroutines",
+    "description": "",
+    "queries": [
+      "go_goroutines"
+    ]
+  },
+  {
+    "name": "Rates of Allocation",
+    "description": "",
+    "queries": [
+      "rate(go_memstats_alloc_bytes_total[1m])"
+    ]
+  },
+  {
+    "name": "GC duration quantile",
+    "description": "",
+    "queries": [
+      "go_gc_duration_seconds"
+    ]
+  }
+]

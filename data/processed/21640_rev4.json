@@ -1,0 +1,123 @@
+[
+  {
+    "name": "Active Workers $controller",
+    "description": "",
+    "queries": [
+      "controller_runtime_active_workers"
+    ]
+  },
+  {
+    "name": "Max Concurrent Reconciles $controller",
+    "description": "",
+    "queries": [
+      "controller_runtime_max_concurrent_reconciles"
+    ]
+  },
+  {
+    "name": "Reconcile Rate $controller",
+    "description": "",
+    "queries": [
+      "sum by (controller, result) (rate(controller_runtime_reconcile_total[2m]))"
+    ]
+  },
+  {
+    "name": "Reconcile Errors Rate $controller",
+    "description": "",
+    "queries": [
+      "sum by (controller) (rate(controller_runtime_reconcile_errors_total[2m]))"
+    ]
+  },
+  {
+    "name": "Runtime Recincile Time $controller",
+    "description": "",
+    "queries": [
+      "histogram_quantile(\n  0.99,\n  sum by (le, controller)(\n    rate(\n      controller_runtime_reconcile_time_seconds_bucket[2m]\n    )\n  )\n)",
+      "histogram_quantile(\n  0.95,\n  sum by (le, controller)(\n    rate(\n      controller_runtime_reconcile_time_seconds_bucket[2m]\n    )\n  )\n)",
+      "histogram_quantile(\n  0.90,\n  sum by (le, controller)(\n    rate(\n      controller_runtime_reconcile_time_seconds_bucket[2m]\n    )\n  )\n)",
+      "histogram_quantile(\n  0.50,\n  sum by (le, controller)(\n    rate(\n      controller_runtime_reconcile_time_seconds_bucket[2m]\n    )\n  )\n)"
+    ]
+  },
+  {
+    "name": "Depth $controller",
+    "description": "",
+    "queries": [
+      "workqueue_depth"
+    ]
+  },
+  {
+    "name": "Adds Rate $controller",
+    "description": "",
+    "queries": [
+      "sum by (name) (rate(workqueue_adds_total[2m]))"
+    ]
+  },
+  {
+    "name": "Longest Running Processor $controller",
+    "description": "",
+    "queries": [
+      "workqueue_longest_running_processor_seconds"
+    ]
+  },
+  {
+    "name": "Retries Rate $controller",
+    "description": "",
+    "queries": [
+      "sum by (name) (rate(workqueue_retries_total[2m]))"
+    ]
+  },
+  {
+    "name": "Unfinished Work $controller",
+    "description": "",
+    "queries": [
+      "workqueue_unfinished_work_seconds"
+    ]
+  },
+  {
+    "name": "Work Duration $controller",
+    "description": "",
+    "queries": [
+      "histogram_quantile(\n  0.99,\n  sum by (le, name)(\n    rate(\n      workqueue_work_duration_seconds_bucket[2m]\n    )\n  )\n)",
+      "histogram_quantile(\n  0.95,\n  sum by (le, name)(\n    rate(\n      workqueue_work_duration_seconds_bucket[2m]\n    )\n  )\n)",
+      "histogram_quantile(\n  0.90,\n  sum by (le, name)(\n    rate(\n      workqueue_work_duration_seconds_bucket[2m]\n    )\n  )\n)",
+      "histogram_quantile(\n  0.50,\n  sum by (le, name)(\n    rate(\n      workqueue_work_duration_seconds_bucket[2m]\n    )\n  )\n)"
+    ]
+  },
+  {
+    "name": "Queue Duration $controller",
+    "description": "",
+    "queries": [
+      "histogram_quantile(\n  0.99,\n  sum by (le, name)(\n    rate(\n      workqueue_queue_duration_seconds_bucket[2m]\n    )\n  )\n)",
+      "histogram_quantile(\n  0.95,\n  sum by (le, name)(\n    rate(\n      workqueue_queue_duration_seconds_bucket[2m]\n    )\n  )\n)",
+      "histogram_quantile(\n  0.90,\n  sum by (le, name)(\n    rate(\n      workqueue_queue_duration_seconds_bucket[2m]\n    )\n  )\n)",
+      "histogram_quantile(\n  0.50,\n  sum by (le, name)(\n    rate(\n      workqueue_queue_duration_seconds_bucket[2m]\n    )\n  )\n)"
+    ]
+  },
+  {
+    "name": "Sync Calls Rate $name",
+    "description": "",
+    "queries": [
+      "sum by (name, exported_namespace) (rate(externalsecret_sync_calls_total[2m]))"
+    ]
+  },
+  {
+    "name": "Sync Calls Error Rate $name",
+    "description": "",
+    "queries": [
+      "sum by (name, exported_namespace) (rate(externalsecret_sync_calls_error[2m]))"
+    ]
+  },
+  {
+    "name": "Reconcile Duration $controller",
+    "description": "",
+    "queries": [
+      "externalsecret_reconcile_duration"
+    ]
+  },
+  {
+    "name": "Status $name",
+    "description": "",
+    "queries": [
+      "externalsecret_status_condition"
+    ]
+  }
+]

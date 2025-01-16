@@ -3,63 +3,63 @@
     "name": "Policy Pass Status",
     "description": "",
     "queries": [
-      "sum(cluster_policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", status=\"pass\" })"
+      "sum(cluster_policy_report_result)"
     ]
   },
   {
     "name": "Policy Warning Status",
     "description": "",
     "queries": [
-      "sum(cluster_policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", status=\"warn\" })"
+      "sum(cluster_policy_report_result)"
     ]
   },
   {
     "name": "Policy Fail Status",
     "description": "",
     "queries": [
-      "sum(cluster_policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", status=\"fail\" })"
+      "sum(cluster_policy_report_result)"
     ]
   },
   {
     "name": "Policy Error Status",
     "description": "",
     "queries": [
-      "sum(cluster_policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", status=\"error\" })"
+      "sum(cluster_policy_report_result)"
     ]
   },
   {
     "name": "Status Timeline",
     "description": "",
     "queries": [
-      "sum(cluster_policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\" } > 0) by (status)"
+      "sum(cluster_policy_report_result > 0) by (status)"
     ]
   },
   {
     "name": "Passed Resources",
     "description": "",
     "queries": [
-      "sum(cluster_policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", kind=~\"$kind\", source=~\"$source\", status=\"pass\" }) by (policy,rule,kind,name,status,severity,category,source)"
+      "sum(cluster_policy_report_result) by (policy,rule,kind,name,status,severity,category,source)"
     ]
   },
   {
     "name": "Failed Resources",
     "description": "",
     "queries": [
-      "sum(cluster_policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", status=\"fail\" }) by (policy,rule,kind,name,status,severity,category,source)"
+      "sum(cluster_policy_report_result) by (policy,rule,kind,name,status,severity,category,source)"
     ]
   },
   {
     "name": "Warning Resources",
     "description": "",
     "queries": [
-      "sum(cluster_policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", status=\"warn\" }) by (policy,rule,kind,name,status,severity,category,source )"
+      "sum(cluster_policy_report_result) by (policy,rule,kind,name,status,severity,category,source )"
     ]
   },
   {
     "name": "Errored Resources",
     "description": "",
     "queries": [
-      "sum(cluster_policy_report_result{policy=~\"$policy\", category=~\"$category\", severity=~\"$severity\", source=~\"$source\", kind=~\"$kind\", status=\"warn\" }) by (policy,rule,kind,name,status,severity,category,source)"
+      "sum(cluster_policy_report_result) by (policy,rule,kind,name,status,severity,category,source)"
     ]
   }
 ]

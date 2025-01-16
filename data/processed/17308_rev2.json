@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Queues",
+    "description": "",
+    "queries": [
+      "count(rabbitmq_detailed_queue_consumers\n* on(instance) group_left(rabbitmq_cluster) rabbitmq_identity_info)\n"
+    ]
+  },
+  {
+    "name": "Queues with Messages Ready",
+    "description": "",
+    "queries": [
+      "count(rabbitmq_detailed_queue_messages_ready\n* on(instance) group_left(rabbitmq_cluster) rabbitmq_identity_info > 0)\n"
+    ]
+  },
+  {
+    "name": "Queues with Messages Unacked",
+    "description": "",
+    "queries": [
+      "count(rabbitmq_detailed_queue_messages_unacked\n* on(instance) group_left(rabbitmq_cluster) rabbitmq_identity_info > 0)\n"
+    ]
+  },
+  {
+    "name": "Virtual Host Ready & Unacked Messages",
+    "description": "",
+    "queries": [
+      "sum(\n  increase(\n    rabbitmq_detailed_queue_messages_ready[30m]\n  )\n) by (instance, vhost)\n* on(instance) group_left(rabbitmq_cluster, rabbitmq_node) rabbitmq_identity_info\n",
+      "sum(\n  increase(\n    rabbitmq_detailed_queue_messages_unacked[30m]\n  )\n) by (instance, vhost)\n* on(instance) group_left(rabbitmq_cluster, rabbitmq_node) rabbitmq_identity_info\n"
+    ]
+  },
+  {
+    "name": "Queue Length & Consumers",
+    "description": "",
+    "queries": [
+      "sum by (instance, vhost, queue) (rabbitmq_detailed_queue_consumers)\n* on(instance) group_left(rabbitmq_cluster, rabbitmq_node) rabbitmq_identity_info\n",
+      "sum by (instance, vhost, queue) (rabbitmq_detailed_queue_messages)\n* on(instance) group_left(rabbitmq_cluster, rabbitmq_node) rabbitmq_identity_info\n"
+    ]
+  },
+  {
+    "name": "Queue Ready & Unacked Messages",
+    "description": "",
+    "queries": [
+      "sum(\n  increase(\n    rabbitmq_detailed_queue_messages_ready[30m]\n  )\n) by (instance, vhost, queue)\n* on(instance) group_left(rabbitmq_cluster, rabbitmq_node) rabbitmq_identity_info\n",
+      "sum(\n  increase(\n    rabbitmq_detailed_queue_messages_unacked[30m]\n  )\n) by (instance, vhost, queue)\n* on(instance) group_left(rabbitmq_cluster, rabbitmq_node) rabbitmq_identity_info\n"
+    ]
+  }
+]

@@ -3,210 +3,210 @@
     "name": "Cluster Pod Usage",
     "description": "",
     "queries": [
-      "sum(kube_pod_info{node=~\"$node\"}) / sum(kube_node_status_allocatable_pods{node=~\".*\"})"
+      "sum(kube_pod_info) / sum(kube_node_status_allocatable_pods)"
     ]
   },
   {
     "name": "Cluster CPU Usage",
     "description": "",
     "queries": [
-      "sum(kube_pod_container_resource_requests_cpu_cores{node=~\"$node\"}) / sum(kube_node_status_allocatable_cpu_cores{node=~\"$node\"})"
+      "sum(kube_pod_container_resource_requests_cpu_cores) / sum(kube_node_status_allocatable_cpu_cores)"
     ]
   },
   {
     "name": "Cluster Memory Usage",
     "description": "",
     "queries": [
-      "sum(kube_pod_container_resource_requests_memory_bytes{node=~\"$node\"}) / sum(kube_node_status_allocatable_memory_bytes{node=~\"$node\"})"
+      "sum(kube_pod_container_resource_requests_memory_bytes) / sum(kube_node_status_allocatable_memory_bytes)"
     ]
   },
   {
     "name": "Cluster Disk Usage",
     "description": "",
     "queries": [
-      "(sum (node_filesystem_size{nodename=~\"$node\"}) - sum (node_filesystem_free{nodename=~\"$node\"})) / sum (node_filesystem_size{nodename=~\"$node\"})"
+      "(sum (node_filesystem_size) - sum (node_filesystem_free)) / sum (node_filesystem_size)"
     ]
   },
   {
     "name": "Cluster Pod Capacity",
     "description": "",
     "queries": [
-      "sum(kube_node_status_allocatable_pods{node=~\"$node\"})",
-      "sum(kube_node_status_capacity_pods{node=~\"$node\"})",
-      "sum(kube_pod_info{node=~\"$node\"})"
+      "sum(kube_node_status_allocatable_pods)",
+      "sum(kube_node_status_capacity_pods)",
+      "sum(kube_pod_info)"
     ]
   },
   {
     "name": "Cluster CPU Capacity",
     "description": "",
     "queries": [
-      "sum(kube_node_status_capacity_cpu_cores{node=~\"$node\"})",
-      "sum(kube_node_status_allocatable_cpu_cores{node=~\"$node\"})",
-      "sum(kube_pod_container_resource_requests_cpu_cores{node=~\"$node\"})"
+      "sum(kube_node_status_capacity_cpu_cores)",
+      "sum(kube_node_status_allocatable_cpu_cores)",
+      "sum(kube_pod_container_resource_requests_cpu_cores)"
     ]
   },
   {
     "name": "Cluster Mem Capacity",
     "description": "",
     "queries": [
-      "sum(kube_node_status_allocatable_memory_bytes{node=~\"$node\"})",
-      "sum(kube_node_status_capacity_memory_bytes{node=~\"$node\"})",
-      "sum(kube_pod_container_resource_requests_memory_bytes{node=~\"$node\"})"
+      "sum(kube_node_status_allocatable_memory_bytes)",
+      "sum(kube_node_status_capacity_memory_bytes)",
+      "sum(kube_pod_container_resource_requests_memory_bytes)"
     ]
   },
   {
     "name": "Cluster Disk Capacity",
     "description": "",
     "queries": [
-      "sum(node_filesystem_size{nodename=~\"$node\"}) - sum(node_filesystem_free{nodename=~\"$node\"})",
-      "sum(node_filesystem_size{nodename=~\"$node\"})"
+      "sum(node_filesystem_size) - sum(node_filesystem_free)",
+      "sum(node_filesystem_size)"
     ]
   },
   {
     "name": "Deployment Replicas - Up To Date",
     "description": "",
     "queries": [
-      "kube_deployment_status_replicas{namespace=~\"$namespace\"}"
+      "kube_deployment_status_replicas"
     ]
   },
   {
     "name": "Deployment Replicas",
     "description": "",
     "queries": [
-      "sum(kube_deployment_status_replicas{namespace=~\"$namespace\"})"
+      "sum(kube_deployment_status_replicas)"
     ]
   },
   {
     "name": "Deployment Replicas - Updated",
     "description": "",
     "queries": [
-      "sum(kube_deployment_status_replicas_updated{namespace=~\"$namespace\"})"
+      "sum(kube_deployment_status_replicas_updated)"
     ]
   },
   {
     "name": "Deployment Replicas - Unavailable",
     "description": "",
     "queries": [
-      "sum(kube_deployment_status_replicas_unavailable{namespace=~\"$namespace\"})"
+      "sum(kube_deployment_status_replicas_unavailable)"
     ]
   },
   {
     "name": "Number Of Nodes",
     "description": "",
     "queries": [
-      "sum(kube_node_info{node=~\"$node\"})"
+      "sum(kube_node_info)"
     ]
   },
   {
     "name": "Nodes Out of Disk",
     "description": "",
     "queries": [
-      "sum(kube_node_status_condition{condition=\"OutOfDisk\", node=~\"$node\", status=\"true\"})"
+      "sum(kube_node_status_condition)"
     ]
   },
   {
     "name": "Nodes Unavailable",
     "description": "",
     "queries": [
-      "sum(kube_node_spec_unschedulable{node=~\"$node\"})"
+      "sum(kube_node_spec_unschedulable)"
     ]
   },
   {
     "name": "Pods Running",
     "description": "",
     "queries": [
-      "sum(kube_pod_status_phase{namespace=~\"$namespace\", phase=\"Running\"})"
+      "sum(kube_pod_status_phase)"
     ]
   },
   {
     "name": "Pods Pending",
     "description": "",
     "queries": [
-      "sum(kube_pod_status_phase{namespace=~\"$namespace\", phase=\"Pending\"})"
+      "sum(kube_pod_status_phase)"
     ]
   },
   {
     "name": "Pods Failed",
     "description": "",
     "queries": [
-      "sum(kube_pod_status_phase{namespace=~\"$namespace\", phase=\"Failed\"})"
+      "sum(kube_pod_status_phase)"
     ]
   },
   {
     "name": "Pods Succeeded",
     "description": "",
     "queries": [
-      "sum(kube_pod_status_phase{namespace=~\"$namespace\", phase=\"Succeeded\"})"
+      "sum(kube_pod_status_phase)"
     ]
   },
   {
     "name": "Pods Unknown",
     "description": "",
     "queries": [
-      "sum(kube_pod_status_phase{namespace=~\"$namespace\", phase=\"Unknown\"})"
+      "sum(kube_pod_status_phase)"
     ]
   },
   {
     "name": "Containers Running",
     "description": "",
     "queries": [
-      "sum(kube_pod_container_status_running{namespace=~\"$namespace\"})"
+      "sum(kube_pod_container_status_running)"
     ]
   },
   {
     "name": "Containers Waiting",
     "description": "",
     "queries": [
-      "sum(kube_pod_container_status_waiting{namespace=~\"$namespace\"})"
+      "sum(kube_pod_container_status_waiting)"
     ]
   },
   {
     "name": "Containers Terminated",
     "description": "",
     "queries": [
-      "sum(kube_pod_container_status_terminated{namespace=~\"$namespace\"})"
+      "sum(kube_pod_container_status_terminated)"
     ]
   },
   {
     "name": "Containers Restarts (Last 30 Minutes)",
     "description": "",
     "queries": [
-      "sum(delta(kube_pod_container_status_restarts{namespace=\"kube-system\"}[30m]))"
+      "sum(delta(kube_pod_container_status_restarts[30m]))"
     ]
   },
   {
     "name": "CPU Cores Requested by Containers",
     "description": "",
     "queries": [
-      "sum(kube_pod_container_resource_requests_cpu_cores{namespace=~\"$namespace\", node=~\"$node\"})"
+      "sum(kube_pod_container_resource_requests_cpu_cores)"
     ]
   },
   {
     "name": "Memory Requested By Containers",
     "description": "",
     "queries": [
-      "sum(kube_pod_container_resource_requests_memory_bytes{namespace=~\"$namespace\", node=~\"$node\"})"
+      "sum(kube_pod_container_resource_requests_memory_bytes)"
     ]
   },
   {
     "name": "Jobs Succeeded",
     "description": "",
     "queries": [
-      "sum(kube_job_status_succeeded{namespace=~\"$namespace\"})"
+      "sum(kube_job_status_succeeded)"
     ]
   },
   {
     "name": "Jobs Succeeded",
     "description": "",
     "queries": [
-      "sum(kube_job_status_active{namespace=~\"$namespace\"})"
+      "sum(kube_job_status_active)"
     ]
   },
   {
     "name": "Jobs Failed",
     "description": "",
     "queries": [
-      "sum(kube_job_status_failed{namespace=~\"$namespace\"})"
+      "sum(kube_job_status_failed)"
     ]
   }
 ]

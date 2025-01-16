@@ -1,0 +1,105 @@
+[
+  {
+    "name": "CoreDNS Version",
+    "description": "",
+    "queries": [
+      "coredns_build_info"
+    ]
+  },
+  {
+    "name": "Requests (total)",
+    "description": "",
+    "queries": [
+      "sum(rate(coredns_dns_request_count_total[5m])) by (proto) or\nsum(rate(coredns_dns_requests_total[5m])) by (proto)"
+    ]
+  },
+  {
+    "name": "Requests (by qtype)",
+    "description": "",
+    "queries": [
+      "sum(rate(coredns_dns_request_type_count_total[5m])) by (type) or \nsum(rate(coredns_dns_requests_total[5m])) by (type)"
+    ]
+  },
+  {
+    "name": "Requests (by zone)",
+    "description": "",
+    "queries": [
+      "sum(rate(coredns_dns_request_count_total[5m])) by (zone) or\nsum(rate(coredns_dns_requests_total[5m])) by (zone)"
+    ]
+  },
+  {
+    "name": "Requests (DO bit)",
+    "description": "",
+    "queries": [
+      "sum(rate(coredns_dns_request_do_count_total[5m])) or\nsum(rate(coredns_dns_do_requests_total[5m]))",
+      "sum(rate(coredns_dns_request_count_total[5m])) or\nsum(rate(coredns_dns_requests_total[5m]))"
+    ]
+  },
+  {
+    "name": "Requests (size, udp)",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.99, sum(rate(coredns_dns_request_size_bytes_bucket[5m])) by (le,proto))",
+      "histogram_quantile(0.90, sum(rate(coredns_dns_request_size_bytes_bucket[5m])) by (le,proto))",
+      "histogram_quantile(0.50, sum(rate(coredns_dns_request_size_bytes_bucket[5m])) by (le,proto))"
+    ]
+  },
+  {
+    "name": "Requests (size,tcp)",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.99, sum(rate(coredns_dns_request_size_bytes_bucket[5m])) by (le,proto))",
+      "histogram_quantile(0.90, sum(rate(coredns_dns_request_size_bytes_bucket[5m])) by (le,proto))",
+      "histogram_quantile(0.50, sum(rate(coredns_dns_request_size_bytes_bucket[5m])) by (le,proto))"
+    ]
+  },
+  {
+    "name": "Responses (by rcode)",
+    "description": "",
+    "queries": [
+      "sum(rate(coredns_dns_response_rcode_count_total[5m])) by (rcode) or\nsum(rate(coredns_dns_responses_total[5m])) by (rcode)"
+    ]
+  },
+  {
+    "name": "Responses (duration)",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.99, sum(rate(coredns_dns_request_duration_seconds_bucket[5m])) by (le, job))",
+      "histogram_quantile(0.90, sum(rate(coredns_dns_request_duration_seconds_bucket[5m])) by (le))",
+      "histogram_quantile(0.50, sum(rate(coredns_dns_request_duration_seconds_bucket[5m])) by (le))"
+    ]
+  },
+  {
+    "name": "Responses (size, udp)",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.99, sum(rate(coredns_dns_response_size_bytes_bucket[5m])) by (le,proto)) ",
+      "histogram_quantile(0.90, sum(rate(coredns_dns_response_size_bytes_bucket[5m])) by (le,proto)) ",
+      "histogram_quantile(0.50, sum(rate(coredns_dns_response_size_bytes_bucket[5m])) by (le,proto)) "
+    ]
+  },
+  {
+    "name": "Responses (size, tcp)",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.99, sum(rate(coredns_dns_response_size_bytes_bucket[5m])) by (le,proto)) ",
+      "histogram_quantile(0.90, sum(rate(coredns_dns_response_size_bytes_bucket[5m])) by (le,proto)) ",
+      "histogram_quantile(0.50, sum(rate(coredns_dns_response_size_bytes_bucket[5m])) by (le, proto)) "
+    ]
+  },
+  {
+    "name": "Cache (size)",
+    "description": "",
+    "queries": [
+      "sum(coredns_cache_size) by (type) or\nsum(coredns_cache_entries) by (type)"
+    ]
+  },
+  {
+    "name": "Cache (hitrate)",
+    "description": "",
+    "queries": [
+      "sum(rate(coredns_cache_hits_total[5m])) by (type)",
+      "sum(rate(coredns_cache_misses_total[5m])) by (type)"
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Message count",
+    "description": "Summed delta between High and Low watermark of all partitions in the given topic. Therefore not accurate for compacted topics that contain compacted records.",
+    "queries": [
+      "avg by (topic_name) (kminion_kafka_topic_high_water_mark_sum - kminion_kafka_topic_low_water_mark_sum)"
+    ]
+  },
+  {
+    "name": "Partition Count",
+    "description": "",
+    "queries": [
+      "kminion_kafka_topic_info"
+    ]
+  },
+  {
+    "name": "Cleanup Policy",
+    "description": "",
+    "queries": [
+      "kminion_kafka_topic_info"
+    ]
+  },
+  {
+    "name": "Messages in/sec",
+    "description": "Summed delta between High and Low watermark of all partitions in the given topic. Therefore not accurate for compacted topics that contain compacted records.",
+    "queries": [
+      "avg by (topic_name) (rate(kminion_kafka_topic_high_water_mark_sum[30m]))"
+    ]
+  },
+  {
+    "name": "Replication Factor",
+    "description": "",
+    "queries": [
+      "kminion_kafka_topic_info"
+    ]
+  },
+  {
+    "name": "Subscribed Consumer Groups",
+    "description": "",
+    "queries": [
+      "kminion_kafka_consumer_group_topic_lag"
+    ]
+  },
+  {
+    "name": "Total Log Dir Size",
+    "description": "Log dir size across all partitions and brokers for the given topic.",
+    "queries": [
+      "avg by (topic_name) (kminion_kafka_topic_log_dir_size_total_bytes)"
+    ]
+  },
+  {
+    "name": "Partitions",
+    "description": "",
+    "queries": [
+      "avg by (partition_id) (kminion_kafka_topic_partition_low_water_mark)",
+      "avg by (partition_id) (kminion_kafka_topic_partition_high_water_mark)"
+    ]
+  }
+]

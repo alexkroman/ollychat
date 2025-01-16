@@ -1,0 +1,5370 @@
+{
+  "__inputs": [
+    {
+      "description": "",
+      "label": "prometheus",
+      "name": "DS_PROMETHEUS",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus",
+      "type": "datasource"
+    }
+  ],
+  "__requires": [
+    {
+      "id": "grafana",
+      "name": "Grafana",
+      "type": "grafana",
+      "version": "7.1.5"
+    },
+    {
+      "id": "graph",
+      "name": "Graph",
+      "type": "panel",
+      "version": ""
+    },
+    {
+      "id": "prometheus",
+      "name": "Prometheus",
+      "type": "datasource",
+      "version": "1.0.0"
+    },
+    {
+      "id": "stat",
+      "name": "Stat",
+      "type": "panel",
+      "version": ""
+    },
+    {
+      "id": "text",
+      "name": "Text",
+      "type": "panel",
+      "version": "7.1.0"
+    }
+  ],
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0
+      },
+      "id": 1,
+      "panels": [],
+      "title": "Billable Usage Overview",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "content": "## Monthly Limits\n- 10K Metric Billable Series\n- 3 Grafana Active users\n- 50GB Logs\n- 50GB Traces\n- 50GB Profiles\n- 3 IRM Active Users\n- 500 k6 Tests VUh\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 16,
+        "x": 8,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "content": "## About Billable Usage\n\n- Metrics ingestion cost is calculated and billed using the 95th percentile of your active series and their samples, called data points, per minute (DPM).\n- Logs and traces costs are calculated and billed according to total monthly ingestion in bytes.\n- Grafana users cost is calculated and billed according to the number of <a href=\"https://grafana.com/docs/grafana-cloud/billing-and-usage/#billing-for-active-users\" target=\"_blank\">active monthly users</a>, with additional per user costs for IRM (and Enterprise plugin for Pro tiers)\n- Load testing (k6) is billed according to <a href=\"https://grafana.com/docs/grafana-cloud/billing-and-usage/k6-billing/\" target=\"_blank\">Virtual User hours (VUh)</a>\n- Synthetic Monitoring is billed according to total monthly <a href=\"https://grafana.com/docs/grafana-cloud/cost-management-and-billing/understand-your-invoice/synthetic-monitoring-invoice/\">test executions</a>.\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 0,
+        "y": 7
+      },
+      "id": 4,
+      "options": {
+        "content": "<div>\n  <a href=\"https://grafana.com/pricing\" target=\"_blank\"/>\n    <h1 style=\"\n        background: linear-gradient(120deg, rgb(211, 210, 5), rgb(249, 187, 17));\n        text-align: center;\n        font-size: 1.5em;\n        padding: 0.3em;\n        color: rgb(32, 34, 38);\n    \">\n      Pricing Page\n    </h1>\n  </a>\n</div>\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 8,
+        "y": 7
+      },
+      "id": 5,
+      "options": {
+        "content": "<div>\n  <a href=\"https://grafana.com/docs/grafana-cloud/account-management/billing-and-usage/#common-billing-questions\" target=\"_blank\"/>\n    <h1 style=\"\n        background: linear-gradient(120deg, rgb(211, 210, 5), rgb(249, 187, 17));\n        text-align: center;\n        font-size: 1.5em;\n        padding: 0.3em;\n        color: rgb(32, 34, 38);\n    \">\n      Billing FAQ\n    </h1>\n  </a>\n</div>\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 8,
+        "x": 16,
+        "y": 7
+      },
+      "id": 6,
+      "options": {
+        "content": "<div>\n  <a href=\"https://grafana.com/profile/org/subscription\" target=\"_blank\"/>\n    <h1 style=\"\n        background: linear-gradient(120deg, rgb(211, 210, 5), rgb(249, 187, 17));\n        text-align: center;\n        font-size: 1.5em;\n        padding: 0.3em;\n        color: rgb(32, 34, 38);\n    \">\n      Upgrade Now\n    </h1>\n  </a>\n</div>\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "id": 7,
+      "panels": [],
+      "title": "Metrics",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 15
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_metrics_billable_series{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Billable Metrics Series"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 15
+      },
+      "id": 9,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Go to Active Series and DPM Billing FAQ",
+          "url": "https://grafana.com/docs/grafana-cloud/billing-and-usage/active-series-and-dpm/"
+        }
+      ],
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_metrics_billable_series{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Series"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_metrics_included_series{org_id=\"$org_id\"}",
+          "legendFormat": "Included Series"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "max(grafanacloud_instance_billable_usage{org_id=\"$org_id\"}) by (id) / ignoring(id) group_left() max(grafanacloud_org_metrics_billable_series{org_id=\"$org_id\"}) by (id) * ignoring(id,org_id,cluster) group_left() avg without(monetary) (grafanacloud_org_metrics_overage{org_id=\"$org_id\"}) * on (id) group_left(name) topk by(id) (1, grafanacloud_instance_info{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "legendFormat": "Additional Usage Amount - {{ name }}"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "max(grafanacloud_instance_billable_usage{org_id=\"$org_id\"}) by (id) / ignoring(id) group_left() max(grafanacloud_org_metrics_billable_series{org_id=\"$org_id\"}) by (id) * ignoring(id,org_id,cluster) group_left() avg without(monetary) (grafanacloud_org_metrics_bill_fraction{org_id=\"$org_id\"}) * on (id) group_left(name) topk by(id) (1, grafanacloud_instance_info{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "legendFormat": "Cost fraction - {{ name }}"
+        }
+      ],
+      "title": "Total Metrics Series",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 15
+      },
+      "id": 10,
+      "options": {
+        "content": "## About Billable Metrics Series\n\nThis panel displays the 95th percentile of your active series and samples, or data points, per minute (DPM) for this month so far.\nYou can dig deeper into your daily ingestion rates, totals, and more in the **Metrics Ingestion Details** row directly below this panel.\n\nFor more information on cardinality and metrics usage, you can:\n\n- Learn to <a href=\"https://grafana.com/docs/grafana-cloud/metrics-control-usage/control-prometheus-metrics-usage/\" target=\"_blank\">Control Your Metrics Usage</a>\n- <a href=\"/d/cardinality-management\" target=\"_blank\">Locate your highest cardinality metrics</a> from your Cardinality Dashboards\n- <a href=\"/a/grafana-adaptive-metrics-app\" target=\"_blank\">Get started with our new Adaptive Metrics cost optimization tool</a>.\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "id": 11,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Shows:\n\n- Total active-series per managed Prometheus metrics service (GrafanaCloud Stack).\n- Active-series ingested in the Datadog format\n- Active-series ingested in the Influx format\n- Active-series per installed integration (with default job-name in Agent config)\n- Active-series generated by Asserts\n",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10,
+                "gradientMode": "hue",
+                "showPoints": "never"
+              },
+              "unit": "short"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/Additional Us(age|(ers?)) Amount/"
+                },
+                "properties": [
+                  {
+                    "id": "unit",
+                    "value": "currencyUSD"
+                  },
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": true,
+                      "tooltip": true,
+                      "viz": true
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/^Included/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineWidth",
+                    "value": 2
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": ".*[Ff]raction.*"
+                },
+                "properties": [
+                  {
+                    "id": "unit",
+                    "value": "percentunit"
+                  },
+                  {
+                    "id": "min",
+                    "value": 0
+                  },
+                  {
+                    "id": "max",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 16,
+            "x": 0,
+            "y": 21
+          },
+          "id": 12,
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "max(grafanacloud_instance_active_series{id=~\"$metrics_id\"}) by (id) * on (id) group_left(name) topk by(id) (1, grafanacloud_instance_info{id=~\"$metrics_id\"})",
+              "legendFormat": "{{ name }}"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "max(grafanacloud_instance_active_datadog_series{id=~\"$metrics_id\"} > 0) by (id) * on (id) group_left(name) topk by(id) (1, grafanacloud_instance_info{id=~\"$metrics_id\"})",
+              "legendFormat": "{{ name }}: Datadog format"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "max(grafanacloud_instance_active_influx_series{id=~\"$metrics_id\"} > 0) by (id) * on (id) group_left(name) topk by(id) (1, grafanacloud_instance_info{id=~\"$metrics_id\"})",
+              "legendFormat": "{{ name }}: Influx format"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "max(grafanacloud_instance_active_integration_series{id=~\"$metrics_id\"}) by (id, integration) * on (id) group_left(name) topk by(id) (1, grafanacloud_instance_info{id=~\"$metrics_id\"})",
+              "legendFormat": "{{name}}: {{integration}} intg."
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "max(grafanacloud_instance_active_asserts_series{id=~\"$metrics_id\"} > 0) by (id) * on (id) group_left(name) topk by(id) (1, grafanacloud_instance_info{id=~\"$metrics_id\"})",
+              "legendFormat": "{{name}}: Asserts active series"
+            }
+          ],
+          "title": "Metrics Active Series",
+          "transformations": [
+            {
+              "id": "renameByRegex",
+              "options": {
+                "regex": "(.*)Billable(.*)",
+                "renamePattern": "$1$2"
+              }
+            }
+          ],
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 21
+          },
+          "id": 13,
+          "options": {
+            "content": "## About Metrics Active Series\n\nAn active series is a time series that receives new data points or samples. If you stop writing new datapoints to a time series, shortly afterwards it is no longer considered active. Learn more about <a href=\"https://grafana.com/docs/grafana-cloud/billing-and-usage/active-series-and-dpm/#active-series\" target=\"_blank\">Active Series</a>.\n\nYour Metrics Active Series panel graphs the total number of active series ingested to Grafana Cloud per push (scrape_interval) at a certain point in time. We recommend <a href=\"https://grafana.com/docs/grafana-cloud/billing-and-usage/optimize-scrape-interval/\" target=\"_blank\">setting that scrape_interval</a> to a resolution of once per minute (60s) to keep ingestion costs down. If you are sending series more frequently than once per minute, you will see this reflected in the rate of Data Points per Minute (DPM) in the two panel rows below.\n\n"
+          },
+          "pluginVersion": "v11.1.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Shows up to 3 of your stacks, ordered by those with the greatest average DPM per active-series.\n\nThis value calculated at the current instant. ie. `now()`",
+          "fieldConfig": {
+            "defaults": {
+              "max": 6,
+              "min": 0,
+              "thresholds": {
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "none"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 16,
+            "x": 0,
+            "y": 29
+          },
+          "id": 14,
+          "options": {
+            "reduceOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "limit": 3,
+              "values": true
+            },
+            "showThresholdLabels": true,
+            "showThresholdMarkers": true
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sort_desc(\n  max by(id, name) (\n    60 * grafanacloud_instance_samples_per_second{id=~\"$metrics_id\"}\n    / grafanacloud_instance_active_series{id=~\"$metrics_id\"}\n\n    * on(id) group_left(name) topk by (id) (1, grafanacloud_instance_info{id=~\"$metrics_id\"})\n  )\n)\n",
+              "format": "table",
+              "instant": true,
+              "refId": "Average DPM per series"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "scalar(grafanacloud_org_metrics_included_dpm_per_series{org_id=\"$org_id\"})",
+              "format": "table",
+              "instant": true,
+              "refId": "Included DPM per series"
+            }
+          ],
+          "title": "Highest Metrics DPM Stacks (top 3 stacks)",
+          "transformations": [
+            {
+              "id": "configFromData",
+              "options": {
+                "applyTo": {
+                  "id": "byName",
+                  "options": "Value #Average DPM per series"
+                },
+                "configRefId": "Included DPM per series",
+                "mappings": [
+                  {
+                    "fieldName": "Time",
+                    "handlerKey": "__ignore"
+                  },
+                  {
+                    "fieldName": "Value #Included DPM per series",
+                    "handlerKey": "threshold1"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "id": true
+                }
+              }
+            }
+          ],
+          "transparent": true,
+          "type": "gauge"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 8,
+            "x": 16,
+            "y": 29
+          },
+          "id": 15,
+          "options": {
+            "content": "## About High DPM\n\nYour Highest Metrics DPM Stacks panel displays your top (or only) metrics ingestion instances and their current DPM (Data Points per Minute). Your plan has an included DPM rate, displayed numerically in green on the gauge panel. If you are sending metrics series at a rate per minute above that number (displayed center), you will see it metered in red. See the graph panel below for the active series ingestion per minute, over time.\n\nTo learn more about how this affects your billing, see: <a href=\"https://grafana.com/docs/grafana-cloud/billing-and-usage/active-series-and-dpm/\" target=\"_blank\">Active Series and DPM</a>. To control or change your DPM, check out: <a href=\"https://grafana.com/docs/grafana-cloud/billing-and-usage/control-prometheus-metrics-usage/changing-scrape-interval/\" target=\"_blank\">Changing your metrics scrape interval</a>.\n\n"
+          },
+          "pluginVersion": "v11.1.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "short"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 37
+          },
+          "id": 16,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "max(grafanacloud_instance_samples_per_second{id=~\"$metrics_id\"} * 60) by (id) * on(id) group_left(name) topk by (id) (1, grafanacloud_instance_info{id=~\"$metrics_id\"})",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Metrics Active Series Ingestion Rate per Minute (DPM)",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "To learn more about these errors and their potential causes, refer to [Monitor Prometheus for ingest errors](https://grafana.com/docs/grafana-cloud/data-configuration/metrics/metrics-prometheus/errors-monitoring/).",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "si:/s"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 45
+          },
+          "id": 17,
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(max(grafanacloud_instance_samples_discarded_per_second{id=~\"$metrics_id\"}) by (id, reason)) by (id, reason) * on(id) group_left(name) topk by (id) (1, grafanacloud_instance_info{id=~\"$metrics_id\"})",
+              "legendFormat": "{{ name }} - {{reason}}"
+            }
+          ],
+          "title": "Discarded Metric Samples",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Metrics Ingestion Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "id": 18,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "The panel displays active series broken down by user-defined usage groups, and the number of active series not assigned to any group. This can be used for internal back-charging. Read the [documentation](https://grafana.com/docs/grafana-cloud/cost-management-and-billing/analyze-costs/metrics-costs/define-usage-groups/) to learn more about this feature.\n\nPlease contact support to get this set up.\n",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "noValue": "No data. Contact Grafana Labs Support to set up usage groups.",
+              "unit": "short"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 22
+          },
+          "id": 19,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "max(grafanacloud_instance_active_usage_group_series{id=~\"$metrics_id\"}) by (id, group) * on (id) group_left(name) topk by(id) (1, grafanacloud_instance_info{id=~\"$metrics_id\"})",
+              "legendFormat": "{{name}}: group {{group}}"
+            }
+          ],
+          "title": "Active series per usage group",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Metrics Instance Usage Group Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 23
+      },
+      "id": 20,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "blue",
+                "mode": "fixed"
+              },
+              "unit": "short"
+            }
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 6,
+            "x": 0,
+            "y": 23
+          },
+          "id": 21,
+          "options": {
+            "colorMode": "background",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "text": {
+              "titleSize": 20,
+              "valueSize": 60
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "grafanacloud_org_graphite_metrics_billable_series{org_id=\"$org_id\"}",
+              "instant": true,
+              "legendFormat": "Current Graphite Metrics Usage"
+            }
+          ],
+          "title": "",
+          "transformations": [
+            {
+              "id": "renameByRegex",
+              "options": {
+                "regex": "(.*)Billable(.*)",
+                "renamePattern": "$1$2"
+              }
+            }
+          ],
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10,
+                "gradientMode": "hue",
+                "showPoints": "never"
+              },
+              "unit": "short"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/Additional Us(age|(ers?)) Amount/"
+                },
+                "properties": [
+                  {
+                    "id": "unit",
+                    "value": "currencyUSD"
+                  },
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": true,
+                      "tooltip": true,
+                      "viz": true
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/^Included/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineWidth",
+                    "value": 2
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": ".*[Ff]raction.*"
+                },
+                "properties": [
+                  {
+                    "id": "unit",
+                    "value": "percentunit"
+                  },
+                  {
+                    "id": "min",
+                    "value": 0
+                  },
+                  {
+                    "id": "max",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 18,
+            "x": 6,
+            "y": 23
+          },
+          "id": 22,
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "grafanacloud_org_graphite_metrics_billable_series{org_id=\"$org_id\"}",
+              "instant": false,
+              "legendFormat": "Billable Usage"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "avg without(monetary) (grafanacloud_org_graphite_metrics_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+              "instant": false,
+              "legendFormat": "Additional Usage Amount"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "avg without(monetary) (grafanacloud_org_graphite_metrics_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+              "instant": false,
+              "legendFormat": "Cost fraction"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "grafanacloud_org_graphite_metrics_included_series{org_id=\"$org_id\"}",
+              "legendFormat": "Included Graphite Series"
+            }
+          ],
+          "title": "Total Graphite Metrics Usage",
+          "transformations": [
+            {
+              "id": "renameByRegex",
+              "options": {
+                "regex": "(.*)Billable(.*)",
+                "renamePattern": "$1$2"
+              }
+            }
+          ],
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Graphite Metrics",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 23,
+      "panels": [],
+      "title": "Logs",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "purple",
+            "mode": "fixed"
+          },
+          "unit": "gbytes"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 35
+      },
+      "id": 24,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_logs_usage{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Billable Logs Usage"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "gbytes"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 35
+      },
+      "id": 25,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Go to Log Volume Explorer FAQ",
+          "url": "https://grafana.com/docs/grafana-cloud/cost-management-and-billing/analyze-costs/logs-costs/analyze-log-ingestion-log-volume-explorer/"
+        }
+      ],
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_logs_usage{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Usage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_logs_included_usage{org_id=\"$org_id\"}",
+          "legendFormat": "Included Usage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "max(grafanacloud_logs_instance_usage{org_id=\"$org_id\"}) by (id) / ignoring(id) group_left() max(grafanacloud_org_logs_usage{org_id=\"$org_id\"}) by (id) * ignoring(id,org_id,cluster) group_left() avg without(monetary) (grafanacloud_org_logs_overage{org_id=\"$org_id\"}) * on (id) group_left(name) topk by (id) (1, grafanacloud_logs_instance_info{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "legendFormat": "Total Additional Usage Amount - {{ name }}"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "max(grafanacloud_logs_instance_query_overage{org_id=\"$org_id\"}) by (id) / ignoring(id) group_left() max(grafanacloud_org_logs_usage{org_id=\"$org_id\"}) by (id) * ignoring(id,org_id,cluster) group_left() avg without(monetary) (grafanacloud_org_logs_overage{org_id=\"$org_id\"}) * on (id) group_left(name) topk by (id) (1, grafanacloud_logs_instance_info{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "legendFormat": "Query Additional Usage Amount - {{ name }}"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "max(grafanacloud_logs_instance_usage{org_id=\"$org_id\"}) by (id) / ignoring(id) group_left() max(grafanacloud_org_logs_usage{org_id=\"$org_id\"}) by (id) * ignoring(id,org_id,cluster) group_left() avg without(monetary) (grafanacloud_org_logs_bill_fraction{org_id=\"$org_id\"})* on (id) group_left(name) topk by (id) (1, grafanacloud_logs_instance_info{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "legendFormat": "Cost fraction - {{ name }}"
+        }
+      ],
+      "title": "Total Logs Usage",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 35
+      },
+      "id": 26,
+      "options": {
+        "content": "## About Billable Logs\n\nYour **total billable logs usage** is calculated using the total number of ingested bytes generated by your logs for the entire month.\nYou may generate additional billable logs for log retention periods above 30 days, or logs query usage above 100x of ingested logs volume.\nYou can dig deeper into your daily ingestion rates, totals, and more in the **Logs Ingestion Details** row directly below this panel.\n\nFor more information on logs usage, see:\n\n- <a href=\"https://grafana.com/docs/grafana-cloud/cost-management-and-billing/understand-your-invoice/logs-invoice/\" target=\"_blank\">Understanding your Grafana Cloud Logs Invoice</a>\n- <a href=\"https://grafana.com/docs/grafana-cloud/cost-management-and-billing/analyze-costs/logs-costs/analyze-logs-costs-grafana-explore/\" target=\"_blank\">Analyze and Understand your Logs usage</a>\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 41
+      },
+      "id": 27,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "Bps"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 41
+          },
+          "id": 28,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(grafanacloud_logs_instance_bytes_received_per_second{id=~\"$logs_id\"}) by (id) * on(id) group_left(name) topk by (id) (1, grafanacloud_logs_instance_info{id=~\"$logs_id\"})",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Logs Ingestion Rate",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "stacking": {
+                  "mode": "normal"
+                }
+              },
+              "unit": "bytes"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byValue",
+                  "options": {
+                    "op": "gte",
+                    "reducer": "allIsZero",
+                    "value": 0
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": true,
+                      "tooltip": true,
+                      "viz": false
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 49
+          },
+          "id": 29,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(sum_over_time((grafanacloud_logs_instance_bytes_received_per_second{id=~\"$logs_id\"} offset -1d * 60)[1d:1m])) by (id) * on(id) group_left(name) topk by (id) (1, grafanacloud_logs_instance_info{id=~\"$logs_id\"}) or vector(0)",
+              "interval": "1d",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Total Ingested Logs by day",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "stacking": {
+                  "mode": "normal"
+                }
+              },
+              "unit": "bytes"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byValue",
+                  "options": {
+                    "op": "gte",
+                    "reducer": "allIsZero",
+                    "value": 0
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": true,
+                      "tooltip": true,
+                      "viz": false
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 57
+          },
+          "id": 30,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(sum_over_time((grafanacloud_logs_instance_query_bytes:rate5m{id=~\"$logs_id\"} offset -1d * 60)[1d:1m])) by (id) * on(id) group_left(name) topk by (id) (1, grafanacloud_logs_instance_info{id=~\"$logs_id\"}) or vector(0)",
+              "interval": "1d",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Total Queried Logs by day",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "To learn more about these errors and dig into potential causes check out our Loki article on [Troubleshoot Cloud Logs write issues](https://grafana.com/docs/grafana-cloud/send-data/logs/troubleshoot/)",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "si:/s"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 65
+          },
+          "id": 31,
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(grafanacloud_logs_instance_samples_discarded_per_second{id=~\"$logs_id\"}) by (id, reason) * on(id) group_left(name) topk by (id) (1, grafanacloud_logs_instance_info{id=~\"$logs_id\"})",
+              "legendFormat": "{{ name }} - {{reason}}"
+            }
+          ],
+          "title": "Discarded Log Samples",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "Bps"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 73
+          },
+          "id": 32,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(grafanacloud_logs_instance_query_bytes:rate5m{id=~\"$logs_id\"}) by (id) * on(id) group_left(name) topk by (id) (1, grafanacloud_logs_instance_info{id=~\"$logs_id\"})",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Logs Query Rate",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Shows the ratio of queried to ingested bytes over the selected time period on each of your stacks.",
+          "fieldConfig": {
+            "defaults": {
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 14,
+            "x": 0,
+            "y": 81
+          },
+          "id": 33,
+          "options": {
+            "displayMode": "basic",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "values": true
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sort_desc(\n  sum_over_time(\n    sum by (id) (\n      grafanacloud_logs_instance_query_bytes:rate5m{id=~\"$logs_id\"}\n    ) [$__range:1m]\n  ) /\n  sum_over_time(\n    sum by (id) (\n      grafanacloud_logs_instance_billable_bytes_received_per_second{id=~\"$logs_id\"}\n    ) [$__range:1m]\n  )\n) * on(id) group_left(name) topk by (id) (1, grafanacloud_logs_instance_info{id=~\"$logs_id\"})\n",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "{{ name }}",
+              "refId": "base"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "grafanacloud_org_logs_included_query_to_ingest_ratio{org_id=\"$org_id\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": "",
+              "refId": "total"
+            }
+          ],
+          "title": "Query Usage Ratio",
+          "transformations": [
+            {
+              "id": "configFromData",
+              "options": {
+                "applyTo": {
+                  "id": "byName",
+                  "options": "Value #base"
+                },
+                "configRefId": "total",
+                "mappings": [
+                  {
+                    "fieldName": "Time",
+                    "handlerKey": "__ignore"
+                  },
+                  {
+                    "fieldName": "Value #total",
+                    "handlerKey": "threshold1"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "id": true
+                }
+              }
+            }
+          ],
+          "transparent": true,
+          "type": "bargauge"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 10,
+            "x": 14,
+            "y": 73
+          },
+          "id": 34,
+          "options": {
+            "content": "\"Query Usage Ratio\" shows the ratio of queried to ingested bytes on each of your stacks.\nIf this ratio exceeds the \"Query Fair Usage Ratio\" configured for your plan, you will incur additional charges.\n\n\nLearn more: <a href=\"https://grafana.com/docs/grafana-cloud/account-management/billing-and-usage/logs-billing/#fair-use-policy-for-gbs-queried\" target=\"_blank\">Fair use policy for GBs queried</a>\n"
+          },
+          "pluginVersion": "v11.1.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "The query fair usage ratio configured for your current plan",
+          "fieldConfig": {
+            "defaults": {
+              "noValue": "-",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "rgb(150, 150, 150)",
+                    "value": null
+                  }
+                ]
+              }
+            }
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 10,
+            "x": 14,
+            "y": 77
+          },
+          "id": 35,
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "grafanacloud_org_logs_included_query_to_ingest_ratio{org_id=\"$org_id\"}",
+              "format": "table",
+              "instant": true,
+              "legendFormat": ""
+            }
+          ],
+          "title": "Query Fair Use Ratio",
+          "transparent": true,
+          "type": "stat"
+        }
+      ],
+      "title": "Logs Ingestion and Query Details",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 43
+      },
+      "id": 36,
+      "panels": [],
+      "title": "Traces",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "orange",
+            "mode": "fixed"
+          },
+          "unit": "gbytes"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 55
+      },
+      "id": 37,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_traces_usage{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Billable Traces Usage"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "gbytes"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 55
+      },
+      "id": 38,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Go to Traces Cost FAQ",
+          "url": "https://grafana.com/docs/grafana-cloud/cost-management-and-billing/reduce-costs/traces-costs/"
+        }
+      ],
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_traces_usage{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Usage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_traces_included_usage{org_id=\"$org_id\"}",
+          "legendFormat": "Included Usage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "max(grafanacloud_traces_instance_usage{org_id=\"$org_id\"}) by (id) / ignoring(id) group_left() max(grafanacloud_org_traces_usage{org_id=\"$org_id\"}) by (id) * ignoring(id,org_id,cluster) group_left() avg without(monetary) (grafanacloud_org_traces_overage{org_id=\"$org_id\"}) * on (id) group_left(name) topk by (id) (1, grafanacloud_traces_instance_info{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "legendFormat": "Additional Usage Amount - {{ name }}"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "max(grafanacloud_traces_instance_usage{org_id=\"$org_id\"}) by (id) / ignoring(id) group_left() max(grafanacloud_org_traces_usage{org_id=\"$org_id\"}) by (id) * ignoring(id,org_id,cluster) group_left() avg without(monetary) (grafanacloud_org_traces_bill_fraction{org_id=\"$org_id\"}) * on (id) group_left(name) topk by (id) (1, grafanacloud_traces_instance_info{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "legendFormat": "Cost fraction - {{ name }}"
+        }
+      ],
+      "title": "Total Traces Usage",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 55
+      },
+      "id": 39,
+      "options": {
+        "content": "## About Billable Traces\n\nYour **total billable traces usage** is calculated using the total number of ingested bytes generated by your traces this month.\n\nYou can dig deeper into your daily ingestion rates, totals, and more by expanding the **Traces Ingestion Details** row directly below this panel.\n\nFor a guide on traces usage management: <a href=\"https://grafana.com/docs/grafana-cloud/cost-management-and-billing/reduce-costs/traces-costs/\" target=\"_blank\">Reduce Grafana Cloud Traces cost</a>.\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 60
+      },
+      "id": 40,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "Bps"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 60
+          },
+          "id": 41,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(grafanacloud_traces_instance_bytes_received_per_second{id=~\"$traces_id\"}) by (id) * on(id) group_left(name) topk by (id) (1, grafanacloud_traces_instance_info{id=~\"$traces_id\"})",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Traces Ingestion Rate",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "stacking": {
+                  "mode": "normal"
+                }
+              },
+              "unit": "bytes"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byValue",
+                  "options": {
+                    "op": "gte",
+                    "reducer": "allIsZero",
+                    "value": 0
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": true,
+                      "tooltip": true,
+                      "viz": false
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 68
+          },
+          "id": 42,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(sum_over_time((grafanacloud_traces_instance_bytes_received_per_second{id=~\"$traces_id\"} offset -1d * 60)[1d:1m])) by (id) * on(id) group_left(name) topk by (id) (1, grafanacloud_traces_instance_info{id=~\"$traces_id\"}) or vector(0)",
+              "interval": "1d",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Total Ingested Traces by day",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "To learn more about why spans were discarded, refer to the [Discarded Spans](https://grafana.com/docs/grafana-cloud/cost-management-and-billing/understand-your-invoice/usage-limits/#discarded-spans-panel-in-the-billing-dashboard) metric definitions.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "si:/s"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 76
+          },
+          "id": 43,
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(grafanacloud_traces_instance_discarded_spans_total:rate5m{id=~\"$traces_id\"}) by (id, reason) * on(id) group_left(name) topk by (id) (1, grafanacloud_traces_instance_info{id=~\"$traces_id\"})",
+              "legendFormat": "{{ name }} - {{reason}}"
+            }
+          ],
+          "title": "Discarded Spans",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Traces Ingestion Details",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 76
+      },
+      "id": 44,
+      "panels": [],
+      "title": "Grafana Users",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 88
+      },
+      "id": 45,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_grafana_billable_users{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Total Unique Users"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_billable_users_grafana{org_id=\"$org_id\"} and grafanacloud_org_billable_users_oncall{org_id=\"$org_id\"} > 0",
+          "instant": true,
+          "legendFormat": "Grafana Users"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_billable_users_oncall{org_id=\"$org_id\"} > 0",
+          "instant": true,
+          "legendFormat": "OnCall Users"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 88
+      },
+      "id": 46,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Go to Billing for Active Users FAQ",
+          "url": "https://grafana.com/docs/grafana-cloud/billing-and-usage/#billing-for-active-users"
+        }
+      ],
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_grafana_billable_users{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Users"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_grafana_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "instant": false,
+          "legendFormat": "Additional Usage Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_grafana_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "instant": false,
+          "legendFormat": "Cost fraction"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_grafana_included_users{org_id=\"$org_id\"}",
+          "legendFormat": "Included Users"
+        }
+      ],
+      "title": "Total Grafana Users Usage",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 88
+      },
+      "id": 47,
+      "options": {
+        "content": "## About Billable Users\n\nYour **total billable grafana users** is determined by all <a href=\"https://grafana.com/docs/grafana-cloud/billing-and-usage/#billing-for-active-users\" target=\"_blank\">monthly active Grafana users</a> and their associated costs. Active users are only billed once per month across all your stacks.\n\nYou can dig deeper in the **Grafana Users Usage Details** row directly below this panel.\nFor additional per user costs generated from an Enterprise plugin add-on, expand the **Enterprise Plugin Add-On** row.\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 93
+      },
+      "id": 48,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "short"
+            }
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 93
+          },
+          "id": 49,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(sum(grafanacloud_grafana_instance_active_user_count{id=~\"$grafana_id\"}) by (id) * on(id) group_left(name) topk by (id) (1, grafanacloud_grafana_instance_info{id=~\"$grafana_id\"})) by (name)",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Active Grafana Users (last 30 days)",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Grafana Users Usage Details",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 101
+      },
+      "id": 50,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "orange",
+                "mode": "fixed"
+              },
+              "unit": "short"
+            }
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 6,
+            "x": 0,
+            "y": 113
+          },
+          "id": 51,
+          "options": {
+            "colorMode": "background",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "text": {
+              "titleSize": 20,
+              "valueSize": 60
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "grafanacloud_org_grafana_plugin_users{org_id=\"$org_id\"}",
+              "instant": true,
+              "legendFormat": "Current Billable Enterprise Plugin Users"
+            }
+          ],
+          "title": "",
+          "transformations": [
+            {
+              "id": "renameByRegex",
+              "options": {
+                "regex": "(.*)Billable(.*)",
+                "renamePattern": "$1$2"
+              }
+            }
+          ],
+          "type": "stat"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10,
+                "gradientMode": "hue",
+                "showPoints": "never"
+              },
+              "unit": "short"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/Additional Us(age|(ers?)) Amount/"
+                },
+                "properties": [
+                  {
+                    "id": "unit",
+                    "value": "currencyUSD"
+                  },
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": true,
+                      "tooltip": true,
+                      "viz": true
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "/^Included/"
+                },
+                "properties": [
+                  {
+                    "id": "custom.fillOpacity",
+                    "value": 0
+                  },
+                  {
+                    "id": "custom.lineWidth",
+                    "value": 2
+                  },
+                  {
+                    "id": "custom.lineStyle",
+                    "value": {
+                      "dash": [
+                        10,
+                        10
+                      ],
+                      "fill": "dash"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": ".*[Ff]raction.*"
+                },
+                "properties": [
+                  {
+                    "id": "unit",
+                    "value": "percentunit"
+                  },
+                  {
+                    "id": "min",
+                    "value": 0
+                  },
+                  {
+                    "id": "max",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 12,
+            "x": 6,
+            "y": 113
+          },
+          "id": 52,
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "grafanacloud_org_grafana_plugin_users{org_id=\"$org_id\"}",
+              "instant": true,
+              "legendFormat": "Billable Users"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "avg without(monetary) (grafanacloud_org_grafana_plugin_users_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+              "instant": false,
+              "legendFormat": "Additional Usage Amount"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "avg without(monetary) (grafanacloud_org_grafana_plugin_users_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+              "instant": false,
+              "legendFormat": "Cost fraction"
+            }
+          ],
+          "title": "Enterprise Plugin Users",
+          "transformations": [
+            {
+              "id": "renameByRegex",
+              "options": {
+                "regex": "(.*)Billable(.*)",
+                "renamePattern": "$1$2"
+              }
+            }
+          ],
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 6,
+            "x": 18,
+            "y": 113
+          },
+          "id": 53,
+          "options": {
+            "content": "## About Enterprise Plugins\n\nUnder the Pro monthly subscription plan it is possible to add a single (1) Grafana Enterprise Plugin for use across your account. Once added, this comes at an additional cost of <a href=\"https://grafana.com/docs/grafana-cloud/billing-and-usage/#billing-for-active-users\" target=\"_blank\">$25 per Grafana active user</a>.\n\nIf you've added an Enterprise plugin, your Billable Enterprise Plugin Users panels displays your total number of Grafana active users and the additional aggregated cost at $25/user, this month so far.\n"
+          },
+          "pluginVersion": "v11.1.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        }
+      ],
+      "title": "Enterprise Plugin Usage (Add-on)",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 114
+      },
+      "id": 54,
+      "panels": [],
+      "title": "Incident Response & Management (IRM) Users",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "purple",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 126
+      },
+      "id": 55,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_irm_users{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Billable IRM Users"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 126
+      },
+      "id": 56,
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_irm_users{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Users"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_irm_users_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "instant": false,
+          "legendFormat": "Additional User Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_irm_users_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "instant": false,
+          "legendFormat": "Cost fraction"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_irm_included_users{org_id=\"$org_id\"}",
+          "legendFormat": "Included Users"
+        }
+      ],
+      "title": "Total IRM Users",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 126
+      },
+      "id": 57,
+      "options": {
+        "content": "## About IRM Users\n\nYour Total Billable IRM Users panel reflects all active users of IRM services this month. A user is <a href=\"https://grafana.com/docs/grafana-cloud/account-management/billing-and-usage/irm-billing/\" target=\"_blank\">considered active</a> if they are included in OnCall schedules or escalation chains, or if they perform any of the actions below:\n- Changed status of alert group or OnCall configuration\n- Got paged or paged someone\n- Created, declared, edited, updated, or deleted an Incident\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 131
+      },
+      "id": 58,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "short"
+            }
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 16,
+            "x": 0,
+            "y": 131
+          },
+          "id": 59,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(sum(grafanacloud_irm_active_user_count{id=~\"$grafana_id\"}) by (id) * on(id) group_left(name) topk by (id) (1, grafanacloud_grafana_instance_info{id=~\"$grafana_id\"})) by (name)",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Active Grafana IRM Users per stack (last 30 days)",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 8,
+            "x": 16,
+            "y": 131
+          },
+          "id": 60,
+          "options": {
+            "content": "## About Active IRM Users per Stack\n\nThis panel displays the total number of <a href=\"https://grafana.com/docs/grafana-cloud/account-management/billing-and-usage/irm-billing/\" target=\"_blank\">active</a>\nusers of IRM services per stack over the last 30 days.\nNote that an active IRM user in two or more stacks is counted only once for billing purposes.\n\n"
+          },
+          "pluginVersion": "v11.1.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        }
+      ],
+      "title": "IRM Users Usage Details",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 139
+      },
+      "id": 61,
+      "panels": [],
+      "title": "Kubernetes Monitoring Host Hours Usage",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "orange",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 148
+      },
+      "id": 62,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_infra_o11y_billable_host_hours{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Kubernetes Monitoring Host Hours"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 148
+      },
+      "id": 63,
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_infra_o11y_billable_host_hours{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Host Hours"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_infra_o11y_host_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "instant": false,
+          "legendFormat": "Additional Usage Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_infra_o11y_host_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "instant": false,
+          "legendFormat": "Cost fraction"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_infra_o11y_included_host_hours{org_id=\"$org_id\"}",
+          "legendFormat": "Included Host Hours"
+        }
+      ],
+      "title": "Total Kubernetes Monitoring Host Hours",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 148
+      },
+      "id": 64,
+      "options": {
+        "content": "## About Kubernetes Monitoring Host Hours\nYour Kubernetes Monitoring Host Usage is calculated from the total number of host hours this month.\n\n* <a href=\"https://grafana.com/docs/grafana-cloud/cost-management-and-billing/understand-your-invoice/kubernetes-monitoring-invoice/\" target=\"_blank\">Understand your Grafana Cloud Kubernetes Monitoring invoice</a>\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 156
+      },
+      "id": 65,
+      "panels": [],
+      "title": "Kubernetes Monitoring Container Hours Usage",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "purple",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 168
+      },
+      "id": 66,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_infra_o11y_billable_container_hours{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Kubernetes Monitoring Container Hours"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 168
+      },
+      "id": 67,
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_infra_o11y_billable_container_hours{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Container Hours"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_infra_o11y_container_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "instant": false,
+          "legendFormat": "Additional Usage Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_infra_o11y_container_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "instant": false,
+          "legendFormat": "Cost fraction"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_infra_o11y_included_container_hours{org_id=\"$org_id\"}",
+          "legendFormat": "Included Container Hours"
+        }
+      ],
+      "title": "Total Kubernetes Monitoring Container Hours",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 168
+      },
+      "id": 68,
+      "options": {
+        "content": "## About Kubernetes Monitoring Container Hours Usage\nYour Kubernetes Monitoring Container Usage is calculated from the total number of container hours this month.\n\n* <a href=\"https://grafana.com/docs/grafana-cloud/cost-management-and-billing/understand-your-invoice/kubernetes-monitoring-invoice/\" target=\"_blank\">Understand your Grafana Cloud Kubernetes Monitoring invoice</a>\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 175
+      },
+      "id": 69,
+      "panels": [],
+      "title": "k6 Virtual User Hours (VUh)",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "fixed"
+          },
+          "unit": "VUh"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 180
+      },
+      "id": 70,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_k6_virtual_user_hours_usage{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Billable VUh Usage"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "VUh"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 180
+      },
+      "id": 71,
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_k6_virtual_user_hours_usage{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Usage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_k6_virtual_user_hours_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "instant": false,
+          "legendFormat": "Additional Usage Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_k6_virtual_user_hours_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "instant": false,
+          "legendFormat": "Cost fraction"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_k6_virtual_user_hours_included_usage{org_id=\"$org_id\"}",
+          "legendFormat": "Included Usage"
+        }
+      ],
+      "title": "Total Virtual User Hours (VUh)",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 180
+      },
+      "id": 72,
+      "options": {
+        "content": "## About k6 Virtual User Hours\n\nYour Total k6 Billable Usage is based on Virtual User hours (VUh) used during your load tests. The Pro and Advanced plans include 1000 VUh/month with 30 day data retention for your test results.\n\nYou can dig deeper into the kind of k6 usage generating billable VUh in the k6 Virtual User Hours (VUh) Details row directly below this panel.\n\nFor information on how we calculate VUh, and the differences between Protocol VU and Browser VU, please visit our <a href=\"https://grafana.com/docs/grafana-cloud/k6/get-started/vu-hours/\" target=\"_blank\">documentation</a>.\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 193
+      },
+      "id": 73,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "This panel displays VUh broken down to stacks, type protocol and browser.\n",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "VUh"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 197
+          },
+          "id": 74,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "max(grafanacloud_k6_stack_virtual_user_hours_usage{org_id=\"$org_id\"}) by (id,vuh_type) *  on(id) group_left(slug) topk by(id)(1, grafanacloud_grafana_instance_info{org_id=\"$org_id\"})",
+              "legendFormat": "Additional Usage Amount - {{ slug }}:{{ vuh_type}}"
+            }
+          ],
+          "title": "k6 Virtual User Hours (VUh) usage by stacks and type",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "k6 Virtual User Hours (VUh) Details",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 200
+      },
+      "id": 75,
+      "panels": [],
+      "title": "Profiles",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "purple",
+            "mode": "fixed"
+          },
+          "unit": "gbytes"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 213
+      },
+      "id": 76,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_profiles_usage{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Billable Profiles Usage"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "gbytes"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 213
+      },
+      "id": 77,
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_profiles_usage{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Usage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_profiles_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "instant": false,
+          "legendFormat": "Additional Usage Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_profiles_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "instant": false,
+          "legendFormat": "Cost fraction"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_profiles_included_usage{org_id=\"$org_id\"}",
+          "legendFormat": "Included Usage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "max(grafanacloud_profiles_instance_usage{org_id=\"$org_id\"}) by (id) / ignoring(id) group_left() max(grafanacloud_org_profiles_usage{org_id=\"$org_id\"}) by (id) * ignoring(id,org_id,cluster) group_left() avg without(monetary) (grafanacloud_org_profiles_overage{org_id=\"$org_id\"}) * on (id) group_left(name) topk by(id)(1, grafanacloud_profiles_instance_info{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "legendFormat": "Additional Usage Amount - {{ name }}"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "max(grafanacloud_profiles_instance_usage{org_id=\"$org_id\"}) by (id) / ignoring(id) group_left() max(grafanacloud_org_profiles_usage{org_id=\"$org_id\"}) by (id) * ignoring(id,org_id,cluster) group_left() avg without(monetary) (grafanacloud_org_profiles_bill_fraction{org_id=\"$org_id\"})  * on (id) group_left(name) topk by(id)(1, grafanacloud_profiles_instance_info{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "legendFormat": "Cost fraction - {{ name }}"
+        }
+      ],
+      "title": "Total Profiles Usage",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 213
+      },
+      "id": 78,
+      "options": {
+        "content": "## About Billable Profiles\n\nYour Total Billable Profiles Usage is calculated on the total number\nof ingested bytes generated by your profiles this month. Usage of\nGrafana Cloud Profiles is subject to <a\nhref=\"https://www.grafana.com/pricing\" target=\"_blank\">Grafana Cloud\nPricing</a> for Profiles.\n\n* <a href=\"https://grafana.com/docs/grafana-cloud/monitor-applications/profiles/\" target=\"_blank\">About Grafana Cloud Continuous Profiling</a>\n* <a href=\"https://grafana.com/blog/2023/08/09/grafana-cloud-profiles-for-continuous-profiling/\" target=\"_blank\">Blog: Unify your Observability signals with Grafana Cloud Profiles</a>\n\nYou can dig deeper into your daily ingestion rates, totals, and more in the **Profiles Ingestion Details** row directly below this panel.\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 218
+      },
+      "id": 79,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "Bps"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 223
+          },
+          "id": 80,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(grafanacloud_profiles_instance_bytes_received_per_second{id=~\"$profiles_id\"}) by (id) * on(id) group_left(name) topk by(id)(1, grafanacloud_profiles_instance_info{id=~\"$profiles_id\"})",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Profiles Ingestion Rate",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "stacking": {
+                  "mode": "normal"
+                }
+              },
+              "unit": "bytes"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byValue",
+                  "options": {
+                    "op": "gte",
+                    "reducer": "allIsZero",
+                    "value": 0
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": true,
+                      "tooltip": true,
+                      "viz": false
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 239
+          },
+          "id": 81,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(sum_over_time((grafanacloud_profiles_instance_bytes_received_per_second{id=~\"$profiles_id\"}  offset -1d * 60)[1d:1m])) by (id) * on(id) group_left(name) topk by(id)(1, grafanacloud_profiles_instance_info{id=~\"$profiles_id\"}) or vector(0)",
+              "interval": "1d",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Total Ingested Profiles by day",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "Bps"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 247
+          },
+          "id": 82,
+          "options": {
+            "legend": {
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(grafanacloud_profiles_instance_discarded_bytes_per_second{id=~\"$profiles_id\"}) by (id, reason) * on(id) group_left(name) topk by(id)(1, grafanacloud_profiles_instance_info{id=~\"$profiles_id\"})",
+              "legendFormat": "{{ name }} - {{reason}}"
+            }
+          ],
+          "title": "Discarded Profiles",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10,
+                "stacking": {
+                  "mode": "normal"
+                }
+              },
+              "unit": "Bps"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 18,
+            "x": 0,
+            "y": 255
+          },
+          "id": 83,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(grafanacloud_profiles_instance_usage_group_estimated_billable_bytes_received_per_second{id=~\"$profiles_id\"}) by (id, usage_group) * on(id) group_left(name) topk by(id)(1, grafanacloud_profiles_instance_info{id=~\"$profiles_id\"})",
+              "legendFormat": "{{ name }} - {{ usage_group }}"
+            }
+          ],
+          "title": "Profiles Estimated Ingestion Rate by usage group",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Mixed --"
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 6,
+            "x": 18,
+            "y": 255
+          },
+          "id": 84,
+          "options": {
+            "content": "## About Usage Groups\n\nUsage groups provide a mechanism to break down billable usage by\ndifferent attributes (for example, by application). The values provided\nby this panel are not exact down to the byte, nor are billable bytes\ncalculated from this data, rather these values are best-effort\nestimates.\n\nUsage groups are not self serve. To configure your usage groups,\nplease contact Grafana Labs Support.\n"
+          },
+          "pluginVersion": "v11.1.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        }
+      ],
+      "title": "Profile Ingestion Details",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 230
+      },
+      "id": 85,
+      "panels": [],
+      "title": "Frontend Observability",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "orange",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 238
+      },
+      "id": 86,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_fe_o11y_billable_sessions{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Frontend Observability Sessions"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 238
+      },
+      "id": 87,
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_fe_o11y_billable_sessions{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Sessions"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_fe_o11y_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "instant": false,
+          "legendFormat": "Additional Usage Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_fe_o11y_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "instant": false,
+          "legendFormat": "Cost fraction"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_fe_o11y_included_sessions{org_id=\"$org_id\"}",
+          "legendFormat": "Included Sessions"
+        }
+      ],
+      "title": "Total Frontend Observability Sessions",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 238
+      },
+      "id": 88,
+      "options": {
+        "content": "## About Frontend Observability\n\nYour Frontend Observability Usage is calculated from the total number of ingested sessions this month.\n\nYou can dig deeper into your daily ingestion rates, totals, and more in the **Frontend Observability Details** tab in the **Usage Drilldown** section at the bottom of this view.\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 248
+      },
+      "id": 89,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "cps"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 250
+          },
+          "id": 90,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(grafanacloud_frontend_observability_instance_sessions_per_second{org_id=\"$org_id\"}) by (id, appName)",
+              "legendFormat": "{{ appName }}"
+            }
+          ],
+          "title": "Sessions Ingestion Rate",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "stacking": {
+                  "mode": "normal"
+                }
+              },
+              "unit": "short"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byValue",
+                  "options": {
+                    "op": "gte",
+                    "reducer": "allIsZero",
+                    "value": 0
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": true,
+                      "tooltip": true,
+                      "viz": false
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 266
+          },
+          "id": 91,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(sum_over_time((grafanacloud_frontend_observability_instance_sessions_per_second{org_id=\"$org_id\"} * 60)[1d:1m])) by (id, appName) or vector(0)",
+              "interval": "1d",
+              "legendFormat": "{{ appName }}"
+            }
+          ],
+          "title": "Total Sessions Ingested by day",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Frontend Observability Details",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 258
+      },
+      "id": 92,
+      "panels": [],
+      "title": "Application Observability",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "green",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 264
+      },
+      "id": 93,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_app_o11y_billable_host_hours{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Application Observability Host Hours"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 264
+      },
+      "id": 94,
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_app_o11y_billable_host_hours{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Host Hours"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_app_o11y_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "instant": false,
+          "legendFormat": "Additional Usage Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_app_o11y_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "instant": false,
+          "legendFormat": "Cost fraction"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_app_o11y_included_host_hours{org_id=\"$org_id\"}",
+          "legendFormat": "Included Host Hours"
+        }
+      ],
+      "title": "Total Application Observability Host Hours",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 264
+      },
+      "id": 95,
+      "options": {
+        "content": "## About Application Observability\n\nYour Application Observability Usage is calculated from the total number of host hours this month.\n\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 270
+      },
+      "id": 96,
+      "panels": [],
+      "title": "Synthetics",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "fixed"
+          },
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 278
+      },
+      "id": 97,
+      "options": {
+        "colorMode": "background",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "text": {
+          "titleSize": 20,
+          "valueSize": 60
+        }
+      },
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_sm_billable_check_executions{org_id=\"$org_id\"}",
+          "instant": true,
+          "legendFormat": "Current Synthetics Test Executions"
+        }
+      ],
+      "title": "",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 10,
+            "gradientMode": "hue",
+            "showPoints": "never"
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/Additional Us(age|(ers?)) Amount/"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "currencyUSD"
+              },
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^Included/"
+            },
+            "properties": [
+              {
+                "id": "custom.fillOpacity",
+                "value": 0
+              },
+              {
+                "id": "custom.lineWidth",
+                "value": 2
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ],
+                  "fill": "dash"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*[Ff]raction.*"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 6,
+        "y": 278
+      },
+      "id": 98,
+      "pluginVersion": "v11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_sm_billable_check_executions{org_id=\"$org_id\"}",
+          "instant": false,
+          "legendFormat": "Billable Usage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_sm_overage{org_id=\"$org_id\"})- (9999999999 * $is_customer_of_partner) >= 0",
+          "instant": false,
+          "legendFormat": "Additional Usage Amount"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "avg without(monetary) (grafanacloud_org_sm_bill_fraction{org_id=\"$org_id\"})- (2 * $is_customer_of_grafana) >= 0",
+          "instant": false,
+          "legendFormat": "Cost fraction"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "grafanacloud_org_sm_included_check_executions{org_id=\"$org_id\"}",
+          "legendFormat": "Included Test Executions"
+        }
+      ],
+      "title": "Total Synthetics Test Executions",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "(.*)Billable(.*)",
+            "renamePattern": "$1$2"
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 18,
+        "y": 278
+      },
+      "id": 99,
+      "options": {
+        "content": "## About Synthetics\nYour Synthetics Usage is calculated from the total number of test executions this month.\n"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 290
+      },
+      "id": 100,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "Shows the 1 hour average rate of tests executed per second by check class\n",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "fillOpacity": 10
+              },
+              "unit": "exec/s"
+            }
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 290
+          },
+          "id": 101,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "lastNotNull",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(\n  label_replace(\n    label_replace(\n      avg_over_time(grafanacloud_sm_billable_check_executions_per_second{org_id=\"$org_id\"}[1h]),\n      \"class\", \"protocol\", \"check_class\", \"(protocol|scripted)\"\n    ), \"class\", \"browser\", \"check_class\", \"browser\"\n  )\n) by(class)\n",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Synthetics Test Execution Rate (executions/second)",
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "drawStyle": "bars",
+                "fillOpacity": 100,
+                "stacking": {
+                  "mode": "normal"
+                }
+              },
+              "unit": "short"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byValue",
+                  "options": {
+                    "op": "gte",
+                    "reducer": "allIsZero",
+                    "value": 0
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": true,
+                      "tooltip": true,
+                      "viz": false
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 298
+          },
+          "id": 102,
+          "options": {
+            "legend": {
+              "calcs": [
+                "mean",
+                "max",
+                "min"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "width": 450
+            }
+          },
+          "pluginVersion": "v11.1.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "expr": "sum(\n  label_replace(\n    label_replace(\n      sum_over_time((grafanacloud_sm_billable_check_executions_per_second{org_id=\"$org_id\"} offset -1d * 60 )[1d:1m]),\n      \"class\", \"protocol\", \"check_class\", \"(protocol|scripted)\"\n    ), \"class\", \"browser\", \"check_class\", \"browser\"\n  )\n) by(class)\n",
+              "interval": "1d",
+              "legendFormat": "{{ name }}"
+            }
+          ],
+          "title": "Synthetics Test Executions per day by check class",
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Synthetic Monitoring Usage Details",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 368
+      },
+      "id": 103,
+      "options": {
+        "content": "<div style=\"vertical-align: top; border: 0px;\"\"><p style=\"text-align: center; font-size: 115%; padding: 0px; margin: 0px;\"><b>Looking for the drilldown of your Usage Details? We moved these further up. You can find them directly below their corresponding Product Usage panels. They are collapsed by default and available to expand, just as before.</b></p></div>"
+      },
+      "pluginVersion": "v11.1.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [
+    "billing",
+    "grafanacloud"
+  ],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": "dapperlabs",
+          "value": "dapperlabs"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "label": "Org",
+        "name": "org_slug",
+        "query": "label_values(grafanacloud_org_info, org_slug)",
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "label": "Org ID",
+        "name": "org_id",
+        "query": "label_values(grafanacloud_org_info{org_slug=\"$org_slug\"}, org_id)",
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "includeAll": true,
+        "label": "Metrics Id",
+        "name": "metrics_id",
+        "query": "label_values(grafanacloud_instance_info{org_id=~\"$org_id\"}, id)",
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "includeAll": true,
+        "label": "Logs Id",
+        "name": "logs_id",
+        "query": "label_values(grafanacloud_logs_instance_info{org_id=~\"$org_id\"}, id)",
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "includeAll": true,
+        "label": "Traces Id",
+        "name": "traces_id",
+        "query": "label_values(grafanacloud_traces_instance_info{org_id=~\"$org_id\"}, id)",
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "includeAll": true,
+        "label": "Grafana Id",
+        "name": "grafana_id",
+        "query": "label_values(grafanacloud_grafana_instance_info{org_id=~\"$org_id\"}, id)",
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "includeAll": true,
+        "label": "Profiles Id",
+        "name": "profiles_id",
+        "query": "label_values(grafanacloud_profiles_instance_info{org_id=~\"$org_id\"}, id)",
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "name": "eval_time",
+        "query": "query_result(vector(time()) > vector(1710979200) or vector(1710979200))",
+        "regex": "{} (.*) .*",
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "name": "is_customer_of_grafana",
+        "query": "query_result(count ({__name__=\"grafanacloud_org_total_overage\", org_id=\"$org_id\"} @ $eval_time ) or vector(0))",
+        "regex": "{} (.*) .*",
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_PROMETHEUS}"
+        },
+        "hide": 2,
+        "name": "is_customer_of_partner",
+        "query": "query_result(1-$is_customer_of_grafana)",
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now/M",
+    "to": "now"
+  },
+  "timezone": "utc",
+  "title": "Grafana Cloud Billing/Usage",
+  "gnetId": 14252
+}

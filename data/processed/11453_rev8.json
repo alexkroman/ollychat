@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Heketi Status",
+    "description": "",
+    "queries": [
+      "heketi_up"
+    ]
+  },
+  {
+    "name": "Available Capacity in a Week Based on Daily Use Rate",
+    "description": "",
+    "queries": [
+      "(sum by (job,cluster) (predict_linear(heketi_device_free_bytes [1d], 7 * 24 * 60 * 60) ))"
+    ]
+  },
+  {
+    "name": "Available Capacity",
+    "description": "",
+    "queries": [
+      "(\n  (sum by (job,cluster) (heketi_device_free_bytes))\n)"
+    ]
+  },
+  {
+    "name": "Available Capacity in a Week Based on Daily Use Rate",
+    "description": "",
+    "queries": [
+      "(sum by (job,cluster) (predict_linear(heketi_device_free_bytes [1d], 7 * 24 * 60 * 60) ))"
+    ]
+  }
+]

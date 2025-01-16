@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Total number of CronJobs",
+    "description": "",
+    "queries": [
+      "sum(kube_cronjob_info)"
+    ]
+  },
+  {
+    "name": "Number of Suspended CronJobs",
+    "description": "Must be equal to Zero",
+    "queries": [
+      "sum(kube_cronjob_spec_suspend)"
+    ]
+  },
+  {
+    "name": "Active jobs",
+    "description": "",
+    "queries": [
+      "sum(kube_cronjob_status_active)"
+    ]
+  },
+  {
+    "name": "Failed jobs",
+    "description": "",
+    "queries": [
+      "sum(kube_job_failed)"
+    ]
+  },
+  {
+    "name": "Succeeded jobs",
+    "description": "",
+    "queries": [
+      "count(kube_job_status_succeeded==1)"
+    ]
+  },
+  {
+    "name": "CronJobs status",
+    "description": "",
+    "queries": [
+      "count(kube_job_failed==1)",
+      "count(kube_job_status_succeeded==1)"
+    ]
+  },
+  {
+    "name": "Schedule",
+    "description": "",
+    "queries": [
+      "topk(1,(kube_cronjob_info))"
+    ]
+  },
+  {
+    "name": "Running",
+    "description": "",
+    "queries": [
+      "sum by (owner_name)\n(\n  kube_job_status_active * on (job_name)\n\n  group_left(owner_name)\n\n  (group by (job_name,owner_name) (kube_job_owner))\n  \n)"
+    ]
+  },
+  {
+    "name": "Maximum Duration",
+    "description": "",
+    "queries": [
+      "max by (owner_name)\n(\n  max by(job_name )\n   (\n     kube_job_status_completion_time - on (job_name)\n       kube_job_created \n   ) * on (job_name)\n   \n    group_left(owner_name)\n\n  (group by (job_name,owner_name) (kube_job_owner))\n\n)  \n\n"
+    ]
+  },
+  {
+    "name": "Average Duration",
+    "description": "",
+    "queries": [
+      "avg by (owner_name)\n(\n  max by(job_name )\n   (\n     kube_job_status_completion_time - on (job_name)\n       kube_job_created \n   ) * on (job_name)\n   \n    group_left(owner_name)\n\n  (group by (job_name,owner_name) (kube_job_owner))\n\n)  \n\n\n\n"
+    ]
+  },
+  {
+    "name": "$cronjob status",
+    "description": "",
+    "queries": [
+      "sum by (owner_name)\n(\n  kube_job_complete + on (job_name)\n\n  group_left(owner_name)\n\n  (group by (job_name,owner_name) (kube_job_owner))\n  \n)",
+      "sum by (owner_name)\n(\n  kube_job_failed + on (job_name)\n\n  group_left(owner_name)\n\n  (group by (job_name,owner_name) (kube_job_owner))\n  \n)"
+    ]
+  },
+  {
+    "name": "Next Scheddule",
+    "description": "",
+    "queries": [
+      "(kube_cronjob_next_schedule_time*1000)"
+    ]
+  },
+  {
+    "name": "Failed",
+    "description": "",
+    "queries": [
+      "sum \n(\n  kube_job_failed + on (job_name)\n\n  group_left(owner_name)\n\n  (group by (job_name,owner_name) (kube_job_owner))\n  \n)"
+    ]
+  },
+  {
+    "name": "Minimum Duration",
+    "description": "",
+    "queries": [
+      "min (\n  (kube_job_status_completion_time\n  - on (job_name)\n    kube_job_created)\n  * on (job_name)\n    group_left(owner_name)\n      (group by (job_name,owner_name) (kube_job_owner))\n)\n\n\n\n"
+    ]
+  },
+  {
+    "name": "Last Scheddule",
+    "description": "",
+    "queries": [
+      "kube_cronjob_status_last_schedule_time*1000"
+    ]
+  },
+  {
+    "name": "Succeeded",
+    "description": "",
+    "queries": [
+      "sum\n(\n  kube_job_complete + on (job_name)\n\n  group_left(owner_name)\n\n  (group by (job_name,owner_name) (kube_job_owner))\n  \n)"
+    ]
+  }
+]

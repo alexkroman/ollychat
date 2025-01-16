@@ -1,0 +1,224 @@
+[
+  {
+    "name": "Ingress CX p/Min",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_http_downstream_cx_total[1m]))"
+    ]
+  },
+  {
+    "name": "HTTP Connections",
+    "description": "",
+    "queries": [
+      "sum(envoy_http_downstream_cx_ssl_active)-sum(envoy_cluster_upstream_cx_active)"
+    ]
+  },
+  {
+    "name": "HTTPS Connections",
+    "description": "",
+    "queries": [
+      "sum(envoy_http_downstream_cx_ssl_active)"
+    ]
+  },
+  {
+    "name": "2xx Per Min",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_http_downstream_rq_xx[1m]))"
+    ]
+  },
+  {
+    "name": "4xx Per Min",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_http_downstream_rq_xx[1m]))"
+    ]
+  },
+  {
+    "name": "5xx Per Min",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_http_downstream_rq_xx[1m]))"
+    ]
+  },
+  {
+    "name": "Upstream RX Data",
+    "description": "",
+    "queries": [
+      "sum(envoy_cluster_upstream_cx_rx_bytes_total)"
+    ]
+  },
+  {
+    "name": "Upstream TX Data",
+    "description": "",
+    "queries": [
+      "sum(envoy_cluster_upstream_cx_tx_bytes_total)"
+    ]
+  },
+  {
+    "name": "Downstream RX Data",
+    "description": "",
+    "queries": [
+      "sum(envoy_http_downstream_cx_rx_bytes_total)"
+    ]
+  },
+  {
+    "name": "Downstream TX Data",
+    "description": "",
+    "queries": [
+      "sum(envoy_http_downstream_cx_tx_bytes_total)"
+    ]
+  },
+  {
+    "name": "Upstream TX KBPs",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_cluster_upstream_cx_tx_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "Upstream RX KBPs",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_cluster_upstream_cx_rx_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "Downstream TX KBPs",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_http_downstream_cx_tx_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "Downstream RX KBPs",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_http_downstream_cx_rx_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "Ambassador Downstream Responses",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_http_downstream_rq_xx[1m]))",
+      "sum(increase(envoy_http_downstream_rq_xx[1m]))",
+      "sum(increase(envoy_http_downstream_rq_xx[1m]))",
+      "sum(increase(envoy_http_downstream_rq_xx[1m]))"
+    ]
+  },
+  {
+    "name": "Ambassador Upstream Responses",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_cluster_upstream_rq_xx[1m]))",
+      "sum(increase(envoy_cluster_upstream_rq_xx[1m]))",
+      "sum(increase(envoy_cluster_upstream_rq_xx[1m]))",
+      "sum(increase(envoy_cluster_upstream_rq_xx[1m]))"
+    ]
+  },
+  {
+    "name": "RX/TX",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_cluster_upstream_cx_tx_bytes_total[1m]))",
+      "sum(increase(envoy_cluster_upstream_cx_rx_bytes_total[1m]))",
+      "sum(increase(envoy_http_downstream_cx_tx_bytes_total[1m]))",
+      "sum(increase(envoy_http_downstream_cx_rx_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "API Response Codes",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_cluster_internal_upstream_rq_xx[1m]))",
+      "sum(increase(envoy_cluster_internal_upstream_rq_xx[1m]))",
+      "sum(increase(envoy_cluster_internal_upstream_rq_xx[1m]))",
+      "sum(increase(envoy_cluster_internal_upstream_rq_xx[1m]))"
+    ]
+  },
+  {
+    "name": "Downstream Connections Length",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(envoy_http_downstream_cx_length_ms_bucket[5m])) by (le))",
+      "histogram_quantile(0.9, sum(rate(envoy_http_downstream_cx_length_ms_bucket[5m])) by (le))",
+      "histogram_quantile(0.5, sum(rate(envoy_http_downstream_cx_length_ms_bucket[5m])) by (le))",
+      ""
+    ]
+  },
+  {
+    "name": "Active Connections",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_http_downstream_cx_http1_active[1m]))",
+      "sum(increase(envoy_http_downstream_cx_http2_active_active[1m]))",
+      "sum(increase(envoy_http_downstream_cx_upgrades_active[1m]))"
+    ]
+  },
+  {
+    "name": "Active Connections",
+    "description": "",
+    "queries": [
+      "sum(envoy_cluster_upstream_cx_active) by (envoy_cluster_name)"
+    ]
+  },
+  {
+    "name": "Upstream Connections Failures",
+    "description": "",
+    "queries": [
+      "sum(envoy_cluster_upstream_cx_connect_fail) by (envoy_cluster_name)"
+    ]
+  },
+  {
+    "name": "Cluster Transfer Data",
+    "description": "",
+    "queries": [
+      "sum(envoy_cluster_upstream_cx_rx_bytes_total) by (envoy_cluster_name)"
+    ]
+  },
+  {
+    "name": "Cluster Update Failures",
+    "description": "",
+    "queries": [
+      "avg(envoy_cluster_update_failure) by (envoy_cluster_name)"
+    ]
+  },
+  {
+    "name": "Upstream Destroy with CX Active",
+    "description": "",
+    "queries": [
+      "max(envoy_cluster_upstream_cx_destroy_with_active_rq) by (envoy_cluster_name)"
+    ]
+  },
+  {
+    "name": "API Requests",
+    "description": "",
+    "queries": [
+      "sum(increase(envoy_$_downstream_rq_xx[1m]))",
+      "sum(increase(envoy_$_downstream_rq_xx[1m]))",
+      "sum(increase(envoy_$_downstream_rq_xx[1m]))",
+      "sum(increase(envoy_$_downstream_rq_xx[1m]))"
+    ]
+  },
+  {
+    "name": "Downstream Connections",
+    "description": "",
+    "queries": [
+      "avg(increase(envoy_http_downstream_cx_http1_total[1m]))",
+      "avg(increase(envoy_http_downstream_cx_http1_total[1m]))",
+      "avg(increase(envoy_http_downstream_cx_http2_total[1m]))",
+      "avg(increase(envoy_http_downstream_cx_http2_total[1m]))"
+    ]
+  },
+  {
+    "name": "Downstream Active Connections",
+    "description": "",
+    "queries": [
+      "sum(envoy_http_downstream_cx_http1_active)",
+      "sum(envoy_http_downstream_cx_http1_active)",
+      "sum(envoy_http_downstream_cx_http2_active)",
+      "sum(envoy_http_downstream_cx_http2_active)"
+    ]
+  }
+]

@@ -1,0 +1,281 @@
+[
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "loki_build_info"
+    ]
+  },
+  {
+    "name": "Loki Version",
+    "description": "",
+    "queries": [
+      "loki_build_info"
+    ]
+  },
+  {
+    "name": "Message Total",
+    "description": "",
+    "queries": [
+      "sum(log_messages_total)"
+    ]
+  },
+  {
+    "name": "Current Alerts",
+    "description": "",
+    "queries": [
+      "cortex_prometheus_notifications_alertmanagers_discovered"
+    ]
+  },
+  {
+    "name": "Alerts Event Total",
+    "description": "",
+    "queries": [
+      "cortex_prometheus_notifications_sent_total"
+    ]
+  },
+  {
+    "name": "Store Series Total",
+    "description": "",
+    "queries": [
+      "sum(loki_store_series_total)"
+    ]
+  },
+  {
+    "name": "Store Chunks Total",
+    "description": "",
+    "queries": [
+      "sum(loki_ingester_chunk_stored_bytes_total)"
+    ]
+  },
+  {
+    "name": "Rules Total",
+    "description": "",
+    "queries": [
+      "sum(cortex_prometheus_rule_group_rules)"
+    ]
+  },
+  {
+    "name": "Panic ",
+    "description": "",
+    "queries": [
+      "loki_panic_total"
+    ]
+  },
+  {
+    "name": "Messages Input",
+    "description": "",
+    "queries": [
+      "sum(irate(log_messages_total[1m])) by (level)"
+    ]
+  },
+  {
+    "name": "S3 Request Durations",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(cortex_s3_request_duration_seconds_bucket[5m])) by (le,operation))"
+    ]
+  },
+  {
+    "name": "API Request Durations",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(loki_request_duration_seconds_bucket[5m])) by (le,route))"
+    ]
+  },
+  {
+    "name": "LogQL Latency",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(loki_logql_querystats_latency_seconds_bucket[5m])) by (le,type))"
+    ]
+  },
+  {
+    "name": "LogQL  Processed bytes",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(loki_logql_querystats_bytes_processed_per_seconds_bucket[5m])) by (le,type))"
+    ]
+  },
+  {
+    "name": "Rules Status ",
+    "description": "",
+    "queries": [
+      "cortex_prometheus_rule_evaluations_total",
+      "cortex_prometheus_notifications_sent_total"
+    ]
+  },
+  {
+    "name": "Notifications Latency",
+    "description": "",
+    "queries": [
+      "sum(rate(cortex_prometheus_notifications_latency_seconds[5m]))  by (quantile)"
+    ]
+  },
+  {
+    "name": "Rule Evaluations",
+    "description": "",
+    "queries": [
+      "sum(rate(cortex_prometheus_rule_evaluation_duration_seconds[5m]))  by (quantile)"
+    ]
+  },
+  {
+    "name": "Cache Request  Duration",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(cortex_cache_request_duration_seconds_bucket[5m])) by (le,name,method))"
+    ]
+  },
+  {
+    "name": "Cache Value Size bytes",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(cortex_cache_value_size_bytes_bucket[5m])) by (le,name,method))"
+    ]
+  },
+  {
+    "name": "Hits Keys",
+    "description": "",
+    "queries": [
+      "rate(cortex_cache_hits[5m])"
+    ]
+  },
+  {
+    "name": "Background Queue Length",
+    "description": "",
+    "queries": [
+      "cortex_cache_background_queue_length"
+    ]
+  },
+  {
+    "name": "Fetched Keys",
+    "description": "",
+    "queries": [
+      "cortex_cache_fetched_keys"
+    ]
+  },
+  {
+    "name": "Cassandra Request Durations",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(cortex_cassandra_request_duration_seconds_bucket[5m])) by (le,operation))"
+    ]
+  },
+  {
+    "name": "Chunk Store Chunks",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(cortex_chunk_store_chunks_per_query_bucket[5m])) by (le))"
+    ]
+  },
+  {
+    "name": "Table-Manager Sync Durations",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(cortex_table_manager_sync_duration_seconds_bucket[5m])) by (le))"
+    ]
+  },
+  {
+    "name": "Received Lines / sec",
+    "description": "",
+    "queries": [
+      "sum by (tenant) (rate(loki_distributor_lines_received_total[5m]))"
+    ]
+  },
+  {
+    "name": "Distributor  Received bytes / sec",
+    "description": "",
+    "queries": [
+      "sum(rate(loki_distributor_bytes_received_total[5m])) by (tenant)"
+    ]
+  },
+  {
+    "name": "batch appends sent to ingesters / sec",
+    "description": "",
+    "queries": [
+      "rate(loki_distributor_ingester_appends_total[5m])",
+      "loki_distributor_ingester_append_failures_total"
+    ]
+  },
+  {
+    "name": "Store Series / sec",
+    "description": "",
+    "queries": [
+      "sum by (status) (rate(loki_store_series_total[5m]))"
+    ]
+  },
+  {
+    "name": "Blocks / Chunk",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(loki_ingester_blocks_per_chunk_bucket[5m])) by (le))"
+    ]
+  },
+  {
+    "name": "Chunk Size",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(loki_ingester_chunk_size_bytes_bucket[5m])) by (le))"
+    ]
+  },
+  {
+    "name": "Chunk Age",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(loki_ingester_chunk_age_seconds_bucket[5m])) by (le))"
+    ]
+  },
+  {
+    "name": "Chunk Compression Ratios",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(loki_ingester_chunk_compression_ratio_bucket[5m])) by (le))"
+    ]
+  },
+  {
+    "name": "Chunk Encode Time",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(loki_ingester_chunk_encode_time_seconds_bucket[5m])) by (le))"
+    ]
+  },
+  {
+    "name": "Lines / Chunk",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(loki_ingester_chunk_entries_bucket[5m])) by (le))"
+    ]
+  },
+  {
+    "name": "Chunk Status",
+    "description": "",
+    "queries": [
+      "rate(loki_ingester_chunks_created_total[5m])",
+      "sum by (reason) (rate(loki_ingester_chunks_flushed_total[5m]))",
+      "sum by (fake) (rate(loki_ingester_chunks_stored_total[5m]))",
+      ""
+    ]
+  },
+  {
+    "name": "Chunks in Memory",
+    "description": "",
+    "queries": [
+      "loki_ingester_memory_chunks"
+    ]
+  },
+  {
+    "name": "Chunks in Streams",
+    "description": "",
+    "queries": [
+      "sum by (tenan) (loki_ingester_memory_streams)"
+    ]
+  },
+  {
+    "name": "Strams Stats",
+    "description": "",
+    "queries": [
+      "rate(loki_ingester_streams_created_total[5m])",
+      "rate(loki_ingester_streams_removed_total[5m])"
+    ]
+  }
+]

@@ -3,118 +3,118 @@
     "name": "Pressure",
     "description": "Resource pressure via PSI",
     "queries": [
-      "irate(node_pressure_cpu_waiting_seconds_total{}[30m])",
-      "irate(node_pressure_memory_waiting_seconds_total{}[30m])",
-      "irate(node_pressure_io_waiting_seconds_total{}[30m])"
+      "irate(node_pressure_cpu_waiting_seconds_total[30m])",
+      "irate(node_pressure_memory_waiting_seconds_total[30m])",
+      "irate(node_pressure_io_waiting_seconds_total[30m])"
     ]
   },
   {
     "name": "CPU Busy",
     "description": "Busy state of all CPU cores together",
     "queries": [
-      "100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\"}[30m])))"
+      "100 * (1 - avg(rate(node_cpu_seconds_total[30m])))"
     ]
   },
   {
     "name": "Sys Load",
     "description": "System load  over all CPU cores together",
     "queries": [
-      "scalar(node_load1{}) * 100 / count(count(node_cpu_seconds_total{}) by (cpu))"
+      "scalar(node_load1) * 100 / count(count(node_cpu_seconds_total) by (cpu))"
     ]
   },
   {
     "name": "RAM Used",
     "description": "Non available RAM memory",
     "queries": [
-      "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / node_memory_MemTotal_bytes{}) * 100",
-      "(1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) * 100"
+      "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / node_memory_MemTotal_bytes) * 100",
+      "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100"
     ]
   },
   {
     "name": "SWAP Used",
     "description": "Used Swap",
     "queries": [
-      "((node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{}) / (node_memory_SwapTotal_bytes{})) * 100"
+      "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes)) * 100"
     ]
   },
   {
     "name": "Root FS Used",
     "description": "Used Root FS",
     "queries": [
-      "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})"
+      "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)"
     ]
   },
   {
     "name": "CPU Cores",
     "description": "Total number of CPU cores",
     "queries": [
-      "count(count(node_cpu_seconds_total{}) by (cpu))"
+      "count(count(node_cpu_seconds_total) by (cpu))"
     ]
   },
   {
     "name": "Uptime",
     "description": "System uptime",
     "queries": [
-      "node_time_seconds{} - node_boot_time_seconds{}"
+      "node_time_seconds - node_boot_time_seconds"
     ]
   },
   {
     "name": "RootFS Total",
     "description": "Total RootFS",
     "queries": [
-      "node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"}"
+      "node_filesystem_size_bytes"
     ]
   },
   {
     "name": "RAM Total",
     "description": "Total RAM",
     "queries": [
-      "node_memory_MemTotal_bytes{}"
+      "node_memory_MemTotal_bytes"
     ]
   },
   {
     "name": "SWAP Total",
     "description": "Total SWAP",
     "queries": [
-      "node_memory_SwapTotal_bytes{}"
+      "node_memory_SwapTotal_bytes"
     ]
   },
   {
     "name": "CPU Basic",
     "description": "Basic CPU info",
     "queries": [
-      "sum(irate(node_cpu_seconds_total{mode=\"system\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-      "sum(irate(node_cpu_seconds_total{mode=\"user\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-      "sum(irate(node_cpu_seconds_total{mode=\"iowait\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-      "sum(irate(node_cpu_seconds_total{mode=~\".*irq\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-      "sum(irate(node_cpu_seconds_total{mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))",
-      "sum(irate(node_cpu_seconds_total{mode=\"idle\"}[30m])) / scalar(count(count(node_cpu_seconds_total{}) by (cpu)))"
+      "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+      "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+      "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+      "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+      "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))",
+      "sum(irate(node_cpu_seconds_total[30m])) / scalar(count(count(node_cpu_seconds_total) by (cpu)))"
     ]
   },
   {
     "name": "Memory Basic",
     "description": "Basic memory usage",
     "queries": [
-      "node_memory_MemTotal_bytes{}",
-      "node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{} - (node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{})",
-      "node_memory_Cached_bytes{} + node_memory_Buffers_bytes{} + node_memory_SReclaimable_bytes{}",
-      "node_memory_MemFree_bytes{}",
-      "(node_memory_SwapTotal_bytes{} - node_memory_SwapFree_bytes{})"
+      "node_memory_MemTotal_bytes",
+      "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_SReclaimable_bytes)",
+      "node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_SReclaimable_bytes",
+      "node_memory_MemFree_bytes",
+      "(node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes)"
     ]
   },
   {
     "name": "Network Traffic Basic",
     "description": "Basic network info per interface",
     "queries": [
-      "irate(node_network_receive_bytes_total{}[30m])*8",
-      "irate(node_network_transmit_bytes_total{}[30m])*8"
+      "irate(node_network_receive_bytes_total[30m])*8",
+      "irate(node_network_transmit_bytes_total[30m])*8"
     ]
   },
   {
     "name": "Disk Space Used Basic",
     "description": "Disk space used of all filesystems mounted",
     "queries": [
-      "100 - ((node_filesystem_avail_bytes{device!~'rootfs'} * 100) / node_filesystem_size_bytes{device!~'rootfs'})"
+      "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)"
     ]
   }
 ]

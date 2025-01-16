@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Failing or dead nodes",
+    "description": "",
+    "queries": [
+      "kube_statefulset_replicas - kube_statefulset_status_replicas"
+    ]
+  }
+]

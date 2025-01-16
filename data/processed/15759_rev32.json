@@ -1,0 +1,264 @@
+[
+  {
+    "name": "CPU  Usage",
+    "description": "",
+    "queries": [
+      "avg(sum by (cpu) (rate(node_cpu_seconds_total[30m])))"
+    ]
+  },
+  {
+    "name": "RAM Usage",
+    "description": "",
+    "queries": [
+      "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)"
+    ]
+  },
+  {
+    "name": "Pods on node",
+    "description": "",
+    "queries": [
+      "sum(kube_pod_info)"
+    ]
+  },
+  {
+    "name": "List of pods on node ($node)",
+    "description": "",
+    "queries": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "CPU Used",
+    "description": "",
+    "queries": [
+      "sum(rate(node_cpu_seconds_total[30m]))"
+    ]
+  },
+  {
+    "name": "CPU Total",
+    "description": "",
+    "queries": [
+      "sum(machine_cpu_cores)"
+    ]
+  },
+  {
+    "name": "RAM Used",
+    "description": "",
+    "queries": [
+      "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)"
+    ]
+  },
+  {
+    "name": "RAM Total",
+    "description": "",
+    "queries": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "uptime",
+    "description": "",
+    "queries": [
+      "node_time_seconds - node_boot_time_seconds"
+    ]
+  },
+  {
+    "name": "CPU Usage",
+    "description": "",
+    "queries": [
+      "avg(rate(node_cpu_seconds_total[30m]) * 100) by (mode)"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "",
+    "queries": [
+      "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes)",
+      "node_memory_MemTotal_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_Buffers_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "name": "CPU usage by Pod",
+    "description": "",
+    "queries": [
+      "sum(rate(container_cpu_usage_seconds_total[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Memory usage by Pod",
+    "description": "",
+    "queries": [
+      "sum(container_memory_working_set_bytes) by (pod)"
+    ]
+  },
+  {
+    "name": "Number of CPU Core Throttled",
+    "description": "Number of times a CPU core has been throttled on an instance.",
+    "queries": [
+      "sum(rate(node_cpu_core_throttles_total[30m]))"
+    ]
+  },
+  {
+    "name": "System Load",
+    "description": "",
+    "queries": [
+      "node_load1",
+      "node_load5",
+      "node_load15"
+    ]
+  },
+  {
+    "name": "Context Switches & Interrupts",
+    "description": "",
+    "queries": [
+      "rate(node_context_switches_total[30m])",
+      "rate(node_intr_total[30m])"
+    ]
+  },
+  {
+    "name": "File Descriptors",
+    "description": "",
+    "queries": [
+      "node_filefd_maximum",
+      "node_filefd_allocated"
+    ]
+  },
+  {
+    "name": "Time Sync",
+    "description": "",
+    "queries": [
+      "node_timex_estimated_error_seconds",
+      "node_timex_maxerror_seconds"
+    ]
+  },
+  {
+    "name": "Network usage (bytes/s)",
+    "description": "",
+    "queries": [
+      "sum(rate(node_network_receive_bytes_total[30m]))",
+      "- sum(rate(node_network_transmit_bytes_total[30m]))"
+    ]
+  },
+  {
+    "name": "Network errors",
+    "description": "",
+    "queries": [
+      "sum(rate(node_network_receive_errs_total[30m]))",
+      "- sum(rate(node_network_transmit_errs_total[30m]))"
+    ]
+  },
+  {
+    "name": "Network usage (packet/s)",
+    "description": "",
+    "queries": [
+      "sum(rate(node_network_receive_packets_total[30m]))",
+      "- sum(rate(node_network_transmit_packets_total[30m]))"
+    ]
+  },
+  {
+    "name": "Network total drops",
+    "description": "",
+    "queries": [
+      "sum(rate(node_network_receive_drop_total[30m]))",
+      "- sum(rate(node_network_transmit_drop_total[30m]))"
+    ]
+  },
+  {
+    "name": "TCP Currently Established",
+    "description": "",
+    "queries": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "name": "NF Conntrack",
+    "description": "",
+    "queries": [
+      "node_nf_conntrack_entries",
+      "node_nf_conntrack_entries_limit"
+    ]
+  },
+  {
+    "name": "Persistent Volumes - Usage in %",
+    "description": "",
+    "queries": [
+      "sum(kubelet_volume_stats_used_bytes) by (persistentvolumeclaim) / sum(kubelet_volume_stats_capacity_bytes) by (persistentvolumeclaim)"
+    ]
+  },
+  {
+    "name": "Persistent Volumes - Usage in GB",
+    "description": "",
+    "queries": [
+      "sum(kubelet_volume_stats_used_bytes) by (persistentvolumeclaim)",
+      "sum(kubelet_volume_stats_capacity_bytes) by (persistentvolumeclaim)"
+    ]
+  },
+  {
+    "name": "Persistent Volumes - Inodes",
+    "description": "",
+    "queries": [
+      "sum(kubelet_volume_stats_inodes_used) by (persistentvolumeclaim) / sum(kubelet_volume_stats_inodes) by (persistentvolumeclaim) * 100"
+    ]
+  },
+  {
+    "name": "FS usage in %",
+    "description": "",
+    "queries": [
+      "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)"
+    ]
+  },
+  {
+    "name": "FS inode usage in %",
+    "description": "",
+    "queries": [
+      "100 - (node_filesystem_files_free / node_filesystem_files * 100)"
+    ]
+  },
+  {
+    "name": "Reads by disk (bytes)",
+    "description": "",
+    "queries": [
+      "rate(node_disk_read_bytes_total[30m])"
+    ]
+  },
+  {
+    "name": "Writes by disk (bytes)",
+    "description": "",
+    "queries": [
+      "rate(node_disk_written_bytes_total[30m])"
+    ]
+  },
+  {
+    "name": "Completed reads by disk",
+    "description": "",
+    "queries": [
+      "rate(node_disk_reads_completed_total[30m])"
+    ]
+  },
+  {
+    "name": "Completed writes by disk",
+    "description": "",
+    "queries": [
+      "rate(node_disk_writes_completed_total[30m])"
+    ]
+  },
+  {
+    "name": "Disk(s) io/s",
+    "description": "",
+    "queries": [
+      "rate(node_disk_io_now[30m]) "
+    ]
+  },
+  {
+    "name": "FS - Device Errors",
+    "description": "",
+    "queries": [
+      "sum(node_filesystem_device_error) by (mountpoint)"
+    ]
+  }
+]

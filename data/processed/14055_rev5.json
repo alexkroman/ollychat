@@ -3,7 +3,7 @@
     "name": "Number of error/warning messages logged by Loki itself",
     "description": "Total number of messages logged by Loki itself",
     "queries": [
-      "sum(rate(log_messages_total{app=\"loki\",level=~\"error|warn\"}[1m])) by (level)\n",
+      "sum(rate(log_messages_total[1m])) by (level)\n",
       "log_messages_total"
     ]
   },
@@ -11,21 +11,21 @@
     "name": "Error/warning messages logged by Loki itself",
     "description": "",
     "queries": [
-      "{app=\"loki\"} | logfmt | level=\"warn\" or level=\"error\""
+      " | logfmt | level=\"warn\" or level=\"error\""
     ]
   },
   {
     "name": "Error/warning messages logged by Promtail",
     "description": "Total number of messages logged by Promtail",
     "queries": [
-      "sum(rate(log_messages_total{app_kubernetes_io_name=\"promtail\",level=~\"error|warn\"}[1m])) by (level)\n"
+      "sum(rate(log_messages_total[1m])) by (level)\n"
     ]
   },
   {
     "name": "Error/warning messages logged by Promtail",
     "description": "",
     "queries": [
-      "{app=\"promtail\"} | logfmt | level=\"warn\" or level=\"error\""
+      " | logfmt | level=\"warn\" or level=\"error\""
     ]
   },
   {
@@ -67,64 +67,64 @@
     "name": "Loki memory usage (% of Kubernetes memory limit)",
     "description": "Percentage of actual usage over configured limit",
     "queries": [
-      "100 * max by(pod,container) (container_memory_working_set_bytes{container!=\"\",container!=\"POD\",pod=~\"loki.*\"})\n/\non (pod,container) group_left  kube_pod_container_resource_limits_memory_bytes{pod=~\"loki.*\"}"
+      "100 * max by(pod,container) (container_memory_working_set_bytes)\n/\non (pod,container) group_left  kube_pod_container_resource_limits_memory_bytes"
     ]
   },
   {
     "name": "Loki memory usage vs Kubernetes limit and request",
     "description": "",
     "queries": [
-      "container_memory_working_set_bytes{container!=\"\",container!=\"POD\",pod=~\"loki.*\"}",
-      "min(kube_pod_container_resource_limits_memory_bytes{pod=~\"loki.*\"})",
-      "min(kube_pod_container_resource_requests_memory_bytes{pod=~\"loki.*\"})"
+      "container_memory_working_set_bytes",
+      "min(kube_pod_container_resource_limits_memory_bytes)",
+      "min(kube_pod_container_resource_requests_memory_bytes)"
     ]
   },
   {
     "name": "Promtail memory usage (% of Kubernetes memory limit)",
     "description": "Percentage of actual usage over configured limit",
     "queries": [
-      "100* max by(pod,container) (container_memory_working_set_bytes{container!=\"\",container!=\"POD\",pod=~\"promtail.*\"})\n/\non (pod,container) (kube_pod_container_resource_limits_memory_bytes{pod=~\"promtail.*\"})"
+      "100* max by(pod,container) (container_memory_working_set_bytes)\n/\non (pod,container) (kube_pod_container_resource_limits_memory_bytes)"
     ]
   },
   {
     "name": "Promtail memory usage vs Kubernetes limit and request",
     "description": "",
     "queries": [
-      "container_memory_working_set_bytes{container!=\"\",container!=\"POD\",pod=~\"promtail.*\"}",
-      "min(kube_pod_container_resource_limits_memory_bytes{pod=~\"promtail.*\"})",
-      "min(kube_pod_container_resource_requests_memory_bytes{pod=~\"promtail.*\"})"
+      "container_memory_working_set_bytes",
+      "min(kube_pod_container_resource_limits_memory_bytes)",
+      "min(kube_pod_container_resource_requests_memory_bytes)"
     ]
   },
   {
     "name": "Loki CPU usage (% of Kubernetes CPU limit)",
     "description": "percentage of configured limit",
     "queries": [
-      "100* rate(container_cpu_usage_seconds_total{container!=\"POD\",container!=\"\",pod=~\"loki.*\"}[1m])\n/\non (pod,container) kube_pod_container_resource_limits_cpu_cores{container=\"loki\"}"
+      "100* rate(container_cpu_usage_seconds_total[1m])\n/\non (pod,container) kube_pod_container_resource_limits_cpu_cores"
     ]
   },
   {
     "name": "Loki CPU usage vs Kubernetes limit and request",
     "description": "",
     "queries": [
-      "rate(container_cpu_usage_seconds_total{container!=\"\",container!=\"POD\",pod=~\"loki.*\"}[1m])",
-      "min(kube_pod_container_resource_limits_cpu_cores{pod=~\"loki.*\"})",
-      "min(kube_pod_container_resource_requests_cpu_cores{pod=~\"loki.*\"})"
+      "rate(container_cpu_usage_seconds_total[1m])",
+      "min(kube_pod_container_resource_limits_cpu_cores)",
+      "min(kube_pod_container_resource_requests_cpu_cores)"
     ]
   },
   {
     "name": "Promtail CPU usage (% of Kubernetes limit)",
     "description": "percentage of configured limit",
     "queries": [
-      "100 * rate(container_cpu_usage_seconds_total{container!=\"\",container!=\"POD\",pod=~\"promtail.*\"}[1m])\n/\non (pod,container) kube_pod_container_resource_limits_cpu_cores{pod=~\"promtail.*\"}"
+      "100 * rate(container_cpu_usage_seconds_total[1m])\n/\non (pod,container) kube_pod_container_resource_limits_cpu_cores"
     ]
   },
   {
     "name": "Promtail CPU usage vs Kubernetes limit and request",
     "description": "",
     "queries": [
-      "rate(container_cpu_usage_seconds_total{container!=\"\",container!=\"POD\",pod=~\"promtail.*\"}[1m])",
-      "min(kube_pod_container_resource_limits_cpu_cores{pod=~\"promtail.*\"})",
-      "min(kube_pod_container_resource_requests_cpu_cores{pod=~\"promtail.*\"})"
+      "rate(container_cpu_usage_seconds_total[1m])",
+      "min(kube_pod_container_resource_limits_cpu_cores)",
+      "min(kube_pod_container_resource_requests_cpu_cores)"
     ]
   }
 ]

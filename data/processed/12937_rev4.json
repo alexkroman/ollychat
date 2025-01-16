@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Number of Pods",
+    "description": "",
+    "queries": [
+      "count\n(\n  kube_pod_container_info\n) by (container)\n"
+    ]
+  },
+  {
+    "name": "CPU Core Usage vs. Requested",
+    "description": "",
+    "queries": [
+      "sum(container_spec_cpu_shares) by (pod) / 1000",
+      "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)"
+    ]
+  },
+  {
+    "name": "Memory Usage v. Limit",
+    "description": "",
+    "queries": [
+      "max(container_spec_memory_limit_bytes) by (pod)",
+      "sum(max_over_time(container_memory_working_set_bytes[$__interval])) by (pod)"
+    ]
+  },
+  {
+    "name": "Last Terminated Reason",
+    "description": "",
+    "queries": [
+      "kube_pod_container_status_last_terminated_reason != 0"
+    ]
+  },
+  {
+    "name": "CPU Core Usage vs. Requested",
+    "description": "",
+    "queries": [
+      "sum(container_spec_cpu_shares) by (pod) / 1000",
+      "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)"
+    ]
+  },
+  {
+    "name": "Memory Usage v. Limit",
+    "description": "",
+    "queries": [
+      "max(container_spec_memory_limit_bytes) by (pod)",
+      "sum(max_over_time(container_memory_working_set_bytes[$__interval])) by (pod)"
+    ]
+  },
+  {
+    "name": "Last Terminated Reason",
+    "description": "",
+    "queries": [
+      "kube_pod_container_status_last_terminated_reason != 0"
+    ]
+  },
+  {
+    "name": "CPU Core Usage vs. Requested",
+    "description": "",
+    "queries": [
+      "sum(container_spec_cpu_shares) by (pod) / 1000",
+      "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (container)"
+    ]
+  },
+  {
+    "name": "Memory Usage v. Limit",
+    "description": "",
+    "queries": [
+      "max(container_spec_memory_limit_bytes) by (pod)",
+      "sum(max_over_time(container_memory_working_set_bytes[$__interval])) by (pod)"
+    ]
+  },
+  {
+    "name": "Last Terminated Reason",
+    "description": "",
+    "queries": [
+      "kube_pod_container_status_last_terminated_reason != 0"
+    ]
+  },
+  {
+    "name": "CPU Core Usage vs. Requested",
+    "description": "",
+    "queries": [
+      "sum(container_spec_cpu_shares) by (pod) / 1000",
+      "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)"
+    ]
+  },
+  {
+    "name": "Memory Usage v. Limit",
+    "description": "",
+    "queries": [
+      "max(container_spec_memory_limit_bytes) by (pod)",
+      "sum(max_over_time(container_memory_working_set_bytes[$__interval])) by (pod)"
+    ]
+  },
+  {
+    "name": "Last Terminated Reason",
+    "description": "",
+    "queries": [
+      "kube_pod_container_status_last_terminated_reason != 0"
+    ]
+  },
+  {
+    "name": "Cache Hit Ratio",
+    "description": "",
+    "queries": [
+      "sum(\n  rate(\n    thanos_store_index_cache_hits_total[30m]\n  )\n)\n/\nsum(\n  rate(\n    thanos_store_index_cache_requests_total[30m]\n  ) \n)"
+    ]
+  },
+  {
+    "name": "Cache Hits",
+    "description": "",
+    "queries": [
+      "rate(thanos_store_index_cache_hits_total[5m])"
+    ]
+  },
+  {
+    "name": "bucket_store_cached_series_fetch_duration_seconds_count",
+    "description": "",
+    "queries": [
+      "rate(thanos_bucket_store_cached_series_fetch_duration_seconds_count[30m])"
+    ]
+  }
+]
