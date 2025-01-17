@@ -76,7 +76,7 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
 
   const updatedHistory = [
     ...(state.chat_history || []), 
-    `Question: ${state.question} Query ${state.query} Answer: ${result.content}`
+    `- Question: ${state.question} Query ${state.query} Answer: ${result.content}`
   ].slice(-5);
 
   return { 
