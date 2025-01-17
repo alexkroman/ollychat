@@ -1,5 +1,6 @@
 import { Annotation } from "@langchain/langgraph";
 import { StateGraph } from "@langchain/langgraph";
+import { BufferMemory } from "langchain/memory";
 
 import { model } from '../models/openai.js';
 import { promModel } from '../models/prom.js';
@@ -10,6 +11,12 @@ import { loadPromptFromFile } from '../utils/promptLoader.js';
 import { exampleSelector } from '../utils/getQueryExamples.js';
 import { formatExamples } from '../utils/exampleFormatter.js';
 import { normalizeQuestion } from '../utils/dataNormalizer.js';
+
+// Memory to store conversation history
+const memory = new BufferMemory({
+  returnMessages: true, // Enables message retrieval
+  memoryKey: "chat_history", // Key for conversation history
+});
 
 const getQueryExamples = async (state: typeof StateAnnotation.State) => {
   const examples = await exampleSelector.invoke(normalizeQuestion(state.question));
@@ -39,14 +46,24 @@ const executeQuery = async (state: typeof StateAnnotation.State) => {
 };
 
 const generateAnswer = async (state: typeof StateAnnotation.State) => {
+  const chatHistory = await memory.loadMemoryVariables({});
+
   const answerPromptTemplate = loadPromptFromFile('answerPrompt');
   const answerPromptValue = await answerPromptTemplate.invoke({
     question: state.question,
     query: state.query,
     result: state.result,
+    chat_history: chatHistory.chat_history || [], // Includes past interactions
   });
 
   const result = await model.invoke(answerPromptValue);
+
+  // Store conversation in memory
+  await memory.saveContext(
+    { input: state },
+    { output: result.content }
+  );
+
   return { answer: result.content };
 
 };
@@ -55,12 +72,10 @@ const StateAnnotation = Annotation.Root({
   question: Annotation<string>,
   examples: Annotation<string>,
   metrics: Annotation<string>,
-  query_explanation: Annotation<string>,
   query: Annotation<string>,
   result: Annotation<string>,
   answer: Annotation<string>,
-  unit: Annotation<string>,
-  unit_description: Annotation<string>
+  chat_history: Annotation<string[]>
 });
 
 const InputStateAnnotation = Annotation.Root({
@@ -83,6 +98,9 @@ const graphBuilder = new StateGraph({
   .addEdge("generateAnswer", "__end__");
 
 export const answerQuestion = async (inputs: { question: string }) => {
+  const chatHistory = await memory.loadMemoryVariables({}); // Load history
   const graph = graphBuilder.compile();
-  return await graph.invoke(inputs);
-}
+  return await graph.invoke({
+    ...inputs,
+    chat_history: chatHistory.chat_history || [], // Injects past messages
+  });}
