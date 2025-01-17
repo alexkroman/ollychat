@@ -4,12 +4,12 @@ import { StateGraph } from "@langchain/langgraph";
 import { model } from '../models/openai.js';
 import { promModel } from '../models/prom.js';
 
-import { prometheusQueryTool } from '../tools/prometheus.js';
-import { metricsExampleSelector } from '../tools/getMetrics.js';
-import { loadPromptFromFile, loadFile } from '../tools/loadPrompts.js';
-import { exampleSelector } from '../tools/getQueryExamples.js';
-import { formatExamples } from '../tools/formatExamples.js';
-import { normalizeQuestion } from '../tools/normalize.js';
+import { prometheusQueryTool } from '../utils/prometheus.js';
+import { metricsExampleSelector } from '../utils/getMetrics.js';
+import { loadPromptFromFile, loadFile } from '../utils/loadPrompts.js';
+import { exampleSelector } from '../utils/getQueryExamples.js';
+import { formatExamples } from '../utils/formatExamples.js';
+import { normalizeQuestion } from '../utils/normalize.js';
 
 const getQueryExamples = async (state: typeof StateAnnotation.State) => {
   const examples = await exampleSelector.invoke(normalizeQuestion(state.question));
