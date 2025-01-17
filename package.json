@@ -36,9 +36,9 @@
   "scripts": {
     "build": "tsc && npm run copy-txt",
     "copy-txt": "mkdir -p dist/templates && cp -R src/templates/*.txt dist/templates/",
-    "dev:cli": "node --watch --loader ts-node/esm src/ui/cli.ts",
-    "start:cli": "npm run build && node --no-warnings dist/ui/cli.js",
-    "dev:slack": "node --watch --loader ts-node/esm src/ui/slack.ts",
+    "dev:cli": "node --watch --loader ts-node/esm src/interfaces/commandLineInterface.ts",
+    "start:cli": "npm run build && node --no-warnings dist/interfaces/commandLineInterface.js",
+    "dev:slack": "node --watch --loader ts-node/esm src/interfaces/slackBot.ts",
     "start:slack": "npm run build && node dist/ui/slack.js",
     "dashboards:import": "node --loader ts-node/esm src/scripts/importDashboards.ts",
     "data:enrich": "node --loader ts-node/esm src/scripts/enrichExampleData.ts",
