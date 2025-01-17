@@ -5,11 +5,11 @@ import { model } from '../models/openai.js';
 import { promModel } from '../models/prom.js';
 
 import { prometheusQueryTool } from '../utils/prometheus.js';
-import { metricsExampleSelector } from '../utils/getMetrics.js';
-import { loadPromptFromFile, loadFile } from '../utils/loadPrompts.js';
+import { metricsExampleSelector } from '../utils/metricsFetcher.js';
+import { loadPromptFromFile, loadFile } from '../utils/promptLoader.js';
 import { exampleSelector } from '../utils/getQueryExamples.js';
-import { formatExamples } from '../utils/formatExamples.js';
-import { normalizeQuestion } from '../utils/normalize.js';
+import { formatExamples } from '../utils/exampleFormatter.js';
+import { normalizeQuestion } from '../utils/dataNormalizer.js';
 
 const getQueryExamples = async (state: typeof StateAnnotation.State) => {
   const examples = await exampleSelector.invoke(normalizeQuestion(state.question));

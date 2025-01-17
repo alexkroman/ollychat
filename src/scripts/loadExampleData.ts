@@ -3,7 +3,7 @@ import path from 'path';
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { ChromaClient } from "chromadb";
-import { normalizeQuestion } from '../src/tools/normalize.js';
+import { normalizeQuestion } from '../utils/dataNormalizer.js';
 
 import * as dotenv from 'dotenv';
 dotenv.config();

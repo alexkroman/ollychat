@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import * as dotenv from 'dotenv';
-import { createMetricsFetcher } from '../src/connectors/prometheus.js';
+import { createMetricsFetcher } from '../integrations/prometheusIntegration.js';
 
 // Load environment variables
 dotenv.config();

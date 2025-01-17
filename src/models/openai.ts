@@ -1,5 +1,5 @@
 import { ChatOpenAI } from "@langchain/openai";
-import { config } from "../config/config.js";
+import { config } from "../config/appConfig.js";
 
 const customHandler = {
   handleLLMStart: async (llm: any, prompts: string[]) => {

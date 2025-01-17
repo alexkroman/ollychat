@@ -35,7 +35,7 @@
   },
   "scripts": {
     "build": "tsc && npm run copy-txt",
-    "copy-txt": "mkdir -p dist/prompts && cp -R src/prompts/*.txt dist/prompts/",
+    "copy-txt": "mkdir -p dist/templates && cp -R src/templates/*.txt dist/templates/",
     "dev:cli": "node --watch --loader ts-node/esm src/ui/cli.ts",
     "start:cli": "npm run build && node --no-warnings dist/ui/cli.js",
     "dev:slack": "node --watch --loader ts-node/esm src/ui/slack.ts",

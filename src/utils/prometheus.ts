@@ -1,4 +1,4 @@
-import { createQueryExecutor } from '../integrations/prometheus.js';
+import { createQueryExecutor } from '../integrations/prometheusIntegration.js';
 import { DynamicStructuredTool } from "@langchain/core/tools";
 import { z } from "zod";
 import * as dotenv from 'dotenv';

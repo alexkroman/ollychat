@@ -1,4 +1,4 @@
-import { loadPromptFromFile } from '../tools/loadPrompts.js';
+import { loadPromptFromFile } from '../utils/promptLoader.js';
 
 export const formatExamples = async (examples: any[], promptPath: string, keys: string[]) => {
     const prompt = loadPromptFromFile(promptPath);
