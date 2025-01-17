@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Max Uptime",
+    "description": "",
+    "queries": [
+      "max(max_over_time(redis_uptime_in_seconds[$__interval]))"
+    ]
+  },
+  {
+    "name": "Clients",
+    "description": "",
+    "queries": [
+      "sum(redis_connected_clients)"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "",
+    "queries": [
+      "sum(100 * (redis_memory_used_bytes  / redis_memory_max_bytes))"
+    ]
+  },
+  {
+    "name": "Total Commands / sec",
+    "description": "",
+    "queries": [
+      "sum(rate(redis_commands_total [1m])) by (cmd)"
+    ]
+  },
+  {
+    "name": "Hits / Misses per Sec",
+    "description": "",
+    "queries": [
+      "irate(redis_keyspace_hits_total[5m])",
+      "irate(redis_keyspace_misses_total[5m])"
+    ]
+  },
+  {
+    "name": "Total Memory Usage",
+    "description": "",
+    "queries": [
+      "redis_memory_used_bytes",
+      "redis_memory_max_bytes"
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "",
+    "queries": [
+      "sum(rate(redis_net_input_bytes_total[5m]))",
+      "sum(rate(redis_net_output_bytes_total[5m]))"
+    ]
+  },
+  {
+    "name": "Total Items per DB",
+    "description": "",
+    "queries": [
+      "sum (redis_db_keys) by (db, instance)"
+    ]
+  },
+  {
+    "name": "Expiring vs Not-Expiring Keys",
+    "description": "",
+    "queries": [
+      "sum (redis_db_keys) by (instance) - sum (redis_db_keys_expiring) by (instance)",
+      "sum (redis_db_keys_expiring) by (instance)"
+    ]
+  },
+  {
+    "name": "Expired/Evicted Keys",
+    "description": "",
+    "queries": [
+      "sum(rate(redis_expired_keys_total[5m])) by (instance)",
+      "sum(rate(redis_evicted_keys_total[5m])) by (instance)"
+    ]
+  },
+  {
+    "name": "Connected/Blocked Clients",
+    "description": "",
+    "queries": [
+      "sum(redis_connected_clients)",
+      "sum(redis_blocked_clients)"
+    ]
+  },
+  {
+    "name": "Average Time Spent by Command / sec",
+    "description": "",
+    "queries": [
+      "sum(irate(redis_commands_duration_seconds_total[1m])) by (cmd)\n  /\nsum(irate(redis_commands_total[1m])) by (cmd)\n"
+    ]
+  },
+  {
+    "name": "Total Time Spent by Command / sec",
+    "description": "",
+    "queries": [
+      "sum(irate(redis_commands_duration_seconds_total[1m])) by (cmd) != 0"
+    ]
+  }
+]

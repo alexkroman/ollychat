@@ -1,0 +1,263 @@
+[
+  {
+    "name": "Containers Running",
+    "description": "Numbers of containers of cluster in state Running",
+    "queries": [
+      "sum(kube_pod_container_status_running)"
+    ]
+  },
+  {
+    "name": "Containers Terminated",
+    "description": "Numbers of containers of cluster in state Terminated",
+    "queries": [
+      "sum(kube_pod_container_status_terminated)"
+    ]
+  },
+  {
+    "name": "Containers Waiting",
+    "description": "Numbers of containers of cluster in state Waiting",
+    "queries": [
+      "sum(kube_pod_container_status_waiting)"
+    ]
+  },
+  {
+    "name": "Containers Restarts (Last 30 Minutes)",
+    "description": "Numbers of containers of cluster that restarts in the last 30 minutes",
+    "queries": [
+      "sum(delta(kube_pod_container_status_restarts_total[30m]))"
+    ]
+  },
+  {
+    "name": "Cluster Pod Usage",
+    "description": "Percentage of possible Pods use in the Cluster",
+    "queries": [
+      "sum(kube_pod_info) / sum(kube_node_status_allocatable_pods) * 100"
+    ]
+  },
+  {
+    "name": "Cluster Pod Capacity",
+    "description": "Graph of Pods use in the cluster",
+    "queries": [
+      "sum(kube_node_status_allocatable_pods)",
+      "sum(kube_node_status_capacity_pods)",
+      "sum(kube_pod_info)"
+    ]
+  },
+  {
+    "name": "Pods Running",
+    "description": "Number of Pods in state Running",
+    "queries": [
+      "sum(kube_pod_status_phase)"
+    ]
+  },
+  {
+    "name": "Pods Pending",
+    "description": "Number of Pods in state Pending",
+    "queries": [
+      "sum(kube_pod_status_phase)"
+    ]
+  },
+  {
+    "name": "Pods Failed",
+    "description": "Number of Pods in state Failed",
+    "queries": [
+      "sum(kube_pod_status_phase)"
+    ]
+  },
+  {
+    "name": "Pods Succeeded",
+    "description": "Number of Pods in state Succeeded",
+    "queries": [
+      "sum(kube_pod_status_phase)"
+    ]
+  },
+  {
+    "name": "Pods Unknown",
+    "description": "Number of Pods in state Unknown",
+    "queries": [
+      "sum(kube_pod_status_phase)"
+    ]
+  },
+  {
+    "name": "Jobs Succeeded",
+    "description": "Number of Succeeded Jobs",
+    "queries": [
+      "sum(kube_job_status_succeeded)"
+    ]
+  },
+  {
+    "name": "Jobs Active",
+    "description": "Number of Active Jobs",
+    "queries": [
+      "sum(kube_job_status_active)"
+    ]
+  },
+  {
+    "name": "Jobs Failed",
+    "description": "Number of Failed Jobs",
+    "queries": [
+      "sum(kube_job_status_failed)"
+    ]
+  },
+  {
+    "name": "Deployment Replicas - Up To Date",
+    "description": "List of Deployment with it number of replicas",
+    "queries": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "name": "Deployment Replicas",
+    "description": "Number replicas of Deployment with state Available",
+    "queries": [
+      "sum(kube_deployment_status_replicas)"
+    ]
+  },
+  {
+    "name": "Replication Controller - Up To Date",
+    "description": "List of Replication Controller with it number of replicas",
+    "queries": [
+      "kube_replicationcontroller_status_replicas"
+    ]
+  },
+  {
+    "name": "Replication Controller Replicas",
+    "description": "Number replicas of Replication Controller with state Available",
+    "queries": [
+      "sum(kube_replicationcontroller_status_replicas)"
+    ]
+  },
+  {
+    "name": "Deployment Replicas - Unavailable",
+    "description": "Number replicas of Deployment with state Unavailable",
+    "queries": [
+      "sum(kube_deployment_status_replicas_unavailable)"
+    ]
+  },
+  {
+    "name": "Replication Controller - Unavailable",
+    "description": "Number replicas of Replication Controller with state Unavailable",
+    "queries": [
+      "sum(kube_replicationcontroller_spec_replicas)\n-\nsum(kube_replicationcontroller_status_replicas)"
+    ]
+  },
+  {
+    "name": "Deployment Replicas - Total",
+    "description": "Total number replicas of Deployment",
+    "queries": [
+      "sum(kube_deployment_spec_replicas)"
+    ]
+  },
+  {
+    "name": "Replication Controller - Total",
+    "description": "Total number replicas of Replication Controller",
+    "queries": [
+      "sum(kube_replicationcontroller_spec_replicas)"
+    ]
+  },
+  {
+    "name": "Nodes Out of Disk",
+    "description": "Nodes with Out of Disk",
+    "queries": [
+      "sum(kube_node_status_condition)"
+    ]
+  },
+  {
+    "name": "Number Of Nodes",
+    "description": "Number of Nodes Available",
+    "queries": [
+      "sum(kube_node_info)"
+    ]
+  },
+  {
+    "name": "Nodes Unavailable",
+    "description": "Number of Nodes Unavailable",
+    "queries": [
+      "sum(kube_node_spec_unschedulable)"
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "Network Activity by Namespaces",
+    "queries": [
+      "sum(rate(container_network_receive_bytes_total[2m])) by (namespace)",
+      "- sum (rate (container_network_transmit_bytes_total[2m])) by (namespace)"
+    ]
+  },
+  {
+    "name": "Cluster CPU Usage Request",
+    "description": "Percent of use of CPU resource request in the Cluster",
+    "queries": [
+      "max(sum(kube_pod_container_resource_requests_cpu_cores) by (instance)) / min(sum(kube_node_status_allocatable_cpu_cores) by (instance)) * 100"
+    ]
+  },
+  {
+    "name": "Cluster CPU Usage Limit",
+    "description": "Percent of use of CPU resource limit in the Cluster",
+    "queries": [
+      "max(sum(kube_pod_container_resource_limits_cpu_cores) by (instance))"
+    ]
+  },
+  {
+    "name": "Cluster CPU usage (2m)",
+    "description": "Cluster CPU usage (2m)",
+    "queries": [
+      "SUM(irate(container_cpu_usage_seconds_total[2m]))"
+    ]
+  },
+  {
+    "name": "CPU Use of node",
+    "description": "CPU Use of node by namespace",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[10m]) * 100) by (namespace) / scalar(sum(machine_cpu_cores))"
+    ]
+  },
+  {
+    "name": "Cluster CPU Capacity",
+    "description": "Cluster CPU capacity in real time",
+    "queries": [
+      "sum(kube_node_status_capacity_cpu_cores)",
+      "sum(kube_node_status_allocatable_cpu_cores)",
+      "sum(kube_pod_container_resource_requests_cpu_cores)",
+      "SUM(irate(container_cpu_usage_seconds_total[2m]))"
+    ]
+  },
+  {
+    "name": "Cluster Ram Memory Usage",
+    "description": "Percent of use of Ram Memory resource request in the Cluster",
+    "queries": [
+      "max(sum(kube_pod_container_resource_requests_memory_bytes) by (instance)) / min(sum(kube_node_status_allocatable_memory_bytes) by (instance)) * 100"
+    ]
+  },
+  {
+    "name": "Cluster Ram Memory Usage Limit",
+    "description": "Percent of use of Ram Memory resource limit in the Cluster",
+    "queries": [
+      "max(sum(kube_pod_container_resource_limits_memory_bytes) by (instance)) / min(sum(kube_node_status_allocatable_memory_bytes) by (instance)) * 100"
+    ]
+  },
+  {
+    "name": "Use Ram memory Cluster",
+    "description": "Use Ram memory Cluster",
+    "queries": [
+      "sum(container_memory_working_set_bytes)"
+    ]
+  },
+  {
+    "name": "Ram memory Use of node",
+    "description": "Ram memory Use of node by namespace",
+    "queries": [
+      "sum(container_memory_usage_bytes) by (namespace,container_name)"
+    ]
+  },
+  {
+    "name": "Cluster Ram memory Capacity",
+    "description": "Cluster Ram memory capacity in real time",
+    "queries": [
+      "sum(min(sum(kube_node_status_allocatable_memory_bytes) by (instance)))",
+      "max(sum(kube_pod_container_resource_requests_memory_bytes) by (instance))",
+      "max(sum(kube_pod_container_resource_limits_memory_bytes) by (instance))",
+      "sum(container_memory_working_set_bytes)"
+    ]
+  }
+]

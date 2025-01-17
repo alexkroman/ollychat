@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Control Plane UP",
+    "description": "",
+    "queries": [
+      "sum(up == 0)"
+    ]
+  },
+  {
+    "name": "Alerts Firing",
+    "description": "",
+    "queries": [
+      "sum(ALERTS)"
+    ]
+  },
+  {
+    "name": "Alerts Pending",
+    "description": "",
+    "queries": [
+      "sum(ALERTS)"
+    ]
+  },
+  {
+    "name": "Node Disk Pressure",
+    "description": "",
+    "queries": [
+      "sum(kube_node_status_condition)"
+    ]
+  },
+  {
+    "name": "Node Memory Pressure",
+    "description": "",
+    "queries": [
+      "sum(kube_node_status_condition)"
+    ]
+  },
+  {
+    "name": "Node Not Ready",
+    "description": "",
+    "queries": [
+      "sum(kube_node_status_condition)"
+    ]
+  },
+  {
+    "name": "Nodes Unschedulable",
+    "description": "",
+    "queries": [
+      "sum(kube_node_spec_unschedulable)"
+    ]
+  },
+  {
+    "name": "Crashing Control Plane Pods",
+    "description": "",
+    "queries": [
+      "count(increase(kube_pod_container_status_restarts[1h]) > 5)"
+    ]
+  },
+  {
+    "name": "API Servers UP",
+    "description": "",
+    "queries": [
+      "(sum(up == 1) / count(up)) * 100"
+    ]
+  },
+  {
+    "name": "Nodes UP",
+    "description": "",
+    "queries": [
+      "(sum(up == 1) / count(up)) * 100"
+    ]
+  },
+  {
+    "name": "API Server Request Error Rate",
+    "description": "",
+    "queries": [
+      "max(sum by(instance) (rate(apiserver_request_count[5m])) / sum by(instance) (rate(apiserver_request_count[5m]))) * 100"
+    ]
+  },
+  {
+    "name": "API Server Request Rates",
+    "description": "",
+    "queries": [
+      "sum by(instance) (rate(apiserver_request_count[5m])) / sum by(instance) (rate(apiserver_request_count[5m]))"
+    ]
+  },
+  {
+    "name": "CPU Utilization",
+    "description": "",
+    "queries": [
+      "sum(100 - (avg by (instance) (rate(node_cpu[5m])) * 100)) / count(node_cpu)"
+    ]
+  },
+  {
+    "name": "Memory Utilization",
+    "description": "",
+    "queries": [
+      "((sum(node_memory_MemTotal) - sum(node_memory_MemFree) - sum(node_memory_Buffers) - sum(node_memory_Cached)) / sum(node_memory_MemTotal)) * 100"
+    ]
+  },
+  {
+    "name": "Filesystem Utilization",
+    "description": "",
+    "queries": [
+      "(sum(node_filesystem_size) - sum(node_filesystem_free)) / sum(node_filesystem_size)"
+    ]
+  },
+  {
+    "name": "Pod Utilization",
+    "description": "",
+    "queries": [
+      "100 - (sum(kube_node_status_capacity_pods) - sum(kube_pod_info)) / sum(kube_node_status_capacity_pods) * 100"
+    ]
+  }
+]

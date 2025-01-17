@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Task Count",
+    "description": "Number of executed tasks in this the time range",
+    "queries": [
+      "count(count by (task_name,task_execution_id) (spring_cloud_task_seconds_count))"
+    ]
+  },
+  {
+    "name": "Active Tasks Count",
+    "description": "Number of executed tasks in this the time range",
+    "queries": [
+      "spring_cloud_task_active_seconds_active_count"
+    ]
+  },
+  {
+    "name": "Task Duration",
+    "description": "",
+    "queries": [
+      "sum(spring_cloud_task_seconds_sum) by (task_name,task_execution_id)"
+    ]
+  },
+  {
+    "name": "Job  Count",
+    "description": "Number of executed tasks in this the time range",
+    "queries": [
+      "count(count(spring_batch_job_active_seconds_active_count) by (task_name,task_execution_id,name))"
+    ]
+  },
+  {
+    "name": "Active Task Duration",
+    "description": "",
+    "queries": [
+      "sum(spring_cloud_task_active_seconds_duration_sum) by (task_name, task_execution_id)"
+    ]
+  },
+  {
+    "name": "Job Duration",
+    "description": "",
+    "queries": [
+      "sum(spring_batch_job_seconds_max) by (task_name,task_execution_id,name)"
+    ]
+  },
+  {
+    "name": "Task Rate",
+    "description": "",
+    "queries": [
+      "rate(spring_cloud_task_seconds_count[1m])"
+    ]
+  },
+  {
+    "name": "Active Task Rate",
+    "description": "",
+    "queries": [
+      "rate(spring_cloud_task_active_seconds_active_count[1m]) "
+    ]
+  },
+  {
+    "name": "Job Rate",
+    "description": "",
+    "queries": [
+      "rate(spring_batch_job_seconds_max[1m])"
+    ]
+  }
+]

@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Client Success Rate (non-5xx responses)",
+    "description": "Non-5xx responses divided by all responses as reported by Istio",
+    "queries": [
+      "sum by (cluster)(irate(istio_requests_total[30m])) / sum by (cluster)(irate(istio_requests_total[30m]))"
+    ]
+  },
+  {
+    "name": "Request Latency",
+    "description": "Green if < 50ms, Yellow if < 100ms, Red if > 100ms",
+    "queries": [
+      "histogram_quantile(0.50, sum(irate(istio_request_duration_milliseconds_bucket[30m])) by (le)) / 1000",
+      "histogram_quantile(0.90, sum(irate(istio_request_duration_milliseconds_bucket[30m])) by (le)) / 1000",
+      "histogram_quantile(0.95, sum(irate(istio_request_duration_milliseconds_bucket[30m])) by (le)) / 1000",
+      "histogram_quantile(0.99, sum(irate(istio_request_duration_milliseconds_bucket[30m])) by (le)) / 1000"
+    ]
+  },
+  {
+    "name": "Client Request Volume",
+    "description": "Requests per second to this deployment's virtual service as reported by Istio",
+    "queries": [
+      "round(sum by (cluster)(rate(istio_requests_total[30m])), 0.001)"
+    ]
+  },
+  {
+    "name": "Deployment Healthy POD Replicas",
+    "description": "Healthy replicas as scaled by the HPA (Horizontal POD Autoscaler) for this Deployment",
+    "queries": [
+      "sum by (cluster) (kube_deployment_status_replicas_available)"
+    ]
+  },
+  {
+    "name": "CPU Throttling Time",
+    "description": "Throttled seconds in 1 minute slices. Safe to ignore if < 1 second. If you're seeing excessive CPU throttling, you should investigate whether your CPU requests/limits are sufficient, or understand what's causing high CPU use.",
+    "queries": [
+      "avg by (cluster)(rate(container_cpu_cfs_throttled_seconds_total[30m]))"
+    ]
+  },
+  {
+    "name": "Current Container Image Tag",
+    "description": "",
+    "queries": [
+      "kube_pod_container_info"
+    ]
+  },
+  {
+    "name": "% of Responses By Response Code",
+    "description": "",
+    "queries": [
+      "sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace) / sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace)",
+      "sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace) / sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace)",
+      "sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace) / sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace)",
+      "sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace) / sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace)",
+      "sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace) / sum(irate(istio_requests_total[30m])) by (cluster,destination_workload, destination_workload_namespace)"
+    ]
+  },
+  {
+    "name": "Incoming Requests by Source And Response Code",
+    "description": "",
+    "queries": [
+      "round(sum(irate(istio_requests_total[30m])) by (cluster,source_workload, source_workload_namespace, response_code), 0.001)",
+      "round(sum(irate(istio_requests_total[30m])) by (cluster,source_workload, source_workload_namespace, response_code), 0.001)"
+    ]
+  },
+  {
+    "name": "Request Duration",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.50, sum(irate(istio_request_duration_milliseconds_bucket[30m])) by (cluster,le)) / 1000",
+      "histogram_quantile(0.90, sum(irate(istio_request_duration_milliseconds_bucket[30m])) by (cluster,le)) / 1000",
+      "histogram_quantile(0.99, sum(irate(istio_request_duration_milliseconds_bucket[30m])) by (cluster,le)) / 1000",
+      "histogram_quantile(0.95, sum(irate(istio_request_duration_milliseconds_bucket[30m])) by (cluster,le)) / 1000"
+    ]
+  },
+  {
+    "name": "Outgoing Requests by Destination And Response Code",
+    "description": "",
+    "queries": [
+      "round(sum(irate(istio_requests_total[30m])) by (cluster,destination_service, response_code), 0.001)",
+      "round(sum(irate(istio_requests_total[30m])) by (cluster,destination_service, response_code), 0.001)"
+    ]
+  },
+  {
+    "name": "CPU Usage (Avg of all replicas)",
+    "description": "",
+    "queries": [
+      "(max by (cluster,container) (rate(container_cpu_usage_seconds_total[30m])))",
+      "avg(kube_pod_container_resource_requests) by (cluster,container)",
+      "avg(kube_pod_container_resource_limits) by (cluster,container)"
+    ]
+  },
+  {
+    "name": "Memory Usage (Max of all replicas)",
+    "description": "",
+    "queries": [
+      "max by (cluster,container) (container_memory_working_set_bytes)",
+      "max by (cluster,container) (kube_pod_container_resource_requests)",
+      "max by (cluster,container) (kube_pod_container_resource_limits)"
+    ]
+  },
+  {
+    "name": "CPU HPA",
+    "description": "",
+    "queries": [
+      "(max by (cluster) (rate(container_cpu_usage_seconds_total[30m]))) / max(kube_pod_container_resource_requests) by (cluster) * 100",
+      "avg(kube_horizontalpodautoscaler_spec_target_metric) by (cluster,horizontalpodautoscaler)"
+    ]
+  },
+  {
+    "name": "Deployment Healthy POD Replicas",
+    "description": "Healthy replicas as scaled by the HPA (Horizontal POD Autoscaler) for this Deployment",
+    "queries": [
+      "sum by (cluster) (kube_deployment_status_replicas_available)"
+    ]
+  },
+  {
+    "name": "Disk I/O (Bytes)",
+    "description": "",
+    "queries": [
+      "sum by (cluster) (rate (container_fs_reads_bytes_total[30m])) ",
+      "-sum by (cluster)(rate (container_fs_writes_bytes_total[30m]))"
+    ]
+  },
+  {
+    "name": "Disk I/O (IOPS)",
+    "description": "",
+    "queries": [
+      "sum by (cluster)(rate (container_fs_reads_total[30m])) ",
+      "-sum by (cluster)(rate (container_fs_writes_total[30m]))"
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "",
+    "queries": [
+      "sum by (cluster)(rate (container_network_receive_bytes_total[30m])) ",
+      "-sum by (cluster)(rate (container_network_transmit_bytes_total[30m]))"
+    ]
+  },
+  {
+    "name": "Open TCP Connections",
+    "description": "",
+    "queries": [
+      "sum by (cluster,service_istio_io_canonical_name) (envoy_server_total_connections)"
+    ]
+  },
+  {
+    "name": "Node & AZ Distribution of Workload",
+    "description": "",
+    "queries": [
+      "sum(count(count(container_cpu_usage_seconds_total) by (cluster,instance,node_type,node_kubernetes_io_instance_type,failure_domain_beta_kubernetes_io_zone)) by (cluster,instance,node_type,node_kubernetes_io_instance_type,failure_domain_beta_kubernetes_io_zone)) by (cluster,node_type,failure_domain_beta_kubernetes_io_zone)"
+    ]
+  },
+  {
+    "name": "Workload Replicas (PODs)",
+    "description": "",
+    "queries": [
+      "kube_horizontalpodautoscaler_status_current_replicas",
+      "kube_horizontalpodautoscaler_status_desired_replicas",
+      "kube_horizontalpodautoscaler_spec_min_replicas",
+      "kube_horizontalpodautoscaler_spec_max_replicas",
+      "kube_deployment_status_replicas_unavailable"
+    ]
+  },
+  {
+    "name": "Running PODs per Container Image Tag",
+    "description": "",
+    "queries": [
+      "sum by (cluster,image) (kube_pod_container_info)"
+    ]
+  },
+  {
+    "name": "Total vCPU's Allocated to Workload",
+    "description": "",
+    "queries": [
+      "sum by (cluster)(kube_pod_container_resource_requests)",
+      "sum by (cluster)(kube_pod_container_resource_requests)"
+    ]
+  },
+  {
+    "name": "Total Memory Allocated to Workload",
+    "description": "",
+    "queries": [
+      "sum by (cluster)(kube_pod_container_resource_requests)",
+      "sum by (cluster)(kube_pod_container_resource_requests)"
+    ]
+  },
+  {
+    "name": "CPU Throttling",
+    "description": "",
+    "queries": [
+      "avg by (cluster,container)(rate(container_cpu_cfs_throttled_seconds_total[30m]))"
+    ]
+  },
+  {
+    "name": "POD Restarts",
+    "description": "",
+    "queries": [
+      "count by (cluster,pod)(delta(kube_pod_container_status_restarts_total[30m]) > 0)"
+    ]
+  },
+  {
+    "name": "OOM Kills",
+    "description": "",
+    "queries": [
+      "sum by (cluster)(node_vmstat_oom_kill)"
+    ]
+  }
+]

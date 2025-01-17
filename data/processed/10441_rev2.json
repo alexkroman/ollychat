@@ -1,0 +1,175 @@
+[
+  {
+    "name": "Current Memory HEAP",
+    "description": "",
+    "queries": [
+      "sum(jvm_memory_bytes_used)*100/sum(jvm_memory_bytes_max)"
+    ]
+  },
+  {
+    "name": "Current Memory nonHEAP",
+    "description": "",
+    "queries": [
+      "sum(jvm_memory_bytes_used)*100/sum(jvm_memory_bytes_max)"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "",
+    "queries": [
+      "sum(jvm_memory_bytes_max)",
+      "sum(jvm_memory_bytes_committed)",
+      "sum(jvm_memory_bytes_used)"
+    ]
+  },
+  {
+    "name": "Logins Per REALM for past 24h",
+    "description": "",
+    "queries": [
+      "sum by (realm)(increase(keycloak_logins[24h]))"
+    ]
+  },
+  {
+    "name": "Registrations Per REALM for past 24h",
+    "description": "",
+    "queries": [
+      "sum by (realm)(increase(keycloak_registrations[24h]))"
+    ]
+  },
+  {
+    "name": "Logins Per CLIENT for past 24h",
+    "description": "",
+    "queries": [
+      "sum by (client_id)(increase(keycloak_logins[24h]))"
+    ]
+  },
+  {
+    "name": "Registrations Per CLIENT for past 24h",
+    "description": "",
+    "queries": [
+      "sum by (client_id)(increase(keycloak_registrations[24h]))"
+    ]
+  },
+  {
+    "name": "4xx and 5xx Responses",
+    "description": "",
+    "queries": [
+      "sum by (code)(increase(keycloak_response_errors[30m]))"
+    ]
+  },
+  {
+    "name": "Logins per REALM",
+    "description": "",
+    "queries": [
+      "sum by (realm)(increase(keycloak_logins[30m]))"
+    ]
+  },
+  {
+    "name": "Login Errors on realm $realm",
+    "description": "",
+    "queries": [
+      "sum by (error) (increase(keycloak_failed_login_attempts[30m]))",
+      "sum by (realm) (increase(keycloak_failed_login_attempts [30m]))"
+    ]
+  },
+  {
+    "name": "Logins per CLIENT on realm $realm",
+    "description": "",
+    "queries": [
+      "sum by (client_id)(increase(keycloak_logins[30m]))"
+    ]
+  },
+  {
+    "name": "Registration Errors on realm $realm",
+    "description": "",
+    "queries": [
+      "sum by (realm) (increase(keycloak_registrations_errors [30m]))",
+      "sum by (error) (increase(keycloak_registrations_errors [30m]))"
+    ]
+  },
+  {
+    "name": "Registrations per REALM",
+    "description": "",
+    "queries": [
+      "sum by (realm)(increase(keycloak_registrations[30m]))"
+    ]
+  },
+  {
+    "name": "Login Errors for $ClientId",
+    "description": "",
+    "queries": [
+      "sum by (error) (increase(keycloak_failed_login_attempts[30m]))"
+    ]
+  },
+  {
+    "name": "Registrations per CLIENT on relm $realm",
+    "description": "",
+    "queries": [
+      "sum by (client_id)(increase(keycloak_registrations[30m]))",
+      "sum by (realm)(increase(keycloak_registrations [30m]))"
+    ]
+  },
+  {
+    "name": "Registration Errors for $ClientId",
+    "description": "",
+    "queries": [
+      "sum by (error) (increase(keycloak_registrations_errors[30m]))"
+    ]
+  },
+  {
+    "name": "Request duration method = \"GET\" Heatmap",
+    "description": "",
+    "queries": [
+      "sum(increase(keycloak_request_duration_bucket[30m])) by (le)"
+    ]
+  },
+  {
+    "name": "Percentage of requests \"GET\"  method  was served in 100ms or below",
+    "description": "",
+    "queries": [
+      "sum(rate(keycloak_request_duration_bucket[30m])) / sum(rate(keycloak_request_duration_count[30m])) * 100"
+    ]
+  },
+  {
+    "name": "Request duration method = \"POST\" Heatmap",
+    "description": "",
+    "queries": [
+      "sum(increase(keycloak_request_duration_bucket[30m])) by (le)"
+    ]
+  },
+  {
+    "name": "Percentage of requests \"POST\"  method  was served in 100ms or below",
+    "description": "",
+    "queries": [
+      "sum(rate(keycloak_request_duration_bucket[30m])) / sum(rate(keycloak_request_duration_count[30m])) * 100"
+    ]
+  },
+  {
+    "name": "Request duration method = \"HEAD\" Heatmap",
+    "description": "",
+    "queries": [
+      "sum(increase(keycloak_request_duration_bucket[30m])) by (le)"
+    ]
+  },
+  {
+    "name": "Percentage of requests \"HEAD\"  method  was served in 100ms or below",
+    "description": "",
+    "queries": [
+      "sum(rate(keycloak_request_duration_bucket[30m])) / sum(rate(keycloak_request_duration_count[30m])) * 100"
+    ]
+  },
+  {
+    "name": "Request duration method = \"PUT\" Heatmap",
+    "description": "",
+    "queries": [
+      "sum(increase(keycloak_request_duration_bucket[30m])) by (le)"
+    ]
+  },
+  {
+    "name": "Percentage of requests \"PUT\"  method  was served in 100ms or below",
+    "description": "",
+    "queries": [
+      "sum(rate(keycloak_request_duration_bucket[30m])) / sum(rate(keycloak_request_duration_count[30m])) * 100"
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Consumer Lag with group",
+    "description": "",
+    "queries": [
+      "kafka_consumer_group_ConsumerLagMetrics_Value"
+    ]
+  },
+  {
+    "name": "Production Rate / 5m",
+    "description": "whether we're ingesting data to partition",
+    "queries": [
+      "sum by (topic, partition) (increase(kafka_log_Log_Value[5m])) \n"
+    ]
+  },
+  {
+    "name": "Consumtion Rate / 5m",
+    "description": "",
+    "queries": [
+      "sum by (topic, partition) (increase(kafka_log_Log_Value[5m]))\n-\nsum by (topic, partition) (kafka_consumer_group_ConsumerLagMetrics_Value)"
+    ]
+  },
+  {
+    "name": "Messages In Per 5m",
+    "description": "",
+    "queries": [
+      "sum by (topic) (rate(kafka_server_BrokerTopicMetrics_Count[5m]))"
+    ]
+  },
+  {
+    "name": "Bytes In Per 5m from Clients",
+    "description": "",
+    "queries": [
+      "sum by (topic) (rate(kafka_server_BrokerTopicMetrics_Count[5m]))"
+    ]
+  },
+  {
+    "name": "Bytes Out Per 5m",
+    "description": "",
+    "queries": [
+      "sum by (topic) (rate(kafka_server_BrokerTopicMetrics_Count[5m]))"
+    ]
+  },
+  {
+    "name": "Under Replicated Partitions",
+    "description": "",
+    "queries": [
+      "sum by (instance) (kafka_server_ReplicaManager_Value)"
+    ]
+  },
+  {
+    "name": "Under ISR Partitions",
+    "description": "",
+    "queries": [
+      "kafka_server_ReplicaManager_Value"
+    ]
+  },
+  {
+    "name": "Partition Counts",
+    "description": "",
+    "queries": [
+      "kafka_server_ReplicaManager_Value"
+    ]
+  },
+  {
+    "name": "Request Rate",
+    "description": "",
+    "queries": [
+      "sum by (instance)(rate(kafka_network_RequestMetrics_Count[5m]))"
+    ]
+  },
+  {
+    "name": "Error Rate",
+    "description": "",
+    "queries": [
+      "(rate(kafka_network_RequestMetrics_Count[5m]))"
+    ]
+  },
+  {
+    "name": "Available Bytes",
+    "description": "",
+    "queries": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "name": "CPU Time Per Sec over the last 5 mins",
+    "description": "",
+    "queries": [
+      "sum by (instance, mode) (rate(node_cpu_seconds_total[5m]))"
+    ]
+  }
+]

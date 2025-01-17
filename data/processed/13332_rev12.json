@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Cluster Pod Requested",
+    "description": "",
+    "queries": [
+      "sum(kube_pod_info) / sum(kube_node_status_allocatable)"
+    ]
+  },
+  {
+    "name": "Cluster CPU Requested",
+    "description": "",
+    "queries": [
+      "sum(kube_pod_container_resource_requests)/ sum(kube_node_status_allocatable)"
+    ]
+  },
+  {
+    "name": "Cluster Memory  Requested",
+    "description": "",
+    "queries": [
+      "sum(kube_pod_container_resource_requests) / sum(kube_node_status_allocatable)"
+    ]
+  },
+  {
+    "name": "Cluster Pod Capacity",
+    "description": "",
+    "queries": [
+      "sum(kube_node_status_allocatable)",
+      "sum(kube_pod_info)"
+    ]
+  },
+  {
+    "name": "Cluster CPU Capacity",
+    "description": "",
+    "queries": [
+      "sum(kube_node_status_capacity)",
+      "sum(kube_node_status_allocatable)",
+      "sum(kube_pod_container_resource_requests)",
+      "sum(kube_pod_container_resource_limits)"
+    ]
+  },
+  {
+    "name": "Cluster Mem Capacity",
+    "description": "",
+    "queries": [
+      "sum(kube_node_status_allocatable)",
+      "sum(kube_node_status_capacity)",
+      "sum(kube_pod_container_resource_requests)",
+      "sum(kube_pod_container_resource_limits)"
+    ]
+  }
+]

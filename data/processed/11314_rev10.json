@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Clients / Channel",
+    "description": "Visualize wireless channel usage w/ wired client counts.",
+    "queries": [
+      "count by (channel) (unpoller_client_roam_count_total)\n"
+    ]
+  },
+  {
+    "name": "Clients / AP Radio",
+    "description": "Visualize how many clients are connected to which radios/APs.",
+    "queries": [
+      "count by (radio_desc) (unpoller_client_uptime_seconds)"
+    ]
+  },
+  {
+    "name": "Client / MAC OUI",
+    "description": "This shows an OUI breakdown from Unifi's perspective.",
+    "queries": [
+      "count by (oui) (unpoller_client_uptime_seconds)"
+    ]
+  },
+  {
+    "name": "Users",
+    "description": "",
+    "queries": [
+      "sum(unpoller_device_stations)"
+    ]
+  },
+  {
+    "name": "Guests",
+    "description": "",
+    "queries": [
+      "sum(unpoller_device_stations)"
+    ]
+  },
+  {
+    "name": "Access Point Details",
+    "description": "",
+    "queries": [
+      "sum by (ip,mac,model,name,serial,site_name,type,version) (unpoller_device_info)",
+      "sum by (ip,mac,model,name,serial,site_name,type,version) (unpoller_device_uptime_seconds)",
+      "sum by (ip,mac,model,name,serial,site_name,type,version) (unpoller_device_bytes_total)"
+    ]
+  },
+  {
+    "name": "Networks / UAP",
+    "description": "The counters in this table represent uptime totals and do not change with the time range selector. ",
+    "queries": [
+      "sum by (bssid,essid,ap_name,name,radio,radio_name,vap_name,site_name,usage,source) (unpoller_device_vap_ccq_ratio)",
+      "sum by (bssid,essid,ap_name,name,radio,radio_name,vap_name,site_name,usage,source) (unpoller_device_vap_average_client_signal)",
+      "sum by (bssid,essid,ap_name,name,radio,radio_name,vap_name,site_name,usage,source) (unpoller_device_vap_receive_dropped_total) ",
+      "sum by (bssid,essid,ap_name,name,radio,radio_name,vap_name,site_name,usage,source) (unpoller_device_vap_transmit_dropped_total) ",
+      "sum by (bssid,essid,ap_name,name,radio,radio_name,vap_name,site_name,usage,source) (unpoller_device_vap_transmit_bytes_total) ",
+      "sum by (bssid,essid,ap_name,name,radio,radio_name,vap_name,site_name,usage,source) (unpoller_device_vap_receive_bytes_total) ",
+      "sum by (bssid,essid,ap_name,name,radio,radio_name,vap_name,site_name,usage,source) (unpoller_device_vap_receive_packets_total) ",
+      "sum by (bssid,essid,ap_name,name,radio,radio_name,vap_name,site_name,usage,source) (unpoller_device_vap_transmit_packets_total) "
+    ]
+  },
+  {
+    "name": "UAP CPU Usage",
+    "description": "",
+    "queries": [
+      "unpoller_device_cpu_utilization_ratio"
+    ]
+  },
+  {
+    "name": "UAP Memory Usage",
+    "description": "",
+    "queries": [
+      "unpoller_device_memory_utilization_ratio"
+    ]
+  },
+  {
+    "name": "UAP Load Average",
+    "description": "",
+    "queries": [
+      "unpoller_device_load_average_1",
+      "unpoller_device_load_average_5",
+      "unpoller_device_load_average_15"
+    ]
+  },
+  {
+    "name": "Clients / UAP",
+    "description": "",
+    "queries": [
+      "unpoller_device_stations"
+    ]
+  },
+  {
+    "name": "Wireless Traffic / Vendor",
+    "description": "Devices TX / RX bytes per second grouped by OUI. RX on negative axis.",
+    "queries": [
+      "sum (unpoller_client_receive_rate_bytes) by (oui)",
+      "sum (unpoller_client_transmit_rate_bytes) by (oui)"
+    ]
+  },
+  {
+    "name": "Users & Guests / Radio Band",
+    "description": "",
+    "queries": [
+      "sum (unpoller_device_radio_stations) by  (radio,name)",
+      "sum (unpoller_device_radio_stations) by (radio,name)",
+      "sum (unpoller_device_radio_stations) by (radio,name)",
+      "sum (unpoller_device_radio_stations) by (radio,name)"
+    ]
+  },
+  {
+    "name": "Average AP Client Signal",
+    "description": "",
+    "queries": [
+      "unpoller_device_vap_average_client_signal"
+    ]
+  },
+  {
+    "name": "Average AP Client RSSI",
+    "description": "",
+    "queries": [
+      "avg(unpoller_client_rssi_db) by (ap_name, radio_name)"
+    ]
+  },
+  {
+    "name": "5 GHz Client Connection Quality",
+    "description": "",
+    "queries": [
+      "unpoller_device_vap_ccq_ratio"
+    ]
+  },
+  {
+    "name": "2.4 GHz Client Connection Quality",
+    "description": "",
+    "queries": [
+      "unpoller_device_vap_ccq_ratio"
+    ]
+  },
+  {
+    "name": "5 GHz Channel Utilization",
+    "description": "",
+    "queries": [
+      "unpoller_device_radio_channel_utilization_receive_ratio",
+      "unpoller_device_radio_channel_utilization_transmit_ratio"
+    ]
+  },
+  {
+    "name": "2.4 GHz Channel Utilization",
+    "description": "Displays 2.4GHz usage.",
+    "queries": [
+      "unpoller_device_radio_channel_utilization_receive_ratio",
+      "unpoller_device_radio_channel_utilization_transmit_ratio"
+    ]
+  },
+  {
+    "name": "5 GHz Traffic",
+    "description": "RX is on the negative Axis.",
+    "queries": [
+      "sum (rate(unpoller_device_vap_transmit_bytes_total[5m])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_bytes_total[5m])) by (name)"
+    ]
+  },
+  {
+    "name": "2.4 GHz Traffic",
+    "description": "RX is on the negative Axis.",
+    "queries": [
+      "sum (rate(unpoller_device_vap_transmit_bytes_total[5m])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_bytes_total[5m])) by (name)"
+    ]
+  },
+  {
+    "name": "5 GHz Packets",
+    "description": "PPS on the na band. In is on the negative Axis.",
+    "queries": [
+      "sum (rate(unpoller_device_vap_transmit_packets_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_packets_total[$__interval])) by (name)"
+    ]
+  },
+  {
+    "name": "2.4 GHz Packets",
+    "description": "PPS on the ng band calculated in 30 second buckets. In is on the negative Axis.",
+    "queries": [
+      "sum (rate(unpoller_device_vap_transmit_packets_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_packets_total[$__interval])) by (name)"
+    ]
+  },
+  {
+    "name": "5 GHz Drops/Errors",
+    "description": "Visualize packet errors (several types)  per second in the 5GHz band.",
+    "queries": [
+      "sum (rate(unpoller_device_vap_receive_dropped_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_transmit_dropped_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_errors_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_transmit_errors_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_crypts_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_frags_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_nwids_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_transmit_retries_total[$__interval])) by (name)"
+    ]
+  },
+  {
+    "name": "2.4 GHz Drops/Errors",
+    "description": "In is on the negative axis.",
+    "queries": [
+      "sum (rate(unpoller_device_vap_receive_dropped_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_transmit_dropped_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_errors_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_transmit_errors_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_crypts_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_frags_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_receive_nwids_total[$__interval])) by (name)",
+      "sum (rate(unpoller_device_vap_transmit_retries_total[$__interval])) by (name)"
+    ]
+  }
+]

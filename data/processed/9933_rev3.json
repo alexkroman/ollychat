@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Total Stream Count",
+    "description": "Number of  deployed Streams",
+    "queries": [
+      "count(count by (stream_name) (spring_integration_send_seconds_count))"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "queries": [
+      "sum(jvm_memory_used_bytes)"
+    ]
+  },
+  {
+    "name": "Error Channel",
+    "description": "",
+    "queries": [
+      "sum(spring_integration_send_seconds_count)"
+    ]
+  },
+  {
+    "name": "Number of Apps",
+    "description": "Average throughput of the apps in the stream",
+    "queries": [
+      "count(system_cpu_usage) by (stream_name)"
+    ]
+  },
+  {
+    "name": "Stream Throughput",
+    "description": "Average throughput of the apps in the stream",
+    "queries": [
+      "avg(rate(spring_integration_send_seconds_count[60s])) by (stream_name,result)",
+      "avg(rate(spring_integration_send_seconds_count[60s])) by (stream_name,result)",
+      "avg(rate(spring_integration_send_seconds_count[60s])) by (stream_name,result)"
+    ]
+  },
+  {
+    "name": "Stream Latency",
+    "description": "Average latency of all apps in a stream",
+    "queries": [
+      "sum(spring_integration_send_seconds_sum/spring_integration_send_seconds_count) by (stream_name,result)",
+      "sum(spring_integration_send_seconds_sum/spring_integration_send_seconds_count) by (stream_name,result)"
+    ]
+  },
+  {
+    "name": "Message Source Rate",
+    "description": "",
+    "queries": [
+      "rate(spring_integration_receive_total[60s])",
+      "rate(spring_integration_receive_total[60s])"
+    ]
+  },
+  {
+    "name": "Total App Count",
+    "description": "Number of active Application Instances",
+    "queries": [
+      "count(count by (application_guid) (spring_integration_send_seconds_count))"
+    ]
+  },
+  {
+    "name": "CPU",
+    "description": "",
+    "queries": [
+      "sum(process_cpu_usage)"
+    ]
+  },
+  {
+    "name": "Tomcat Errors",
+    "description": "",
+    "queries": [
+      "sum(tomcat_global_error_total)"
+    ]
+  },
+  {
+    "name": "Stream CPU",
+    "description": "",
+    "queries": [
+      "sum(process_cpu_usage) by (stream_name)"
+    ]
+  },
+  {
+    "name": "Stream Memory",
+    "description": "",
+    "queries": [
+      "sum(jvm_memory_used_bytes) by (stream_name)"
+    ]
+  },
+  {
+    "name": "Stream Open Files",
+    "description": "",
+    "queries": [
+      "sum(process_files_open_files) by (stream_name)"
+    ]
+  },
+  {
+    "name": "Stream Threads",
+    "description": "",
+    "queries": [
+      "sum(jvm_threads_live_threads) by (stream_name)"
+    ]
+  },
+  {
+    "name": "Error Channel Throughput",
+    "description": "",
+    "queries": [
+      "sum(rate(spring_integration_send_seconds_count[60s])) by (stream_name)"
+    ]
+  }
+]

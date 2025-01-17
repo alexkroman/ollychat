@@ -1,0 +1,78 @@
+[
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "gitlab_ci_environment_behind_commits_count"
+    ]
+  },
+  {
+    "name": "AVAILABLE",
+    "description": "",
+    "queries": [
+      "count(gitlab_ci_environment_information) or vector(0)"
+    ]
+  },
+  {
+    "name": "NOT UP TO DATE",
+    "description": "",
+    "queries": [
+      "count(gitlab_ci_environment_behind_commits_count > 0) or vector(0)"
+    ]
+  },
+  {
+    "name": "FAILED DEPLOYMENTS",
+    "description": "",
+    "queries": [
+      "count(gitlab_ci_environment_status > 0) or vector(0)"
+    ]
+  },
+  {
+    "name": "UNAVAILABLE",
+    "description": "",
+    "queries": [
+      "count(gitlab_ci_environment_information) or vector(0)"
+    ]
+  },
+  {
+    "name": "Average environment deployment lag commits count",
+    "description": "",
+    "queries": [
+      "avg(gitlab_ci_environment_behind_commits_count)"
+    ]
+  },
+  {
+    "name": "DEPLOYMENTS",
+    "description": "",
+    "queries": [
+      "sum(increase(gitlab_ci_environment_deployment_count[1m])) by (project, environment) / sum(increase(gitlab_ci_environment_deployment_count[1m])) by (project, environment)"
+    ]
+  },
+  {
+    "name": "DEPLOYMENTS # (in the last hour)",
+    "description": "",
+    "queries": [
+      "sum(increase(gitlab_ci_environment_deployment_count[1h]))"
+    ]
+  },
+  {
+    "name": "Average environment deployment lag duration",
+    "description": "",
+    "queries": [
+      "avg(gitlab_ci_environment_behind_duration_seconds)"
+    ]
+  },
+  {
+    "name": "ENVIRONMENTS",
+    "description": "",
+    "queries": [
+      "(max(gitlab_ci_environment_deployment_status) by (project, environment) * 1) > 0 or\n(max(gitlab_ci_environment_deployment_status) by (project, environment) * 2) > 0 or\n(max(gitlab_ci_environment_deployment_status) by (project, environment) * 3) > 0 or\n(max(gitlab_ci_environment_deployment_status) by (project, environment) * 4) > 0 or\n(max(gitlab_ci_environment_deployment_status) by (project, environment) * 5) > 0 or\n(max(gitlab_ci_environment_deployment_status) by (project, environment) * 6) > 0",
+      "-max(time() - gitlab_ci_environment_deployment_timestamp) by (project, environment)",
+      "max(gitlab_ci_environment_deployment_duration_seconds) by (project, environment)",
+      "max(gitlab_ci_environment_information) by (environment_id, project, environment, author_email, current_commit_short_id, ref, latest_commit_short_id)",
+      "max(gitlab_ci_environment_behind_commits_count) by (project, environment)",
+      "max(gitlab_ci_environment_behind_duration_seconds) by (project, environment)",
+      "max(gitlab_ci_environment_deployment_job_id) by (project, environment)"
+    ]
+  }
+]

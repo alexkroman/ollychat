@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Consumergroup => Topic Lag",
+    "description": "",
+    "queries": [
+      "avg by (group_id,topic_name) (kminion_kafka_consumer_group_topic_lag)"
+    ]
+  },
+  {
+    "name": "Offset Commit Rate",
+    "description": "",
+    "queries": [
+      "avg (sum by (kubernetes_pod_name) (rate(kminion_kafka_consumer_group_offset_commits_total[1m])))"
+    ]
+  },
+  {
+    "name": "Topic Lag",
+    "description": "",
+    "queries": [
+      "avg by (group_id,topic_name) (kminion_kafka_consumer_group_topic_lag)"
+    ]
+  },
+  {
+    "name": "Messages In vs Consumed",
+    "description": "",
+    "queries": [
+      "avg by (topic_name) (rate(kminion_kafka_topic_high_water_mark_sum[30m]))",
+      "avg by (topic_name, group_id) (rate(kminion_kafka_consumer_group_topic_offset_sum[30m]))"
+    ]
+  }
+]

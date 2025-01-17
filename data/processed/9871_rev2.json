@@ -1,0 +1,93 @@
+[
+  {
+    "name": "CPU Cores",
+    "description": "This represents the total [CPU resource requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#meaning-of-cpu) in the cluster.\nFor comparison the total [allocatable CPU cores](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md) is also shown.",
+    "queries": [
+      "sum(eagle_node_resource_allocatable_cpu_cores)",
+      "sum(eagle_node_resource_requests_cpu_cores)",
+      "sum(eagle_node_resource_limits_cpu_cores)",
+      "sum(eagle_node_resource_usage_cpu_cores)"
+    ]
+  },
+  {
+    "name": "CPU Usage",
+    "description": "",
+    "queries": [
+      "sum(eagle_node_resource_usage_cpu_cores) / sum(eagle_node_resource_allocatable_cpu_cores)"
+    ]
+  },
+  {
+    "name": "RAM Usage",
+    "description": "",
+    "queries": [
+      "sum(eagle_node_resource_usage_memory_bytes) / sum(eagle_node_resource_allocatable_memory_bytes)"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "This represents the total [memory resource requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#meaning-of-memory) in the cluster.\nFor comparison the total [allocatable memory](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md) is also shown.",
+    "queries": [
+      "sum(eagle_node_resource_allocatable_memory_bytes)",
+      "sum(eagle_node_resource_requests_memory_bytes)",
+      "sum(eagle_node_resource_limits_memory_bytes)",
+      "sum(eagle_node_resource_usage_memory_bytes)"
+    ]
+  },
+  {
+    "name": "Node CPU",
+    "description": "",
+    "queries": [
+      "sum(eagle_node_resource_requests_cpu_cores) by (node)",
+      "sum(eagle_node_resource_limits_cpu_cores) by (node)",
+      "sum(eagle_node_resource_allocatable_cpu_cores) by (node)",
+      "sum(eagle_node_resource_requests_cpu_cores / eagle_node_resource_allocatable_cpu_cores) by (node)",
+      "sum(eagle_node_resource_limits_cpu_cores / eagle_node_resource_allocatable_cpu_cores) by (node)",
+      "sum(eagle_node_resource_usage_cpu_cores / eagle_node_resource_allocatable_cpu_cores) by (node)"
+    ]
+  },
+  {
+    "name": "Container CPU",
+    "description": "",
+    "queries": [
+      "sum (eagle_pod_container_resource_requests_cpu_cores) by (pod, container, namespace)",
+      "sum (eagle_pod_container_resource_limits_cpu_cores) by (pod, container, namespace)",
+      "sum (eagle_pod_container_resource_usage_cpu_cores) by (pod, container, namespace)"
+    ]
+  },
+  {
+    "name": "Node RAM",
+    "description": "",
+    "queries": [
+      "sum(eagle_node_resource_requests_memory_bytes) by (node)",
+      "sum(eagle_node_resource_limits_memory_bytes) by (node)",
+      "sum(eagle_node_resource_allocatable_memory_bytes) by (node)",
+      "sum(eagle_node_resource_requests_memory_bytes / eagle_node_resource_allocatable_memory_bytes) by (node)",
+      "sum(eagle_node_resource_limits_memory_bytes / eagle_node_resource_allocatable_memory_bytes) by (node)",
+      "sum(eagle_node_resource_usage_memory_bytes / eagle_node_resource_allocatable_memory_bytes) by (node)"
+    ]
+  },
+  {
+    "name": "Container RAM",
+    "description": "",
+    "queries": [
+      "sum (eagle_pod_container_resource_requests_memory_bytes) by (pod, container, namespace)",
+      "sum (eagle_pod_container_resource_limits_memory_bytes) by (pod, container, namespace)",
+      "sum (eagle_pod_container_resource_usage_memory_bytes) by (pod, container, namespace)"
+    ]
+  },
+  {
+    "name": "Scrape duration by collector",
+    "description": "",
+    "queries": [
+      "avg by (collector) (eagle_scrape_collector_duration_seconds)",
+      ""
+    ]
+  },
+  {
+    "name": "Scrape success by collector",
+    "description": "",
+    "queries": [
+      "avg by (collector) (eagle_scrape_collector_success)"
+    ]
+  }
+]

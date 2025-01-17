@@ -1,0 +1,34 @@
+[
+  {
+    "name": "CPU",
+    "description": "",
+    "queries": [
+      "sum by (mode) (irate(node_cpu_seconds_total[5m]))"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "queries": [
+      "sum(node_memory_MemAvailable_bytes)",
+      "sum(node_memory_MemTotal_bytes)-sum(node_memory_MemAvailable_bytes)",
+      "sum(node_memory_MemTotal_bytes)"
+    ]
+  },
+  {
+    "name": "CPU",
+    "description": "",
+    "queries": [
+      "sum by (mode) (irate(node_cpu_seconds_total[5m]))"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "queries": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  }
+]

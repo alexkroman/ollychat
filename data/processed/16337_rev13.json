@@ -1,0 +1,177 @@
+[
+  {
+    "name": "CRITICAL",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_vulnerabilities)"
+    ]
+  },
+  {
+    "name": "HIGH",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_vulnerabilities)"
+    ]
+  },
+  {
+    "name": "MEDIUM",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_vulnerabilities)"
+    ]
+  },
+  {
+    "name": "LOW",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_vulnerabilities)"
+    ]
+  },
+  {
+    "name": "UNKNOWN",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_vulnerabilities)"
+    ]
+  },
+  {
+    "name": "TOTAL",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_vulnerabilities)"
+    ]
+  },
+  {
+    "name": "Total vulnerabilities by namespaces",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_vulnerabilities) by (namespace)"
+    ]
+  },
+  {
+    "name": "Total vulnerabilities by severity",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_vulnerabilities) by (severity)"
+    ]
+  },
+  {
+    "name": "Vulnerability count per image and severity in $namespace namespace(s)",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_vulnerabilities) by (namespace, image_registry, image_repository, image_tag, severity) > 0"
+    ]
+  },
+  {
+    "name": "Detaillled CVE vulnerabilities in $namespace namespace(s)",
+    "description": "Require operator.metricsVulnIdEnabled: true",
+    "queries": [
+      "sum(trivy_vulnerability_id) by (namespace, image_registry, image_repository, image_tag, vuln_id, severity)"
+    ]
+  },
+  {
+    "name": "CRITICAL",
+    "description": "",
+    "queries": [
+      "sum(trivy_resource_configaudits)"
+    ]
+  },
+  {
+    "name": "HIGH",
+    "description": "",
+    "queries": [
+      "sum(trivy_resource_configaudits)"
+    ]
+  },
+  {
+    "name": "MEDIUM",
+    "description": "",
+    "queries": [
+      "sum(trivy_resource_configaudits)"
+    ]
+  },
+  {
+    "name": "LOW",
+    "description": "",
+    "queries": [
+      "sum(trivy_resource_configaudits)"
+    ]
+  },
+  {
+    "name": "TOTAL",
+    "description": "",
+    "queries": [
+      "sum(trivy_resource_configaudits)"
+    ]
+  },
+  {
+    "name": "Total config audit report by namespaces",
+    "description": "",
+    "queries": [
+      "sum(trivy_resource_configaudits) by (namespace)"
+    ]
+  },
+  {
+    "name": "Total config audit report by severity",
+    "description": "",
+    "queries": [
+      "sum(trivy_resource_configaudits) by (severity)"
+    ]
+  },
+  {
+    "name": "CRITICAL",
+    "description": "",
+    "queries": [
+      "sum(trivy_role_rbacassessments)"
+    ]
+  },
+  {
+    "name": "HIGH",
+    "description": "",
+    "queries": [
+      "sum(trivy_role_rbacassessments)"
+    ]
+  },
+  {
+    "name": "MEDIUM",
+    "description": "",
+    "queries": [
+      "sum(trivy_role_rbacassessments)"
+    ]
+  },
+  {
+    "name": "LOW",
+    "description": "",
+    "queries": [
+      "sum(trivy_role_rbacassessments)"
+    ]
+  },
+  {
+    "name": "TOTAL",
+    "description": "",
+    "queries": [
+      "sum(trivy_role_rbacassessments)"
+    ]
+  },
+  {
+    "name": "Total RBAC Assessments by namespaces",
+    "description": "",
+    "queries": [
+      "sum(trivy_role_rbacassessments) by (namespace)"
+    ]
+  },
+  {
+    "name": "Total RBAC Assessments by severity",
+    "description": "",
+    "queries": [
+      "sum(trivy_role_rbacassessments) by (severity)"
+    ]
+  },
+  {
+    "name": "Total Exposed Secrets by namespaces",
+    "description": "",
+    "queries": [
+      "sum(trivy_image_exposedsecrets) by (namespace)"
+    ]
+  }
+]

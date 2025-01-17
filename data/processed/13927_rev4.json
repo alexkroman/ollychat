@@ -1,0 +1,96 @@
+[
+  {
+    "name": "WF Pending",
+    "description": "",
+    "queries": [
+      "argo_workflows_count "
+    ]
+  },
+  {
+    "name": "WF Running",
+    "description": "",
+    "queries": [
+      "argo_workflows_count"
+    ]
+  },
+  {
+    "name": "WF Errors",
+    "description": "",
+    "queries": [
+      "argo_workflows_count"
+    ]
+  },
+  {
+    "name": "WF Failed",
+    "description": "",
+    "queries": [
+      "argo_workflows_count"
+    ]
+  },
+  {
+    "name": "WF Skipped",
+    "description": "",
+    "queries": [
+      "argo_workflows_count"
+    ]
+  },
+  {
+    "name": "WF Succeeded",
+    "description": "",
+    "queries": [
+      "argo_workflows_count"
+    ]
+  },
+  {
+    "name": "Workflow Status  ",
+    "description": "",
+    "queries": [
+      "argo_workflows_count"
+    ]
+  },
+  {
+    "name": "Workflow Errors Alerting ",
+    "description": "",
+    "queries": [
+      "argo_workflows_count"
+    ]
+  },
+  {
+    "name": "Workflow operation duration",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(argo_workflows_operation_duration_seconds_bucket[5m])) by (le,origin_prometheus,kubernetes_namespace)) "
+    ]
+  },
+  {
+    "name": "Workflow queue adds ",
+    "description": "",
+    "queries": [
+      "delta(argo_workflows_queue_adds_count[2m])"
+    ]
+  },
+  {
+    "name": "Depth of the queue",
+    "description": "",
+    "queries": [
+      "argo_workflows_queue_depth_count"
+    ]
+  },
+  {
+    "name": "Time objects spend waiting in the queue",
+    "description": "",
+    "queries": [
+      "  rate(argo_workflows_queue_latency_sum[1m])\n/\n  rate(argo_workflows_queue_latency_count[1m])",
+      "  rate(argo_workflows_queue_latency_sum[1m])\n/\n  rate(argo_workflows_queue_latency_count[1m])",
+      "  rate(argo_workflows_queue_latency_sum[1m])\n/\n  rate(argo_workflows_queue_latency_count[1m])",
+      "  rate(argo_workflows_queue_latency_sum[1m])\n/\n  rate(argo_workflows_queue_latency_count[1m])"
+    ]
+  },
+  {
+    "name": "Log messages",
+    "description": "",
+    "queries": [
+      "rate(log_messages[1m])"
+    ]
+  }
+]

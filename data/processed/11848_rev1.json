@@ -1,0 +1,18 @@
+[
+  {
+    "name": "CPU Usage vs Throttling Percent",
+    "description": "",
+    "queries": [
+      "rate(container_cpu_usage_seconds_total[1m])",
+      "sum by (namespace,pod_name, container_name) ((container_cpu_cfs_throttled_periods_total / container_cpu_cfs_periods_total) * 100)"
+    ]
+  },
+  {
+    "name": "CPU Usage vs Throttling Percent",
+    "description": "",
+    "queries": [
+      "rate(container_cpu_usage_seconds_total[1m])",
+      "sum by (namespace,pod_name, container_name) ((container_cpu_cfs_throttled_periods_total / container_cpu_cfs_periods_total) * 100)"
+    ]
+  }
+]

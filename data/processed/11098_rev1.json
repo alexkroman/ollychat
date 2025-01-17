@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Alerts History",
+    "description": "",
+    "queries": [
+      "ALERTS",
+      "1"
+    ]
+  },
+  {
+    "name": "Total Alert Counts",
+    "description": "Shows how many times was particular alert started in a defined time range. Alert can be started either directly as `firing` or as a `pending`. Pending alerts wait for a defined time before it flips to a `firing` alert. This is specified with the `FOR` clause in a Prometheus `rules` file.",
+    "queries": [
+      "changes( ALERTS_FOR_STATE[$__range] ) + 1"
+    ]
+  }
+]

@@ -1,0 +1,115 @@
+[
+  {
+    "name": "Query Operations",
+    "description": "",
+    "queries": [
+      "rate(mongodb_op_counters_total[$interval])"
+    ]
+  },
+  {
+    "name": "Document Operations",
+    "description": "",
+    "queries": [
+      "rate(mongodb_mongod_metrics_document_total[$interval])"
+    ]
+  },
+  {
+    "name": "Document Query Executor",
+    "description": "",
+    "queries": [
+      "rate(mongodb_mongod_metrics_query_executor_total[$interval])"
+    ]
+  },
+  {
+    "name": "Member Health",
+    "description": "",
+    "queries": [
+      "mongodb_mongod_replset_number_of_members",
+      "sum(mongodb_mongod_replset_number_of_members)"
+    ]
+  },
+  {
+    "name": "Member State",
+    "description": "See which node is currently acting as the primary, secondary, ...",
+    "queries": [
+      "mongodb_rs_members_state"
+    ]
+  },
+  {
+    "name": "Replica Query Operations",
+    "description": "",
+    "queries": [
+      "rate(mongodb_op_counters_total[$interval])"
+    ]
+  },
+  {
+    "name": "Uptime",
+    "description": "",
+    "queries": [
+      "mongodb_instance_uptime_seconds"
+    ]
+  },
+  {
+    "name": "Available Connections",
+    "description": "",
+    "queries": [
+      "mongodb_connections"
+    ]
+  },
+  {
+    "name": "Open Connections",
+    "description": "",
+    "queries": [
+      "mongodb_connections"
+    ]
+  },
+  {
+    "name": "Oplog Size",
+    "description": "",
+    "queries": [
+      "mongodb_oplog_stats_size"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "queries": [
+      "mongodb_memory"
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "",
+    "queries": [
+      "rate(mongodb_network_metrics_num_requests_total[$interval])"
+    ]
+  },
+  {
+    "name": "Oplog Lag",
+    "description": "",
+    "queries": [
+      "rate(mongodb_mongod_replset_oplog_head_timestamp[5m])"
+    ]
+  },
+  {
+    "name": "Disk IO Utilization",
+    "description": "",
+    "queries": [
+      "(rate(node_disk_io_time_seconds_total[5m])/1000 or irate(node_disk_io_time_seconds_total[5m])/1000)"
+    ]
+  },
+  {
+    "name": "Disk Reads Completed",
+    "description": "",
+    "queries": [
+      "rate(node_disk_reads_completed_total[5m])"
+    ]
+  },
+  {
+    "name": "Disk Writes Completed",
+    "description": "",
+    "queries": [
+      "rate(node_disk_writes_completed_total[5m])"
+    ]
+  }
+]

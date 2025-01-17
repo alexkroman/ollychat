@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Modify by Path",
+    "description": "",
+    "queries": [
+      "sum(idelta(vault_route_count[5m])) by (method, path)"
+    ]
+  },
+  {
+    "name": "Read by Path",
+    "description": "",
+    "queries": [
+      "sum(idelta(vault_route_count[5m])) by (method, path)"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "avg_over_time(vault_sys_sealed[15s])"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "avg_over_time(vault_sys_initialized[15s])"
+    ]
+  },
+  {
+    "name": "Pending Tokens",
+    "description": "",
+    "queries": [
+      "vault_token_create_count-vault_token_store_count"
+    ]
+  },
+  {
+    "name": "Token Lookup",
+    "description": "",
+    "queries": [
+      "rate(vault_token_lookup_count[1m])"
+    ]
+  },
+  {
+    "name": "Token",
+    "description": "",
+    "queries": [
+      "vault_token_create_count",
+      "vault_token_store_count"
+    ]
+  },
+  {
+    "name": "Audit Log Request",
+    "description": "",
+    "queries": [
+      "sum(irate(vault_audit_log_request_count[1m]))",
+      "sum(irate(vault_audit_log_response_count[1m]))",
+      "sum(irate(vault_core_handle_request_count[1m]))"
+    ]
+  },
+  {
+    "name": "Auth Rollback",
+    "description": "",
+    "queries": [
+      "sum(idelta(vault_route_count[5m])) by (method, path)"
+    ]
+  },
+  {
+    "name": "Policy Set",
+    "description": "",
+    "queries": [
+      "sum(rate(vault_policy_set_policy_count[1m]))"
+    ]
+  },
+  {
+    "name": "Policy Get",
+    "description": "",
+    "queries": [
+      "sum(rate(vault_policy_get_policy_count[1m]))"
+    ]
+  },
+  {
+    "name": "Cloud Storage List",
+    "description": "",
+    "queries": [
+      "round(irate(vault_gcs_list_count[10m]))"
+    ]
+  },
+  {
+    "name": "Cloud Storage GET",
+    "description": "",
+    "queries": [
+      "rate(vault_gcs_get_count[10m])"
+    ]
+  },
+  {
+    "name": "Cloud Storage Delete",
+    "description": "",
+    "queries": [
+      "rate(vault_gcs_delete_count[10m])"
+    ]
+  },
+  {
+    "name": "Cloud Storage PUT",
+    "description": "",
+    "queries": [
+      "irate(vault_gcs_put_sum[5m])"
+    ]
+  }
+]

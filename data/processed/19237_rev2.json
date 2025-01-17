@@ -1,0 +1,240 @@
+[
+  {
+    "name": "Object Size Distribution",
+    "description": "",
+    "queries": [
+      "sum by (bucket,range) (minio_bucket_objects_size_distribution)"
+    ]
+  },
+  {
+    "name": "Object Version Distribution",
+    "description": "",
+    "queries": [
+      "sum by (bucket,range) (minio_bucket_objects_version_distribution)"
+    ]
+  },
+  {
+    "name": "TTFB Distribution",
+    "description": "",
+    "queries": [
+      "sum by (bucket,le,api) (minio_bucket_requests_ttfb_seconds_distribution)"
+    ]
+  },
+  {
+    "name": "S3 API Request 4xx Error Rate",
+    "description": "",
+    "queries": [
+      "sum by (bucket,api) (increase(minio_bucket_requests_4xx_errors_total[30m]))"
+    ]
+  },
+  {
+    "name": "Inflight Requests Rate",
+    "description": "",
+    "queries": [
+      "sum by (bucket,api) (increase(minio_bucket_requests_inflight_total[30m]))"
+    ]
+  },
+  {
+    "name": "Total Requests Rate",
+    "description": "",
+    "queries": [
+      "sum by (bucket,api) (increase(minio_bucket_requests_total[30m]))"
+    ]
+  },
+  {
+    "name": "Total Data Sent Rate",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (rate(minio_bucket_traffic_sent_bytes[30m]))"
+    ]
+  },
+  {
+    "name": "Usage Rate",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (rate(minio_bucket_usage_total_bytes[30m]))"
+    ]
+  },
+  {
+    "name": "Objects Increase Rate",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (increase(minio_bucket_usage_object_total[30m]))"
+    ]
+  },
+  {
+    "name": "Versions Increase Rate",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (increase(minio_bucket_usage_version_total[30m]))"
+    ]
+  },
+  {
+    "name": "Delete Markers Increase Rate",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (increase(minio_bucket_usage_deletemarker_total[30m]))"
+    ]
+  },
+  {
+    "name": "Time Elapsed Since Last Scan (nanos)",
+    "description": "",
+    "queries": [
+      "minio_usage_last_activity_nano_seconds"
+    ]
+  },
+  {
+    "name": "Total Data Received Rate",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (rate(minio_bucket_traffic_received_bytes[30m]))"
+    ]
+  },
+  {
+    "name": "Replication Data Received",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_received_bytes)"
+    ]
+  },
+  {
+    "name": "Replication Data Sent",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_sent_bytes)"
+    ]
+  },
+  {
+    "name": "Replication Data Failed",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_total_failed_bytes)"
+    ]
+  },
+  {
+    "name": "Replication Failed Objects",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_total_failed_count)"
+    ]
+  },
+  {
+    "name": "Replicated In Objects",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_received_count)"
+    ]
+  },
+  {
+    "name": "Replicated Out Objects",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_sent_count)"
+    ]
+  },
+  {
+    "name": "Last Hour Failed Size",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (rate(minio_bucket_replication_last_hour_failed_bytes[30m]))"
+    ]
+  },
+  {
+    "name": "Last Hour Failed Objects",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_last_hour_failed_count)"
+    ]
+  },
+  {
+    "name": "Last Minute Failed Size",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (rate(minio_bucket_replication_last_minute_failed_bytes[30m]))"
+    ]
+  },
+  {
+    "name": "Last Minute Failed Objects",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_last_minute_failed_count)"
+    ]
+  },
+  {
+    "name": "Replication Latency (millis)",
+    "description": "",
+    "queries": [
+      "sum by (bucket,range,operation) (minio_bucket_replication_latency_ms)"
+    ]
+  },
+  {
+    "name": "Total Proxied Head Requests",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_proxied_head_requests_total)"
+    ]
+  },
+  {
+    "name": "Total Failed Proxied Head Requests",
+    "description": "",
+    "queries": [
+      "minio_bucket_replication_proxied_head_requests_failures"
+    ]
+  },
+  {
+    "name": "Total Proxied Put Tag Requests",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_proxied_put_tagging_requests_total)"
+    ]
+  },
+  {
+    "name": "Total Failed Proxied Put Tag Requests",
+    "description": "",
+    "queries": [
+      "minio_bucket_replication_proxied_put_tagging_requests_failures"
+    ]
+  },
+  {
+    "name": "Total Proxied Get Tag Requests",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_proxied_get_tagging_requests_total)"
+    ]
+  },
+  {
+    "name": "Total Failed Proxied Get Tag Requests",
+    "description": "",
+    "queries": [
+      "minio_bucket_replication_proxied_get_tagging_requests_failures"
+    ]
+  },
+  {
+    "name": "Total Proxied Delete Tag Requests",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_proxied_delete_tagging_requests_total)"
+    ]
+  },
+  {
+    "name": "Total Failed Proxied Delete Tag Requests",
+    "description": "",
+    "queries": [
+      "minio_bucket_replication_proxied_delete_tagging_requests_failures"
+    ]
+  },
+  {
+    "name": "Total Proxied Get Requests",
+    "description": "",
+    "queries": [
+      "sum by (bucket) (minio_bucket_replication_proxied_get_requests_total)"
+    ]
+  },
+  {
+    "name": "Total Failed Proxied Get Requests",
+    "description": "",
+    "queries": [
+      "minio_bucket_replication_proxied_get_requests_failures"
+    ]
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Pilot Versions",
+    "description": "Version number of each running instance",
+    "queries": [
+      "sum(istio_build) by (tag)"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "Memory usage of each running instance",
+    "queries": [
+      "sum by (pod) (\n  container_memory_working_set_bytes\n)",
+      "sum by (pod) (\n  go_memstats_stack_inuse_bytes\n)",
+      "sum by (pod) (\n  go_memstats_heap_inuse_bytes\n)",
+      "sum by (pod) (\n  go_memstats_heap_alloc_bytes\n)"
+    ]
+  },
+  {
+    "name": "Memory Allocations",
+    "description": "Details about memory allocations",
+    "queries": [
+      "sum by (pod) (\n  rate(\n    go_memstats_alloc_bytes_total\n  [30m])\n)",
+      "sum by (pod) (\n  rate(\n    go_memstats_mallocs_total\n  [30m])\n)"
+    ]
+  },
+  {
+    "name": "CPU Usage",
+    "description": "CPU usage of each running instance",
+    "queries": [
+      "sum by (pod) (\n  irate(\n    container_cpu_usage_seconds_total\n  [30m])\n)"
+    ]
+  },
+  {
+    "name": "Goroutines",
+    "description": "Goroutine count for each running instance",
+    "queries": [
+      "sum by (pod) (\n  go_goroutines\n)"
+    ]
+  },
+  {
+    "name": "XDS Pushes",
+    "description": "",
+    "queries": [
+      "sum by (type) (\n  irate(\n    pilot_xds_pushes\n  [30m])\n)"
+    ]
+  },
+  {
+    "name": "Events",
+    "description": "Size of each xDS push.\n",
+    "queries": [
+      "sum by (type, event) (\n  rate(\n    pilot_k8s_reg_events\n  [30m])\n)",
+      "sum by (type, event) (\n  rate(\n    pilot_k8s_cfg_events\n  [30m])\n)",
+      "sum by (type) (\n  rate(\n    pilot_push_triggers\n  [30m])\n)"
+    ]
+  },
+  {
+    "name": "Connections",
+    "description": "Total number of XDS connections\n",
+    "queries": [
+      "sum(envoy_cluster_upstream_cx_active)",
+      "sum(pilot_xds)"
+    ]
+  },
+  {
+    "name": "Push Errors",
+    "description": "Number of push errors. Many of these are at least potentional fatal and should be explored in-depth via Istiod logs.\nNote: metrics here do not use rate() to avoid missing transition from \"No series\"; series are not reported if there are no errors at all.\n",
+    "queries": [
+      "sum by (type) (\n  pilot_total_xds_rejects\n)",
+      "pilot_total_xds_internal_errors",
+      "pilot_xds_push_context_errors"
+    ]
+  },
+  {
+    "name": "Push Time",
+    "description": "Count of active and pending proxies managed by each instance.\nPending is expected to converge to zero.\n",
+    "queries": [
+      "sum(rate(pilot_xds_push_time_bucket[1m])) by (le)"
+    ]
+  },
+  {
+    "name": "Push Size",
+    "description": "Size of each xDS push.\n",
+    "queries": [
+      "sum(rate(pilot_xds_config_size_bytes_bucket[1m])) by (le)"
+    ]
+  },
+  {
+    "name": "Validation",
+    "description": "Rate of XDS push operations, by type. This is incremented on a per-proxy basis.\n",
+    "queries": [
+      "sum(\n  rate(\n    galley_validation_passed\n  [30m])\n)",
+      "sum(\n  rate(\n    galley_validation_passed\n  [30m])\n)"
+    ]
+  },
+  {
+    "name": "Injection",
+    "description": "Size of each xDS push.\n",
+    "queries": [
+      "sum(\n  rate(\n    sidecar_injection_success_total\n  [30m])\n)",
+      "sum(\n  rate(\n    sidecar_injection_failure_total\n  [30m])\n)"
+    ]
+  }
+]

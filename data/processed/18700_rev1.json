@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Execution Logs",
+    "description": "",
+    "queries": [
+      " |= ``"
+    ]
+  },
+  {
+    "name": "Consensus Logs",
+    "description": "",
+    "queries": [
+      " |= ``"
+    ]
+  },
+  {
+    "name": "Validator Logs",
+    "description": "",
+    "queries": [
+      " |= ``"
+    ]
+  },
+  {
+    "name": "MEV Boost Logs",
+    "description": "",
+    "queries": [
+      " |= ``"
+    ]
+  }
+]

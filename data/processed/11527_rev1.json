@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Instance State",
+    "description": "",
+    "queries": [
+      "memcached_up"
+    ]
+  },
+  {
+    "name": "Up Time",
+    "description": "",
+    "queries": [
+      "memcached_uptime_seconds"
+    ]
+  },
+  {
+    "name": "Memory usage",
+    "description": "",
+    "queries": [
+      "memcached_current_bytes/memcached_limit_bytes"
+    ]
+  },
+  {
+    "name": "Get & Set ratio",
+    "description": "",
+    "queries": [
+      "sum (memcached_commands_total) / (sum (memcached_commands_total) + sum (memcached_commands_total))",
+      "sum (memcached_commands_total) / (sum (memcached_commands_total) + sum (memcached_commands_total))"
+    ]
+  },
+  {
+    "name": "Hit & Miss ratio",
+    "description": "",
+    "queries": [
+      "sum (memcached_commands_total) / sum (memcached_commands_total)",
+      "sum (memcached_commands_total) / sum (memcached_commands_total)"
+    ]
+  },
+  {
+    "name": "Evicts (total)",
+    "description": "",
+    "queries": [
+      "sum (memcached_items_evicted_total)"
+    ]
+  },
+  {
+    "name": "Reclaims (total)",
+    "description": "",
+    "queries": [
+      "sum (memcached_items_reclaimed_total)"
+    ]
+  },
+  {
+    "name": "Evicts & Reclaims rate",
+    "description": "",
+    "queries": [
+      "sum (irate (memcached_items_evicted_total[5m]))",
+      "sum (irate (memcached_items_reclaimed_total[5m]))"
+    ]
+  },
+  {
+    "name": "Connections",
+    "description": "",
+    "queries": [
+      "memcached_current_connections"
+    ]
+  },
+  {
+    "name": "Hit rate",
+    "description": "",
+    "queries": [
+      "sum (irate (memcached_commands_total[5m])) / sum (irate (memcached_commands_total[5m]\n))"
+    ]
+  },
+  {
+    "name": "Read/Write",
+    "description": "",
+    "queries": [
+      "delta(memcached_read_bytes_total[1m])",
+      "delta(memcached_written_bytes_total[1m])"
+    ]
+  },
+  {
+    "name": "Memory Used",
+    "description": "",
+    "queries": [
+      "memcached_current_bytes/memcached_limit_bytes"
+    ]
+  },
+  {
+    "name": "Items in cache",
+    "description": "",
+    "queries": [
+      "memcached_current_items"
+    ]
+  },
+  {
+    "name": "Commands",
+    "description": "",
+    "queries": [
+      "sum (irate (memcached_commands_total[5m])) by (command)"
+    ]
+  },
+  {
+    "name": "QPS",
+    "description": "",
+    "queries": [
+      "sum(delta(memcached_commands_total[30s]))/30"
+    ]
+  },
+  {
+    "name": "Hit Ratio",
+    "description": "",
+    "queries": [
+      "sum (delta(memcached_commands_total[1m]))  / sum (delta(memcached_commands_total[1m])) * 100"
+    ]
+  },
+  {
+    "name": "Hit Ratio Per Command",
+    "description": "",
+    "queries": [
+      "sum (delta(memcached_commands_total[1m]))  / sum (delta(memcached_commands_total[1m])) * 100",
+      "sum (delta(memcached_commands_total[1m]))  / sum (delta(memcached_commands_total[1m])) * 100"
+    ]
+  }
+]

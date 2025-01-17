@@ -1,0 +1,471 @@
+[
+  {
+    "name": "znode_count",
+    "description": "",
+    "queries": [
+      "znode_count",
+      "ephemerals_count"
+    ]
+  },
+  {
+    "name": "znode_count_rate",
+    "description": "",
+    "queries": [
+      "rate(znode_count[5m])",
+      "rate(ephemerals_count[5m])"
+    ]
+  },
+  {
+    "name": "global_sessions",
+    "description": "",
+    "queries": [
+      "global_sessions"
+    ]
+  },
+  {
+    "name": "local_sessions ",
+    "description": "",
+    "queries": [
+      "local_sessions"
+    ]
+  },
+  {
+    "name": "write_per_namespace",
+    "description": "",
+    "queries": [
+      "write_per_namespace_sum"
+    ]
+  },
+  {
+    "name": "read_per_namespace",
+    "description": "",
+    "queries": [
+      "read_per_namespace_sum"
+    ]
+  },
+  {
+    "name": "approximate_data_size",
+    "description": "",
+    "queries": [
+      "approximate_data_size"
+    ]
+  },
+  {
+    "name": "packets_received",
+    "description": "",
+    "queries": [
+      "packets_received"
+    ]
+  },
+  {
+    "name": "packets_sent",
+    "description": "",
+    "queries": [
+      "packets_sent"
+    ]
+  },
+  {
+    "name": "response_packet_cache",
+    "description": "",
+    "queries": [
+      "response_packet_cache_misses",
+      "response_packet_cache_hits",
+      "response_packet_get_children_cache_misses",
+      "response_packet_get_children_cache_hits"
+    ]
+  },
+  {
+    "name": "unrecoverable_error_count",
+    "description": "",
+    "queries": [
+      "unrecoverable_error_count"
+    ]
+  },
+  {
+    "name": "digest_mismatches_count",
+    "description": "",
+    "queries": [
+      "digest_mismatches_count"
+    ]
+  },
+  {
+    "name": "startup_snap_load_time",
+    "description": "",
+    "queries": [
+      "startup_snap_load_time",
+      "startup_snap_load_time_count",
+      "startup_snap_load_time_sum"
+    ]
+  },
+  {
+    "name": "startup_txns_loaded",
+    "description": "",
+    "queries": [
+      "startup_txns_loaded",
+      "startup_txns_loaded_count",
+      "startup_txns_loaded_sum"
+    ]
+  },
+  {
+    "name": "db_init_time",
+    "description": "",
+    "queries": [
+      "dbinittime",
+      "dbinittime_count",
+      "dbinittime_sum"
+    ]
+  },
+  {
+    "name": "open_file_descriptor",
+    "description": "",
+    "queries": [
+      "open_file_descriptor_count"
+    ]
+  },
+  {
+    "name": "fsync_time",
+    "description": "",
+    "queries": [
+      "fsynctime",
+      "fsynctime_count",
+      "fsynctime_sum",
+      "fsynctime_sum * 1000 /fsynctime_count",
+      "irate(fsynctime_sum[1m])"
+    ]
+  },
+  {
+    "name": "snapshot_time",
+    "description": "",
+    "queries": [
+      "rate(snapshottime_sum[5m])",
+      "snapshottime_count",
+      "snapshottime_sum / snapshottime_count"
+    ]
+  },
+  {
+    "name": "prep_process_time",
+    "description": "",
+    "queries": [
+      "rate(prep_process_time_sum[5m])"
+    ]
+  },
+  {
+    "name": "prep_processor_queue_time",
+    "description": "",
+    "queries": [
+      "rate(prep_processor_queue_time_ms_sum[5m])"
+    ]
+  },
+  {
+    "name": "prep_processor_queue_size",
+    "description": "",
+    "queries": [
+      "rate(prep_processor_queue_size_sum[5m])"
+    ]
+  },
+  {
+    "name": "prep_processor_request_queued",
+    "description": "",
+    "queries": [
+      "prep_processor_request_queued"
+    ]
+  },
+  {
+    "name": "outstanding_changes_queued",
+    "description": "",
+    "queries": [
+      "outstanding_changes_queued",
+      "outstanding_changes_removed"
+    ]
+  },
+  {
+    "name": "close_session_prep_time",
+    "description": "",
+    "queries": [
+      "rate(close_session_prep_time_sum[5m])"
+    ]
+  },
+  {
+    "name": "sync_process_time",
+    "description": "",
+    "queries": [
+      "rate(sync_process_time_sum[5m])"
+    ]
+  },
+  {
+    "name": "sync_processor_queue_flush_time",
+    "description": "",
+    "queries": [
+      "rate(sync_processor_queue_flush_time_ms_sum[5m])"
+    ]
+  },
+  {
+    "name": "sync_processor_queue_size",
+    "description": "",
+    "queries": [
+      "rate(sync_processor_queue_size_sum[5m])"
+    ]
+  },
+  {
+    "name": "sync_processor_request_queued",
+    "description": "",
+    "queries": [
+      "sync_processor_request_queued"
+    ]
+  },
+  {
+    "name": "sync_processor_batch_size",
+    "description": "",
+    "queries": [
+      "rate(sync_processor_batch_size_sum[5m])"
+    ]
+  },
+  {
+    "name": "commit_process_time",
+    "description": "",
+    "queries": [
+      "rate(commit_process_time_sum[5m])",
+      "rate(read_commitproc_time_ms_sum[5m])",
+      "rate(write_commitproc_time_ms_sum[5m])"
+    ]
+  },
+  {
+    "name": "commit_proc_req_queued",
+    "description": "",
+    "queries": [
+      "rate(write_commit_proc_req_queued_sum[5m])",
+      "rate(read_commit_proc_req_queued_sum[5m])",
+      "rate(commit_commit_proc_req_queued_sum[5m])"
+    ]
+  },
+  {
+    "name": "requests_in_session_queue",
+    "description": "",
+    "queries": [
+      "rate(requests_in_session_queue_sum[5m])"
+    ]
+  },
+  {
+    "name": "commit_proc_issued",
+    "description": "",
+    "queries": [
+      "rate(read_commit_proc_issued_sum[5m])",
+      "rate(write_commit_proc_issued_sum[5m])"
+    ]
+  },
+  {
+    "name": "concurrent_request_processing_in_commit_processor",
+    "description": "",
+    "queries": [
+      "rate(concurrent_request_processing_in_commit_processor_sum[5m])"
+    ]
+  },
+  {
+    "name": "time_waiting_empty_pool_in_commit_processor_read",
+    "description": "",
+    "queries": [
+      "rate(time_waiting_empty_pool_in_commit_processor_read_ms_sum[5m])"
+    ]
+  },
+  {
+    "name": "pending_session_queue_size",
+    "description": "",
+    "queries": [
+      "rate(pending_session_queue_size_sum[5m])"
+    ]
+  },
+  {
+    "name": "local_write_committed_time",
+    "description": "",
+    "queries": [
+      "rate(local_write_committed_time_ms_sum[5m])"
+    ]
+  },
+  {
+    "name": "server_write_committed_time",
+    "description": "",
+    "queries": [
+      "rate(server_write_committed_time_ms_sum[5m])"
+    ]
+  },
+  {
+    "name": "write_batch_time_in_commit_processor",
+    "description": "",
+    "queries": [
+      "rate(write_batch_time_in_commit_processor_sum[5m])"
+    ]
+  },
+  {
+    "name": "reads_after_write_in_session_queue",
+    "description": "",
+    "queries": [
+      "rate(reads_after_write_in_session_queue_sum[5m])"
+    ]
+  },
+  {
+    "name": "session_queues_drained",
+    "description": "",
+    "queries": [
+      "rate(session_queues_drained_sum[5m])"
+    ]
+  },
+  {
+    "name": "reads_issued_from_session_queue",
+    "description": "",
+    "queries": [
+      "rate(reads_issued_from_session_queue_sum[5m])"
+    ]
+  },
+  {
+    "name": "request_commit_queued",
+    "description": "",
+    "queries": [
+      "request_commit_queued"
+    ]
+  },
+  {
+    "name": "write_final_proc_time_ms",
+    "description": "",
+    "queries": [
+      "rate(write_final_proc_time_ms_sum[5m])"
+    ]
+  },
+  {
+    "name": "read_final_proc_time_ms",
+    "description": "",
+    "queries": [
+      "rate(read_final_proc_time_ms_sum[5m])"
+    ]
+  },
+  {
+    "name": "read_latency",
+    "description": "",
+    "queries": [
+      "rate(readlatency_sum[5m])"
+    ]
+  },
+  {
+    "name": "update_latency",
+    "description": "",
+    "queries": [
+      "rate(updatelatency_sum[5m])"
+    ]
+  },
+  {
+    "name": "max_min_avg_latency",
+    "description": "",
+    "queries": [
+      "max_latency",
+      "min_latency",
+      "avg_latency"
+    ]
+  },
+  {
+    "name": "proposal_latency",
+    "description": "",
+    "queries": [
+      "rate(proposal_latency_sum[5m])"
+    ]
+  },
+  {
+    "name": "quorum_ack_latency",
+    "description": "",
+    "queries": [
+      "rate(quorum_ack_latency_sum[5m])"
+    ]
+  },
+  {
+    "name": "ack_latency",
+    "description": "",
+    "queries": [
+      "rate(ack_latency_sum[5m])"
+    ]
+  },
+  {
+    "name": "propagation_latency",
+    "description": "",
+    "queries": [
+      "rate(propagation_latency_sum[5m])"
+    ]
+  },
+  {
+    "name": "commit_propagation_latency",
+    "description": "",
+    "queries": [
+      "rate(commit_propagation_latency_sum[5m])"
+    ]
+  },
+  {
+    "name": "proposal_ack_creation_latency",
+    "description": "",
+    "queries": [
+      "proposal_ack_creation_latency"
+    ]
+  },
+  {
+    "name": "tls_handshake",
+    "description": "",
+    "queries": [
+      "tls_handshake_exceeded",
+      "outstanding_tls_handshake"
+    ]
+  },
+  {
+    "name": "ensemble_auth",
+    "description": "",
+    "queries": [
+      "ensemble_auth_fail",
+      "ensemble_auth_success",
+      "ensemble_auth_skip"
+    ]
+  },
+  {
+    "name": "jvm_classes_loaded",
+    "description": "",
+    "queries": [
+      "max(jvm_classes_loaded)"
+    ]
+  },
+  {
+    "name": "jvm_threads_current",
+    "description": "",
+    "queries": [
+      "max(jvm_threads_current)"
+    ]
+  },
+  {
+    "name": "jvm_threads_deadlocked",
+    "description": "",
+    "queries": [
+      "max(jvm_threads_deadlocked)"
+    ]
+  },
+  {
+    "name": "jvm_pause_time_ms",
+    "description": "",
+    "queries": [
+      "rate(jvm_pause_time_ms_sum[5m])"
+    ]
+  },
+  {
+    "name": "jvm_gc_collection_seconds",
+    "description": "",
+    "queries": [
+      "rate(jvm_gc_collection_seconds_sum[5m])"
+    ]
+  },
+  {
+    "name": "jvm_threads_state",
+    "description": "",
+    "queries": [
+      "jvm_threads_state"
+    ]
+  },
+  {
+    "name": "jvm_memory_pool_bytes_used",
+    "description": "",
+    "queries": [
+      "jvm_memory_pool_bytes_used"
+    ]
+  }
+]

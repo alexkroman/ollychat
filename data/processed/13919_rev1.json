@@ -1,0 +1,48 @@
+[
+  {
+    "name": "$Job：Server resource overview",
+    "description": "",
+    "queries": [
+      "mssql_instance_local_time*1000",
+      "mssql_total_physical_memory_kb-0",
+      "mssql_available_physical_memory_kb-0",
+      "mssql_total_page_file_kb-0",
+      "mssql_available_page_file_kb-0",
+      "mssql_page_fault_count-0",
+      "mssql_batch_requests-0",
+      "mssql_page_life_expectancy-0",
+      "mssql_deadlocks-0",
+      "mssql_user_errors-0",
+      "mssql_kill_connection_errors-0",
+      "sum(mssql_database_state)"
+    ]
+  },
+  {
+    "name": "Current database connections",
+    "description": "",
+    "queries": [
+      "mssql_connections"
+    ]
+  },
+  {
+    "name": "DB Log growth since last restart",
+    "description": "",
+    "queries": [
+      "mssql_log_growths"
+    ]
+  },
+  {
+    "name": "Total wait time of I/O stall",
+    "description": "",
+    "queries": [
+      "mssql_io_stall_total"
+    ]
+  },
+  {
+    "name": "Database ${database} wait by I/O stall ",
+    "description": "",
+    "queries": [
+      "mssql_io_stall"
+    ]
+  }
+]

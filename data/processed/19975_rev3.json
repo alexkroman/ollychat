@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Notification Deliveries",
+    "description": "",
+    "queries": [
+      "sum(\n  round(\n    increase(\n      argocd_notifications_deliveries_total[30m]\n    )\n  )\n) by (job, exported_service, succeeded)\n"
+    ]
+  },
+  {
+    "name": "Trigger Evaluations",
+    "description": "",
+    "queries": [
+      "sum(\n  round(\n    increase(\n      argocd_notifications_trigger_eval_total[30m]\n    )\n  )\n) by (job, name, triggered)\n"
+    ]
+  }
+]

@@ -1,0 +1,120 @@
+[
+  {
+    "name": "Erlang Distribution outgoing traffic / s",
+    "description": "",
+    "queries": [
+      "rate(erlang_vm_dist_send_bytes[60s]) * on(instance, job) group_left(rabbitmq_cluster, rabbitmq_node) rabbitmq_identity_info"
+    ]
+  },
+  {
+    "name": "Erlang Distribution outgoing traffic / s",
+    "description": "Erlang Distribution traffic, node network traffic and CPU + PerfTest message throughput and latency",
+    "queries": [
+      "rate(erlang_vm_dist_send_bytes[60s]) * on(instance, job) group_left(rabbitmq_cluster, rabbitmq_node) rabbitmq_identity_info"
+    ]
+  },
+  {
+    "name": "Network incoming traffic / s",
+    "description": "",
+    "queries": [
+      "sum by(instance) (rate(node_network_receive_bytes_total[5m]))",
+      "sum by(name) (rate(container_network_receive_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "Network incoming traffic / s",
+    "description": "",
+    "queries": [
+      "sum by(instance) (rate(node_network_receive_bytes_total[5m]))",
+      "sum by(name) (rate(container_network_receive_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "Network outgoing traffic / s",
+    "description": "",
+    "queries": [
+      "sum by(instance) (rate(node_network_transmit_bytes_total[5m]))",
+      "sum by(name) (rate(container_network_transmit_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "Network outgoing traffic / s",
+    "description": "",
+    "queries": [
+      "sum by(instance) (rate(node_network_transmit_bytes_total[5m]))",
+      "sum by(name) (rate(container_network_transmit_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "CPU",
+    "description": "",
+    "queries": [
+      "(max by (instance) (irate(node_cpu_seconds_total[5m])) * 100)",
+      "sum by(name) (irate(container_cpu_usage_seconds_total[1m])) * 100"
+    ]
+  },
+  {
+    "name": "CPU",
+    "description": "",
+    "queries": [
+      "(max by (instance) (irate(node_cpu_seconds_total[5m])) * 100)",
+      "sum by(name) (irate(container_cpu_usage_seconds_total[1m])) * 100"
+    ]
+  },
+  {
+    "name": "Messages published / s",
+    "description": "",
+    "queries": [
+      "perftest_published"
+    ]
+  },
+  {
+    "name": "Messages published / s",
+    "description": "",
+    "queries": [
+      "perftest_published"
+    ]
+  },
+  {
+    "name": "Messages consumed / s",
+    "description": "",
+    "queries": [
+      "perftest_consumed"
+    ]
+  },
+  {
+    "name": "Messages consumed / s",
+    "description": "",
+    "queries": [
+      "perftest_consumed"
+    ]
+  },
+  {
+    "name": "End-to-end message latency",
+    "description": "",
+    "queries": [
+      "perftest_latency_seconds"
+    ]
+  },
+  {
+    "name": "End-to-end message latency",
+    "description": "",
+    "queries": [
+      "perftest_latency_seconds"
+    ]
+  },
+  {
+    "name": "End-to-end message latency distribution",
+    "description": "",
+    "queries": [
+      "perftest_latency_seconds"
+    ]
+  },
+  {
+    "name": "End-to-end message latency distribution",
+    "description": "",
+    "queries": [
+      "perftest_latency_seconds"
+    ]
+  }
+]

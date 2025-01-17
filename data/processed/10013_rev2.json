@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Message processing rate",
+    "description": "",
+    "queries": [
+      "rate(postfix_cleanup_messages_processed_total[5m])"
+    ]
+  },
+  {
+    "name": "Rejection ratio",
+    "description": "",
+    "queries": [
+      "rate(postfix_cleanup_messages_rejected_total[5m])"
+    ]
+  },
+  {
+    "name": "Message processing rate",
+    "description": "",
+    "queries": [
+      "rate(postfix_lmtp_messages_processed_total[5m])"
+    ]
+  },
+  {
+    "name": "Average delivery duration by stage",
+    "description": "",
+    "queries": [
+      "(sum(rate(postfix_lmtp_delivery_delay_seconds_sum[5m])) by (stage)) / (sum(rate(postfix_lmtp_delivery_delay_seconds_count[5m])) by (stage))"
+    ]
+  },
+  {
+    "name": "Message processing rate",
+    "description": "",
+    "queries": [
+      "rate(postfix_pipe_delivery_delay_seconds_count[5m])"
+    ]
+  },
+  {
+    "name": "Average delivery duration by stage",
+    "description": "",
+    "queries": [
+      "sum(rate(postfix_pipe_delivery_delay_seconds_count[5m])) by (stage)"
+    ]
+  },
+  {
+    "name": "Message insertion rate",
+    "description": "",
+    "queries": [
+      "rate(postfix_qmgr_messages_inserted_size_bytes_count[5m])"
+    ]
+  },
+  {
+    "name": "Message insertion bandwidth",
+    "description": "",
+    "queries": [
+      "rate(postfix_qmgr_messages_inserted_size_bytes_sum[5m])"
+    ]
+  },
+  {
+    "name": "Message removal rate",
+    "description": "",
+    "queries": [
+      "rate(postfix_qmgr_messages_removed_total[5m])"
+    ]
+  },
+  {
+    "name": "Number of enqueued messages",
+    "description": "",
+    "queries": [
+      "postfix_showq_message_size_bytes_count"
+    ]
+  },
+  {
+    "name": "Size of enqueued messages",
+    "description": "",
+    "queries": [
+      "postfix_showq_message_size_bytes_sum"
+    ]
+  },
+  {
+    "name": "Average age of enqueued messages",
+    "description": "",
+    "queries": [
+      "avg(postfix_showq_message_age_seconds_count) by (instance)"
+    ]
+  },
+  {
+    "name": "Message processing rate",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtp_delivery_delay_seconds_count[5m])"
+    ]
+  },
+  {
+    "name": "Average delivery duration by stage",
+    "description": "",
+    "queries": [
+      "(sum(rate(postfix_smtp_delivery_delay_seconds_sum[5m])) by (stage)) / (sum(rate(postfix_smtp_delivery_delay_seconds_count[5m])) by (stage))"
+    ]
+  },
+  {
+    "name": "TLS conection ratio",
+    "description": "",
+    "queries": [
+      "(sum(rate(postfix_smtp_tls_connections_total[5m])) by (instance)) / (sum(rate(postfix_smtp_delivery_delay_seconds_count[5m])) by (instance))"
+    ]
+  },
+  {
+    "name": "TLS protocol/cipher usage",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtp_tls_connections_total[5m])"
+    ]
+  },
+  {
+    "name": "Connect rate",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtpd_connects_total[5m])"
+    ]
+  },
+  {
+    "name": "Disconnect rate",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtpd_disconnects_total[5m])"
+    ]
+  },
+  {
+    "name": "Connections lost",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtpd_connections_lost_total[5m])"
+    ]
+  },
+  {
+    "name": "SASL authentication failures",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtpd_sasl_authentication_failures_total[5m])"
+    ]
+  },
+  {
+    "name": "Forward-confirmed reverse DNS erros",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtpd_forward_confirmed_reverse_dns_errors_total[5m])"
+    ]
+  },
+  {
+    "name": "Message processing rate",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtpd_messages_processed_total[5m])"
+    ]
+  },
+  {
+    "name": "Rejection ratio",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtpd_messages_rejected_total[5m])"
+    ]
+  },
+  {
+    "name": "TLS conection ratio",
+    "description": "",
+    "queries": [
+      "(sum(rate(postfix_smtpd_tls_connections_total[5m])) by (instance)) / (sum(rate(postfix_smtpd_connects_total[5m])) by (instance))"
+    ]
+  },
+  {
+    "name": "TLS protocol/cipher usage",
+    "description": "",
+    "queries": [
+      "rate(postfix_smtpd_tls_connections_total[5m])"
+    ]
+  }
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "name": "Uptime",
+    "description": "",
+    "queries": [
+      "max(max_over_time(redis_uptime_in_seconds[$__interval]))"
+    ]
+  },
+  {
+    "name": "Clients",
+    "description": "",
+    "queries": [
+      "redis_connected_clients"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "",
+    "queries": [
+      "100 * (redis_memory_used_bytes  / redis_memory_max_bytes )"
+    ]
+  },
+  {
+    "name": "Commands Executed / sec",
+    "description": "",
+    "queries": [
+      "rate(redis_commands_processed_total[1m])"
+    ]
+  },
+  {
+    "name": "Hits / Misses per Sec",
+    "description": "",
+    "queries": [
+      "irate(redis_keyspace_hits_total[5m])",
+      "irate(redis_keyspace_misses_total[5m])"
+    ]
+  },
+  {
+    "name": "Total Memory Usage",
+    "description": "",
+    "queries": [
+      "redis_memory_used_bytes ",
+      "redis_memory_max_bytes "
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "",
+    "queries": [
+      "rate(redis_net_input_bytes_total[5m])",
+      "rate(redis_net_output_bytes_total[5m])"
+    ]
+  },
+  {
+    "name": "Total Items per DB",
+    "description": "",
+    "queries": [
+      "sum (redis_db_keys) by (db)"
+    ]
+  },
+  {
+    "name": "Expiring vs Not-Expiring Keys",
+    "description": "",
+    "queries": [
+      "sum (redis_db_keys) - sum (redis_db_keys_expiring) ",
+      "sum (redis_db_keys_expiring) "
+    ]
+  },
+  {
+    "name": "Expired / Evicted",
+    "description": "",
+    "queries": [
+      "sum(rate(redis_expired_keys_total[5m])) by (instance)",
+      "sum(rate(redis_evicted_keys_total[5m])) by (instance)"
+    ]
+  },
+  {
+    "name": "Command Calls / sec",
+    "description": "",
+    "queries": [
+      "topk(5, irate(redis_commands_total [1m]))"
+    ]
+  },
+  {
+    "name": "Redis connected clients",
+    "description": "",
+    "queries": [
+      "redis_connected_clients"
+    ]
+  }
+]

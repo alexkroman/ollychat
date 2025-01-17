@@ -1,0 +1,65 @@
+[
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "count(sloth_slo_info)"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "count(max(sloth_slo_info) by (sloth_service))"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "avg(slo:current_burn_rate:ratio)"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "max(ALERTS) OR on() vector(0)"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "max(ALERTS) OR on() vector(0)"
+    ]
+  },
+  {
+    "name": "All burning rate (Filtered >${min_burning_rate}x)",
+    "description": "The burning rate of the all the Service SLOs",
+    "queries": [
+      "slo:current_burn_rate:ratio > $"
+    ]
+  },
+  {
+    "name": "Current exceeded burning rate SLOs ",
+    "description": "The SLOs that currently are burning more error budget that then available",
+    "queries": [
+      "slo:current_burn_rate:ratio > $"
+    ]
+  },
+  {
+    "name": "SLOs burn rate state timeline",
+    "description": "Shows all the SLOs at the same time burning rate state",
+    "queries": [
+      "slo:current_burn_rate:ratio"
+    ]
+  },
+  {
+    "name": "Budget remaining 30 day window",
+    "description": "",
+    "queries": [
+      "slo:period_error_budget_remaining:ratio"
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Timeline",
+    "description": "",
+    "queries": [
+      "sum(count_over_time( |~ \"$search\"[$__interval]))"
+    ]
+  },
+  {
+    "name": "Logs",
+    "description": "",
+    "queries": [
+      " |~ \"$search\""
+    ]
+  }
+]

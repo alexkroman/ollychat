@@ -1,0 +1,110 @@
+[
+  {
+    "name": "HTTP status code",
+    "description": "",
+    "queries": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "SSL",
+    "description": "",
+    "queries": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "name": "Certificate validity",
+    "description": "",
+    "queries": [
+      "(probe_ssl_earliest_cert_expiry - time()) / (60*60*24)"
+    ]
+  },
+  {
+    "name": "TLS version",
+    "description": "",
+    "queries": [
+      "probe_tls_version_info"
+    ]
+  },
+  {
+    "name": "DNS lookup time",
+    "description": "",
+    "queries": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "name": "HTTP version",
+    "description": "",
+    "queries": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "name": "Redirect(s)",
+    "description": "",
+    "queries": [
+      "probe_http_redirects"
+    ]
+  },
+  {
+    "name": "ICMP",
+    "description": "",
+    "queries": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "Availability",
+    "description": "",
+    "queries": [
+      "avg_over_time(probe_success[$__interval]) * 100"
+    ]
+  },
+  {
+    "name": "Availability",
+    "description": "",
+    "queries": [
+      "avg_over_time(probe_success[$__interval]) * 100"
+    ]
+  },
+  {
+    "name": "Availability",
+    "description": "",
+    "queries": [
+      "avg_over_time(probe_success[$__interval]) * 100"
+    ]
+  },
+  {
+    "name": "HTTP probe duration / status code",
+    "description": "",
+    "queries": [
+      "probe_duration_seconds",
+      "probe_http_status_code == 200",
+      "probe_http_status_code != 200"
+    ]
+  },
+  {
+    "name": "ICMP probe duration / failure",
+    "description": "Display only ICMP failures",
+    "queries": [
+      "probe_duration_seconds",
+      "probe_success == 0"
+    ]
+  },
+  {
+    "name": "HTTP probe (by phase)",
+    "description": "",
+    "queries": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "name": "ICMP probe (by phase)",
+    "description": "",
+    "queries": [
+      "probe_icmp_duration_seconds"
+    ]
+  }
+]

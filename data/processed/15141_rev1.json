@@ -1,0 +1,16 @@
+[
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "sum(count_over_time( |= \"$query\" [$__interval]))"
+    ]
+  },
+  {
+    "name": "",
+    "description": "Logs from services running in Kubernetes",
+    "queries": [
+      " |= \"$query\""
+    ]
+  }
+]

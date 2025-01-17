@@ -1,0 +1,169 @@
+[
+  {
+    "name": "Healthy Status",
+    "description": "",
+    "queries": [
+      "up"
+    ]
+  },
+  {
+    "name": "Secrets",
+    "description": "",
+    "queries": [
+      "avg without(instance) (vault_secret_kv_count)"
+    ]
+  },
+  {
+    "name": "Number of Identity Entities",
+    "description": "",
+    "queries": [
+      "avg(vault_identity_num_entities)"
+    ]
+  },
+  {
+    "name": "Identity Entities Aliases by Method",
+    "description": "",
+    "queries": [
+      "avg without(instance) (vault_identity_entity_alias_count)"
+    ]
+  },
+  {
+    "name": "Sealed Status",
+    "description": "",
+    "queries": [
+      "max(1 + vault_core_unsealed)"
+    ]
+  },
+  {
+    "name": "Number of Leases",
+    "description": "",
+    "queries": [
+      "avg(vault_expire_num_leases)"
+    ]
+  },
+  {
+    "name": "Heap Objects Used",
+    "description": "",
+    "queries": [
+      "avg(vault_runtime_heap_objects / vault_runtime_malloc_count)"
+    ]
+  },
+  {
+    "name": "Number of Goroutines",
+    "description": "",
+    "queries": [
+      "avg(vault_runtime_num_goroutines)"
+    ]
+  },
+  {
+    "name": "Allocated MB",
+    "description": "",
+    "queries": [
+      "avg(vault_runtime_alloc_bytes)"
+    ]
+  },
+  {
+    "name": "Available Tokens",
+    "description": "",
+    "queries": [
+      "avg(vault_token_count)"
+    ]
+  },
+  {
+    "name": "Tokens by Policy",
+    "description": "",
+    "queries": [
+      "avg without(instance) (vault_token_count_by_policy)"
+    ]
+  },
+  {
+    "name": "Pending Tokens",
+    "description": "",
+    "queries": [
+      "avg(vault_token_create_count - vault_token_store_count)"
+    ]
+  },
+  {
+    "name": "Tokens by TTL",
+    "description": "",
+    "queries": [
+      "avg without(instance) (vault_token_count_by_ttl)"
+    ]
+  },
+  {
+    "name": "Tokens by Auth Method",
+    "description": "",
+    "queries": [
+      "avg without(instance) (vault_token_count_by_auth)"
+    ]
+  },
+  {
+    "name": "Tokens Creation by Method & TTL",
+    "description": "",
+    "queries": [
+      "avg by(auth_method, creation_ttl) (vault_token_creation)"
+    ]
+  },
+  {
+    "name": "Token Creation/Storage",
+    "description": "",
+    "queries": [
+      "avg without(instance) (vault_token_create_count)",
+      "avg without(instance) (vault_token_store_count)"
+    ]
+  },
+  {
+    "name": "Token Lookups",
+    "description": "",
+    "queries": [
+      "avg(irate(vault_token_lookup_count[1m]))"
+    ]
+  },
+  {
+    "name": "Log Request Failures",
+    "description": "",
+    "queries": [
+      "max(idelta(vault_audit_log_request_failure[1m]))"
+    ]
+  },
+  {
+    "name": "Log Requests",
+    "description": "",
+    "queries": [
+      "avg(irate(vault_audit_log_request_count[1m]))",
+      "avg(irate(vault_audit_log_response_count[1m]))",
+      "avg(irate(vault_core_handle_request_count[1m]))"
+    ]
+  },
+  {
+    "name": "Consul Requests",
+    "description": "",
+    "queries": [
+      "avg(irate(vault_consul_get_count[1m]))",
+      "avg(irate(vault_consul_put_count[1m]))",
+      "avg(irate(vault_consul_delete_count[1m]))",
+      "irate(vault_consul_list_count[1m])"
+    ]
+  },
+  {
+    "name": "Log Response Failures",
+    "description": "",
+    "queries": [
+      "max(idelta(vault_audit_log_response_failure[1m]))"
+    ]
+  },
+  {
+    "name": "Policy Set",
+    "description": "",
+    "queries": [
+      "avg(irate(vault_policy_set_policy_count[1m]))"
+    ]
+  },
+  {
+    "name": "Policy Get",
+    "description": "",
+    "queries": [
+      "avg(irate(vault_policy_get_policy_count[1m]))"
+    ]
+  }
+]

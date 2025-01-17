@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Total datapoints",
+    "description": "How many datapoints are in storage",
+    "queries": [
+      "sum(vm_rows)"
+    ]
+  },
+  {
+    "name": "Ingestion rate",
+    "description": "Shows the datapoints ingestion rate.",
+    "queries": [
+      "sum(rate(vm_rows_inserted_total[30m]))"
+    ]
+  },
+  {
+    "name": "Read requests",
+    "description": "Shows the rate of HTTP read requests.",
+    "queries": [
+      "sum(rate(vm_http_requests_total[30m]))"
+    ]
+  },
+  {
+    "name": "Available CPU",
+    "description": "Total number of available CPUs for VM process",
+    "queries": [
+      "sum(vm_available_cpu_cores)"
+    ]
+  },
+  {
+    "name": "Uptime",
+    "description": "",
+    "queries": [
+      "min(vm_app_uptime_seconds)"
+    ]
+  },
+  {
+    "name": "Active series",
+    "description": "Shows the number of [active time series](https://docs.victoriametrics.com/faq/#what-is-an-active-time-series) with new data points inserted during the last hour. High value may result in ingestion slowdown.",
+    "queries": [
+      "sum(vm_cache_entries)"
+    ]
+  },
+  {
+    "name": "Disk space usage",
+    "description": "Total amount of used disk space",
+    "queries": [
+      "sum(vm_data_size_bytes)"
+    ]
+  },
+  {
+    "name": "Bytes per point",
+    "description": "Average disk usage per datapoint.",
+    "queries": [
+      "max(sum(vm_data_size_bytes) / sum(vm_rows))"
+    ]
+  },
+  {
+    "name": "Available memory",
+    "description": "Total size of available memory for VM process",
+    "queries": [
+      "sum(vm_available_memory_bytes)"
+    ]
+  },
+  {
+    "name": "Datapoints ingestion rate",
+    "description": "How many datapoints are inserted into storage per second",
+    "queries": [
+      "sum(rate(vm_rows_inserted_total[30m])) by (type, instance) > 0"
+    ]
+  },
+  {
+    "name": "Requests rate",
+    "description": "* `*` - unsupported query path\n* `/write` - insert into VM\n* `/metrics` - query VM system metrics\n* `/query` - query instant values\n* `/query_range` - query over a range of time\n* `/series` - match a certain label set\n* `/label/{}/values` - query a list of label values (variables mostly)",
+    "queries": [
+      "sum(rate(vm_http_requests_total[30m])) by (path, instance) > 0"
+    ]
+  },
+  {
+    "name": "Active time series",
+    "description": "Shows the number of [active time series](https://docs.victoriametrics.com/faq/#what-is-an-active-time-series) with new data points inserted during the last hour. High value may result in ingestion slowdown. \n\nSee following link for details:",
+    "queries": [
+      "vm_cache_entries"
+    ]
+  },
+  {
+    "name": "Query duration 0.99 quantile",
+    "description": "The less time it takes is better.\n* `*` - unsupported query path\n* `/write` - insert into VM\n* `/metrics` - query VM system metrics\n* `/query` - query instant values\n* `/query_range` - query over a range of time\n* `/series` - match a certain label set\n* `/label/{}/values` - query a list of label values (variables mostly)",
+    "queries": [
+      "max(vm_request_duration_seconds) by (instance, path) > 0"
+    ]
+  },
+  {
+    "name": "Requests error rate",
+    "description": "* `*` - unsupported query path\n* `/write` - insert into VM\n* `/metrics` - query VM system metrics\n* `/query` - query instant values\n* `/query_range` - query over a range of time\n* `/series` - match a certain label set\n* `/label/{}/values` - query a list of label values (variables mostly)",
+    "queries": [
+      "sum(rate(vm_http_request_errors_total[30m])) by (instance, path) > 0"
+    ]
+  },
+  {
+    "name": "Logging rate",
+    "description": "Shows the rate of logging the messages by their level. Unexpected spike in rate is a good reason to check logs.",
+    "queries": [
+      "sum(rate(vm_log_messages_total[30m])) by (instance, level, location) > 0"
+    ]
+  }
+]

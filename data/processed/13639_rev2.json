@@ -1,0 +1,16 @@
+[
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "sum(count_over_time( |= \"$search\" [$__interval]))"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      " |= \"$search\" | logfmt"
+    ]
+  }
+]

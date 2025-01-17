@@ -1,0 +1,30 @@
+[
+  {
+    "name": "USW",
+    "description": "",
+    "queries": [
+      "sum(unpoller_site_switches)"
+    ]
+  },
+  {
+    "name": "UAP",
+    "description": "",
+    "queries": [
+      "sum(unpoller_site_aps)"
+    ]
+  },
+  {
+    "name": "USG",
+    "description": "",
+    "queries": [
+      "sum(unpoller_site_gateways)"
+    ]
+  },
+  {
+    "name": "Stations",
+    "description": "",
+    "queries": [
+      "sum(unpoller_site_stations)"
+    ]
+  }
+]

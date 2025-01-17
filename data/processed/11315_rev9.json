@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Wireless Devices",
+    "description": "This table represents current (latest) data.\nBytes columns are lifetime totals.",
+    "queries": [
+      "sum by (channel,essid,ip,mac,name,network,oui,radio_desc,site_name,source) (\n unpoller_client_receive_bytes_total)",
+      "sum by (channel,essid,ip,mac,name,network,oui,radio_desc,site_name,source) (\n unpoller_client_transmit_bytes_total)",
+      "sum by (channel,essid,ip,mac,name,network,oui,radio_desc,site_name,source) (\n unpoller_client_uptime_seconds)"
+    ]
+  },
+  {
+    "name": "Wired Devices",
+    "description": "This table represents current (latest) data.\nBytes columns are lifetime totals.",
+    "queries": [
+      "sum by (ap_name,ip,mac,name,network,oui,site_name,source,sw_port) (\n     unpoller_client_uptime_seconds)",
+      "sum by (ap_name,ip,mac,name,network,oui,site_name,source,sw_port) (\n     unpoller_client_receive_bytes_total)",
+      "sum by (ap_name,ip,mac,name,network,oui,site_name,source,sw_port) (\n     unpoller_client_transmit_bytes_total)"
+    ]
+  },
+  {
+    "name": "Clients / Channel",
+    "description": "Visualize wireless channel usage w/ wired client counts.",
+    "queries": [
+      "count by (hostname) (unpoller_client_uptime_seconds)",
+      "count by (channel) (unpoller_client_roam_count_total)"
+    ]
+  },
+  {
+    "name": "Clients / AP Radio",
+    "description": "Visualize how many clients are connected to which radios/APs.",
+    "queries": [
+      "count by (radio_proto) (unpoller_client_roam_count_total)"
+    ]
+  },
+  {
+    "name": "Client MAC OUI Breakdown",
+    "description": "This shows an OUI breakdown from Unifi's perspective. e = wired, w = wireless",
+    "queries": [
+      "count by (oui) (unpoller_client_uptime_seconds)",
+      "count by (oui) (+unpoller_client_uptime_seconds)"
+    ]
+  },
+  {
+    "name": "UAP Bandwidth / Wireless Devices",
+    "description": "Bandwidth usage per wireless devices as reported by the UAPs. Rx is on the negative axis. Does not include amazon devices.",
+    "queries": [
+      "sum by ($Identifier) (rate(unpoller_client_transmit_bytes_total[$__interval]))",
+      "sum by ($Identifier) (rate(unpoller_client_receive_bytes_total[$__interval]))"
+    ]
+  },
+  {
+    "name": "Switch Bandwidth / Wired Devices",
+    "description": "Wired TX / RX bytes per second (calculated in 30 second buckets). Rx is on the negative axis. Does not include amazon and camera devices. Unaffected by the AP setting.",
+    "queries": [
+      "sum by ($Identifier) (rate(unpoller_client_transmit_bytes_total[$__interval]))",
+      "sum by ($Identifier) (rate(unpoller_client_receive_bytes_total[$__interval]))"
+    ]
+  },
+  {
+    "name": "Client Bandwidth / Echos & FireTVs",
+    "description": "Amazon Devices TX / RX bytes per second. Rx is on the negative axis. My home network has a ton of Amazon devices, so I broke them out separately. If you don't have Amazon devices, or they have different names, you can edit the query to use a different name. e = wired, w = wireless",
+    "queries": [
+      "sum by ($Identifier) (rate(unpoller_client_transmit_bytes_total[$__interval]))",
+      "sum by ($Identifier) (rate(unpoller_client_receive_bytes_total[$__interval]))",
+      "sum by ($Identifier) (rate(unpoller_client_transmit_bytes_total[$__interval]))",
+      "sum by ($Identifier) (rate(unpoller_client_receive_bytes_total[$__interval]))"
+    ]
+  },
+  {
+    "name": "Client Bandwidth: Cameras",
+    "description": "Cameras TX / RX bytes per second. Rx is on the negative axis. This graph shows any device with the word \"camera\" in its name and has nothing to do with UniFi Protect/video products. e = wired, w = wireless",
+    "queries": [
+      "sum by ($Identifier) (rate(unpoller_client_transmit_bytes_total[$__interval]))",
+      "sum by ($Identifier) (rate(unpoller_client_receive_bytes_total[$__interval]))",
+      "sum by ($Identifier) (rate(unpoller_client_transmit_bytes_total[$__interval]))",
+      "sum by ($Identifier) (rate(unpoller_client_receive_bytes_total[$__interval]))"
+    ]
+  },
+  {
+    "name": "Received Signal Strength Indicator",
+    "description": "",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_rssi_db)"
+    ]
+  },
+  {
+    "name": "Wireless Signal",
+    "description": "",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_radio_signal_db)"
+    ]
+  },
+  {
+    "name": "UAP Client Stats / Noise",
+    "description": "",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_noise_db)"
+    ]
+  },
+  {
+    "name": "TX Rate",
+    "description": "Client reported transmit rate.",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_radio_transmit_rate_bps)"
+    ]
+  },
+  {
+    "name": "Client Wifi Tx Attempts",
+    "description": "",
+    "queries": [
+      "avg by ($Identifier) (rate(unpoller_client_wifi_attempts_transmit_total[$__interval]))"
+    ]
+  },
+  {
+    "name": "RX Rate",
+    "description": "Client reported receive rate.",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_radio_receive_rate_bps)"
+    ]
+  },
+  {
+    "name": "Client Transmit Retries",
+    "description": "",
+    "queries": [
+      "sum by ($Identifier) (rate(unpoller_client_transmit_retries_total[$__interval]))"
+    ]
+  },
+  {
+    "name": "Client Transmit Power",
+    "description": "",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_radio_transmit_power_dbm)"
+    ]
+  },
+  {
+    "name": "Client Anomalies",
+    "description": "",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_anomalies)"
+    ]
+  },
+  {
+    "name": "Client Satisfaction",
+    "description": "",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_satisfaction_ratio)"
+    ]
+  },
+  {
+    "name": "Roam Count",
+    "description": "",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_roam_count_total)"
+    ]
+  },
+  {
+    "name": "Client Connection Quality %",
+    "description": "",
+    "queries": [
+      "sum by ($Identifier) (unpoller_client_ccq_ratio)"
+    ]
+  }
+]

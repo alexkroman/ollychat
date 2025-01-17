@@ -1,0 +1,168 @@
+[
+  {
+    "name": "PostgreSQL Version",
+    "description": "Source: server_version_num",
+    "queries": [
+      "max(pg_settings_server_version_num)"
+    ]
+  },
+  {
+    "name": "Max Replication Lag",
+    "description": "Max Replication lag behind master in seconds\n\nOnly available on a standby system.\n\nSource: pg_last_xact_replay_timestamp\n\nUse: pg_stat_replication for Details.",
+    "queries": [
+      "max(pg_replication_lag)"
+    ]
+  },
+  {
+    "name": "Active clients",
+    "description": "Clients executing Statements.\n\nSource: pg_stat_activity",
+    "queries": [
+      "sum(pg_stat_activity_count)"
+    ]
+  },
+  {
+    "name": "Shared Buffer Hits",
+    "description": "Shared buffer hits vs reads from disc",
+    "queries": [
+      "sum(pg_stat_database_blks_hit)/(sum(pg_stat_database_blks_hit)+sum(pg_stat_database_blks_read))*100"
+    ]
+  },
+  {
+    "name": "Connections used",
+    "description": "Percentage of max_connections used",
+    "queries": [
+      "sum(pg_stat_database_numbackends)/max(pg_settings_max_connections)"
+    ]
+  },
+  {
+    "name": "Commit Ratio",
+    "description": "Transaction committed vs rollbacked",
+    "queries": [
+      "sum(pg_stat_database_xact_commit)/(sum(pg_stat_database_xact_commit) + sum(pg_stat_database_xact_rollback))"
+    ]
+  },
+  {
+    "name": "PostgreSQL Uptime",
+    "description": "Source: pg_postmaster_start_time()",
+    "queries": [
+      "time()-(pg_postmaster_start_time_seconds)"
+    ]
+  },
+  {
+    "name": "Transaction rate",
+    "description": "Transactions committed + roolback per minute\n\nSource: pg_stat_database,xact_commit + xact_rollback",
+    "queries": [
+      "sum((rate(pg_stat_database_xact_commit[$Interval])))+sum((rate(pg_stat_database_xact_rollback[$Interval])))"
+    ]
+  },
+  {
+    "name": "Query rate",
+    "description": "Statements executed per Minute.\n\nSource: pg_stat_statements.calls",
+    "queries": [
+      "sum((rate(pg_stat_statements_calls[$Interval])))"
+    ]
+  },
+  {
+    "name": "Total database size",
+    "description": "Size of all databases in $Instance.\n\nSource: pg_database_size()",
+    "queries": [
+      "sum(pg_database_size)"
+    ]
+  },
+  {
+    "name": "Average query runtime",
+    "description": "Source: pg_stat_statements.total_time / pg_stat_statements.calls",
+    "queries": [
+      "sum((delta(pg_stat_statements_total_time_seconds[$Interval])))/sum((delta(pg_stat_statements_calls[$Interval])))"
+    ]
+  },
+  {
+    "name": "Shared Buffers",
+    "description": "Setting: shared_buffers in PostgreSQL.conf",
+    "queries": [
+      "pg_settings_shared_buffers_bytes"
+    ]
+  },
+  {
+    "name": "Max Connections",
+    "description": "Setting: max_connections in postgreSQL.conf",
+    "queries": [
+      "pg_settings_max_connections"
+    ]
+  },
+  {
+    "name": "Connections by state (stacked)",
+    "description": "View: pg_stat_activity",
+    "queries": [
+      "sum by (state) (pg_stat_activity_count)"
+    ]
+  },
+  {
+    "name": "Connections by database (stacked)",
+    "description": "View: pg_stat_activity",
+    "queries": [
+      "sum by (datname) (pg_stat_activity_count)"
+    ]
+  },
+  {
+    "name": "Transactions",
+    "description": "1 Minute rate of transactions committed or rollback.",
+    "queries": [
+      "sum ((rate(pg_stat_database_xact_commit[$Interval])))",
+      "sum ((rate(pg_stat_database_xact_rollback[$Interval])))"
+    ]
+  },
+  {
+    "name": "Tuples inserts/updates/deletes",
+    "description": "Source: pg_stat_database",
+    "queries": [
+      "sum((rate(pg_stat_database_tup_inserted[$Interval])))",
+      "sum((rate(pg_stat_database_tup_updated[$Interval])))",
+      "sum((rate(pg_stat_database_tup_deleted[$Interval])))"
+    ]
+  },
+  {
+    "name": "I/O Read/Write time",
+    "description": "* blk_read_time: Time spent reading data file blocks by backends in this database, in milliseconds\n* blk_write_time: Time spent writing data file blocks by backends in this database, in milliseconds\n\ntrack_io_timings needs to be activated",
+    "queries": [
+      "sum ((rate(pg_stat_database_blk_read_time[$Interval])))",
+      "sum ((rate(pg_stat_database_blk_write_time[$Interval])))"
+    ]
+  },
+  {
+    "name": "Tuples fetched/returned",
+    "description": "Source: pg_stat_database\n\n* tup_fetched: rows needed to satisfy queries\n* tup_returned: rows read/scanned",
+    "queries": [
+      "sum((rate(pg_stat_database_tup_fetched[$Interval])))",
+      "sum((rate(pg_stat_database_tup_returned[$Interval])))"
+    ]
+  },
+  {
+    "name": "Locks by state",
+    "description": "Source: pg_locks",
+    "queries": [
+      "sum by (mode) (pg_locks_count)"
+    ]
+  },
+  {
+    "name": "Deadlocks by database",
+    "description": "Should be 0 \n\nSource: pg_stat_database\n\nWith log_lock_waits turned on, deadlocks will be logged to the PostgreSQL Logfiles.",
+    "queries": [
+      "sum by (datname) ((rate(pg_stat_database_deadlocks[$Interval])))"
+    ]
+  },
+  {
+    "name": "Temporary files by database",
+    "description": "Should be 0. If temporary files are created, it can indicate insufficient work_mem. With log_temp_files the creation of temporary files are logged to the PostgreSQL Logfiles.",
+    "queries": [
+      "sum by (datname) ((rate(pg_stat_database_temp_files[$Interval])))"
+    ]
+  },
+  {
+    "name": "Replication lag ",
+    "description": "Lag behind master in seconds.\n\nOnly available on a standby System.",
+    "queries": [
+      "max(pg_replication_lag)"
+    ]
+  }
+]

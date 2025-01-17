@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Target Metric ($hpa)",
+    "description": "",
+    "queries": [
+      "kube_horizontalpodautoscaler_spec_target_metric",
+      "kube_horizontalpodautoscaler_status_target_metric\n  and on(metric_name, metric_target_type)\n    kube_horizontalpodautoscaler_spec_target_metric"
+    ]
+  },
+  {
+    "name": "Replicas ($hpa)",
+    "description": "",
+    "queries": [
+      "kube_horizontalpodautoscaler_spec_max_replicas",
+      "kube_horizontalpodautoscaler_status_desired_replicas",
+      "kube_horizontalpodautoscaler_status_current_replicas",
+      "kube_horizontalpodautoscaler_spec_min_replicas"
+    ]
+  },
+  {
+    "name": "Max Replicas",
+    "description": "",
+    "queries": [
+      "kube_horizontalpodautoscaler_spec_max_replicas"
+    ]
+  },
+  {
+    "name": "Current Replicas",
+    "description": "",
+    "queries": [
+      "kube_horizontalpodautoscaler_status_current_replicas"
+    ]
+  },
+  {
+    "name": "Min Replicas",
+    "description": "",
+    "queries": [
+      "kube_horizontalpodautoscaler_spec_min_replicas"
+    ]
+  },
+  {
+    "name": "Status Condition",
+    "description": "",
+    "queries": [
+      "kube_horizontalpodautoscaler_status_condition"
+    ]
+  }
+]

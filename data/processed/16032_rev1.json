@@ -1,0 +1,152 @@
+[
+  {
+    "name": "CNI Pods",
+    "description": "agents and nodes should match\n\nnormal pods + preemptible pods should match\nthe assigned ip addresses count,\nmodulo pods using the host network",
+    "queries": [
+      "count(awscni_eni_max)",
+      "sum(kube_node_labels)",
+      "sum(kube_pod_info)",
+      "sum(kube_pod_info)"
+    ]
+  },
+  {
+    "name": "ENI in the Cluster",
+    "description": "",
+    "queries": [
+      "sum(awscni_eni_max)",
+      "sum(awscni_eni_allocated)"
+    ]
+  },
+  {
+    "name": "IP Addresses in the Cluster",
+    "description": "Max: max IP addresses reachable with these nodes\n\nAssigned: IP addresses assigned to pods",
+    "queries": [
+      "sum(awscni_ip_max-1)",
+      "sum(awscni_assigned_ip_addresses)"
+    ]
+  },
+  {
+    "name": "Available IP Addresses in the Cluster",
+    "description": "Warm: total - assigned, already allocated and available\n\nCold: max - total, could be allocated",
+    "queries": [
+      "sum(awscni_total_ip_addresses-1-awscni_assigned_ip_addresses)",
+      "sum(awscni_ip_max-awscni_total_ip_addresses)"
+    ]
+  },
+  {
+    "name": "IP Addresses in the Cluster",
+    "description": "",
+    "queries": [
+      "sum(awscni_assigned_ip_addresses)",
+      "sum(awscni_total_ip_addresses-1)",
+      "sum(awscni_ip_max-1)"
+    ]
+  },
+  {
+    "name": "ENI Usage (node count per usage %)",
+    "description": "",
+    "queries": [
+      "count_values(\"value\", 100*awscni_eni_allocated/awscni_eni_max)"
+    ]
+  },
+  {
+    "name": "ENI Usage (Cluster)",
+    "description": "ENI usage on nodes",
+    "queries": [
+      "sum(awscni_eni_allocated/awscni_eni_max)/count(awscni_eni_allocated)"
+    ]
+  },
+  {
+    "name": "IP Addresses Usage (Cluster)",
+    "description": "IP Addresses usage on attached ENIs",
+    "queries": [
+      "sum(awscni_assigned_ip_addresses/(awscni_total_ip_addresses-1))/count(awscni_assigned_ip_addresses)"
+    ]
+  },
+  {
+    "name": "Add/Del IP Address Rate",
+    "description": "",
+    "queries": [
+      "sum (rate(awscni_add_ip_req_count[30m]))",
+      "sum (rate(awscni_del_ip_req_count[30m]))"
+    ]
+  },
+  {
+    "name": "Force Removed ENI / IP",
+    "description": "",
+    "queries": [
+      "sum(awscni_force_removed_enis)",
+      "sum(awscni_force_removed_ips)"
+    ]
+  },
+  {
+    "name": "Delete IP Address Errors",
+    "description": "Zero is good",
+    "queries": [
+      "sum (awscni_del_ip_req_count)"
+    ]
+  },
+  {
+    "name": "Delete IP Address Errors (by Reason)",
+    "description": "Zero is good",
+    "queries": [
+      "sum by (reason) (awscni_del_ip_req_count)"
+    ]
+  },
+  {
+    "name": "API Errors on the Period",
+    "description": "Zero is good",
+    "queries": [
+      "sum by (api) (sum_over_time(awscni_aws_api_error_count[$__interval]))"
+    ]
+  },
+  {
+    "name": "API Errors on the Period (by API)",
+    "description": "Non zero means errors or IP addresses leaks",
+    "queries": [
+      "sum by (api) (sum_over_time(awscni_aws_api_error_count[$__interval]))"
+    ]
+  },
+  {
+    "name": "Average AWS API Latency (5min)",
+    "description": "",
+    "queries": [
+      "avg by (api)(rate(awscni_aws_api_latency_ms_sum[5m])/rate(awscni_aws_api_latency_ms_count[5m]))"
+    ]
+  },
+  {
+    "name": "ipamd Actions in Progress",
+    "description": "",
+    "queries": [
+      "sum by (fn) (awscni_ipamd_action_inprogress)"
+    ]
+  },
+  {
+    "name": "The number of times ipamd reconciles on ENIs and IP addresses",
+    "description": "",
+    "queries": [
+      "sum(rate(awscni_reconcile_count[5m])) by (fn)"
+    ]
+  },
+  {
+    "name": "Assigned IP Addresses",
+    "description": "",
+    "queries": [
+      "awscni_assigned_ip_addresses"
+    ]
+  },
+  {
+    "name": "IP Deletion Requests (Cumulated)",
+    "description": "reason=PodDeleted is normal",
+    "queries": [
+      "awscni_del_ip_req_count"
+    ]
+  },
+  {
+    "name": "API Errors (cumulated)",
+    "description": "",
+    "queries": [
+      "awscni_aws_api_error_count"
+    ]
+  }
+]

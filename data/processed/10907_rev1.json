@@ -1,0 +1,95 @@
+[
+  {
+    "name": "API Server RPS",
+    "description": "",
+    "queries": [
+      "sum(rate(apiserver_request_count[5m]))"
+    ]
+  },
+  {
+    "name": "Current Inflight Requests",
+    "description": "",
+    "queries": [
+      "sum(apiserver_current_inflight_requests) by (requestKind)"
+    ]
+  },
+  {
+    "name": "Latency - p99 (ms)",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.99, sum(rate(apiserver_request_latencies_bucket[5m])) by (le) ) / 1e+06"
+    ]
+  },
+  {
+    "name": "API Server Response Duration (Seconds)",
+    "description": "",
+    "queries": [
+      "sum(rate(apiserver_request_duration_seconds_sum[5m])) "
+    ]
+  },
+  {
+    "name": "API Server Errors",
+    "description": "",
+    "queries": [
+      "sum(rate(apiserver_request_count[5m])) by (code)>0"
+    ]
+  },
+  {
+    "name": "Has Leader?",
+    "description": "",
+    "queries": [
+      "sum(leader_election_master_status)"
+    ]
+  },
+  {
+    "name": "Controller Manager Queue Depth",
+    "description": "",
+    "queries": [
+      "sum(volumes_depth)\r",
+      "sum(deployment_depth)\r",
+      "sum(replicaset_depth)\r",
+      "sum(service_depth)\r",
+      "sum(serviceaccount_depth)\r",
+      "sum(endpoint_depth)\r",
+      "sum(daemonset_depth)\r",
+      "sum(statefulset_depth)\r",
+      "sum(replicationmanager_depth)\r",
+      "sum(horizontalpodautoscaler_depth)"
+    ]
+  },
+  {
+    "name": "Controller Manager Adds",
+    "description": "",
+    "queries": [
+      "rate(volumes_adds[5m])\r",
+      "rate(deployment_adds[5m])\r",
+      "rate(replicaset_adds[5m])\r",
+      "rate(service_adds[5m])\r",
+      "rate(endpoint_adds[5m])\r",
+      "rate(daemonset_adds[5m])\r",
+      "rate(statefulset_adds[5m])\r",
+      "rate(horizontalpodautoscaler_adds[5m])"
+    ]
+  },
+  {
+    "name": "Has Leader?",
+    "description": "",
+    "queries": [
+      "sum(leader_election_master_status)"
+    ]
+  },
+  {
+    "name": "Scheduler Attempts",
+    "description": "",
+    "queries": [
+      "sum(increase(scheduler_schedule_attempts_total[1m])) by (result)"
+    ]
+  },
+  {
+    "name": "Scheduler Duration ",
+    "description": "",
+    "queries": [
+      "sum(rate(scheduler_e2e_scheduling_duration_seconds_sum[5m]))"
+    ]
+  }
+]

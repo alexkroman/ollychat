@@ -1,0 +1,116 @@
+[
+  {
+    "name": "CRD Objects count by controller",
+    "description": "Number of objects at kubernetes cluster per each controller",
+    "queries": [
+      "max(operator_controller_objects_count) by (controller)"
+    ]
+  },
+  {
+    "name": "Uptime",
+    "description": "",
+    "queries": [
+      "vm_app_uptime_seconds"
+    ]
+  },
+  {
+    "name": "Prometheus Objects watchers",
+    "description": " Shows per namespace watchers for Prometheus Operator objects (ServiceMonitors, PodMonitors, etc) ",
+    "queries": [
+      "sum(operator_prometheus_converter_active_watchers)"
+    ]
+  },
+  {
+    "name": "Electer Leaders",
+    "description": " Number of operator instances with obtained leader status. \n Value above 1 indicates that instances with the same job may behave incorrectly.\n It's recommend to check Operator logs. ",
+    "queries": [
+      "sum(leader_election_master_status)"
+    ]
+  },
+  {
+    "name": "Active workers",
+    "description": " Shows number of active reconcile workers",
+    "queries": [
+      "sum(controller_runtime_active_workers)"
+    ]
+  },
+  {
+    "name": "Prometheus Converter Watch events",
+    "description": " Shows amount of Prometheus Operator objects processed by Operator.",
+    "queries": [
+      "sum(rate(operator_prometheus_converter_watch_events_total[$__interval])) by (event_type,object_type_name)"
+    ]
+  },
+  {
+    "name": "Reconciliation rate by controller",
+    "description": "",
+    "queries": [
+      "sum(rate(controller_runtime_reconcile_total[30m])) by(controller)"
+    ]
+  },
+  {
+    "name": "Log message rate",
+    "description": "Shows the rate of logging the messages by their level. Unexpected spike in rate is a good reason to check logs.",
+    "queries": [
+      "sum(rate(operator_log_messages_total[30m])) by (level)"
+    ]
+  },
+  {
+    "name": "reconcile errors by controller",
+    "description": "Non zero metrics indicates about error with CR object definition (typos or incorrect values) or errors with kubernetes API connection.",
+    "queries": [
+      "sum(rate(controller_runtime_reconcile_errors_total[30m])) by(controller) > 0 ",
+      "sum(rate(controller_runtime_reconcile_total[30m])) by(controller) > 0"
+    ]
+  },
+  {
+    "name": "throttled reconcilation config events",
+    "description": "Operator limits number of reconcile configuration events to 5 events per 2 seconds by default.",
+    "queries": [
+      "sum(rate(operator_reconcile_throttled_events_total[30m])) by(controller)"
+    ]
+  },
+  {
+    "name": "Wokring queue depth",
+    "description": "Number of objects waiting in the queue for reconciliation. Non-zero values indicate that operator cannot process CR objects changes with the given resources.",
+    "queries": [
+      "max(workqueue_depth) by (name)"
+    ]
+  },
+  {
+    "name": "Reconcilation latency by controller",
+    "description": " For controllers with StatefulSet it's ok to see latency greater then 3 seconds. It could be vmalertmanager,vmcluster or vmagent in statefulMode.\n\n For other controllers, latency greater then 2 second may indicate issues with kubernetes cluster or operator's performance.\n ",
+    "queries": [
+      "histogram_quantile(0.99,sum(rate(controller_runtime_reconcile_time_seconds_bucket[30m])) by(le,controller) )"
+    ]
+  },
+  {
+    "name": "Rest client requests",
+    "description": "Number of HTTP requests to the Kubernetes API server break down by code and method",
+    "queries": [
+      "sum(rate(rest_client_requests_total[$__interval])) by (method,code)"
+    ]
+  },
+  {
+    "name": "Concurrent reconcile ($instance)",
+    "description": "Shows how many ongoing reconcile events are taking place, where:\n* `max` - equal to the value of flag`-controller.maxConcurrentReconciles`;\n* `current` - current number of reconcile workers processing CRD objects.\n\nWhen `current` hits `max` constantly, it means operator cannot process events in time. It should be either increased value for flag `-controller.maxConcurrentReconciles` or allocated  additional CPU resources to the operator.",
+    "queries": [
+      "max(max_over_time(controller_runtime_active_workers[$__interval]))",
+      "min(controller_runtime_max_concurrent_reconciles)"
+    ]
+  },
+  {
+    "name": "Go scheduling latency",
+    "description": "Shows the time goroutines have spent in runnable state before actually running. The lower is better.\n\nHigh values or values exceeding the threshold is usually a sign of insufficient CPU resources or CPU throttling. \n\nVerify that service has enough CPU resources. Otherwise, the service could work unreliably with delays in processing.",
+    "queries": [
+      "max(histogram_quantile(0.99, sum(rate(go_sched_latencies_seconds_bucket[30m])) by (job, instance, le))) by(job)"
+    ]
+  },
+  {
+    "name": "rest client latency",
+    "description": " Requests latency to the Kubernetes API server.",
+    "queries": [
+      "histogram_quantile(0.99,sum(rate(rest_client_request_duration_seconds_bucket)) by(le,method,api) )"
+    ]
+  }
+]

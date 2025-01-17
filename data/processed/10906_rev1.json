@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Uptime",
+    "description": "",
+    "queries": [
+      "time() - process_start_time_seconds"
+    ]
+  },
+  {
+    "name": "404 Error Count last $interval",
+    "description": "",
+    "queries": [
+      "sum(increase(traefik_service_requests_total[$interval]))"
+    ]
+  },
+  {
+    "name": "$protocol return code",
+    "description": "",
+    "queries": [
+      "traefik_service_requests_total"
+    ]
+  },
+  {
+    "name": "Average response time",
+    "description": "",
+    "queries": [
+      "sum(traefik_entrypoint_request_duration_seconds_sum) / sum(traefik_entrypoint_requests_total) * 1000"
+    ]
+  },
+  {
+    "name": "Average response time",
+    "description": "",
+    "queries": [
+      "sum(traefik_service_request_duration_seconds_sum) / sum(traefik_entrypoint_requests_total) * 1000"
+    ]
+  },
+  {
+    "name": "Bad Status Code Count $interval",
+    "description": "",
+    "queries": [
+      "sum(increase(traefik_service_requests_total[$interval])) by (service)"
+    ]
+  },
+  {
+    "name": "Total requests over $interval",
+    "description": "",
+    "queries": [
+      "sum(rate(traefik_service_requests_total[$interval]))"
+    ]
+  },
+  {
+    "name": "Used sockets",
+    "description": "",
+    "queries": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "name": "Access to backends",
+    "description": "",
+    "queries": [
+      "sum(rate(traefik_service_requests_total[$interval])) by (service)"
+    ]
+  },
+  {
+    "name": "ENTRYPOINT - Open Connections",
+    "description": "",
+    "queries": [
+      "sum(traefik_entrypoint_open_connections) by (method)"
+    ]
+  },
+  {
+    "name": "BACKEND - Open Connections",
+    "description": "",
+    "queries": [
+      "sum(traefik_service_open_connections) by (method)"
+    ]
+  },
+  {
+    "name": "Status Code Count per $interval",
+    "description": "",
+    "queries": [
+      "sum(increase(traefik_service_requests_total[$interval])) by (code)"
+    ]
+  }
+]

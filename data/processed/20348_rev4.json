@@ -1,0 +1,103 @@
+[
+  {
+    "name": "WF Pending",
+    "description": "",
+    "queries": [
+      "sum(argo_workflows_count)"
+    ]
+  },
+  {
+    "name": "WF Running",
+    "description": "",
+    "queries": [
+      "sum(argo_workflows_count)"
+    ]
+  },
+  {
+    "name": "WF Errors",
+    "description": "",
+    "queries": [
+      "sum(argo_workflows_count)"
+    ]
+  },
+  {
+    "name": "WF Failed",
+    "description": "",
+    "queries": [
+      "sum(argo_workflows_count)"
+    ]
+  },
+  {
+    "name": "WF Skipped",
+    "description": "",
+    "queries": [
+      "argo_workflows_count"
+    ]
+  },
+  {
+    "name": "WF Succeeded",
+    "description": "",
+    "queries": [
+      "sum(argo_workflows_count)"
+    ]
+  },
+  {
+    "name": "Workflow Status  ",
+    "description": "",
+    "queries": [
+      "sum by (prometheus, namespace, status) (argo_workflows_count)"
+    ]
+  },
+  {
+    "name": "Workflow Errors/Failures ",
+    "description": "",
+    "queries": [
+      "sum by (prometheus, namespace, status) (argo_workflows_count)"
+    ]
+  },
+  {
+    "name": "Workflow operation duration",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(argo_workflows_operation_duration_seconds_bucket[5m])) by (le,prometheus,namespace)) "
+    ]
+  },
+  {
+    "name": "Workflow queue adds ",
+    "description": "",
+    "queries": [
+      "sum by (prometheus, namespace, queue_name) (increase(argo_workflows_queue_adds_count[2m]))"
+    ]
+  },
+  {
+    "name": "Depth of the queue",
+    "description": "",
+    "queries": [
+      "sum by (prometheus, namespace, queue_name) (argo_workflows_queue_depth_count)"
+    ]
+  },
+  {
+    "name": "Time objects spend waiting in the queue",
+    "description": "",
+    "queries": [
+      "  rate(argo_workflows_queue_latency_sum[1m])\n/\n  rate(argo_workflows_queue_latency_count[1m])",
+      "  rate(argo_workflows_queue_latency_sum[1m])\n/\n  rate(argo_workflows_queue_latency_count[1m])",
+      "  rate(argo_workflows_queue_latency_sum[1m])\n/\n  rate(argo_workflows_queue_latency_count[1m])",
+      "  rate(argo_workflows_queue_latency_sum[1m])\n/\n  rate(argo_workflows_queue_latency_count[1m])"
+    ]
+  },
+  {
+    "name": "Workflow Pods by State",
+    "description": "",
+    "queries": [
+      "sum by (prometheus, namespace, status) (argo_workflows_pods_count)"
+    ]
+  },
+  {
+    "name": "Log messages",
+    "description": "",
+    "queries": [
+      "sum by (prometheus, namespace, level) (rate(log_messages[1m]))"
+    ]
+  }
+]

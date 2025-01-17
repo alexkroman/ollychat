@@ -1,0 +1,205 @@
+[
+  {
+    "name": "Prometheus version",
+    "description": "",
+    "queries": [
+      "prometheus_build_info"
+    ]
+  },
+  {
+    "name": "Instance Down",
+    "description": "",
+    "queries": [
+      "up < 1"
+    ]
+  },
+  {
+    "name": "TSDB Head Series",
+    "description": "",
+    "queries": [
+      "sum(prometheus_tsdb_head_series) by (pod)"
+    ]
+  },
+  {
+    "name": "Discovered Targets",
+    "description": "",
+    "queries": [
+      "sum(prometheus_sd_discovered_targets) by (pod)"
+    ]
+  },
+  {
+    "name": "Liveness by pod",
+    "description": "",
+    "queries": [
+      "up"
+    ]
+  },
+  {
+    "name": "Config - Last Successful Reload by pod",
+    "description": "",
+    "queries": [
+      "sum(prometheus_config_last_reload_successful) by (pod)"
+    ]
+  },
+  {
+    "name": "Target Scrapes Errors by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(prometheus_target_scrapes_exceeded_body_size_limit_total[30m])) by (pod)",
+      "sum(rate(prometheus_target_scrapes_exceeded_sample_limit_total[30m])) by (pod)",
+      "sum(rate(prometheus_target_scrapes_sample_duplicate_timestamp_total[30m])) by (pod)",
+      "sum(rate(prometheus_target_scrapes_sample_out_of_bounds_total[30m])) by (pod)",
+      "sum(rate(prometheus_target_scrapes_sample_out_of_order_total[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Number of Targets by pod",
+    "description": "",
+    "queries": [
+      "sum(prometheus_sd_discovered_targets) by (pod)"
+    ]
+  },
+  {
+    "name": "Target Sync by pod, scrape_job",
+    "description": "",
+    "queries": [
+      "sum(rate(prometheus_target_sync_length_seconds_sum[30m])) by (pod, scrape_job) * 1000"
+    ]
+  },
+  {
+    "name": "Average Scrape Interval by pod",
+    "description": "",
+    "queries": [
+      "round(sum(rate(prometheus_target_interval_length_seconds_sum[30m]) / rate(prometheus_target_interval_length_seconds_count[30m])) by (pod))"
+    ]
+  },
+  {
+    "name": "TSDB Head Series & Chunks by pod",
+    "description": "",
+    "queries": [
+      "sum(prometheus_tsdb_head_series) by (pod)",
+      "sum(prometheus_tsdb_head_chunks) by (pod)"
+    ]
+  },
+  {
+    "name": "TSDB Head samples appended - rate by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(prometheus_tsdb_head_samples_appended_total[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "TSDB Blocks Loaded by pod",
+    "description": "",
+    "queries": [
+      "sum(prometheus_tsdb_blocks_loaded) by (pod)"
+    ]
+  },
+  {
+    "name": "TSDB Rate of Compactions by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(prometheus_tsdb_compactions_total[30m])) by (pod)",
+      "sum(rate(prometheus_tsdb_compactions_triggered_total[30m])) by (pod)",
+      "sum(rate(prometheus_tsdb_compactions_skipped_total[30m])) by (pod)",
+      "sum(rate(prometheus_tsdb_compactions_failed_total[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "TSDB Reload Failures by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(prometheus_tsdb_reloads_failures_total[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "TSDB Created & Deleted series by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(prometheus_tsdb_head_series_created_total[30m])) by (pod)",
+      "sum(rate(prometheus_tsdb_head_series_removed_total[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Engine Query Count by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(prometheus_engine_query_duration_seconds_count[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Engine Query Duration by pod, slice",
+    "description": "",
+    "queries": [
+      "max(prometheus_engine_query_duration_seconds) by (pod, slice) * 1000"
+    ]
+  },
+  {
+    "name": "CPU Usage by pod, container",
+    "description": "",
+    "queries": [
+      "sum(rate(container_cpu_usage_seconds_total[30m])) by (pod, container)"
+    ]
+  },
+  {
+    "name": "Memory Usage by container",
+    "description": "",
+    "queries": [
+      "sum(container_memory_working_set_bytes) by (pod, container)"
+    ]
+  },
+  {
+    "name": "Persistent Volumes - Capacity and usage in %",
+    "description": "",
+    "queries": [
+      "sum(kubelet_volume_stats_used_bytes) by (persistentvolumeclaim) / sum(kubelet_volume_stats_capacity_bytes) by (persistentvolumeclaim)"
+    ]
+  },
+  {
+    "name": "Persistent Volumes - Capacity and usage in bytes",
+    "description": "",
+    "queries": [
+      "sum(kubelet_volume_stats_used_bytes) by (persistentvolumeclaim)",
+      "sum(kubelet_volume_stats_capacity_bytes) by (persistentvolumeclaim)"
+    ]
+  },
+  {
+    "name": "Persistent Volumes - Inodes",
+    "description": "",
+    "queries": [
+      "1 - sum(kubelet_volume_stats_inodes_used) by (persistentvolumeclaim) / sum(kubelet_volume_stats_inodes) by (persistentvolumeclaim)"
+    ]
+  },
+  {
+    "name": "Network - Bandwidth by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_bytes_total[30m])) by (pod)",
+      "- sum(rate(container_network_transmit_bytes_total[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Network - Packets rate by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_packets_total[30m])) by (pod)",
+      "- sum(rate(container_network_transmit_packets_total[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Network - Packets Dropped by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_packets_dropped_total[30m])) by (pod)",
+      "- sum(rate(container_network_transmit_packets_dropped_total[30m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Network - Errors by pod",
+    "description": "",
+    "queries": [
+      "sum(rate(container_network_receive_errors_total[30m])) by (pod)",
+      "- sum(rate(container_network_transmit_errors_total[30m])) by (pod)"
+    ]
+  }
+]

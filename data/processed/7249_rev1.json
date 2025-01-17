@@ -1,0 +1,108 @@
+[
+  {
+    "name": "Current Connections",
+    "description": "",
+    "queries": [
+      "sum(nginx_connections_total)"
+    ]
+  },
+  {
+    "name": "Least CPU Idle",
+    "description": "",
+    "queries": [
+      "sort_desc(min(avg(rate(node_cpu_seconds_total[2m])) by (instance)))"
+    ]
+  },
+  {
+    "name": "Min Space",
+    "description": "",
+    "queries": [
+      "min(node_filesystem_avail_bytes/node_filesystem_size_bytes)"
+    ]
+  },
+  {
+    "name": "Min Mem",
+    "description": "",
+    "queries": [
+      "min(node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)"
+    ]
+  },
+  {
+    "name": "Request Time",
+    "description": "",
+    "queries": [
+      "avg(irate(http_request_duration_seconds_count[10m]))"
+    ]
+  },
+  {
+    "name": "Pod Restarts",
+    "description": "",
+    "queries": [
+      "count(sum by (pod)(delta(kube_pod_container_status_restarts_total[15m]) > 0))"
+    ]
+  },
+  {
+    "name": "Pods Restarted",
+    "description": "",
+    "queries": [
+      "sum by (pod)(delta(kube_pod_container_status_restarts_total[15m]) > 0)"
+    ]
+  },
+  {
+    "name": "Pods Running Count",
+    "description": "",
+    "queries": [
+      "sum (kube_pod_status_phase) by (phase)",
+      "kubelet_running_pod_count"
+    ]
+  },
+  {
+    "name": "Load 1m",
+    "description": "",
+    "queries": [
+      "node_load1"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "queries": [
+      "node_memory_MemFree_bytes + node_memory_Buffers_bytes + node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "name": "CPU Idle Avg",
+    "description": "",
+    "queries": [
+      "avg(rate(node_cpu_seconds_total[2m])) by (instance)"
+    ]
+  },
+  {
+    "name": "Node Storage",
+    "description": "",
+    "queries": [
+      "min(node_filesystem_avail_bytes/node_filesystem_size_bytes) by (device, instance)"
+    ]
+  },
+  {
+    "name": "Disk IO s",
+    "description": "",
+    "queries": [
+      "rate(node_disk_io_time_seconds_total[2m])"
+    ]
+  },
+  {
+    "name": "Top 5 Memory Intense Pods",
+    "description": "",
+    "queries": [
+      "topk(5,sum(container_memory_usage_bytes) by (pod_name))"
+    ]
+  },
+  {
+    "name": "TOP CPU Containers",
+    "description": "",
+    "queries": [
+      "topk(5, sum(rate(container_cpu_usage_seconds_total[2m])) by (pod_name, container_name))"
+    ]
+  }
+]

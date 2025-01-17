@@ -1,0 +1,153 @@
+[
+  {
+    "name": "Cluster memory usage",
+    "description": "",
+    "queries": [
+      "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100"
+    ]
+  },
+  {
+    "name": "Cluster CPU usage (5m avg)",
+    "description": "",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores) * 100"
+    ]
+  },
+  {
+    "name": "Cluster filesystem usage",
+    "description": "",
+    "queries": [
+      "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "",
+    "queries": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "",
+    "queries": [
+      "(machine_memory_bytes)"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[5m]))"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "",
+    "queries": [
+      "machine_cpu_physical_cores"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "",
+    "queries": [
+      "sum (container_fs_usage_bytes)"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "",
+    "queries": [
+      "sum (container_fs_limit_bytes)"
+    ]
+  },
+  {
+    "name": "Network I/O pressure",
+    "description": "",
+    "queries": [
+      "sum (rate (container_network_receive_bytes_total[5m]))",
+      "- sum (rate (container_network_transmit_bytes_total[5m]))"
+    ]
+  },
+  {
+    "name": "CPU use by namespace",
+    "description": "",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[5m])) by (namespace)"
+    ]
+  },
+  {
+    "name": "Memory use by namespace",
+    "description": "",
+    "queries": [
+      "sum (container_memory_working_set_bytes) by (namespace)"
+    ]
+  },
+  {
+    "name": "Pods CPU usage (5m avg)",
+    "description": "",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[5m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Containers CPU usage (5m avg)",
+    "description": "",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[5m])) by (container_name, pod)",
+      "sum (rate (container_cpu_usage_seconds_total[5m])) by (node, name, image)",
+      "sum (rate (container_cpu_usage_seconds_total[5m])) by (node, rkt_container_name)"
+    ]
+  },
+  {
+    "name": "All processes CPU usage (5m avg)",
+    "description": "",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[5m])) by (id)"
+    ]
+  },
+  {
+    "name": "Pods memory usage",
+    "description": "",
+    "queries": [
+      "sum (container_memory_working_set_bytes) by (pod)"
+    ]
+  },
+  {
+    "name": "Containers memory usage",
+    "description": "",
+    "queries": [
+      "sum (container_memory_working_set_bytes) by (container_name, pod)",
+      "sum (container_memory_working_set_bytes) by (node, name, image)",
+      "sum (container_memory_working_set_bytes) by (node, rkt_container_name)"
+    ]
+  },
+  {
+    "name": "All processes memory usage",
+    "description": "",
+    "queries": [
+      "sum (container_memory_working_set_bytes) by (id)"
+    ]
+  },
+  {
+    "name": "Pods network I/O (5m avg)",
+    "description": "",
+    "queries": [
+      "sum (rate (container_network_receive_bytes_total[5m])) by (pod)",
+      "- sum (rate (container_network_transmit_bytes_total[5m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Containers network I/O (5m avg)",
+    "description": "",
+    "queries": [
+      "sum (rate (container_network_receive_bytes_total[5m])) by (container_name, pod)",
+      "- sum (rate (container_network_transmit_bytes_total[5m])) by (container_name, pod)",
+      "sum (rate (container_network_receive_bytes_total[5m])) by (node, name, image)",
+      "- sum (rate (container_network_transmit_bytes_total[5m])) by (node, name, image)",
+      "sum (rate (container_network_transmit_bytes_total[5m])) by (node, rkt_container_name)",
+      "- sum (rate (container_network_transmit_bytes_total[5m])) by (node, rkt_container_name)"
+    ]
+  }
+]

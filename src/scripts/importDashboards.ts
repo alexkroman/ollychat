@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-
+import { promql, Expression } from 'tsqtsq';
+import { allMetricNames } from '../utils/metricsFetcher.js';
 const inputDir = 'data/raw'; // Directory containing JSON files
 const outputDir = 'data/processed'; // Directory to save processed files
+
+console.log(allMetricNames);
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {

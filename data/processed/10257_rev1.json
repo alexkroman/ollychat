@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Desired Replicas",
+    "description": "",
+    "queries": [
+      "kube_hpa_status_desired_replicas"
+    ]
+  },
+  {
+    "name": "Current Replicas",
+    "description": "",
+    "queries": [
+      "kube_hpa_status_current_replicas"
+    ]
+  },
+  {
+    "name": "Min Replicas",
+    "description": "",
+    "queries": [
+      "kube_hpa_spec_min_replicas"
+    ]
+  },
+  {
+    "name": "Max Replicas",
+    "description": "",
+    "queries": [
+      "kube_hpa_spec_max_replicas"
+    ]
+  },
+  {
+    "name": "Replicas",
+    "description": "",
+    "queries": [
+      "kube_hpa_status_desired_replicas",
+      "kube_hpa_status_current_replicas",
+      "kube_hpa_spec_max_replicas",
+      "kube_hpa_spec_min_replicas"
+    ]
+  }
+]

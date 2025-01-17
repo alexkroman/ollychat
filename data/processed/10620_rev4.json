@@ -1,0 +1,70 @@
+[
+  {
+    "name": "PIPELINES #",
+    "description": "",
+    "queries": [
+      "count(gitlab_ci_pipeline_run_count)"
+    ]
+  },
+  {
+    "name": "FAILED PIPELINES #",
+    "description": "",
+    "queries": [
+      "count(gitlab_ci_pipeline_status > 0) or vector(0)"
+    ]
+  },
+  {
+    "name": "RUNS # (in the last hour)",
+    "description": "",
+    "queries": [
+      "sum(increase(gitlab_ci_pipeline_run_count[1h]))"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "queries": [
+      "(gitlab_ci_pipeline_status * 1 > 0) or (gitlab_ci_pipeline_status * 2 > 0) or (gitlab_ci_pipeline_status * 3 > 0) or (gitlab_ci_pipeline_status * 4 > 0)"
+    ]
+  },
+  {
+    "name": "Average Pipeline Run Frequency",
+    "description": "",
+    "queries": [
+      "avg(time() - gitlab_ci_pipeline_timestamp)"
+    ]
+  },
+  {
+    "name": "Average Pipeline Duration",
+    "description": "",
+    "queries": [
+      "avg(gitlab_ci_pipeline_duration_seconds)"
+    ]
+  },
+  {
+    "name": "PIPELINE RUNS",
+    "description": "",
+    "queries": [
+      "sum(increase(gitlab_ci_pipeline_run_count[1m])) by (project, ref) / sum(increase(gitlab_ci_pipeline_run_count[1m])) by (project, ref)"
+    ]
+  },
+  {
+    "name": "SUCCESSFULLY COMPLETED",
+    "description": "",
+    "queries": [
+      "-max(time() - gitlab_ci_pipeline_timestamp) by (project, ref, kind) unless max(gitlab_ci_pipeline_status) by (project, ref, kind) > 0",
+      "max(gitlab_ci_pipeline_duration_seconds) by (project, ref, kind) unless (max(gitlab_ci_pipeline_status) by (project, ref, kind) > 0)",
+      "max(gitlab_ci_pipeline_id) by (project, ref, kind) unless (max(gitlab_ci_pipeline_status) by (project, ref, kind) > 0)"
+    ]
+  },
+  {
+    "name": "RUNNING, FAILED OR NOT COMPLETED",
+    "description": "",
+    "queries": [
+      "-max(time() - gitlab_ci_pipeline_timestamp) by (project, ref, kind) unless max(gitlab_ci_pipeline_status) by (project, ref, kind) > 0",
+      "max(gitlab_ci_pipeline_duration_seconds) by (project, ref, kind) unless (max(gitlab_ci_pipeline_status) by (project, ref, kind) > 0)",
+      "(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 2) > 0 or\n(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 3) > 0 or\n(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 4) > 0 or\n(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 5) > 0 or\n(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 6) > 0 or\n(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 7) > 0 or\n(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 8) > 0 or\n(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 9) > 0 or\n(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 10) > 0 or\n(max(gitlab_ci_pipeline_status) by (project, ref, kind) * 11) > 0",
+      "max(gitlab_ci_pipeline_id) by (project, ref, kind, job_name) unless (max(gitlab_ci_pipeline_status) by (project, ref, kind, job_name) > 0)"
+    ]
+  }
+]

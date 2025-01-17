@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Performance Overview",
+    "description": "",
+    "queries": [
+      "avg(k6_vus)",
+      "histogram_quantile($quantile, sum by (le) (rate(k6_http_req_duration_seconds[30m])))",
+      "sum(irate(k6_http_reqs_total[30m]))",
+      "avg(round(k6_http_req_failed_rate, 0.1)*100)",
+      "sum(irate(k6_http_reqs_total[30m]))"
+    ]
+  },
+  {
+    "name": "HTTP requests",
+    "description": "",
+    "queries": [
+      "sum(k6_http_reqs_total)"
+    ]
+  },
+  {
+    "name": "HTTP request failures",
+    "description": "",
+    "queries": [
+      "sum(k6_http_reqs_total)"
+    ]
+  },
+  {
+    "name": "Peak RPS",
+    "description": "",
+    "queries": [
+      "sum(irate(k6_http_reqs_total[30m]))"
+    ]
+  },
+  {
+    "name": "HTTP Request Duration",
+    "description": "Select a different quantile to change the query",
+    "queries": [
+      "histogram_quantile($quantile, sum by(le) (rate(k6_http_req_duration_seconds[30m])))"
+    ]
+  },
+  {
+    "name": "Transfer Rate",
+    "description": "",
+    "queries": [
+      "avg(irate(k6_data_sent_total[30m]))",
+      "avg(irate(k6_data_received_total[30m]))"
+    ]
+  },
+  {
+    "name": "Iterations",
+    "description": "",
+    "queries": [
+      "histogram_quantile($quantile, sum by(le) (rate(k6_iteration_duration_seconds[30m])))",
+      "avg(k6_dropped_iterations_total)"
+    ]
+  },
+  {
+    "name": "HTTP Latency Timings",
+    "description": "Select a different quantile to change the query\n\n<a href=\"https://k6.io/docs/using-k6/metrics/reference/#http\" target=\"_blank\">HTTP-specific built-in metrics</a>",
+    "queries": [
+      "histogram_quantile($quantile, sum by(le) (rate(k6_http_req_blocked_seconds[30m])))",
+      "histogram_quantile($quantile, sum by(le) (rate(k6_http_req_tls_handshaking_seconds[30m])))",
+      "histogram_quantile($quantile, sum by(le) (rate(k6_http_req_sending_seconds[30m])))",
+      "histogram_quantile($quantile, sum by(le) (rate(k6_http_req_waiting_seconds[30m])))",
+      "histogram_quantile($quantile, sum by(le) (rate(k6_http_req_receiving_seconds[30m])))",
+      "histogram_quantile($quantile, sum by(le) (rate(k6_http_req_duration_seconds[30m])))"
+    ]
+  },
+  {
+    "name": "HTTP Latency Stats",
+    "description": "Select a different quantile to change the query",
+    "queries": [
+      "histogram_quantile($quantile, sum by (le) ((rate(k6_http_req_duration_seconds[30m]))))",
+      "histogram_quantile($quantile, sum by(le) (rate(k6_http_req_waiting_seconds[30m])))",
+      "histogram_quantile($quantile, sum by(le) (rate(k6_http_req_waiting_seconds[30m])))"
+    ]
+  },
+  {
+    "name": "HTTP Request Rate",
+    "description": "",
+    "queries": [
+      "sum(irate(k6_http_reqs_total[30m]))",
+      "sum(irate(k6_http_reqs_total[30m]))",
+      "sum(irate(k6_http_reqs_total[30m]))"
+    ]
+  },
+  {
+    "name": "Requests by URL",
+    "description": "min/max/p95/p99 depends on the available Quantile Stats",
+    "queries": [
+      "histogram_quantile(0, sum by(le, name, method, status) (rate(k6_http_req_duration_seconds[30m])))",
+      "histogram_quantile(1, sum by(le, name, method, status) (rate(k6_http_req_duration_seconds[30m])))",
+      "histogram_quantile(0.95, sum by(le, name, method, status) (rate(k6_http_req_duration_seconds[30m])))",
+      "histogram_quantile(0.99, sum by(le, name, method, status) (rate(k6_http_req_duration_seconds[30m])))"
+    ]
+  },
+  {
+    "name": "Checks list",
+    "description": "",
+    "queries": [
+      "round(k6_checks_rate, 0.1)",
+      "round(k6_checks_rate, 0.1)"
+    ]
+  },
+  {
+    "name": "Checks Success Rate (aggregate individual checks)",
+    "description": "Filter by check name to query a particular check",
+    "queries": [
+      "avg(round(k6_checks_rate, 0.1)*100)"
+    ]
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Total requests  ",
+    "description": "",
+    "queries": [
+      "sum by(host) (count_over_time([$__interval]))  "
+    ]
+  },
+  {
+    "name": "Requests per status code",
+    "description": "",
+    "queries": [
+      "sum by (status_code) (count_over_time( \n| pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`  | __error__=\"\"\n | status_code =~\"0|2..|3..|4..|5..\" \n[$__interval])) "
+    ]
+  },
+  {
+    "name": "Istio logs in bytes",
+    "description": "",
+    "queries": [
+      "bytes_over_time([$__interval])"
+    ]
+  },
+  {
+    "name": "Total Bytes Sent",
+    "description": "",
+    "queries": [
+      "sum by (upstream_cluster) (sum_over_time(\n| pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`\n| unwrap bytes_sent\n|  __error__=\"\"\n[$__interval]))"
+    ]
+  },
+  {
+    "name": "Recent requests",
+    "description": "",
+    "queries": [
+      "\n| pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`\n| line_format \"} request to } with HTTP status: }\""
+    ]
+  },
+  {
+    "name": "Realtime visitors ",
+    "description": "",
+    "queries": [
+      "count (sum by (downstream_remote_address) (count_over_time(\n| pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`\n[$__interval])))"
+    ]
+  },
+  {
+    "name": "# Istio log lines",
+    "description": "",
+    "queries": [
+      "count_over_time([$__interval])"
+    ]
+  },
+  {
+    "name": "% of 5xx requests ",
+    "description": "",
+    "queries": [
+      "sum(count_over_time( | pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>` \n| status_code >= 500 |__error__=\"\" [$__interval]))\n/\n(sum(count_over_time( | pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>` \n| __error__=\"\" [$__interval])) / 100)"
+    ]
+  },
+  {
+    "name": "% of requests by bots",
+    "description": "",
+    "queries": [
+      "sum(count_over_time(( |~ \"Googlebot|Slack.+\")[$__interval])) / (sum(count_over_time(( !~ \"Googlebot|Slack.+\")[$__interval])) / 100)"
+    ]
+  },
+  {
+    "name": "95th percentile of duration",
+    "description": "",
+    "queries": [
+      "quantile_over_time(0.95,\n| pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`\n| unwrap duration \n|  __error__=\"\"  [$__interval]) by (host)",
+      "max by (host) (max_over_time(| pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>` \n| unwrap duration \n|  __error__=\"\"  [$__interval]))"
+    ]
+  },
+  {
+    "name": "Requests per status code",
+    "description": "",
+    "queries": [
+      "sum by (status_code) (count_over_time( \n| pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`  | __error__=\"\"\n | status_code =~\"0|2..|3..|4..|5..\" \n[$__interval])) "
+    ]
+  },
+  {
+    "name": "Bytes Sent",
+    "description": "",
+    "queries": [
+      "sum by (host) (sum_over_time( | json | status=200 | unwrap body_bytes_sent |  __error__=\"\" [$__interval]))",
+      "sum by (host) (sum_over_time( | pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`\n| status_code=200 \n| unwrap bytes_sent\n|  __error__=\"\" [$__interval]))"
+    ]
+  },
+  {
+    "name": "Top 10 paths by duration in last 1h",
+    "description": "",
+    "queries": [
+      "max_over_time(\n!~ `.ico|.svg|.css|.png|.txt|.js|.xml`\n| pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`\n| unwrap duration\n| status_code = 200 and path != \"/\" \n| __error__=\"\" [1h]) by (path)"
+    ]
+  },
+  {
+    "name": "Top 10 visitor IPs",
+    "description": "",
+    "queries": [
+      "topk(10, sum by (forward_for) (count_over_time( | pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>` |  __error__=\"\" [$__interval])))"
+    ]
+  },
+  {
+    "name": "Top 10 Requested Pages",
+    "description": "",
+    "queries": [
+      "topk(10, sum by (path) (count_over_time( \n!~ `.ico|.svg|.css|.png|.txt|.js|.xml`\n| pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`\n| status_code = 200 and path != \"/\" \n| __error__=\"\" [7d])))"
+    ]
+  },
+  {
+    "name": "Top 10 User Agents",
+    "description": "",
+    "queries": [
+      "topk(10, sum by (agent) (count_over_time( | pattern `<_> \"<method> <path> <protocol>\" <status_code> <response_flags> <response_code_details> <connection_termination_details> \"<failure_reason>\" <bytes_received> <bytes_sent> <duration> <upstream_time> \"<forward_for>\" \"<agent>\" \"<req_id>\" \"<authority>\" \"<upstream_host>\" <upstream_cluster> <upstream_local_address> <downstream_local_address> <downstream_remote_address> <requested_server_name> <route_name>`\n| __error__=\"\" [6h])))"
+    ]
+  }
+]

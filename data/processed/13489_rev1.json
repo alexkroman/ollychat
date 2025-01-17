@@ -1,0 +1,118 @@
+[
+  {
+    "name": "Process CPU Load",
+    "description": "Displays the \"recent cpu usage\" for the Java Virtual Machine process.",
+    "queries": [
+      "base:cpu_process_cpu_load"
+    ]
+  },
+  {
+    "name": "JVM Uptime",
+    "description": "Displays the uptime of the Java virtual machine",
+    "queries": [
+      "base:jvm_uptime_seconds"
+    ]
+  },
+  {
+    "name": "Available Processors",
+    "description": "Displays the number of processors available to the Java virtual machine. This value may change during a particular invocation of the virtual machine.",
+    "queries": [
+      "base:cpu_available_processors"
+    ]
+  },
+  {
+    "name": "Current Thread count",
+    "description": "Number of currently deployed threads",
+    "queries": [
+      "base:thread_count"
+    ]
+  },
+  {
+    "name": "Peak Thread Count",
+    "description": "Displays the peak live thread count since the Java virtual machine started or peak was reset. This includes daemon and non-daemon threads.",
+    "queries": [
+      "base:thread_max_count"
+    ]
+  },
+  {
+    "name": "System Load Average",
+    "description": "Displays the system load average for the last minute. The system load average is the sum of the number of runnable entities queued to the available processors and the number of runnable entities running on the available processors averaged over a period of time. The way in which the load average is calculated is operating system specific but is typically a damped time-dependent average. If the load average is not available, a negative value is displayed. This attribute is designed to provide a hint about the system load and may be queried frequently. The load average may be unavailable on some platform where it is expensive to implement this method.",
+    "queries": [
+      "base:cpu_system_load_average"
+    ]
+  },
+  {
+    "name": "Current Loaded Class Count",
+    "description": "Displays the number of classes that are currently loaded in the Java virtual machine.",
+    "queries": [
+      "base:classloader_current_loaded_class_count"
+    ]
+  },
+  {
+    "name": "Daemon Thread Count",
+    "description": "Displays the current number of live daemon threads.",
+    "queries": [
+      "base:thread_daemon_count"
+    ]
+  },
+  {
+    "name": "Heap Memory",
+    "description": "Displays the amount of used memory and max memory.",
+    "queries": [
+      "base:memory_used_heap_bytes",
+      "base:memory_max_heap_bytes",
+      "base:memory_committed_heap_bytes"
+    ]
+  },
+  {
+    "name": "G1 Young Generation GC Count",
+    "description": "Displays the total number of collections that have occurred. This attribute lists -1 if the collection count is undefined for this collector.",
+    "queries": [
+      "base:gc_g1_young_generation_count"
+    ]
+  },
+  {
+    "name": "G1 Old Generation GC Count",
+    "description": "Displays the total number of collections that have occurred. This attribute lists -1 if the collection count is undefined for this collector.",
+    "queries": [
+      "irate(base:gc_g1_old_generation_count[1m])"
+    ]
+  },
+  {
+    "name": "G1 Young Generation GC Time",
+    "description": "Displays the approximate accumulated collection elapsed time in milliseconds. This attribute displays -1 if the collection elapsed time is undefined for this collector. The Java virtual machine implementation may use a high resolution timer to measure the elapsed time. This attribute may display the same value even if the collection count has been incremented if the collection elapsed time is very short.",
+    "queries": [
+      "irate(base:gc_g1_young_generation_time_seconds[1m])"
+    ]
+  },
+  {
+    "name": "G1 Old Generation GC Time",
+    "description": "Displays the approximate accumulated collection elapsed time in milliseconds. This attribute displays -1 if the collection elapsed time is undefined for this collector. The Java virtual machine implementation may use a high resolution timer to measure the elapsed time. This attribute may display the same value even if the collection count has been incremented if the collection elapsed time is very short.",
+    "queries": [
+      "irate(base:gc_g1_old_generation_time_seconds[1m])"
+    ]
+  },
+  {
+    "name": "Non Heap Memory",
+    "description": "Displays the amount of used memory and max memory.",
+    "queries": [
+      "base:memory_used_non_heap_bytes",
+      "base:memory_max_non_heap_bytes",
+      "base:memory_committed_non_heap_bytes"
+    ]
+  },
+  {
+    "name": "Total Unloaded Class Count",
+    "description": "Displays the total number of classes unloaded since the Java virtual machine has started execution.",
+    "queries": [
+      "base:classloader_total_unloaded_class_count"
+    ]
+  },
+  {
+    "name": "Total Loaded Class Count",
+    "description": "Displays the total number of classes that have been loaded since the Java virtual machine has started execution.",
+    "queries": [
+      "base:classloader_total_loaded_class_count"
+    ]
+  }
+]

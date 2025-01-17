@@ -1,0 +1,86 @@
+[
+  {
+    "name": "HTTP Status Code",
+    "description": "",
+    "queries": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "Status",
+    "description": "",
+    "queries": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "HTTP Status Code",
+    "description": "",
+    "queries": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "HTTP Version",
+    "description": "",
+    "queries": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "name": "Probe Duration",
+    "description": "",
+    "queries": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "name": "Average Probe Duration",
+    "description": "",
+    "queries": [
+      "avg(probe_duration_seconds) by (target)"
+    ]
+  },
+  {
+    "name": "Average DNS Lookup",
+    "description": "",
+    "queries": [
+      "avg(probe_dns_lookup_time_seconds) by (target)"
+    ]
+  },
+  {
+    "name": "IP protocol",
+    "description": "",
+    "queries": [
+      "probe_ip_protocol"
+    ]
+  },
+  {
+    "name": "HTTP Duration (phase = $phase)",
+    "description": "",
+    "queries": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "name": "SSL Expiry",
+    "description": "",
+    "queries": [
+      "probe_ssl_earliest_cert_expiry - time()"
+    ]
+  },
+  {
+    "name": "SSL",
+    "description": "",
+    "queries": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "name": "TLS version",
+    "description": "",
+    "queries": [
+      "probe_tls_version_info"
+    ]
+  }
+]

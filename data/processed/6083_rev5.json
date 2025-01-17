@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Min",
+    "description": "",
+    "queries": [
+      "jdbc_connections_min"
+    ]
+  },
+  {
+    "name": "Active",
+    "description": "",
+    "queries": [
+      "jdbc_connections_active"
+    ]
+  },
+  {
+    "name": "Max",
+    "description": "",
+    "queries": [
+      "jdbc_connections_max"
+    ]
+  },
+  {
+    "name": "Connections",
+    "description": "",
+    "queries": [
+      "hikaricp_connections_active",
+      "hikaricp_connections_idle",
+      "hikaricp_connections_pending"
+    ]
+  },
+  {
+    "name": "Max",
+    "description": "",
+    "queries": [
+      "hikaricp_connections_max"
+    ]
+  },
+  {
+    "name": "Min",
+    "description": "",
+    "queries": [
+      "hikaricp_connections_min"
+    ]
+  },
+  {
+    "name": "Total Timeout",
+    "description": "",
+    "queries": [
+      "hikaricp_connections_timeout_total"
+    ]
+  },
+  {
+    "name": "Connections Time",
+    "description": "",
+    "queries": [
+      "irate(hikaricp_connections_usage_seconds_sum[5m]) / irate(hikaricp_connections_usage_seconds_count[5m])",
+      "irate(hikaricp_connections_creation_seconds_sum[5m]) / irate(hikaricp_connections_creation_seconds_count[5m])",
+      "irate(hikaricp_connections_acquire_seconds_sum[5m]) / irate(hikaricp_connections_acquire_seconds_count[5m])"
+    ]
+  }
+]

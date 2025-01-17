@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Volumes Full in Week Based on Daily Use Rate",
+    "description": "",
+    "queries": [
+      "(\n count (\n   (kubelet_volume_stats_available_bytes )\n   and\n   (predict_linear(kubelet_volume_stats_available_bytes [1d], 7 * 24 * 60 * 60) < 0)\n )\n)\nor\nvector(0)"
+    ]
+  },
+  {
+    "name": "Running PVCs Above % Used Warning Threshold",
+    "description": "",
+    "queries": [
+      "count (max by (persistentvolumeclaim,namespace) (kubelet_volume_stats_used_bytes ) and (max by (persistentvolumeclaim,namespace) (kubelet_volume_stats_used_bytes )) / (max by (persistentvolumeclaim,namespace) (kubelet_volume_stats_capacity_bytes )) >= ($pvc_percent_used_warning_threshold / 100)) or vector (0)"
+    ]
+  },
+  {
+    "name": "Unbound PVCs",
+    "description": "",
+    "queries": [
+      "(max (sum by (exported_namespace) (pv_collector_unbound_pvc_count ))) or (vector(0))"
+    ]
+  }
+]

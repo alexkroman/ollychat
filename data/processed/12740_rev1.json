@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Network I/O pressure",
+    "description": "",
+    "queries": [
+      "sum (rate (container_network_receive_bytes_total[1m]))",
+      "- sum (rate (container_network_transmit_bytes_total[1m]))"
+    ]
+  },
+  {
+    "name": "Cluster memory usage",
+    "description": "",
+    "queries": [
+      "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100"
+    ]
+  },
+  {
+    "name": "Cluster CPU usage (1m avg)",
+    "description": "",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[1m])) / sum (machine_cpu_cores) * 100"
+    ]
+  },
+  {
+    "name": "Cluster filesystem usage",
+    "description": "",
+    "queries": [
+      "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "",
+    "queries": [
+      "sum (container_memory_working_set_bytes)"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "",
+    "queries": [
+      "sum (machine_memory_bytes)"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[1m]))"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "",
+    "queries": [
+      "sum (machine_cpu_cores)"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "",
+    "queries": [
+      "sum (container_fs_usage_bytes)"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "",
+    "queries": [
+      "sum (container_fs_limit_bytes)"
+    ]
+  },
+  {
+    "name": "Pods CPU usage (1m avg)",
+    "description": "",
+    "queries": [
+      "sum (rate (container_cpu_usage_seconds_total[1m])) by (pod)"
+    ]
+  },
+  {
+    "name": "Pods memory usage",
+    "description": "",
+    "queries": [
+      "sum (container_memory_working_set_bytes) by (pod)"
+    ]
+  },
+  {
+    "name": "Pods network I/O (1m avg)",
+    "description": "",
+    "queries": [
+      "sum (rate (container_network_receive_bytes_total[1m])) by (pod)",
+      "- sum (rate (container_network_transmit_bytes_total[1m])) by (pod)"
+    ]
+  }
+]

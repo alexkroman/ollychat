@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Repository Check",
+    "description": "",
+    "queries": [
+      "restic_check_success"
+    ]
+  },
+  {
+    "name": "Repository Locks",
+    "description": "",
+    "queries": [
+      "restic_locks_total"
+    ]
+  },
+  {
+    "name": "Last backup",
+    "description": "",
+    "queries": [
+      "restic_backup_timestamp * 1000",
+      "time() - restic_backup_timestamp"
+    ]
+  },
+  {
+    "name": "Total snapshot count",
+    "description": "",
+    "queries": [
+      "restic_backup_snapshots_total"
+    ]
+  },
+  {
+    "name": "Total backup size & files",
+    "description": "",
+    "queries": [
+      "restic_backup_size_total",
+      "restic_backup_files_total"
+    ]
+  },
+  {
+    "name": "Total backup size",
+    "description": "",
+    "queries": [
+      "restic_backup_size_total"
+    ]
+  },
+  {
+    "name": "Total backup size",
+    "description": "",
+    "queries": [
+      "sum by(client_hostname,client_username) (restic_backup_size_total)"
+    ]
+  },
+  {
+    "name": "Total backup files",
+    "description": "",
+    "queries": [
+      "sum by(client_hostname,client_username) (restic_backup_files_total)"
+    ]
+  },
+  {
+    "name": "Total snapshot count",
+    "description": "",
+    "queries": [
+      "sum by(client_hostname,client_username) (restic_backup_snapshots_total)"
+    ]
+  }
+]

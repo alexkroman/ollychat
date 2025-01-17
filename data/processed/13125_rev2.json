@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Available CPU",
+    "description": "Shows CPU used vs. allocatable CPU",
+    "queries": [
+      "sum (rate(node_cpu_seconds_total[5m])) by (instance)"
+    ]
+  },
+  {
+    "name": "CPU limits used",
+    "description": "CPU usage relative to the CPU limits",
+    "queries": [
+      "sum (\n  irate (\n    container_cpu_usage_seconds_total[2m]\n  )\n) by (namespace,pod,container)\n/\nsum (\n  container_spec_cpu_quota\n) by (namespace,pod,container)\n*\n10000000"
+    ]
+  },
+  {
+    "name": "Available memory",
+    "description": "Shows memory used vs. allocatable memory",
+    "queries": [
+      "sum(node_memory_MemAvailable_bytes) by (instance)/1024^3"
+    ]
+  },
+  {
+    "name": "Memory limits used",
+    "description": "Memory usage relative to the memory limits",
+    "queries": [
+      "(\n  sum (\n    container_memory_working_set_bytes\n  ) by (namespace,pod,container)\n  /\n  sum (\n    container_spec_memory_limit_bytes\n  ) by (namespace,pod,container)\n) * 100"
+    ]
+  }
+]

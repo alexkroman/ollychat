@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Downloads",
+    "description": "",
+    "queries": [
+      "sonarr_queue_total OR on() vector(0)",
+      "sonarr_history_total"
+    ]
+  },
+  {
+    "name": "Series",
+    "description": "",
+    "queries": [
+      "sonarr_series_monitored_total",
+      "sonarr_series_total"
+    ]
+  },
+  {
+    "name": "Seasons",
+    "description": "",
+    "queries": [
+      "sonarr_season_monitored_total",
+      "sonarr_season_total"
+    ]
+  },
+  {
+    "name": "Episodes",
+    "description": "",
+    "queries": [
+      "sonarr_episode_downloaded_total",
+      "sonarr_episode_total",
+      "sonarr_episode_missing_total"
+    ]
+  },
+  {
+    "name": "Storage Used",
+    "description": "",
+    "queries": [
+      "sonarr_series_filesize_bytes"
+    ]
+  },
+  {
+    "name": "Episode quality",
+    "description": "",
+    "queries": [
+      "sort_desc(sum(sonarr_episode_quality_total) by (quality))"
+    ]
+  },
+  {
+    "name": "Storage Available",
+    "description": "",
+    "queries": [
+      "sonarr_rootfolder_freespace_bytes"
+    ]
+  }
+]

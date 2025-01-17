@@ -1,0 +1,121 @@
+[
+  {
+    "name": "RQ workers",
+    "description": "",
+    "queries": [
+      "count(rq_workers) or vector(0)"
+    ]
+  },
+  {
+    "name": "Workers capacity",
+    "description": "",
+    "queries": [
+      "(count(rq_workers) / count(rq_workers)) * 100",
+      "(count(rq_workers) / count(rq_workers)) * 100"
+    ]
+  },
+  {
+    "name": "Current jobs overview",
+    "description": "",
+    "queries": [
+      "sum(rq_jobs) by (queue)",
+      "sum(rq_jobs) by (queue)",
+      "sum(rq_jobs) by (queue)",
+      "sum(rq_jobs) by (queue)",
+      "sum(rq_jobs) by (queue)",
+      "sum(rq_jobs) by (queue)"
+    ]
+  },
+  {
+    "name": "Avg. data collection duration",
+    "description": "The average time the exporter took to query the Redis instance for the RQ workers and jobs data.",
+    "queries": [
+      "rate(rq_request_processing_seconds_sum[$__range]) /rate(rq_request_processing_seconds_count[$__range])"
+    ]
+  },
+  {
+    "name": "Queued",
+    "description": "This percentage reflects the number of jobs currently queued, an optimal value is a value near or equal to 0% which means the jobs are being picked up by the workers without delays.\n\nA high percentage of queued jobs means that you need to add more workers as the current workers are not able to process all the jobs in a timely manner.",
+    "queries": [
+      "sum(rq_jobs) / sum(rq_jobs)"
+    ]
+  },
+  {
+    "name": "Started",
+    "description": "",
+    "queries": [
+      "sum(rq_jobs) / sum(rq_jobs)"
+    ]
+  },
+  {
+    "name": "Finished",
+    "description": "",
+    "queries": [
+      "sum(rq_jobs) / sum(rq_jobs)"
+    ]
+  },
+  {
+    "name": "Failed",
+    "description": "The percentage of failed jobs will always be higher if you are using the default failure TTL  which is 1 year and you don't re-queue the jobs.\n\nIf you don't intend to re-queue the jobs you should set a lower failure TTL.",
+    "queries": [
+      "sum(rq_jobs) / sum(rq_jobs)",
+      ""
+    ]
+  },
+  {
+    "name": "Deferred",
+    "description": "",
+    "queries": [
+      "sum(rq_jobs) / sum(rq_jobs)"
+    ]
+  },
+  {
+    "name": "Scheduled",
+    "description": "",
+    "queries": [
+      "sum(rq_jobs) / sum(rq_jobs)"
+    ]
+  },
+  {
+    "name": "Percentage of jobs by status",
+    "description": "",
+    "queries": [
+      "sum by (status) (rq_jobs) / ignoring(status) group_left sum(rq_jobs)"
+    ]
+  },
+  {
+    "name": "Number of jobs by status",
+    "description": "",
+    "queries": [
+      "sum(rq_jobs) by (status)"
+    ]
+  },
+  {
+    "name": "Percentage of jobs by queue",
+    "description": "",
+    "queries": [
+      "sum by (queue) (rq_jobs) / ignoring(queue) group_left sum(rq_jobs)"
+    ]
+  },
+  {
+    "name": "Number of jobs by queue",
+    "description": "",
+    "queries": [
+      "sum(rq_jobs) by (queue)"
+    ]
+  },
+  {
+    "name": "Percentage of jobs by status and queue",
+    "description": "",
+    "queries": [
+      "sum by (status, queue) (rq_jobs) / ignoring(status) group_left sum by (queue) (rq_jobs)"
+    ]
+  },
+  {
+    "name": "Number of jobs by status and queue",
+    "description": "",
+    "queries": [
+      "sum(rq_jobs) by (queue, status)"
+    ]
+  }
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Total Certificates",
+    "description": "",
+    "queries": [
+      "count(x509_cert_not_after)"
+    ]
+  },
+  {
+    "name": "Expired",
+    "description": "",
+    "queries": [
+      "sum(((x509_cert_not_after - time()) / 86400) < bool 0)"
+    ]
+  },
+  {
+    "name": "Expiring within $critical_threshold days",
+    "description": "",
+    "queries": [
+      "sum(0 < ((x509_cert_not_after - time()) / 86400) < bool $critical_threshold)"
+    ]
+  },
+  {
+    "name": "Expiring within $warning_threshold days",
+    "description": "",
+    "queries": [
+      "sum(0 < ((x509_cert_not_after - time()) / 86400) < bool $warning_threshold)"
+    ]
+  },
+  {
+    "name": "Media",
+    "description": "",
+    "queries": [
+      "count(x509_cert_not_after)",
+      "count(x509_cert_not_after)",
+      "count(x509_cert_not_after)"
+    ]
+  },
+  {
+    "name": "Exporters",
+    "description": "",
+    "queries": [
+      "count(x509_read_errors)"
+    ]
+  },
+  {
+    "name": "Exporter Errors",
+    "description": "",
+    "queries": [
+      "sum(x509_read_errors)"
+    ]
+  },
+  {
+    "name": "Kubernetes Secrets (time left < $list_threshold days)",
+    "description": "",
+    "queries": [
+      "sort(((x509_cert_not_after - time()) / 86400) < $list_threshold)"
+    ]
+  },
+  {
+    "name": "Host Files (time left < $list_threshold days)",
+    "description": "",
+    "queries": [
+      "sort(((x509_cert_not_after - time()) / 86400) < $list_threshold)"
+    ]
+  },
+  {
+    "name": "Top Issuers",
+    "description": "",
+    "queries": [
+      "topk(10, sort_desc(count by (issuer_CN) (x509_cert_not_after)))"
+    ]
+  },
+  {
+    "name": "Top Namespaces (Kubernetes Secrets)",
+    "description": "",
+    "queries": [
+      "topk(10, sort_desc(count by (secret_namespace) (x509_cert_not_after)))"
+    ]
+  },
+  {
+    "name": "Top Instances (Host Paths)",
+    "description": "",
+    "queries": [
+      "topk(10, sort_desc(count by (instance) (x509_cert_not_after)))"
+    ]
+  },
+  {
+    "name": "Kubernetes Secrets : Shortest Validity Period",
+    "description": "",
+    "queries": [
+      "bottomk(10, (x509_cert_not_after - x509_cert_not_before) / 86400)"
+    ]
+  },
+  {
+    "name": "Host Paths : Shortest Validity Period",
+    "description": "",
+    "queries": [
+      "bottomk(10, (x509_cert_not_after - x509_cert_not_before) / 86400)"
+    ]
+  },
+  {
+    "name": "Kubernetes Secrets : Longest Validity Period",
+    "description": "",
+    "queries": [
+      "topk(10, (x509_cert_not_after - x509_cert_not_before) / 86400)"
+    ]
+  },
+  {
+    "name": "Host Paths : Longest Validity Period",
+    "description": "",
+    "queries": [
+      "topk(10, (x509_cert_not_after - x509_cert_not_before) / 86400)"
+    ]
+  },
+  {
+    "name": "Reporting Exporters",
+    "description": "",
+    "queries": [
+      "count(x509_read_errors)"
+    ]
+  },
+  {
+    "name": "Exporters with Errors",
+    "description": "",
+    "queries": [
+      "sum (x509_read_errors > bool 0)"
+    ]
+  },
+  {
+    "name": "Error Rate",
+    "description": "",
+    "queries": [
+      "sum(rate(x509_read_errors[15m]))"
+    ]
+  },
+  {
+    "name": "Cumulative Errors",
+    "description": "",
+    "queries": [
+      "sum(x509_read_errors)"
+    ]
+  },
+  {
+    "name": "Top Exporters by Error Rate",
+    "description": "",
+    "queries": [
+      "topk(10, rate(x509_read_errors[6h]))"
+    ]
+  },
+  {
+    "name": "Top Exporters by Cumulative Errors",
+    "description": "",
+    "queries": [
+      "topk(10, x509_read_errors)"
+    ]
+  }
+]

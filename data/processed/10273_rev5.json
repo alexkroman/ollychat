@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Overview",
+    "description": "",
+    "queries": [
+      "sum by (instance) (besu_blockchain_height or ethereum_blockchain_height)",
+      "sum by (instance) (besu_synchronizer_best_known_block or ethereum_best_known_block_number)",
+      "sum by (instance) ((besu_synchronizer_best_known_block - besu_blockchain_height) or (ethereum_best_known_block_number - ethereum_blockchain_height))",
+      "sum by (instance) (besu_blockchain_difficulty_total)",
+      "sum by (instance) ((1/rate(besu_blockchain_height[5m])) or (1/rate(ethereum_blockchain_height[5m])))",
+      "sum by (instance) (time() - besu_blockchain_chain_head_timestamp)",
+      "sum by (instance) (besu_peers_peer_count_current or ethereum_peer_count)",
+      "sum by (instance) ((besu_peers_peer_count_current / besu_network_peers_limit) or ethereum_peer_count / ethereum_peer_limit)"
+    ]
+  },
+  {
+    "name": "Fast Sync Progress",
+    "description": "",
+    "queries": [
+      "sum by (instance) ((besu_blockchain_height or ethereum_blockchain_height) and besu_synchronizer_world_state_pending_requests_current > 0)",
+      "sum by (instance) (besu_synchronizer_fast_sync_pivot_block_current and besu_synchronizer_world_state_pending_requests_current > 0)",
+      "sum by (instance) (besu_synchronizer_fast_sync_pivot_block_current - besu_blockchain_height and besu_synchronizer_world_state_pending_requests_current > 0)",
+      "sum by (instance) (besu_synchronizer_world_state_pending_requests_current > 0)",
+      "sum by (instance) (besu_synchronizer_world_state_completed_requests_total and besu_synchronizer_world_state_pending_requests_current > 0)"
+    ]
+  },
+  {
+    "name": "Block Time",
+    "description": "",
+    "queries": [
+      "1/rate(besu_blockchain_height[5m]) or 1/rate(ethereum_blockchain_height[5m])"
+    ]
+  },
+  {
+    "name": "Blocks Behind",
+    "description": "",
+    "queries": [
+      "besu_synchronizer_best_known_block - besu_blockchain_height or ethereum_best_known_block_number - ethereum_blockchain_height"
+    ]
+  },
+  {
+    "name": "CPU",
+    "description": "",
+    "queries": [
+      "irate(process_cpu_seconds_total[1m])"
+    ]
+  },
+  {
+    "name": "GC time",
+    "description": "",
+    "queries": [
+      "rate(jvm_gc_collection_seconds_sum[1m])"
+    ]
+  },
+  {
+    "name": "Memory Used",
+    "description": "",
+    "queries": [
+      "jvm_memory_bytes_used + ignoring(area) jvm_memory_bytes_used"
+    ]
+  }
+]

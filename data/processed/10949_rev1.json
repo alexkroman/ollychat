@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Goldpinger Nodes",
+    "description": "",
+    "queries": [
+      "(count(goldpinger_nodes_health_total) + count(goldpinger_nodes_health_total)) /2"
+    ]
+  },
+  {
+    "name": "Increase in # Errors [30m]",
+    "description": "",
+    "queries": [
+      "sum(increase(goldpinger_errors_total[30m]))"
+    ]
+  },
+  {
+    "name": "Unhealthy seen by instance",
+    "description": "",
+    "queries": [
+      "sum(goldpinger_nodes_health_total) by (goldpinger_instance)"
+    ]
+  },
+  {
+    "name": "Unhealthy nodes increase [30m]",
+    "description": "",
+    "queries": [
+      "sum(increase(goldpinger_nodes_health_total[30m])) by (goldpinger_instance)"
+    ]
+  },
+  {
+    "name": "% Unhealthy nodes reported",
+    "description": "",
+    "queries": [
+      "sum(increase(goldpinger_nodes_health_total[30m])) by (goldpinger_instance) /  (sum(increase(goldpinger_nodes_health_total[30m])) by (goldpinger_instance) + sum(increase(goldpinger_nodes_health_total[30m])) by (goldpinger_instance))"
+    ]
+  },
+  {
+    "name": "99% response time from node [30m]",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.99, sum(rate(goldpinger_peers_response_time_s_bucket[30m])) by (goldpinger_instance, le))"
+    ]
+  },
+  {
+    "name": "95% response time from node [30m]",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(goldpinger_peers_response_time_s_bucket[30m])) by (goldpinger_instance, le))"
+    ]
+  },
+  {
+    "name": "50% response time from node [30m]",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.50, sum(rate(goldpinger_peers_response_time_s_bucket[30m])) by (goldpinger_instance, le))"
+    ]
+  },
+  {
+    "name": "99% response time from k8s api [30m]",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.99, sum(rate(goldpinger_kube_master_response_time_s_bucket[30m])) by (goldpinger_instance, le))"
+    ]
+  },
+  {
+    "name": "95% response time from k8s api [30m]",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.95, sum(rate(goldpinger_kube_master_response_time_s_bucket[30m])) by (goldpinger_instance, le))"
+    ]
+  },
+  {
+    "name": "50% response time from k8s api [30m]",
+    "description": "",
+    "queries": [
+      "histogram_quantile(0.50, sum(rate(goldpinger_kube_master_response_time_s_bucket[30m])) by (goldpinger_instance, le))"
+    ]
+  }
+]

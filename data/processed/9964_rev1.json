@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Processing speed",
+    "description": "",
+    "queries": [
+      "rate(jenkins_job_building_duration_count[1m])"
+    ]
+  },
+  {
+    "name": "Job queue duration",
+    "description": "",
+    "queries": [
+      "jenkins_job_queuing_duration"
+    ]
+  },
+  {
+    "name": "Queued rate",
+    "description": "",
+    "queries": [
+      "rate(jenkins_job_queuing_duration_count[1m])"
+    ]
+  },
+  {
+    "name": "JVM free memory",
+    "description": "",
+    "queries": [
+      "(vm_memory_total_max - vm_memory_total_used) / vm_memory_total_max * 100.0"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "",
+    "queries": [
+      "vm_memory_total_used"
+    ]
+  },
+  {
+    "name": "Jenkins health",
+    "description": "",
+    "queries": [
+      "jenkins_health_check_score"
+    ]
+  },
+  {
+    "name": "JVM Uptime",
+    "description": "",
+    "queries": [
+      "vm_uptime_milliseconds"
+    ]
+  },
+  {
+    "name": "Jenkins nodes offline",
+    "description": "",
+    "queries": [
+      "jenkins_node_offline_value"
+    ]
+  },
+  {
+    "name": "CPU Usage",
+    "description": "",
+    "queries": [
+      "vm_cpu_load"
+    ]
+  },
+  {
+    "name": "Total Jobs",
+    "description": "",
+    "queries": [
+      "jenkins_node_builds_count"
+    ]
+  },
+  {
+    "name": "Sucessful Jobs",
+    "description": "",
+    "queries": [
+      "jenkins_runs_success_total"
+    ]
+  },
+  {
+    "name": "Aborted Jobs",
+    "description": "",
+    "queries": [
+      "jenkins_runs_aborted_total"
+    ]
+  },
+  {
+    "name": "Unstable Jobs",
+    "description": "",
+    "queries": [
+      "jenkins_runs_unstable_total"
+    ]
+  },
+  {
+    "name": "Failed Jobs",
+    "description": "",
+    "queries": [
+      "jenkins_runs_failure_total"
+    ]
+  },
+  {
+    "name": "Jenkins queue size",
+    "description": "",
+    "queries": [
+      "jenkins_queue_size_value"
+    ]
+  },
+  {
+    "name": "Executor free",
+    "description": "",
+    "queries": [
+      "jenkins_executor_free_value"
+    ]
+  },
+  {
+    "name": "Executors health",
+    "description": "",
+    "queries": [
+      "avg(sum(jenkins_job_building_duration)/sum(jenkins_job_building_duration_count))"
+    ]
+  },
+  {
+    "name": "Job Duration",
+    "description": "",
+    "queries": [
+      "default_jenkins_builds_last_build_duration_milliseconds"
+    ]
+  },
+  {
+    "name": "Executor In-use",
+    "description": "",
+    "queries": [
+      "jenkins_executor_in_use_value"
+    ]
+  }
+]

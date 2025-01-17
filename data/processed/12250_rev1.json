@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Average response time by service",
+    "description": "",
+    "queries": [
+      "sum(traefik_service_request_duration_seconds_sum) by (service) / sum(traefik_service_request_duration_seconds_count) by (service)"
+    ]
+  },
+  {
+    "name": "Requests by service",
+    "description": "",
+    "queries": [
+      "sum(rate(traefik_service_requests_total[5m])) by (service) "
+    ]
+  },
+  {
+    "name": "Requests by protocol",
+    "description": "",
+    "queries": [
+      "sum(rate(traefik_entrypoint_requests_total[5m])) by (entrypoint) "
+    ]
+  },
+  {
+    "name": "Status code 200 over 5min",
+    "description": "",
+    "queries": [
+      "rate(traefik_entrypoint_requests_total[5m])"
+    ]
+  },
+  {
+    "name": "Others status code over 5min",
+    "description": "",
+    "queries": [
+      "rate(traefik_entrypoint_requests_total[5m])"
+    ]
+  },
+  {
+    "name": "$service response time",
+    "description": "",
+    "queries": [
+      "sum(traefik_service_request_duration_seconds_sum) / sum(traefik_service_requests_total) * 1000"
+    ]
+  },
+  {
+    "name": "$service return code",
+    "description": "",
+    "queries": [
+      "traefik_service_requests_total"
+    ]
+  },
+  {
+    "name": "Total requests over 5min $service",
+    "description": "",
+    "queries": [
+      "sum(rate(traefik_service_requests_total[5m]))"
+    ]
+  }
+]
