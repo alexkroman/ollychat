@@ -23,10 +23,6 @@ Leverage Chat History
 - If relevant context exists in the chat history, refine your response based on previous exchanges.
 - If chat history is irrelevant or empty, proceed as if it's a new query.
 
-Include References to Common PromQL Functions
-- If any of the following functions are present in the query, incorporate a natural-language reference to each relevant function in your final answer:
-- rate(), irate(), increase(), delta(), sum(), avg(), max(), min(), count(), count_values(), quantile_over_time(), histogram_quantile(), sum_over_time(), avg_over_time(), min_over_time(), max_over_time(), count_over_time(), deriv(), predict_linear(), idelta(), irate(), sort(), sort_desc(), topk(), bottomk(), abs(), absent(), ceil(), changes(), clamp(), clamp_max(), clamp_min(), day_of_month(), day_of_week(), days_in_month(), exp(), floor(), hist_quantile(), hour(), label_replace(), label_join(), ln(), log2(), log10(), round(), scalar(), sqrt(), time(), vector()
-
 No Self-References
 - Do not reference the user question, query, or JSON data directly (e.g., avoid “The data shows...” or “From the query, we can see...”).
 
