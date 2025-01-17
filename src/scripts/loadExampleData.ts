@@ -4,15 +4,13 @@ import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { ChromaClient } from "chromadb";
 import { normalizeQuestion } from '../utils/dataNormalizer.js';
-
-import * as dotenv from 'dotenv';
-dotenv.config();
+import { config } from "../config/appConfig.js";
 
 const enrichedDir = './data/enriched';
 const embeddings = new OpenAIEmbeddings({ model: process.env.OPENAI_EMBEDDINGS });
 const vectorStore = new Chroma(embeddings, {
-  collectionName: process.env.CHROMA_INDEX,
-  url: process.env.CHROMA_URL,
+  collectionName: config.chromaIndex,
+  url: config.chromaUrl,
 });
 
 async function processFile(filePath: string) {
@@ -50,12 +48,12 @@ async function processAllFiles() {
 
 (async () => {
   try {
-    console.log(`Clearing existing collection: ${process.env.CHROMA_INDEX}`);
+    console.log(`Clearing existing collection: ${config.chromaIndex}`);
     const client = new ChromaClient();
     if (!process.env.CHROMA_INDEX) {
       throw new Error("CHROMA_INDEX environment variable is not defined");
     }
-    await client.deleteCollection({ name: process.env.CHROMA_INDEX });
+    await client.deleteCollection({ name: config.chromaIndex });
     await processAllFiles();
   } catch (error) {
     if (error instanceof Error) {

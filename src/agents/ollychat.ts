@@ -6,7 +6,7 @@ import { promModel } from '../models/prom.js';
 
 import { prometheusQueryTool } from '../utils/prometheus.js';
 import { metricsExampleSelector } from '../utils/metricsFetcher.js';
-import { loadPromptFromFile, loadFile } from '../utils/promptLoader.js';
+import { loadPromptFromFile } from '../utils/promptLoader.js';
 import { exampleSelector } from '../utils/getQueryExamples.js';
 import { formatExamples } from '../utils/exampleFormatter.js';
 import { normalizeQuestion } from '../utils/dataNormalizer.js';

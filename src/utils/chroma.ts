@@ -1,18 +1,18 @@
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { OpenAIEmbeddings } from "@langchain/openai";
-import * as dotenv from 'dotenv';
-dotenv.config();
+import { config } from "../config/appConfig.js";
+
 
 const embeddings = new OpenAIEmbeddings({
-    model: process.env.OPENAI_EMBEDDINGS || "text-embedding-ada-002",
+    model: config.openAIEmbeddings,
 });
 
 export const vectorStore = new Chroma(embeddings, {
-    collectionName: process.env.CHROMA_INDEX || 'prometheus_examples-2',
-    url: process.env.CHROMA_URL || "http://localhost:8000", // Optional, will default to this value
+    collectionName: config.chromaIndex,
+    url: config.chromaUrl
 });
   
 export const MetricsVectorStore = new Chroma(embeddings, {
-    collectionName: process.env.CHROMA_METRICS_INDEX || 'prometheus_metrics',
-    url: process.env.CHROMA_URL || "http://localhost:8000", // Optional, will default to this value
+    collectionName: config.chromaMetricsIndex,
+    url: config.chromaUrl
 });

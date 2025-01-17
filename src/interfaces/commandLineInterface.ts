@@ -2,14 +2,14 @@ import chalk from 'chalk';
 import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
 import { answerQuestion } from "../agents/ollychat.js";
+import { config } from "../config/appConfig.js";
+
 
 interface Command {
     name: string;
     description: string;
     execute: (...args: string[]) => Promise<void>;
 }
-
-const logging = !process.execArgv.includes('--no-warnings');
 
 export class CLI {
     private rl: Interface;
@@ -43,7 +43,7 @@ export class CLI {
             console.log(chalk.bold.green("✅ Answer: ") + chalk.magenta(result.answer) + "\n");
 
         } catch (error) {
-            if (logging === true) {
+            if (config.logging === true) {
                 console.error(chalk.red('Error processing input:'), error);
             } else {
                 console.log(chalk.red("Sorry I ran into an issue."));

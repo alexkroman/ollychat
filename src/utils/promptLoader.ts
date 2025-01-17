@@ -6,7 +6,7 @@ import { PromptTemplate } from "@langchain/core/prompts";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export function loadFile(filePath: string) {
+function loadFile(filePath: string) {
     return readFileSync(join(__dirname, "../templates/" + filePath + ".txt"), "utf-8");
 }
 

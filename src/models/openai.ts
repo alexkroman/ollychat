@@ -10,8 +10,8 @@ const customHandler = {
 };
 
 export const model = new ChatOpenAI({
-  openAIApiKey: process.env.OPENAI_API_KEY,
-  model: process.env.OPENAI_MODEL,
+  openAIApiKey: config.openAIApiKey,
+  model: config.openAIModel,
   temperature: 0,
   callbacks: [customHandler]
 });

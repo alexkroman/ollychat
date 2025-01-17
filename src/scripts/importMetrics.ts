@@ -1,9 +1,6 @@
 import fs from 'fs/promises';
-import * as dotenv from 'dotenv';
 import { createMetricsFetcher } from '../integrations/prometheusIntegration.js';
-
-// Load environment variables
-dotenv.config();
+import { config } from "../config/appConfig.js";
 
 // Define interfaces instead of types for better object modeling
 interface Metric {
@@ -21,7 +18,7 @@ interface MetricsResult {
     [key: string]: Metric[];
 }
 
-const prometheusUrl: string = process.env.PROMETHEUS_URL || 'http://localhost:9090';
+const prometheusUrl: string = config.prometheusUrl;
 
 async function fetchAndSaveMetrics(): Promise<void> {
     try {

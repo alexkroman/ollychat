@@ -5,9 +5,8 @@ import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { Document } from "@langchain/core/documents";
 import { ChromaClient } from "chromadb";
 import { normalizeQuestion } from '../utils/dataNormalizer.js';
+import { config } from "../config/appConfig.js";
 
-import * as dotenv from 'dotenv';
-dotenv.config();
 
 // Read and parse the JSON file
 const rawData = fs.readFileSync('./data/metrics/metrics.json', 'utf-8');
@@ -29,19 +28,19 @@ const transformedData: Document[] = inputData.map((item: any) => ({
 }));
 
 const embeddings = new OpenAIEmbeddings({
-  model: process.env.OPENAI_EMBEDDINGS || "text-embedding-ada-002",
+  model: config.openAIEmbeddings,
 });
 
 const vectorStore = new Chroma(embeddings, {
-  collectionName: process.env.CHROMA_METRICS_INDEX || "prometheus_metrics",
-  url: process.env.CHROMA_URL || "http://localhost:8000",
+  collectionName: config.chromaIndex,
+  url: config.chromaUrl,
 });
 
 // Add documents to vector store
 (async () => {
   try {
     const client = new ChromaClient();
-    const metricsIndex = process.env.CHROMA_METRICS_INDEX || "default_metrics_index";
+    const metricsIndex = config.chromaMetricsIndex;
     await client.deleteCollection({ name: metricsIndex });
     await vectorStore.addDocuments(transformedData);
     console.log("Documents successfully added to the vector store.");

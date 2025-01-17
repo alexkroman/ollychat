@@ -1,13 +1,12 @@
 import slack from '@slack/bolt';
 const { App } = slack;
 import { answerQuestion } from "../agents/ollychat.js";
-import * as dotenv from 'dotenv';
-dotenv.config();
+import { config } from "../config/appConfig.js";
 
 const app = new App({
-  token: process.env.SLACK_BOT_TOKEN,
-  signingSecret: process.env.SLACK_SIGNING_SECRET,
-  appToken: process.env.SLACK_APP_TOKEN,
+  token: config.slackBotToken,
+  signingSecret: config.slackSigningSecret,
+  appToken: config.slackAppToken,
   socketMode: true,
 });
 
@@ -24,7 +23,6 @@ app.event('app_mention', async ({ event, say }) => {
 });
 
 (async () => {
-  const port = process.env.PORT || 3000;
-  await app.start(port);
-  console.log(`⚡️ Bolt app is running on port ${port}!`);
+  await app.start(config.port);
+  console.log(`⚡️ Bolt app is running on port ${config.port}!`);
 })();

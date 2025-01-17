@@ -1,14 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import * as dotenv from 'dotenv';
 import { OpenAI } from 'openai';
 import { v4 as uuidv4 } from 'uuid';
-
-dotenv.config();
+import { config } from "../config/appConfig.js";
 
 // Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: config.openAIApiKey,
 });
 
 // Directories
