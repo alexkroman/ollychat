@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import { promql, Expression } from 'tsqtsq';
 import { allMetricNames } from '../utils/metricsFetcher.js';
 const inputDir = 'data/raw'; // Directory containing JSON files
 const outputDir = 'data/processed'; // Directory to save processed files
@@ -21,6 +20,7 @@ interface VectorEntry {
 
 // Function to modify a PromQL query
 function modifyPromQLQuery(query: string): string {
+
   // Set the time interval to 30m
   query = query.replace(/\[\$\__rate_interval\]/g, '[30m]');
 
