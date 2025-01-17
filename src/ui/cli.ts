@@ -31,6 +31,11 @@ export class CLI {
             const messageText = input.trim();
             if (!messageText) return;
 
+            if (messageText.toLowerCase() === 'exit') {
+                this.stop();
+                return;
+            }
+
             console.log(chalk.green('\nQuerying...'));
             
             const result = await answerQuestion({ question: messageText });
@@ -51,8 +56,8 @@ export class CLI {
 // ASCII Art Title
 console.log(chalk.cyan('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
 console.log(chalk.bold.rgb(255, 165, 0)('💬🤖  Welcome to OLLYCHAT 🚀✨'));
-console.log(chalk.green('- Just type your questions and hit Enter. OLLY will do the rest.'));
-console.log(chalk.green('- Ctrl-C to exit'));
+console.log(chalk.green('- Just type your questions and hit Enter.'));
+console.log(chalk.green('- type exit to exit'));
 console.log(chalk.cyan('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'));
 
         this.rl.prompt();
@@ -65,16 +70,16 @@ console.log(chalk.cyan('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         });
 
         this.rl.on('close', () => {
-            if (this.isRunning) {
-                console.log(chalk.blue('\nGoodbye!'));
-                process.exit(0);
-            }
+            this.stop();
         });
+
     }
 
     public stop() {
         this.isRunning = false;
         this.rl.close();
+        console.log(chalk.blue('\nGoodbye!'));
+        process.exit(0);
     }
 }
 
