@@ -37,8 +37,13 @@ export function createQueryExecutor(
         timeout,
       }
     );
-    // Return the raw JSON string of the result array
-    return JSON.stringify(response.data.data.result);
+    const result = response.data.data.result;
+    
+    if (Array.isArray(result) && result.length > 0 && 'metric' in result[0]) {
+      return JSON.stringify(metricsToStructuredJSON(result as PrometheusMetricFormatted[]));
+    }
+    
+    return JSON.stringify(result);
   };
 }
 
@@ -54,4 +59,28 @@ export function createMetricsFetcher(
     );
     return JSON.stringify(response.data.data);
   };
+}
+
+type PrometheusMetricFormatted = {
+  metric: {
+    __name__: string;
+    env: string;
+    id: string;
+    instance: string;
+    job: string;
+  };
+  value: [number, string];
+};
+
+export function metricsToStructuredJSON(data: PrometheusMetricFormatted[]): object {
+  if (data.length === 0) return [];
+
+  return data.map(({ metric, value }) => ({
+    metricName: metric.__name__,
+    serviceId: metric.id,
+    instance: metric.instance,
+    job: metric.job,
+    timestamp: value[0],
+    value: parseFloat(value[1])
+  }));
 }

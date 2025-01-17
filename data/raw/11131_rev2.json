@@ -1,0 +1,1366 @@
+{
+  "__inputs": [
+    {
+      "type": "datasource",
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "6.4.3"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    }
+  ],
+  "id": null,
+  "title": "Kubernetes JMX Dashboard",
+  "description": "JMX Dashboard for Kubernetes Monitoring with Prometheus",
+  "tags": [
+    "jvm",
+    "jmx",
+    "prometheus",
+    "prometheus-operator",
+    "kubernetes"
+  ],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": false,
+  "hideControls": true,
+  "graphTooltip": 0,
+  "refresh": "30s",
+  "schemaVersion": 14,
+  "version": 1,
+  "links": [],
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "allValue": "",
+        "current": {},
+        "datasource": "${DS_PROMETHEUS}",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Pod",
+        "multi": false,
+        "name": "pod",
+        "options": [],
+        "query": "label_values(up{job='jmx-exporter'}, pod)",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "annotations": {
+    "list": []
+  },
+  "rows": [
+    {
+      "collapse": false,
+      "height": "150",
+      "panels": [
+        {
+          "id": 1,
+          "type": "singlestat",
+          "title": "Status",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "datasource": "${DS_PROMETHEUS}",
+          "format": "none",
+          "interval": null,
+          "nullText": null,
+          "span": 1,
+          "targets": [
+            {
+              "expr": "up{job='jmx-exporter',pod=\"$pod\"}",
+              "format": "time_series",
+              "instant": true,
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0,1",
+          "timeShift": null,
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "UP",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "DOWN",
+              "value": "0"
+            },
+            {
+              "op": "=",
+              "text": "DOWN",
+              "value": "null"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": "singlestat",
+          "title": "Total CPU Cores",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "format": "none",
+          "interval": null,
+          "nullText": null,
+          "span": 2,
+          "targets": [
+            {
+              "expr": "kube_pod_container_resource_limits_cpu_cores{job='kube-state-metrics',container='tomcat',pod=\"$pod\"}",
+              "format": "time_series",
+              "instant": true,
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "valueFontSize": "80%"
+        },
+        {
+          "id": 3,
+          "type": "singlestat",
+          "title": "Total Memory",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "format": "decbytes",
+          "interval": null,
+          "nullText": null,
+          "span": 2,
+          "targets": [
+            {
+              "expr": "kube_pod_container_resource_limits_memory_bytes{job='kube-state-metrics',container='tomcat',pod=\"$pod\"}",
+              "format": "time_series",
+              "instant": true,
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "valueFontSize": "80%",
+          "valueName": "avg"
+        },
+        {
+          "id": 4,
+          "type": "singlestat",
+          "title": "Uptime",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "format": "s",
+          "interval": null,
+          "nullText": null,
+          "span": 2,
+          "targets": [
+            {
+              "expr": "time() - process_start_time_seconds{job='jmx-exporter',pod=\"$pod\"}",
+              "format": "time_series",
+              "instant": true,
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "timeShift": null,
+          "valueFontSize": "80%"
+        },
+        {
+          "id": 5,
+          "type": "singlestat",
+          "title": "Start Time",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "format": "dateTimeAsIso",
+          "interval": null,
+          "nullText": null,
+          "span": 2,
+          "targets": [
+            {
+              "expr": "process_start_time_seconds{job='jmx-exporter',pod=\"$pod\"}*1000",
+              "format": "time_series",
+              "instant": true,
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "timeShift": null,
+          "valueFontSize": "70%"
+        },
+        {
+          "id": 6,
+          "type": "singlestat",
+          "title": "JVM Version",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "format": "none",
+          "interval": null,
+          "nullText": null,
+          "span": 3,
+          "tableColumn": "jdk",
+          "targets": [
+            {
+              "expr": "label_join(jvm_info{pod=\"$pod\"}, \"jdk\", \", \", \"vendor\", \"runtime\", \"version\")",
+              "format": "table",
+              "instant": true,
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "timeShift": null,
+          "valueFontSize": "50%"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "id": 11,
+          "type": "singlestat",
+          "title": "CPU Usage [3m]",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "format": "percent",
+          "gauge": {
+            "minValue": 0,
+            "maxValue": 100,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "interval": null,
+          "maxDataPoints": 100,
+          "span": 2,
+          "targets": [
+            {
+              "expr": "avg(rate(container_cpu_usage_seconds_total{container=\"tomcat\",pod=\"$pod\"}[3m]))/avg(kube_pod_container_resource_limits_cpu_cores{container=\"tomcat\",pod=\"$pod\"})*100",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "refId": "A",
+              "step": 20
+            }
+          ],
+          "thresholds": "50,80",
+          "valueFontSize": "80%"
+        },
+        {
+          "id": 12,
+          "type": "graph",
+          "title": "CPU Usage Timeline [3m]",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 4,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "seriesOverrides": [
+            {
+              "alias": "Usage %",
+              "bars": true,
+              "color": "#6d1f62",
+              "legend": false,
+              "lines": false,
+              "yaxis": 2,
+              "zindex": -1
+            }
+          ],
+          "targets": [
+            {
+              "expr": "rate(container_cpu_usage_seconds_total{container=\"tomcat\",pod=\"$pod\"}[3m])",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Usage",
+              "refId": "A",
+              "step": 20
+            },
+            {
+              "expr": "rate(container_cpu_system_seconds_total{container=\"tomcat\",pod=\"$pod\"}[3m])",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "System",
+              "refId": "B",
+              "step": 20
+            },
+            {
+              "expr": "rate(container_cpu_user_seconds_total{container=\"tomcat\",pod=\"$pod\"}[3m])",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "User",
+              "refId": "C",
+              "step": 20
+            },
+            {
+              "expr": "avg(rate(container_cpu_usage_seconds_total{container=\"tomcat\",pod=\"$pod\"}[3m]))/avg(kube_pod_container_resource_limits_cpu_cores{container=\"tomcat\",pod=\"$pod\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Usage %",
+              "refId": "D",
+              "step": 20
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 1,
+              "format": "percentunit",
+              "label": "",
+              "logBase": 1,
+              "max": "1",
+              "min": "0",
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "type": "singlestat",
+          "title": "Memory Usage",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "format": "percent",
+          "gauge": {
+            "minValue": 0,
+            "maxValue": 100,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "interval": null,
+          "maxDataPoints": 100,
+          "span": 2,
+          "targets": [
+            {
+              "expr": "avg(container_memory_usage_bytes{container=\"tomcat\",pod=\"$pod\"})/avg(kube_pod_container_resource_limits_memory_bytes{container=\"tomcat\",pod=\"$pod\"})*100",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "refId": "A",
+              "step": 20
+            }
+          ],
+          "thresholds": "50,80",
+          "valueFontSize": "80%"
+        },
+        {
+          "id": 14,
+          "type": "graph",
+          "title": "Memory Usage Timeline",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 4,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "seriesOverrides": [
+            {
+              "alias": "Usage %",
+              "bars": true,
+              "color": "#6d1f62",
+              "legend": false,
+              "lines": false,
+              "yaxis": 2,
+              "zindex": -1
+            }
+          ],
+          "targets": [
+            {
+              "expr": "container_memory_usage_bytes{container=\"tomcat\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Usage",
+              "refId": "A",
+              "step": 20
+            },
+            {
+              "expr": "avg(container_memory_usage_bytes{container=\"tomcat\",pod=\"$pod\"})/avg(kube_pod_container_resource_limits_memory_bytes{container=\"tomcat\",pod=\"$pod\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Usage %",
+              "refId": "B",
+              "step": 20
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 1,
+              "format": "percentunit",
+              "label": "",
+              "logBase": 1,
+              "max": "1",
+              "min": "0",
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Container Resources Overall",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "id": 21,
+          "type": "graph",
+          "title": "JVM Memory Area (Heap)",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 4,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "seriesOverrides": [
+            {
+              "alias": "Usage %",
+              "bars": true,
+              "color": "#6d1f62",
+              "legend": false,
+              "lines": false,
+              "yaxis": 2,
+              "zindex": -1
+            }
+          ],
+          "targets": [
+            {
+              "expr": "jvm_memory_bytes_used{area=\"heap\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Used",
+              "refId": "A"
+            },
+            {
+              "expr": " jvm_memory_bytes_committed{area=\"heap\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Committed",
+              "refId": "B"
+            },
+            {
+              "expr": " jvm_memory_bytes_max{area=\"heap\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Max",
+              "refId": "C"
+            },
+            {
+              "expr": "jvm_memory_bytes_used{area=\"heap\",pod=\"$pod\"}/jvm_memory_bytes_max{area=\"heap\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Usage %",
+              "refId": "D"
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 1,
+              "format": "percentunit",
+              "label": "",
+              "logBase": 1,
+              "max": "1",
+              "min": "0",
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "type": "graph",
+          "title": "JVM Memory Area (Non-Heap)",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 4,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "targets": [
+            {
+              "expr": "jvm_memory_bytes_used{area=\"nonheap\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Used",
+              "refId": "A"
+            },
+            {
+              "expr": " jvm_memory_bytes_committed{area=\"heap\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Committed",
+              "refId": "B"
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "type": "graph",
+          "title": "JVM Memory Pool",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 4,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": false
+          },
+          "targets": [
+            {
+              "expr": "jvm_memory_pool_bytes_used{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "{{pool}}",
+              "refId": "A",
+              "step": 20
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "decbytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "JVM Memory Overall",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "id": 31,
+          "type": "graph",
+          "title": "JVM Threads used",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "targets": [
+            {
+              "expr": "jvm_threads_current{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 5,
+              "legendFormat": "Current",
+              "refId": "A",
+              "step": 50
+            },
+            {
+              "expr": " jvm_threads_daemon{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 5,
+              "legendFormat": "Daemon",
+              "refId": "B",
+              "step": 50
+            },
+            {
+              "expr": " jvm_threads_peak{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 5,
+              "legendFormat": "Peak",
+              "refId": "C",
+              "step": 50
+            },
+            {
+              "expr": " jvm_threads_deadlocked{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 5,
+              "legendFormat": "Deadlocked",
+              "refId": "D",
+              "step": 50
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "type": "graph",
+          "title": "JVM Class Loading",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "targets": [
+            {
+              "expr": "jvm_classes_loaded{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 5,
+              "legendFormat": "Loaded",
+              "refId": "A",
+              "step": 50
+            },
+            {
+              "expr": " jvm_classes_loaded_total{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 5,
+              "legendFormat": "Total",
+              "refId": "B",
+              "step": 50
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 2,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "type": "graph",
+          "title": "JVM GC Time [3m]",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "targets": [
+            {
+              "expr": "rate(jvm_gc_collection_seconds_sum{pod=\"$pod\"}[3m])",
+              "format": "time_series",
+              "intervalFactor": 5,
+              "legendFormat": "{{gc}}",
+              "refId": "A",
+              "step": 25
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "s",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 1,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "type": "graph",
+          "title": "JVM GC Count Increase [3m]",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "targets": [
+            {
+              "expr": "increase(jvm_gc_collection_seconds_count{pod=\"$pod\"}[3m])",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "{{gc}}",
+              "refId": "A",
+              "step": 10
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Threads, Class, and GC Info",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "id": 41,
+          "type": "graph",
+          "title": "Tomcat Session Counter",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "targets": [
+            {
+              "expr": "tomcat_session_sessioncounter_total{pod=\"$pod\"}-tomcat_session_expiredsessions_total{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "Current",
+              "refId": "A",
+              "step": 20
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 42,
+          "type": "graph",
+          "title": "Tomcat Thread Pool",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "targets": [
+            {
+              "expr": "tomcat_threadpool_connectioncount{protocol=\"http-nio\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "Connection",
+              "refId": "A",
+              "step": 20
+            },
+            {
+              "expr": "tomcat_threadpool_currentthreadcount{protocol=\"http-nio\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "Current",
+              "refId": "B",
+              "step": 20
+            },
+            {
+              "expr": "tomcat_threadpool_currentthreadsbusy{protocol=\"http-nio\",pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "Busy",
+              "refId": "C",
+              "step": 20
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 43,
+          "type": "graph",
+          "title": "Tomcat Servlet Request",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "targets": [
+            {
+              "expr": "tomcat_servlet_requestcount_total{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "{{servlet}}",
+              "refId": "A",
+              "step": 20
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "id": 44,
+          "type": "graph",
+          "title": "Tomcat Servlet Error",
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "datasource": "${DS_PROMETHEUS}",
+          "span": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "targets": [
+            {
+              "expr": "tomcat_servlet_errorcount_total{pod=\"$pod\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "{{servlet}}",
+              "refId": "A",
+              "step": 20
+            }
+          ],
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Tomcat Info",
+      "titleSize": "h6"
+    }
+  ],
+  "gnetId": 11131
+}
