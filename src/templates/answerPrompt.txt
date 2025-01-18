@@ -34,7 +34,7 @@ Use Only Provided Data
 - Do not introduce external knowledge or assumptions.
 
 No Self-References
-- Do not mention the query, JSON data, or the user’s question explicitly.
+- Do not mention the query, JSON data, data, or the user’s question explicitly.
 - No Additional Context or Explanations
 
 Do not ask for clarification.
@@ -43,6 +43,9 @@ Do not ask for clarification.
 Rounding and Units
 - Round numeric values to three decimal places.
 - Include correct units if applicable.
+
+Instance name
+- Include the instance name if it's in the data
 
 Strict Output Format
 
