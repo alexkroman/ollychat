@@ -1,0 +1,1244 @@
+[
+  {
+    "id": "1ae19aad-b69a-4030-b778-e3f27ffb7c38",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "highest partition utilization and network activity",
+    "query": "node_uname_info - 0",
+    "metrics": [
+      "node_uname_info"
+    ]
+  },
+  {
+    "id": "7a8d21d0-d333-443d-a4a6-f0607a2b58d7",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "total tcp connections in established or closewait state",
+    "query": "node_uname_info - 0",
+    "metrics": [
+      "node_uname_info"
+    ]
+  },
+  {
+    "id": "3ada26ab-0d65-4428-ada0-c068a15a47b6",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "server resource overview excluding zero values",
+    "query": "node_uname_info - 0",
+    "metrics": [
+      "node_uname_info"
+    ]
+  },
+  {
+    "id": "4f39f809-1bbf-4eca-acd6-ba14037fa70c",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "highest partition utilization minus constant value",
+    "query": "node_memory_MemTotal_bytes - 0",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "d3361325-54e0-4a2c-ba31-13b63fdb5ec9",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "difference between total memory and a fixed value",
+    "query": "node_memory_MemTotal_bytes - 0",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "cdec4554-61c4-4c12-a6a9-a35170e20198",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "current number of tcp connections in established or closewait",
+    "query": "node_memory_MemTotal_bytes - 0",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "d71d7f77-11ff-4d2e-8bd6-03a61246a376",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "tcp connections in established or closewait state",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "f0c94489-e4a0-44e0-a00c-ab30a8368cf6",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "current number of active tcp connections",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "0b1c6f3b-6fd1-431f-8824-6cc3d446b8ab",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "count of established tcp connections",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "e0ab4ecb-68e7-499f-ae21-bfb2975a8c5f",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "percentage of used memory compared to total memory",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "4ff21611-1328-421e-bad4-b68b42341113",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "memory utilization as a percentage of total memory",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "138e808b-c0e6-410e-ac77-959fb799c4fc",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "node memory utilization percentage",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "8610788c-3d3f-439b-ac98-434f1e5ba90c",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "current number of established tcp connections",
+    "query": "node_netstat_Tcp_CurrEstab - 0",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "id": "f9b1af1d-86fb-4cd2-bef0-a1da5c0af072",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "difference between current and initial tcp connections",
+    "query": "node_netstat_Tcp_CurrEstab - 0",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "id": "5bdcc5c6-5009-4069-a8ee-2b770ee11739",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "number of active tcp connections minus zero",
+    "query": "node_netstat_Tcp_CurrEstab - 0",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "id": "39346685-c493-4e7b-b8a2-5bfca64c3b73",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "number of established tcp connections",
+    "query": "node_sockstat_TCP_tw - 0",
+    "metrics": [
+      "node_sockstat_TCP_tw"
+    ]
+  },
+  {
+    "id": "1e69d314-6bce-46f8-82bb-56d232da6f0f",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "count of tcp connections in established or closewait state",
+    "query": "node_sockstat_TCP_tw - 0",
+    "metrics": [
+      "node_sockstat_TCP_tw"
+    ]
+  },
+  {
+    "id": "8d4ef077-bf92-4706-b8db-2dac429c68c5",
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "question": "total tcp connections with current status established or closewait",
+    "query": "node_sockstat_TCP_tw - 0",
+    "metrics": [
+      "node_sockstat_TCP_tw"
+    ]
+  },
+  {
+    "id": "32dc17d8-7489-4deb-868c-c3b7f068e21c",
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "question": "count of total cpu seconds on nodes",
+    "query": "count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "b55cedad-12e2-4ecc-9b43-6ecf33deb471",
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "question": "aggregated cpu usage count on nodes",
+    "query": "count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "c78b9876-471f-42e9-9946-50db76f6a80f",
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "question": "total cpu seconds count across nodes",
+    "query": "count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "65bf4246-4690-4bdf-be0c-ce173a9deddd",
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "question": "total 5minute load across nodes",
+    "query": "sum(node_load5)",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "9448f51c-69bc-44b7-a605-fc4aca7e59a3",
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "question": "aggregate node load over 5 minutes",
+    "query": "sum(node_load5)",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "9d05b9d3-fc15-4ed4-990b-ec2465abe381",
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "question": "sum of node load5 metric",
+    "query": "sum(node_load5)",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "f0434c2e-c786-4dfa-b509-b47969ce0254",
+    "name": "$job：Overall total memory & average memory used%",
+    "question": "total memory size across nodes",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "1eee02a3-fc24-416b-b763-020eea50ea77",
+    "name": "$job：Overall total memory & average memory used%",
+    "question": "aggregated node memory capacity",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "deb7c28f-dbbc-4a20-909f-5a9a07d284e8",
+    "name": "$job：Overall total memory & average memory used%",
+    "question": "summed memory across all nodes",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "4d67f9f8-15aa-4e30-9145-5b516e3eb3fc",
+    "name": "$job：Overall total memory & average memory used%",
+    "question": "total memory consumption excluding available memory",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "2609da23-4f96-4c55-8b62-8c7d51e22d2a",
+    "name": "$job：Overall total memory & average memory used%",
+    "question": "sum of used memory across nodes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "806967ba-690c-4b24-a1c2-077e42adb81b",
+    "name": "$job：Overall total memory & average memory used%",
+    "question": "aggregated memory usage excluding free memory",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "3d9d2c3e-a85d-47c9-9699-b299bbfe9a6a",
+    "name": "$job：Overall total memory & average memory used%",
+    "question": "calculate overall memory utilization percentage",
+    "query": "(sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes))*100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "2744e31a-4297-436b-a084-1db1adb2f65e",
+    "name": "$job：Overall total memory & average memory used%",
+    "question": "aggregate total and average memory usage percentage",
+    "query": "(sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes))*100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "e0a5f231-8d37-4927-993e-662f20f85e3f",
+    "name": "$job：Overall total memory & average memory used%",
+    "question": "determine memory utilization in percentage",
+    "query": "(sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes))*100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "603b9638-a90e-418e-8736-233dbe403d7c",
+    "name": "",
+    "question": "percentage of memory used on the node",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "53ddeb3b-9757-43cc-a065-23b13025fb3d",
+    "name": "",
+    "question": "node memory utilization as a percentage",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "1cac07d4-1333-4af9-9a9a-fe044e8d8969",
+    "name": "",
+    "question": "memory usage ratio on the node",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "7efff3e8-1d04-46a0-88fe-25b4f4b5a29a",
+    "name": "",
+    "question": "percentage of available filesystem space used",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes)*100 /(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "1f3a1169-d2ea-40b9-a96b-cc4f4dfc4888",
+    "name": "",
+    "question": "proportion of used filesystem space to total available space",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes)*100 /(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "146bd9ff-9497-45d6-a6a5-529500f6a608",
+    "name": "",
+    "question": "utilization ratio of filesystem space",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes)*100 /(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "f73da6e2-1554-43c0-892c-8eb3b2440d7c",
+    "name": "",
+    "question": "percentage of used swap memory on a node",
+    "query": "(1 - ((node_memory_SwapFree_bytes + 1)/ (node_memory_SwapTotal_bytes + 1))) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "4821a904-1c54-4b58-8506-a81617075d80",
+    "name": "",
+    "question": "node swap memory utilization as a percentage",
+    "query": "(1 - ((node_memory_SwapFree_bytes + 1)/ (node_memory_SwapTotal_bytes + 1))) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "7e376ab1-4d50-44d3-94de-32bf08079c77",
+    "name": "",
+    "question": "calculation of node swap memory utilization rate",
+    "query": "(1 - ((node_memory_SwapFree_bytes + 1)/ (node_memory_SwapTotal_bytes + 1))) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "9004695a-4dd6-4147-abf6-aba74feeeb6f",
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "question": "current disk space usage rate in percentage",
+    "query": "node_filesystem_size_bytes-0",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "aeb951b4-11e9-483a-8362-e32c240009fb",
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "question": "total disk space used in bytes",
+    "query": "node_filesystem_size_bytes-0",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "72c6d21b-8532-4dea-b36d-edd059d8ec56",
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "question": "available disk space in bytes",
+    "query": "node_filesystem_size_bytes-0",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "43e4934a-0751-4b98-ab01-e70f3261399c",
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "question": "disk space used as a percentage",
+    "query": "node_filesystem_avail_bytes -0",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "8140fe40-56cb-4c39-98cd-a4df653dd866",
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "question": "available disk space in bytes",
+    "query": "node_filesystem_avail_bytes -0",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "55bf4445-e438-4674-9beb-243260321da8",
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "question": "total disk space used basic extxfs",
+    "query": "node_filesystem_avail_bytes -0",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "44bd3fab-510b-4ebe-8d98-3e0e42e52afa",
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "question": "calculate disk space usage rate",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes) *100/(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "9ddead31-5cd0-4ec3-b881-a296acddebf3",
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "question": "display disk space utilization percentage",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes) *100/(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "f4662463-35eb-477f-8b32-391329bef014",
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "question": "compute disk space used percentage",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes) *100/(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "c0144969-c920-4e5d-ac7d-7371de0154b3",
+    "name": "Internet traffic per hour $device",
+    "question": "increase in received bytes on device",
+    "query": "increase(node_network_receive_bytes_total[60m])",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "693e1aa2-e301-4948-a0ae-f88a5bdde6b0",
+    "name": "Internet traffic per hour $device",
+    "question": "hourly internet traffic received by device",
+    "query": "increase(node_network_receive_bytes_total[60m])",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "70d9a049-268a-4318-990f-3f5fdc646e03",
+    "name": "Internet traffic per hour $device",
+    "question": "cumulative network bytes received in one hour for device",
+    "query": "increase(node_network_receive_bytes_total[60m])",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "7a7b8df6-1886-412a-9221-e1d0e82c1fe0",
+    "name": "Internet traffic per hour $device",
+    "question": "increase in network transmit bytes per device",
+    "query": "increase(node_network_transmit_bytes_total[60m])",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "eb97c497-8764-4b82-ac78-dea3aca5f57c",
+    "name": "Internet traffic per hour $device",
+    "question": "hourly internet traffic volume per device",
+    "query": "increase(node_network_transmit_bytes_total[60m])",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "4b61220a-0cda-4da3-9c2f-a08282a0ff42",
+    "name": "Internet traffic per hour $device",
+    "question": "cumulative network transmit bytes over an hour",
+    "query": "increase(node_network_transmit_bytes_total[60m])",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "1ca65d53-044c-4494-ace4-3040a09d833a",
+    "name": "CPU Cores",
+    "question": "aggregate count of cpu cores",
+    "query": "count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f1d0c4f6-7c08-4550-881f-0c487add0c09",
+    "name": "CPU Cores",
+    "question": "total number of cpu cores",
+    "query": "count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "5d291cd9-bbdf-46f9-924b-548876a5b1cf",
+    "name": "CPU Cores",
+    "question": "count of available cpu cores",
+    "query": "count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "6374231c-f937-4b83-b0d1-a4846b6331d2",
+    "name": "Free inodes:$maxmount ",
+    "question": "average free inodes per filesystem",
+    "query": "avg(node_filesystem_files_free)",
+    "metrics": [
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "id": "efe12208-1b1d-414e-9ae8-502b39bb79ee",
+    "name": "Free inodes:$maxmount ",
+    "question": "mean number of available inodes",
+    "query": "avg(node_filesystem_files_free)",
+    "metrics": [
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "id": "a20e7ff5-1f84-42c7-b12c-568f54b0fff5",
+    "name": "Free inodes:$maxmount ",
+    "question": "average count of available inodes",
+    "query": "avg(node_filesystem_files_free)",
+    "metrics": [
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "id": "0bfa8695-f0bf-4a8d-be72-92c52b676eec",
+    "name": "Total RAM",
+    "question": "total ram of all nodes",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "398a3586-b311-42a9-b651-3e6804c386f3",
+    "name": "Total RAM",
+    "question": "sum of memory capacity on all nodes",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "794d2ef0-5498-4de8-8cae-c80745fb4f99",
+    "name": "Total RAM",
+    "question": "aggregated memory size of nodes",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "f25cf52e-ce03-411f-a805-93db0e1e7fc0",
+    "name": "Total filefd",
+    "question": "average maximum file descriptors per node",
+    "query": "avg(node_filefd_maximum)",
+    "metrics": [
+      "node_filefd_maximum"
+    ]
+  },
+  {
+    "id": "60f24ea5-0714-4ec8-bd08-07cc1d2b911f",
+    "name": "Total filefd",
+    "question": "mean value of maximum file descriptors on nodes",
+    "query": "avg(node_filefd_maximum)",
+    "metrics": [
+      "node_filefd_maximum"
+    ]
+  },
+  {
+    "id": "1f5f8aed-e4d0-4686-90ec-cdd5e2c4f24f",
+    "name": "Total filefd",
+    "question": "average of nodes maximum file descriptors",
+    "query": "avg(node_filefd_maximum)",
+    "metrics": [
+      "node_filefd_maximum"
+    ]
+  },
+  {
+    "id": "3b3a2c47-ecc0-4551-9425-f33d5c28da34",
+    "name": "Memory Basic",
+    "question": "total memory size on the node",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "74d5ecc1-ea31-4d8e-b467-f6ab33c842b2",
+    "name": "Memory Basic",
+    "question": "aggregated node memory capacity",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "ecf3690a-0d57-4b53-8976-880e33b12b07",
+    "name": "Memory Basic",
+    "question": "sum of memory available on the node",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "5eacb4fb-a7ae-4835-9afe-0e93b8bc8f91",
+    "name": "Memory Basic",
+    "question": "difference between total and available memory",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "3e28f192-3408-47a8-b791-ea8f85f671ae",
+    "name": "Memory Basic",
+    "question": "memory usage excluding available memory",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "677c178c-4a78-44ab-9854-5f04fc7ebe30",
+    "name": "Memory Basic",
+    "question": "total memory minus available memory",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "f5609347-bb8f-4d21-bd08-0ad998f4c93e",
+    "name": "Memory Basic",
+    "question": "available memory on the node",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "be2f13c0-34d8-4235-ad1b-398dc96ebcf7",
+    "name": "Memory Basic",
+    "question": "nodes available memory in bytes",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "e7bbdb91-a2b6-45dd-b1d0-89c399d0b084",
+    "name": "Memory Basic",
+    "question": "memory available on the node",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "15391b3c-74c4-4d88-a914-b0f9d87dd595",
+    "name": "Memory Basic",
+    "question": "buffer memory usage on node",
+    "query": "node_memory_Buffers_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "id": "b34ca399-383c-470b-880c-0a51e27f70a6",
+    "name": "Memory Basic",
+    "question": "node memory allocated for buffers",
+    "query": "node_memory_Buffers_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "id": "e2f75628-1af3-40bc-b2da-20bb7db6a885",
+    "name": "Memory Basic",
+    "question": "memory used for buffer operations",
+    "query": "node_memory_Buffers_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "id": "c97f5787-e673-4256-a657-cb6e7afb55b4",
+    "name": "Memory Basic",
+    "question": "current amount of free memory on the node",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "b4407d7f-b003-459a-9b4a-0981ae6f1e9a",
+    "name": "Memory Basic",
+    "question": "memory available on the node",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "82df731f-22f4-4b62-9bf3-2ec211dcad40",
+    "name": "Memory Basic",
+    "question": "quantity of unused memory on the node",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "2b60696b-9664-4fe0-8d09-1941dc5fb86a",
+    "name": "Memory Basic",
+    "question": "amount of cached memory on the node",
+    "query": "node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "9a2c6a2a-3c74-4603-b743-72abb669217f",
+    "name": "Memory Basic",
+    "question": "nodes cached memory size",
+    "query": "node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "53a5276e-7aac-4bae-a7e7-d956307c8ca3",
+    "name": "Memory Basic",
+    "question": "total cached memory in bytes",
+    "query": "node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "d09de155-5e23-4212-b8a1-e93a7c873ef8",
+    "name": "Memory Basic",
+    "question": "memory usage excluding cache and buffers",
+    "query": "node_memory_MemTotal_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_MemFree_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "d0b69235-85e8-43bb-82bd-77b2ae8c7f48",
+    "name": "Memory Basic",
+    "question": "total available memory minus cached and buffers",
+    "query": "node_memory_MemTotal_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_MemFree_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "d2a3c445-7ed5-4649-a405-332075deefa8",
+    "name": "Memory Basic",
+    "question": "utilized memory without considering cache and buffers",
+    "query": "node_memory_MemTotal_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_MemFree_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "cc308cde-3276-4553-8e48-ea1f252e895d",
+    "name": "Memory Basic",
+    "question": "percentage of memory used compared to total memory",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "5ff4bb89-a904-4e9c-8e35-e14920149494",
+    "name": "Memory Basic",
+    "question": "memory utilization percentage excluding available memory",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "791a827c-4d25-4075-919e-d4b19455446b",
+    "name": "Memory Basic",
+    "question": "computed metric representing memory usage as a percentage",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "a15323e8-b44f-4cc3-9d18-8b67df940192",
+    "name": "System Load",
+    "question": "current system load average",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "96f9db01-e9a3-4771-8728-943ae6ea9e12",
+    "name": "System Load",
+    "question": "first node load metric",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "0a49289f-f228-4050-9452-1162541af71f",
+    "name": "System Load",
+    "question": "node load value for load average 1",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "ddb0478b-ebcd-4501-abd5-84dd82bc2bac",
+    "name": "System Load",
+    "question": "current system load over 5 minutes",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "f9b8653e-611f-4a18-bd2a-65e211c74cb9",
+    "name": "System Load",
+    "question": "nodes average load in the last 5 minutes",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "54487275-eef7-4588-80de-78eee781c068",
+    "name": "System Load",
+    "question": "load average for the node in recent interval",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "ab3a655a-4425-4d10-9084-359807475f81",
+    "name": "System Load",
+    "question": "current system load average over 15 minutes",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "165aae98-6319-4d5b-b7eb-8dec3b8c1127",
+    "name": "System Load",
+    "question": "nodes 15minute load average",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "a5e74f7b-6b82-4637-8c44-070a16b036d0",
+    "name": "System Load",
+    "question": "system load metric for a node",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "a36e89a4-be19-43fa-bd53-8f0c6c8ab277",
+    "name": "Disk Space Used% Basic",
+    "question": "disk space utilization percentage",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes) *100/(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "48901326-ba11-4c33-9952-2f7ad9ad662b",
+    "name": "Disk Space Used% Basic",
+    "question": "percentage of used disk space",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes) *100/(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "1d2d5d6e-5b43-46ee-98a8-e091a4216610",
+    "name": "Disk Space Used% Basic",
+    "question": "ratio of used to available disk space",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes) *100/(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "d6febdbf-ded1-428a-992a-b4594b8961f9",
+    "name": "Disk Space Used% Basic",
+    "question": "percentage of used disk space",
+    "query": "node_filesystem_files_free / node_filesystem_files",
+    "metrics": [
+      "node_filesystem_files",
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "id": "4e712b43-ab43-455f-9445-8496e15eaf05",
+    "name": "Disk Space Used% Basic",
+    "question": "ratio of free to total filesystem files",
+    "query": "node_filesystem_files_free / node_filesystem_files",
+    "metrics": [
+      "node_filesystem_files",
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "id": "692691c7-653a-4aba-9b3e-12a8cd121b0d",
+    "name": "Disk Space Used% Basic",
+    "question": "proportion of free filesystem files",
+    "query": "node_filesystem_files_free / node_filesystem_files",
+    "metrics": [
+      "node_filesystem_files",
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "id": "ac9732cf-8374-43a9-806c-09b990416ee8",
+    "name": "Disk IOps Completed（IOPS）",
+    "question": "current disk iops completed",
+    "query": "node_disk_io_now",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  },
+  {
+    "id": "c0cf0b67-fe54-4f41-bba2-f9433bbcdcbb",
+    "name": "Disk IOps Completed（IOPS）",
+    "question": "disk write completions per second",
+    "query": "node_disk_io_now",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  },
+  {
+    "id": "f0bef0c7-a842-4047-b0c2-97c7ed02616d",
+    "name": "Disk IOps Completed（IOPS）",
+    "question": "number of io requests processing per second",
+    "query": "node_disk_io_now",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  },
+  {
+    "id": "1ed634ea-9d59-4b99-9762-e1b1ff32092c",
+    "name": "Network Sockstat",
+    "question": "number of established and closewait tcp connections",
+    "query": "node_netstat_Tcp_CurrEstab",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "id": "584fc4e9-8766-4ab9-870c-98cd28d9ec99",
+    "name": "Network Sockstat",
+    "question": "current count of active tcp connections",
+    "query": "node_netstat_Tcp_CurrEstab",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "id": "8ceae02f-e1fe-4cc6-a21b-6514421ba8eb",
+    "name": "Network Sockstat",
+    "question": "total count of tcp connections in established or closewait state",
+    "query": "node_netstat_Tcp_CurrEstab",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "id": "a08c151d-9b9f-4974-b9c7-5456ee8c6f8f",
+    "name": "Network Sockstat",
+    "question": "retrieve the count of tcp sockets waiting to close",
+    "query": "node_sockstat_TCP_tw",
+    "metrics": [
+      "node_sockstat_TCP_tw"
+    ]
+  },
+  {
+    "id": "96bd2630-714d-401f-a9d8-b4ad4c400f75",
+    "name": "Network Sockstat",
+    "question": "fetch the number of tcp sockets in closewait state",
+    "query": "node_sockstat_TCP_tw",
+    "metrics": [
+      "node_sockstat_TCP_tw"
+    ]
+  },
+  {
+    "id": "5c7c4f87-1487-4fcb-b5d9-ea971f941a2b",
+    "name": "Network Sockstat",
+    "question": "obtain the total count of tcp sockets in timewait state",
+    "query": "node_sockstat_TCP_tw",
+    "metrics": [
+      "node_sockstat_TCP_tw"
+    ]
+  },
+  {
+    "id": "3b774f92-4561-4235-8b6c-f3a8227a59dc",
+    "name": "Network Sockstat",
+    "question": "current total sockets in use",
+    "query": "node_sockstat_sockets_used",
+    "metrics": [
+      "node_sockstat_sockets_used"
+    ]
+  },
+  {
+    "id": "4c1aca4f-6db1-4d77-a5de-cce4942d197c",
+    "name": "Network Sockstat",
+    "question": "estabclosewait tcp connections count",
+    "query": "node_sockstat_sockets_used",
+    "metrics": [
+      "node_sockstat_sockets_used"
+    ]
+  },
+  {
+    "id": "1e6b84d1-efdb-4aaa-933d-318167e3b5fb",
+    "name": "Network Sockstat",
+    "question": "allocated sockets count with waiting close",
+    "query": "node_sockstat_sockets_used",
+    "metrics": [
+      "node_sockstat_sockets_used"
+    ]
+  },
+  {
+    "id": "707a11ab-a8cc-4efb-b3ac-6183a51b483d",
+    "name": "Network Sockstat",
+    "question": "current udp sockets in use",
+    "query": "node_sockstat_UDP_inuse",
+    "metrics": [
+      "node_sockstat_UDP_inuse"
+    ]
+  },
+  {
+    "id": "bb0cdbbf-0c69-4566-a03f-53568d7aea39",
+    "name": "Network Sockstat",
+    "question": "number of active udp sockets",
+    "query": "node_sockstat_UDP_inuse",
+    "metrics": [
+      "node_sockstat_UDP_inuse"
+    ]
+  },
+  {
+    "id": "36685cbc-5aeb-4433-85ae-5a3925975282",
+    "name": "Network Sockstat",
+    "question": "total count of utilized udp sockets",
+    "query": "node_sockstat_UDP_inuse",
+    "metrics": [
+      "node_sockstat_UDP_inuse"
+    ]
+  },
+  {
+    "id": "54bb9b7b-aa28-4782-a7b8-4af453eb8905",
+    "name": "Network Sockstat",
+    "question": "total allocated tcp sockets on node",
+    "query": "node_sockstat_TCP_alloc",
+    "metrics": [
+      "node_sockstat_TCP_alloc"
+    ]
+  },
+  {
+    "id": "65d416b0-97d0-4543-93f8-5005ac11596c",
+    "name": "Network Sockstat",
+    "question": "number of tcp sockets waiting to close",
+    "query": "node_sockstat_TCP_alloc",
+    "metrics": [
+      "node_sockstat_TCP_alloc"
+    ]
+  },
+  {
+    "id": "12d9b66c-8304-45bc-8e64-282582aa0784",
+    "name": "Network Sockstat",
+    "question": "count of tcp sockets currently in use",
+    "query": "node_sockstat_TCP_alloc",
+    "metrics": [
+      "node_sockstat_TCP_alloc"
+    ]
+  },
+  {
+    "id": "b6cadcab-adb8-4164-8a4e-8e7faf24a229",
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "question": "number of open file descriptors allocated",
+    "query": "node_filefd_allocated",
+    "metrics": [
+      "node_filefd_allocated"
+    ]
+  },
+  {
+    "id": "39bf993b-f813-47a3-bcc6-bf6c7ec72d7a",
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "question": "metric for file descriptors in use",
+    "query": "node_filefd_allocated",
+    "metrics": [
+      "node_filefd_allocated"
+    ]
+  },
+  {
+    "id": "0fe8466d-886a-46f3-984f-18babb75ccc8",
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "question": "count of allocated file descriptors",
+    "query": "node_filefd_allocated",
+    "metrics": [
+      "node_filefd_allocated"
+    ]
+  },
+  {
+    "id": "60e64bb5-44b6-4bed-ae5b-4a73ef847072",
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "question": "percentage of allocated file descriptors",
+    "query": "  (node_filefd_allocated/node_filefd_maximum) *100",
+    "metrics": [
+      "node_filefd_allocated",
+      "node_filefd_maximum"
+    ]
+  },
+  {
+    "id": "7147ffbd-fc5b-411d-ab08-80e651f678c9",
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "question": "ratio of allocated to maximum file descriptors",
+    "query": "  (node_filefd_allocated/node_filefd_maximum) *100",
+    "metrics": [
+      "node_filefd_allocated",
+      "node_filefd_maximum"
+    ]
+  },
+  {
+    "id": "d6c160be-44d9-4d51-98ec-5bbc2e9b3e45",
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "question": "file descriptor allocation efficiency",
+    "query": "  (node_filefd_allocated/node_filefd_maximum) *100",
+    "metrics": [
+      "node_filefd_allocated",
+      "node_filefd_maximum"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "cdcdce49-49d9-4005-86ed-4d7ac95072b3",
+    "name": "CPU",
+    "question": "instantaneous cpu usage rate",
+    "query": "irate(process_cpu_seconds_total[1m])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "7ce735cc-99cd-4e87-b3bc-c697299fa26f",
+    "name": "CPU",
+    "question": "rate of cpu seconds consumed",
+    "query": "irate(process_cpu_seconds_total[1m])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a619a76f-9208-4391-adc9-9805366415d3",
+    "name": "CPU",
+    "question": "aggregated cpu seconds consumption",
+    "query": "irate(process_cpu_seconds_total[1m])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  }
+]

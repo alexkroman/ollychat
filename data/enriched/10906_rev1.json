@@ -1,0 +1,29 @@
+[
+  {
+    "id": "e6467632-73e6-47ae-b40d-a71ddf864f9f",
+    "name": "Used sockets",
+    "question": "number of currently used sockets",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "cad38914-0420-45a3-ad13-1431b52cd9f0",
+    "name": "Used sockets",
+    "question": "count of open file descriptors",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "cad159e7-a904-48c9-ab83-104805c2b0ce",
+    "name": "Used sockets",
+    "question": "total open file descriptors count",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  }
+]

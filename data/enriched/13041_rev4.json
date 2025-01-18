@@ -1,0 +1,326 @@
+[
+  {
+    "id": "c4141742-5d34-4ea0-8f02-488c6c3af55a",
+    "name": "HTTP status code",
+    "question": "http status codes received",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "353bb9f4-9122-45b3-b2c3-ad91548225b1",
+    "name": "HTTP status code",
+    "question": "probe responses by status code",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "43292686-12bb-4cf4-9c7e-6da6c22a3010",
+    "name": "HTTP status code",
+    "question": "aggregated http status code metrics",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "e2eed6b0-2098-45bc-bd7a-a57bc903ba2e",
+    "name": "SSL",
+    "question": "ssl status for http probe",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "280bd10e-447e-457f-8991-574ed511fb20",
+    "name": "SSL",
+    "question": "http probe ssl metrics",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "b24f306d-afbd-4007-af2c-73cec74b41cd",
+    "name": "SSL",
+    "question": "http ssl probe results",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "5a35844c-4137-4b3b-a629-fce729059403",
+    "name": "DNS lookup time",
+    "question": "dns lookup time metrics",
+    "query": "probe_dns_lookup_time_seconds",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "79d32d5f-4a93-4785-90e7-da690f904afe",
+    "name": "DNS lookup time",
+    "question": "probe dns lookup time data",
+    "query": "probe_dns_lookup_time_seconds",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "a77ca15d-ddb4-4fe9-937f-25c422d17e62",
+    "name": "DNS lookup time",
+    "question": "aggregated dns lookup duration",
+    "query": "probe_dns_lookup_time_seconds",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "6d626359-017c-42ed-993c-93b7c1228874",
+    "name": "HTTP version",
+    "question": "http version probed",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "22f6a490-3164-4d9d-a20d-1af58b6b3126",
+    "name": "HTTP version",
+    "question": "version of http protocol checked",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "07e6c4d2-be60-4f4a-b965-75be16cd8556",
+    "name": "HTTP version",
+    "question": "identified http versions",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "556e6c3e-349a-4dd4-85dc-44401bf92951",
+    "name": "Redirect(s)",
+    "question": "number of http redirects probed",
+    "query": "probe_http_redirects",
+    "metrics": [
+      "probe_http_redirects"
+    ]
+  },
+  {
+    "id": "73be2edc-82b1-4885-b38d-ad3695aaeb40",
+    "name": "Redirect(s)",
+    "question": "total count of http redirections",
+    "query": "probe_http_redirects",
+    "metrics": [
+      "probe_http_redirects"
+    ]
+  },
+  {
+    "id": "33e92952-c146-470f-adf9-84ceb99f1c57",
+    "name": "Redirect(s)",
+    "question": "aggregated http redirect occurrences",
+    "query": "probe_http_redirects",
+    "metrics": [
+      "probe_http_redirects"
+    ]
+  },
+  {
+    "id": "2083acf3-73fc-418c-a966-7da3ae9be31c",
+    "name": "ICMP",
+    "question": "success rate of icmp probes",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "24c2a434-490c-453d-bcdf-c56e53146382",
+    "name": "ICMP",
+    "question": "icmp probe success metric",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "6dca31e7-5ee2-460f-8148-1746f053cc57",
+    "name": "ICMP",
+    "question": "aggregated icmp probe success",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "302b5b56-9687-4c78-ae09-0b0784261258",
+    "name": "HTTP probe duration / status code",
+    "question": "http probe duration metric",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "cb08a9a1-e3c4-4307-8066-58e6237be763",
+    "name": "HTTP probe duration / status code",
+    "question": "duration of http probes",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "dc559df4-7167-4e76-b32c-2c13d8bbfb77",
+    "name": "HTTP probe duration / status code",
+    "question": "status code of http probes",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "c5d7a95f-8597-4bc9-b1c0-5d92d5945b68",
+    "name": "HTTP probe duration / status code",
+    "question": "http probe duration for successful requests",
+    "query": "probe_http_status_code == 200",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "394385f3-706d-4529-a053-9e123c5af88f",
+    "name": "HTTP probe duration / status code",
+    "question": "number of successful http probe durations",
+    "query": "probe_http_status_code == 200",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "5617b55d-00fc-4949-9f1e-09c77b8be98a",
+    "name": "HTTP probe duration / status code",
+    "question": "duration of http probes with status code 200",
+    "query": "probe_http_status_code == 200",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "f2433196-33e7-41a2-bfef-a9993622f759",
+    "name": "HTTP probe duration / status code",
+    "question": "http probe duration by non200 status codes",
+    "query": "probe_http_status_code != 200",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "c45dea4c-4eb2-434e-8cf8-72f78a7c01e0",
+    "name": "HTTP probe duration / status code",
+    "question": "count of http probes with status code not 200",
+    "query": "probe_http_status_code != 200",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "cffa8eda-845e-4858-a7ff-987650cf43a0",
+    "name": "HTTP probe duration / status code",
+    "question": "metrics of http probes not returning status 200",
+    "query": "probe_http_status_code != 200",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "42349088-b5e9-4e71-b754-8d072e07d847",
+    "name": "ICMP probe duration / failure",
+    "question": "duration of icmp probe",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "d9383e0a-a2ee-4b99-a2c3-54ef18a2417a",
+    "name": "ICMP probe duration / failure",
+    "question": "icmp probe failures",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "60456465-ebe3-4180-a6b4-b8c99cd6eb82",
+    "name": "ICMP probe duration / failure",
+    "question": "failed icmp probes duration",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "5f5dc506-5bbb-440f-ba62-f39578a4b419",
+    "name": "ICMP probe duration / failure",
+    "question": "retrieve icmp failures",
+    "query": "probe_success == 0",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "bad944c5-feba-482f-8a5d-b32655e2ab51",
+    "name": "ICMP probe duration / failure",
+    "question": "display failed icmp probes",
+    "query": "probe_success == 0",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "684869b5-488d-4d88-ac08-c40391ca5e84",
+    "name": "ICMP probe duration / failure",
+    "question": "get only unsuccessful icmp probes",
+    "query": "probe_success == 0",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "c1801e4b-da80-42be-a27a-b2fe530f8599",
+    "name": "HTTP probe (by phase)",
+    "question": "http probe duration by phase",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "118bb49a-3255-4f7c-95e9-510e9b2595cb",
+    "name": "HTTP probe (by phase)",
+    "question": "http probe phase duration",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "2f591692-e194-416d-ae40-df38f1015f40",
+    "name": "HTTP probe (by phase)",
+    "question": "duration of http probe by phase",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  }
+]

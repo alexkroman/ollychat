@@ -1,0 +1,218 @@
+[
+  {
+    "id": "4e6f15e9-d076-4584-9009-e00ce5eb66b4",
+    "name": "HTTP Status Code",
+    "question": "http status codes from probes",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "17901a04-d523-4512-b8a2-e996c53d67aa",
+    "name": "HTTP Status Code",
+    "question": "probed http status code metrics",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "fabf91e1-93cd-4623-bd90-fa791d5194db",
+    "name": "HTTP Status Code",
+    "question": "aggregated probe http status codes",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "97235034-35dd-42b0-8a6a-b95316d61ec6",
+    "name": "Status",
+    "question": "success status of probes",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "b6842a44-1c6b-4484-aa26-b77564d750e2",
+    "name": "Status",
+    "question": "probe success rate",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "36fdc034-3b51-47f0-aa77-608c75480d21",
+    "name": "Status",
+    "question": "probed endpoints success",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "8fbbef1c-3982-4ada-9eef-c8efb8003304",
+    "name": "HTTP Status Code",
+    "question": "http status codes from probes",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "605ece19-457c-48dd-a419-a8a05435e386",
+    "name": "HTTP Status Code",
+    "question": "aggregated http status code data",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "4ceda193-d0fa-4ed5-8ad6-c26a092dce93",
+    "name": "HTTP Status Code",
+    "question": "retrieves http status codes",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "f91f2b5d-1785-4581-b2c1-c9430241b076",
+    "name": "HTTP Version",
+    "question": "retrieve http version from probes",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "d7a890fd-3fa2-49c7-b8da-314dda56661f",
+    "name": "HTTP Version",
+    "question": "check for http version in probes",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "78e2cc34-f0f7-494e-b3fa-1c3afd650585",
+    "name": "HTTP Version",
+    "question": "get http version reported by probes",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "d3fc46b9-f01e-47d1-8ecc-886e3b52b0d8",
+    "name": "Probe Duration",
+    "question": "total probe duration",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "eed2fc60-e7c7-4726-a988-7d18d30f66de",
+    "name": "Probe Duration",
+    "question": "aggregate probe duration",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "934f363d-5848-4151-bec6-3cdf0d55fd6e",
+    "name": "Probe Duration",
+    "question": "sum of probe durations",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "3889af39-3185-4194-9cf3-6f73ed44c89b",
+    "name": "IP protocol",
+    "question": "probe ip protocol statistics",
+    "query": "probe_ip_protocol",
+    "metrics": [
+      "probe_ip_protocol"
+    ]
+  },
+  {
+    "id": "56491f3c-b252-4c94-83e2-1f2b2dc4c8df",
+    "name": "IP protocol",
+    "question": "retrieve ip protocol data",
+    "query": "probe_ip_protocol",
+    "metrics": [
+      "probe_ip_protocol"
+    ]
+  },
+  {
+    "id": "ad0f7957-183e-4e36-b6aa-5d87dd44b1eb",
+    "name": "IP protocol",
+    "question": "aggregate ip protocol metrics",
+    "query": "probe_ip_protocol",
+    "metrics": [
+      "probe_ip_protocol"
+    ]
+  },
+  {
+    "id": "5c6ef575-2d81-42b4-a661-a06f7f67cc4d",
+    "name": "HTTP Duration (phase = $phase)",
+    "question": "http duration for a specific phase",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "18d05c98-f66d-46a8-a601-38b370b0571a",
+    "name": "HTTP Duration (phase = $phase)",
+    "question": "duration of http probes by phase",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "ce7d5740-9be9-4257-bb9e-a2d4001f6107",
+    "name": "HTTP Duration (phase = $phase)",
+    "question": "phasespecific http probe duration",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "10b079f6-9f1e-40ee-a5ea-301ec5eed896",
+    "name": "SSL",
+    "question": "ssl status for http probes",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "1f9a7a1b-61b1-4183-ad45-fea3121011a2",
+    "name": "SSL",
+    "question": "http probe ssl information",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "48242ee0-ee96-4113-a24f-7cabb47365c6",
+    "name": "SSL",
+    "question": "ssl metrics from http probes",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  }
+]

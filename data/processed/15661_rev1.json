@@ -1,125 +1,59 @@
 [
   {
-    "name": " Overall core usage ",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
     "description": "",
-    "queries": [
-      "sum(container_memory_working_set_bytes) / sum(kube_node_status_allocatable)",
-      "sum(kube_pod_container_resource_requests) / sum(kube_node_status_allocatable)",
-      "sum(kube_pod_container_resource_limits) / sum(kube_node_status_allocatable)"
-    ]
-  },
-  {
-    "name": " container CPU proportion ",
-    "description": "",
-    "queries": [
-      "sum (irate(container_cpu_usage_seconds_total[2m])) / sum(kube_node_status_allocatable)",
-      "sum(kube_pod_container_resource_requests) / sum(kube_node_status_allocatable)",
-      "sum(kube_pod_container_resource_limits) / sum(kube_node_status_allocatable)"
-    ]
-  },
-  {
-    "name": " microservice Pod",
-    "description": " Memory Request Rate ， container POD core ， container POD disk ",
-    "queries": [
-      "count(kube_node_info)",
-      "count(kube_pod_info)",
-      "sum(kube_node_status_allocatable)"
-    ]
-  },
-  {
-    "name": " average memory ",
-    "description": "",
-    "queries": [
-      "count(kube_pod_info) by (namespace)",
-      "count(kube_service_info) by(namespace)",
-      "count(count(kube_pod_container_info) by(container,namespace))by(namespace)",
-      "count(kube_configmap_info) by(namespace)",
-      "count(kube_secret_info) by(namespace)"
+    "query": "sum (rate(container_network_receive_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_receive_bytes_total"
     ]
   },
   {
     "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
     "description": "",
-    "queries": [
-      "sum (rate(container_network_receive_bytes_total[2m]))*8",
-      "sum (rate(container_network_transmit_bytes_total[2m]))*8"
+    "query": "sum (rate(container_network_transmit_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_transmit_bytes_total"
     ]
   },
   {
     "name": " Resource comprehensive display ",
     "description": "",
-    "queries": [
-      "sum(kube_node_status_allocatable)",
-      "sum (container_memory_working_set_bytes)",
-      "sum(kube_pod_container_resource_requests)",
-      "sum(kube_pod_container_resource_limits)"
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
     ]
   },
   {
     "name": " container CPU node ",
     "description": "",
-    "queries": [
-      "sum(kube_node_status_allocatable)",
-      "sum (irate(container_cpu_usage_seconds_total[2m]))",
-      "sum(kube_pod_container_resource_requests)",
-      "sum(kube_pod_container_resource_limits)"
+    "query": "sum (irate(container_cpu_usage_seconds_total[2m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
     ]
   },
   {
     "name": " Node memory ratio ",
     "description": "",
-    "queries": [
-      "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes)",
-      "sum (container_fs_usage_bytes)",
-      "sum (container_fs_limit_bytes)"
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
     ]
   },
   {
-    "name": "$Node： Node memory details ",
+    "name": " Node memory ratio ",
     "description": "",
-    "queries": [
-      "count(kube_pod_info) by (node)",
-      "kube_node_status_condition  == 1",
-      "sum (irate(container_cpu_usage_seconds_total[2m])) by (node)",
-      "kube_node_status_allocatable - 0",
-      "sum(kube_pod_container_resource_requests) by (node)",
-      "sum(kube_pod_container_resource_limits) by (node)",
-      "sum (container_memory_working_set_bytes) by (node)",
-      "sum(kube_node_status_allocatable) by (node) - 0",
-      "sum(kube_pod_container_resource_requests) by (node)",
-      "sum(kube_pod_container_resource_limits) by (node)",
-      "sum (container_fs_usage_bytes) by (node)",
-      "sum (container_fs_limit_bytes) by (node)",
-      "sum (container_memory_working_set_bytes)by (node) / sum(kube_node_status_allocatable)by (node)",
-      "sum(kube_pod_container_resource_requests)by (node) / sum(kube_node_status_allocatable)by (node)",
-      "sum(kube_pod_container_resource_limits)by (node) / sum(kube_node_status_allocatable)by (node)",
-      "sum (irate(container_cpu_usage_seconds_total[2m]))by (node) / sum(kube_node_status_allocatable)by (node)",
-      "sum(kube_pod_container_resource_requests)by (node) / sum(kube_node_status_allocatable)by (node)",
-      "sum(kube_pod_container_resource_limits)by (node) / sum(kube_node_status_allocatable)by (node)",
-      "sum (container_fs_usage_bytes)by (node) / sum (container_fs_limit_bytes)by (node)",
-      "sum(kube_node_status_allocatable)by (node)"
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
     ]
   },
   {
-    "name": "$Node： container CPU receive ",
+    "name": " Node memory ratio ",
     "description": "",
-    "queries": [
-      "sum (irate(container_cpu_usage_seconds_total[2m]))by (node) / sum(kube_node_status_allocatable)by (node)*100"
-    ]
-  },
-  {
-    "name": "$Node： Node Memory Information ",
-    "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes)by (node) / sum(kube_node_status_allocatable)by (node)*100"
-    ]
-  },
-  {
-    "name": "$Node： Overall resource overview ",
-    "description": "",
-    "queries": [
-      "sum (irate(container_network_receive_bytes_total[2m]))by (node) *8",
-      "sum (irate(container_network_transmit_bytes_total[2m]))by (node) *8"
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
     ]
   }
 ]

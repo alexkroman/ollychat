@@ -2,88 +2,103 @@
   {
     "name": "CPU usage (5m avg)",
     "description": "",
-    "queries": [
-      "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores) * 100"
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
     ]
   },
   {
     "name": "Memory usage",
     "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100"
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
     ]
   },
   {
     "name": "Filesystem usage",
     "description": "",
-    "queries": [
-      "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100"
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
     ]
   },
   {
     "name": "Used",
     "description": "",
-    "queries": [
-      "sum (rate (container_cpu_usage_seconds_total[5m]))"
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
     ]
   },
   {
     "name": "Total",
     "description": "",
-    "queries": [
-      "sum (machine_cpu_cores)"
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
     ]
   },
   {
     "name": "Used",
     "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes)"
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
     ]
   },
   {
     "name": "Total",
     "description": "",
-    "queries": [
-      "sum (machine_memory_bytes)"
+    "query": "sum (machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
     ]
   },
   {
     "name": "Used",
     "description": "",
-    "queries": [
-      "sum (container_fs_usage_bytes)"
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
     ]
   },
   {
     "name": "Total",
     "description": "",
-    "queries": [
-      "sum (container_fs_limit_bytes)"
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
     ]
   },
   {
     "name": "CPU usage (5m avg)",
     "description": "",
-    "queries": [
-      "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores)",
-      "sum (rate (container_cpu_usage_seconds_total[5m])) by (node) / sum (machine_cpu_cores) by (node)"
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
     ]
   },
   {
     "name": "Memory usage",
     "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
-      "sum (container_memory_working_set_bytes) by (node) / sum (machine_memory_bytes) by (node) * 100"
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
     ]
   },
   {
     "name": "Filesystem usage",
     "description": "",
-    "queries": [
-      "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
-      "sum (container_fs_usage_bytes) by (node) / sum (container_fs_limit_bytes) by (node) * 100"
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
     ]
   }
 ]

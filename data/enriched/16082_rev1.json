@@ -1,0 +1,29 @@
+[
+  {
+    "id": "afe7adaf-5fc2-4aaa-886c-f7e7e5209684",
+    "name": "Available Bytes",
+    "question": "available bytes on the node filesystem",
+    "query": "node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "96848833-d141-4453-879e-435b24172e56",
+    "name": "Available Bytes",
+    "question": "free storage capacity in bytes",
+    "query": "node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "7a38e5b9-5a4d-4824-8642-62ebc8f87f63",
+    "name": "Available Bytes",
+    "question": "remaining disk space in bytes",
+    "query": "node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  }
+]

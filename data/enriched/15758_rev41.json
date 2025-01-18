@@ -1,0 +1,170 @@
+[
+  {
+    "id": "20630c09-2147-4fd0-824d-685e92466611",
+    "name": "Namespace(s) usage on total cluster CPU in %",
+    "question": "percentage of cluster cpu used by namespaces",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m])) / sum(machine_cpu_cores)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "cbd9b068-24dd-4765-b9aa-e8e9ee107348",
+    "name": "Namespace(s) usage on total cluster CPU in %",
+    "question": "total cluster cpu utilization by namespaces",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m])) / sum(machine_cpu_cores)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "e61b77bb-8184-461c-83e5-feb3e1baab69",
+    "name": "Namespace(s) usage on total cluster CPU in %",
+    "question": "proportion of cpu allocated to namespaces",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m])) / sum(machine_cpu_cores)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "ec2400ef-b0eb-4deb-9294-17bfad6ec1e8",
+    "name": "Namespace(s) usage on total cluster RAM in %",
+    "question": "percentage of total cluster ram used by namespaces",
+    "query": "sum(container_memory_working_set_bytes) / sum(machine_memory_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "ae9766f2-43bb-48f2-abd3-a03458399027",
+    "name": "Namespace(s) usage on total cluster RAM in %",
+    "question": "namespaces ram usage as a percentage of total",
+    "query": "sum(container_memory_working_set_bytes) / sum(machine_memory_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "9e7a6866-e427-44e3-a4bb-6fbb99e7bd63",
+    "name": "Namespace(s) usage on total cluster RAM in %",
+    "question": "ratio of working set memory to machine memory",
+    "query": "sum(container_memory_working_set_bytes) / sum(machine_memory_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "296f00fd-f8c7-470c-99c9-b3da7a766c66",
+    "name": "Namespace(s) CPU Usage in cores",
+    "question": "sum of cpu usage for namespaces",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "9bb9fdad-79a2-4535-81e8-4fa697bded00",
+    "name": "Namespace(s) CPU Usage in cores",
+    "question": "total cpu consumption by namespaces",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "ed5c6066-e8f4-44d3-8824-94f437bbf6ea",
+    "name": "Namespace(s) CPU Usage in cores",
+    "question": "aggregated cpu usage within namespaces",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "e96ff69c-f8d9-4902-8bb3-12f6ce950211",
+    "name": "Namespace(s) CPU Usage in cores",
+    "question": "overall cpu usage in cores across namespaces",
+    "query": "sum(machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "c3b22738-969d-48e9-8841-3c132d7f9880",
+    "name": "Namespace(s) CPU Usage in cores",
+    "question": "cumulative cpu cores utilized by namespaces",
+    "query": "sum(machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "4cb937c6-cf29-4a72-a307-d45b3248b1c0",
+    "name": "Namespace(s) CPU Usage in cores",
+    "question": "sum of cpu cores used by all namespaces",
+    "query": "sum(machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "e79b08f9-311a-4983-b43e-3e1702b1243f",
+    "name": "Namespace(s) RAM Usage in bytes",
+    "question": "sum of ram usage across namespaces",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "8a5e3906-10c5-42d7-9136-dc4bb0a78630",
+    "name": "Namespace(s) RAM Usage in bytes",
+    "question": "total memory consumption in namespaces",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "b1c9cb24-8c8c-46e8-b787-53dd69b0ac35",
+    "name": "Namespace(s) RAM Usage in bytes",
+    "question": "aggregated ram utilization by namespaces",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "f90ef94a-7328-4514-95de-c189eea3af5f",
+    "name": "Namespace(s) RAM Usage in bytes",
+    "question": "total ram usage across namespaces",
+    "query": "sum(machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "1e2245a5-d5c6-44a5-b5a5-ebe08eebd49a",
+    "name": "Namespace(s) RAM Usage in bytes",
+    "question": "aggregated ram consumption by namespace",
+    "query": "sum(machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "4cf8bf4c-a925-42c7-90a7-bc958c6dff0a",
+    "name": "Namespace(s) RAM Usage in bytes",
+    "question": "summed ram utilization in namespaces",
+    "query": "sum(machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  }
+]

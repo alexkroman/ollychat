@@ -2,94 +2,92 @@
   {
     "name": "Network I/O pressure",
     "description": "",
-    "queries": [
-      "sum (rate (container_network_receive_bytes_total[1m]))",
-      "- sum (rate (container_network_transmit_bytes_total[1m]))"
+    "query": "sum (rate (container_network_receive_bytes_total[1m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network I/O pressure",
+    "description": "",
+    "query": "- sum (rate (container_network_transmit_bytes_total[1m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
     ]
   },
   {
     "name": "Cluster memory usage",
     "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100"
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
     ]
   },
   {
     "name": "Cluster CPU usage (1m avg)",
     "description": "",
-    "queries": [
-      "sum (rate (container_cpu_usage_seconds_total[1m])) / sum (machine_cpu_cores) * 100"
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
     ]
   },
   {
     "name": "Cluster filesystem usage",
     "description": "",
-    "queries": [
-      "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100"
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
     ]
   },
   {
     "name": "Used",
     "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes)"
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
     ]
   },
   {
     "name": "Total",
     "description": "",
-    "queries": [
-      "sum (machine_memory_bytes)"
+    "query": "sum (machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
     ]
   },
   {
     "name": "Used",
     "description": "",
-    "queries": [
-      "sum (rate (container_cpu_usage_seconds_total[1m]))"
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
     ]
   },
   {
     "name": "Total",
     "description": "",
-    "queries": [
-      "sum (machine_cpu_cores)"
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
     ]
   },
   {
     "name": "Used",
     "description": "",
-    "queries": [
-      "sum (container_fs_usage_bytes)"
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
     ]
   },
   {
     "name": "Total",
     "description": "",
-    "queries": [
-      "sum (container_fs_limit_bytes)"
-    ]
-  },
-  {
-    "name": "Pods CPU usage (1m avg)",
-    "description": "",
-    "queries": [
-      "sum (rate (container_cpu_usage_seconds_total[1m])) by (pod)"
-    ]
-  },
-  {
-    "name": "Pods memory usage",
-    "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes) by (pod)"
-    ]
-  },
-  {
-    "name": "Pods network I/O (1m avg)",
-    "description": "",
-    "queries": [
-      "sum (rate (container_network_receive_bytes_total[1m])) by (pod)",
-      "- sum (rate (container_network_transmit_bytes_total[1m])) by (pod)"
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
     ]
   }
 ]

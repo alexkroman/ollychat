@@ -1,0 +1,170 @@
+[
+  {
+    "id": "ed5938cd-6cce-4904-bfdf-7c7710814a20",
+    "name": "Memory",
+    "question": "total memory available on nodes",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "c9e2f3c5-4d42-4fb4-924d-554b706a9ec4",
+    "name": "Memory",
+    "question": "aggregated node memory available",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "428c433b-f27a-438e-8a2b-7e70c0d0476c",
+    "name": "Memory",
+    "question": "summed available memory on nodes",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "f9713c21-f2cf-45a6-9557-6fe0fc850a01",
+    "name": "Memory",
+    "question": "difference between total and available memory",
+    "query": "sum(node_memory_MemTotal_bytes)-sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "72ece6c6-6190-45fa-87d6-aabc571bc47a",
+    "name": "Memory",
+    "question": "aggregated memory usage across nodes",
+    "query": "sum(node_memory_MemTotal_bytes)-sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "9dcb83b9-5872-40e8-8396-4a33064887e9",
+    "name": "Memory",
+    "question": "total memory minus available memory",
+    "query": "sum(node_memory_MemTotal_bytes)-sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "b730d205-6b0c-433a-bee4-8235515b24e5",
+    "name": "Memory",
+    "question": "total memory across nodes",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "60824e61-e078-446c-9aee-41ee06c05276",
+    "name": "Memory",
+    "question": "aggregated node memory size",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "ea0874c8-411d-4b93-bdc2-94e5b03c6a7e",
+    "name": "Memory",
+    "question": "sum of node memory capacities",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "145da914-d82c-41d5-a730-da46c58ec9b1",
+    "name": "Memory",
+    "question": "available memory on the node",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "088b9c34-2387-4b82-a14c-de45ce020dfe",
+    "name": "Memory",
+    "question": "nodes available memory in bytes",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "549e571e-5c5a-4ed6-99ed-e91d745585c4",
+    "name": "Memory",
+    "question": "memory available on the node",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "0f93f081-c0f6-4cfa-b3ce-e118dfb038d2",
+    "name": "Memory",
+    "question": "difference between total and available memory",
+    "query": "node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "2679feeb-c712-40b3-8fe1-920f70d04a4c",
+    "name": "Memory",
+    "question": "memory consumption excluding available memory",
+    "query": "node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "5acb6bad-5f3d-48a7-85d9-4d89656080d8",
+    "name": "Memory",
+    "question": "total memory minus available memory",
+    "query": "node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "3ba5ae4d-3355-4955-b81f-ecd1e9980b6f",
+    "name": "Memory",
+    "question": "total memory capacity on the node",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "f66ce431-1806-4b0c-8ffc-a91545b95235",
+    "name": "Memory",
+    "question": "nodes total available memory size",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "118ac043-5e8a-44f3-9436-8bfff50a92ae",
+    "name": "Memory",
+    "question": "aggregate of nodes memory capacity",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  }
+]

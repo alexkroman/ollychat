@@ -1,0 +1,110 @@
+[
+  {
+    "id": "aedb0f11-a660-4baa-b035-cc23c79a16fc",
+    "name": "Average CPU Usage",
+    "question": "average cpu usage from user and system time",
+    "query": "avg(rate(process_cpu_seconds_total[5m]) * 1000)",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "6bfb9f62-bd83-48ff-b41a-e6a6a9242edf",
+    "name": "Average CPU Usage",
+    "question": "average cpu time spent by processes",
+    "query": "avg(rate(process_cpu_seconds_total[5m]) * 1000)",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "281a4bcf-d575-4fd8-b1dd-e9ad63da5d75",
+    "name": "Average CPU Usage",
+    "question": "average cpu consumption over 5 minutes",
+    "query": "avg(rate(process_cpu_seconds_total[5m]) * 1000)",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a0140a0a-679a-4057-b87a-d0dc517060d2",
+    "name": "Average Memory Usage",
+    "question": "average resident memory bytes over 5 minutes",
+    "query": "avg(rate(process_resident_memory_bytes[5m]))",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "66aede68-1110-40ae-8d4b-cae913784218",
+    "name": "Average Memory Usage",
+    "question": "mean of resident memory size within 5 minutes",
+    "query": "avg(rate(process_resident_memory_bytes[5m]))",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "0bf21da2-b9ea-4e8e-a4f5-0db8a958a1ad",
+    "name": "Average Memory Usage",
+    "question": "average virtual memory usage in byte intervals",
+    "query": "avg(rate(process_resident_memory_bytes[5m]))",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "16d58a7b-c16e-4009-8141-f387d1359274",
+    "name": "Average Memory Usage",
+    "question": "average virtual memory usage over 5 minutes",
+    "query": "avg(rate(process_virtual_memory_bytes[5m]))",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "3e2182b1-5465-4b39-b98f-141b491a59e7",
+    "name": "Average Memory Usage",
+    "question": "aggregated average process virtual memory size",
+    "query": "avg(rate(process_virtual_memory_bytes[5m]))",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "4b723143-4fa8-4268-9e41-9034e888e529",
+    "name": "Average Memory Usage",
+    "question": "average memory consumption rate for processes",
+    "query": "avg(rate(process_virtual_memory_bytes[5m]))",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "27997520-269f-40a5-b49d-2199ad1ee4a8",
+    "name": "Open File Descriptors",
+    "question": "aggregated count of open file descriptors",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "0d985899-12fa-4e5a-ad08-a94324c7c6d6",
+    "name": "Open File Descriptors",
+    "question": "total number of currently open file descriptors",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "c4804ab6-45f9-4002-b42f-d10b02072325",
+    "name": "Open File Descriptors",
+    "question": "sum of open file descriptors",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  }
+]

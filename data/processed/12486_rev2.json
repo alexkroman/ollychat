@@ -1,142 +1,183 @@
 [
   {
-    "name": "CPU Busy",
-    "description": "Busy state of all CPU cores together",
-    "queries": [
-      "(((count(count(node_cpu_seconds_total) by (cpu))) - avg(sum by (mode)(irate(node_cpu_seconds_total[5m])))) * 100) / count(count(node_cpu_seconds_total) by (cpu))"
-    ]
-  },
-  {
-    "name": "Sys Load (5m avg)",
-    "description": "Busy state of all CPU cores together (5 min average)",
-    "queries": [
-      "avg(node_load5) /  count(count(node_cpu_seconds_total) by (cpu)) * 100"
-    ]
-  },
-  {
-    "name": "Sys Load (15m avg)",
-    "description": "Busy state of all CPU cores together (15 min average)",
-    "queries": [
-      "avg(node_load15) /  count(count(node_cpu_seconds_total) by (cpu)) * 100"
+    "name": "RAM Used",
+    "description": "Non available RAM memory",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / (node_memory_MemTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
     ]
   },
   {
     "name": "RAM Used",
     "description": "Non available RAM memory",
-    "queries": [
-      "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / (node_memory_MemTotal_bytes )) * 100",
-      "100 - ((node_memory_MemAvailable_bytes * 100) / node_memory_MemTotal_bytes)"
+    "query": "100 - ((node_memory_MemAvailable_bytes * 100) / node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
     ]
   },
   {
     "name": "SWAP Used",
     "description": "Used Swap",
-    "queries": [
-      "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes )) * 100"
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
     ]
   },
   {
     "name": "Root FS Used",
     "description": "Used Root FS",
-    "queries": [
-      "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)"
-    ]
-  },
-  {
-    "name": "CPU Cores",
-    "description": "Total number of CPU cores",
-    "queries": [
-      "count(count(node_cpu_seconds_total) by (cpu))"
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
     ]
   },
   {
     "name": "Uptime",
     "description": "System uptime",
-    "queries": [
-      "node_time_seconds - node_boot_time_seconds"
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
     ]
   },
   {
     "name": "RootFS Total",
     "description": "Total RootFS",
-    "queries": [
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
       "node_filesystem_size_bytes"
     ]
   },
   {
     "name": "RAM Total",
     "description": "Total RAM",
-    "queries": [
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
       "node_memory_MemTotal_bytes"
     ]
   },
   {
     "name": "SWAP Total",
     "description": "Total SWAP",
-    "queries": [
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
       "node_memory_SwapTotal_bytes"
     ]
   },
   {
     "name": "Disk IOps Completed",
     "description": "",
-    "queries": [
-      "irate(node_disk_reads_completed_total[5m])",
-      "irate(node_disk_writes_completed_total[5m])"
+    "query": "irate(node_disk_reads_completed_total[5m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "name": "Disk IOps Completed",
+    "description": "",
+    "query": "irate(node_disk_writes_completed_total[5m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
     ]
   },
   {
     "name": "Disk R/W Data",
     "description": "",
-    "queries": [
-      "irate(node_disk_read_bytes_total[5m])",
-      "irate(node_disk_written_bytes_total[5m])"
+    "query": "irate(node_disk_read_bytes_total[5m])",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "name": "Disk R/W Data",
+    "description": "",
+    "query": "irate(node_disk_written_bytes_total[5m])",
+    "metrics": [
+      "node_disk_written_bytes_total"
     ]
   },
   {
     "name": "Disk R/W Time",
     "description": "",
-    "queries": [
-      "irate(node_disk_read_time_seconds_total[5m])",
-      "irate(node_disk_write_time_seconds_total[5m])"
+    "query": "irate(node_disk_read_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_read_time_seconds_total"
+    ]
+  },
+  {
+    "name": "Disk R/W Time",
+    "description": "",
+    "query": "irate(node_disk_write_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_write_time_seconds_total"
     ]
   },
   {
     "name": "Disk IOs Weighted",
     "description": "",
-    "queries": [
-      "irate(node_disk_io_time_weighted_seconds_total[5m])"
+    "query": "irate(node_disk_io_time_weighted_seconds_total[5m])",
+    "metrics": [
+      "node_disk_io_time_weighted_seconds_total"
     ]
   },
   {
     "name": "Disk R/W Merged",
     "description": "",
-    "queries": [
-      "irate(node_disk_reads_merged_total[5m])",
-      "irate(node_disk_writes_merged_total[5m])"
+    "query": "irate(node_disk_reads_merged_total[5m])",
+    "metrics": [
+      "node_disk_reads_merged_total"
+    ]
+  },
+  {
+    "name": "Disk R/W Merged",
+    "description": "",
+    "query": "irate(node_disk_writes_merged_total[5m])",
+    "metrics": [
+      "node_disk_writes_merged_total"
     ]
   },
   {
     "name": "Time Spent Doing I/Os",
     "description": "",
-    "queries": [
-      "irate(node_disk_io_time_seconds_total[5m])",
-      "irate(node_disk_discard_time_seconds_total[5m])"
+    "query": "irate(node_disk_io_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "name": "Time Spent Doing I/Os",
+    "description": "",
+    "query": "irate(node_disk_discard_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_discard_time_seconds_total"
     ]
   },
   {
     "name": "Disk IOs Current in Progress",
     "description": "",
-    "queries": [
+    "query": "node_disk_io_now",
+    "metrics": [
       "node_disk_io_now"
     ]
   },
   {
     "name": "Disk IOps Discards completed / merged",
     "description": "",
-    "queries": [
-      "irate(node_disk_discards_completed_total[5m])",
-      "irate(node_disk_discards_merged_total[5m])"
+    "query": "irate(node_disk_discards_completed_total[5m])",
+    "metrics": [
+      "node_disk_discards_completed_total"
+    ]
+  },
+  {
+    "name": "Disk IOps Discards completed / merged",
+    "description": "",
+    "query": "irate(node_disk_discards_merged_total[5m])",
+    "metrics": [
+      "node_disk_discards_merged_total"
     ]
   }
 ]

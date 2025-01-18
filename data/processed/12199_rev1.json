@@ -1,48 +1,10 @@
 [
   {
-    "name": "Epoch",
-    "description": "",
-    "queries": [
-      "beacon_epoch",
-      "beacon_current_justified_epoch",
-      "beacon_previous_justified_epoch",
-      "beacon_finalized_epoch"
-    ]
-  },
-  {
-    "name": "Slot",
-    "description": "",
-    "queries": [
-      "beacon_slot",
-      "beacon_head_slot"
-    ]
-  },
-  {
-    "name": "Peers",
-    "description": "The number of peers currently connected.",
-    "queries": [
-      "libp2p_peers"
-    ]
-  },
-  {
     "name": "CPU",
     "description": "",
-    "queries": [
-      "irate(process_cpu_seconds_total[1m])"
-    ]
-  },
-  {
-    "name": "Memory Used",
-    "description": "",
-    "queries": [
-      "jvm_memory_bytes_used + ignoring(area) jvm_memory_bytes_used"
-    ]
-  },
-  {
-    "name": "GC time",
-    "description": "",
-    "queries": [
-      "rate(jvm_gc_collection_seconds_sum[1m])"
+    "query": "irate(process_cpu_seconds_total[1m])",
+    "metrics": [
+      "process_cpu_seconds_total"
     ]
   }
 ]

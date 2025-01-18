@@ -2,101 +2,49 @@
   {
     "name": "Memory",
     "description": "",
-    "queries": [
-      "node_memory_Active_bytes",
-      "node_memory_Buffers_bytes",
-      "node_memory_Cached_bytes",
+    "query": "node_memory_Active_bytes",
+    "metrics": [
+      "node_memory_Active_bytes"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "query": "node_memory_Buffers_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "query": "node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
       "node_memory_MemTotal_bytes"
     ]
   },
   {
     "name": "Memory write cache",
     "description": "",
-    "queries": [
-      "node_memory_Dirty_bytes",
+    "query": "node_memory_Dirty_bytes",
+    "metrics": [
+      "node_memory_Dirty_bytes"
+    ]
+  },
+  {
+    "name": "Memory write cache",
+    "description": "",
+    "query": "node_memory_Writeback_bytes",
+    "metrics": [
       "node_memory_Writeback_bytes"
-    ]
-  },
-  {
-    "name": "OOM killed procs",
-    "description": "",
-    "queries": [
-      "irate(node_vmstat_oom_kill[$RateInterval])"
-    ]
-  },
-  {
-    "name": "IO Wait per core",
-    "description": "",
-    "queries": [
-      "rate(node_cpu_seconds_total[$RateInterval])",
-      "min(rate(node_cpu_seconds_total[$RateInterval]))",
-      "avg(rate(node_cpu_seconds_total[$RateInterval]))",
-      "max(rate(node_cpu_seconds_total[$RateInterval]))"
-    ]
-  },
-  {
-    "name": "Disk active time",
-    "description": "",
-    "queries": [
-      "rate(node_disk_io_time_seconds_total[$RateInterval])"
-    ]
-  },
-  {
-    "name": "Disk IO",
-    "description": "",
-    "queries": [
-      "rate(node_disk_io_time_weighted_seconds_total[$RateInterval])",
-      "rate(node_disk_write_time_seconds_total[$RateInterval])",
-      "rate(node_disk_read_time_seconds_total[$RateInterval])"
-    ]
-  },
-  {
-    "name": "IOPS",
-    "description": "",
-    "queries": [
-      "rate(node_disk_writes_completed_total[$RateInterval])"
-    ]
-  },
-  {
-    "name": "Write bandwidth",
-    "description": "",
-    "queries": [
-      " rate(node_disk_written_bytes_total[$RateInterval]) "
-    ]
-  },
-  {
-    "name": "Write size",
-    "description": "",
-    "queries": [
-      "rate(node_disk_written_bytes_total[$RateInterval]) / rate(node_disk_writes_completed_total[$RateInterval])"
-    ]
-  },
-  {
-    "name": "Write latency",
-    "description": "",
-    "queries": [
-      "rate(node_disk_write_time_seconds_total[$RateInterval]) /  rate(node_disk_writes_completed_total[$RateInterval])"
-    ]
-  },
-  {
-    "name": "Read bandwidth",
-    "description": "",
-    "queries": [
-      " rate(node_disk_read_bytes_total[$RateInterval]) "
-    ]
-  },
-  {
-    "name": "Read size",
-    "description": "",
-    "queries": [
-      "rate(node_disk_read_bytes_total[$RateInterval]) / rate(node_disk_reads_completed_total[$RateInterval])"
-    ]
-  },
-  {
-    "name": "Read latency",
-    "description": "",
-    "queries": [
-      "rate(node_disk_read_time_seconds_total[$RateInterval]) /  rate(node_disk_reads_completed_total[$RateInterval])"
     ]
   }
 ]

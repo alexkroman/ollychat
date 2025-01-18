@@ -2,71 +2,73 @@
   {
     "name": "Global Probe Duration",
     "description": "",
-    "queries": [
+    "query": "probe_duration_seconds",
+    "metrics": [
       "probe_duration_seconds"
     ]
   },
   {
     "name": "Status",
     "description": "",
-    "queries": [
+    "query": "probe_success",
+    "metrics": [
       "probe_success"
     ]
   },
   {
     "name": "HTTP Duration",
     "description": "",
-    "queries": [
+    "query": "probe_http_duration_seconds",
+    "metrics": [
       "probe_http_duration_seconds"
     ]
   },
   {
     "name": "Probe Duration",
     "description": "",
-    "queries": [
+    "query": "probe_duration_seconds",
+    "metrics": [
       "probe_duration_seconds"
     ]
   },
   {
     "name": "HTTP Status Code",
     "description": "",
-    "queries": [
+    "query": "probe_http_status_code",
+    "metrics": [
       "probe_http_status_code"
     ]
   },
   {
     "name": "HTTP Version",
     "description": "",
-    "queries": [
+    "query": "probe_http_version",
+    "metrics": [
       "probe_http_version"
     ]
   },
   {
     "name": "SSL",
     "description": "",
-    "queries": [
+    "query": "probe_http_ssl",
+    "metrics": [
       "probe_http_ssl"
-    ]
-  },
-  {
-    "name": "SSL Expiry",
-    "description": "",
-    "queries": [
-      "probe_ssl_earliest_cert_expiry - time()"
     ]
   },
   {
     "name": "Average Probe Duration",
     "description": "",
-    "queries": [
-      "avg(probe_duration_seconds)"
+    "query": "avg(probe_duration_seconds)",
+    "metrics": [
+      "probe_duration_seconds"
     ]
   },
   {
     "name": "Average DNS Lookup",
     "description": "",
-    "queries": [
-      "avg(probe_dns_lookup_time_seconds)"
+    "query": "avg(probe_dns_lookup_time_seconds)",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
     ]
   }
 ]

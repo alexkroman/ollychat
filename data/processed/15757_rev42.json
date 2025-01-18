@@ -1,231 +1,69 @@
 [
   {
-    "name": "Global CPU  Usage",
-    "description": "",
-    "queries": [
-      "avg(sum by (instance, cpu) (rate(node_cpu_seconds_total[30m])))",
-      "avg(sum by (core) (rate(windows_cpu_time_total[30m])))",
-      "sum(kube_pod_container_resource_requests) / sum(machine_cpu_cores)",
-      "sum(kube_pod_container_resource_limits) / sum(machine_cpu_cores)"
-    ]
-  },
-  {
     "name": "Global RAM Usage",
     "description": "",
-    "queries": [
-      "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
-      "sum(windows_memory_available_bytes + windows_memory_cache_bytes) / sum(windows_os_visible_memory_bytes)",
-      "sum(kube_pod_container_resource_requests) / sum(machine_memory_bytes)",
-      "sum(kube_pod_container_resource_limits) / sum(machine_memory_bytes)"
-    ]
-  },
-  {
-    "name": "Nodes",
-    "description": "",
-    "queries": [
-      "count(count by (node) (kube_node_info))"
-    ]
-  },
-  {
-    "name": "Kubernetes Resource Count",
-    "description": "",
-    "queries": [
-      "sum(kube_namespace_labels)",
-      "sum(kube_pod_container_status_running)",
-      "sum(kube_pod_status_phase)",
-      "sum(kube_service_info)",
-      "sum(kube_endpoint_info)",
-      "sum(kube_ingress_info)",
-      "sum(kube_deployment_labels)",
-      "sum(kube_statefulset_labels)",
-      "sum(kube_daemonset_labels)",
-      "sum(kube_persistentvolumeclaim_info)",
-      "sum(kube_hpa_labels)",
-      "sum(kube_configmap_info)",
-      "sum(kube_secret_info)",
-      "sum(kube_networkpolicy_labels)",
-      "count(count by (node) (kube_node_info))"
-    ]
-  },
-  {
-    "name": "Namespaces",
-    "description": "",
-    "queries": [
-      "count(kube_namespace_created)"
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
     ]
   },
   {
     "name": "CPU Usage",
     "description": "",
-    "queries": [
-      "sum(rate(node_cpu_seconds_total[30m]))",
-      "sum(rate(windows_cpu_time_total[30m]))",
-      "sum(kube_pod_container_resource_requests)",
-      "sum(kube_pod_container_resource_limits)",
-      "sum(machine_cpu_cores)"
+    "query": "sum(rate(node_cpu_seconds_total[30m]))",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage",
+    "description": "",
+    "query": "sum(machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
     ]
   },
   {
     "name": "RAM Usage",
     "description": "",
-    "queries": [
-      "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
-      "sum(windows_os_visible_memory_bytes - windows_memory_available_bytes - windows_memory_cache_bytes)",
-      "sum(kube_pod_container_resource_requests)",
-      "sum(kube_pod_container_resource_limits)",
-      "sum(machine_memory_bytes)"
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
     ]
   },
   {
-    "name": "Running Pods",
+    "name": "RAM Usage",
     "description": "",
-    "queries": [
-      "sum(kube_pod_status_phase)"
-    ]
-  },
-  {
-    "name": "Cluster CPU Utilization",
-    "description": "",
-    "queries": [
-      "avg(sum by (instance, cpu) (rate(node_cpu_seconds_total[30m])))",
-      "1 - avg(rate(windows_cpu_time_total[30m]))"
+    "query": "sum(machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
     ]
   },
   {
     "name": "Cluster Memory Utilization",
     "description": "",
-    "queries": [
-      "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
-      "sum(windows_os_visible_memory_bytes - windows_memory_available_bytes) / sum(windows_os_visible_memory_bytes)"
-    ]
-  },
-  {
-    "name": "CPU Utilization by namespace",
-    "description": "",
-    "queries": [
-      "sum(rate(container_cpu_usage_seconds_total[30m])) by (namespace)\n+ on (namespace)\n(sum(rate(windows_container_cpu_usage_seconds_total[30m]) * on (container_id) group_left (container, pod, namespace) max by ( container, container_id, pod, namespace) (kube_pod_container_info) OR kube_namespace_created * 0) by (namespace))"
-    ]
-  },
-  {
-    "name": "Memory Utilization by namespace",
-    "description": "",
-    "queries": [
-      "sum(container_memory_working_set_bytes) by (namespace)\n+ on (namespace)\n(sum(windows_container_memory_usage_commit_bytes * on (container_id) group_left (container, pod, namespace) max by ( container, container_id, pod, namespace) (kube_pod_container_info) OR kube_namespace_created * 0) by (namespace))"
-    ]
-  },
-  {
-    "name": "CPU Utilization by instance",
-    "description": "",
-    "queries": [
-      "avg(sum by (instance, cpu) (rate(node_cpu_seconds_total[30m]))) by (instance)",
-      "avg(sum by (instance,core) (rate(windows_cpu_time_total[30m]))) by (instance)"
-    ]
-  },
-  {
-    "name": "Memory Utilization by instance",
-    "description": "",
-    "queries": [
-      "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) by (instance)",
-      "sum(windows_os_visible_memory_bytes - windows_memory_available_bytes) by (instance)"
-    ]
-  },
-  {
-    "name": "CPU Throttled seconds by namespace",
-    "description": "No data is generally a good thing here.",
-    "queries": [
-      "sum(rate(container_cpu_cfs_throttled_seconds_total[30m])) by (namespace) > 0"
-    ]
-  },
-  {
-    "name": "CPU Core Throttled by instance",
-    "description": "No data is generally a good thing here.",
-    "queries": [
-      "sum(rate(node_cpu_core_throttles_total[30m])) by (instance)"
-    ]
-  },
-  {
-    "name": "Kubernetes Pods QoS classes",
-    "description": "",
-    "queries": [
-      "sum(kube_pod_status_qos_class) by (qos_class)",
-      "sum(kube_pod_info)"
-    ]
-  },
-  {
-    "name": "Kubernetes Pods Status Reason",
-    "description": "",
-    "queries": [
-      "sum(kube_pod_status_reason) by (reason)"
-    ]
-  },
-  {
-    "name": "OOM Events by namespace",
-    "description": "No data is generally a good thing here.",
-    "queries": [
-      "sum(increase(container_oom_events_total[30m])) by (namespace) > 0"
-    ]
-  },
-  {
-    "name": "Container Restarts by namespace",
-    "description": "No data is generally a good thing here.",
-    "queries": [
-      "sum(increase(kube_pod_container_status_restarts_total[30m])) by (namespace) > 0"
-    ]
-  },
-  {
-    "name": "Global Network Utilization by device",
-    "description": "Dropped noisy virtual devices for readability.",
-    "queries": [
-      "sum(rate(node_network_receive_bytes_total[30m])) by (device)",
-      "- sum(rate(node_network_transmit_bytes_total[30m])) by (device)",
-      "sum(rate(windows_net_bytes_received_total[30m])) by (nic)",
-      "- sum(rate(windows_net_bytes_sent_total[30m])) by (nic)"
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
     ]
   },
   {
     "name": "Network Saturation - Packets dropped",
     "description": "",
-    "queries": [
-      "sum(rate(node_network_receive_drop_total[30m]))",
-      "- sum(rate(node_network_transmit_drop_total[30m]))",
-      "sum(rate(windows_net_packets_received_discarded_total[30m]))",
-      "- sum(rate(windows_net_packets_outbound_discarded_total[30m]))"
+    "query": "sum(rate(node_network_receive_drop_total[30m]))",
+    "metrics": [
+      "node_network_receive_drop_total"
     ]
   },
   {
-    "name": "Network Received by namespace",
+    "name": "Network Saturation - Packets dropped",
     "description": "",
-    "queries": [
-      "sum(rate(container_network_receive_bytes_total[30m])) by (namespace)\n+ on (namespace)\n(sum(rate(windows_container_network_receive_bytes_total[30m]) * on (container_id) group_left (container, pod, namespace) max by ( container, container_id, pod, namespace) (kube_pod_container_info) OR kube_namespace_created * 0) by (namespace))",
-      "- (sum(rate(container_network_transmit_bytes_total[30m])) by (namespace)\n+ on (namespace)\n(sum(rate(windows_container_network_transmit_bytes_total[30m]) * on (container_id) group_left (container, pod, namespace) max by ( container, container_id, pod, namespace) (kube_pod_container_info) OR kube_namespace_created * 0) by (namespace)))"
-    ]
-  },
-  {
-    "name": "Total Network Received (with all virtual devices) by instance",
-    "description": "",
-    "queries": [
-      "sum(rate(node_network_receive_bytes_total[30m])) by (instance)",
-      "- sum(rate(node_network_transmit_bytes_total[30m])) by (instance)",
-      "sum(rate(windows_net_bytes_received_total[30m])) by (instance)",
-      "- sum(rate(windows_net_bytes_sent_total[30m])) by (instance)"
-    ]
-  },
-  {
-    "name": "Network Received (without loopback)  by instance",
-    "description": "Dropped noisy virtual devices for readability.",
-    "queries": [
-      "sum(rate(node_network_receive_bytes_total[30m])) by (instance)",
-      "- sum(rate(node_network_transmit_bytes_total[30m])) by (instance)",
-      "sum(rate(windows_net_bytes_received_total[30m])) by (instance)",
-      "- sum(rate(windows_net_bytes_sent_total[30m])) by (instance)"
-    ]
-  },
-  {
-    "name": "Network Received (loopback only) by instance",
-    "description": "Dropped noisy virtual devices for readability.",
-    "queries": [
-      "sum(rate(node_network_receive_bytes_total[30m])) by (instance)",
-      "- sum(rate(node_network_transmit_bytes_total[30m])) by (instance)"
+    "query": "- sum(rate(node_network_transmit_drop_total[30m]))",
+    "metrics": [
+      "node_network_transmit_drop_total"
     ]
   }
 ]

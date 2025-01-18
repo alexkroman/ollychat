@@ -1,9 +1,0 @@
-[
-  {
-    "name": "Helm Releases",
-    "description": "",
-    "queries": [
-      "min(helm_chart_info) by (chart, release, namespace, version) != 2"
-    ]
-  }
-]

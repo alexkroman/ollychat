@@ -1,85 +1,17 @@
 [
   {
-    "name": "API Server - Health Status",
-    "description": "",
-    "queries": [
-      "up"
-    ]
-  },
-  {
-    "name": "Deprecated Kubernetes Resources",
-    "description": "",
-    "queries": [
-      "apiserver_requested_deprecated_apis"
-    ]
-  },
-  {
-    "name": "API Server - HTTP Requests by code",
-    "description": "",
-    "queries": [
-      "sum by (code) (rate(apiserver_request_total[30m]))"
-    ]
-  },
-  {
-    "name": "API Server - HTTP Requests by verb",
-    "description": "",
-    "queries": [
-      "sum by (verb) (rate(apiserver_request_total[30m]))"
-    ]
-  },
-  {
-    "name": "API Server - HTTP Requests Latency by instance",
-    "description": "",
-    "queries": [
-      "sum(rate(apiserver_request_duration_seconds_sum[30m])) by (instance)\n/\nsum(rate(apiserver_request_duration_seconds_count[30m])) by (instance)"
-    ]
-  },
-  {
-    "name": "API Server - HTTP Requests Latency by verb",
-    "description": "",
-    "queries": [
-      "sum(rate(apiserver_request_duration_seconds_sum[30m])) by (verb)\n/\nsum(rate(apiserver_request_duration_seconds_count[30m])) by (verb)"
-    ]
-  },
-  {
-    "name": "API Server - Errors by Instance",
-    "description": "",
-    "queries": [
-      "sum by(instance) (rate(apiserver_request_total[30m]))\n / sum by(instance) (rate(apiserver_request_total[30m]))"
-    ]
-  },
-  {
-    "name": "API Server - Errors by verb",
-    "description": "",
-    "queries": [
-      "sum by(verb) (rate(apiserver_request_total[30m]))\n / sum by(verb) (rate(apiserver_request_total[30m]))"
-    ]
-  },
-  {
-    "name": "API Server - Stacked HTTP Requests by instance",
-    "description": "",
-    "queries": [
-      "sum(rate(apiserver_request_total[30m])) by (instance)"
-    ]
-  },
-  {
-    "name": "API Server - Work Queue by instance",
-    "description": "",
-    "queries": [
-      "sum(rate(workqueue_depth[30m])) by (instance)"
-    ]
-  },
-  {
     "name": "API Server - CPU Usage by instance",
     "description": "",
-    "queries": [
-      "rate(process_cpu_seconds_total[30m])"
+    "query": "rate(process_cpu_seconds_total[30m])",
+    "metrics": [
+      "process_cpu_seconds_total"
     ]
   },
   {
     "name": "API Server - Memory Usage by instance",
     "description": "",
-    "queries": [
+    "query": "process_resident_memory_bytes",
+    "metrics": [
       "process_resident_memory_bytes"
     ]
   }

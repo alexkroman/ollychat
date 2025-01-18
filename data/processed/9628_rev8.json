@@ -1,234 +1,34 @@
 [
   {
-    "name": "Version",
-    "description": "",
-    "queries": [
-      "pg_static"
-    ]
-  },
-  {
-    "name": "Start Time",
-    "description": "start time of the process",
-    "queries": [
-      "pg_postmaster_start_time_seconds * 1000"
-    ]
-  },
-  {
-    "name": "Current fetch data",
-    "description": "",
-    "queries": [
-      "SUM(pg_stat_database_tup_fetched)"
-    ]
-  },
-  {
-    "name": "Current insert data",
-    "description": "",
-    "queries": [
-      "SUM(pg_stat_database_tup_inserted)"
-    ]
-  },
-  {
-    "name": "Current update data",
-    "description": "",
-    "queries": [
-      "SUM(pg_stat_database_tup_updated)"
-    ]
-  },
-  {
-    "name": "Max Connections",
-    "description": "",
-    "queries": [
-      "pg_settings_max_connections"
-    ]
-  },
-  {
     "name": "Average CPU Usage",
     "description": "Average user and system CPU time spent in seconds.",
-    "queries": [
-      "avg(rate(process_cpu_seconds_total[5m]) * 1000)"
+    "query": "avg(rate(process_cpu_seconds_total[5m]) * 1000)",
+    "metrics": [
+      "process_cpu_seconds_total"
     ]
   },
   {
     "name": "Average Memory Usage",
     "description": "Virtual and Resident memory size in bytes, averages over 5 min interval",
-    "queries": [
-      "avg(rate(process_resident_memory_bytes[5m]))",
-      "avg(rate(process_virtual_memory_bytes[5m]))"
+    "query": "avg(rate(process_resident_memory_bytes[5m]))",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "name": "Average Memory Usage",
+    "description": "Virtual and Resident memory size in bytes, averages over 5 min interval",
+    "query": "avg(rate(process_virtual_memory_bytes[5m]))",
+    "metrics": [
+      "process_virtual_memory_bytes"
     ]
   },
   {
     "name": "Open File Descriptors",
     "description": "Number of open file descriptors",
-    "queries": [
+    "query": "process_open_fds",
+    "metrics": [
       "process_open_fds"
-    ]
-  },
-  {
-    "name": "Shared Buffers",
-    "description": "",
-    "queries": [
-      "pg_settings_shared_buffers_bytes"
-    ]
-  },
-  {
-    "name": "Effective Cache",
-    "description": "",
-    "queries": [
-      "pg_settings_effective_cache_size_bytes"
-    ]
-  },
-  {
-    "name": "Maintenance Work Mem",
-    "description": "",
-    "queries": [
-      "pg_settings_maintenance_work_mem_bytes"
-    ]
-  },
-  {
-    "name": "Work Mem",
-    "description": "",
-    "queries": [
-      "pg_settings_work_mem_bytes"
-    ]
-  },
-  {
-    "name": "Max WAL Size",
-    "description": "",
-    "queries": [
-      "pg_settings_max_wal_size_bytes"
-    ]
-  },
-  {
-    "name": "Random Page Cost",
-    "description": "",
-    "queries": [
-      "pg_settings_random_page_cost"
-    ]
-  },
-  {
-    "name": "Seq Page Cost",
-    "description": "",
-    "queries": [
-      "pg_settings_seq_page_cost"
-    ]
-  },
-  {
-    "name": "Max Worker Processes",
-    "description": "",
-    "queries": [
-      "pg_settings_max_worker_processes"
-    ]
-  },
-  {
-    "name": "Max Parallel Workers",
-    "description": "",
-    "queries": [
-      "pg_settings_max_parallel_workers"
-    ]
-  },
-  {
-    "name": "Active sessions",
-    "description": "",
-    "queries": [
-      "pg_stat_activity_count !=0"
-    ]
-  },
-  {
-    "name": "Transactions",
-    "description": "",
-    "queries": [
-      "irate(pg_stat_database_xact_commit[5m])",
-      "irate(pg_stat_database_xact_rollback[5m])"
-    ]
-  },
-  {
-    "name": "Update data",
-    "description": "",
-    "queries": [
-      "pg_stat_database_tup_updated != 0"
-    ]
-  },
-  {
-    "name": "Fetch data (SELECT)",
-    "description": "",
-    "queries": [
-      "pg_stat_database_tup_fetched != 0"
-    ]
-  },
-  {
-    "name": "Insert data",
-    "description": "",
-    "queries": [
-      "pg_stat_database_tup_inserted != 0"
-    ]
-  },
-  {
-    "name": "Lock tables",
-    "description": "",
-    "queries": [
-      "pg_locks_count != 0"
-    ]
-  },
-  {
-    "name": "Return data",
-    "description": "",
-    "queries": [
-      "pg_stat_database_tup_returned != 0"
-    ]
-  },
-  {
-    "name": "Idle sessions",
-    "description": "",
-    "queries": [
-      "pg_stat_activity_count"
-    ]
-  },
-  {
-    "name": "Delete data",
-    "description": "",
-    "queries": [
-      "pg_stat_database_tup_deleted != 0"
-    ]
-  },
-  {
-    "name": "Cache Hit Rate",
-    "description": "",
-    "queries": [
-      "pg_stat_database_blks_hit / (pg_stat_database_blks_read + pg_stat_database_blks_hit)"
-    ]
-  },
-  {
-    "name": "Buffers (bgwriter)",
-    "description": "",
-    "queries": [
-      "irate(pg_stat_bgwriter_buffers_backend_total[5m])",
-      "irate(pg_stat_bgwriter_buffers_alloc_total[5m])",
-      "irate(pg_stat_bgwriter_buffers_backend_fsync_total[5m])",
-      "irate(pg_stat_bgwriter_buffers_checkpoint_total[5m])",
-      "irate(pg_stat_bgwriter_buffers_clean_total[5m])"
-    ]
-  },
-  {
-    "name": "Conflicts/Deadlocks",
-    "description": "",
-    "queries": [
-      "irate(pg_stat_database_conflicts[5m])",
-      "irate(pg_stat_database_deadlocks[5m])"
-    ]
-  },
-  {
-    "name": "Temp File (Bytes)",
-    "description": "Total amount of data written to temporary files by queries in this database. All temporary files are counted, regardless of why the temporary file was created, and regardless of the log_temp_files setting.",
-    "queries": [
-      "irate(pg_stat_database_temp_bytes[5m])"
-    ]
-  },
-  {
-    "name": "Checkpoint Stats",
-    "description": "",
-    "queries": [
-      "irate(pg_stat_bgwriter_checkpoint_write_time_total[5m])",
-      "irate(pg_stat_bgwriter_checkpoint_sync_time_total[5m])"
     ]
   }
 ]

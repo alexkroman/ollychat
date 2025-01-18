@@ -1,0 +1,113 @@
+[
+  {
+    "id": "10701f83-8510-4391-baf2-08de5fd69eee",
+    "name": "Deployment CPU usage",
+    "question": "average cpu usage percentage for all deployments",
+    "query": "sum (rate (container_cpu_usage_seconds_total[2m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "40fb6d36-150e-45d7-9d49-c0b92a4d4289",
+    "name": "Deployment CPU usage",
+    "question": "ratio of cpu usage to available cores for deployments",
+    "query": "sum (rate (container_cpu_usage_seconds_total[2m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "52a05bf5-ccf7-4705-9d8c-b1e9a25802ff",
+    "name": "Deployment CPU usage",
+    "question": "total cpu usage compared to machine cpu cores for deployments",
+    "query": "sum (rate (container_cpu_usage_seconds_total[2m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "ab1eb6f3-3a8f-4d56-8450-4691b17413fd",
+    "name": "Used",
+    "question": "sum of container memory working set bytes",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "70fc9ac0-154b-4200-9050-5e38a5eca2d3",
+    "name": "Used",
+    "question": "total container memory usage",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "750fac83-36ee-4375-8a0b-d1258175892f",
+    "name": "Used",
+    "question": "aggregated memory working set across containers",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "8a67318b-cb59-4525-b4b0-10e93e7ce49d",
+    "name": "Used",
+    "question": "sum of cpu usage rate for containers",
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "a4bdc9be-1d23-42c4-abf0-e55366417ddd",
+    "name": "Used",
+    "question": "total container cpu usage rate aggregated",
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "734d1dc9-63ec-4d5f-b233-a2dc3750f9b2",
+    "name": "Used",
+    "question": "aggregated cpu consumption rate for containers",
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "e543fadf-363a-42cb-a138-7390d713ba25",
+    "name": "Total",
+    "question": "aggregated total machine cpu core count",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "40fced49-c299-4c4b-b8ec-514729cd44d4",
+    "name": "Total",
+    "question": "sum of machine cpu core count",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "54950f65-ec18-4636-922c-15bfc83f2961",
+    "name": "Total",
+    "question": "total machine cpu cores summed",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  }
+]

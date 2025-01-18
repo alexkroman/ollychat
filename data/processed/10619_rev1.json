@@ -2,117 +2,178 @@
   {
     "name": "Running containers",
     "description": "",
-    "queries": [
-      "count(container_last_seen)"
+    "query": "count(container_last_seen)",
+    "metrics": [
+      "container_last_seen"
     ]
   },
   {
     "name": "CPU Usage on Node",
     "description": "",
-    "queries": [
-      "sum(rate(container_cpu_system_seconds_total[1m]))",
-      "sum(rate(container_cpu_system_seconds_total[1m]))",
-      "sum(rate(container_cpu_system_seconds_total[1m]))",
-      "sum(rate(process_cpu_seconds_total[$interval])) * 100",
-      "sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(process_cpu_seconds_total[1m]))"
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage on Node",
+    "description": "",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage on Node",
+    "description": "",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage on Node",
+    "description": "",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(process_cpu_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total",
+      "process_cpu_seconds_total"
     ]
   },
   {
     "name": "Free and Used Disk Space on Node",
     "description": "",
-    "queries": [
+    "query": "node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "name": "Free and Used Disk Space on Node",
+    "description": "",
+    "query": "node_filesystem_size_bytes - node_filesystem_avail_bytes",
+    "metrics": [
       "node_filesystem_avail_bytes",
-      "node_filesystem_size_bytes - node_filesystem_avail_bytes"
+      "node_filesystem_size_bytes"
     ]
   },
   {
     "name": "Available Memory on Node",
     "description": "",
-    "queries": [
-      "container_memory_rss",
-      "sum(container_memory_rss)",
-      "container_memory_usage_bytes",
-      "container_memory_rss",
-      "sum(container_memory_rss)",
-      "node_memory_Buffers",
-      "node_memory_MemFree",
-      "node_memory_MemAvailable",
-      "node_memory_MemTotal - node_memory_MemAvailable",
-      "node_memory_Inactive",
-      "node_memory_KernelStack",
-      "node_memory_Active",
-      "node_memory_MemTotal - (node_memory_Active + node_memory_MemFree + node_memory_Inactive)",
-      "node_memory_MemFree + node_memory_Inactive ",
-      "container_memory_rss",
-      "node_memory_Inactive + node_memory_MemFree + node_memory_MemAvailable"
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
     ]
   },
   {
-    "name": "Disk I/O on Node",
+    "name": "Available Memory on Node",
     "description": "",
-    "queries": [
-      "sum(rate(node_disk_bytes_read[$interval])) by (device)",
-      "sum(rate(node_disk_bytes_written[$interval])) by (device)",
-      ""
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
     ]
   },
   {
-    "name": "Network Traffic on Node",
+    "name": "Available Memory on Node",
     "description": "",
-    "queries": [
-      "sum(rate(container_network_receive_bytes_total[$interval])) by (id)",
-      "- sum(rate(container_network_transmit_bytes_total[$interval])) by (id)"
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
     ]
   },
   {
-    "name": "CPU Usage per Container (Stacked)",
+    "name": "Available Memory on Node",
     "description": "",
-    "queries": [
-      "sum(rate(container_cpu_usage_seconds_total[$interval])) by (name) * 100"
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "Available Memory on Node",
+    "description": "",
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "Available Memory on Node",
+    "description": "",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
     ]
   },
   {
     "name": "Memory Usage per Container (Stacked)",
     "description": "",
-    "queries": [
-      "sum(container_memory_rss) by (name)",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
       "container_memory_usage_bytes"
-    ]
-  },
-  {
-    "name": "Sent Network Traffic per Container",
-    "description": "",
-    "queries": [
-      "sum(rate(container_network_transmit_bytes_total[$interval])) by (name)",
-      "rate(container_network_transmit_bytes_total[$interval])"
     ]
   },
   {
     "name": "Cached Memory per Container (Stacked)",
     "description": "",
-    "queries": [
-      "container_memory_rss",
-      "container_memory_usage_bytes",
-      "sum(container_memory_cache) by (name)"
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
     ]
   },
   {
-    "name": "Received Network Traffic per Container",
+    "name": "Cached Memory per Container (Stacked)",
     "description": "",
-    "queries": [
-      "sum(rate(container_network_receive_bytes_total[$interval])) by (name)",
-      "- rate(container_network_transmit_bytes_total[$interval])"
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
     ]
   },
   {
     "name": "",
     "description": "",
-    "queries": [
-      "cadvisor_version_info",
-      "prometheus_build_info",
-      "node_exporter_build_info",
-      "cadvisor_version_info",
-      "cadvisor_version_info",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "query": "prometheus_build_info",
+    "metrics": [
+      "prometheus_build_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "query": "node_exporter_build_info",
+    "metrics": [
+      "node_exporter_build_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "",
+    "query": "cadvisor_version_info",
+    "metrics": [
       "cadvisor_version_info"
     ]
   }

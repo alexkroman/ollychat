@@ -1,112 +1,129 @@
 [
   {
-    "name": "CPU Cores Requests",
-    "description": "",
-    "queries": [
-      "max(sum(kube_pod_container_resource_requests_cpu_cores) by (instance)) / min(sum(kube_node_status_allocatable_cpu_cores) by (instance))"
-    ]
-  },
-  {
     "name": "Idle CPU",
     "description": "",
-    "queries": [
-      "sum(rate(node_cpu_seconds_total[2m])) * 100 / count(node_cpu_seconds_total)"
-    ]
-  },
-  {
-    "name": "CPU Cores",
-    "description": "This represents the total [CPU resource requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#meaning-of-cpu) in the cluster.\nFor comparison the total [allocatable CPU cores](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md) is also shown.",
-    "queries": [
-      "min(sum(kube_node_status_allocatable_cpu_cores) by (instance))",
-      "max(sum(kube_pod_container_resource_requests_cpu_cores) by (instance))"
+    "query": "sum(rate(node_cpu_seconds_total[2m])) * 100 / count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
     ]
   },
   {
     "name": "System Load",
     "description": "",
-    "queries": [
-      "sum(node_load1)",
-      "sum(node_load5)",
-      "sum(node_load15)"
+    "query": "sum(node_load1)",
+    "metrics": [
+      "node_load1"
     ]
   },
   {
-    "name": "Memory Requests",
+    "name": "System Load",
     "description": "",
-    "queries": [
-      "max(sum(kube_pod_container_resource_requests_memory_bytes) by (instance)) / min(sum(kube_node_status_allocatable_memory_bytes) by (instance))"
+    "query": "sum(node_load5)",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "name": "System Load",
+    "description": "",
+    "query": "sum(node_load15)",
+    "metrics": [
+      "node_load15"
     ]
   },
   {
     "name": "Memory Free",
     "description": "",
-    "queries": [
-      "1 - ((sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)) / sum(node_memory_MemTotal_bytes))"
-    ]
-  },
-  {
-    "name": "Memory",
-    "description": "This represents the total [memory resource requests](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#meaning-of-memory) in the cluster.\nFor comparison the total [allocatable memory](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/node-allocatable.md) is also shown.",
-    "queries": [
-      "min(sum(kube_node_status_allocatable_memory_bytes) by (instance))",
-      "max(sum(kube_pod_container_resource_requests_memory_bytes) by (instance))",
-      "max(sum(kube_pod_container_resource_limits_memory_bytes) by (instance))",
-      "sum(node_memory_MemTotal) - sum(node_memory_MemFree) - sum(node_memory_Buffers) - sum(node_memory_Cached)"
+    "query": "1 - ((sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)) / sum(node_memory_MemTotal_bytes))",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
     ]
   },
   {
     "name": "Memory Usage",
     "description": "",
-    "queries": [
-      "sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)",
-      "sum(node_memory_Buffers_bytes)",
-      "sum(node_memory_Cached_bytes)",
-      "sum(node_memory_MemFree_bytes)"
+    "query": "sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "",
+    "query": "sum(node_memory_Buffers_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "",
+    "query": "sum(node_memory_Cached_bytes)",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "",
+    "query": "sum(node_memory_MemFree_bytes)",
+    "metrics": [
+      "node_memory_MemFree_bytes"
     ]
   },
   {
     "name": "Disk Space Usage",
     "description": "",
-    "queries": [
-      "(sum(node_filesystem_size_bytes) - sum(node_filesystem_free_bytes)) / sum(node_filesystem_size_bytes)"
+    "query": "(sum(node_filesystem_size_bytes) - sum(node_filesystem_free_bytes)) / sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
     ]
   },
   {
     "name": "Disk I/O",
     "description": "",
-    "queries": [
-      "sum(rate(node_disk_read_bytes_total[5m]))",
-      "sum(rate(node_disk_written_bytes_total[5m]))",
-      "sum(rate(node_disk_io_time_seconds_total[5m]))"
+    "query": "sum(rate(node_disk_read_bytes_total[5m]))",
+    "metrics": [
+      "node_disk_read_bytes_total"
     ]
   },
   {
-    "name": "Pod Utilization",
+    "name": "Disk I/O",
     "description": "",
-    "queries": [
-      "100 - (sum(kube_node_status_capacity_pods) - sum(kube_pod_info)) / sum(kube_node_status_capacity_pods) * 100"
+    "query": "sum(rate(node_disk_written_bytes_total[5m]))",
+    "metrics": [
+      "node_disk_written_bytes_total"
     ]
   },
   {
-    "name": "Cluster Pod Utilization",
+    "name": "Disk I/O",
     "description": "",
-    "queries": [
-      "sum(kube_pod_info)",
-      "sum(kube_node_status_capacity_pods)"
+    "query": "sum(rate(node_disk_io_time_seconds_total[5m]))",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
     ]
   },
   {
     "name": "Network Received",
     "description": "",
-    "queries": [
-      "sum(rate(node_network_receive_bytes_total[5m]))"
+    "query": "sum(rate(node_network_receive_bytes_total[5m]))",
+    "metrics": [
+      "node_network_receive_bytes_total"
     ]
   },
   {
     "name": "Network Transmitted",
     "description": "",
-    "queries": [
-      "sum(rate(node_network_transmit_bytes_total[5m]))"
+    "query": "sum(rate(node_network_transmit_bytes_total[5m]))",
+    "metrics": [
+      "node_network_transmit_bytes_total"
     ]
   }
 ]

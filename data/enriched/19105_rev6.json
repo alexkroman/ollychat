@@ -1,0 +1,29 @@
+[
+  {
+    "id": "7cfde891-6e92-42b9-94ca-40adbea83b64",
+    "name": "Prometheus version",
+    "question": "retrieve prometheus version information",
+    "query": "prometheus_build_info",
+    "metrics": [
+      "prometheus_build_info"
+    ]
+  },
+  {
+    "id": "718fb9fa-81d4-49cb-b595-95564d8221b9",
+    "name": "Prometheus version",
+    "question": "query the prometheus build details",
+    "query": "prometheus_build_info",
+    "metrics": [
+      "prometheus_build_info"
+    ]
+  },
+  {
+    "id": "5263ae72-782a-45fc-ada7-89fff633b807",
+    "name": "Prometheus version",
+    "question": "get prometheus software version",
+    "query": "prometheus_build_info",
+    "metrics": [
+      "prometheus_build_info"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "c2605fca-6f3c-4d29-b918-84101398190e",
+    "name": "Process Memory Usage",
+    "question": "current process memory usage",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "86faa076-2a10-4d29-a133-2da3d16d8853",
+    "name": "Process Memory Usage",
+    "question": "resident memory bytes for process",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "00f41924-96d6-45b6-983c-4e6227baf96b",
+    "name": "Process Memory Usage",
+    "question": "memory consumed by the process",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  }
+]

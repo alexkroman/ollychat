@@ -2,77 +2,105 @@
   {
     "name": "Average DNS Lookup",
     "description": "",
-    "queries": [
-      "avg(probe_dns_lookup_time_seconds)"
+    "query": "avg(probe_dns_lookup_time_seconds)",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
     ]
   },
   {
     "name": "HTTP Version",
     "description": "",
-    "queries": [
-      "avg(probe_http_version)"
-    ]
-  },
-  {
-    "name": "HTTP Status code",
-    "description": "",
-    "queries": [
-      "count_values('value',probe_http_status_code)"
-    ]
-  },
-  {
-    "name": "probe success / failure",
-    "description": "",
-    "queries": [
-      " count_values('value',probe_success)"
-    ]
-  },
-  {
-    "name": "probe success / failure",
-    "description": "",
-    "queries": [
-      "sum by (value) (probe_http_status_code - 0 == 200)",
-      "sum by (value) (probe_http_status_code - 0 != 200)"
+    "query": "avg(probe_http_version)",
+    "metrics": [
+      "probe_http_version"
     ]
   },
   {
     "name": "Global Probe Duration",
     "description": "",
-    "queries": [
+    "query": "probe_duration_seconds",
+    "metrics": [
       "probe_duration_seconds"
     ]
   },
   {
     "name": "ICMP/HTTPS duration",
     "description": "",
-    "queries": [
-      "probe_icmp_duration_seconds",
-      "probe_http_duration_seconds",
-      "sum by (phase) (probe_http_duration_seconds)",
-      "sum by (phase) (probe_icmp_duration_seconds)"
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
     ]
   },
   {
     "name": "Certificate & Connection Monitoring",
     "description": "",
-    "queries": [
-      "probe_ssl_earliest_cert_expiry-time()",
-      "probe_http_status_code",
-      "probe_http_duration_seconds",
-      "probe_http_duration_seconds",
-      "probe_http_duration_seconds",
-      "probe_http_duration_seconds",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "Certificate & Connection Monitoring",
+    "description": "",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "name": "Certificate & Connection Monitoring",
+    "description": "",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "name": "Certificate & Connection Monitoring",
+    "description": "",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "name": "Certificate & Connection Monitoring",
+    "description": "",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "name": "Certificate & Connection Monitoring",
+    "description": "",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
       "probe_http_duration_seconds"
     ]
   },
   {
     "name": "Global status",
     "description": "",
-    "queries": [
-      "probe_success - 0 ",
-      "probe_http_ssl - 0",
-      "probe_http_status_code - 0",
-      "probe_ssl_earliest_cert_expiry-time()"
+    "query": "probe_success - 0 ",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "Global status",
+    "description": "",
+    "query": "probe_http_ssl - 0",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "name": "Global status",
+    "description": "",
+    "query": "probe_http_status_code - 0",
+    "metrics": [
+      "probe_http_status_code"
     ]
   }
 ]

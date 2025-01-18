@@ -2,64 +2,64 @@
   {
     "name": "process memory",
     "description": "",
-    "queries": [
-      "process_resident_memory_bytes",
-      "process_virtual_memory_bytes"
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
     ]
   },
   {
-    "name": "process memory deriv",
+    "name": "process memory",
     "description": "",
-    "queries": [
-      "rate(process_resident_memory_bytes[$interval])",
-      "deriv(process_virtual_memory_bytes[$interval])"
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
     ]
   },
   {
     "name": "go memstats",
     "description": "",
-    "queries": [
-      "go_memstats_alloc_bytes",
-      "rate(go_memstats_alloc_bytes_total[30s])",
-      "go_memstats_stack_inuse_bytes",
-      "go_memstats_heap_inuse_bytes"
+    "query": "go_memstats_alloc_bytes",
+    "metrics": [
+      "go_memstats_alloc_bytes"
     ]
   },
   {
-    "name": "go memstats deriv",
+    "name": "go memstats",
     "description": "",
-    "queries": [
-      "deriv(go_memstats_alloc_bytes[$interval])",
-      "rate(go_memstats_alloc_bytes_total[$interval])",
-      "deriv(go_memstats_stack_inuse_bytes[$interval])",
-      "deriv(go_memstats_heap_inuse_bytes[$interval])"
+    "query": "go_memstats_stack_inuse_bytes",
+    "metrics": [
+      "go_memstats_stack_inuse_bytes"
+    ]
+  },
+  {
+    "name": "go memstats",
+    "description": "",
+    "query": "go_memstats_heap_inuse_bytes",
+    "metrics": [
+      "go_memstats_heap_inuse_bytes"
     ]
   },
   {
     "name": "open fds",
     "description": "",
-    "queries": [
+    "query": "process_open_fds",
+    "metrics": [
       "process_open_fds"
-    ]
-  },
-  {
-    "name": "open fds deriv",
-    "description": "",
-    "queries": [
-      "deriv(process_open_fds[$interval])"
     ]
   },
   {
     "name": "Goroutines",
     "description": "",
-    "queries": [
+    "query": "go_goroutines",
+    "metrics": [
       "go_goroutines"
     ]
   },
   {
     "name": "GC duration quantiles",
     "description": "",
-    "queries": [
+    "query": "go_gc_duration_seconds",
+    "metrics": [
       "go_gc_duration_seconds"
     ]
   }

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "3f405f61-dbfd-4bee-9372-9105cbb2d66c",
+    "name": "Start time",
+    "question": "total process start times multiplied by 1000",
+    "query": "process_start_time_seconds*1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "7c109a09-9876-454b-92e8-acef69b4085f",
+    "name": "Start time",
+    "question": "aggregate of process start time values",
+    "query": "process_start_time_seconds*1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "d06ea9f8-1280-4bdd-ab87-e743293b0d85",
+    "name": "Start time",
+    "question": "product of process start time and 1000",
+    "query": "process_start_time_seconds*1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  }
+]

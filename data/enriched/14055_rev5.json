@@ -1,0 +1,110 @@
+[
+  {
+    "id": "58ae87af-c382-4a67-a323-ab760baa34fa",
+    "name": "Loki memory usage vs Kubernetes limit and request",
+    "question": "container working set memory usage comparison",
+    "query": "container_memory_working_set_bytes",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "9c9e4eae-4b35-47cd-9683-f1408a165d98",
+    "name": "Loki memory usage vs Kubernetes limit and request",
+    "question": "loki memory usage versus kubernetes limits",
+    "query": "container_memory_working_set_bytes",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "c204d933-6290-4cff-b9f9-e5ba1d488082",
+    "name": "Loki memory usage vs Kubernetes limit and request",
+    "question": "memory working set bytes for containers",
+    "query": "container_memory_working_set_bytes",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "ed257533-c12d-40a8-9873-e203e358d22c",
+    "name": "Promtail memory usage vs Kubernetes limit and request",
+    "question": "memory usage of containers in working set",
+    "query": "container_memory_working_set_bytes",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "77284a9e-82e9-45d0-85ea-234e11b848d5",
+    "name": "Promtail memory usage vs Kubernetes limit and request",
+    "question": "container memory usage compared to limits and requests",
+    "query": "container_memory_working_set_bytes",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "98812a36-6cb6-43a8-9474-d1cb68c3e37f",
+    "name": "Promtail memory usage vs Kubernetes limit and request",
+    "question": "working set memory usage of containers",
+    "query": "container_memory_working_set_bytes",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "77df9030-ec6b-44df-85f3-e10181259be9",
+    "name": "Loki CPU usage vs Kubernetes limit and request",
+    "question": "rate of container cpu usage",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "fe04a0f5-2343-4a76-a3ae-8ccfe19edbb6",
+    "name": "Loki CPU usage vs Kubernetes limit and request",
+    "question": "cpu usage rate within containers",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "b091afb8-d1b0-479e-8179-52118e336c12",
+    "name": "Loki CPU usage vs Kubernetes limit and request",
+    "question": "aggregated container cpu consumption rate",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "f9732e15-ae1b-4ffc-b137-cb0f6a5b8e2e",
+    "name": "Promtail CPU usage vs Kubernetes limit and request",
+    "question": "rate of container cpu usage",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "90316f2f-1b3b-43b1-b593-af556f41a5a3",
+    "name": "Promtail CPU usage vs Kubernetes limit and request",
+    "question": "cpu usage rate of containers",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "befc04b2-bfbd-425a-8308-fb303b08d8f9",
+    "name": "Promtail CPU usage vs Kubernetes limit and request",
+    "question": "aggregated container cpu usage",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  }
+]

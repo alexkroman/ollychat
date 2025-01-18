@@ -1,0 +1,29 @@
+[
+  {
+    "id": "58e180c5-09b2-4612-8d23-c20660498787",
+    "name": "Node network transmit",
+    "question": "aggregate of node network transmit bytes",
+    "query": "sum (rate (node_network_transmit_bytes_total[60m]))\n",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "e5fb69d5-6d7a-436e-a219-b0db789b94b7",
+    "name": "Node network transmit",
+    "question": "total network transmit bytes from node",
+    "query": "sum (rate (node_network_transmit_bytes_total[60m]))\n",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "69c817b4-6b44-4d4d-99eb-44b8c01053d1",
+    "name": "Node network transmit",
+    "question": "sum of nodes network transmit data",
+    "query": "sum (rate (node_network_transmit_bytes_total[60m]))\n",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "b1b26322-54e3-40b1-87b6-53b8a73783c1",
+    "name": "CPU Time",
+    "question": "sum of cpu time consumed",
+    "query": "sum(rate(process_cpu_seconds_total[5m]))",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "0c76ae4d-fe4a-4900-a80f-cba091fbec5d",
+    "name": "CPU Time",
+    "question": "aggregated process cpu utilization",
+    "query": "sum(rate(process_cpu_seconds_total[5m]))",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "32f8262f-b926-48c1-9417-f22c8f38ae2f",
+    "name": "CPU Time",
+    "question": "total process cpu time usage",
+    "query": "sum(rate(process_cpu_seconds_total[5m]))",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "ff56e1ca-65cf-4291-a9d2-589c25c32324",
+    "name": "Memory Usage",
+    "question": "memory allocation statistics for go",
+    "query": "go_memstats_alloc_bytes",
+    "metrics": [
+      "go_memstats_alloc_bytes"
+    ]
+  },
+  {
+    "id": "0c7257ab-c9ae-4648-93ad-cba28e10936a",
+    "name": "Memory Usage",
+    "question": "current bytes allocated by go processes",
+    "query": "go_memstats_alloc_bytes",
+    "metrics": [
+      "go_memstats_alloc_bytes"
+    ]
+  },
+  {
+    "id": "248b1653-f832-4858-908e-3db98c38ac68",
+    "name": "Memory Usage",
+    "question": "aggregated allocation of memory by go applications",
+    "query": "go_memstats_alloc_bytes",
+    "metrics": [
+      "go_memstats_alloc_bytes"
+    ]
+  }
+]

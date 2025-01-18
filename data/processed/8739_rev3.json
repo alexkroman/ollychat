@@ -1,33 +1,51 @@
 [
   {
-    "name": "CPU",
+    "name": "Memory",
     "description": "",
-    "queries": [
-      "sum by (mode) (irate(node_cpu_seconds_total[5m]))"
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
     ]
   },
   {
     "name": "Memory",
     "description": "",
-    "queries": [
-      "sum(node_memory_MemAvailable_bytes)",
-      "sum(node_memory_MemTotal_bytes)-sum(node_memory_MemAvailable_bytes)",
-      "sum(node_memory_MemTotal_bytes)"
-    ]
-  },
-  {
-    "name": "CPU",
-    "description": "",
-    "queries": [
-      "sum by (mode) (irate(node_cpu_seconds_total[5m]))"
-    ]
-  },
-  {
-    "name": "Memory",
-    "description": "",
-    "queries": [
+    "query": "sum(node_memory_MemTotal_bytes)-sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
       "node_memory_MemAvailable_bytes",
-      "node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "query": "node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
       "node_memory_MemTotal_bytes"
     ]
   }

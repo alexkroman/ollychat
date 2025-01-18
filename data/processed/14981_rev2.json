@@ -1,178 +1,18 @@
 [
   {
-    "name": "Requests (by instance)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_dns_requests_total[5m])) by (instance)"
-    ]
-  },
-  {
-    "name": "Version",
-    "description": "",
-    "queries": [
-      "coredns_build_info"
-    ]
-  },
-  {
-    "name": "Upstream Health Check Fails",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_forward_healthcheck_broken_total[5m]))"
-    ]
-  },
-  {
-    "name": "Upstream Rejected Queries",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_forward_max_concurrent_rejects_total[5m]))"
-    ]
-  },
-  {
-    "name": "Panics",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_panics_total[5m]))"
-    ]
-  },
-  {
-    "name": "Failed Reloads",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_reload_failed_total[5m]))"
-    ]
-  },
-  {
     "name": "CPU Time",
     "description": "",
-    "queries": [
-      "sum(rate(process_cpu_seconds_total[5m]))"
+    "query": "sum(rate(process_cpu_seconds_total[5m]))",
+    "metrics": [
+      "process_cpu_seconds_total"
     ]
   },
   {
     "name": "Memory Usage",
     "description": "",
-    "queries": [
+    "query": "go_memstats_alloc_bytes",
+    "metrics": [
       "go_memstats_alloc_bytes"
-    ]
-  },
-  {
-    "name": "Requests (total)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_dns_requests_total[5m])) by (server)",
-      "sum(rate(coredns_cache_requests_total[5m]))"
-    ]
-  },
-  {
-    "name": "Requests (by zone)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_dns_requests_total[5m])) by (zone)"
-    ]
-  },
-  {
-    "name": "Responses (latency, internet zone)",
-    "description": "",
-    "queries": [
-      "histogram_quantile(0.99, sum(rate(coredns_dns_request_duration_seconds_bucket[5m])) by (le))",
-      "histogram_quantile(0.90, sum(rate(coredns_dns_request_duration_seconds_bucket[5m])) by (le))",
-      "histogram_quantile(0.50, sum(rate(coredns_dns_request_duration_seconds_bucket[5m])) by (le))"
-    ]
-  },
-  {
-    "name": "Requests (by type)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_dns_requests_total[5m])) by (type)"
-    ]
-  },
-  {
-    "name": "Cache (hitrate)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_cache_hits_total[5m])) / sum(rate(coredns_cache_requests_total[5m]))",
-      "sum(rate(coredns_cache_hits_total[5m])) / sum(rate(coredns_cache_requests_total[5m]))",
-      "(sum(rate(coredns_cache_requests_total[5m])) - sum(rate(coredns_cache_hits_total[5m]))) / sum(rate(coredns_cache_requests_total[5m]))",
-      "sum(rate(coredns_dnssec_cache_hits_total[5m])) / sum(rate(coredns_cache_requests_total[5m]))",
-      "(sum(rate(coredns_cache_requests_total[5m])) - sum(rate(coredns_dnssec_cache_hits_total[5m]))) / sum(rate(coredns_cache_requests_total[5m]))"
-    ]
-  },
-  {
-    "name": "Requests (DNSSEC by zone)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_dns_do_requests_total[5m])) by (zone)"
-    ]
-  },
-  {
-    "name": "Responses (by code)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_dns_responses_total[5m])) by (rcode)"
-    ]
-  },
-  {
-    "name": "Requests (size, internet zone)",
-    "description": "",
-    "queries": [
-      "histogram_quantile(0.99, sum(rate(coredns_dns_request_size_bytes_bucket[5m])) by (le))",
-      "histogram_quantile(0.90, sum(rate(coredns_dns_request_size_bytes_bucket[5m])) by (le))",
-      "histogram_quantile(0.50, sum(rate(coredns_dns_request_size_bytes_bucket[5m])) by (le))"
-    ]
-  },
-  {
-    "name": "Responses (size, internet zone)",
-    "description": "",
-    "queries": [
-      "histogram_quantile(0.99, sum(rate(coredns_dns_response_size_bytes_bucket[5m])) by (le))",
-      "histogram_quantile(0.90, sum(rate(coredns_dns_response_size_bytes_bucket[5m])) by (le))",
-      "histogram_quantile(0.50, sum(rate(coredns_dns_response_size_bytes_bucket[5m])) by (le))"
-    ]
-  },
-  {
-    "name": "Cache (size)",
-    "description": "",
-    "queries": [
-      "sum(coredns_cache_entries) by (type)",
-      "sum(coredns_dnssec_cache_entries)"
-    ]
-  },
-  {
-    "name": "Requests (total)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_forward_requests_total[5m]))"
-    ]
-  },
-  {
-    "name": "Cache (hitrate)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_forward_conn_cache_hits_total[5m])) / sum(rate(coredns_forward_requests_total[5m]))",
-      "(sum(rate(coredns_forward_requests_total[5m])) - sum(rate(coredns_forward_conn_cache_hits_total[5m]))) / sum(rate(coredns_forward_requests_total[5m]))"
-    ]
-  },
-  {
-    "name": "Responses (latency)",
-    "description": "",
-    "queries": [
-      "histogram_quantile(0.99, sum(rate(coredns_forward_request_duration_seconds_bucket[5m])) by (le))",
-      "histogram_quantile(0.90, sum(rate(coredns_forward_request_duration_seconds_bucket[5m])) by (le))",
-      "histogram_quantile(0.50, sum(rate(coredns_forward_request_duration_seconds_bucket[5m])) by (le))"
-    ]
-  },
-  {
-    "name": "Requests (by upstream)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_forward_requests_total[5m])) by (to)"
-    ]
-  },
-  {
-    "name": "Responses (by code)",
-    "description": "",
-    "queries": [
-      "sum(rate(coredns_forward_responses_total[5m])) by (rcode)"
     ]
   }
 ]

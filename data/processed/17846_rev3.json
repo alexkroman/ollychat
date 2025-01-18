@@ -1,245 +1,114 @@
 [
   {
-    "name": "Consensus",
-    "description": "",
-    "queries": [
-      "eth_con_sync_is_syncing"
-    ]
-  },
-  {
-    "name": "Execution",
-    "description": "",
-    "queries": [
-      "eth_exe_sync_is_syncing"
-    ]
-  },
-  {
-    "name": "ETH",
-    "description": "",
-    "queries": [
-      "crypto_currency"
-    ]
-  },
-  {
-    "name": "Validators",
-    "description": "",
-    "queries": [
-      "validator_local_validator_count"
-    ]
-  },
-  {
-    "name": "Missed Attestations",
-    "description": "",
-    "queries": [
-      "(validator_performance_expected_attestations-validator_performance_included_attestations)"
-    ]
-  },
-  {
     "name": "CPU",
     "description": "",
-    "queries": [
+    "query": "node_load1",
+    "metrics": [
       "node_load1"
     ]
   },
   {
     "name": "Disk",
     "description": "",
-    "queries": [
-      "sum(node_filesystem_avail_bytes)"
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
     ]
   },
   {
     "name": "RAM",
     "description": "",
-    "queries": [
-      "sum(node_memory_MemAvailable_bytes)"
-    ]
-  },
-  {
-    "name": "Uptime",
-    "description": "",
-    "queries": [
-      "time()-node_boot_time_seconds"
-    ]
-  },
-  {
-    "name": "Gas Price",
-    "description": "",
-    "queries": [
-      "eth_exe_gas_price_gwei/1000000000"
-    ]
-  },
-  {
-    "name": "Block Import",
-    "description": "",
-    "queries": [
-      "beacon_block_import_delay_latest"
-    ]
-  },
-  {
-    "name": "Consensus Peers",
-    "description": "",
-    "queries": [
-      "sum(eth_con_peers)"
-    ]
-  },
-  {
-    "name": "Execution Peers",
-    "description": "",
-    "queries": [
-      "eth_exe_net_peer_count"
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
     ]
   },
   {
     "name": "Memory",
     "description": "",
-    "queries": [
-      "node_memory_MemTotal_bytes",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
       "node_memory_MemAvailable_bytes"
     ]
   },
   {
     "name": "Disk Space",
     "description": "",
-    "queries": [
-      "sum(node_filesystem_size_bytes)",
-      "sum(node_filesystem_avail_bytes)"
+    "query": "sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "Disk Space",
+    "description": "",
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
     ]
   },
   {
     "name": "Network",
     "description": "",
-    "queries": [
-      "sum(rate(container_network_transmit_bytes_total[30m]))",
-      "-sum(rate(container_network_receive_bytes_total[30m]))"
+    "query": "sum(rate(container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "Network",
+    "description": "",
+    "query": "-sum(rate(container_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
     ]
   },
   {
     "name": "Disk I/O",
     "description": "",
-    "queries": [
-      "sum(-rate(node_disk_written_bytes_total[30m]))",
-      "sum(rate(node_disk_read_bytes_total[30m]))"
+    "query": "sum(-rate(node_disk_written_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "name": "Disk I/O",
+    "description": "",
+    "query": "sum(rate(node_disk_read_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_read_bytes_total"
     ]
   },
   {
     "name": "CPU Load",
     "description": "",
-    "queries": [
-      "node_load1",
-      "node_load5",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "name": "CPU Load",
+    "description": "",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "name": "CPU Load",
+    "description": "",
+    "query": "node_load15",
+    "metrics": [
       "node_load15"
-    ]
-  },
-  {
-    "name": "Sync Distance",
-    "description": "",
-    "queries": [
-      "eth_con_sync_distance"
-    ]
-  },
-  {
-    "name": "Sync Percent",
-    "description": "",
-    "queries": [
-      "eth_con_sync_percentage"
-    ]
-  },
-  {
-    "name": "Reorgs",
-    "description": "",
-    "queries": [
-      "sum by (instance)(increase(eth_con_beacon_reorg_count[5m]))"
-    ]
-  },
-  {
-    "name": "Missed Attestations",
-    "description": "",
-    "queries": [
-      "(validator_performance_expected_attestations-validator_performance_included_attestations)"
-    ]
-  },
-  {
-    "name": "Epochs",
-    "description": "",
-    "queries": [
-      "eth_con_beacon_finality_checkpoint_epochs"
-    ]
-  },
-  {
-    "name": "Proposer Delay",
-    "description": "",
-    "queries": [
-      "eth_con_beacon_proposer_delay_sum / eth_con_beacon_proposer_delay_count"
-    ]
-  },
-  {
-    "name": "Counts Per Block",
-    "description": "",
-    "queries": [
-      "eth_con_beacon_transactions",
-      "eth_con_beacon_slashings",
-      "eth_con_beacon_slashings",
-      "eth_con_beacon_attestations",
-      "eth_con_beacon_deposits",
-      "eth_con_beacon_voluntary_exits"
-    ]
-  },
-  {
-    "name": "Epoch distances",
-    "description": "",
-    "queries": [
-      "sum by (instance)(\n    eth_con_beacon_finality_checkpoint_epochs\n)\n-\nsum by (instance)(\n    eth_con_beacon_finality_checkpoint_epochs\n)",
-      "sum by (instance)(\n    eth_con_beacon_finality_checkpoint_epochs\n)\n-\nsum by (instance)(\n    eth_con_beacon_finality_checkpoint_epochs\n)"
-    ]
-  },
-  {
-    "name": "Slots",
-    "description": "",
-    "queries": [
-      "\n    eth_con_beacon_slot\n"
-    ]
-  },
-  {
-    "name": "Sync Distance",
-    "description": "",
-    "queries": [
-      "eth_exe_sync_highest_block - eth_exe_sync_current_block"
-    ]
-  },
-  {
-    "name": "Sync Percent",
-    "description": "",
-    "queries": [
-      "eth_exe_sync_percentage"
-    ]
-  },
-  {
-    "name": "MemPool TXs",
-    "description": "",
-    "queries": [
-      "besu_transaction_pool_transactions"
-    ]
-  },
-  {
-    "name": "Gas Used ",
-    "description": "",
-    "queries": [
-      "sum by (instance)(\n    eth_exe_block_head_gas_used\n)\n/\nsum by (instance)( \n    eth_exe_block_head_gas_limit \n)"
-    ]
-  },
-  {
-    "name": "Block Height",
-    "description": "",
-    "queries": [
-      "eth_exe_block_most_recent_number"
-    ]
-  },
-  {
-    "name": "Block size",
-    "description": "",
-    "queries": [
-      "eth_exe_block_head_block_size_bytes"
     ]
   }
 ]

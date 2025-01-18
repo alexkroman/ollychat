@@ -1,0 +1,137 @@
+[
+  {
+    "id": "df11836c-fa6e-4b27-9f8e-23ac3fd71318",
+    "name": "$service Process start time",
+    "question": "total process start time in milliseconds",
+    "query": "(process_start_time_seconds)*1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "71772448-60ae-4f36-8521-4fea26494b63",
+    "name": "$service Process start time",
+    "question": "aggregated service process start time",
+    "query": "(process_start_time_seconds)*1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "66aa6aba-79c8-46e5-ba83-6f2460292e4e",
+    "name": "$service Process start time",
+    "question": "summed start time for the service process",
+    "query": "(process_start_time_seconds)*1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "80fec228-d0b0-415e-a4d7-65d509fa5bbe",
+    "name": "$service Max file descriptors",
+    "question": "max file descriptors for the service",
+    "query": "process_max_fds",
+    "metrics": [
+      "process_max_fds"
+    ]
+  },
+  {
+    "id": "ec067853-55a5-407b-ac15-19851f556bfc",
+    "name": "$service Max file descriptors",
+    "question": "highest number of file descriptors allowed",
+    "query": "process_max_fds",
+    "metrics": [
+      "process_max_fds"
+    ]
+  },
+  {
+    "id": "50970bf6-6fe9-4fa9-b995-3ce596e68173",
+    "name": "$service Max file descriptors",
+    "question": "peak file descriptor count for the service",
+    "query": "process_max_fds",
+    "metrics": [
+      "process_max_fds"
+    ]
+  },
+  {
+    "id": "01bb025c-59e5-46cf-9862-86f37703a2cf",
+    "name": "$service Open file descriptors",
+    "question": "count of open file descriptors for service",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "5204147d-6af1-4473-afba-ff4b75f5d232",
+    "name": "$service Open file descriptors",
+    "question": "total number of open file descriptors in service",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "6b74086e-a9fa-47ae-9628-c2fb429f25f4",
+    "name": "$service Open file descriptors",
+    "question": "sum of open file descriptors for service",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "583d78c6-d6cd-4355-b944-8ca1c4fe060d",
+    "name": "Process Memory",
+    "question": "current process resident memory in bytes",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "e0f0311b-0e37-43c4-835c-8ef45c75f2ac",
+    "name": "Process Memory",
+    "question": "retrieve process resident memory usage",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "6f645000-7714-4fe1-bbfe-d75dbef8138b",
+    "name": "Process Memory",
+    "question": "query for process memory consumption",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "f003cfd2-9aa3-4f19-801c-a31cb2f679d9",
+    "name": "Process Memory",
+    "question": "retrieve virtual memory usage for a process",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "1630a11f-3604-4ff0-a3a5-2cdb4ffe98bb",
+    "name": "Process Memory",
+    "question": "query process virtual memory bytes metric",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "bd66edfa-9011-4d27-a90a-5ad8dc515164",
+    "name": "Process Memory",
+    "question": "get process memory usage data",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  }
+]

@@ -1,98 +1,35 @@
 [
   {
-    "name": "Deployment memory usage",
-    "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes) / sum (kube_node_status_allocatable_memory_bytes) * 100"
-    ]
-  },
-  {
     "name": "Deployment CPU usage",
     "description": "",
-    "queries": [
-      "sum (rate (container_cpu_usage_seconds_total[2m])) / sum (machine_cpu_cores) * 100"
-    ]
-  },
-  {
-    "name": "Unavailable Replicas",
-    "description": "",
-    "queries": [
-      "(((sum(kube_deployment_status_replicas) or vector(0)) + (sum(kube_statefulset_replicas) or vector(0)) + (sum(kube_daemonset_status_desired_number_scheduled) or vector(0))) - ((sum(kube_deployment_status_replicas_available) or vector(0)) + (sum(kube_statefulset_status_replicas) or vector(0)) + (sum(kube_daemonset_status_number_ready) or vector(0)))) / ((sum(kube_deployment_status_replicas) or vector(0)) + (sum(kube_statefulset_replicas) or vector(0)) + (sum(kube_daemonset_status_desired_number_scheduled) or vector(0))) * 100"
+    "query": "sum (rate (container_cpu_usage_seconds_total[2m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
     ]
   },
   {
     "name": "Used",
     "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes)"
-    ]
-  },
-  {
-    "name": "Total",
-    "description": "",
-    "queries": [
-      "sum (kube_node_status_allocatable_memory_bytes)"
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
     ]
   },
   {
     "name": "Used",
     "description": "",
-    "queries": [
-      "sum (rate (container_cpu_usage_seconds_total[1m]))"
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
     ]
   },
   {
     "name": "Total",
     "description": "",
-    "queries": [
-      "sum (machine_cpu_cores)"
-    ]
-  },
-  {
-    "name": "Available (cluster)",
-    "description": "",
-    "queries": [
-      "(sum(kube_deployment_status_replicas_available) or vector(0)) + (sum(kube_statefulset_status_replicas) or vector(0)) + (sum(kube_daemonset_status_number_ready) or vector(0))"
-    ]
-  },
-  {
-    "name": "Total (cluster)",
-    "description": "",
-    "queries": [
-      "(sum(kube_deployment_status_replicas) or vector(0)) + (sum(kube_statefulset_replicas) or vector(0)) + (sum(kube_daemonset_status_desired_number_scheduled) or vector(0))"
-    ]
-  },
-  {
-    "name": "CPU usage",
-    "description": "",
-    "queries": [
-      "sum (rate (container_cpu_usage_seconds_total[1m])) by (pod_name,kubernetes_io_hostname)",
-      "sum (kube_pod_container_resource_requests_cpu_cores) by (pod,node)",
-      "sum ((kube_node_status_allocatable_cpu_cores)) by (node)"
-    ]
-  },
-  {
-    "name": "Memory usage",
-    "description": "",
-    "queries": [
-      "sum (container_memory_working_set_bytes) by (pod_name,kubernetes_io_hostname)",
-      "sum ((kube_pod_container_resource_requests_memory_bytes)) by (pod,node)",
-      "sum ((kube_node_status_allocatable_memory_bytes)) by (node)"
-    ]
-  },
-  {
-    "name": "Disk Usage",
-    "description": "",
-    "queries": [
-      "100 * (kubelet_volume_stats_used_bytes / kubelet_volume_stats_capacity_bytes)"
-    ]
-  },
-  {
-    "name": "All processes network I/O",
-    "description": "",
-    "queries": [
-      "sum (rate (container_network_receive_bytes_total[1m])) by (pod_name, kubernetes_io_hostname)",
-      "- sum( rate (container_network_transmit_bytes_total[1m])) by (pod_name, kubernetes_io_hostname)"
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
     ]
   }
 ]

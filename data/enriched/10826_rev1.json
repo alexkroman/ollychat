@@ -1,0 +1,599 @@
+[
+  {
+    "id": "c262ee63-24fc-486e-bef4-952f19721733",
+    "name": "Memory in Off-Heap",
+    "question": "current memory usage in offheap",
+    "query": "go_memstats_mspan_inuse_bytes",
+    "metrics": [
+      "go_memstats_mspan_inuse_bytes"
+    ]
+  },
+  {
+    "id": "434ed909-c2d1-418f-a4b1-8caceb10c6f0",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory allocation in use",
+    "query": "go_memstats_mspan_inuse_bytes",
+    "metrics": [
+      "go_memstats_mspan_inuse_bytes"
+    ]
+  },
+  {
+    "id": "adc5dbc6-b53c-4f6f-a52e-5a301b106d90",
+    "name": "Memory in Off-Heap",
+    "question": "memory allocated offheap in use",
+    "query": "go_memstats_mspan_inuse_bytes",
+    "metrics": [
+      "go_memstats_mspan_inuse_bytes"
+    ]
+  },
+  {
+    "id": "b614f61e-c03b-48da-bf19-4d2a24347e5d",
+    "name": "Memory in Off-Heap",
+    "question": "memory usage in offheap space",
+    "query": "go_memstats_mspan_sys_bytes",
+    "metrics": [
+      "go_memstats_mspan_sys_bytes"
+    ]
+  },
+  {
+    "id": "df23dafe-eae3-4b85-b707-2c60250843ad",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory utilization",
+    "query": "go_memstats_mspan_sys_bytes",
+    "metrics": [
+      "go_memstats_mspan_sys_bytes"
+    ]
+  },
+  {
+    "id": "5de4206e-256f-459f-9fc9-b83f0769b6e8",
+    "name": "Memory in Off-Heap",
+    "question": "sys bytes of offheap memory",
+    "query": "go_memstats_mspan_sys_bytes",
+    "metrics": [
+      "go_memstats_mspan_sys_bytes"
+    ]
+  },
+  {
+    "id": "2442e3ac-aa46-40d7-b941-5663c8f80d76",
+    "name": "Memory in Off-Heap",
+    "question": "current offheap memory usage",
+    "query": "go_memstats_mcache_inuse_bytes",
+    "metrics": [
+      "go_memstats_mcache_inuse_bytes"
+    ]
+  },
+  {
+    "id": "9eb5d477-c2de-44b5-a240-2cb3e6b31f26",
+    "name": "Memory in Off-Heap",
+    "question": "inuse bytes of offheap memory",
+    "query": "go_memstats_mcache_inuse_bytes",
+    "metrics": [
+      "go_memstats_mcache_inuse_bytes"
+    ]
+  },
+  {
+    "id": "701df323-fece-44da-ad62-b7b4edc95bd3",
+    "name": "Memory in Off-Heap",
+    "question": "measurement of offheap memory in use",
+    "query": "go_memstats_mcache_inuse_bytes",
+    "metrics": [
+      "go_memstats_mcache_inuse_bytes"
+    ]
+  },
+  {
+    "id": "a5ba75a6-e278-4889-ad4d-af29bd5264e5",
+    "name": "Memory in Off-Heap",
+    "question": "current offheap memory usage",
+    "query": "go_memstats_mcache_sys_bytes",
+    "metrics": [
+      "go_memstats_mcache_sys_bytes"
+    ]
+  },
+  {
+    "id": "c497e593-6545-4cab-a9d5-ca00a7e961da",
+    "name": "Memory in Off-Heap",
+    "question": "total offheap memory in use",
+    "query": "go_memstats_mcache_sys_bytes",
+    "metrics": [
+      "go_memstats_mcache_sys_bytes"
+    ]
+  },
+  {
+    "id": "becb89c4-91d8-4a49-b2a9-53ae33e778f4",
+    "name": "Memory in Off-Heap",
+    "question": "amount of memory allocated offheap",
+    "query": "go_memstats_mcache_sys_bytes",
+    "metrics": [
+      "go_memstats_mcache_sys_bytes"
+    ]
+  },
+  {
+    "id": "d86a8209-c96e-4d15-95b5-48feada9d665",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory usage statistics",
+    "query": "go_memstats_buck_hash_sys_bytes",
+    "metrics": [
+      "go_memstats_buck_hash_sys_bytes"
+    ]
+  },
+  {
+    "id": "cc756ee9-2f72-4f04-8888-c36cc2513c29",
+    "name": "Memory in Off-Heap",
+    "question": "bytes allocated for offheap memory",
+    "query": "go_memstats_buck_hash_sys_bytes",
+    "metrics": [
+      "go_memstats_buck_hash_sys_bytes"
+    ]
+  },
+  {
+    "id": "d3989d50-6b7b-450b-8c29-a13971c70078",
+    "name": "Memory in Off-Heap",
+    "question": "hash system memory usage in bytes",
+    "query": "go_memstats_buck_hash_sys_bytes",
+    "metrics": [
+      "go_memstats_buck_hash_sys_bytes"
+    ]
+  },
+  {
+    "id": "320d10d1-7183-44f4-b18a-61688d5123cc",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory statistics for go",
+    "query": "go_memstats_gc_sys_bytes",
+    "metrics": [
+      "go_memstats_gc_sys_bytes"
+    ]
+  },
+  {
+    "id": "c157c437-b482-4e08-a585-d7b4313308b4",
+    "name": "Memory in Off-Heap",
+    "question": "garbage collection system bytes in memory",
+    "query": "go_memstats_gc_sys_bytes",
+    "metrics": [
+      "go_memstats_gc_sys_bytes"
+    ]
+  },
+  {
+    "id": "339aa81c-d672-495d-a9d5-d8d88402c2dd",
+    "name": "Memory in Off-Heap",
+    "question": "go memory stats for offheap usage",
+    "query": "go_memstats_gc_sys_bytes",
+    "metrics": [
+      "go_memstats_gc_sys_bytes"
+    ]
+  },
+  {
+    "id": "eef6e29f-5a7d-44bb-8ddc-2c85168a3379",
+    "name": "Memory in Off-Heap",
+    "question": "difference in offheap memory usage",
+    "query": "go_memstats_other_sys_bytes - go_memstats_other_sys_bytes",
+    "metrics": [
+      "go_memstats_other_sys_bytes"
+    ]
+  },
+  {
+    "id": "ecd881b4-66b0-4825-8766-09c2eec97549",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory metrics comparison",
+    "query": "go_memstats_other_sys_bytes - go_memstats_other_sys_bytes",
+    "metrics": [
+      "go_memstats_other_sys_bytes"
+    ]
+  },
+  {
+    "id": "fad3c8db-df31-4644-be69-f6a157866677",
+    "name": "Memory in Off-Heap",
+    "question": "calculating offheap memory consumption",
+    "query": "go_memstats_other_sys_bytes - go_memstats_other_sys_bytes",
+    "metrics": [
+      "go_memstats_other_sys_bytes"
+    ]
+  },
+  {
+    "id": "4319b494-d344-4e25-b992-ed56784a525a",
+    "name": "Memory in Off-Heap",
+    "question": "memory metrics for offheap usage",
+    "query": "go_memstats_next_gc_bytes",
+    "metrics": [
+      "go_memstats_next_gc_bytes"
+    ]
+  },
+  {
+    "id": "0b772c9c-944f-48b1-bb7f-25f8e8fa2977",
+    "name": "Memory in Off-Heap",
+    "question": "retrieve offheap memory statistics",
+    "query": "go_memstats_next_gc_bytes",
+    "metrics": [
+      "go_memstats_next_gc_bytes"
+    ]
+  },
+  {
+    "id": "000b2c83-5025-4c9f-8f0f-d49de5e12b74",
+    "name": "Memory in Off-Heap",
+    "question": "query for offheap memory consumption",
+    "query": "go_memstats_next_gc_bytes",
+    "metrics": [
+      "go_memstats_next_gc_bytes"
+    ]
+  },
+  {
+    "id": "a8b4d672-9f3a-47da-9664-8babba5ae90d",
+    "name": "Memory in Heap",
+    "question": "heap memory currently allocated in bytes",
+    "query": "go_memstats_heap_alloc_bytes",
+    "metrics": [
+      "go_memstats_heap_alloc_bytes"
+    ]
+  },
+  {
+    "id": "1a256b5d-a1be-4d9e-9db7-6d58e0e8e8b8",
+    "name": "Memory in Heap",
+    "question": "total memory allocated in heap space",
+    "query": "go_memstats_heap_alloc_bytes",
+    "metrics": [
+      "go_memstats_heap_alloc_bytes"
+    ]
+  },
+  {
+    "id": "e7f4e966-523e-4e53-8b71-b89fde366004",
+    "name": "Memory in Heap",
+    "question": "aggregate of heap memory allocation in bytes",
+    "query": "go_memstats_heap_alloc_bytes",
+    "metrics": [
+      "go_memstats_heap_alloc_bytes"
+    ]
+  },
+  {
+    "id": "ebf0bd55-9a06-4b61-be7c-20d085bbc453",
+    "name": "Memory in Heap",
+    "question": "memory allocated in heap",
+    "query": "go_memstats_heap_sys_bytes",
+    "metrics": [
+      "go_memstats_heap_sys_bytes"
+    ]
+  },
+  {
+    "id": "4d94efdd-4ef1-470a-a2f8-d63f416ca0f3",
+    "name": "Memory in Heap",
+    "question": "heap memory system bytes",
+    "query": "go_memstats_heap_sys_bytes",
+    "metrics": [
+      "go_memstats_heap_sys_bytes"
+    ]
+  },
+  {
+    "id": "0c82c835-6747-453b-8196-f01858beba55",
+    "name": "Memory in Heap",
+    "question": "heap memory statistics in bytes",
+    "query": "go_memstats_heap_sys_bytes",
+    "metrics": [
+      "go_memstats_heap_sys_bytes"
+    ]
+  },
+  {
+    "id": "6c495a6c-6c05-4d01-8c3b-597bec009f56",
+    "name": "Memory in Heap",
+    "question": "amount of idle memory in the heap",
+    "query": "go_memstats_heap_idle_bytes",
+    "metrics": [
+      "go_memstats_heap_idle_bytes"
+    ]
+  },
+  {
+    "id": "15074d88-b9a8-4e2e-9633-1ea903eb3348",
+    "name": "Memory in Heap",
+    "question": "heap memory idle bytes metric",
+    "query": "go_memstats_heap_idle_bytes",
+    "metrics": [
+      "go_memstats_heap_idle_bytes"
+    ]
+  },
+  {
+    "id": "8bf98b25-efee-48cf-93bb-e98633f95e55",
+    "name": "Memory in Heap",
+    "question": "memory available in heap",
+    "query": "go_memstats_heap_idle_bytes",
+    "metrics": [
+      "go_memstats_heap_idle_bytes"
+    ]
+  },
+  {
+    "id": "554d090e-85ed-48c6-bbda-a50a323c28a5",
+    "name": "Memory in Heap",
+    "question": "current heap memory usage in bytes",
+    "query": "go_memstats_heap_inuse_bytes",
+    "metrics": [
+      "go_memstats_heap_inuse_bytes"
+    ]
+  },
+  {
+    "id": "97e73103-e275-40d7-80be-81dfb5c749fc",
+    "name": "Memory in Heap",
+    "question": "inuse memory bytes in the heap",
+    "query": "go_memstats_heap_inuse_bytes",
+    "metrics": [
+      "go_memstats_heap_inuse_bytes"
+    ]
+  },
+  {
+    "id": "dcd092ab-dbd0-4f72-8385-ffc12f54280c",
+    "name": "Memory in Heap",
+    "question": "heap memory bytes actively being used",
+    "query": "go_memstats_heap_inuse_bytes",
+    "metrics": [
+      "go_memstats_heap_inuse_bytes"
+    ]
+  },
+  {
+    "id": "b131d736-9122-4b47-b3f2-717377da9dba",
+    "name": "Memory in Heap",
+    "question": "released memory in heap",
+    "query": "go_memstats_heap_released_bytes",
+    "metrics": [
+      "go_memstats_heap_released_bytes"
+    ]
+  },
+  {
+    "id": "0295dbbc-0f1a-4e47-aa4f-7d9bada88187",
+    "name": "Memory in Heap",
+    "question": "heap memory release size",
+    "query": "go_memstats_heap_released_bytes",
+    "metrics": [
+      "go_memstats_heap_released_bytes"
+    ]
+  },
+  {
+    "id": "70645bea-9cef-4a09-8e03-eb21596f51e9",
+    "name": "Memory in Heap",
+    "question": "heap memory deallocated amount",
+    "query": "go_memstats_heap_released_bytes",
+    "metrics": [
+      "go_memstats_heap_released_bytes"
+    ]
+  },
+  {
+    "id": "4a966ab9-ebd8-4622-bf5c-2f6f44b8c2a7",
+    "name": "Memory in Stack",
+    "question": "current memory usage in stack",
+    "query": "go_memstats_stack_inuse_bytes",
+    "metrics": [
+      "go_memstats_stack_inuse_bytes"
+    ]
+  },
+  {
+    "id": "71b51925-78a9-483b-bb13-49c0ee0ff1a3",
+    "name": "Memory in Stack",
+    "question": "stack memory in use",
+    "query": "go_memstats_stack_inuse_bytes",
+    "metrics": [
+      "go_memstats_stack_inuse_bytes"
+    ]
+  },
+  {
+    "id": "878dec27-5607-48db-a822-00717b8c9973",
+    "name": "Memory in Stack",
+    "question": "bytes allocated for stack memory",
+    "query": "go_memstats_stack_inuse_bytes",
+    "metrics": [
+      "go_memstats_stack_inuse_bytes"
+    ]
+  },
+  {
+    "id": "43297311-2108-43ae-93ab-7ccdc8071a63",
+    "name": "Memory in Stack",
+    "question": "memory allocated for stack",
+    "query": "go_memstats_stack_sys_bytes",
+    "metrics": [
+      "go_memstats_stack_sys_bytes"
+    ]
+  },
+  {
+    "id": "2e7c7461-4207-4dbf-8b5a-062f5d76841f",
+    "name": "Memory in Stack",
+    "question": "system memory usage for stack",
+    "query": "go_memstats_stack_sys_bytes",
+    "metrics": [
+      "go_memstats_stack_sys_bytes"
+    ]
+  },
+  {
+    "id": "3aa53b22-b910-4bbc-8e57-32fd5c0e1189",
+    "name": "Memory in Stack",
+    "question": "stack memory utilization",
+    "query": "go_memstats_stack_sys_bytes",
+    "metrics": [
+      "go_memstats_stack_sys_bytes"
+    ]
+  },
+  {
+    "id": "b96184ee-867c-482b-923a-e807a287d9c7",
+    "name": "Total Used Memory",
+    "question": "total system memory usage in bytes",
+    "query": "go_memstats_sys_bytes",
+    "metrics": [
+      "go_memstats_sys_bytes"
+    ]
+  },
+  {
+    "id": "f1555b25-cabc-4f19-a5e0-f8f87e0b4ac3",
+    "name": "Total Used Memory",
+    "question": "aggregated memory statistics in bytes",
+    "query": "go_memstats_sys_bytes",
+    "metrics": [
+      "go_memstats_sys_bytes"
+    ]
+  },
+  {
+    "id": "13369f12-ec0c-4c05-b250-371d4ec5eb8a",
+    "name": "Total Used Memory",
+    "question": "cumulative memory consumption measurement",
+    "query": "go_memstats_sys_bytes",
+    "metrics": [
+      "go_memstats_sys_bytes"
+    ]
+  },
+  {
+    "id": "b7979a04-fcb8-4597-b18d-7e636b2da12c",
+    "name": "Number of Live Objects",
+    "question": "difference between allocated and deallocated memory objects",
+    "query": "go_memstats_mallocs_total - go_memstats_frees_total",
+    "metrics": [
+      "go_memstats_frees_total",
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "60e29228-52f1-4bda-9abd-53e84344ef43",
+    "name": "Number of Live Objects",
+    "question": "total live objects currently in memory",
+    "query": "go_memstats_mallocs_total - go_memstats_frees_total",
+    "metrics": [
+      "go_memstats_frees_total",
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "f4b49b1a-e8b0-4309-bf85-1db3808f4aa3",
+    "name": "Number of Live Objects",
+    "question": "net count of memory objects in use",
+    "query": "go_memstats_mallocs_total - go_memstats_frees_total",
+    "metrics": [
+      "go_memstats_frees_total",
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "98642cc3-26b5-498e-a5d8-76ab4c9b9c8a",
+    "name": "Rate of Objects Allocated",
+    "question": "rate of heap objects allocated per second",
+    "query": "rate(go_memstats_mallocs_total[1m])",
+    "metrics": [
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "cb407e13-1a0c-4299-aadc-157c380cc964",
+    "name": "Rate of Objects Allocated",
+    "question": "allocation rate of heap objects",
+    "query": "rate(go_memstats_mallocs_total[1m])",
+    "metrics": [
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "34f23bf8-eeb5-40af-85d1-629fdb7b9e07",
+    "name": "Rate of Objects Allocated",
+    "question": "objects allocated rate in heap memory",
+    "query": "rate(go_memstats_mallocs_total[1m])",
+    "metrics": [
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "f46605ed-e63f-4821-925f-8869b5bb455f",
+    "name": "Rate of a Pointer Dereferences",
+    "question": "rate of pointer dereferences per minute",
+    "query": "rate(go_memstats_lookups_total[1m])",
+    "metrics": [
+      "go_memstats_lookups_total"
+    ]
+  },
+  {
+    "id": "d4f40b4a-e843-46ed-8706-49cd9e3edfba",
+    "name": "Rate of a Pointer Dereferences",
+    "question": "total rate of pointer dereferences",
+    "query": "rate(go_memstats_lookups_total[1m])",
+    "metrics": [
+      "go_memstats_lookups_total"
+    ]
+  },
+  {
+    "id": "e420774f-967c-4367-af20-faa9a2df332a",
+    "name": "Rate of a Pointer Dereferences",
+    "question": "aggregated pointer dereference rate",
+    "query": "rate(go_memstats_lookups_total[1m])",
+    "metrics": [
+      "go_memstats_lookups_total"
+    ]
+  },
+  {
+    "id": "55b1d153-6d17-486d-a218-12195882ab41",
+    "name": "Goroutines",
+    "question": "current number of goroutines",
+    "query": "go_goroutines",
+    "metrics": [
+      "go_goroutines"
+    ]
+  },
+  {
+    "id": "f9791184-75bd-4c82-a52c-01e3776adf5e",
+    "name": "Goroutines",
+    "question": "total count of goroutines",
+    "query": "go_goroutines",
+    "metrics": [
+      "go_goroutines"
+    ]
+  },
+  {
+    "id": "850782ad-488d-4465-9fd4-f64c1f7b05c3",
+    "name": "Goroutines",
+    "question": "aggregated goroutine count",
+    "query": "go_goroutines",
+    "metrics": [
+      "go_goroutines"
+    ]
+  },
+  {
+    "id": "7fd4f055-3674-4774-81d4-05e33d89063a",
+    "name": "Rates of Allocation",
+    "question": "rate of memory allocation over 1 minute",
+    "query": "rate(go_memstats_alloc_bytes_total[1m])",
+    "metrics": [
+      "go_memstats_alloc_bytes_total"
+    ]
+  },
+  {
+    "id": "543fc668-76df-429d-9208-2e569649016e",
+    "name": "Rates of Allocation",
+    "question": "memory allocation rate in the past minute",
+    "query": "rate(go_memstats_alloc_bytes_total[1m])",
+    "metrics": [
+      "go_memstats_alloc_bytes_total"
+    ]
+  },
+  {
+    "id": "1883b632-9f99-4099-bb7f-9190395c88fa",
+    "name": "Rates of Allocation",
+    "question": "allocation rates for memory usage",
+    "query": "rate(go_memstats_alloc_bytes_total[1m])",
+    "metrics": [
+      "go_memstats_alloc_bytes_total"
+    ]
+  },
+  {
+    "id": "e87abc88-987a-48f3-b1de-8292003c1ff4",
+    "name": "GC duration quantile",
+    "question": "quantile of gc durations",
+    "query": "go_gc_duration_seconds",
+    "metrics": [
+      "go_gc_duration_seconds"
+    ]
+  },
+  {
+    "id": "10bcc3e2-c529-458f-ad9b-6810f607e950",
+    "name": "GC duration quantile",
+    "question": "gc duration statistics",
+    "query": "go_gc_duration_seconds",
+    "metrics": [
+      "go_gc_duration_seconds"
+    ]
+  },
+  {
+    "id": "8bd0f3af-2363-407f-8fb8-1c4fc1d56352",
+    "name": "GC duration quantile",
+    "question": "gc duration distribution",
+    "query": "go_gc_duration_seconds",
+    "metrics": [
+      "go_gc_duration_seconds"
+    ]
+  }
+]

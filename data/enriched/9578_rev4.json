@@ -1,0 +1,137 @@
+[
+  {
+    "id": "687dbaca-8d8c-456b-9dff-30e05d05291e",
+    "name": "Number of instances",
+    "question": "count of instances with alertmanager build info",
+    "query": "count(alertmanager_build_info)",
+    "metrics": [
+      "alertmanager_build_info"
+    ]
+  },
+  {
+    "id": "3d90aed0-5799-4c8d-84a6-6042525f6cd1",
+    "name": "Number of instances",
+    "question": "total number of instances with alertmanager build info",
+    "query": "count(alertmanager_build_info)",
+    "metrics": [
+      "alertmanager_build_info"
+    ]
+  },
+  {
+    "id": "667fc8cb-d836-4fc2-8619-4e4317e8fb8c",
+    "name": "Number of instances",
+    "question": "aggregate count of instances reporting alertmanager build info",
+    "query": "count(alertmanager_build_info)",
+    "metrics": [
+      "alertmanager_build_info"
+    ]
+  },
+  {
+    "id": "f0bb742c-9868-4f13-9fc2-6674885a9fe2",
+    "name": "Instance versions and up time",
+    "question": "alertmanager instances last successful reload",
+    "query": "alertmanager_config_last_reload_successful",
+    "metrics": [
+      "alertmanager_config_last_reload_successful"
+    ]
+  },
+  {
+    "id": "806de100-b365-4726-bb6b-64a46d19f1fe",
+    "name": "Instance versions and up time",
+    "question": "alertmanager instances version and uptime status",
+    "query": "alertmanager_config_last_reload_successful",
+    "metrics": [
+      "alertmanager_config_last_reload_successful"
+    ]
+  },
+  {
+    "id": "9744989c-20d5-4b5f-9d91-25ee85f7806f",
+    "name": "Instance versions and up time",
+    "question": "table of alertmanager instances with reload success",
+    "query": "alertmanager_config_last_reload_successful",
+    "metrics": [
+      "alertmanager_config_last_reload_successful"
+    ]
+  },
+  {
+    "id": "d4b99759-fbc4-4e4c-a4b2-29616c32ac20",
+    "name": "Number of active alerts",
+    "question": "maximum number of active alerts",
+    "query": "max(alertmanager_alerts)",
+    "metrics": [
+      "alertmanager_alerts"
+    ]
+  },
+  {
+    "id": "bc1d7f3f-cdc7-45f1-9793-9d98c69bf9f9",
+    "name": "Number of active alerts",
+    "question": "largest count of current alerts",
+    "query": "max(alertmanager_alerts)",
+    "metrics": [
+      "alertmanager_alerts"
+    ]
+  },
+  {
+    "id": "d114d8be-c0f8-4e96-a18d-4d179bc51be7",
+    "name": "Number of active alerts",
+    "question": "peak active alert count",
+    "query": "max(alertmanager_alerts)",
+    "metrics": [
+      "alertmanager_alerts"
+    ]
+  },
+  {
+    "id": "92b652a7-4ab5-41b1-b984-0a973a9ae0c5",
+    "name": "Number of suppressed alerts",
+    "question": "maximum number of active suppressed alerts",
+    "query": "max(alertmanager_alerts)",
+    "metrics": [
+      "alertmanager_alerts"
+    ]
+  },
+  {
+    "id": "12ea8967-a086-4b77-b1fc-b6698c4bab7f",
+    "name": "Number of suppressed alerts",
+    "question": "largest count of currently suppressed alerts",
+    "query": "max(alertmanager_alerts)",
+    "metrics": [
+      "alertmanager_alerts"
+    ]
+  },
+  {
+    "id": "ad0750ce-c92f-426f-bcf6-5088af52d1e2",
+    "name": "Number of suppressed alerts",
+    "question": "peak count of suppressed alerts",
+    "query": "max(alertmanager_alerts)",
+    "metrics": [
+      "alertmanager_alerts"
+    ]
+  },
+  {
+    "id": "eb929b0a-fabe-4076-a19d-0a95432cb92d",
+    "name": "Number of active silences",
+    "question": "maximum active silences in alertmanager",
+    "query": "max(alertmanager_silences)",
+    "metrics": [
+      "alertmanager_silences"
+    ]
+  },
+  {
+    "id": "26e49f32-a226-4515-bdde-d956124977e2",
+    "name": "Number of active silences",
+    "question": "largest number of ongoing silences",
+    "query": "max(alertmanager_silences)",
+    "metrics": [
+      "alertmanager_silences"
+    ]
+  },
+  {
+    "id": "ace1b5df-8b9a-4488-bf35-5cff9d8bead2",
+    "name": "Number of active silences",
+    "question": "peak count of active silences",
+    "query": "max(alertmanager_silences)",
+    "metrics": [
+      "alertmanager_silences"
+    ]
+  }
+]

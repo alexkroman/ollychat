@@ -1,0 +1,380 @@
+[
+  {
+    "id": "0ba413fb-3b35-411d-a2bf-5ade4dfe8a6a",
+    "name": "CPU",
+    "question": "node load average over last minute",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "eb8884b7-2e29-48d7-8894-2c2a11dfe3dc",
+    "name": "CPU",
+    "question": "current node load1 value",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "9452276b-557c-465e-9904-9290bed2c7a8",
+    "name": "CPU",
+    "question": "singlenode load1 metric retrieval",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "32d3036b-5d62-4be8-98e2-5f0e1781e954",
+    "name": "Disk",
+    "question": "total available disk space on nodes",
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "985961bb-32e2-43b6-9da9-7b9b6cd96cd7",
+    "name": "Disk",
+    "question": "aggregated node filesystem available bytes",
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "e91afc09-c41f-4022-842e-29af89496269",
+    "name": "Disk",
+    "question": "sum of available disk space across nodes",
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "8de77d96-ab4d-4ccc-8655-f3ca78288407",
+    "name": "RAM",
+    "question": "total available ram across nodes",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "4dd9b3d5-c9c6-4eb9-b416-2d5a5156805f",
+    "name": "RAM",
+    "question": "aggregated node memory available",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "570e5dc6-eaeb-45e4-82a3-886dbd295113",
+    "name": "RAM",
+    "question": "sum of available memory on nodes",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "01642ae8-00f7-4aa9-9cd8-33cc617798e3",
+    "name": "Memory",
+    "question": "total memory capacity of the node",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "ed36c33f-e01d-41bb-9447-37b3070b3035",
+    "name": "Memory",
+    "question": "nodes total memory in bytes",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "d2d7cec7-d8c3-44e3-8a43-e4d68b7bbc30",
+    "name": "Memory",
+    "question": "aggregate of nodes memory capacity",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "c729141c-50df-48e2-8869-b6cb0a41dce2",
+    "name": "Memory",
+    "question": "available memory in bytes",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "6ad7c6ba-353c-41d8-abcd-dbab0d59b7c0",
+    "name": "Memory",
+    "question": "node memory available bytes",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "325031ef-526b-442a-bca0-4027892f1ebd",
+    "name": "Memory",
+    "question": "retrieve available memory metric",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "d1616b30-c38d-4d1c-b3f3-7c7b4cf19f43",
+    "name": "Disk Space",
+    "question": "total disk space on nodes",
+    "query": "sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "4c3ea5a2-8378-4676-afbd-39ff50f1dbda",
+    "name": "Disk Space",
+    "question": "aggregated filesystem size on nodes",
+    "query": "sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "79ef1d33-1f96-4594-bf4d-6c7f7dd775d0",
+    "name": "Disk Space",
+    "question": "sum of node filesystem sizes",
+    "query": "sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "aef98a88-b0fe-4555-b00d-722c3d89338c",
+    "name": "Disk Space",
+    "question": "aggregate available disk space across nodes",
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "dd19233a-7442-48c6-a3c8-11b4818c458b",
+    "name": "Disk Space",
+    "question": "total free disk space on nodes",
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "c09d9c5c-9abc-4b36-aefb-767032200114",
+    "name": "Disk Space",
+    "question": "combined available disk storage on nodes",
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "f96a89ed-37d5-4696-a4d2-ae838e578bc7",
+    "name": "Network",
+    "question": "sum of transmitted network bytes",
+    "query": "sum(rate(container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "80f9c241-cfca-4acd-8006-fd9426dd3563",
+    "name": "Network",
+    "question": "aggregated network data transmission",
+    "query": "sum(rate(container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "0beec020-7d10-4c59-8071-45cd65a82b56",
+    "name": "Network",
+    "question": "total network bytes sent by containers",
+    "query": "sum(rate(container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "c9a5fca8-c7c1-4d82-9e2b-2afd68506743",
+    "name": "Network",
+    "question": "sum of network receive bytes for containers",
+    "query": "-sum(rate(container_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "54a5fae3-f63b-4414-a08e-901803066b04",
+    "name": "Network",
+    "question": "aggregated network data received by containers",
+    "query": "-sum(rate(container_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "72513993-22ad-45dc-941b-5b0002f19223",
+    "name": "Network",
+    "question": "total received network bytes across containers",
+    "query": "-sum(rate(container_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "ac6e9ee0-dfbe-4f6d-bc34-605ea72d3baf",
+    "name": "Disk I/O",
+    "question": "total disk write activity over 30 minutes",
+    "query": "sum(-rate(node_disk_written_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "a29016c3-4b23-41d0-b790-cdf5dd068eca",
+    "name": "Disk I/O",
+    "question": "aggregated disk write rate",
+    "query": "sum(-rate(node_disk_written_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "5404ef97-85b7-4365-89b5-0398370c16aa",
+    "name": "Disk I/O",
+    "question": "summed disk write operations",
+    "query": "sum(-rate(node_disk_written_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "8add3afb-fd39-4575-bd13-0ef0f3e84f58",
+    "name": "Disk I/O",
+    "question": "aggregated disk read bytes per second",
+    "query": "sum(rate(node_disk_read_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "f31a8f7c-9a05-4681-b8bc-283c258741ed",
+    "name": "Disk I/O",
+    "question": "total disk read bytes rate within 30 minutes",
+    "query": "sum(rate(node_disk_read_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "e972d43b-232d-4c11-a436-bd3bf485fa31",
+    "name": "Disk I/O",
+    "question": "sum of disk read bytes per second",
+    "query": "sum(rate(node_disk_read_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "2c7a0d24-5c5e-4c41-b960-6f08aa44f2ba",
+    "name": "CPU Load",
+    "question": "current node load1 value",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "2524e9e2-a45c-491e-b925-deec5c39eb46",
+    "name": "CPU Load",
+    "question": "node load1 metric data",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "4021a3db-3d95-4775-a2b5-72e0ded13c31",
+    "name": "CPU Load",
+    "question": "load1 value for the node",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "822523e3-9519-44df-9b3a-afd7f028a974",
+    "name": "CPU Load",
+    "question": "retrieve nodes 5minute average cpu load",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "8e4bf7de-4b90-420e-8673-5fadc9b95f23",
+    "name": "CPU Load",
+    "question": "query nodes load average over 5 units",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "cdbfe14c-6f0f-40a1-bc1c-b9d7e37f5188",
+    "name": "CPU Load",
+    "question": "fetch nodes cpu load over 5minute period",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "8f03eac0-7b8e-4343-9a54-621fd72e9c9d",
+    "name": "CPU Load",
+    "question": "current 15minute node load",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "44734722-b9c3-4872-a7ee-4f4670443d7d",
+    "name": "CPU Load",
+    "question": "nodes 15minute load metric",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "8e4bb9f0-fa83-4927-93c6-f737fec687c9",
+    "name": "CPU Load",
+    "question": "node load average over 15 minutes",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  }
+]

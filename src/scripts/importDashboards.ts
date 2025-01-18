@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import { allMetricNames } from '../utils/metricsFetcher.js';
+
+const allMetrics = allMetricNames;
+
 const inputDir = 'data/raw'; // Directory containing JSON files
 const outputDir = 'data/processed'; // Directory to save processed files
-
-console.log(allMetricNames);
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
@@ -12,21 +13,37 @@ if (!fs.existsSync(outputDir)) {
 }
 
 // Interface for vector database entries
-interface VectorEntry {
+interface QueryEntry {
   name: string;
   description: string;
-  queries: string[];
+  query: string;
+  metrics: string[];
+}
+
+function extractPromQLMetrics(query: string): string[] {
+  const metricRegex = /[a-zA-Z_:][a-zA-Z0-9_:]*/g;
+  const promQLFunctions = new Set([
+      "sum", "avg", "min", "max", "count", "rate", "irate", "delta", "increase", "topk", "bottomk",
+      "quantile", "sort", "sort_desc", "sort_asc", "stddev", "stdvar", "abs", "clamp_max", "clamp_min",
+      "by", "m", "oninstance", "job",
+  ]);
+
+  const metrics = new Set<string>();
+  const matches = query.match(metricRegex);
+  if (matches) {
+      matches.forEach(metric => {
+          if (!promQLFunctions.has(metric) && !metric.includes("(")) {
+              metrics.add(metric);
+          }
+      });
+  }
+  return Array.from(metrics).sort();
 }
 
 // Function to modify a PromQL query
 function modifyPromQLQuery(query: string): string {
-
-  // Set the time interval to 30m
-  query = query.replace(/\[\$\__rate_interval\]/g, '[30m]');
-
-  // Remove braces
+  query = query.replace(/\[\$__rate_interval\]/g, '[30m]');
   query = query.replace(/\{[^}]*\}/g, '');
-
   return query;
 }
 
@@ -35,39 +52,35 @@ function transformFile(inputPath: string, outputPath: string): void {
   const rawData = fs.readFileSync(inputPath, 'utf-8');
   const grafanaData = JSON.parse(rawData);
 
-  const vectorData: VectorEntry[] = grafanaData.panels.map((panel: any) => {
+  const queryData: QueryEntry[] = [];
+
+  (grafanaData.panels || []).forEach((panel: any) => {
     const name = panel.title || '';
     const description = panel.description || ''; 
-    const queries = (panel.targets || [])
-      .map((target: any) => {
-        if (typeof target.expr === 'string') {
-          return modifyPromQLQuery(target.expr);
+
+    (panel.targets || []).forEach((target: any) => {
+      if (typeof target.expr === 'string') {
+        const query = modifyPromQLQuery(target.expr);
+        const metrics = extractPromQLMetrics(query);
+
+        const missingMetrics = metrics.filter(metric => !allMetrics.includes(metric));
+        if (missingMetrics.length > 0) { 
+          console.warn(`Skipping because metrics don't exist in installation: ${missingMetrics.join(', ')}`);
         }
-        return '';
-      });
-    
-    return {
-      name,
-      description,
-      queries,
-    };
-  }).filter((entry: VectorEntry) => {
-    if (entry === null) return false; // Exclude invalid panels
-    if (entry.queries.every(query => query.trim() === "")) {
-      console.warn(`Panel "${entry.name}" has no valid queries and will be excluded.`);
-      return false; // Exclude panels with no valid queries
-    }
-    return true;
+
+        if (query.trim() !== "" && metrics.length > 0 && missingMetrics.length === 0) {
+          queryData.push({ name, description, query, metrics });
+        }
+      }
+    });
   });
 
-  // Only write the file if vectorData is valid and not empty
-  if (vectorData && Array.isArray(vectorData) && vectorData.length > 0) {
-    fs.writeFileSync(outputPath, JSON.stringify(vectorData, null, 2), 'utf-8');
+  if (queryData.length > 0) {
+    fs.writeFileSync(outputPath, JSON.stringify(queryData, null, 2), 'utf-8');
     console.log(`File written successfully to ${outputPath}`);
   } else {
-    console.warn(`No valid vector data to write. Skipping file creation.`);
+    console.warn(`No valid query data to write. Skipping file creation.`);
   }
-
 }
 
 // Process all JSON files in the input directory
@@ -81,7 +94,6 @@ fs.readdir(inputDir, (err, files) => {
     const inputFilePath = path.join(inputDir, file);
     const outputFilePath = path.join(outputDir, file);
 
-    // Process only .json files
     if (path.extname(file).toLowerCase() === '.json') {
       try {
         transformFile(inputFilePath, outputFilePath);

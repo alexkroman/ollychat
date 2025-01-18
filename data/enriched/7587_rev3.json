@@ -1,0 +1,245 @@
+[
+  {
+    "id": "135a47d8-142f-4227-b4e5-2421d2289a25",
+    "name": "Global Probe Duration",
+    "question": "aggregate of probe duration",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "182ae452-80af-43c3-ba4d-1f3e3811d51c",
+    "name": "Global Probe Duration",
+    "question": "total probe time",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "9e616164-08a1-486f-8769-1b7dd7a3a489",
+    "name": "Global Probe Duration",
+    "question": "cumulative probe duration",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "7632053e-5cf2-4e38-988a-364a072daabc",
+    "name": "Status",
+    "question": "success status of probes",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "82b1837f-2172-45ba-8d3f-af222d949d83",
+    "name": "Status",
+    "question": "probe success metric",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "78ee59fb-1085-45b9-a9d1-2d01e959a6b8",
+    "name": "Status",
+    "question": "probe success status",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "61868cce-3bdb-45d4-8273-41761fed956e",
+    "name": "HTTP Duration",
+    "question": "http duration reported by probes",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "0caa4f59-6d6b-498f-a5e5-e46397c03418",
+    "name": "HTTP Duration",
+    "question": "current http duration metrics",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "a7833a73-5846-4c84-90f7-49fbe1cd3baa",
+    "name": "HTTP Duration",
+    "question": "probemeasured http response time",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "bd317c10-7445-4375-84f2-34f993e671a0",
+    "name": "Probe Duration",
+    "question": "duration of probes",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "1c6388d2-3972-4204-85af-f545ec4ea8d2",
+    "name": "Probe Duration",
+    "question": "probe time taken",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "acc67d3e-7b62-4553-bbfd-29d74690652b",
+    "name": "Probe Duration",
+    "question": "time for probe execution",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "bcb2486c-5ed1-4ee1-866d-cf3228c53b37",
+    "name": "HTTP Status Code",
+    "question": "http status codes from probes",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "33d7566b-1802-4191-9bb0-e6e7bbd24a22",
+    "name": "HTTP Status Code",
+    "question": "aggregated http status code metrics",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "c260a5a0-933c-43bd-a23c-88207674bfc8",
+    "name": "HTTP Status Code",
+    "question": "probe results for http status codes",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "a1050904-0a3e-483b-98ec-ebbe0cc0c10e",
+    "name": "HTTP Version",
+    "question": "retrieve http versions from probes",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "18548d4d-5973-4165-89ef-be95f72c4c95",
+    "name": "HTTP Version",
+    "question": "aggregated probe http version data",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "8dbc6b9a-4b95-4bb0-96cf-079195123508",
+    "name": "HTTP Version",
+    "question": "summarize http versions in probes",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "c7f1fd68-ccbc-4cc7-8220-4ad1b69a7c30",
+    "name": "SSL",
+    "question": "http ssl status for probing",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "5111de86-6736-4567-a9d4-e48a926ce129",
+    "name": "SSL",
+    "question": "metric for checking https ssl",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "25cd5e1b-2e3d-4fc9-9a37-066e90a95f34",
+    "name": "SSL",
+    "question": "probe result for http ssl",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "9f52dea2-d859-4a99-96d5-8b7ce6b3445f",
+    "name": "Average Probe Duration",
+    "question": "average duration of probes",
+    "query": "avg(probe_duration_seconds)",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "889e2cec-895a-4b57-9645-c061439e18a9",
+    "name": "Average Probe Duration",
+    "question": "mean probe duration",
+    "query": "avg(probe_duration_seconds)",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "136c65ba-d46c-41dd-a83e-30373c727d29",
+    "name": "Average Probe Duration",
+    "question": "probe duration average",
+    "query": "avg(probe_duration_seconds)",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "930ab463-9639-47c9-b928-533dec42067b",
+    "name": "Average DNS Lookup",
+    "question": "average dns lookup time",
+    "query": "avg(probe_dns_lookup_time_seconds)",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "42633759-70c7-49c6-bfa5-2e5b0d3dadce",
+    "name": "Average DNS Lookup",
+    "question": "mean dns resolution duration",
+    "query": "avg(probe_dns_lookup_time_seconds)",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "64650e60-3c0f-48b1-9ecd-c57dc081b029",
+    "name": "Average DNS Lookup",
+    "question": "aggregated dns query response time",
+    "query": "avg(probe_dns_lookup_time_seconds)",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  }
+]

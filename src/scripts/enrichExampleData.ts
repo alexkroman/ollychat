@@ -3,6 +3,7 @@ import path from 'path';
 import { OpenAI } from 'openai';
 import { v4 as uuidv4 } from 'uuid';
 import { config } from "../config/appConfig.js";
+import { normalizeQuestion } from "../utils/dataNormalizer.js";
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -28,7 +29,6 @@ interface EnrichedEntry {
 }
 
 interface EnrichmentResponse {
-  metrics: string[];
   questions: string[];
 }
 
@@ -39,36 +39,36 @@ async function enrichMetricData(
   query: string
 ): Promise<EnrichmentResponse> {
   const prompt = `
-  Given a Grafana dashboard query with the following details:
-Name: ${name}
-Current Description: ${currentDescription}
-PromQL query: ${query}
+You are a world-class prompt generator. Given the following information about a PromQL query:
 
-1. Extract all metric names from the PromQL query. 
-   - A metric name is typically the string that appears before any '{', '(', or other operators (e.g., "node_cpu_seconds_total" in rate(node_cpu_seconds_total[5m])).
-   - It can be surrounded by functions, filters, or time ranges.
-   - If multiple metrics are found, include them all. If none are found, return an empty array.
+- Name: ${name}
+- Current Description: ${currentDescription}
+- PromQL Query: ${query}
 
-2. Generate 3 different questions that this query might be used to answer.
-  - Be concise (fewer than 20 words)
-  - Avoid referencing time (e.g., do not include phrases like “over the last hour”)
-  - Not say “This query is answering…” or provide explanations
-  - Reflect different, distinct angles or perspectives of how someone might ask about this data
-  - Contain enough context to uniquely match relevant information in a vector store (i.e., each question should hint at a different dimension of the query)
-  - Return them as simple strings in an array, e.g. ["Question 1", "Question 2", "Question 3"]
+Generate exactly 3 concise, natural-language descriptions of what this query retrieves. Each description must adhere to the following rules:
 
-3. Return the result as **valid JSON** with exactly these two keys:
-   - "metrics": an array of metric names
-   - "questions": an array of questions
+1. Do not begin with question words (e.g., "What", "How", "Which").
+2. Use fewer than 10 words per description.
+3. Make each description unique and semantically different.
+4. Exclude any time-related words.
+5. Do not include time units like milliseconds, seconds, or minutes.
+5. Focus on the key metric, scope, and aggregation.
 
-4. **Output Format**:
-   - Do not include any additional text, explanations, or keys.
-   - The output must be a single JSON object, for example:
+Return the result as a valid JSON object with exactly one key "questions" whose value is the array of three descriptions. 
+No additional text, explanations, or keys should be included.
 
-   {
-     "metrics": ["metric1", "metric2"],
-     "questions": ["Question 1", "Question 2", "Question 3"]
-   }
+Example:
+- PromQL Query: sum(rate(container_cpu_usage_seconds_total[5m]))
+- Possible Output:
+{
+  "questions": [
+    "Total CPU usage rate across containers",
+    "Aggregated container CPU utilization rate",
+    "Summed CPU consumption rate for containers"
+  ]
+}
+
+Now generate your output in the same JSON format, following all of the above rules.
 `;
 
   const response = await openai.chat.completions.create({
@@ -76,7 +76,7 @@ PromQL query: ${query}
     messages: [
       {
         role: "system",
-        content: "You are a helpful assistant that creates questions from PromQL queries. Always respond with valid JSON."
+        content: "You are a helpful assistant that creates statements describing PromQL queries. Always respond with valid JSON."
       },
       { role: "user", content: prompt }
     ],
@@ -92,7 +92,7 @@ PromQL query: ${query}
     const parsedResponse = JSON.parse(content) as EnrichmentResponse;
 
     // Validate response format
-    if (!Array.isArray(parsedResponse.metrics) || !Array.isArray(parsedResponse.questions)) {
+    if (!Array.isArray(parsedResponse.questions)) {
       throw new Error('Invalid response format');
     }
     return parsedResponse;
@@ -100,7 +100,6 @@ PromQL query: ${query}
     console.error('Error parsing OpenAI response:', error);
     return {
       questions: [],
-      metrics: []
 
     };
   }
@@ -114,19 +113,20 @@ async function transformFile(inputPath: string, outputPath: string): Promise<voi
 
   for (const entry of inputData) {
     try {
-      for (const query of entry.queries) { 
-        const enriched = await enrichMetricData(entry.name, entry.description, query);
+      const enriched = await enrichMetricData(entry.name, entry.description, entry.query);
 
-        for (const question of enriched.questions) {
-          vectorData.push({
-            id: uuidv4(),
-            name: entry.name,
-            question: question,
-            query: query,
-            metrics: enriched.metrics,
-          });
-        }
+      for (const question of enriched.questions) {
+        vectorData.push({
+          id: uuidv4(),
+          name: entry.name,
+          question: normalizeQuestion(question),
+          query: entry.query,
+          metrics: entry.metrics,
+        });
       }
+
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
     } catch (error) {
       console.error(`Error processing entry "${entry.name}":`, error);
     }
@@ -134,6 +134,7 @@ async function transformFile(inputPath: string, outputPath: string): Promise<voi
 
   fs.writeFileSync(outputPath, JSON.stringify(vectorData, null, 2), 'utf-8');
   console.log(`Processed: ${inputPath} -> ${outputPath}`);
+  await new Promise(resolve => setTimeout(resolve, 500)); 
 }
 
 fs.readdir(inputDir, (err, files) => {
