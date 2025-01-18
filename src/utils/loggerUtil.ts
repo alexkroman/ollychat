@@ -1,4 +1,4 @@
-import { config } from "../config/appConfig.js";
+import { config } from "../config/config.js";
 
 export class Logger {
   static log(message: string, ...optionalParams: any[]) {

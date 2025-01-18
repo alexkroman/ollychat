@@ -1,7 +1,7 @@
 import slack from '@slack/bolt';
 const { App } = slack;
 import { answerQuestion } from "../agents/ollychat.js";
-import { config } from "../config/appConfig.js";
+import { config } from "../config/config.js";
 
 const app = new App({
   token: config.slackBotToken,

@@ -1,6 +1,6 @@
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { OpenAIEmbeddings } from "@langchain/openai";
-import { config } from "../config/appConfig.js";
+import { config } from "../config/config.js";
 
 const embeddings = new OpenAIEmbeddings({
     model: config.openAIEmbeddings,

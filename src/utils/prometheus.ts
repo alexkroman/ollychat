@@ -1,7 +1,7 @@
 import { createQueryExecutor } from '../integrations/prometheusIntegration.js';
 import { DynamicStructuredTool } from "@langchain/core/tools";
 import { z } from "zod";
-import { config } from "../config/appConfig.js";
+import { config } from "../config/config.js";
 
 const prometheusUrl = config.prometheusUrl
 const queryPrometheus = createQueryExecutor(prometheusUrl);

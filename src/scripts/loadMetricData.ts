@@ -5,7 +5,7 @@ import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { Document } from "@langchain/core/documents";
 import { ChromaClient } from "chromadb";
 import { normalizeQuestion } from '../utils/dataNormalizer.js';
-import { config } from "../config/appConfig.js";
+import { config } from "../config/config.js";
 
 
 // Read and parse the JSON file

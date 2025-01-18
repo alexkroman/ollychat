@@ -4,7 +4,7 @@ import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { ChromaClient } from "chromadb";
 import { normalizeQuestion } from '../utils/dataNormalizer.js';
-import { config } from "../config/appConfig.js";
+import { config } from "../config/config.js";
 
 const enrichedDir = './data/enriched';
 const embeddings = new OpenAIEmbeddings({ model: process.env.OPENAI_EMBEDDINGS });

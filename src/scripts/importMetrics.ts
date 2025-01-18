@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import { createMetricsFetcher } from '../integrations/prometheusIntegration.js';
-import { config } from "../config/appConfig.js";
+import { config } from "../config/config.js";
 
 // Define interfaces instead of types for better object modeling
 interface Metric {

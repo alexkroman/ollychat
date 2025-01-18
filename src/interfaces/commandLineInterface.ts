@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
 import { answerQuestion } from "../agents/ollychat.js";
-import { config } from "../config/appConfig.js";
+import { config } from "../config/config.js";
 
 
 interface Command {

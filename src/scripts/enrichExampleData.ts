@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { OpenAI } from 'openai';
 import { v4 as uuidv4 } from 'uuid';
-import { config } from "../config/appConfig.js";
+import { config } from "../config/config.js";
 import { normalizeQuestion } from "../utils/dataNormalizer.js";
 
 // Initialize OpenAI client
