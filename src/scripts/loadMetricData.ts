@@ -41,6 +41,17 @@ const vectorStore = new Chroma(embeddings, {
   try {
     const client = new ChromaClient();
     const metricsIndex = config.chromaMetricsIndex;
+
+    const collections: string[] = await client.listCollections();
+    const collectionExists = collections.some((col: string) => col === metricsIndex);
+
+    if (collectionExists) {
+      console.log(`Collection '${metricsIndex}' already exists. Skipping creation.`);
+    } else {
+      console.log(`Collection '${metricsIndex}' does not exist. Creating it now.`);
+      await client.createCollection({ name: metricsIndex });
+    }
+
     await client.deleteCollection({ name: metricsIndex });
     await vectorStore.addDocuments(transformedData);
     console.log("Documents successfully added to the vector store.");

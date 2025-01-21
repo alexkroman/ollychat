@@ -50,9 +50,17 @@ async function processAllFiles() {
   try {
     console.log(`Clearing existing collection: ${config.chromaIndex}`);
     const client = new ChromaClient();
-    if (!process.env.CHROMA_INDEX) {
-      throw new Error("CHROMA_INDEX environment variable is not defined");
+    const chromaIndex = config.chromaIndex;
+    const collections: string[] = await client.listCollections();
+    const collectionExists = collections.some((col: string) => col === chromaIndex);
+
+    if (collectionExists) {
+      console.log(`Collection '${chromaIndex}' already exists. Skipping creation.`);
+    } else {
+      console.log(`Collection '${chromaIndex}' does not exist. Creating it now.`);
+      await client.createCollection({ name: chromaIndex });
     }
+
     await client.deleteCollection({ name: config.chromaIndex });
     await processAllFiles();
   } catch (error) {
