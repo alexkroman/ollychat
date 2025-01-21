@@ -1,29 +1,110 @@
 [
   {
-    "id": "3f405f61-dbfd-4bee-9372-9105cbb2d66c",
-    "name": "Start time",
-    "question": "total process start times multiplied by 1000",
-    "query": "process_start_time_seconds*1000",
+    "id": "4adea4c5-73e6-4df8-b6c6-2a5d4d5a6917",
+    "name": "$memory_pool_heap (heap)",
+    "question": "used jvm memory in bytes",
+    "query": "jvm_memory_used_bytes",
     "metrics": [
-      "process_start_time_seconds"
+      "jvm_memory_used_bytes"
     ]
   },
   {
-    "id": "7c109a09-9876-454b-92e8-acef69b4085f",
-    "name": "Start time",
-    "question": "aggregate of process start time values",
-    "query": "process_start_time_seconds*1000",
+    "id": "57f201bf-3d40-415c-92da-eaf9d1da1d0c",
+    "name": "$memory_pool_heap (heap)",
+    "question": "heap memory pool usage",
+    "query": "jvm_memory_used_bytes",
     "metrics": [
-      "process_start_time_seconds"
+      "jvm_memory_used_bytes"
     ]
   },
   {
-    "id": "d06ea9f8-1280-4bdd-ab87-e743293b0d85",
-    "name": "Start time",
-    "question": "product of process start time and 1000",
-    "query": "process_start_time_seconds*1000",
+    "id": "8dd536f3-eab8-4c13-b141-73a2c8461392",
+    "name": "$memory_pool_heap (heap)",
+    "question": "amount of memory used by jvm",
+    "query": "jvm_memory_used_bytes",
     "metrics": [
-      "process_start_time_seconds"
+      "jvm_memory_used_bytes"
+    ]
+  },
+  {
+    "id": "e9376209-c6fd-4cb2-a998-d521ff420a4f",
+    "name": "$memory_pool_heap (heap)",
+    "question": "committed jvm memory in bytes",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "ba1d1972-51b0-4415-94d9-af7dd45153d8",
+    "name": "$memory_pool_heap (heap)",
+    "question": "heap memory pool committed bytes",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "b73469f2-8f83-40a5-a901-942151ef0441",
+    "name": "$memory_pool_heap (heap)",
+    "question": "total heap memory committed in jvm",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "01fd300a-7d75-4f52-be44-be7d36286ce4",
+    "name": "$memory_pool_nonheap (non-heap)",
+    "question": "used nonheap memory in jvm",
+    "query": "jvm_memory_used_bytes",
+    "metrics": [
+      "jvm_memory_used_bytes"
+    ]
+  },
+  {
+    "id": "ccf46743-bbe8-456a-b4d1-85e72eb594b7",
+    "name": "$memory_pool_nonheap (non-heap)",
+    "question": "current nonheap memory consumption",
+    "query": "jvm_memory_used_bytes",
+    "metrics": [
+      "jvm_memory_used_bytes"
+    ]
+  },
+  {
+    "id": "a91f8bd7-0dcf-4529-ae97-e0b81c742c4a",
+    "name": "$memory_pool_nonheap (non-heap)",
+    "question": "amount of memory used in nonheap space",
+    "query": "jvm_memory_used_bytes",
+    "metrics": [
+      "jvm_memory_used_bytes"
+    ]
+  },
+  {
+    "id": "a0a1dfd1-89bf-4d95-ac51-110566348246",
+    "name": "$memory_pool_nonheap (non-heap)",
+    "question": "committed nonheap memory usage",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "3ef1c229-b811-44a3-842b-fd71f49ce192",
+    "name": "$memory_pool_nonheap (non-heap)",
+    "question": "total nonheap memory allocation",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "923dc3d5-19c9-4b52-87fe-378bb539a2d3",
+    "name": "$memory_pool_nonheap (non-heap)",
+    "question": "aggregated nonheap memory commitment",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
     ]
   }
 ]

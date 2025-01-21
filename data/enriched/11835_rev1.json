@@ -1,0 +1,164 @@
+[
+  {
+    "id": "69e37ced-8374-4e38-bbf3-c36640091734",
+    "name": "Commands Executed / sec",
+    "question": "rate of executed redis commands",
+    "query": "rate(redis_commands_processed_total[1m])",
+    "metrics": [
+      "redis_commands_processed_total"
+    ]
+  },
+  {
+    "id": "9d93e202-17fa-4b84-a17f-906a218db088",
+    "name": "Commands Executed / sec",
+    "question": "total commands processed per second",
+    "query": "rate(redis_commands_processed_total[1m])",
+    "metrics": [
+      "redis_commands_processed_total"
+    ]
+  },
+  {
+    "id": "acbc7f2c-08cc-4a71-bff3-e652d504d9d5",
+    "name": "Commands Executed / sec",
+    "question": "aggregated rate of redis commands executed",
+    "query": "rate(redis_commands_processed_total[1m])",
+    "metrics": [
+      "redis_commands_processed_total"
+    ]
+  },
+  {
+    "id": "23037025-3bea-4908-b4e2-09077d19c4a3",
+    "name": "Hits / Misses per Sec",
+    "question": "rate of redis keyspace hits per second",
+    "query": "irate(redis_keyspace_hits_total[5m])",
+    "metrics": [
+      "redis_keyspace_hits_total"
+    ]
+  },
+  {
+    "id": "261d4f72-e10c-4fa1-bd0a-9d6bc35f408a",
+    "name": "Hits / Misses per Sec",
+    "question": "instantaneous rate of redis hits",
+    "query": "irate(redis_keyspace_hits_total[5m])",
+    "metrics": [
+      "redis_keyspace_hits_total"
+    ]
+  },
+  {
+    "id": "9fabebda-0ca5-49ce-bcc5-b33807971a88",
+    "name": "Hits / Misses per Sec",
+    "question": "hits per second on redis keyspace",
+    "query": "irate(redis_keyspace_hits_total[5m])",
+    "metrics": [
+      "redis_keyspace_hits_total"
+    ]
+  },
+  {
+    "id": "50189818-10eb-4d80-a993-11426b767e72",
+    "name": "Hits / Misses per Sec",
+    "question": "rate of redis keyspace misses per second",
+    "query": "irate(redis_keyspace_misses_total[5m])",
+    "metrics": [
+      "redis_keyspace_misses_total"
+    ]
+  },
+  {
+    "id": "6f6204d0-6c2c-44c5-a404-5b1c2ab93ac4",
+    "name": "Hits / Misses per Sec",
+    "question": "instantaneous rate of redis misses",
+    "query": "irate(redis_keyspace_misses_total[5m])",
+    "metrics": [
+      "redis_keyspace_misses_total"
+    ]
+  },
+  {
+    "id": "bfa3f490-239a-4e60-b1b1-1437016fb6ed",
+    "name": "Hits / Misses per Sec",
+    "question": "redis misses per second in last 5 minutes",
+    "query": "irate(redis_keyspace_misses_total[5m])",
+    "metrics": [
+      "redis_keyspace_misses_total"
+    ]
+  },
+  {
+    "id": "422904b0-4d24-4443-b73e-2a8763aaa60e",
+    "name": "Total Memory Usage",
+    "question": "total memory usage for redis instance",
+    "query": "redis_memory_used_bytes ",
+    "metrics": [
+      "redis_memory_used_bytes"
+    ]
+  },
+  {
+    "id": "4c9bf2a9-21c2-4fcc-9217-12a9e548bfb1",
+    "name": "Total Memory Usage",
+    "question": "aggregated redis memory consumption",
+    "query": "redis_memory_used_bytes ",
+    "metrics": [
+      "redis_memory_used_bytes"
+    ]
+  },
+  {
+    "id": "9c3ef0dd-271e-4726-b468-dc67db495145",
+    "name": "Total Memory Usage",
+    "question": "sum of memory used by redis",
+    "query": "redis_memory_used_bytes ",
+    "metrics": [
+      "redis_memory_used_bytes"
+    ]
+  },
+  {
+    "id": "1d6ed6f9-1c62-4af3-a114-b062d5aa4ead",
+    "name": "Network I/O",
+    "question": "aggregated rate of redis network input bytes",
+    "query": "rate(redis_net_input_bytes_total[5m])",
+    "metrics": [
+      "redis_net_input_bytes_total"
+    ]
+  },
+  {
+    "id": "241fda38-2540-4862-a892-5c2a5062aae7",
+    "name": "Network I/O",
+    "question": "5minute average of redis network input traffic",
+    "query": "rate(redis_net_input_bytes_total[5m])",
+    "metrics": [
+      "redis_net_input_bytes_total"
+    ]
+  },
+  {
+    "id": "6e35890b-a505-416a-8194-7b5f66ea2c1a",
+    "name": "Network I/O",
+    "question": "rate of incoming bytes for redis network",
+    "query": "rate(redis_net_input_bytes_total[5m])",
+    "metrics": [
+      "redis_net_input_bytes_total"
+    ]
+  },
+  {
+    "id": "efb34cf9-8dbc-4263-912f-1c8a7ce64806",
+    "name": "Network I/O",
+    "question": "rate of output bytes for redis network",
+    "query": "rate(redis_net_output_bytes_total[5m])",
+    "metrics": [
+      "redis_net_output_bytes_total"
+    ]
+  },
+  {
+    "id": "62d2004d-f2d9-409b-b0f8-9284b0bab633",
+    "name": "Network I/O",
+    "question": "aggregated network output rate for redis",
+    "query": "rate(redis_net_output_bytes_total[5m])",
+    "metrics": [
+      "redis_net_output_bytes_total"
+    ]
+  },
+  {
+    "id": "ea737ee5-f242-4043-83bd-2d27595cd9ab",
+    "name": "Network I/O",
+    "question": "total rate of bytes sent over redis network",
+    "query": "rate(redis_net_output_bytes_total[5m])",
+    "metrics": [
+      "redis_net_output_bytes_total"
+    ]
+  }
+]

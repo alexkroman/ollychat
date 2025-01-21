@@ -1,110 +1,56 @@
 [
   {
-    "id": "03543d3a-0cb9-4b12-9c55-f3502b4e66bc",
-    "name": "Cpu Time",
-    "question": "total cpu seconds consumed by processes",
-    "query": "process_cpu_seconds_total",
+    "id": "1d8cf536-0b04-4c5a-8b01-ffd551cb4198",
+    "name": "Status",
+    "question": "checks status of targets",
+    "query": "up",
     "metrics": [
-      "process_cpu_seconds_total"
+      "up"
     ]
   },
   {
-    "id": "851accd3-f517-4d78-a94e-e56eef1d4b1c",
-    "name": "Cpu Time",
-    "question": "aggregated process cpu time",
-    "query": "process_cpu_seconds_total",
+    "id": "6dffd67c-a126-4b74-8194-58ad83bf7eb5",
+    "name": "Status",
+    "question": "returns availability status of targets",
+    "query": "up",
     "metrics": [
-      "process_cpu_seconds_total"
+      "up"
     ]
   },
   {
-    "id": "e743ce9c-4986-4cbe-9059-839e1330441f",
-    "name": "Cpu Time",
-    "question": "sum of cpu time for processes",
-    "query": "process_cpu_seconds_total",
+    "id": "b972c6e7-873d-42a5-9e68-b7a2c91a2ad4",
+    "name": "Status",
+    "question": "indicates if targets are up",
+    "query": "up",
     "metrics": [
-      "process_cpu_seconds_total"
+      "up"
     ]
   },
   {
-    "id": "d1a6927e-2781-46e7-9405-3fd319d4e040",
-    "name": "Open File Descriptors",
-    "question": "count of open file descriptors in processes",
-    "query": "process_open_fds",
+    "id": "165d7082-626a-4a64-af25-fd6bab841aed",
+    "name": "State",
+    "question": "retrieve current state of targets",
+    "query": "up",
     "metrics": [
-      "process_open_fds"
+      "up"
     ]
   },
   {
-    "id": "5a0dafd8-468a-4755-9988-2b9adb299cd8",
-    "name": "Open File Descriptors",
-    "question": "aggregated number of open file descriptors",
-    "query": "process_open_fds",
+    "id": "65bab5bc-d730-4deb-8589-f52838c04b66",
+    "name": "State",
+    "question": "check if targets are up",
+    "query": "up",
     "metrics": [
-      "process_open_fds"
+      "up"
     ]
   },
   {
-    "id": "4c3b2704-dec4-4e6c-8d9b-49a377e28081",
-    "name": "Open File Descriptors",
-    "question": "total open file descriptors in processes",
-    "query": "process_open_fds",
+    "id": "a0b251ff-98ed-4f19-a0cd-815707229f42",
+    "name": "State",
+    "question": "query for active target status",
+    "query": "up",
     "metrics": [
-      "process_open_fds"
-    ]
-  },
-  {
-    "id": "ad904dc5-7f7a-4858-834e-440485664b40",
-    "name": "Process Memory",
-    "question": "retrieve process resident memory bytes",
-    "query": "process_resident_memory_bytes",
-    "metrics": [
-      "process_resident_memory_bytes"
-    ]
-  },
-  {
-    "id": "83593c78-fb21-4285-b4ef-4e2833fecc79",
-    "name": "Process Memory",
-    "question": "get current process memory usage",
-    "query": "process_resident_memory_bytes",
-    "metrics": [
-      "process_resident_memory_bytes"
-    ]
-  },
-  {
-    "id": "584d7fb3-245b-459d-bbf4-1b87d064c28c",
-    "name": "Process Memory",
-    "question": "query for process memory consumption",
-    "query": "process_resident_memory_bytes",
-    "metrics": [
-      "process_resident_memory_bytes"
-    ]
-  },
-  {
-    "id": "2c3d1ab8-9fbb-4cce-9106-7d23fceee314",
-    "name": "Process Memory",
-    "question": "total virtual memory used by processes",
-    "query": "process_virtual_memory_bytes",
-    "metrics": [
-      "process_virtual_memory_bytes"
-    ]
-  },
-  {
-    "id": "56dd7c32-c432-4284-8905-d9790c61b80b",
-    "name": "Process Memory",
-    "question": "aggregated process virtual memory usage",
-    "query": "process_virtual_memory_bytes",
-    "metrics": [
-      "process_virtual_memory_bytes"
-    ]
-  },
-  {
-    "id": "d6277031-a6aa-480c-8e06-98026214e07d",
-    "name": "Process Memory",
-    "question": "sum of process virtual memory bytes",
-    "query": "process_virtual_memory_bytes",
-    "metrics": [
-      "process_virtual_memory_bytes"
+      "up"
     ]
   }
 ]

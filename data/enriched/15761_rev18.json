@@ -1,56 +1,29 @@
 [
   {
-    "id": "bca4d6ec-0b0f-4be8-af77-c7c285db1d5e",
-    "name": "API Server - CPU Usage by instance",
-    "question": "cpu usage rate for api server instances",
-    "query": "rate(process_cpu_seconds_total[30m])",
+    "id": "b957bf87-17fb-4122-b2be-cd7fe5583011",
+    "name": "API Server - Health Status",
+    "question": "retrieve health status of api server",
+    "query": "up",
     "metrics": [
-      "process_cpu_seconds_total"
+      "up"
     ]
   },
   {
-    "id": "cc714eb3-610f-4da1-afd7-901ee382ae1c",
-    "name": "API Server - CPU Usage by instance",
-    "question": "average cpu consumption by api server instances",
-    "query": "rate(process_cpu_seconds_total[30m])",
+    "id": "ac5ff0ef-e64b-40e1-b4e6-7264d53a372a",
+    "name": "API Server - Health Status",
+    "question": "check api server health status",
+    "query": "up",
     "metrics": [
-      "process_cpu_seconds_total"
+      "up"
     ]
   },
   {
-    "id": "7fd0c675-34ed-4795-ae2a-926f6f4c1c8a",
-    "name": "API Server - CPU Usage by instance",
-    "question": "rate of cpu utilization per api server instance",
-    "query": "rate(process_cpu_seconds_total[30m])",
+    "id": "57031ed9-ac28-44ff-b216-8a5aba910c50",
+    "name": "API Server - Health Status",
+    "question": "get status of api server health",
+    "query": "up",
     "metrics": [
-      "process_cpu_seconds_total"
-    ]
-  },
-  {
-    "id": "2ae126ef-a7c6-421d-9d0d-70a693a0a4ca",
-    "name": "API Server - Memory Usage by instance",
-    "question": "memory usage by api server instance",
-    "query": "process_resident_memory_bytes",
-    "metrics": [
-      "process_resident_memory_bytes"
-    ]
-  },
-  {
-    "id": "159d9501-a3aa-432e-bc27-692cc96e80d9",
-    "name": "API Server - Memory Usage by instance",
-    "question": "api server instances resident memory bytes",
-    "query": "process_resident_memory_bytes",
-    "metrics": [
-      "process_resident_memory_bytes"
-    ]
-  },
-  {
-    "id": "fab2a181-961f-4974-ac4e-aedb21c32a30",
-    "name": "API Server - Memory Usage by instance",
-    "question": "resident memory bytes for api server",
-    "query": "process_resident_memory_bytes",
-    "metrics": [
-      "process_resident_memory_bytes"
+      "up"
     ]
   }
 ]

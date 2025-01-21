@@ -1,0 +1,29 @@
+[
+  {
+    "id": "216c7a07-557b-4199-b835-abcacf357e18",
+    "name": "Healthy Status",
+    "question": "shows the status of healthy targets",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "172216ca-930c-4b89-8387-24d8b8c324cc",
+    "name": "Healthy Status",
+    "question": "checks the availability of healthy instances",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "64e415c7-0680-4aec-bea6-768d02c05f61",
+    "name": "Healthy Status",
+    "question": "indicates the up status of targets",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  }
+]

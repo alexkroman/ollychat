@@ -1,0 +1,29 @@
+[
+  {
+    "id": "fbfb8017-4c89-411b-8857-d917f9905250",
+    "name": "Controller State",
+    "question": "status of controllers",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "8e9da751-0aff-4806-adfa-3dca36f6bfd3",
+    "name": "Controller State",
+    "question": "availability of controllers",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "f4dfc7fd-210b-4b13-931d-742d9e41137d",
+    "name": "Controller State",
+    "question": "controller operational state",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  }
+]

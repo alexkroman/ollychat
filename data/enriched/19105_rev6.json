@@ -1,29 +1,56 @@
 [
   {
-    "id": "7cfde891-6e92-42b9-94ca-40adbea83b64",
-    "name": "Prometheus version",
-    "question": "retrieve prometheus version information",
-    "query": "prometheus_build_info",
+    "id": "1afdf1d0-e306-4bff-b7ed-a33e3c97c343",
+    "name": "Instance Down",
+    "question": "instances with a down status",
+    "query": "up < 1",
     "metrics": [
-      "prometheus_build_info"
+      "up"
     ]
   },
   {
-    "id": "718fb9fa-81d4-49cb-b595-95564d8221b9",
-    "name": "Prometheus version",
-    "question": "query the prometheus build details",
-    "query": "prometheus_build_info",
+    "id": "6d8dc551-8bd4-4fdd-bf84-b6a180f9d5a1",
+    "name": "Instance Down",
+    "question": "number of instances not up",
+    "query": "up < 1",
     "metrics": [
-      "prometheus_build_info"
+      "up"
     ]
   },
   {
-    "id": "5263ae72-782a-45fc-ada7-89fff633b807",
-    "name": "Prometheus version",
-    "question": "get prometheus software version",
-    "query": "prometheus_build_info",
+    "id": "25089d5b-12e1-4a3f-b850-411c21fe068c",
+    "name": "Instance Down",
+    "question": "instances failing health check",
+    "query": "up < 1",
     "metrics": [
-      "prometheus_build_info"
+      "up"
+    ]
+  },
+  {
+    "id": "8a952502-0486-490c-b104-15a81bfd4ed5",
+    "name": "Liveness by pod",
+    "question": "pods with liveness status",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "8929f13b-9558-4ce2-9e23-94b273cb451d",
+    "name": "Liveness by pod",
+    "question": "check if pods are up",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "67dfbf04-2fd8-494a-a545-e3ca89b165cc",
+    "name": "Liveness by pod",
+    "question": "liveness status of pods",
+    "query": "up",
+    "metrics": [
+      "up"
     ]
   }
 ]

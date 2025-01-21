@@ -1,0 +1,29 @@
+[
+  {
+    "id": "77288386-4c56-43a7-a94f-ba69198ad2d5",
+    "name": "Uptime",
+    "question": "aggregated job uptime",
+    "query": "sum(up) by (job)",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "915ac43c-a5b7-4b45-99be-b286555ebd7a",
+    "name": "Uptime",
+    "question": "total uptime by job",
+    "query": "sum(up) by (job)",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "39c4966a-ab22-4980-a807-fcedad83760f",
+    "name": "Uptime",
+    "question": "sum of uptime per job",
+    "query": "sum(up) by (job)",
+    "metrics": [
+      "up"
+    ]
+  }
+]

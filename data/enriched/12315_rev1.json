@@ -1,0 +1,56 @@
+[
+  {
+    "id": "8910788a-597a-4040-a5c4-0584af762ffe",
+    "name": "Heap",
+    "question": "memory used by jvm heap",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "429645d3-31e1-4368-9451-4f5dedf035a9",
+    "name": "Heap",
+    "question": "jvm heap memory committed bytes",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "4f2736e8-1a43-42bd-94be-2d2ceb7f6500",
+    "name": "Heap",
+    "question": "amount of memory allocated to jvm heap",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "875bfab1-9803-4d2f-92d4-e83f174eb422",
+    "name": "Off-Heap",
+    "question": "memory used outside jvm heap",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "e41d3469-351b-4c86-94a7-7cd16f1aee45",
+    "name": "Off-Heap",
+    "question": "jvm offheap memory consumption",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "id": "0e6d784b-99a1-473c-b3f8-b54299ea0cc7",
+    "name": "Off-Heap",
+    "question": "amount of memory not in jvm heap",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  }
+]

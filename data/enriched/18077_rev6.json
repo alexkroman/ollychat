@@ -1,0 +1,56 @@
+[
+  {
+    "id": "8e8d3f4a-8e47-49a7-a184-78b4872603eb",
+    "name": "",
+    "question": "collects metrics about availability of targets",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "61bbded4-bcd6-4baf-88b7-63dddee30c78",
+    "name": "",
+    "question": "returns status of target instances",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "7b832521-af9d-45d0-93e4-1cc1cf9fc3ce",
+    "name": "",
+    "question": "retrieves information on target health",
+    "query": "up",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "id": "78ca4b8f-4a8f-415e-a4ed-654e16a520e4",
+    "name": "",
+    "question": "average scrape duration",
+    "query": "scrape_duration_seconds",
+    "metrics": [
+      "scrape_duration_seconds"
+    ]
+  },
+  {
+    "id": "2aedf2d1-6ccb-49d2-87c9-e76b216fdd7c",
+    "name": "",
+    "question": "total time taken to scrape",
+    "query": "scrape_duration_seconds",
+    "metrics": [
+      "scrape_duration_seconds"
+    ]
+  },
+  {
+    "id": "a893e7fb-ee64-431b-b6f4-04dedb833a03",
+    "name": "",
+    "question": "aggregated scrape durations",
+    "query": "scrape_duration_seconds",
+    "metrics": [
+      "scrape_duration_seconds"
+    ]
+  }
+]

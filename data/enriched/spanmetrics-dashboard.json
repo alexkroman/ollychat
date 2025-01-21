@@ -1,0 +1,56 @@
+[
+  {
+    "id": "e3bcf90e-7431-4095-b396-80d19e997069",
+    "name": "Top 7 Services Mean Rate over Range",
+    "question": "top 7 services mean call rate",
+    "query": "topk(7,sum by (service_name) (rate(traces_span_metrics_calls_total[$__range])))",
+    "metrics": [
+      "traces_span_metrics_calls_total"
+    ]
+  },
+  {
+    "id": "a20e0679-c617-44ee-912c-ce9be397b30a",
+    "name": "Top 7 Services Mean Rate over Range",
+    "question": "aggregate mean call rate of top 7 services",
+    "query": "topk(7,sum by (service_name) (rate(traces_span_metrics_calls_total[$__range])))",
+    "metrics": [
+      "traces_span_metrics_calls_total"
+    ]
+  },
+  {
+    "id": "cba7d938-518a-42b6-ba0b-7afade896460",
+    "name": "Top 7 Services Mean Rate over Range",
+    "question": "mean call rate of top 7 services",
+    "query": "topk(7,sum by (service_name) (rate(traces_span_metrics_calls_total[$__range])))",
+    "metrics": [
+      "traces_span_metrics_calls_total"
+    ]
+  },
+  {
+    "id": "bae744a7-606c-4e3c-a82e-92a51cebab9d",
+    "name": "Top 7 Services Mean ERROR Rate over Range",
+    "question": "top 7 services mean error rate",
+    "query": "topk(7,sum(rate(traces_span_metrics_calls_total[$__range])) by (service_name))",
+    "metrics": [
+      "traces_span_metrics_calls_total"
+    ]
+  },
+  {
+    "id": "ca433380-2297-43cd-a3a7-74b9147c84dd",
+    "name": "Top 7 Services Mean ERROR Rate over Range",
+    "question": "average error rate for top services",
+    "query": "topk(7,sum(rate(traces_span_metrics_calls_total[$__range])) by (service_name))",
+    "metrics": [
+      "traces_span_metrics_calls_total"
+    ]
+  },
+  {
+    "id": "97d70324-484e-4559-954c-d1d46ad82758",
+    "name": "Top 7 Services Mean ERROR Rate over Range",
+    "question": "error rate mean of top 7 services",
+    "query": "topk(7,sum(rate(traces_span_metrics_calls_total[$__range])) by (service_name))",
+    "metrics": [
+      "traces_span_metrics_calls_total"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "52dadcb0-aeb1-488a-9063-ea9ba27120e3",
+    "name": "Memory",
+    "question": "total jvm memory usage",
+    "query": "sum(jvm_memory_used_bytes)",
+    "metrics": [
+      "jvm_memory_used_bytes"
+    ]
+  },
+  {
+    "id": "bb2cbf7b-99fd-4950-aa30-e0401d99fcb9",
+    "name": "Memory",
+    "question": "aggregated jvm memory utilization",
+    "query": "sum(jvm_memory_used_bytes)",
+    "metrics": [
+      "jvm_memory_used_bytes"
+    ]
+  },
+  {
+    "id": "f6941642-fd03-4bc9-a9e5-648f34d196bf",
+    "name": "Memory",
+    "question": "summed jvm memory consumption",
+    "query": "sum(jvm_memory_used_bytes)",
+    "metrics": [
+      "jvm_memory_used_bytes"
+    ]
+  }
+]
