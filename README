@@ -2,4 +2,4 @@
 - brew install node python
 - pip3 install chromadb 
 - chroma run 
-- npm install --save chromadb chromadb-default-embed 
+- npm install --save chromadb chromadb-default-embed  
