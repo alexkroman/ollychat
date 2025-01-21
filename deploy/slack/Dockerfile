@@ -2,7 +2,7 @@
 FROM node:18
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /ollychat
 
 # Copy package.json and package-lock.json (if available) first
 COPY package*.json ./

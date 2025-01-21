@@ -47,7 +47,6 @@
     "metrics:import": "node --loader ts-node/esm src/scripts/importMetrics.ts",
     "examples:load": "node --loader ts-node/esm src/scripts/loadExampleData.ts",
     "metrics:load": "node --loader ts-node/esm src/scripts/loadMetricData.ts",
-    "docker:build": "docker build -t ollychat .",
-    "docker:run": "docker-compose up --build"
+    "docker:run": "docker-compose -f deploy/slack/docker-compose.yml up --build"
   }
 }

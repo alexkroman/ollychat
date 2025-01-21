@@ -1,6 +1,8 @@
 services:
-  app:
-    build: .
+  ollychat:
+    build:
+      context: ../../
+      dockerfile: deploy/slack/Dockerfile
     ports:
       - "3000:3000"
     env_file:
