@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.docker
+    depends_on:
+      chromadb:
+        condition: service_healthy
+    environment:
+      CHROMADB_HOST: chromadb
+      CHROMADB_PORT: 8000
+    restart: unless-stopped
+
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8000:8000"
+    environment:
+      CHROMA_SERVER_CORS_ALLOW_ORIGINS: '["*"]'  # Fix: Proper JSON format
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v2/heartbeat"]
+      interval: 10s
+      retries: 5
