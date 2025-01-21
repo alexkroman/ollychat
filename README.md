@@ -5,13 +5,14 @@
 
 # Set up CLI
 
-- mv env-example to .env
+- mv config/env-example.example to .env
 - Edit .env with your values
 
 # Start CLI
 
 - npm run start:cli
 
-# Set up Slack (if you want to run in Slack)
+# Set up a Slack bot (optional)
 
-- 
+- Add SLACK_BOT_TOKEN, SLACK_SIGNING_SECRET, and SLACK_APP_TOKEN to .env
+- Add a Slack App using the config/slack-manifest.json file
