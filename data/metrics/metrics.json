@@ -1,1 +1,1174 @@
-[]
+[
+  {
+    "name": "app_ads_ad_requests_total",
+    "help": "Counts ad requests by request and response type"
+  },
+  {
+    "name": "app_cart_add_item_latency",
+    "help": ""
+  },
+  {
+    "name": "app_cart_get_cart_latency",
+    "help": ""
+  },
+  {
+    "name": "app_currency_counter_total",
+    "help": ""
+  },
+  {
+    "name": "app_frontend_requests_total",
+    "help": ""
+  },
+  {
+    "name": "app_payment_transactions_total",
+    "help": ""
+  },
+  {
+    "name": "app_recommendations_counter_total",
+    "help": "Counts the total number of given recommendations"
+  },
+  {
+    "name": "aspnetcore_routing_match_attempts_total",
+    "help": "Number of requests that were attempted to be matched to an endpoint."
+  },
+  {
+    "name": "container_blockio_io_service_bytes_recursive_total",
+    "help": "Number of bytes transferred to/from the disk by the group and descendant groups."
+  },
+  {
+    "name": "container_cpu_usage_kernelmode_nanoseconds_total",
+    "help": "Time spent by tasks of the cgroup in kernel mode (Linux).  Time spent by all container processes in kernel mode (Windows)."
+  },
+  {
+    "name": "container_cpu_usage_nanoseconds_total",
+    "help": "Total CPU time consumed."
+  },
+  {
+    "name": "container_cpu_usage_usermode_nanoseconds_total",
+    "help": "Time spent by tasks of the cgroup in user mode (Linux).  Time spent by all container processes in user mode (Windows)."
+  },
+  {
+    "name": "container_cpu_utilization_ratio",
+    "help": "Percent of CPU used by the container."
+  },
+  {
+    "name": "container_memory_file_bytes",
+    "help": "Amount of memory used to cache filesystem data, including tmpfs and shared memory (Only available with cgroups v2)."
+  },
+  {
+    "name": "container_memory_percent_ratio",
+    "help": "Percentage of memory used."
+  },
+  {
+    "name": "container_memory_usage_limit_bytes",
+    "help": "Memory limit of the container."
+  },
+  {
+    "name": "container_memory_usage_total_bytes",
+    "help": "Memory usage of the container. This excludes the cache."
+  },
+  {
+    "name": "container_network_io_usage_rx_bytes_total",
+    "help": "Bytes received by the container."
+  },
+  {
+    "name": "container_network_io_usage_rx_dropped_total",
+    "help": "Incoming packets dropped."
+  },
+  {
+    "name": "container_network_io_usage_tx_bytes_total",
+    "help": "Bytes sent."
+  },
+  {
+    "name": "container_network_io_usage_tx_dropped_total",
+    "help": "Outgoing packets dropped."
+  },
+  {
+    "name": "dns_lookup_duration_seconds",
+    "help": "Measures the time taken to perform a DNS lookup."
+  },
+  {
+    "name": "feature_flag_flagd_evaluation_reason_total",
+    "help": "Measures the number of evaluations for a given reason."
+  },
+  {
+    "name": "feature_flag_flagd_impression_total",
+    "help": "Measures the number of evaluations for a given flag."
+  },
+  {
+    "name": "http_client_active_requests",
+    "help": "Number of outbound HTTP requests that are currently active on the client."
+  },
+  {
+    "name": "http_client_connection_duration_seconds",
+    "help": "The duration of successfully established outbound HTTP connections."
+  },
+  {
+    "name": "http_client_duration_milliseconds",
+    "help": "Measures the duration of outbound HTTP requests."
+  },
+  {
+    "name": "http_client_open_connections",
+    "help": "Number of outbound HTTP connections that are currently active or idle on the client."
+  },
+  {
+    "name": "http_client_request_duration_seconds",
+    "help": "The duration of outbound HTTP requests."
+  },
+  {
+    "name": "http_client_request_size_bytes_total",
+    "help": "Measures the size of HTTP request messages."
+  },
+  {
+    "name": "http_client_request_time_in_queue_seconds",
+    "help": "The amount of time requests spent on a queue waiting for an available connection."
+  },
+  {
+    "name": "http_client_response_size_bytes_total",
+    "help": "Measures the size of HTTP response messages."
+  },
+  {
+    "name": "http_server_active_requests",
+    "help": "Measures the number of concurrent HTTP requests that are currently in-flight."
+  },
+  {
+    "name": "http_server_duration_milliseconds",
+    "help": "Measures the duration of inbound HTTP requests."
+  },
+  {
+    "name": "http_server_duration_seconds",
+    "help": "Measures the duration of inbound HTTP requests."
+  },
+  {
+    "name": "http_server_request_duration_seconds",
+    "help": "Duration of HTTP server requests."
+  },
+  {
+    "name": "http_server_response_size_bytes",
+    "help": "Measures the size of HTTP request messages (compressed)."
+  },
+  {
+    "name": "httpcheck_duration_milliseconds",
+    "help": "Measures the duration of the HTTP check."
+  },
+  {
+    "name": "httpcheck_status",
+    "help": "1 if the check resulted in status_code matching the status_class, otherwise 0."
+  },
+  {
+    "name": "jvm_class_count",
+    "help": "Number of classes currently loaded."
+  },
+  {
+    "name": "jvm_class_loaded_total",
+    "help": "Number of classes loaded since JVM start."
+  },
+  {
+    "name": "jvm_class_unloaded_total",
+    "help": "Number of classes unloaded since JVM start."
+  },
+  {
+    "name": "jvm_cpu_count",
+    "help": "Number of processors available to the Java virtual machine."
+  },
+  {
+    "name": "jvm_cpu_recent_utilization_ratio",
+    "help": "Recent CPU utilization for the process as reported by the JVM."
+  },
+  {
+    "name": "jvm_cpu_time_seconds_total",
+    "help": "CPU time used by the process as reported by the JVM."
+  },
+  {
+    "name": "jvm_gc_duration_seconds",
+    "help": "Duration of JVM garbage collection actions."
+  },
+  {
+    "name": "jvm_memory_committed_bytes",
+    "help": "Measure of memory committed."
+  },
+  {
+    "name": "jvm_memory_limit_bytes",
+    "help": "Measure of max obtainable memory."
+  },
+  {
+    "name": "jvm_memory_used_after_last_gc_bytes",
+    "help": "Measure of memory used, as measured after the most recent garbage collection event on this pool."
+  },
+  {
+    "name": "jvm_memory_used_bytes",
+    "help": "Measure of memory used."
+  },
+  {
+    "name": "jvm_thread_count",
+    "help": "Number of executing platform threads."
+  },
+  {
+    "name": "kafka_consumer_assigned_partitions",
+    "help": "The number of partitions currently assigned to this consumer"
+  },
+  {
+    "name": "kafka_consumer_bytes_consumed_rate",
+    "help": "The average number of bytes consumed per second"
+  },
+  {
+    "name": "kafka_consumer_bytes_consumed_total",
+    "help": "The total number of bytes consumed"
+  },
+  {
+    "name": "kafka_consumer_commit_latency_avg",
+    "help": "The average time taken for a commit request"
+  },
+  {
+    "name": "kafka_consumer_commit_latency_max",
+    "help": "The max time taken for a commit request"
+  },
+  {
+    "name": "kafka_consumer_commit_rate",
+    "help": "The number of commit calls per second"
+  },
+  {
+    "name": "kafka_consumer_commit_sync_time_ns_total",
+    "help": "The total time the consumer has spent in commitSync in nanoseconds"
+  },
+  {
+    "name": "kafka_consumer_commit_total",
+    "help": "The total number of commit calls"
+  },
+  {
+    "name": "kafka_consumer_committed_time_ns_total",
+    "help": "The total time the consumer has spent in committed in nanoseconds"
+  },
+  {
+    "name": "kafka_consumer_connection_close_rate",
+    "help": "The number of connections closed per second"
+  },
+  {
+    "name": "kafka_consumer_connection_close_total",
+    "help": "The total number of connections closed"
+  },
+  {
+    "name": "kafka_consumer_connection_count",
+    "help": "The current number of active connections."
+  },
+  {
+    "name": "kafka_consumer_connection_creation_rate",
+    "help": "The number of new connections established per second"
+  },
+  {
+    "name": "kafka_consumer_connection_creation_total",
+    "help": "The total number of new connections established"
+  },
+  {
+    "name": "kafka_consumer_failed_authentication_rate",
+    "help": "The number of connections with failed authentication per second"
+  },
+  {
+    "name": "kafka_consumer_failed_authentication_total",
+    "help": "The total number of connections with failed authentication"
+  },
+  {
+    "name": "kafka_consumer_failed_reauthentication_rate",
+    "help": "The number of failed re-authentication of connections per second"
+  },
+  {
+    "name": "kafka_consumer_failed_reauthentication_total",
+    "help": "The total number of failed re-authentication of connections"
+  },
+  {
+    "name": "kafka_consumer_failed_rebalance_rate_per_hour",
+    "help": "The number of failed rebalance events per hour"
+  },
+  {
+    "name": "kafka_consumer_failed_rebalance_total",
+    "help": "The total number of failed rebalance events"
+  },
+  {
+    "name": "kafka_consumer_fetch_latency_avg",
+    "help": "The average time taken for a fetch request."
+  },
+  {
+    "name": "kafka_consumer_fetch_latency_max",
+    "help": "The max time taken for any fetch request."
+  },
+  {
+    "name": "kafka_consumer_fetch_rate",
+    "help": "The number of fetch requests per second."
+  },
+  {
+    "name": "kafka_consumer_fetch_throttle_time_avg",
+    "help": "The average throttle time in ms"
+  },
+  {
+    "name": "kafka_consumer_fetch_throttle_time_max",
+    "help": "The maximum throttle time in ms"
+  },
+  {
+    "name": "kafka_consumer_fetch_total",
+    "help": "The total number of fetch requests."
+  },
+  {
+    "name": "kafka_consumer_heartbeat_rate",
+    "help": "The number of heartbeats per second"
+  },
+  {
+    "name": "kafka_consumer_heartbeat_response_time_max",
+    "help": "The max time taken to receive a response to a heartbeat request"
+  },
+  {
+    "name": "kafka_consumer_heartbeat_total",
+    "help": "The total number of heartbeats"
+  },
+  {
+    "name": "kafka_consumer_incoming_byte_rate",
+    "help": "The number of bytes read off all sockets per second"
+  },
+  {
+    "name": "kafka_consumer_incoming_byte_total",
+    "help": "The total number of bytes read off all sockets"
+  },
+  {
+    "name": "kafka_consumer_io_ratio",
+    "help": "*Deprecated* The fraction of time the I/O thread spent doing I/O"
+  },
+  {
+    "name": "kafka_consumer_io_time_ns_avg",
+    "help": "The average length of time for I/O per select call in nanoseconds."
+  },
+  {
+    "name": "kafka_consumer_io_time_ns_total",
+    "help": "The total time the I/O thread spent doing I/O"
+  },
+  {
+    "name": "kafka_consumer_io_wait_ratio",
+    "help": "*Deprecated* The fraction of time the I/O thread spent waiting"
+  },
+  {
+    "name": "kafka_consumer_io_wait_time_ns_avg",
+    "help": "The average length of time the I/O thread spent waiting for a socket ready for reads or writes in nanoseconds."
+  },
+  {
+    "name": "kafka_consumer_io_wait_time_ns_total",
+    "help": "The total time the I/O thread spent waiting"
+  },
+  {
+    "name": "kafka_consumer_io_waittime_total",
+    "help": "*Deprecated* The total time the I/O thread spent waiting"
+  },
+  {
+    "name": "kafka_consumer_iotime_total",
+    "help": "*Deprecated* The total time the I/O thread spent doing I/O"
+  },
+  {
+    "name": "kafka_consumer_join_rate",
+    "help": "The number of group joins per second"
+  },
+  {
+    "name": "kafka_consumer_join_total",
+    "help": "The total number of group joins"
+  },
+  {
+    "name": "kafka_consumer_last_heartbeat_seconds_ago",
+    "help": "The number of seconds since the last coordinator heartbeat was sent"
+  },
+  {
+    "name": "kafka_consumer_last_poll_seconds_ago",
+    "help": "The number of seconds since the last poll() invocation."
+  },
+  {
+    "name": "kafka_consumer_last_rebalance_seconds_ago",
+    "help": "The number of seconds since the last successful rebalance event"
+  },
+  {
+    "name": "kafka_consumer_network_io_rate",
+    "help": "The number of network operations (reads or writes) on all connections per second"
+  },
+  {
+    "name": "kafka_consumer_network_io_total",
+    "help": "The total number of network operations (reads or writes) on all connections"
+  },
+  {
+    "name": "kafka_consumer_outgoing_byte_rate",
+    "help": "The number of outgoing bytes sent to all servers per second"
+  },
+  {
+    "name": "kafka_consumer_outgoing_byte_total",
+    "help": "The total number of outgoing bytes sent to all servers"
+  },
+  {
+    "name": "kafka_consumer_poll_idle_ratio_avg",
+    "help": "The average fraction of time the consumer's poll() is idle as opposed to waiting for the user code to process records."
+  },
+  {
+    "name": "kafka_consumer_rebalance_latency_total",
+    "help": "The total number of milliseconds this consumer has spent in successful rebalances since creation"
+  },
+  {
+    "name": "kafka_consumer_rebalance_rate_per_hour",
+    "help": "The number of successful rebalance events per hour, each event is composed of several failed re-trials until it succeeded"
+  },
+  {
+    "name": "kafka_consumer_rebalance_total",
+    "help": "The total number of successful rebalance events, each event is composed of several failed re-trials until it succeeded"
+  },
+  {
+    "name": "kafka_consumer_records_consumed_rate",
+    "help": "The average number of records consumed per second"
+  },
+  {
+    "name": "kafka_consumer_records_consumed_total",
+    "help": "The total number of records consumed"
+  },
+  {
+    "name": "kafka_consumer_records_lag",
+    "help": "The latest lag of the partition"
+  },
+  {
+    "name": "kafka_consumer_records_lead",
+    "help": "The latest lead of the partition"
+  },
+  {
+    "name": "kafka_consumer_request_rate",
+    "help": "The number of requests sent per second"
+  },
+  {
+    "name": "kafka_consumer_request_size_avg",
+    "help": "The average size of requests sent."
+  },
+  {
+    "name": "kafka_consumer_request_size_max",
+    "help": "The maximum size of any request sent."
+  },
+  {
+    "name": "kafka_consumer_request_total",
+    "help": "The total number of requests sent"
+  },
+  {
+    "name": "kafka_consumer_response_rate",
+    "help": "The number of responses received per second"
+  },
+  {
+    "name": "kafka_consumer_response_total",
+    "help": "The total number of responses received"
+  },
+  {
+    "name": "kafka_consumer_select_rate",
+    "help": "The number of times the I/O layer checked for new I/O to perform per second"
+  },
+  {
+    "name": "kafka_consumer_select_total",
+    "help": "The total number of times the I/O layer checked for new I/O to perform"
+  },
+  {
+    "name": "kafka_consumer_successful_authentication_no_reauth_total",
+    "help": "The total number of connections with successful authentication where the client does not support re-authentication"
+  },
+  {
+    "name": "kafka_consumer_successful_authentication_rate",
+    "help": "The number of connections with successful authentication per second"
+  },
+  {
+    "name": "kafka_consumer_successful_authentication_total",
+    "help": "The total number of connections with successful authentication"
+  },
+  {
+    "name": "kafka_consumer_successful_reauthentication_rate",
+    "help": "The number of successful re-authentication of connections per second"
+  },
+  {
+    "name": "kafka_consumer_successful_reauthentication_total",
+    "help": "The total number of successful re-authentication of connections"
+  },
+  {
+    "name": "kafka_consumer_sync_rate",
+    "help": "The number of group syncs per second"
+  },
+  {
+    "name": "kafka_consumer_sync_total",
+    "help": "The total number of group syncs"
+  },
+  {
+    "name": "kafka_consumer_time_between_poll_avg",
+    "help": "The average delay between invocations of poll() in milliseconds."
+  },
+  {
+    "name": "kafka_consumer_time_between_poll_max",
+    "help": "The max delay between invocations of poll() in milliseconds."
+  },
+  {
+    "name": "kafka_controller_active_count",
+    "help": "The number of controllers active on the broker"
+  },
+  {
+    "name": "kafka_isr_operation_count",
+    "help": "The number of in-sync replica shrink and expand operations"
+  },
+  {
+    "name": "kafka_lag_max",
+    "help": "The max lag in messages between follower and leader replicas"
+  },
+  {
+    "name": "kafka_logs_flush_Count_milliseconds_total",
+    "help": "Log flush count"
+  },
+  {
+    "name": "kafka_logs_flush_time_50p_milliseconds",
+    "help": "Log flush time - 50th percentile"
+  },
+  {
+    "name": "kafka_logs_flush_time_99p_milliseconds",
+    "help": "Log flush time - 99th percentile"
+  },
+  {
+    "name": "kafka_message_count_total",
+    "help": "The number of messages received by the broker"
+  },
+  {
+    "name": "kafka_network_io_bytes_total",
+    "help": "The bytes received or sent by the broker"
+  },
+  {
+    "name": "kafka_partition_count",
+    "help": "The number of partitions on the broker"
+  },
+  {
+    "name": "kafka_partition_offline",
+    "help": "The number of partitions offline"
+  },
+  {
+    "name": "kafka_partition_underReplicated",
+    "help": "The number of under replicated partitions"
+  },
+  {
+    "name": "kafka_purgatory_size",
+    "help": "The number of requests waiting in purgatory"
+  },
+  {
+    "name": "kafka_request_count_total",
+    "help": "The number of requests received by the broker"
+  },
+  {
+    "name": "kafka_request_failed_total",
+    "help": "The number of requests to the broker resulting in a failure"
+  },
+  {
+    "name": "kafka_request_queue",
+    "help": "Size of the request queue"
+  },
+  {
+    "name": "kafka_request_time_50p_milliseconds",
+    "help": "The 50th percentile time the broker has taken to service requests"
+  },
+  {
+    "name": "kafka_request_time_99p_milliseconds",
+    "help": "The 99th percentile time the broker has taken to service requests"
+  },
+  {
+    "name": "kafka_request_time_milliseconds_total",
+    "help": "The total time the broker has taken to service requests"
+  },
+  {
+    "name": "kestrel_active_connections",
+    "help": "Number of connections that are currently active on the server."
+  },
+  {
+    "name": "kestrel_connection_duration_seconds",
+    "help": "The duration of connections on the server."
+  },
+  {
+    "name": "kestrel_queued_connections",
+    "help": "Number of connections that are currently queued and are waiting to start."
+  },
+  {
+    "name": "kestrel_queued_requests",
+    "help": "Number of HTTP requests on multiplexed connections (HTTP/2 and HTTP/3) that are currently queued and are waiting to start."
+  },
+  {
+    "name": "nodejs_eventloop_delay_max_seconds",
+    "help": "Event loop maximum delay."
+  },
+  {
+    "name": "nodejs_eventloop_delay_mean_seconds",
+    "help": "Event loop mean delay."
+  },
+  {
+    "name": "nodejs_eventloop_delay_min_seconds",
+    "help": "Event loop minimum delay."
+  },
+  {
+    "name": "nodejs_eventloop_delay_p50_seconds",
+    "help": "Event loop 50 percentile delay."
+  },
+  {
+    "name": "nodejs_eventloop_delay_p90_seconds",
+    "help": "Event loop 90 percentile delay."
+  },
+  {
+    "name": "nodejs_eventloop_delay_p99_seconds",
+    "help": "Event loop 99 percentile delay."
+  },
+  {
+    "name": "nodejs_eventloop_delay_stddev_seconds",
+    "help": "Event loop standard deviation delay."
+  },
+  {
+    "name": "nodejs_eventloop_time_seconds_total",
+    "help": "Cumulative duration of time the event loop has been in each state."
+  },
+  {
+    "name": "nodejs_eventloop_utilization_seconds",
+    "help": "Event loop utilization"
+  },
+  {
+    "name": "otel_logs_log_processor_logs",
+    "help": "The number of log records received by the processor"
+  },
+  {
+    "name": "otel_logs_log_processor_queue_limit",
+    "help": "The queue size limit"
+  },
+  {
+    "name": "otel_logs_log_processor_queue_usage",
+    "help": "The current queue usage"
+  },
+  {
+    "name": "otel_trace_span_processor_queue_limit",
+    "help": "The queue size limit"
+  },
+  {
+    "name": "otel_trace_span_processor_queue_usage",
+    "help": "The current queue usage"
+  },
+  {
+    "name": "otel_trace_span_processor_spans",
+    "help": "The number of sampled spans received by the span processor"
+  },
+  {
+    "name": "otlp_exporter_exported_total",
+    "help": ""
+  },
+  {
+    "name": "otlp_exporter_seen_total",
+    "help": ""
+  },
+  {
+    "name": "process_cpu_count",
+    "help": "The number of processors (CPU cores) available to the current process."
+  },
+  {
+    "name": "process_cpu_time_seconds_total",
+    "help": "Total CPU seconds broken down by different states."
+  },
+  {
+    "name": "process_disk_io_bytes_total",
+    "help": "Disk bytes transferred."
+  },
+  {
+    "name": "process_memory_usage_bytes",
+    "help": "The amount of physical memory in use."
+  },
+  {
+    "name": "process_memory_virtual_bytes",
+    "help": "Virtual memory size."
+  },
+  {
+    "name": "process_runtime_cpython_context_switches_total",
+    "help": "Runtime context switches"
+  },
+  {
+    "name": "process_runtime_cpython_cpu_time_seconds_total",
+    "help": "Runtime cpython CPU time"
+  },
+  {
+    "name": "process_runtime_cpython_cpu_utilization_ratio",
+    "help": "Runtime CPU utilization"
+  },
+  {
+    "name": "process_runtime_cpython_gc_count_bytes_total",
+    "help": "Runtime cpython GC count"
+  },
+  {
+    "name": "process_runtime_cpython_memory_bytes",
+    "help": "Runtime cpython memory"
+  },
+  {
+    "name": "process_runtime_cpython_thread_count",
+    "help": "Runtime active threads count"
+  },
+  {
+    "name": "process_runtime_dotnet_assemblies_count",
+    "help": "The number of .NET assemblies that are currently loaded."
+  },
+  {
+    "name": "process_runtime_dotnet_exceptions_count_total",
+    "help": "Count of exceptions that have been thrown in managed code, since the observation started. The value will be unavailable until an exception has been thrown after OpenTelemetry.Instrumentation.Runtime initialization."
+  },
+  {
+    "name": "process_runtime_dotnet_gc_allocations_size_bytes_total",
+    "help": "Count of bytes allocated on the managed GC heap since the process start. .NET objects are allocated from this heap. Object allocations from unmanaged languages such as C/C++ do not use this heap."
+  },
+  {
+    "name": "process_runtime_dotnet_gc_collections_count_total",
+    "help": "Number of garbage collections that have occurred since process start."
+  },
+  {
+    "name": "process_runtime_dotnet_gc_committed_memory_size_bytes",
+    "help": "The amount of committed virtual memory for the managed GC heap, as observed during the latest garbage collection. Committed virtual memory may be larger than the heap size because it includes both memory for storing existing objects (the heap size) and some extra memory that is ready to handle newly allocated objects in the future. The value will be unavailable until at least one garbage collection has occurred."
+  },
+  {
+    "name": "process_runtime_dotnet_gc_duration_nanoseconds_total",
+    "help": "The total amount of time paused in GC since the process start."
+  },
+  {
+    "name": "process_runtime_dotnet_gc_heap_fragmentation_size_bytes",
+    "help": "The heap fragmentation, as observed during the latest garbage collection. The value will be unavailable until at least one garbage collection has occurred."
+  },
+  {
+    "name": "process_runtime_dotnet_gc_heap_size_bytes",
+    "help": "The heap size (including fragmentation), as observed during the latest garbage collection. The value will be unavailable until at least one garbage collection has occurred."
+  },
+  {
+    "name": "process_runtime_dotnet_gc_objects_size_bytes",
+    "help": "Count of bytes currently in use by objects in the GC heap that haven't been collected yet. Fragmentation and other GC committed memory pools are excluded."
+  },
+  {
+    "name": "process_runtime_dotnet_jit_compilation_time_nanoseconds_total",
+    "help": "The amount of time the JIT compiler has spent compiling methods since the process start."
+  },
+  {
+    "name": "process_runtime_dotnet_jit_il_compiled_size_bytes_total",
+    "help": "Count of bytes of intermediate language that have been compiled since the process start."
+  },
+  {
+    "name": "process_runtime_dotnet_jit_methods_compiled_count_total",
+    "help": "The number of times the JIT compiler compiled a method since the process start. The JIT compiler may be invoked multiple times for the same method to compile with different generic parameters, or because tiered compilation requested different optimization settings."
+  },
+  {
+    "name": "process_runtime_dotnet_monitor_lock_contention_count_total",
+    "help": "The number of times there was contention when trying to acquire a monitor lock since the process start. Monitor locks are commonly acquired by using the lock keyword in C#, or by calling Monitor.Enter() and Monitor.TryEnter()."
+  },
+  {
+    "name": "process_runtime_dotnet_thread_pool_completed_items_count_total",
+    "help": "The number of work items that have been processed by the thread pool since the process start."
+  },
+  {
+    "name": "process_runtime_dotnet_thread_pool_queue_length",
+    "help": "The number of work items that are currently queued to be processed by the thread pool."
+  },
+  {
+    "name": "process_runtime_dotnet_thread_pool_threads_count",
+    "help": "The number of thread pool threads that currently exist."
+  },
+  {
+    "name": "process_runtime_dotnet_timer_count",
+    "help": "The number of timer instances that are currently active. Timers can be created by many sources such as System.Threading.Timer, Task.Delay, or the timeout in a CancellationSource. An active timer is registered to tick at some point in the future and has not yet been canceled."
+  },
+  {
+    "name": "process_runtime_go_cgo_calls",
+    "help": "Number of cgo calls made by the current process"
+  },
+  {
+    "name": "process_runtime_go_gc_count_total",
+    "help": "Number of completed garbage collection cycles"
+  },
+  {
+    "name": "process_runtime_go_gc_pause_ns",
+    "help": "Amount of nanoseconds in GC stop-the-world pauses"
+  },
+  {
+    "name": "process_runtime_go_gc_pause_ns_total",
+    "help": "Cumulative nanoseconds in GC stop-the-world pauses since the program started"
+  },
+  {
+    "name": "process_runtime_go_goroutines",
+    "help": "Number of goroutines that currently exist"
+  },
+  {
+    "name": "process_runtime_go_mem_heap_alloc_bytes",
+    "help": "Bytes of allocated heap objects"
+  },
+  {
+    "name": "process_runtime_go_mem_heap_idle_bytes",
+    "help": "Bytes in idle (unused) spans"
+  },
+  {
+    "name": "process_runtime_go_mem_heap_inuse_bytes",
+    "help": "Bytes in in-use spans"
+  },
+  {
+    "name": "process_runtime_go_mem_heap_objects",
+    "help": "Number of allocated heap objects"
+  },
+  {
+    "name": "process_runtime_go_mem_heap_released_bytes",
+    "help": "Bytes of idle spans whose physical memory has been returned to the OS"
+  },
+  {
+    "name": "process_runtime_go_mem_heap_sys_bytes",
+    "help": "Bytes of heap memory obtained from the OS"
+  },
+  {
+    "name": "process_runtime_go_mem_live_objects",
+    "help": "Number of live objects is the number of cumulative Mallocs - Frees"
+  },
+  {
+    "name": "process_runtime_go_mem_lookups_total",
+    "help": "Number of pointer lookups performed by the runtime"
+  },
+  {
+    "name": "process_thread_count",
+    "help": "Process threads count."
+  },
+  {
+    "name": "processedLogs_total",
+    "help": "The number of logs processed by the BatchLogRecordProcessor. [dropped=true if they were dropped due to high throughput]"
+  },
+  {
+    "name": "processedSpans_total",
+    "help": "The number of spans processed by the BatchSpanProcessor. [dropped=true if they were dropped due to high throughput]"
+  },
+  {
+    "name": "queueSize_ratio",
+    "help": "The number of items queued"
+  },
+  {
+    "name": "quotes_total",
+    "help": "number of quotes calculated"
+  },
+  {
+    "name": "redis_clients_blocked",
+    "help": "Number of clients pending on a blocking call"
+  },
+  {
+    "name": "redis_clients_connected",
+    "help": "Number of client connections (excluding connections from replicas)"
+  },
+  {
+    "name": "redis_clients_max_input_buffer_bytes",
+    "help": "Biggest input buffer among current client connections"
+  },
+  {
+    "name": "redis_clients_max_output_buffer_bytes",
+    "help": "Longest output list among current client connections"
+  },
+  {
+    "name": "redis_commands_per_second",
+    "help": "Number of commands processed per second"
+  },
+  {
+    "name": "redis_commands_processed_total",
+    "help": "Total number of commands processed by the server"
+  },
+  {
+    "name": "redis_connections_received_total",
+    "help": "Total number of connections accepted by the server"
+  },
+  {
+    "name": "redis_connections_rejected_total",
+    "help": "Number of connections rejected because of maxclients limit"
+  },
+  {
+    "name": "redis_cpu_time_seconds_total",
+    "help": "System CPU consumed by the Redis server in seconds since server start"
+  },
+  {
+    "name": "redis_db_avg_ttl_milliseconds",
+    "help": "Average keyspace keys TTL"
+  },
+  {
+    "name": "redis_db_expires",
+    "help": "Number of keyspace keys with an expiration"
+  },
+  {
+    "name": "redis_db_keys",
+    "help": "Number of keyspace keys"
+  },
+  {
+    "name": "redis_keys_evicted_total",
+    "help": "Number of evicted keys due to maxmemory limit"
+  },
+  {
+    "name": "redis_keys_expired_total",
+    "help": "Total number of key expiration events"
+  },
+  {
+    "name": "redis_keyspace_hits_total",
+    "help": "Number of successful lookup of keys in the main dictionary"
+  },
+  {
+    "name": "redis_keyspace_misses_total",
+    "help": "Number of failed lookup of keys in the main dictionary"
+  },
+  {
+    "name": "redis_latest_fork_microseconds",
+    "help": "Duration of the latest fork operation in microseconds"
+  },
+  {
+    "name": "redis_memory_fragmentation_ratio",
+    "help": "Ratio between used_memory_rss and used_memory"
+  },
+  {
+    "name": "redis_memory_lua_bytes",
+    "help": "Number of bytes used by the Lua engine"
+  },
+  {
+    "name": "redis_memory_peak_bytes",
+    "help": "Peak memory consumed by Redis (in bytes)"
+  },
+  {
+    "name": "redis_memory_rss_bytes",
+    "help": "Number of bytes that Redis allocated as seen by the operating system"
+  },
+  {
+    "name": "redis_memory_used_bytes",
+    "help": "Total number of bytes allocated by Redis using its allocator"
+  },
+  {
+    "name": "redis_net_input_bytes_total",
+    "help": "The total number of bytes read from the network"
+  },
+  {
+    "name": "redis_net_output_bytes_total",
+    "help": "The total number of bytes written to the network"
+  },
+  {
+    "name": "redis_rdb_changes_since_last_save",
+    "help": "Number of changes since the last dump"
+  },
+  {
+    "name": "redis_replication_backlog_first_byte_offset_bytes",
+    "help": "The master offset of the replication backlog buffer"
+  },
+  {
+    "name": "redis_replication_offset_bytes",
+    "help": "The server's current replication offset"
+  },
+  {
+    "name": "redis_slaves_connected",
+    "help": "Number of connected replicas"
+  },
+  {
+    "name": "redis_uptime_seconds_total",
+    "help": "Number of seconds since Redis server start"
+  },
+  {
+    "name": "rpc_client_duration_milliseconds",
+    "help": "Measures the duration of inbound RPC."
+  },
+  {
+    "name": "rpc_client_request_size_bytes",
+    "help": "Measures size of RPC request messages (uncompressed)."
+  },
+  {
+    "name": "rpc_client_requests_per_rpc",
+    "help": "Measures the number of messages received per RPC. Should be 1 for all non-streaming RPCs."
+  },
+  {
+    "name": "rpc_client_response_size_bytes",
+    "help": "Measures size of RPC response messages (uncompressed)."
+  },
+  {
+    "name": "rpc_client_responses_per_rpc",
+    "help": "Measures the number of messages received per RPC. Should be 1 for all non-streaming RPCs."
+  },
+  {
+    "name": "rpc_server_duration_milliseconds",
+    "help": "Measures the duration of inbound RPC."
+  },
+  {
+    "name": "rpc_server_request_size_bytes",
+    "help": "Measures size of RPC request messages (uncompressed)."
+  },
+  {
+    "name": "rpc_server_requests_per_rpc",
+    "help": "Measures the number of messages received per RPC. Should be 1 for all non-streaming RPCs."
+  },
+  {
+    "name": "rpc_server_response_size_bytes",
+    "help": "Measures size of RPC response messages (uncompressed)."
+  },
+  {
+    "name": "rpc_server_responses_per_rpc",
+    "help": "Measures the number of messages received per RPC. Should be 1 for all non-streaming RPCs."
+  },
+  {
+    "name": "runtime_uptime_milliseconds_total",
+    "help": "Milliseconds since application was initialized"
+  },
+  {
+    "name": "scrape_duration_seconds",
+    "help": "Duration of the scrape"
+  },
+  {
+    "name": "scrape_samples_post_metric_relabeling",
+    "help": "The number of samples remaining after metric relabeling was applied"
+  },
+  {
+    "name": "scrape_samples_scraped",
+    "help": "The number of samples the target exposed"
+  },
+  {
+    "name": "scrape_series_added",
+    "help": "The approximate number of new series in this scrape"
+  },
+  {
+    "name": "system_cpu_load_average_15m",
+    "help": "Average CPU Load over 15 minutes."
+  },
+  {
+    "name": "system_cpu_load_average_1m",
+    "help": "Average CPU Load over 1 minute."
+  },
+  {
+    "name": "system_cpu_load_average_5m",
+    "help": "Average CPU Load over 5 minutes."
+  },
+  {
+    "name": "system_cpu_time_seconds_total",
+    "help": "Total seconds each logical CPU spent on each mode."
+  },
+  {
+    "name": "system_cpu_utilization_ratio",
+    "help": "System CPU utilization"
+  },
+  {
+    "name": "system_disk_io_bytes_total",
+    "help": "Disk bytes transferred."
+  },
+  {
+    "name": "system_disk_io_time_seconds_total",
+    "help": "Time disk spent activated. On Windows, this is calculated as the inverse of disk idle time."
+  },
+  {
+    "name": "system_disk_merged_total",
+    "help": "The number of disk reads/writes merged into single physical disk access operations."
+  },
+  {
+    "name": "system_disk_operation_time_seconds_total",
+    "help": "Time spent in disk operations."
+  },
+  {
+    "name": "system_disk_operations_total",
+    "help": "Disk operations count."
+  },
+  {
+    "name": "system_disk_pending_operations",
+    "help": "The queue size of pending I/O operations."
+  },
+  {
+    "name": "system_disk_time_seconds_total",
+    "help": "System disk time"
+  },
+  {
+    "name": "system_disk_weighted_io_time_seconds_total",
+    "help": "Time disk spent activated multiplied by the queue length."
+  },
+  {
+    "name": "system_filesystem_inodes_usage",
+    "help": "FileSystem inodes used."
+  },
+  {
+    "name": "system_filesystem_usage_bytes",
+    "help": "Filesystem bytes used."
+  },
+  {
+    "name": "system_memory_usage_bytes",
+    "help": "Bytes of memory in use."
+  },
+  {
+    "name": "system_memory_utilization_ratio",
+    "help": "Percentage of memory bytes in use."
+  },
+  {
+    "name": "system_network_connections",
+    "help": "The number of connections."
+  },
+  {
+    "name": "system_network_dropped_packets_total",
+    "help": "System network dropped_packets"
+  },
+  {
+    "name": "system_network_dropped_total",
+    "help": "The number of packets dropped."
+  },
+  {
+    "name": "system_network_errors_total",
+    "help": "The number of errors encountered."
+  },
+  {
+    "name": "system_network_io_bytes_total",
+    "help": "The number of bytes transmitted and received."
+  },
+  {
+    "name": "system_network_packets_total",
+    "help": "The number of packets transferred."
+  },
+  {
+    "name": "system_paging_faults_total",
+    "help": "The number of page faults."
+  },
+  {
+    "name": "system_paging_operations_total",
+    "help": "The number of paging operations."
+  },
+  {
+    "name": "system_paging_usage_bytes",
+    "help": "Swap (unix) or pagefile (windows) usage."
+  },
+  {
+    "name": "system_processes_count",
+    "help": "Total number of processes in each state."
+  },
+  {
+    "name": "system_processes_created_total",
+    "help": "Total number of created processes."
+  },
+  {
+    "name": "system_swap_usage_pages",
+    "help": "System swap usage"
+  },
+  {
+    "name": "system_swap_utilization_ratio",
+    "help": "System swap utilization"
+  },
+  {
+    "name": "system_thread_count",
+    "help": "System active threads count"
+  },
+  {
+    "name": "target_info",
+    "help": "Target metadata"
+  },
+  {
+    "name": "traces_span_metrics_calls_total",
+    "help": ""
+  },
+  {
+    "name": "traces_span_metrics_duration_milliseconds",
+    "help": ""
+  },
+  {
+    "name": "up",
+    "help": "The scraping was successful"
+  },
+  {
+    "name": "v8js_gc_duration_seconds",
+    "help": "Garbage collection duration by kind, one of major, minor, incremental or weakcb."
+  },
+  {
+    "name": "v8js_memory_heap_limit_bytes",
+    "help": "Total heap memory size pre-allocated."
+  },
+  {
+    "name": "v8js_memory_heap_space_available_size_bytes",
+    "help": "Heap space available size."
+  },
+  {
+    "name": "v8js_memory_heap_space_physical_size_bytes",
+    "help": "Committed size of a heap space."
+  },
+  {
+    "name": "v8js_memory_heap_used_bytes",
+    "help": "Heap Memory size allocated."
+  }
+]

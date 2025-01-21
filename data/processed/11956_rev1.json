@@ -1,42 +1,10 @@
 [
   {
-    "name": "$service Process start time",
+    "name": "$service Metrics scrape duration",
     "description": "",
-    "query": "(process_start_time_seconds)*1000",
+    "query": "scrape_duration_seconds",
     "metrics": [
-      "process_start_time_seconds"
-    ]
-  },
-  {
-    "name": "$service Max file descriptors",
-    "description": "",
-    "query": "process_max_fds",
-    "metrics": [
-      "process_max_fds"
-    ]
-  },
-  {
-    "name": "$service Open file descriptors",
-    "description": "",
-    "query": "process_open_fds",
-    "metrics": [
-      "process_open_fds"
-    ]
-  },
-  {
-    "name": "Process Memory",
-    "description": "",
-    "query": "process_resident_memory_bytes",
-    "metrics": [
-      "process_resident_memory_bytes"
-    ]
-  },
-  {
-    "name": "Process Memory",
-    "description": "",
-    "query": "process_virtual_memory_bytes",
-    "metrics": [
-      "process_virtual_memory_bytes"
+      "scrape_duration_seconds"
     ]
   }
 ]

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Commands Executed / sec",
+    "description": "",
+    "query": "rate(redis_commands_processed_total[1m])",
+    "metrics": [
+      "redis_commands_processed_total"
+    ]
+  },
+  {
+    "name": "Hits / Misses per Sec",
+    "description": "",
+    "query": "irate(redis_keyspace_hits_total[5m])",
+    "metrics": [
+      "redis_keyspace_hits_total"
+    ]
+  },
+  {
+    "name": "Hits / Misses per Sec",
+    "description": "",
+    "query": "irate(redis_keyspace_misses_total[5m])",
+    "metrics": [
+      "redis_keyspace_misses_total"
+    ]
+  },
+  {
+    "name": "Total Memory Usage",
+    "description": "",
+    "query": "redis_memory_used_bytes ",
+    "metrics": [
+      "redis_memory_used_bytes"
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "",
+    "query": "rate(redis_net_input_bytes_total[5m])",
+    "metrics": [
+      "redis_net_input_bytes_total"
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "",
+    "query": "rate(redis_net_output_bytes_total[5m])",
+    "metrics": [
+      "redis_net_output_bytes_total"
+    ]
+  }
+]

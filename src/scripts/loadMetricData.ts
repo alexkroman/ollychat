@@ -32,7 +32,7 @@ const embeddings = new OpenAIEmbeddings({
 });
 
 const vectorStore = new Chroma(embeddings, {
-  collectionName: config.chromaIndex,
+  collectionName: config.chromaMetricsIndex,
   url: config.chromaUrl,
 });
 
@@ -53,6 +53,12 @@ const vectorStore = new Chroma(embeddings, {
     }
 
     await client.deleteCollection({ name: metricsIndex });
+   
+    console.log("Transformed Data Page Contents:");
+    transformedData.forEach((doc, index) => {
+      console.log(`${index + 1}: ${doc.pageContent}`);
+    });
+
     await vectorStore.addDocuments(transformedData);
     console.log("Documents successfully added to the vector store.");
   } catch (error) {

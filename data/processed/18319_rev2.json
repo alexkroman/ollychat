@@ -1,6 +1,6 @@
 [
   {
-    "name": "API Server - Health Status",
+    "name": "Controller State",
     "description": "",
     "query": "up",
     "metrics": [

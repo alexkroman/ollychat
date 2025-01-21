@@ -1,6 +1,6 @@
 [
   {
-    "name": "API Server - Health Status",
+    "name": "Healthy Status",
     "description": "",
     "query": "up",
     "metrics": [

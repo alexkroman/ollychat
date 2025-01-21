@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Python services (CPU%)",
+    "description": "",
+    "query": "rate(process_runtime_cpython_cpu_time_seconds_total[30m])*100",
+    "metrics": [
+      "process_runtime_cpython_cpu_time_seconds_total"
+    ]
+  },
+  {
+    "name": "Python services (CPU%)",
+    "description": "",
+    "query": "rate(process_runtime_cpython_cpu_time_seconds_total[30m])*100",
+    "metrics": [
+      "process_runtime_cpython_cpu_time_seconds_total"
+    ]
+  },
+  {
+    "name": "Python services (Memory)",
+    "description": "",
+    "query": "process_runtime_cpython_memory_bytes",
+    "metrics": [
+      "process_runtime_cpython_memory_bytes"
+    ]
+  },
+  {
+    "name": "Recommendations Rate",
+    "description": "",
+    "query": "rate(app_recommendations_counter_total[30m])",
+    "metrics": [
+      "app_recommendations_counter_total"
+    ]
+  },
+  {
+    "name": "Quote Service batch span processor",
+    "description": "",
+    "query": "rate(otel_trace_span_processor_spans[2m])*120",
+    "metrics": [
+      "otel_trace_span_processor_spans"
+    ]
+  }
+]

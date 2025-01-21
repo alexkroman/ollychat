@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Memory",
+    "description": "",
+    "query": "sum(jvm_memory_used_bytes)",
+    "metrics": [
+      "jvm_memory_used_bytes"
+    ]
+  }
+]

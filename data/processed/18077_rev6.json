@@ -1,18 +1,18 @@
 [
   {
-    "name": "Instance Down",
+    "name": "",
     "description": "",
-    "query": "up < 1",
+    "query": "up",
     "metrics": [
       "up"
     ]
   },
   {
-    "name": "Liveness by pod",
+    "name": "",
     "description": "",
-    "query": "up",
+    "query": "scrape_duration_seconds",
     "metrics": [
-      "up"
+      "scrape_duration_seconds"
     ]
   }
 ]

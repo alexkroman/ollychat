@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Control Plane UP",
+    "description": "",
+    "query": "sum(up == 0)",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "name": "API Servers UP",
+    "description": "",
+    "query": "(sum(up == 1) / count(up)) * 100",
+    "metrics": [
+      "up"
+    ]
+  },
+  {
+    "name": "Nodes UP",
+    "description": "",
+    "query": "(sum(up == 1) / count(up)) * 100",
+    "metrics": [
+      "up"
+    ]
+  }
+]

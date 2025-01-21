@@ -1,8 +1,8 @@
 [
   {
-    "name": "API Server - Health Status",
+    "name": "Uptime",
     "description": "",
-    "query": "up",
+    "query": "sum(up) by (job)",
     "metrics": [
       "up"
     ]
