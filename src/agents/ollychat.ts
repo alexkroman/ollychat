@@ -103,5 +103,5 @@ const graphBuilder = new StateGraph(StateAnnotation)
   const graph = graphBuilder.compile({ checkpointer: memory });
 
   export const answerQuestion = async (inputs: { question: string, chat_history?: string[] }) => {
-    return await graph.invoke(inputs, config);
+      return await graph.invoke(inputs, config);
   }

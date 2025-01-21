@@ -1,28 +1,35 @@
 import slack from '@slack/bolt';
-const { App } = slack;
 import { answerQuestion } from "../agents/ollychat.js";
-import { config } from "../config/config.js";
+import { slackConfig } from "../config/slackConfig.js";
+
+const { App } = slack;
 
 const app = new App({
-  token: config.slackBotToken,
-  signingSecret: config.slackSigningSecret,
-  appToken: config.slackAppToken,
+  token: slackConfig.slackBotToken,
+  signingSecret: slackConfig.slackSigningSecret,
+  appToken: slackConfig.slackAppToken,
   socketMode: true,
 });
 
 app.event('app_mention', async ({ event, say }) => {
   try {
-    const messageText = (event as { text: string }).text;
+    const messageText = event.text;
     const results = await answerQuestion({ question: messageText });
     await say(results.query);
-
-  } catch (error: unknown) {
+  } catch (error) {
     console.error('An error occurred:', error);
     await say('Sorry, I encountered an error while generating the PromQL query. Please try again later.');
   }
 });
 
-(async () => {
-  await app.start(config.port);
-  console.log(`⚡️ Bolt app is running on port ${config.port}!`);
-})();
+const main = async () => {
+  try {
+    await app.start(slackConfig.port);
+    console.log(`⚡️ Slack app is running on port ${slackConfig.port}!`);
+  } catch (error) {
+      console.error('Failed to start Slack app', error);
+      process.exit(1);
+  }
+};
+
+main();
