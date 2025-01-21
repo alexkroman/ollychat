@@ -41,7 +41,7 @@
     "dev:cli": "node --watch --loader ts-node/esm src/interfaces/commandLineInterface.ts",
     "start:cli": "npm run build && node --no-warnings dist/interfaces/commandLineInterface.js",
     "dev:slack": "node --watch --loader ts-node/esm src/interfaces/slackBot.ts",
-    "start:slack": "npm run build && node dist/ui/slack.js",
+    "start:slack": "npm run build && node dist/interfaces/slackBot.js",
     "dashboards:import": "node --loader ts-node/esm src/scripts/importDashboards.ts",
     "data:enrich": "node --loader ts-node/esm src/scripts/enrichExampleData.ts",
     "metrics:import": "node --loader ts-node/esm src/scripts/importMetrics.ts",
