@@ -1,5 +1,0 @@
-- docker pull chromadb/chroma
-- docker run -p 8000:8000 chromadb/chroma
-- chroma run 
-- npm install --save chromadb chromadb-default-embed  
-- envsample to env

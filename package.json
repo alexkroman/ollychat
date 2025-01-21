@@ -35,6 +35,7 @@
   },
   "scripts": {
     "build": "tsc && npm run copy-txt",
+    "install-data": "npm run refresh-metrics && npm run examples:load",
     "refresh-metrics": "npm run metrics:import && npm run metrics:load",
     "copy-txt": "mkdir -p dist/templates && cp -R src/templates/*.txt dist/templates/",
     "dev:cli": "node --watch --loader ts-node/esm src/interfaces/commandLineInterface.ts",
