@@ -62,7 +62,7 @@ export class CLI {
 // ASCII Art Title
 console.log(chalk.cyan('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
 console.log(chalk.bold.rgb(255, 165, 0)('💬🤖  Welcome to OLLYCHAT 🚀✨'));
-console.log(chalk.green('- Just type your questions and hit Enter.'));
+console.log(chalk.green('- Just type your questions and hit enter.'));
 console.log(chalk.green('- type exit to exit'));
 console.log(chalk.cyan('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'));
 
