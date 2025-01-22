@@ -19,7 +19,7 @@ To ensure accuracy, follow this structured reasoning before outputting the query
 
 3. Query Validity & Constraints
 
-- Use relevant example queries as a reference.
+- Do not use queries outside of provided query examples.
 - Ensure the query is syntactically correct and runs in a Prometheus-compatible environment.
 - Do not use metrics outside of provided metrics.
 
