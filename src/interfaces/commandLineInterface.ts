@@ -3,7 +3,7 @@ import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
 import { answerQuestion } from "../agents/ollychat.js";
 import { config } from "../config/config.js";
-
+import { posthog } from '../utils/telemetry.js';
 
 interface Command {
     name: string;
@@ -78,6 +78,7 @@ console.log(chalk.cyan('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public stop() {
         this.isRunning = false;
         this.rl.close();
+        posthog.reset()
         console.log(chalk.blue('\nGoodbye!'));
         process.exit(0);
     }

@@ -1,10 +1,34 @@
 [
   {
-    "name": "Start time",
+    "name": "$memory_pool_heap (heap)",
     "description": "Dashboard for Spring Boot2.1 Statistics(based on Spring Boot2 Statistic by micrometer-prometheus).",
-    "query": "process_start_time_seconds*1000",
+    "query": "jvm_memory_used_bytes",
     "metrics": [
-      "process_start_time_seconds"
+      "jvm_memory_used_bytes"
+    ]
+  },
+  {
+    "name": "$memory_pool_heap (heap)",
+    "description": "Dashboard for Spring Boot2.1 Statistics(based on Spring Boot2 Statistic by micrometer-prometheus).",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
+    ]
+  },
+  {
+    "name": "$memory_pool_nonheap (non-heap)",
+    "description": "Dashboard for Spring Boot2.1 Statistics(based on Spring Boot2 Statistic by micrometer-prometheus).",
+    "query": "jvm_memory_used_bytes",
+    "metrics": [
+      "jvm_memory_used_bytes"
+    ]
+  },
+  {
+    "name": "$memory_pool_nonheap (non-heap)",
+    "description": "Dashboard for Spring Boot2.1 Statistics(based on Spring Boot2 Statistic by micrometer-prometheus).",
+    "query": "jvm_memory_committed_bytes",
+    "metrics": [
+      "jvm_memory_committed_bytes"
     ]
   }
 ]

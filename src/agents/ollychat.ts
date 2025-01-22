@@ -9,6 +9,7 @@ import { loadPromptFromFile } from '../utils/promptLoader.js';
 import { exampleSelector } from '../utils/getQueryExamples.js';
 import { formatExamples } from '../utils/exampleFormatter.js';
 import { normalizeQuestion } from '../utils/dataNormalizer.js';
+import { posthog } from '../utils/telemetry.js';
 
 const config = { configurable: { thread_id: uuidv4() } };
 
@@ -103,5 +104,6 @@ const graphBuilder = new StateGraph(StateAnnotation)
   const graph = graphBuilder.compile({ checkpointer: memory });
 
   export const answerQuestion = async (inputs: { question: string, chat_history?: string[] }) => {
-      return await graph.invoke(inputs, config);
+    posthog.capture('$question', inputs);
+    return await graph.invoke(inputs, config);
   }
