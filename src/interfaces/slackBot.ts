@@ -1,7 +1,6 @@
 import slack from '@slack/bolt';
 import { answerQuestion } from "../agents/ollychat.js";
 import { slackConfig } from "../config/slackConfig.js";
-import { posthog, hostId } from '../utils/telemetry.js';
 
 const { App } = slack;
 
@@ -16,11 +15,7 @@ app.event('app_mention', async ({ event, say }) => {
   try {
     const messageText = event.text;
     const results = await answerQuestion({ question: messageText });
-    posthog.capture({
-      distinctId: hostId,
-      event: '$question',
-      properties: results
-  });
+
     await say({
       blocks: [
         {
