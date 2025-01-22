@@ -1,80 +1,80 @@
 [
   {
-    "id": "e5b9faf1-2c23-4e66-9024-d33f08a87190",
+    "id": "c0f24a5d-1a30-4fb1-8409-c3d612f5ff1f",
     "name": "Exported/Scraped",
-    "question": "average rate of exported metrics vs scraped metrics",
+    "question": "export otelcol prometheus exporter",
     "query": "(sum_over_time(scrape_samples_scraped[$__range])/ count_over_time(scrape_samples_scraped[$__range])/(5*30)) ",
     "metrics": [
       "scrape_samples_scraped"
     ]
   },
   {
-    "id": "f95be325-2023-4f94-ad91-1437752cf369",
+    "id": "93d3d188-352d-4fa9-8e64-505b34961d07",
     "name": "Exported/Scraped",
-    "question": "normalized export rate compared to scrape metrics",
+    "question": "ratio metrics scraped prometheus metrics",
     "query": "(sum_over_time(scrape_samples_scraped[$__range])/ count_over_time(scrape_samples_scraped[$__range])/(5*30)) ",
     "metrics": [
       "scrape_samples_scraped"
     ]
   },
   {
-    "id": "720745af-4981-42f2-b9c5-4652924b7c34",
+    "id": "284b92d4-1f9c-421c-8c4d-281ad6e0abb5",
     "name": "Exported/Scraped",
-    "question": "rate of exported metrics relative to scraped metrics",
+    "question": "export prometheus scrape metrics",
     "query": "(sum_over_time(scrape_samples_scraped[$__range])/ count_over_time(scrape_samples_scraped[$__range])/(5*30)) ",
     "metrics": [
       "scrape_samples_scraped"
     ]
   },
   {
-    "id": "6e73aa2d-4d67-4d72-9d5e-7f005822bc0b",
+    "id": "c32c150a-6eda-4456-864c-7f25ebc33169",
     "name": "Samples Scraped",
-    "question": "average samples scraped per scrape",
+    "question": "scraped count",
     "query": "sum_over_time(scrape_samples_scraped[$__range])/ count_over_time(scrape_samples_scraped[$__range])/(5*30)",
     "metrics": [
       "scrape_samples_scraped"
     ]
   },
   {
-    "id": "9317ea1f-bb97-4f4e-9e02-79f814acc65d",
+    "id": "6c220c4e-20fd-4745-abba-7f94561bd4b4",
     "name": "Samples Scraped",
-    "question": "ratio of scraped samples to total samples",
+    "question": "ratio scraped count",
     "query": "sum_over_time(scrape_samples_scraped[$__range])/ count_over_time(scrape_samples_scraped[$__range])/(5*30)",
     "metrics": [
       "scrape_samples_scraped"
     ]
   },
   {
-    "id": "465f7d81-9fcf-4f01-9ac2-845512df0d63",
+    "id": "1fd06a6c-32ae-4873-9655-552da1859331",
     "name": "Samples Scraped",
-    "question": "normalized samples scraped per sample count",
+    "question": "scraped against count",
     "query": "sum_over_time(scrape_samples_scraped[$__range])/ count_over_time(scrape_samples_scraped[$__range])/(5*30)",
     "metrics": [
       "scrape_samples_scraped"
     ]
   },
   {
-    "id": "3fa3bc55-be90-4914-9cde-6f76f88e5aa9",
+    "id": "f2203b18-45a6-44f2-85dd-d8f13e00441f",
     "name": "Total",
-    "question": "average samples scraped per job",
+    "question": "scraped job",
     "query": "sum_over_time(scrape_samples_scraped[$__range])/ count_over_time(scrape_samples_scraped[$__range])/(5*30)",
     "metrics": [
       "scrape_samples_scraped"
     ]
   },
   {
-    "id": "fef7fc78-21d6-4eba-81c0-ae9450fa3cfd",
+    "id": "62e06ced-fe5b-4caa-b4fc-850669eeaf1a",
     "name": "Total",
-    "question": "total samples scraped per instance",
+    "question": "scraped job count",
     "query": "sum_over_time(scrape_samples_scraped[$__range])/ count_over_time(scrape_samples_scraped[$__range])/(5*30)",
     "metrics": [
       "scrape_samples_scraped"
     ]
   },
   {
-    "id": "68efb514-5f7f-4712-861e-4d3e318ff067",
+    "id": "092e60a0-99ca-4b8c-8f94-07cfddc175db",
     "name": "Total",
-    "question": "average samples scraped per target",
+    "question": "scraped job minute",
     "query": "sum_over_time(scrape_samples_scraped[$__range])/ count_over_time(scrape_samples_scraped[$__range])/(5*30)",
     "metrics": [
       "scrape_samples_scraped"

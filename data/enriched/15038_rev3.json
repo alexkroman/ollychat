@@ -1,0 +1,137 @@
+[
+  {
+    "id": "63ae3fa0-b780-4935-9267-4ebc4ccda0d0",
+    "name": "Memory Usage (w/o cache)",
+    "question": "aggregate memory usage pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "a3b15f9d-39ac-4e4d-b519-26754cde1085",
+    "name": "Memory Usage (w/o cache)",
+    "question": "memory working set pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "04a272f1-09db-4156-8747-a2dfa466f5d1",
+    "name": "Memory Usage (w/o cache)",
+    "question": "memory usage excluding cache pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "e0c18b15-8567-425c-839b-d016f28e851a",
+    "name": "Memory Quota",
+    "question": "memory working set pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "5e058dad-78b6-4aca-a8e2-a2bcd70c2309",
+    "name": "Memory Quota",
+    "question": "aggregate memory usage pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "53e90f4c-d174-41e0-a849-bb48f64bcafe",
+    "name": "Memory Quota",
+    "question": "memory quota pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "a48375f5-2862-4ba5-a1b9-c293f7d2391d",
+    "name": "Memory Quota",
+    "question": "container memory usage pod",
+    "query": "sum(container_memory_rss) by (pod)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "083ace4e-dbcc-4373-b343-df8847bbb413",
+    "name": "Memory Quota",
+    "question": "aggregate memory rss pod",
+    "query": "sum(container_memory_rss) by (pod)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "da76e9b5-3dd8-496c-8c09-91f74b6a3525",
+    "name": "Memory Quota",
+    "question": "memory quota pod",
+    "query": "sum(container_memory_rss) by (pod)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "0c381745-654d-46b1-947e-3cecdeaed49f",
+    "name": "Memory Quota",
+    "question": "memory cache pod",
+    "query": "sum(container_memory_cache) by (pod)",
+    "metrics": [
+      "container_memory_cache"
+    ]
+  },
+  {
+    "id": "7ca8cff1-b8cf-4947-ac13-87ad202b30cf",
+    "name": "Memory Quota",
+    "question": "memory cache pod",
+    "query": "sum(container_memory_cache) by (pod)",
+    "metrics": [
+      "container_memory_cache"
+    ]
+  },
+  {
+    "id": "4f0d1442-4a15-497a-9995-9e70aeff0400",
+    "name": "Memory Quota",
+    "question": "memory cache grouped pod",
+    "query": "sum(container_memory_cache) by (pod)",
+    "metrics": [
+      "container_memory_cache"
+    ]
+  },
+  {
+    "id": "afd298c9-7beb-498a-9cc5-f49d985cab23",
+    "name": "Memory Quota",
+    "question": "swap memory pod",
+    "query": "sum(container_memory_swap) by (pod)",
+    "metrics": [
+      "container_memory_swap"
+    ]
+  },
+  {
+    "id": "6086b3d0-d364-464f-a8e4-fe7bc50c9912",
+    "name": "Memory Quota",
+    "question": "swap memory usage pod",
+    "query": "sum(container_memory_swap) by (pod)",
+    "metrics": [
+      "container_memory_swap"
+    ]
+  },
+  {
+    "id": "649fccd7-8c08-4a30-a7e4-cff3fbb861ac",
+    "name": "Memory Quota",
+    "question": "swap memory pod",
+    "query": "sum(container_memory_swap) by (pod)",
+    "metrics": [
+      "container_memory_swap"
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "name": "HTTP Status Code",
+    "description": "Prometheus Blackbox Exporter Overview",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "Status",
+    "description": "Prometheus Blackbox Exporter Overview",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "HTTP Status Code",
+    "description": "Prometheus Blackbox Exporter Overview",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "HTTP Version",
+    "description": "Prometheus Blackbox Exporter Overview",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "name": "Probe Duration",
+    "description": "Prometheus Blackbox Exporter Overview",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "name": "IP protocol",
+    "description": "Prometheus Blackbox Exporter Overview",
+    "query": "probe_ip_protocol",
+    "metrics": [
+      "probe_ip_protocol"
+    ]
+  },
+  {
+    "name": "HTTP Duration (phase = $phase)",
+    "description": "Prometheus Blackbox Exporter Overview",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "name": "SSL",
+    "description": "Prometheus Blackbox Exporter Overview",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  }
+]

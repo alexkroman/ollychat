@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Container CPU in Crossplane Namespace by Pod",
+    "description": "v1",
+    "query": "sum(rate(container_cpu_usage_seconds_total[5m])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  }
+]

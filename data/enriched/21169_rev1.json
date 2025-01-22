@@ -1,0 +1,29 @@
+[
+  {
+    "id": "7e10671a-cb6f-49f3-a02c-daaa8879151b",
+    "name": "Container CPU in Crossplane Namespace by Pod",
+    "question": "cpu usage pod namespace",
+    "query": "sum(rate(container_cpu_usage_seconds_total[5m])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "6c4ddc48-0daf-457c-9efe-0b6a3fa776d1",
+    "name": "Container CPU in Crossplane Namespace by Pod",
+    "question": "cpu consumption pods namespace",
+    "query": "sum(rate(container_cpu_usage_seconds_total[5m])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "abf9d4d4-7981-4976-afcc-a2018799fbf3",
+    "name": "Container CPU in Crossplane Namespace by Pod",
+    "question": "summed cpu usage pod namespace",
+    "query": "sum(rate(container_cpu_usage_seconds_total[5m])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  }
+]

@@ -1,26 +1,26 @@
 [
   {
-    "id": "fbfb8017-4c89-411b-8857-d917f9905250",
+    "id": "2c446ad5-e4d2-48bd-b7c3-2f1096094e3c",
     "name": "Controller State",
-    "question": "status of controllers",
+    "question": "overall status controllers",
     "query": "up",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "8e9da751-0aff-4806-adfa-3dca36f6bfd3",
+    "id": "3071daf5-17b5-4d93-9639-71a4461cfc84",
     "name": "Controller State",
-    "question": "availability of controllers",
+    "question": "up status controllers",
     "query": "up",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "f4dfc7fd-210b-4b13-931d-742d9e41137d",
+    "id": "2f144e9f-bbb6-431f-9ff2-31592dfc2f8f",
     "name": "Controller State",
-    "question": "controller operational state",
+    "question": "controller health status",
     "query": "up",
     "metrics": [
       "up"

@@ -1,0 +1,105 @@
+[
+  {
+    "name": "System Load",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "name": "System Load",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "name": "System Load",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Buffers_bytes - node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "node_memory_Buffers_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "name": "Memory Usage",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes  - node_memory_Buffers_bytes - node_memory_Cached_bytes) / node_memory_MemTotal_bytes) * 100",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Disk I/O",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "sum by (instance) (rate(node_disk_io_time_seconds_total[2m]))",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "name": "Disk Space Usage",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "(sum(node_filesystem_size_bytes) - sum(node_filesystem_free_bytes)) / sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "Network Received",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "rate(node_network_receive_bytes_total[5m])",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network Transmitted",
+    "description": "Kubernetes Nodes for node exporter 0.16+ (via Prometheus)\r\n",
+    "query": "rate(node_network_transmit_bytes_total[5m])",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  }
+]

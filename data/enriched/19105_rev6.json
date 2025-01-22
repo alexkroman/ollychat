@@ -1,56 +1,785 @@
 [
   {
-    "id": "1afdf1d0-e306-4bff-b7ed-a33e3c97c343",
-    "name": "Instance Down",
-    "question": "instances with a down status",
-    "query": "up < 1",
+    "id": "e1e29339-13e2-41f0-9874-74ea88dd6bbe",
+    "name": "Prometheus version",
+    "question": "retrieve prometheus build information",
+    "query": "prometheus_build_info",
     "metrics": [
-      "up"
+      "prometheus_build_info"
     ]
   },
   {
-    "id": "6d8dc551-8bd4-4fdd-bf84-b6a180f9d5a1",
-    "name": "Instance Down",
-    "question": "number of instances not up",
-    "query": "up < 1",
+    "id": "898ce7f0-af0a-4806-a5c5-20e1766770f5",
+    "name": "Prometheus version",
+    "question": "get details about prometheus version",
+    "query": "prometheus_build_info",
     "metrics": [
-      "up"
+      "prometheus_build_info"
     ]
   },
   {
-    "id": "25089d5b-12e1-4a3f-b850-411c21fe068c",
-    "name": "Instance Down",
-    "question": "instances failing health check",
-    "query": "up < 1",
+    "id": "ed776ecc-2d3a-48f4-87b0-5a6cdca14045",
+    "name": "Prometheus version",
+    "question": "query prometheus build details",
+    "query": "prometheus_build_info",
     "metrics": [
-      "up"
+      "prometheus_build_info"
     ]
   },
   {
-    "id": "8a952502-0486-490c-b104-15a81bfd4ed5",
-    "name": "Liveness by pod",
-    "question": "pods with liveness status",
-    "query": "up",
+    "id": "2dbda58b-d2d0-47d5-a591-b6a87f51866b",
+    "name": "TSDB Head Series",
+    "question": "head series metrics pod",
+    "query": "sum(prometheus_tsdb_head_series) by (pod)",
     "metrics": [
-      "up"
+      "prometheus_tsdb_head_series"
     ]
   },
   {
-    "id": "8929f13b-9558-4ce2-9e23-94b273cb451d",
-    "name": "Liveness by pod",
-    "question": "check if pods are up",
-    "query": "up",
+    "id": "b52edf78-f8f0-4fa4-9972-6a8c63d4864d",
+    "name": "TSDB Head Series",
+    "question": "head series metrics pod",
+    "query": "sum(prometheus_tsdb_head_series) by (pod)",
     "metrics": [
-      "up"
+      "prometheus_tsdb_head_series"
     ]
   },
   {
-    "id": "67dfbf04-2fd8-494a-a545-e3ca89b165cc",
-    "name": "Liveness by pod",
-    "question": "liveness status of pods",
-    "query": "up",
+    "id": "ea21ce0e-ce67-443e-9cad-dfb13d546cd1",
+    "name": "TSDB Head Series",
+    "question": "head series metrics grouped pod",
+    "query": "sum(prometheus_tsdb_head_series) by (pod)",
     "metrics": [
-      "up"
+      "prometheus_tsdb_head_series"
+    ]
+  },
+  {
+    "id": "9b0c90d9-f6e4-40ac-b161-54c630f9675a",
+    "name": "Discovered Targets",
+    "question": "discovered targets pod",
+    "query": "sum(prometheus_sd_discovered_targets) by (pod)",
+    "metrics": [
+      "prometheus_sd_discovered_targets"
+    ]
+  },
+  {
+    "id": "3ae3691f-0605-4e49-bf8b-1b845bd5a24c",
+    "name": "Discovered Targets",
+    "question": "discovered targets pod",
+    "query": "sum(prometheus_sd_discovered_targets) by (pod)",
+    "metrics": [
+      "prometheus_sd_discovered_targets"
+    ]
+  },
+  {
+    "id": "d69f5355-bb14-443b-9726-2d2667ec5483",
+    "name": "Discovered Targets",
+    "question": "discovered targets grouped pod",
+    "query": "sum(prometheus_sd_discovered_targets) by (pod)",
+    "metrics": [
+      "prometheus_sd_discovered_targets"
+    ]
+  },
+  {
+    "id": "c1d4ac6f-cf44-4d91-a05d-4e169159f4f5",
+    "name": "Config - Last Successful Reload by pod",
+    "question": "config reloads pod",
+    "query": "sum(prometheus_config_last_reload_successful) by (pod)",
+    "metrics": [
+      "prometheus_config_last_reload_successful"
+    ]
+  },
+  {
+    "id": "1f021c71-38ce-481d-b20b-f7d6d999e9d8",
+    "name": "Config - Last Successful Reload by pod",
+    "question": "reloads pod",
+    "query": "sum(prometheus_config_last_reload_successful) by (pod)",
+    "metrics": [
+      "prometheus_config_last_reload_successful"
+    ]
+  },
+  {
+    "id": "b5d0d07c-a75c-4415-bfbd-7d526fb6a26c",
+    "name": "Config - Last Successful Reload by pod",
+    "question": "config reloads grouped pod",
+    "query": "sum(prometheus_config_last_reload_successful) by (pod)",
+    "metrics": [
+      "prometheus_config_last_reload_successful"
+    ]
+  },
+  {
+    "id": "5117d383-e7e9-4264-a6a3-ffff6c7aa7e2",
+    "name": "Target Scrapes Errors by pod",
+    "question": "target scrapes exceeded body errors pod",
+    "query": "sum(rate(prometheus_target_scrapes_exceeded_body_size_limit_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_exceeded_body_size_limit_total"
+    ]
+  },
+  {
+    "id": "0ca623b4-c81d-47d3-a137-524a6c2a1918",
+    "name": "Target Scrapes Errors by pod",
+    "question": "errors target scrapes pod",
+    "query": "sum(rate(prometheus_target_scrapes_exceeded_body_size_limit_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_exceeded_body_size_limit_total"
+    ]
+  },
+  {
+    "id": "51ee1873-d01c-458d-a913-279aac1881aa",
+    "name": "Target Scrapes Errors by pod",
+    "question": "errors target scrapes pod",
+    "query": "sum(rate(prometheus_target_scrapes_exceeded_body_size_limit_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_exceeded_body_size_limit_total"
+    ]
+  },
+  {
+    "id": "e6427e39-0311-46ca-9846-a170a3a03d3c",
+    "name": "Target Scrapes Errors by pod",
+    "question": "errors target scrapes pod",
+    "query": "sum(rate(prometheus_target_scrapes_exceeded_sample_limit_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_exceeded_sample_limit_total"
+    ]
+  },
+  {
+    "id": "bcc45bec-57b6-4b04-b6b9-253ed0bbac66",
+    "name": "Target Scrapes Errors by pod",
+    "question": "pod errors scraping targets",
+    "query": "sum(rate(prometheus_target_scrapes_exceeded_sample_limit_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_exceeded_sample_limit_total"
+    ]
+  },
+  {
+    "id": "66a95bfe-8b15-4a5f-a393-802e2e559276",
+    "name": "Target Scrapes Errors by pod",
+    "question": "summed pod errors due scraping limits",
+    "query": "sum(rate(prometheus_target_scrapes_exceeded_sample_limit_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_exceeded_sample_limit_total"
+    ]
+  },
+  {
+    "id": "36705f56-733b-4beb-90b8-0a881c674e26",
+    "name": "Target Scrapes Errors by pod",
+    "question": "target scrapes errors pod",
+    "query": "sum(rate(prometheus_target_scrapes_sample_duplicate_timestamp_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_sample_duplicate_timestamp_total"
+    ]
+  },
+  {
+    "id": "ac1df857-5a31-4950-9b73-82b0e9c3b424",
+    "name": "Target Scrapes Errors by pod",
+    "question": "target scrape error count pod",
+    "query": "sum(rate(prometheus_target_scrapes_sample_duplicate_timestamp_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_sample_duplicate_timestamp_total"
+    ]
+  },
+  {
+    "id": "a0bc099a-77d9-41c4-acd5-358b9f91dc48",
+    "name": "Target Scrapes Errors by pod",
+    "question": "target scrape error grouped pod",
+    "query": "sum(rate(prometheus_target_scrapes_sample_duplicate_timestamp_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_sample_duplicate_timestamp_total"
+    ]
+  },
+  {
+    "id": "10120b18-74c7-4ac6-8e8e-c53faedc3a52",
+    "name": "Target Scrapes Errors by pod",
+    "question": "errors target scrapes pod",
+    "query": "sum(rate(prometheus_target_scrapes_sample_out_of_bounds_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_sample_out_of_bounds_total"
+    ]
+  },
+  {
+    "id": "5db73c3a-cd2c-47a6-adc7-c157331276ed",
+    "name": "Target Scrapes Errors by pod",
+    "question": "pod errors target scrapes",
+    "query": "sum(rate(prometheus_target_scrapes_sample_out_of_bounds_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_sample_out_of_bounds_total"
+    ]
+  },
+  {
+    "id": "1ae953db-6e47-4add-8857-4c570a225503",
+    "name": "Target Scrapes Errors by pod",
+    "question": "summed errors pod target scrapes",
+    "query": "sum(rate(prometheus_target_scrapes_sample_out_of_bounds_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_sample_out_of_bounds_total"
+    ]
+  },
+  {
+    "id": "49680498-e01e-42f0-982d-949833c93378",
+    "name": "Target Scrapes Errors by pod",
+    "question": "target scrapes errors pod",
+    "query": "sum(rate(prometheus_target_scrapes_sample_out_of_order_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_sample_out_of_order_total"
+    ]
+  },
+  {
+    "id": "9d4de446-f789-4c2e-9576-b3ac47c86cc6",
+    "name": "Target Scrapes Errors by pod",
+    "question": "target scrapes errors pod",
+    "query": "sum(rate(prometheus_target_scrapes_sample_out_of_order_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_sample_out_of_order_total"
+    ]
+  },
+  {
+    "id": "d108f936-5add-47e8-9e60-62405188b7b6",
+    "name": "Target Scrapes Errors by pod",
+    "question": "target scrapes errors grouped pod",
+    "query": "sum(rate(prometheus_target_scrapes_sample_out_of_order_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_target_scrapes_sample_out_of_order_total"
+    ]
+  },
+  {
+    "id": "37e385b7-7529-40ca-8c41-8597af14c395",
+    "name": "Number of Targets by pod",
+    "question": "targets discovered pod",
+    "query": "sum(prometheus_sd_discovered_targets) by (pod)",
+    "metrics": [
+      "prometheus_sd_discovered_targets"
+    ]
+  },
+  {
+    "id": "fd367337-b9b3-4091-b386-b6a419fb0934",
+    "name": "Number of Targets by pod",
+    "question": "discovered targets grouped pod",
+    "query": "sum(prometheus_sd_discovered_targets) by (pod)",
+    "metrics": [
+      "prometheus_sd_discovered_targets"
+    ]
+  },
+  {
+    "id": "5e6f5bdc-47fb-424f-9139-3b0172cd564e",
+    "name": "Number of Targets by pod",
+    "question": "discovered targets pod",
+    "query": "sum(prometheus_sd_discovered_targets) by (pod)",
+    "metrics": [
+      "prometheus_sd_discovered_targets"
+    ]
+  },
+  {
+    "id": "e6a4ea85-764f-434a-9add-7b8b4f81aa14",
+    "name": "TSDB Head Series & Chunks by pod",
+    "question": "head series pod",
+    "query": "sum(prometheus_tsdb_head_series) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_series"
+    ]
+  },
+  {
+    "id": "7cf0e9b0-0c72-4e81-92bd-2272f307b909",
+    "name": "TSDB Head Series & Chunks by pod",
+    "question": "head series grouped pod",
+    "query": "sum(prometheus_tsdb_head_series) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_series"
+    ]
+  },
+  {
+    "id": "9192fe5b-35c6-4d60-9eed-4bb178f93564",
+    "name": "TSDB Head Series & Chunks by pod",
+    "question": "head series count pod",
+    "query": "sum(prometheus_tsdb_head_series) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_series"
+    ]
+  },
+  {
+    "id": "8042734e-725d-428f-b537-edcc0a10046e",
+    "name": "TSDB Head Series & Chunks by pod",
+    "question": "prometheus tsdb head chunks pod",
+    "query": "sum(prometheus_tsdb_head_chunks) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_chunks"
+    ]
+  },
+  {
+    "id": "4f5c3492-e624-4d2a-8b21-45942ee0de92",
+    "name": "TSDB Head Series & Chunks by pod",
+    "question": "tsdb head series chunks grouped pod",
+    "query": "sum(prometheus_tsdb_head_chunks) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_chunks"
+    ]
+  },
+  {
+    "id": "a6a0dded-9e2a-47db-88fd-735317f7d6a9",
+    "name": "TSDB Head Series & Chunks by pod",
+    "question": "tsdb head chunks based pod",
+    "query": "sum(prometheus_tsdb_head_chunks) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_chunks"
+    ]
+  },
+  {
+    "id": "d27d45cb-22e8-47b7-87d9-36a592baea0f",
+    "name": "TSDB Head samples appended - rate by pod",
+    "question": "tsdb head appended pod",
+    "query": "sum(rate(prometheus_tsdb_head_samples_appended_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_samples_appended_total"
+    ]
+  },
+  {
+    "id": "422187b3-21bc-4b62-8d30-45f9d6ed0102",
+    "name": "TSDB Head samples appended - rate by pod",
+    "question": "tsdb head appended pod",
+    "query": "sum(rate(prometheus_tsdb_head_samples_appended_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_samples_appended_total"
+    ]
+  },
+  {
+    "id": "2742471e-c411-428f-968b-f78dd7ff64b3",
+    "name": "TSDB Head samples appended - rate by pod",
+    "question": "summed tsdb head added grouped pod",
+    "query": "sum(rate(prometheus_tsdb_head_samples_appended_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_samples_appended_total"
+    ]
+  },
+  {
+    "id": "0b4763fb-dbe0-4b03-b02e-925ba33562f9",
+    "name": "TSDB Blocks Loaded by pod",
+    "question": "tsdb blocks loaded pod",
+    "query": "sum(prometheus_tsdb_blocks_loaded) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_blocks_loaded"
+    ]
+  },
+  {
+    "id": "717b0b6d-145e-4c49-927f-12f4b86b484e",
+    "name": "TSDB Blocks Loaded by pod",
+    "question": "tsdb block count pod",
+    "query": "sum(prometheus_tsdb_blocks_loaded) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_blocks_loaded"
+    ]
+  },
+  {
+    "id": "47219b14-99d0-4872-83a3-f32a53ea398d",
+    "name": "TSDB Blocks Loaded by pod",
+    "question": "tsdb blocks loaded grouped pod",
+    "query": "sum(prometheus_tsdb_blocks_loaded) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_blocks_loaded"
+    ]
+  },
+  {
+    "id": "397303b5-912f-426b-a691-1b8335716cf6",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "prometheus tsdb compactions pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_total"
+    ]
+  },
+  {
+    "id": "9b7bc42a-8f11-422a-962d-f7bc41e6dcdd",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "tsdb compaction rates grouped pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_total"
+    ]
+  },
+  {
+    "id": "c2e91e92-08c4-4fb0-8783-bcff0b9531dd",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "compaction prometheus tsdb pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_total"
+    ]
+  },
+  {
+    "id": "a055c104-8b00-4026-9dbd-e23b655bc5a9",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "compactions pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_triggered_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_triggered_total"
+    ]
+  },
+  {
+    "id": "19e60fc1-d4d9-4c66-9806-a3cff9852588",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "compactions triggered pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_triggered_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_triggered_total"
+    ]
+  },
+  {
+    "id": "872e47c0-bc3b-4b26-bced-e8925029eb3e",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "compactions pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_triggered_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_triggered_total"
+    ]
+  },
+  {
+    "id": "1ce8820e-378d-40f5-82e6-4e264c4b5467",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "skipped compactions pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_skipped_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_skipped_total"
+    ]
+  },
+  {
+    "id": "139f5465-e778-4a4b-8c68-95586a619e81",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "compaction pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_skipped_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_skipped_total"
+    ]
+  },
+  {
+    "id": "1fe8bc0e-70f8-4414-80c5-c6fbf51e0eba",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "compactions skipped pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_skipped_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_skipped_total"
+    ]
+  },
+  {
+    "id": "ed8ce16f-8bcc-4828-a26f-d28a04a2dae1",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "compaction failures pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_failed_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_failed_total"
+    ]
+  },
+  {
+    "id": "5c261d47-4c34-40ac-bf04-03ff6b694f39",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "compaction failure pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_failed_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_failed_total"
+    ]
+  },
+  {
+    "id": "27720b6a-1d87-42ad-9c34-94c78015ae75",
+    "name": "TSDB Rate of Compactions by pod",
+    "question": "summed compactions grouped pod",
+    "query": "sum(rate(prometheus_tsdb_compactions_failed_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_compactions_failed_total"
+    ]
+  },
+  {
+    "id": "cd4bad74-4ef3-42ec-9cc8-922f4c35f526",
+    "name": "TSDB Reload Failures by pod",
+    "question": "tsdb reload failures pod",
+    "query": "sum(rate(prometheus_tsdb_reloads_failures_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_reloads_failures_total"
+    ]
+  },
+  {
+    "id": "a3676950-caea-4f5e-8353-a6da7cda2f48",
+    "name": "TSDB Reload Failures by pod",
+    "question": "tsdb failures grouped pod",
+    "query": "sum(rate(prometheus_tsdb_reloads_failures_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_reloads_failures_total"
+    ]
+  },
+  {
+    "id": "ff4708da-1f9e-4d9e-a263-e0ae3182cfa2",
+    "name": "TSDB Reload Failures by pod",
+    "question": "summed tsdb reload errors pod",
+    "query": "sum(rate(prometheus_tsdb_reloads_failures_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_reloads_failures_total"
+    ]
+  },
+  {
+    "id": "1f906d2c-d0e1-452b-aa7a-649be7672640",
+    "name": "TSDB Created & Deleted series by pod",
+    "question": "series created pod",
+    "query": "sum(rate(prometheus_tsdb_head_series_created_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_series_created_total"
+    ]
+  },
+  {
+    "id": "dab6083e-51ee-4e71-ab35-28f107e177af",
+    "name": "TSDB Created & Deleted series by pod",
+    "question": "cumulative pod series creation count",
+    "query": "sum(rate(prometheus_tsdb_head_series_created_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_series_created_total"
+    ]
+  },
+  {
+    "id": "0bba50f8-9d2f-48b5-9a83-3de624eea581",
+    "name": "TSDB Created & Deleted series by pod",
+    "question": "pod series creation",
+    "query": "sum(rate(prometheus_tsdb_head_series_created_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_series_created_total"
+    ]
+  },
+  {
+    "id": "deb61eae-8d4e-4dde-b320-bb07513b4271",
+    "name": "TSDB Created & Deleted series by pod",
+    "question": "series removed pod",
+    "query": "sum(rate(prometheus_tsdb_head_series_removed_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_series_removed_total"
+    ]
+  },
+  {
+    "id": "02cc6b38-034b-4683-b226-fd2f6734dadc",
+    "name": "TSDB Created & Deleted series by pod",
+    "question": "series deletion count pod",
+    "query": "sum(rate(prometheus_tsdb_head_series_removed_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_series_removed_total"
+    ]
+  },
+  {
+    "id": "574a0dee-a8df-456a-a78f-73ee575365ab",
+    "name": "TSDB Created & Deleted series by pod",
+    "question": "series removed pod",
+    "query": "sum(rate(prometheus_tsdb_head_series_removed_total[30m])) by (pod)",
+    "metrics": [
+      "prometheus_tsdb_head_series_removed_total"
+    ]
+  },
+  {
+    "id": "cb9cf95e-5b4d-4cf4-aa1b-64b5ac21b420",
+    "name": "Network - Bandwidth by pod",
+    "question": "bandwidth received pod",
+    "query": "sum(rate(container_network_receive_bytes_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "b43353f6-10c8-4e4e-a2fd-697de8e4e8b2",
+    "name": "Network - Bandwidth by pod",
+    "question": "aggregate network bandwidth pod",
+    "query": "sum(rate(container_network_receive_bytes_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "5500ec60-5c2e-4f69-a535-185662ac86ad",
+    "name": "Network - Bandwidth by pod",
+    "question": "data received pods",
+    "query": "sum(rate(container_network_receive_bytes_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "812236df-b0d7-455a-9b06-956dcfccc816",
+    "name": "Network - Bandwidth by pod",
+    "question": "network bandwidth pod",
+    "query": "- sum(rate(container_network_transmit_bytes_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "fd9cb2b2-da65-4851-8d3e-f5d03cb9104e",
+    "name": "Network - Bandwidth by pod",
+    "question": "pod network transmit",
+    "query": "- sum(rate(container_network_transmit_bytes_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "332914ed-bc7e-4b2c-bfcc-9605ed307034",
+    "name": "Network - Bandwidth by pod",
+    "question": "network transmit pod",
+    "query": "- sum(rate(container_network_transmit_bytes_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "0647804d-ca63-4a6f-ac91-8d4825cae40b",
+    "name": "Network - Packets rate by pod",
+    "question": "network packets received pod",
+    "query": "sum(rate(container_network_receive_packets_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "9aa07b98-9453-4394-9050-5e9db78664ec",
+    "name": "Network - Packets rate by pod",
+    "question": "network packets pod",
+    "query": "sum(rate(container_network_receive_packets_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "a29e5ae2-44b6-4a1e-b1ad-eec210fb685c",
+    "name": "Network - Packets rate by pod",
+    "question": "packets received individual pods",
+    "query": "sum(rate(container_network_receive_packets_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "c1650e15-31b7-4bb9-af92-d35ce8bb259a",
+    "name": "Network - Packets rate by pod",
+    "question": "summed packets pod",
+    "query": "- sum(rate(container_network_transmit_packets_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "21661b13-bd7a-419d-8aa1-c0c9d8f8911b",
+    "name": "Network - Packets rate by pod",
+    "question": "pod network packet",
+    "query": "- sum(rate(container_network_transmit_packets_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "1c665651-517c-4fc9-8915-728e192a230e",
+    "name": "Network - Packets rate by pod",
+    "question": "network packets pod",
+    "query": "- sum(rate(container_network_transmit_packets_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "bd330962-e0ed-4499-b44c-db29e0974c11",
+    "name": "Network - Packets Dropped by pod",
+    "question": "dropped network packets pod",
+    "query": "sum(rate(container_network_receive_packets_dropped_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "d8a3f1f8-6e3d-4136-b909-dcb4e76d8b4f",
+    "name": "Network - Packets Dropped by pod",
+    "question": "dropped packets pod",
+    "query": "sum(rate(container_network_receive_packets_dropped_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "e0595330-a9af-4b2b-8d97-a918b87e4695",
+    "name": "Network - Packets Dropped by pod",
+    "question": "dropped packets grouped pod",
+    "query": "sum(rate(container_network_receive_packets_dropped_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "f821ccae-1091-44b0-8c5f-f6e289fb5623",
+    "name": "Network - Packets Dropped by pod",
+    "question": "dropped network packets pod",
+    "query": "- sum(rate(container_network_transmit_packets_dropped_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "35ea883f-41d1-426c-974a-a01e8a3acfee",
+    "name": "Network - Packets Dropped by pod",
+    "question": "network packet drops pod",
+    "query": "- sum(rate(container_network_transmit_packets_dropped_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "4ab5c5ca-2193-4f2e-9742-0c369a79062e",
+    "name": "Network - Packets Dropped by pod",
+    "question": "network packet drop pod",
+    "query": "- sum(rate(container_network_transmit_packets_dropped_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "f8526f24-c87f-4b66-a829-f0d395b2d558",
+    "name": "Network - Errors by pod",
+    "question": "network receive errors pod",
+    "query": "sum(rate(container_network_receive_errors_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_errors_total"
+    ]
+  },
+  {
+    "id": "18fcba2f-eb39-4f8b-bb4b-76aa769d64f7",
+    "name": "Network - Errors by pod",
+    "question": "network errors pod",
+    "query": "sum(rate(container_network_receive_errors_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_errors_total"
+    ]
+  },
+  {
+    "id": "773f033c-d2fc-4981-baa1-1c09de2e2e3c",
+    "name": "Network - Errors by pod",
+    "question": "network errors grouped pod",
+    "query": "sum(rate(container_network_receive_errors_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_receive_errors_total"
+    ]
+  },
+  {
+    "id": "260684a2-f940-4d2d-97ca-4fedb9ca213e",
+    "name": "Network - Errors by pod",
+    "question": "network transmit errors pod",
+    "query": "- sum(rate(container_network_transmit_errors_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_errors_total"
+    ]
+  },
+  {
+    "id": "6eb7c9fe-6909-4f7c-8343-8e96f7973b66",
+    "name": "Network - Errors by pod",
+    "question": "network transmit errors grouped pod",
+    "query": "- sum(rate(container_network_transmit_errors_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_errors_total"
+    ]
+  },
+  {
+    "id": "683ec885-8a99-4ccc-a665-7b5a94adebe2",
+    "name": "Network - Errors by pod",
+    "question": "aggregate transmit errors pod",
+    "query": "- sum(rate(container_network_transmit_errors_total[30m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_errors_total"
     ]
   }
 ]

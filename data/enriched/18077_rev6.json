@@ -1,53 +1,53 @@
 [
   {
-    "id": "8e8d3f4a-8e47-49a7-a184-78b4872603eb",
-    "name": "",
-    "question": "collects metrics about availability of targets",
+    "id": "4309af18-c200-403c-a997-52d5f045059f",
+    "name": "undefined",
+    "question": "status monitored targets",
     "query": "up",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "61bbded4-bcd6-4baf-88b7-63dddee30c78",
-    "name": "",
-    "question": "returns status of target instances",
+    "id": "4a515745-d3e3-4fd1-add3-950028d54767",
+    "name": "undefined",
+    "question": "availability monitored services",
     "query": "up",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "7b832521-af9d-45d0-93e4-1cc1cf9fc3ce",
-    "name": "",
-    "question": "retrieves information on target health",
+    "id": "f2979eb2-bea1-49bb-96c4-e95eed42c387",
+    "name": "undefined",
+    "question": "up status tracked metrics",
     "query": "up",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "78ca4b8f-4a8f-415e-a4ed-654e16a520e4",
-    "name": "",
-    "question": "average scrape duration",
+    "id": "7a56b153-e41b-49a6-a328-694d2706aed7",
+    "name": "undefined",
+    "question": "scraped metric values",
     "query": "scrape_duration_seconds",
     "metrics": [
       "scrape_duration_seconds"
     ]
   },
   {
-    "id": "2aedf2d1-6ccb-49d2-87c9-e76b216fdd7c",
-    "name": "",
-    "question": "total time taken to scrape",
+    "id": "75e1463f-9d62-47d1-bc16-16e9097c2611",
+    "name": "undefined",
+    "question": "retrieved scraping process",
     "query": "scrape_duration_seconds",
     "metrics": [
       "scrape_duration_seconds"
     ]
   },
   {
-    "id": "a893e7fb-ee64-431b-b6f4-04dedb833a03",
-    "name": "",
-    "question": "aggregated scrape durations",
+    "id": "bf1381a1-dc82-4487-8713-c9192854d204",
+    "name": "undefined",
+    "question": "querying metrics scrape process",
     "query": "scrape_duration_seconds",
     "metrics": [
       "scrape_duration_seconds"

@@ -1,0 +1,599 @@
+[
+  {
+    "id": "d9e6585d-dc44-4500-a921-ec5e73a35f74",
+    "name": "Memory in Off-Heap",
+    "question": "memory use golang application offheap",
+    "query": "go_memstats_mspan_inuse_bytes",
+    "metrics": [
+      "go_memstats_mspan_inuse_bytes"
+    ]
+  },
+  {
+    "id": "9fe00b40-029b-4e33-8147-bc3e7f5ada6f",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory usage golang runtime",
+    "query": "go_memstats_mspan_inuse_bytes",
+    "metrics": [
+      "go_memstats_mspan_inuse_bytes"
+    ]
+  },
+  {
+    "id": "8bb90aff-e23d-46fa-9136-ce741bc82326",
+    "name": "Memory in Off-Heap",
+    "question": "metrics golang app offheap memory",
+    "query": "go_memstats_mspan_inuse_bytes",
+    "metrics": [
+      "go_memstats_mspan_inuse_bytes"
+    ]
+  },
+  {
+    "id": "b7db76e7-bda0-4185-af7c-599dbcdf0c2f",
+    "name": "Memory in Off-Heap",
+    "question": "memory usage golang offheap space",
+    "query": "go_memstats_mspan_sys_bytes",
+    "metrics": [
+      "go_memstats_mspan_sys_bytes"
+    ]
+  },
+  {
+    "id": "677d8c08-152a-4736-9e16-8427e9743296",
+    "name": "Memory in Off-Heap",
+    "question": "metrics golang application memory allocation",
+    "query": "go_memstats_mspan_sys_bytes",
+    "metrics": [
+      "go_memstats_mspan_sys_bytes"
+    ]
+  },
+  {
+    "id": "259da354-de01-47d4-a73c-1a702bcddd7d",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory statistics golang runtime",
+    "query": "go_memstats_mspan_sys_bytes",
+    "metrics": [
+      "go_memstats_mspan_sys_bytes"
+    ]
+  },
+  {
+    "id": "c9ef1b6d-2d19-40a4-8d1d-74591cca544c",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory usage golang application",
+    "query": "go_memstats_mcache_inuse_bytes",
+    "metrics": [
+      "go_memstats_mcache_inuse_bytes"
+    ]
+  },
+  {
+    "id": "2584b9a7-c318-447b-8984-6be3014a6219",
+    "name": "Memory in Off-Heap",
+    "question": "inuse memory golang mcache",
+    "query": "go_memstats_mcache_inuse_bytes",
+    "metrics": [
+      "go_memstats_mcache_inuse_bytes"
+    ]
+  },
+  {
+    "id": "61fa75d0-be98-4a77-b31d-373c9d8f5f73",
+    "name": "Memory in Off-Heap",
+    "question": "metric golang mcache inuse memory",
+    "query": "go_memstats_mcache_inuse_bytes",
+    "metrics": [
+      "go_memstats_mcache_inuse_bytes"
+    ]
+  },
+  {
+    "id": "02ea32a2-faf1-47bc-a0a1-b781af624904",
+    "name": "Memory in Off-Heap",
+    "question": "memory golang mcache",
+    "query": "go_memstats_mcache_sys_bytes",
+    "metrics": [
+      "go_memstats_mcache_sys_bytes"
+    ]
+  },
+  {
+    "id": "433a4e31-2a57-4f6c-9c0b-e07904b4ecb5",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory allocation golang app",
+    "query": "go_memstats_mcache_sys_bytes",
+    "metrics": [
+      "go_memstats_mcache_sys_bytes"
+    ]
+  },
+  {
+    "id": "72038ff1-f8bf-41ab-a2e9-829570731dcb",
+    "name": "Memory in Off-Heap",
+    "question": "system used golang mcache",
+    "query": "go_memstats_mcache_sys_bytes",
+    "metrics": [
+      "go_memstats_mcache_sys_bytes"
+    ]
+  },
+  {
+    "id": "2feb277b-a800-41ea-8b59-c894e4aa2116",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory usage golang runtime",
+    "query": "go_memstats_buck_hash_sys_bytes",
+    "metrics": [
+      "go_memstats_buck_hash_sys_bytes"
+    ]
+  },
+  {
+    "id": "ede68a83-f8b8-4adf-8a0b-f3aa710db2b4",
+    "name": "Memory in Off-Heap",
+    "question": "metrics offheap memory golang",
+    "query": "go_memstats_buck_hash_sys_bytes",
+    "metrics": [
+      "go_memstats_buck_hash_sys_bytes"
+    ]
+  },
+  {
+    "id": "7a3f66d4-126d-409f-b487-9029c967f6aa",
+    "name": "Memory in Off-Heap",
+    "question": "golang app runtime offheap memory stats",
+    "query": "go_memstats_buck_hash_sys_bytes",
+    "metrics": [
+      "go_memstats_buck_hash_sys_bytes"
+    ]
+  },
+  {
+    "id": "6e183186-ce75-4d36-bbfe-64fa22659f63",
+    "name": "Memory in Off-Heap",
+    "question": "memory used golang runtime offheap",
+    "query": "go_memstats_gc_sys_bytes",
+    "metrics": [
+      "go_memstats_gc_sys_bytes"
+    ]
+  },
+  {
+    "id": "a2ee0c51-f640-4f29-87b7-3173f3b78ad2",
+    "name": "Memory in Off-Heap",
+    "question": "garbage collection system memory golang app",
+    "query": "go_memstats_gc_sys_bytes",
+    "metrics": [
+      "go_memstats_gc_sys_bytes"
+    ]
+  },
+  {
+    "id": "5a11a15d-64a7-44a5-b4fd-f1b2bf5a2939",
+    "name": "Memory in Off-Heap",
+    "question": "offheap memory statistics golang application",
+    "query": "go_memstats_gc_sys_bytes",
+    "metrics": [
+      "go_memstats_gc_sys_bytes"
+    ]
+  },
+  {
+    "id": "f8dbfaed-aa4c-43f9-b0a8-94fac13ab128",
+    "name": "Memory in Off-Heap",
+    "question": "calculate difference offheap memory",
+    "query": "go_memstats_other_sys_bytes - go_memstats_other_sys_bytes",
+    "metrics": [
+      "go_memstats_other_sys_bytes"
+    ]
+  },
+  {
+    "id": "55e442c4-980c-416f-bb77-27249a551db1",
+    "name": "Memory in Off-Heap",
+    "question": "retrieve golang application runtime memory metrics",
+    "query": "go_memstats_other_sys_bytes - go_memstats_other_sys_bytes",
+    "metrics": [
+      "go_memstats_other_sys_bytes"
+    ]
+  },
+  {
+    "id": "873354f6-993e-46ec-8f15-6bccd8d1f808",
+    "name": "Memory in Off-Heap",
+    "question": "find difference system golang app",
+    "query": "go_memstats_other_sys_bytes - go_memstats_other_sys_bytes",
+    "metrics": [
+      "go_memstats_other_sys_bytes"
+    ]
+  },
+  {
+    "id": "5faf8145-e11d-43e2-8d35-f2d2a93bf985",
+    "name": "Memory in Off-Heap",
+    "question": "memory usage outside heap golang apps",
+    "query": "go_memstats_next_gc_bytes",
+    "metrics": [
+      "go_memstats_next_gc_bytes"
+    ]
+  },
+  {
+    "id": "a0d1036e-c4d3-48dd-8d72-cb8a55c94599",
+    "name": "Memory in Off-Heap",
+    "question": "metric offheap memory golang runtime",
+    "query": "go_memstats_next_gc_bytes",
+    "metrics": [
+      "go_memstats_next_gc_bytes"
+    ]
+  },
+  {
+    "id": "32f07b49-2e7b-4a07-914f-9afa68a5626d",
+    "name": "Memory in Off-Heap",
+    "question": "next gc golang offheap memory",
+    "query": "go_memstats_next_gc_bytes",
+    "metrics": [
+      "go_memstats_next_gc_bytes"
+    ]
+  },
+  {
+    "id": "319492c7-7b20-4135-988a-6cccb7fd742c",
+    "name": "Memory in Heap",
+    "question": "allocated heap memory golang runtime",
+    "query": "go_memstats_heap_alloc_bytes",
+    "metrics": [
+      "go_memstats_heap_alloc_bytes"
+    ]
+  },
+  {
+    "id": "0de327e0-ca76-46c6-826f-13372de1315b",
+    "name": "Memory in Heap",
+    "question": "heap memory allocation metrics golang app",
+    "query": "go_memstats_heap_alloc_bytes",
+    "metrics": [
+      "go_memstats_heap_alloc_bytes"
+    ]
+  },
+  {
+    "id": "75b7bb4a-60b8-4e24-ad0b-239554ff635f",
+    "name": "Memory in Heap",
+    "question": "golang application heap memory",
+    "query": "go_memstats_heap_alloc_bytes",
+    "metrics": [
+      "go_memstats_heap_alloc_bytes"
+    ]
+  },
+  {
+    "id": "ca26bc33-064c-4e5f-8e9a-7f591b459389",
+    "name": "Memory in Heap",
+    "question": "heap memory usage golang application",
+    "query": "go_memstats_heap_sys_bytes",
+    "metrics": [
+      "go_memstats_heap_sys_bytes"
+    ]
+  },
+  {
+    "id": "8bb26bd9-2114-46c6-af05-0b7a72b299c9",
+    "name": "Memory in Heap",
+    "question": "system memory allocated golang heap",
+    "query": "go_memstats_heap_sys_bytes",
+    "metrics": [
+      "go_memstats_heap_sys_bytes"
+    ]
+  },
+  {
+    "id": "786f0ddb-5faf-46b6-b83f-7bb97faabf6e",
+    "name": "Memory in Heap",
+    "question": "runtime metrics golang application memory",
+    "query": "go_memstats_heap_sys_bytes",
+    "metrics": [
+      "go_memstats_heap_sys_bytes"
+    ]
+  },
+  {
+    "id": "2ee5a952-eedd-462d-8c5d-cda66d3eb4cb",
+    "name": "Memory in Heap",
+    "question": "idle heap memory golang application",
+    "query": "go_memstats_heap_idle_bytes",
+    "metrics": [
+      "go_memstats_heap_idle_bytes"
+    ]
+  },
+  {
+    "id": "45f8bc86-d713-47f5-a4d5-c8abf60fbd81",
+    "name": "Memory in Heap",
+    "question": "metric showing unused heap memory golang runtime",
+    "query": "go_memstats_heap_idle_bytes",
+    "metrics": [
+      "go_memstats_heap_idle_bytes"
+    ]
+  },
+  {
+    "id": "fcf83a1e-9c5d-4e8f-ae93-13e4de6ecec6",
+    "name": "Memory in Heap",
+    "question": "heap memory currently not use",
+    "query": "go_memstats_heap_idle_bytes",
+    "metrics": [
+      "go_memstats_heap_idle_bytes"
+    ]
+  },
+  {
+    "id": "f1ff1765-9c95-4750-8729-2c7ea4fe10c9",
+    "name": "Memory in Heap",
+    "question": "memory usage golang application heap",
+    "query": "go_memstats_heap_inuse_bytes",
+    "metrics": [
+      "go_memstats_heap_inuse_bytes"
+    ]
+  },
+  {
+    "id": "d82ed03c-4e7d-4e73-9994-a8e6e92f1ec3",
+    "name": "Memory in Heap",
+    "question": "heap memory actively use",
+    "query": "go_memstats_heap_inuse_bytes",
+    "metrics": [
+      "go_memstats_heap_inuse_bytes"
+    ]
+  },
+  {
+    "id": "d389ae2b-158e-449e-87a8-a50db9cac4da",
+    "name": "Memory in Heap",
+    "question": "heap memory golang application",
+    "query": "go_memstats_heap_inuse_bytes",
+    "metrics": [
+      "go_memstats_heap_inuse_bytes"
+    ]
+  },
+  {
+    "id": "bd36ddc1-09ba-45a4-84df-9009ead5fe5b",
+    "name": "Memory in Heap",
+    "question": "metrics released heap memory golang app",
+    "query": "go_memstats_heap_released_bytes",
+    "metrics": [
+      "go_memstats_heap_released_bytes"
+    ]
+  },
+  {
+    "id": "b9fa5c4a-b9de-4017-b6b4-a97f48361b70",
+    "name": "Memory in Heap",
+    "question": "heap memory released golang application",
+    "query": "go_memstats_heap_released_bytes",
+    "metrics": [
+      "go_memstats_heap_released_bytes"
+    ]
+  },
+  {
+    "id": "9027fe66-54bb-4de2-b857-0f72ac9e40cc",
+    "name": "Memory in Heap",
+    "question": "runtime heap memory release golang app",
+    "query": "go_memstats_heap_released_bytes",
+    "metrics": [
+      "go_memstats_heap_released_bytes"
+    ]
+  },
+  {
+    "id": "7f69d427-29a9-443c-bb29-2785b35a052f",
+    "name": "Memory in Stack",
+    "question": "metrics golang application memory stack usage",
+    "query": "go_memstats_stack_inuse_bytes",
+    "metrics": [
+      "go_memstats_stack_inuse_bytes"
+    ]
+  },
+  {
+    "id": "e2a9a1ad-28b5-43c2-bd97-57aba73b4d1c",
+    "name": "Memory in Stack",
+    "question": "inuse memory golang application stack",
+    "query": "go_memstats_stack_inuse_bytes",
+    "metrics": [
+      "go_memstats_stack_inuse_bytes"
+    ]
+  },
+  {
+    "id": "221bbc26-e9f5-42dd-83f2-f7f33e0f7ec1",
+    "name": "Memory in Stack",
+    "question": "memory allocated golang applications stack",
+    "query": "go_memstats_stack_inuse_bytes",
+    "metrics": [
+      "go_memstats_stack_inuse_bytes"
+    ]
+  },
+  {
+    "id": "163e1ee8-d076-43f3-bb65-b9841b8446cd",
+    "name": "Memory in Stack",
+    "question": "memory usage golang application stack",
+    "query": "go_memstats_stack_sys_bytes",
+    "metrics": [
+      "go_memstats_stack_sys_bytes"
+    ]
+  },
+  {
+    "id": "88bbcc6b-db61-493e-9b11-50b102b1a9de",
+    "name": "Memory in Stack",
+    "question": "stack memory system golang runtime",
+    "query": "go_memstats_stack_sys_bytes",
+    "metrics": [
+      "go_memstats_stack_sys_bytes"
+    ]
+  },
+  {
+    "id": "76c46032-5915-4713-8235-3b0ba2644519",
+    "name": "Memory in Stack",
+    "question": "metrics memory allocated stack",
+    "query": "go_memstats_stack_sys_bytes",
+    "metrics": [
+      "go_memstats_stack_sys_bytes"
+    ]
+  },
+  {
+    "id": "93af409b-ab9a-4b3a-8560-22d4691d7c2f",
+    "name": "Total Used Memory",
+    "question": "used memory golang application",
+    "query": "go_memstats_sys_bytes",
+    "metrics": [
+      "go_memstats_sys_bytes"
+    ]
+  },
+  {
+    "id": "27c01317-9ceb-4c5f-a8d7-595d93197ada",
+    "name": "Total Used Memory",
+    "question": "runtime memory metrics golang application",
+    "query": "go_memstats_sys_bytes",
+    "metrics": [
+      "go_memstats_sys_bytes"
+    ]
+  },
+  {
+    "id": "92ae6fef-32a5-4f1a-a94a-9ceb41a806cc",
+    "name": "Total Used Memory",
+    "question": "aggregate system memory consumption golang app",
+    "query": "go_memstats_sys_bytes",
+    "metrics": [
+      "go_memstats_sys_bytes"
+    ]
+  },
+  {
+    "id": "9c502e1e-87ac-471b-ad17-bbd1a9e77e0f",
+    "name": "Number of Live Objects",
+    "question": "difference between memory allocations frees",
+    "query": "go_memstats_mallocs_total - go_memstats_frees_total",
+    "metrics": [
+      "go_memstats_frees_total",
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "87f53e83-44e8-4a00-ae9c-2f5e4b1b881d",
+    "name": "Number of Live Objects",
+    "question": "live objects count golang application",
+    "query": "go_memstats_mallocs_total - go_memstats_frees_total",
+    "metrics": [
+      "go_memstats_frees_total",
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "3d932ff8-7611-400f-ad36-6f6937540372",
+    "name": "Number of Live Objects",
+    "question": "golang application memory object delta",
+    "query": "go_memstats_mallocs_total - go_memstats_frees_total",
+    "metrics": [
+      "go_memstats_frees_total",
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "e9681616-2230-4b5c-8141-37b481c6d69f",
+    "name": "Rate of Objects Allocated",
+    "question": "heap objects being allocated",
+    "query": "rate(go_memstats_mallocs_total[1m])",
+    "metrics": [
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "45f09345-7c63-4bc8-a8fe-bd537e0ab99b",
+    "name": "Rate of Objects Allocated",
+    "question": "allocated heap objects",
+    "query": "rate(go_memstats_mallocs_total[1m])",
+    "metrics": [
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "0b2e9995-cc09-4a9d-9c74-24422577f387",
+    "name": "Rate of Objects Allocated",
+    "question": "at which heap objects allocated",
+    "query": "rate(go_memstats_mallocs_total[1m])",
+    "metrics": [
+      "go_memstats_mallocs_total"
+    ]
+  },
+  {
+    "id": "04cac1ec-e7d1-478d-8490-eafd1bc521eb",
+    "name": "Rate of a Pointer Dereferences",
+    "question": "pointer dereferences minute",
+    "query": "rate(go_memstats_lookups_total[1m])",
+    "metrics": [
+      "go_memstats_lookups_total"
+    ]
+  },
+  {
+    "id": "39875002-a454-4512-8cf3-cfe6b0514bc8",
+    "name": "Rate of a Pointer Dereferences",
+    "question": "pointer lookups",
+    "query": "rate(go_memstats_lookups_total[1m])",
+    "metrics": [
+      "go_memstats_lookups_total"
+    ]
+  },
+  {
+    "id": "e8ee12e4-5f3f-477c-b732-1d9ae7e856a1",
+    "name": "Rate of a Pointer Dereferences",
+    "question": "counter converted lookups",
+    "query": "rate(go_memstats_lookups_total[1m])",
+    "metrics": [
+      "go_memstats_lookups_total"
+    ]
+  },
+  {
+    "id": "cdef8a9f-bac3-426d-9ba5-71ad829cbded",
+    "name": "Goroutines",
+    "question": "goroutines golang application",
+    "query": "go_goroutines",
+    "metrics": [
+      "go_goroutines"
+    ]
+  },
+  {
+    "id": "21fc62b1-36ea-448a-8e0a-550a89d337da",
+    "name": "Goroutines",
+    "question": "metric capturing golang application runtime concurrency",
+    "query": "go_goroutines",
+    "metrics": [
+      "go_goroutines"
+    ]
+  },
+  {
+    "id": "60754759-0a07-48a7-95c8-dc1f44a74cdb",
+    "name": "Goroutines",
+    "question": "count running goroutines golang runtime",
+    "query": "go_goroutines",
+    "metrics": [
+      "go_goroutines"
+    ]
+  },
+  {
+    "id": "02b7022b-c6e9-4531-82a9-854494b84cd1",
+    "name": "Rates of Allocation",
+    "question": "memory allocation golang app",
+    "query": "rate(go_memstats_alloc_bytes_total[1m])",
+    "metrics": [
+      "go_memstats_alloc_bytes_total"
+    ]
+  },
+  {
+    "id": "b4dff673-7adb-44d2-82b1-028a8bd77eb6",
+    "name": "Rates of Allocation",
+    "question": "memory allocation rates",
+    "query": "rate(go_memstats_alloc_bytes_total[1m])",
+    "metrics": [
+      "go_memstats_alloc_bytes_total"
+    ]
+  },
+  {
+    "id": "7051cde3-0304-41bc-aa5a-ae2314d510a3",
+    "name": "Rates of Allocation",
+    "question": "allocation golang application memory",
+    "query": "rate(go_memstats_alloc_bytes_total[1m])",
+    "metrics": [
+      "go_memstats_alloc_bytes_total"
+    ]
+  },
+  {
+    "id": "0e1453e9-228b-4053-a1fe-97a2e52c9f5e",
+    "name": "GC duration quantile",
+    "question": "quantile golang application gc",
+    "query": "go_gc_duration_seconds",
+    "metrics": [
+      "go_gc_duration_seconds"
+    ]
+  },
+  {
+    "id": "6a86a257-37af-4556-8368-8cf4bf10c5ae",
+    "name": "GC duration quantile",
+    "question": "metric golang app runtime gc",
+    "query": "go_gc_duration_seconds",
+    "metrics": [
+      "go_gc_duration_seconds"
+    ]
+  },
+  {
+    "id": "a4c72f73-7964-46a4-82ec-e679c73ce46e",
+    "name": "GC duration quantile",
+    "question": "gc quantile golang application",
+    "query": "go_gc_duration_seconds",
+    "metrics": [
+      "go_gc_duration_seconds"
+    ]
+  }
+]

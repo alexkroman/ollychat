@@ -1,0 +1,10 @@
+[
+  {
+    "name": "CPU",
+    "description": "Provides an overview of Besu nodes",
+    "query": "irate(process_cpu_seconds_total[1m])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  }
+]

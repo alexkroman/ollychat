@@ -1,134 +1,134 @@
 [
   {
-    "id": "25a96ab4-c33d-4a0b-81da-ac008ee7c97b",
+    "id": "b0ce8a95-9195-4286-98cc-1731b5510e70",
     "name": "Python services (CPU%)",
-    "question": "cpu usage rate for python services",
+    "question": "cpu usage python services",
     "query": "rate(process_runtime_cpython_cpu_time_seconds_total[30m])*100",
     "metrics": [
       "process_runtime_cpython_cpu_time_seconds_total"
     ]
   },
   {
-    "id": "e40de6c2-2159-4e30-8595-354055e7fdb9",
+    "id": "0c3edc9d-8b72-4fc0-a1f3-00eee67639ab",
     "name": "Python services (CPU%)",
-    "question": "aggregated cpu for python services",
+    "question": "cpu python services",
     "query": "rate(process_runtime_cpython_cpu_time_seconds_total[30m])*100",
     "metrics": [
       "process_runtime_cpython_cpu_time_seconds_total"
     ]
   },
   {
-    "id": "a0bb267f-01ce-4f91-ace9-e53f890392af",
+    "id": "54e89d2e-4dfa-45ad-9a7b-5505c537d10c",
     "name": "Python services (CPU%)",
-    "question": "total cpu consumed by python services",
+    "question": "cpu spent python services",
     "query": "rate(process_runtime_cpython_cpu_time_seconds_total[30m])*100",
     "metrics": [
       "process_runtime_cpython_cpu_time_seconds_total"
     ]
   },
   {
-    "id": "5cf5cfe5-6bac-4125-af33-81bacde67396",
+    "id": "05c09276-ceb7-4074-8ab8-019ac212a14e",
     "name": "Python services (CPU%)",
-    "question": "rate of cpu usage for python services",
+    "question": "cpu usage python services",
     "query": "rate(process_runtime_cpython_cpu_time_seconds_total[30m])*100",
     "metrics": [
       "process_runtime_cpython_cpu_time_seconds_total"
     ]
   },
   {
-    "id": "fcd7f655-c5ad-44ba-aef9-240cd79f904b",
+    "id": "ef7a5d1d-1b84-490c-9768-c62e68e9694e",
     "name": "Python services (CPU%)",
-    "question": "cpu percentage of python services over time",
+    "question": "cpu python services",
     "query": "rate(process_runtime_cpython_cpu_time_seconds_total[30m])*100",
     "metrics": [
       "process_runtime_cpython_cpu_time_seconds_total"
     ]
   },
   {
-    "id": "80766271-4736-416b-9a23-dd4797e6706e",
+    "id": "0df82e73-292e-4df8-bcda-20cfc3df0775",
     "name": "Python services (CPU%)",
-    "question": "average cpu utilization of python services",
+    "question": "cpu python services",
     "query": "rate(process_runtime_cpython_cpu_time_seconds_total[30m])*100",
     "metrics": [
       "process_runtime_cpython_cpu_time_seconds_total"
     ]
   },
   {
-    "id": "18f10ab2-2028-4020-aa36-d5fcfae47b75",
+    "id": "963565c9-608e-476f-896e-cf888a91f76a",
     "name": "Python services (Memory)",
-    "question": "memory usage of python services",
+    "question": "memory usage python services",
     "query": "process_runtime_cpython_memory_bytes",
     "metrics": [
       "process_runtime_cpython_memory_bytes"
     ]
   },
   {
-    "id": "8b437017-5d2c-4c10-bef6-fd3fcbe63683",
+    "id": "4ac123fa-05a7-4c15-a83c-f5136699c771",
     "name": "Python services (Memory)",
-    "question": "current memory consumption by python services",
+    "question": "python services memory consumption",
     "query": "process_runtime_cpython_memory_bytes",
     "metrics": [
       "process_runtime_cpython_memory_bytes"
     ]
   },
   {
-    "id": "0a57ed1e-2045-4752-8b52-8ef69a83a594",
+    "id": "85643dc7-c392-46d8-bba1-95b0f1e44154",
     "name": "Python services (Memory)",
-    "question": "python services memory utilization",
+    "question": "memory usage python services",
     "query": "process_runtime_cpython_memory_bytes",
     "metrics": [
       "process_runtime_cpython_memory_bytes"
     ]
   },
   {
-    "id": "e1ca7c61-3bd9-4b5d-8bdc-322e65fde873",
+    "id": "3f4e2fb1-3103-4a5e-98ab-f6f954b3c37a",
     "name": "Recommendations Rate",
-    "question": "rate of recommendations counter over 30 minutes",
+    "question": "app recommendations counter 30 minutes",
     "query": "rate(app_recommendations_counter_total[30m])",
     "metrics": [
       "app_recommendations_counter_total"
     ]
   },
   {
-    "id": "232c8dd8-3219-43d5-8e6f-16435dd33155",
+    "id": "22558f90-3640-42c7-9872-cb6f0d4d1df3",
     "name": "Recommendations Rate",
-    "question": "average rate of app recommendations counter",
+    "question": "app recommendations counter averaged 30 minutes",
     "query": "rate(app_recommendations_counter_total[30m])",
     "metrics": [
       "app_recommendations_counter_total"
     ]
   },
   {
-    "id": "7a074fed-acc8-4f96-b284-b5d461900a72",
+    "id": "b1b441a8-b86c-4695-a317-d9fcadf0a8af",
     "name": "Recommendations Rate",
-    "question": "rate of recommendations counter per time interval",
+    "question": "app recommendations counter 30 minutes",
     "query": "rate(app_recommendations_counter_total[30m])",
     "metrics": [
       "app_recommendations_counter_total"
     ]
   },
   {
-    "id": "52774dfc-8b28-4fb3-845f-d7bfded142fa",
+    "id": "2053feb6-edf5-44c9-a592-fd6ceedc755d",
     "name": "Quote Service batch span processor",
-    "question": "rate of processed spans in quote service",
+    "question": "spans span processor",
     "query": "rate(otel_trace_span_processor_spans[2m])*120",
     "metrics": [
       "otel_trace_span_processor_spans"
     ]
   },
   {
-    "id": "5270a6da-81e0-46f8-ba63-59aff3acc46e",
+    "id": "7d09f88a-aecf-4eba-91d2-3694fc2bd657",
     "name": "Quote Service batch span processor",
-    "question": "aggregate span processing rate for quote service",
+    "question": "span processing",
     "query": "rate(otel_trace_span_processor_spans[2m])*120",
     "metrics": [
       "otel_trace_span_processor_spans"
     ]
   },
   {
-    "id": "e0dc6fc0-c6c6-48e0-af32-d521416b7ce9",
+    "id": "7068b37a-cd81-43ce-a2e5-c127b0852f0c",
     "name": "Quote Service batch span processor",
-    "question": "spans processed by batch span processor in quote service",
+    "question": "span processing 2 minutes",
     "query": "rate(otel_trace_span_processor_spans[2m])*120",
     "metrics": [
       "otel_trace_span_processor_spans"

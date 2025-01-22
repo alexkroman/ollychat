@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Uptime",
+    "description": "Dashboard for Traefik2/Prometheus, based upon the one by ichasco.  Updated for Traefik2 metric names.",
+    "query": "time() - process_start_time_seconds",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "name": "Used sockets",
+    "description": "Dashboard for Traefik2/Prometheus, based upon the one by ichasco.  Updated for Traefik2 metric names.",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  }
+]

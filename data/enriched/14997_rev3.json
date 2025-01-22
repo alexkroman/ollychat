@@ -1,0 +1,83 @@
+[
+  {
+    "id": "04823bea-8b4c-4362-8680-ed5da12c2f29",
+    "name": "Disk IO Utilization",
+    "question": "disk io",
+    "query": "(rate(node_disk_io_time_seconds_total[5m])/1000 or irate(node_disk_io_time_seconds_total[5m])/1000)",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "id": "34ea58ef-ee2a-4926-87d3-70673505bce2",
+    "name": "Disk IO Utilization",
+    "question": "disk io",
+    "query": "(rate(node_disk_io_time_seconds_total[5m])/1000 or irate(node_disk_io_time_seconds_total[5m])/1000)",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "id": "cb9e89c2-719f-4792-97f3-b2f56602713d",
+    "name": "Disk IO Utilization",
+    "question": "io divided 1000",
+    "query": "(rate(node_disk_io_time_seconds_total[5m])/1000 or irate(node_disk_io_time_seconds_total[5m])/1000)",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "id": "ef8e375e-41eb-4182-aa5d-603aa2bd1490",
+    "name": "Disk Reads Completed",
+    "question": "completed disk reads",
+    "query": "rate(node_disk_reads_completed_total[5m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "id": "cde150b5-3861-45ef-a52d-d282bca88c65",
+    "name": "Disk Reads Completed",
+    "question": "disk reads completion",
+    "query": "rate(node_disk_reads_completed_total[5m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "id": "4981a728-d127-424d-b606-01e8b61fed44",
+    "name": "Disk Reads Completed",
+    "question": "disk read",
+    "query": "rate(node_disk_reads_completed_total[5m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "id": "8cb23992-cdba-409b-9563-d55fbe8c7d64",
+    "name": "Disk Writes Completed",
+    "question": "completed disk writes",
+    "query": "rate(node_disk_writes_completed_total[5m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "id": "f428d1c1-00f1-4884-a2d4-c5c58dae6457",
+    "name": "Disk Writes Completed",
+    "question": "disk write completion",
+    "query": "rate(node_disk_writes_completed_total[5m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "id": "66b93366-98aa-48fd-94d5-8b2cc705cd81",
+    "name": "Disk Writes Completed",
+    "question": "disk writes completed",
+    "query": "rate(node_disk_writes_completed_total[5m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  }
+]

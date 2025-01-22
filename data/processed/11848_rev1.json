@@ -1,0 +1,18 @@
+[
+  {
+    "name": "CPU Usage vs Throttling Percent",
+    "description": "Detect/Diagnose CPU throttling for containers",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage vs Throttling Percent",
+    "description": "Detect/Diagnose CPU throttling for containers",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  }
+]

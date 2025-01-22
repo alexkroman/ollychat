@@ -1,10 +1,18 @@
 [
   {
-    "name": "API Server - Health Status",
+    "name": "API Server - CPU Usage by instance",
     "description": "This is a modern API Server dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
-    "query": "up",
+    "query": "rate(process_cpu_seconds_total[30m])",
     "metrics": [
-      "up"
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "API Server - Memory Usage by instance",
+    "description": "This is a modern API Server dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
     ]
   }
 ]

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "process memory",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "name": "process memory",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "name": "process memory deriv",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "rate(process_resident_memory_bytes[$interval])",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "name": "go memstats",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "go_memstats_alloc_bytes",
+    "metrics": [
+      "go_memstats_alloc_bytes"
+    ]
+  },
+  {
+    "name": "go memstats",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "rate(go_memstats_alloc_bytes_total[30s])",
+    "metrics": [
+      "go_memstats_alloc_bytes_total"
+    ]
+  },
+  {
+    "name": "go memstats",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "go_memstats_stack_inuse_bytes",
+    "metrics": [
+      "go_memstats_stack_inuse_bytes"
+    ]
+  },
+  {
+    "name": "go memstats",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "go_memstats_heap_inuse_bytes",
+    "metrics": [
+      "go_memstats_heap_inuse_bytes"
+    ]
+  },
+  {
+    "name": "go memstats deriv",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "rate(go_memstats_alloc_bytes_total[$interval])",
+    "metrics": [
+      "go_memstats_alloc_bytes_total"
+    ]
+  },
+  {
+    "name": "open fds",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "name": "Goroutines",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "go_goroutines",
+    "metrics": [
+      "go_goroutines"
+    ]
+  },
+  {
+    "name": "GC duration quantiles",
+    "description": "Process status published by Go Prometheus client library, e.g. memory used, fds open, GC details",
+    "query": "go_gc_duration_seconds",
+    "metrics": [
+      "go_gc_duration_seconds"
+    ]
+  }
+]

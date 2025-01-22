@@ -1,29 +1,164 @@
 [
   {
-    "id": "d8c64251-4718-47db-8f2d-20bf8f19f46a",
-    "name": "$service Metrics scrape duration",
-    "question": "scrape duration of service metrics",
-    "query": "scrape_duration_seconds",
+    "id": "4237c714-2f5c-41ff-a13c-4cd3b10b0531",
+    "name": "$service Process start time",
+    "question": "nodejs process start multiplied 1000",
+    "query": "(process_start_time_seconds)*1000",
     "metrics": [
-      "scrape_duration_seconds"
+      "process_start_time_seconds"
     ]
   },
   {
-    "id": "cc655b83-9167-41c5-82f5-cb3f86fbf661",
-    "name": "$service Metrics scrape duration",
-    "question": "service metrics scrape time",
-    "query": "scrape_duration_seconds",
+    "id": "c0c85e94-49a2-46dc-887b-f18f44fb95a3",
+    "name": "$service Process start time",
+    "question": "metric representing nodejs process start",
+    "query": "(process_start_time_seconds)*1000",
     "metrics": [
-      "scrape_duration_seconds"
+      "process_start_time_seconds"
     ]
   },
   {
-    "id": "f7126872-c912-4e6f-ad96-5a7c9f5b161e",
-    "name": "$service Metrics scrape duration",
-    "question": "duration of service metrics scraping",
-    "query": "scrape_duration_seconds",
+    "id": "c6391d4d-a884-45ad-bf26-27102892a290",
+    "name": "$service Process start time",
+    "question": "nodejs runtime process start",
+    "query": "(process_start_time_seconds)*1000",
     "metrics": [
-      "scrape_duration_seconds"
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "4590fbb7-d6b7-4c22-9050-dc1d66f14ac1",
+    "name": "$service Max file descriptors",
+    "question": "max file descriptors nodejs runtime",
+    "query": "process_max_fds",
+    "metrics": [
+      "process_max_fds"
+    ]
+  },
+  {
+    "id": "357ff5c4-1fdf-4804-b8d9-bfa949746d3f",
+    "name": "$service Max file descriptors",
+    "question": "process file descriptors metric",
+    "query": "process_max_fds",
+    "metrics": [
+      "process_max_fds"
+    ]
+  },
+  {
+    "id": "b28c910a-12e5-4087-bd65-ed934f05e574",
+    "name": "$service Max file descriptors",
+    "question": "nodejs services highest file descriptors count",
+    "query": "process_max_fds",
+    "metrics": [
+      "process_max_fds"
+    ]
+  },
+  {
+    "id": "7dfa535e-24fc-46ea-953d-02a38a8db56a",
+    "name": "$service Open file descriptors",
+    "question": "open file descriptors nodejs runtime",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "5e063f77-9218-48f5-accd-b6ec4b5169fb",
+    "name": "$service Open file descriptors",
+    "question": "count open file descriptors nodejs",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "a429554c-0fd2-46e7-86c7-8c62096f8e15",
+    "name": "$service Open file descriptors",
+    "question": "open file descriptors nodejs processes",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "150e27c7-ef00-4ed5-8a1f-8d105bb1cbbf",
+    "name": "% CPU usage",
+    "question": "cpu usage nodejs runtime",
+    "query": "rate(process_cpu_seconds_total[$interval])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f5b40f52-ef98-4ea7-b451-6eb7bd13b24b",
+    "name": "% CPU usage",
+    "question": "nodejs cpu consumption",
+    "query": "rate(process_cpu_seconds_total[$interval])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "6c76621e-5996-4e5c-8bf6-32e91f66355c",
+    "name": "% CPU usage",
+    "question": "cpu usage nodejs environment",
+    "query": "rate(process_cpu_seconds_total[$interval])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "51413dc9-b5df-452e-86be-816cba0d1751",
+    "name": "Process Memory",
+    "question": "resident memory nodejs processes",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "eb93dcea-7f67-44b6-a4b9-c25ded2a014d",
+    "name": "Process Memory",
+    "question": "nodejs process memory usage",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "f6522eb8-72c4-4b34-a40f-157ef664bcef",
+    "name": "Process Memory",
+    "question": "metrics nodejs process memory",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "cc1156e4-9bbb-47bf-b454-7d1f28f8e60a",
+    "name": "Process Memory",
+    "question": "retrieve virtual memory usage nodejs processes",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "71aad9ec-14e4-45e0-8df2-4c7cc8e6914b",
+    "name": "Process Memory",
+    "question": "query nodejs process virtual memory metrics",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "bc635c75-86ed-4b43-a799-df4eb2c59222",
+    "name": "Process Memory",
+    "question": "check nodejs runtime virtual memory consumption",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
     ]
   }
 ]

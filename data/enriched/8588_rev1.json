@@ -1,0 +1,113 @@
+[
+  {
+    "id": "86524edd-c988-4f23-b504-89b92cb017b6",
+    "name": "Deployment CPU usage",
+    "question": "cpu usage deployments",
+    "query": "sum (rate (container_cpu_usage_seconds_total[2m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "06428f98-23b1-4532-8516-4ba44c714035",
+    "name": "Deployment CPU usage",
+    "question": "cpu usage deployments relative machine cores",
+    "query": "sum (rate (container_cpu_usage_seconds_total[2m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "dfe87dfb-3ff7-4726-a156-d71214973b08",
+    "name": "Deployment CPU usage",
+    "question": "deployment cpu machine capacity",
+    "query": "sum (rate (container_cpu_usage_seconds_total[2m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "e4206091-9587-48e9-a3aa-4962a5b6c04d",
+    "name": "Used",
+    "question": "container memory working set",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "77a1d5c6-14ba-4db5-a97d-a19ee5e02401",
+    "name": "Used",
+    "question": "memory usage containers",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "30522914-ad73-4e4e-bf18-d95420383290",
+    "name": "Used",
+    "question": "memory containers",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "6f1fa8a1-4fd3-48e8-ace9-06956452c730",
+    "name": "Used",
+    "question": "container cpu usage",
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "f386bc04-ed2e-45ca-9daa-627eeb7ea8ab",
+    "name": "Used",
+    "question": "cpu usage across containers",
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "0c2a87dd-9c2d-4a68-abde-07f75d177fba",
+    "name": "Used",
+    "question": "cpu consumption containers",
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "22bfe248-8246-40c5-ab33-aa461b2d6b64",
+    "name": "Total",
+    "question": "machine cpu cores",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "88974193-c269-44a4-afdd-e3ca3559e461",
+    "name": "Total",
+    "question": "cpu cores cluster",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "1689b255-85b4-49ff-b666-7abc5e18d751",
+    "name": "Total",
+    "question": "aggregate cpu core count",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  }
+]

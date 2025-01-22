@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Disk IO Utilization",
+    "description": "MongoDB Prometheus Exporter Dashboard. A fork inspired from https://grafana.com/grafana/dashboards/2583 which is made to work well with https://github.com/percona/mongodb_exporter.",
+    "query": "(rate(node_disk_io_time_seconds_total[5m])/1000 or irate(node_disk_io_time_seconds_total[5m])/1000)",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "name": "Disk Reads Completed",
+    "description": "MongoDB Prometheus Exporter Dashboard. A fork inspired from https://grafana.com/grafana/dashboards/2583 which is made to work well with https://github.com/percona/mongodb_exporter.",
+    "query": "rate(node_disk_reads_completed_total[5m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "name": "Disk Writes Completed",
+    "description": "MongoDB Prometheus Exporter Dashboard. A fork inspired from https://grafana.com/grafana/dashboards/2583 which is made to work well with https://github.com/percona/mongodb_exporter.",
+    "query": "rate(node_disk_writes_completed_total[5m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  }
+]

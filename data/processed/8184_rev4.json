@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Pods CPU usage for $Namespace",
+    "description": "Displays Namespace utilization",
+    "query": "sum (rate (container_cpu_usage_seconds_total[2m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Total Pods memory usage for $Namespace",
+    "description": "Displays Namespace utilization",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Total Network I/O pressure for  $Namespace",
+    "description": "Displays Namespace utilization",
+    "query": "sum (rate (container_network_receive_bytes_total[2m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Total Network I/O pressure for  $Namespace",
+    "description": "Displays Namespace utilization",
+    "query": "- sum (rate (container_network_transmit_bytes_total[2m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  }
+]

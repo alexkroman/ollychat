@@ -1,0 +1,244 @@
+[
+  {
+    "name": "Running containers",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "count(container_last_seen)",
+    "metrics": [
+      "container_last_seen"
+    ]
+  },
+  {
+    "name": "CPU Usage on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(rate(process_cpu_seconds_total[$interval])) * 100",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(process_cpu_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total",
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Free and Used Disk Space on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "name": "Free and Used Disk Space on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "node_filesystem_size_bytes - node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "Available Memory on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "Available Memory on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "Available Memory on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "name": "Available Memory on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "Available Memory on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "Available Memory on Node",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "CPU Usage per Container (Stacked)",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(rate(container_cpu_usage_seconds_total[$interval])) by (name) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Memory Usage per Container (Stacked)",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(container_memory_rss) by (name)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "Memory Usage per Container (Stacked)",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "name": "Sent Network Traffic per Container",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(rate(container_network_transmit_bytes_total[$interval])) by (name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "Sent Network Traffic per Container",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "rate(container_network_transmit_bytes_total[$interval])",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "Cached Memory per Container (Stacked)",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "Cached Memory per Container (Stacked)",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "name": "Cached Memory per Container (Stacked)",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(container_memory_cache) by (name)",
+    "metrics": [
+      "container_memory_cache"
+    ]
+  },
+  {
+    "name": "Received Network Traffic per Container",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "sum(rate(container_network_receive_bytes_total[$interval])) by (name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Received Network Traffic per Container",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "- rate(container_network_transmit_bytes_total[$interval])",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "prometheus_build_info",
+    "metrics": [
+      "prometheus_build_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "node_exporter_build_info",
+    "metrics": [
+      "node_exporter_build_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "name": "",
+    "description": "A simple overview of the most important Docker host and container metrics. (cAdvisor/Prometheus)",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  }
+]

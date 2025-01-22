@@ -1,0 +1,56 @@
+[
+  {
+    "id": "0d82db27-0337-41f1-969f-f8e43038a180",
+    "name": "Uptime",
+    "question": "process uptime",
+    "query": "time() - process_start_time_seconds",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "915d50de-8f00-4ea4-ac72-ca350f179e59",
+    "name": "Uptime",
+    "question": "elapsed process start",
+    "query": "time() - process_start_time_seconds",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "5f0f2be5-4ff6-4d1a-8819-93edc37157e7",
+    "name": "Uptime",
+    "question": "process initialization",
+    "query": "time() - process_start_time_seconds",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "bb11b5c8-3a13-429e-af41-b465b2873d21",
+    "name": "Used sockets",
+    "question": "open sockets use",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "4012d3a5-2c69-4443-b054-1f831153a3e2",
+    "name": "Used sockets",
+    "question": "metric representing used sockets",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "4a285234-2d3e-4710-8356-fb3b12396bb1",
+    "name": "Used sockets",
+    "question": "count socket connections",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  }
+]

@@ -1,0 +1,818 @@
+[
+  {
+    "id": "4e29579d-ba44-4eec-8b26-467d25e14cf3",
+    "name": "Running containers",
+    "question": "count running containers",
+    "query": "count(container_last_seen)",
+    "metrics": [
+      "container_last_seen"
+    ]
+  },
+  {
+    "id": "f2bbc697-948e-4aa0-94a5-c08781ffa453",
+    "name": "Running containers",
+    "question": "containers",
+    "query": "count(container_last_seen)",
+    "metrics": [
+      "container_last_seen"
+    ]
+  },
+  {
+    "id": "cb0da49e-50c3-4862-8a0c-58421eda2770",
+    "name": "Running containers",
+    "question": "containers currently running",
+    "query": "count(container_last_seen)",
+    "metrics": [
+      "container_last_seen"
+    ]
+  },
+  {
+    "id": "1aef325c-d74d-4514-8776-bf78c07add04",
+    "name": "CPU Usage on Node",
+    "question": "cpu system usage containers",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "id": "c70f059f-ab61-4ae3-a40b-6036b45c439d",
+    "name": "CPU Usage on Node",
+    "question": "container cpu system usage",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "id": "98c37759-7ccc-4811-a53a-2a913b9c0302",
+    "name": "CPU Usage on Node",
+    "question": "cpu system usage across containers",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "id": "594bfc97-53ac-4c88-b422-a1d57919b7a6",
+    "name": "CPU Usage on Node",
+    "question": "aggregate cpu system usage node",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "id": "4282ebb8-901c-4122-bcbb-ddd143825d7d",
+    "name": "CPU Usage on Node",
+    "question": "cpu system node",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "id": "ffb10236-36aa-4bb4-bd7e-488c7e0f7b7a",
+    "name": "CPU Usage on Node",
+    "question": "cpu system node",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "id": "8a1892ad-e52c-418c-a64a-08e07807c2b5",
+    "name": "CPU Usage on Node",
+    "question": "cpu system containers",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "id": "d80882b7-e327-4e02-b4f5-7efc94fe3e6a",
+    "name": "CPU Usage on Node",
+    "question": "container cpu system usage",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "id": "b245211b-78c8-43c7-8bb2-7c304c02057c",
+    "name": "CPU Usage on Node",
+    "question": "cpu system across containers",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total"
+    ]
+  },
+  {
+    "id": "a7a3091a-31be-46d4-9f33-e19c86c0e7a2",
+    "name": "CPU Usage on Node",
+    "question": "aggregate cpu usage across processes",
+    "query": "sum(rate(process_cpu_seconds_total[$interval])) * 100",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "97818656-76da-4658-90c1-be2dc1934103",
+    "name": "CPU Usage on Node",
+    "question": "cpu consumption node",
+    "query": "sum(rate(process_cpu_seconds_total[$interval])) * 100",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "3891b1cb-4273-422c-82a9-0b99b2ad0a46",
+    "name": "CPU Usage on Node",
+    "question": "combined cpu usage docker host containers",
+    "query": "sum(rate(process_cpu_seconds_total[$interval])) * 100",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "afafe4b2-2fa5-4cf7-ab36-672a51834e95",
+    "name": "CPU Usage on Node",
+    "question": "combined cpu usage containers docker host",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(process_cpu_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total",
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "f6006e29-abde-4a7c-8fdb-ffb39519253d",
+    "name": "CPU Usage on Node",
+    "question": "cpu system across containers host",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(process_cpu_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total",
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "a659fbf1-51c1-4554-ad50-0d568b56091e",
+    "name": "CPU Usage on Node",
+    "question": "cpu system containers host",
+    "query": "sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(container_cpu_system_seconds_total[1m])) + sum(rate(process_cpu_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_system_seconds_total",
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "ceba0353-d7eb-4a43-bfa7-aa833c4f4c80",
+    "name": "Free and Used Disk Space on Node",
+    "question": "available disk space node",
+    "query": "node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "98e89a4f-3c28-4c07-bfd7-805a2d749263",
+    "name": "Free and Used Disk Space on Node",
+    "question": "disk space available node",
+    "query": "node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "65cd734a-0cf5-4142-9ffc-75e200b6b3a1",
+    "name": "Free and Used Disk Space on Node",
+    "question": "nodes free disk space",
+    "query": "node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "id": "5c897829-ff13-4344-bb29-3e8e95781e30",
+    "name": "Free and Used Disk Space on Node",
+    "question": "difference between node disk available space",
+    "query": "node_filesystem_size_bytes - node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "9e8fe8f7-00e9-4db1-83ed-9981b227ea1b",
+    "name": "Free and Used Disk Space on Node",
+    "question": "overview free used disk space node",
+    "query": "node_filesystem_size_bytes - node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "70d8f3c4-893a-442e-b540-9eadbc115f14",
+    "name": "Free and Used Disk Space on Node",
+    "question": "node filesystem capacity available space",
+    "query": "node_filesystem_size_bytes - node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "70716caf-742e-42b3-9d92-dfd59aa08eeb",
+    "name": "Available Memory on Node",
+    "question": "memory usage containers",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "aeb3490d-aece-40f8-b58a-1e37edd6017a",
+    "name": "Available Memory on Node",
+    "question": "resident set container memory",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "083657c8-68d3-4de0-94c1-5237b7bd4477",
+    "name": "Available Memory on Node",
+    "question": "memory rss metric docker hosts",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "44c6bc13-c655-4526-a107-9f002aca48e8",
+    "name": "Available Memory on Node",
+    "question": "memory usage containers",
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "ff669498-4c51-412d-828d-9f81d4ddee61",
+    "name": "Available Memory on Node",
+    "question": "aggregate memory rss containers",
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "a9975cdb-584a-449f-8e81-fd4876909e0f",
+    "name": "Available Memory on Node",
+    "question": "container memory rss metrics",
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "1c352e3c-c0f7-42d5-91cc-7dd9e51b6bf8",
+    "name": "Available Memory on Node",
+    "question": "memory usage docker containers",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "f59be5c0-4e8f-44cd-96b5-4e4bee1ba1ff",
+    "name": "Available Memory on Node",
+    "question": "container memory overview",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "1a81ae0c-a6fe-4491-a874-6218dd108114",
+    "name": "Available Memory on Node",
+    "question": "memory containers",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "42c786f2-0522-48b3-bec9-1aee3fb99473",
+    "name": "Available Memory on Node",
+    "question": "memory usage containers",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "46eb605b-fc25-4385-8d45-54a16b60837d",
+    "name": "Available Memory on Node",
+    "question": "resident set container memory",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "a890af00-fc14-4274-8a66-ddf8253fe68c",
+    "name": "Available Memory on Node",
+    "question": "rss memory metric docker containers",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "77696cfa-37fd-46ad-bdf1-836e0fea83c6",
+    "name": "Available Memory on Node",
+    "question": "memory usage all containers",
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "2986efef-8183-45f5-9b24-13b89828771e",
+    "name": "Available Memory on Node",
+    "question": "container memory rss",
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "c8dfce2e-5a20-49dd-b501-538acb24fe8b",
+    "name": "Available Memory on Node",
+    "question": "container memory rss across hosts",
+    "query": "sum(container_memory_rss)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "7b237e06-780d-4c46-93e4-7156f6d89557",
+    "name": "Available Memory on Node",
+    "question": "memory usage docker containers",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "51966d28-b8a0-47e9-a5bd-b0220d0a775f",
+    "name": "Available Memory on Node",
+    "question": "rss memory containers docker host",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "1e84878c-accb-4eac-b7b6-11a3c85717cf",
+    "name": "Available Memory on Node",
+    "question": "overview docker host container memory",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "8399015c-ec8e-4f83-90f6-3bb30e8201d7",
+    "name": "CPU Usage per Container (Stacked)",
+    "question": "stacked cpu usage container",
+    "query": "sum(rate(container_cpu_usage_seconds_total[$interval])) by (name) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "ee2e9854-9bbc-4993-ae41-3035e9a285e3",
+    "name": "CPU Usage per Container (Stacked)",
+    "question": "aggregate cpu container",
+    "query": "sum(rate(container_cpu_usage_seconds_total[$interval])) by (name) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "1858d4ae-06da-494e-b131-f16ae0942030",
+    "name": "CPU Usage per Container (Stacked)",
+    "question": "cpu consumption container",
+    "query": "sum(rate(container_cpu_usage_seconds_total[$interval])) by (name) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "4003124c-8999-4909-9534-7e3268d0aaee",
+    "name": "Memory Usage per Container (Stacked)",
+    "question": "stacked memory usage container name",
+    "query": "sum(container_memory_rss) by (name)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "3161f5f3-5a9e-4077-9624-9eb40c856610",
+    "name": "Memory Usage per Container (Stacked)",
+    "question": "memory rss container name",
+    "query": "sum(container_memory_rss) by (name)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "3f2b2d1c-bfeb-4611-af58-1af64fb52292",
+    "name": "Memory Usage per Container (Stacked)",
+    "question": "memory rss grouped container name",
+    "query": "sum(container_memory_rss) by (name)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "b4e90e3d-1474-48b3-8860-3acc257a9c94",
+    "name": "Memory Usage per Container (Stacked)",
+    "question": "memory usage container",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "5d8125e9-d2db-481e-9b5f-8829bf6f8846",
+    "name": "Memory Usage per Container (Stacked)",
+    "question": "stacked container memory",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "38d50447-7516-473f-add5-4b5d15419a64",
+    "name": "Memory Usage per Container (Stacked)",
+    "question": "container memory consumption",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "16a37f9b-c865-43ab-87e3-9e12fba2a071",
+    "name": "Sent Network Traffic per Container",
+    "question": "sent network traffic container",
+    "query": "sum(rate(container_network_transmit_bytes_total[$interval])) by (name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "225cec75-3fac-4220-9ae0-ebafc364e743",
+    "name": "Sent Network Traffic per Container",
+    "question": "network transmit container",
+    "query": "sum(rate(container_network_transmit_bytes_total[$interval])) by (name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "aa81720c-77e1-4384-8718-b01dc6ba5c45",
+    "name": "Sent Network Traffic per Container",
+    "question": "network data transmission container",
+    "query": "sum(rate(container_network_transmit_bytes_total[$interval])) by (name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "f93f8281-dd78-4423-9473-d501893dd8d8",
+    "name": "Sent Network Traffic per Container",
+    "question": "sent network traffic container",
+    "query": "rate(container_network_transmit_bytes_total[$interval])",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "18b3be85-fbe6-4345-a832-0ff668c63a7e",
+    "name": "Sent Network Traffic per Container",
+    "question": "transmitted network container",
+    "query": "rate(container_network_transmit_bytes_total[$interval])",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "871b64ec-2291-40fb-b517-6429cd2aa3c7",
+    "name": "Sent Network Traffic per Container",
+    "question": "network traffic containers",
+    "query": "rate(container_network_transmit_bytes_total[$interval])",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "f8b75ed0-09e4-4bae-8d28-908779fcaeed",
+    "name": "Cached Memory per Container (Stacked)",
+    "question": "rss memory usage container",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "fd2d8f04-b0fb-40ab-be5b-cc18488aa1f2",
+    "name": "Cached Memory per Container (Stacked)",
+    "question": "stacked memory footprint container",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "d8e4d556-e021-4de0-bbdd-9d65b4aec350",
+    "name": "Cached Memory per Container (Stacked)",
+    "question": "container memory usage rss breakdown",
+    "query": "container_memory_rss",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "id": "a44e4264-1f22-4af9-936d-436fed474399",
+    "name": "Cached Memory per Container (Stacked)",
+    "question": "memory usage container",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "acbbdf35-a1a3-436f-8237-053da54893b4",
+    "name": "Cached Memory per Container (Stacked)",
+    "question": "memory consumption containers",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "497efb53-eedc-4ce7-b960-ff135628d1b0",
+    "name": "Cached Memory per Container (Stacked)",
+    "question": "aggregate memory usage docker containers",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "7994ef13-4f65-49a2-a8cf-5e68761b4d21",
+    "name": "Cached Memory per Container (Stacked)",
+    "question": "cached memory container",
+    "query": "sum(container_memory_cache) by (name)",
+    "metrics": [
+      "container_memory_cache"
+    ]
+  },
+  {
+    "id": "9c0e7f76-db01-4a30-8bff-9a1e8a4a586b",
+    "name": "Cached Memory per Container (Stacked)",
+    "question": "memory cache container",
+    "query": "sum(container_memory_cache) by (name)",
+    "metrics": [
+      "container_memory_cache"
+    ]
+  },
+  {
+    "id": "a19ebece-aa1c-4504-a5ea-4c90a436fcbf",
+    "name": "Cached Memory per Container (Stacked)",
+    "question": "memory cache containers",
+    "query": "sum(container_memory_cache) by (name)",
+    "metrics": [
+      "container_memory_cache"
+    ]
+  },
+  {
+    "id": "a248d4af-c123-4628-a31f-938294d42055",
+    "name": "Received Network Traffic per Container",
+    "question": "summed network traffic received container",
+    "query": "sum(rate(container_network_receive_bytes_total[$interval])) by (name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "07dad1c0-82dd-4949-ae96-3110e12f61f2",
+    "name": "Received Network Traffic per Container",
+    "question": "container network receive",
+    "query": "sum(rate(container_network_receive_bytes_total[$interval])) by (name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "ccd1beb8-9678-4585-8114-13d5354e4d6c",
+    "name": "Received Network Traffic per Container",
+    "question": "received container",
+    "query": "sum(rate(container_network_receive_bytes_total[$interval])) by (name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "b512283e-bf20-46d6-825e-f932f5d8c606",
+    "name": "Received Network Traffic per Container",
+    "question": "network traffic received containers",
+    "query": "- rate(container_network_transmit_bytes_total[$interval])",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "85d2be15-c542-413c-9021-5a48089164bd",
+    "name": "Received Network Traffic per Container",
+    "question": "network transmit container",
+    "query": "- rate(container_network_transmit_bytes_total[$interval])",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "2ab7d401-781c-4118-9968-8840e0df7153",
+    "name": "Received Network Traffic per Container",
+    "question": "network data transmitted container",
+    "query": "- rate(container_network_transmit_bytes_total[$interval])",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "dcc2922b-e702-480e-b331-2145f381709a",
+    "name": "",
+    "question": "version information cadvisor",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "684f173b-4d1e-4cd2-9697-09a9d41d5533",
+    "name": "",
+    "question": "metrics docker host containers",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "455dcac9-d08e-4430-9621-a096f7de2f5a",
+    "name": "",
+    "question": "overview cadvisor prometheus metrics",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "f17c1278-fbf5-43b5-96e2-69f57e3d3b7a",
+    "name": "",
+    "question": "retrieve prometheus build information",
+    "query": "prometheus_build_info",
+    "metrics": [
+      "prometheus_build_info"
+    ]
+  },
+  {
+    "id": "83ccc88c-98cc-4f57-b7b3-199f1115cde5",
+    "name": "",
+    "question": "query cadvisorprometheus metrics",
+    "query": "prometheus_build_info",
+    "metrics": [
+      "prometheus_build_info"
+    ]
+  },
+  {
+    "id": "92dd6b43-28ff-4fc9-bcbb-807b7d28e3cd",
+    "name": "",
+    "question": "get key docker host container metrics",
+    "query": "prometheus_build_info",
+    "metrics": [
+      "prometheus_build_info"
+    ]
+  },
+  {
+    "id": "83b2cde8-02c6-4d08-a4cd-ba36db965478",
+    "name": "",
+    "question": "retrieve node exporter build information",
+    "query": "node_exporter_build_info",
+    "metrics": [
+      "node_exporter_build_info"
+    ]
+  },
+  {
+    "id": "33c40d97-53ef-45c2-856b-7f9df6605d56",
+    "name": "",
+    "question": "get details about node exporter build",
+    "query": "node_exporter_build_info",
+    "metrics": [
+      "node_exporter_build_info"
+    ]
+  },
+  {
+    "id": "b47ca8a1-7b52-4844-9501-41d515282dab",
+    "name": "",
+    "question": "fetch node exporter build info metrics",
+    "query": "node_exporter_build_info",
+    "metrics": [
+      "node_exporter_build_info"
+    ]
+  },
+  {
+    "id": "4e18d74d-c2fc-4c4f-92b0-fbd1135812d4",
+    "name": "",
+    "question": "docker host container version info",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "bd23ffc8-c935-4b8f-9c49-9a3c0a8d8f92",
+    "name": "",
+    "question": "overview cadvisorprometheus version",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "22739100-6c06-41d5-8bd3-c75f934fffb9",
+    "name": "",
+    "question": "metrics docker host container versions",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "b83f2657-c652-4033-a88f-b4c356b9f1ef",
+    "name": "",
+    "question": "version information cadvisor",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "c6554b65-7bcc-49e7-a428-b817e26e0eb7",
+    "name": "",
+    "question": "docker host container metrics version details",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "4d59c1b0-d991-4984-ab88-4df9dbf44d48",
+    "name": "",
+    "question": "cadvisor prometheus version status",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "0f98575b-7b6f-4767-843d-eb1b2a82375f",
+    "name": "",
+    "question": "retrieve cadvisor version information",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "258e546f-51fa-401c-831b-b25b85c403ed",
+    "name": "",
+    "question": "get cadvisor version details",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  },
+  {
+    "id": "c13e1b75-c667-4260-93a1-ff2d9d8cb598",
+    "name": "",
+    "question": "query cadvisor version info",
+    "query": "cadvisor_version_info",
+    "metrics": [
+      "cadvisor_version_info"
+    ]
+  }
+]

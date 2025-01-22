@@ -1,0 +1,191 @@
+[
+  {
+    "id": "81c2ce80-d4e7-47da-9ab0-1e16cddce29d",
+    "name": "Disk I/O (Bytes)",
+    "question": "disk read cluster",
+    "query": "sum by (cluster) (rate (container_fs_reads_bytes_total[30m])) ",
+    "metrics": [
+      "container_fs_reads_bytes_total"
+    ]
+  },
+  {
+    "id": "2ebc290f-9b2c-4bb8-94de-d1ce3190a18a",
+    "name": "Disk I/O (Bytes)",
+    "question": "disk read cluster",
+    "query": "sum by (cluster) (rate (container_fs_reads_bytes_total[30m])) ",
+    "metrics": [
+      "container_fs_reads_bytes_total"
+    ]
+  },
+  {
+    "id": "64758b95-350b-4bdd-93f8-377211a1b38b",
+    "name": "Disk I/O (Bytes)",
+    "question": "aggregate read grouped cluster",
+    "query": "sum by (cluster) (rate (container_fs_reads_bytes_total[30m])) ",
+    "metrics": [
+      "container_fs_reads_bytes_total"
+    ]
+  },
+  {
+    "id": "8fdbf0ba-3e82-49d4-bd86-91a122dcc8ec",
+    "name": "Disk I/O (Bytes)",
+    "question": "writes cluster",
+    "query": "-sum by (cluster)(rate (container_fs_writes_bytes_total[30m]))",
+    "metrics": [
+      "container_fs_writes_bytes_total"
+    ]
+  },
+  {
+    "id": "ed0a86ea-8e8d-4108-ba2d-0069fc76d4e7",
+    "name": "Disk I/O (Bytes)",
+    "question": "container disk writes",
+    "query": "-sum by (cluster)(rate (container_fs_writes_bytes_total[30m]))",
+    "metrics": [
+      "container_fs_writes_bytes_total"
+    ]
+  },
+  {
+    "id": "fd1703c6-0c5c-4745-9222-c49725e16995",
+    "name": "Disk I/O (Bytes)",
+    "question": "writes cluster",
+    "query": "-sum by (cluster)(rate (container_fs_writes_bytes_total[30m]))",
+    "metrics": [
+      "container_fs_writes_bytes_total"
+    ]
+  },
+  {
+    "id": "067dd266-687e-4118-ab7b-c6caf1da923e",
+    "name": "Disk I/O (IOPS)",
+    "question": "reads iops cluster",
+    "query": "sum by (cluster)(rate (container_fs_reads_total[30m])) ",
+    "metrics": [
+      "container_fs_reads_total"
+    ]
+  },
+  {
+    "id": "c9090cc3-597d-447b-bc43-d2ff76013f86",
+    "name": "Disk I/O (IOPS)",
+    "question": "reads iops cluster",
+    "query": "sum by (cluster)(rate (container_fs_reads_total[30m])) ",
+    "metrics": [
+      "container_fs_reads_total"
+    ]
+  },
+  {
+    "id": "e551187b-80a7-4b05-92d1-137978c54048",
+    "name": "Disk I/O (IOPS)",
+    "question": "reads iops grouped cluster",
+    "query": "sum by (cluster)(rate (container_fs_reads_total[30m])) ",
+    "metrics": [
+      "container_fs_reads_total"
+    ]
+  },
+  {
+    "id": "472f9c48-676d-4252-9d78-ffe5a4b939b0",
+    "name": "Disk I/O (IOPS)",
+    "question": "writes cluster",
+    "query": "-sum by (cluster)(rate (container_fs_writes_total[30m]))",
+    "metrics": [
+      "container_fs_writes_total"
+    ]
+  },
+  {
+    "id": "32cfb9be-7347-4f8d-b06c-d62a4b0a11c8",
+    "name": "Disk I/O (IOPS)",
+    "question": "writes grouped cluster",
+    "query": "-sum by (cluster)(rate (container_fs_writes_total[30m]))",
+    "metrics": [
+      "container_fs_writes_total"
+    ]
+  },
+  {
+    "id": "a76d4580-c238-4da8-88c5-afd1d13469d0",
+    "name": "Disk I/O (IOPS)",
+    "question": "summed writes cluster",
+    "query": "-sum by (cluster)(rate (container_fs_writes_total[30m]))",
+    "metrics": [
+      "container_fs_writes_total"
+    ]
+  },
+  {
+    "id": "f1285944-4467-4957-a307-b8f4467875e9",
+    "name": "Network I/O",
+    "question": "network receive cluster",
+    "query": "sum by (cluster)(rate (container_network_receive_bytes_total[30m])) ",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "4126e0e4-09a3-4211-9d19-5ac7e713664d",
+    "name": "Network I/O",
+    "question": "network receive cluster",
+    "query": "sum by (cluster)(rate (container_network_receive_bytes_total[30m])) ",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "a2390e83-8a38-47df-bc36-52973faf8d1a",
+    "name": "Network I/O",
+    "question": "network receive grouped cluster",
+    "query": "sum by (cluster)(rate (container_network_receive_bytes_total[30m])) ",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "9b7576db-e7df-4563-8e33-284135cca988",
+    "name": "Network I/O",
+    "question": "network transmit cluster",
+    "query": "-sum by (cluster)(rate (container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "85f595e3-9912-468b-afab-6750857ff1c3",
+    "name": "Network I/O",
+    "question": "network transmitted cluster",
+    "query": "-sum by (cluster)(rate (container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "88dcf3a8-c8d8-4d30-82fe-f8b846f20ff3",
+    "name": "Network I/O",
+    "question": "network transmission grouped cluster",
+    "query": "-sum by (cluster)(rate (container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "e45984c2-aa48-4cc1-bf7d-825a5cf53d54",
+    "name": "OOM Kills",
+    "question": "oom kills cluster",
+    "query": "sum by (cluster)(node_vmstat_oom_kill)",
+    "metrics": [
+      "node_vmstat_oom_kill"
+    ]
+  },
+  {
+    "id": "1edaf471-6f91-48ae-94dd-ac76b47f9e07",
+    "name": "OOM Kills",
+    "question": "oom kill counts cluster",
+    "query": "sum by (cluster)(node_vmstat_oom_kill)",
+    "metrics": [
+      "node_vmstat_oom_kill"
+    ]
+  },
+  {
+    "id": "91a0cd2f-ad35-4cab-8cfb-1662e0aabbbd",
+    "name": "OOM Kills",
+    "question": "oom kills grouped cluster",
+    "query": "sum by (cluster)(node_vmstat_oom_kill)",
+    "metrics": [
+      "node_vmstat_oom_kill"
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Memory Usage (w/o cache)",
+    "description": "Grafana dashboard to display external-dns metrics",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Memory Quota",
+    "description": "Grafana dashboard to display external-dns metrics",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Memory Quota",
+    "description": "Grafana dashboard to display external-dns metrics",
+    "query": "sum(container_memory_rss) by (pod)",
+    "metrics": [
+      "container_memory_rss"
+    ]
+  },
+  {
+    "name": "Memory Quota",
+    "description": "Grafana dashboard to display external-dns metrics",
+    "query": "sum(container_memory_cache) by (pod)",
+    "metrics": [
+      "container_memory_cache"
+    ]
+  },
+  {
+    "name": "Memory Quota",
+    "description": "Grafana dashboard to display external-dns metrics",
+    "query": "sum(container_memory_swap) by (pod)",
+    "metrics": [
+      "container_memory_swap"
+    ]
+  }
+]

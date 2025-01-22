@@ -1,0 +1,656 @@
+[
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "node_uname_info - 0",
+    "metrics": [
+      "node_uname_info"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "sum(time() - node_boot_time_seconds)by(instance)",
+    "metrics": [
+      "node_boot_time_seconds"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "node_memory_MemTotal_bytes - 0",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "count(node_cpu_seconds_total) by (instance)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "(1 - avg(rate(node_cpu_seconds_total[$interval])) by (instance)) * 100",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "max((node_filesystem_size_bytes-node_filesystem_free_bytes) *100/(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes)))by(instance)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "max(rate(node_disk_read_bytes_total[$interval])) by (instance)",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "max(rate(node_disk_written_bytes_total[$interval])) by (instance)",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "node_netstat_Tcp_CurrEstab - 0",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "node_sockstat_TCP_tw - 0",
+    "metrics": [
+      "node_sockstat_TCP_tw"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "max(rate(node_network_receive_bytes_total[$interval])*8) by (instance)",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Server Resource Overview【JOB：$job，Total：$total】",
+    "description": "Partition utilization, disk read, disk write, download bandwidth, upload bandwidth, if there are multiple network cards or multiple partitions, it is the value of the network card or partition with the highest utilization rate collected.\n\nCurrEstab: The number of TCP connections whose current status is ESTABLISHED or CLOSE-WAIT.",
+    "query": "max(rate(node_network_transmit_bytes_total[$interval])*8) by (instance)",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "sum(node_load5)",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "name": "$job：Overall total 5m load & average CPU used%",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "avg(1 - avg(rate(node_cpu_seconds_total[$interval])) by (instance)) * 100",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "$job：Overall total memory & average memory used%",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "$job：Overall total memory & average memory used%",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "$job：Overall total memory & average memory used%",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "(sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes))*100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Uptime",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "avg(time() - node_boot_time_seconds)",
+    "metrics": [
+      "node_boot_time_seconds"
+    ]
+  },
+  {
+    "name": "",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "100 - (avg(rate(node_cpu_seconds_total[$interval])) * 100)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "avg(rate(node_cpu_seconds_total[$interval])) * 100",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes)*100 /(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "(1 - ((node_memory_SwapFree_bytes + 1)/ (node_memory_SwapTotal_bytes + 1))) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "description": "In this kanban: the total disk, usage, available, and usage rate are consistent with the values of the Size, Used, Avail, and Use% columns of the df command, and the value of Use% will be rounded to one decimal place, which will be more accurate .\n\nNote: The Use% algorithm in df is: (size-free) * 100 / (avail + (size-free)), the result is divisible by this value, non-divisible by this value is +1, and the unit of the result is %.\nRefer to the df command source code:",
+    "query": "node_filesystem_size_bytes-0",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "description": "In this kanban: the total disk, usage, available, and usage rate are consistent with the values of the Size, Used, Avail, and Use% columns of the df command, and the value of Use% will be rounded to one decimal place, which will be more accurate .\n\nNote: The Use% algorithm in df is: (size-free) * 100 / (avail + (size-free)), the result is divisible by this value, non-divisible by this value is +1, and the unit of the result is %.\nRefer to the df command source code:",
+    "query": "node_filesystem_avail_bytes -0",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "name": "【$show_hostname】：Disk Space Used Basic(EXT?/XFS)",
+    "description": "In this kanban: the total disk, usage, available, and usage rate are consistent with the values of the Size, Used, Avail, and Use% columns of the df command, and the value of Use% will be rounded to one decimal place, which will be more accurate .\n\nNote: The Use% algorithm in df is: (size-free) * 100 / (avail + (size-free)), the result is divisible by this value, non-divisible by this value is +1, and the unit of the result is %.\nRefer to the df command source code:",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes) *100/(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "CPU iowait",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "avg(rate(node_cpu_seconds_total[$interval])) * 100",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Internet traffic per hour $device",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "increase(node_network_receive_bytes_total[60m])",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Internet traffic per hour $device",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "increase(node_network_transmit_bytes_total[60m])",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "CPU Cores",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Free inodes:$maxmount ",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "avg(node_filesystem_files_free)",
+    "metrics": [
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "name": "Total RAM",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Total filefd",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "avg(node_filefd_maximum)",
+    "metrics": [
+      "node_filefd_maximum"
+    ]
+  },
+  {
+    "name": "CPU% Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "avg(rate(node_cpu_seconds_total[$interval])) by (instance) *100",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU% Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "avg(rate(node_cpu_seconds_total[$interval])) by (instance) *100",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU% Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "avg(rate(node_cpu_seconds_total[$interval])) by (instance) *100",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU% Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "(1 - avg(rate(node_cpu_seconds_total[$interval])) by (instance))*100",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Memory Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "name": "Memory Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_memory_Buffers_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "name": "Memory Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "name": "Memory Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "name": "Memory Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_memory_MemTotal_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes + node_memory_MemFree_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "(1 - (node_memory_MemAvailable_bytes / (node_memory_MemTotal_bytes)))* 100",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Network bandwidth usage per second $device",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "rate(node_network_receive_bytes_total[$interval])*8",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network bandwidth usage per second $device",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "rate(node_network_transmit_bytes_total[$interval])*8",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "System Load",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "name": "System Load",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "name": "System Load",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "name": "Disk R/W Data",
+    "description": "Per second read / write bytes ",
+    "query": "rate(node_disk_read_bytes_total[$interval])",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "name": "Disk R/W Data",
+    "description": "Per second read / write bytes ",
+    "query": "rate(node_disk_written_bytes_total[$interval])",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "name": "Disk Space Used% Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "(node_filesystem_size_bytes-node_filesystem_free_bytes) *100/(node_filesystem_avail_bytes +(node_filesystem_size_bytes-node_filesystem_free_bytes))",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "Disk Space Used% Basic",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_filesystem_files_free / node_filesystem_files",
+    "metrics": [
+      "node_filesystem_files",
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "name": "Disk IOps Completed（IOPS）",
+    "description": "Read/write completions per second\n\nWrites completed: 每个磁盘分区每秒写完成次数\n\nIO now 每个磁盘分区每秒正在处理的输入/输出请求数",
+    "query": "rate(node_disk_reads_completed_total[$interval])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "name": "Disk IOps Completed（IOPS）",
+    "description": "Read/write completions per second\n\nWrites completed: 每个磁盘分区每秒写完成次数\n\nIO now 每个磁盘分区每秒正在处理的输入/输出请求数",
+    "query": "rate(node_disk_writes_completed_total[$interval])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "name": "Disk IOps Completed（IOPS）",
+    "description": "Read/write completions per second\n\nWrites completed: 每个磁盘分区每秒写完成次数\n\nIO now 每个磁盘分区每秒正在处理的输入/输出请求数",
+    "query": "node_disk_io_now",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  },
+  {
+    "name": "Time Spent Doing I/Os",
+    "description": "The time spent on I/O in the natural time of each second.（wall-clock time）",
+    "query": "rate(node_disk_io_time_seconds_total[$interval])",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "name": "Disk R/W Time(Reference: less than 100ms)(beta)",
+    "description": "Time spent on each read/write operation",
+    "query": "rate(node_disk_read_time_seconds_total[$interval]) / rate(node_disk_reads_completed_total[$interval])",
+    "metrics": [
+      "node_disk_read_time_seconds_total",
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "name": "Disk R/W Time(Reference: less than 100ms)(beta)",
+    "description": "Time spent on each read/write operation",
+    "query": "rate(node_disk_write_time_seconds_total[$interval]) / rate(node_disk_writes_completed_total[$interval])",
+    "metrics": [
+      "node_disk_write_time_seconds_total",
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "name": "Disk R/W Time(Reference: less than 100ms)(beta)",
+    "description": "Time spent on each read/write operation",
+    "query": "rate(node_disk_io_time_seconds_total[$interval])",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "name": "Disk R/W Time(Reference: less than 100ms)(beta)",
+    "description": "Time spent on each read/write operation",
+    "query": "rate(node_disk_io_time_weighted_seconds_total[$interval])",
+    "metrics": [
+      "node_disk_io_time_weighted_seconds_total"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "node_netstat_Tcp_CurrEstab",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "node_sockstat_TCP_tw",
+    "metrics": [
+      "node_sockstat_TCP_tw"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "node_sockstat_sockets_used",
+    "metrics": [
+      "node_sockstat_sockets_used"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "node_sockstat_UDP_inuse",
+    "metrics": [
+      "node_sockstat_UDP_inuse"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "node_sockstat_TCP_alloc",
+    "metrics": [
+      "node_sockstat_TCP_alloc"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "rate(node_netstat_Tcp_PassiveOpens[$interval])",
+    "metrics": [
+      "node_netstat_Tcp_PassiveOpens"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "rate(node_netstat_Tcp_ActiveOpens[$interval])",
+    "metrics": [
+      "node_netstat_Tcp_ActiveOpens"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "rate(node_netstat_Tcp_InSegs[$interval])",
+    "metrics": [
+      "node_netstat_Tcp_InSegs"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "rate(node_netstat_Tcp_OutSegs[$interval])",
+    "metrics": [
+      "node_netstat_Tcp_OutSegs"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "rate(node_netstat_Tcp_RetransSegs[$interval])",
+    "metrics": [
+      "node_netstat_Tcp_RetransSegs"
+    ]
+  },
+  {
+    "name": "Network Sockstat",
+    "description": "Sockets_used - Sockets currently in use\n\nCurrEstab - TCP connections for which the current state is either ESTABLISHED or CLOSE- WAIT\n\nTCP_alloc - Allocated sockets\n\nTCP_tw - Sockets wating close\n\nUDP_inuse - Udp sockets currently in use\n\nRetransSegs - TCP retransmission packets\n\nOutSegs - Number of packets sent by TCP\n\nInSegs - Number of packets received by TCP",
+    "query": "rate(node_netstat_TcpExt_ListenDrops[$interval])",
+    "metrics": [
+      "node_netstat_TcpExt_ListenDrops"
+    ]
+  },
+  {
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "node_filefd_allocated",
+    "metrics": [
+      "node_filefd_allocated"
+    ]
+  },
+  {
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "rate(node_context_switches_total[$interval])",
+    "metrics": [
+      "node_context_switches_total"
+    ]
+  },
+  {
+    "name": "Open  File Descriptor(left)/Context switches(right)",
+    "description": "【English version】Update 2020.10.10, add the overall resource overview! Support Grafana6&7,Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+    "query": "  (node_filefd_allocated/node_filefd_maximum) *100",
+    "metrics": [
+      "node_filefd_allocated",
+      "node_filefd_maximum"
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Deployment CPU usage",
+    "description": "Monitors Kubernetes deployments in cluster using Prometheus. Shows overall cluster CPU / Memory of deployments, replicas in each deployment. Uses Kube state metrics and cAdvisor metrics (741)",
+    "query": "sum (rate (container_cpu_usage_seconds_total[2m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "Monitors Kubernetes deployments in cluster using Prometheus. Shows overall cluster CPU / Memory of deployments, replicas in each deployment. Uses Kube state metrics and cAdvisor metrics (741)",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "Monitors Kubernetes deployments in cluster using Prometheus. Shows overall cluster CPU / Memory of deployments, replicas in each deployment. Uses Kube state metrics and cAdvisor metrics (741)",
+    "query": "sum (rate (container_cpu_usage_seconds_total[1m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "Monitors Kubernetes deployments in cluster using Prometheus. Shows overall cluster CPU / Memory of deployments, replicas in each deployment. Uses Kube state metrics and cAdvisor metrics (741)",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  }
+]

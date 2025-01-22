@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Network - Bandwidth",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(rate(container_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network - Bandwidth",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "- sum(rate(container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "Network - Packets Rate",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(rate(container_network_receive_packets_total[30m]))",
+    "metrics": [
+      "container_network_receive_packets_total"
+    ]
+  },
+  {
+    "name": "Network - Packets Rate",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "- sum(rate(container_network_transmit_packets_total[30m]))",
+    "metrics": [
+      "container_network_transmit_packets_total"
+    ]
+  },
+  {
+    "name": "Network - Packets Dropped",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(rate(container_network_receive_packets_dropped_total[30m]))",
+    "metrics": [
+      "container_network_receive_packets_dropped_total"
+    ]
+  },
+  {
+    "name": "Network - Packets Dropped",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "- sum(rate(container_network_transmit_packets_dropped_total[30m]))",
+    "metrics": [
+      "container_network_transmit_packets_dropped_total"
+    ]
+  },
+  {
+    "name": "Network - Errors",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(rate(container_network_receive_errors_total[30m]))",
+    "metrics": [
+      "container_network_receive_errors_total"
+    ]
+  },
+  {
+    "name": "Network - Errors",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "- sum(rate(container_network_transmit_errors_total[30m]))",
+    "metrics": [
+      "container_network_transmit_errors_total"
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "HTTP Probe Overview",
+    "description": "Blackbox exporter HTTP prober dashboard",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "HTTP Probe Overview",
+    "description": "Blackbox exporter HTTP prober dashboard",
+    "query": "probe_http_ssl > 0",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "name": "HTTP Probe Overview",
+    "description": "Blackbox exporter HTTP prober dashboard",
+    "query": "probe_http_status_code > 0",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "HTTP Probe Overview",
+    "description": "Blackbox exporter HTTP prober dashboard",
+    "query": "avg_over_time(probe_duration_seconds[1m])",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "name": "HTTP Probe Overview",
+    "description": "Blackbox exporter HTTP prober dashboard",
+    "query": "avg_over_time(probe_dns_lookup_time_seconds[1m])",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "name": "HTTP Probe Duration",
+    "description": "Returns how long the probe took to complete in seconds",
+    "query": "sum(probe_http_duration_seconds) by (instance)",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "undefined",
+    "description": "Excluding cache",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Memory Usage (w/o cache)",
+    "description": "",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  }
+]

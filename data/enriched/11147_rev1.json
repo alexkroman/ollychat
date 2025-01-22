@@ -1,0 +1,506 @@
+[
+  {
+    "id": "f6d15268-1c5a-46e4-a1fd-135a50e294a8",
+    "name": "",
+    "question": "information about openwrt routers node uname",
+    "query": "node_uname_info",
+    "metrics": [
+      "node_uname_info"
+    ]
+  },
+  {
+    "id": "72eddff9-1b12-470c-ade0-84c5828e6f38",
+    "name": "",
+    "question": "details openwrt routers lua scripts",
+    "query": "node_uname_info",
+    "metrics": [
+      "node_uname_info"
+    ]
+  },
+  {
+    "id": "2e907c01-8ec1-44a2-b3cc-94a35ddd24db",
+    "name": "",
+    "question": "node details openwrt routers lua scripts",
+    "query": "node_uname_info",
+    "metrics": [
+      "node_uname_info"
+    ]
+  },
+  {
+    "id": "ecf11ca1-8799-47e2-97c0-9f6f797c2c1b",
+    "name": "Used RAM Memory",
+    "question": "used ram memory",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / (node_memory_MemTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "a1473845-7540-4c33-900e-923d97a6aa04",
+    "name": "Used RAM Memory",
+    "question": "ratio nonavailable ram ram",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / (node_memory_MemTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "b24589e9-32af-476e-ac73-091889c8395f",
+    "name": "Used RAM Memory",
+    "question": "ram",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / (node_memory_MemTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "b64afe89-9c75-49d9-8e07-42c90c448f11",
+    "name": "Used RAM Memory",
+    "question": "used ram memory",
+    "query": "100 - ((node_memory_MemAvailable_bytes * 100) / node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "2b76c009-0fcb-41de-a539-89e44f76a720",
+    "name": "Used RAM Memory",
+    "question": "proportion unavailable ram memory",
+    "query": "100 - ((node_memory_MemAvailable_bytes * 100) / node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "3015cb3e-8aaa-4ff5-9879-c556e1a3710a",
+    "name": "Used RAM Memory",
+    "question": "ram memory",
+    "query": "100 - ((node_memory_MemAvailable_bytes * 100) / node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "df30fc72-46aa-42ea-95e1-0cb508446b22",
+    "name": "Used SWAP",
+    "question": "used swap memory",
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "591e6b60-3bd4-4d2a-9072-992a6ce80ee6",
+    "name": "Used SWAP",
+    "question": "swap memory",
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "d1b6759f-b501-4ec6-9a8e-d0bdb5896737",
+    "name": "Used SWAP",
+    "question": "proportion swap memory use",
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "3d77c49b-a2ba-449b-89a4-d4cb51145aff",
+    "name": "Used Root FS",
+    "question": "used root filesystem",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "e12abda9-c80b-49fa-97c2-c04d1dc61957",
+    "name": "Used Root FS",
+    "question": "root filesystem",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "885022f7-cec6-4b3b-88a4-ad833065b6e9",
+    "name": "Used Root FS",
+    "question": "available root filesystem space ratio",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "04352b7f-7be6-4870-85e6-dcc885601706",
+    "name": "Uptime",
+    "question": "difference between system boot",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
+    ]
+  },
+  {
+    "id": "31a2b67b-b61e-4634-8148-7810b6c88a79",
+    "name": "Uptime",
+    "question": "system uptime calculated boot difference",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
+    ]
+  },
+  {
+    "id": "7d24c0d0-adcf-4f25-b27b-8b166b57d193",
+    "name": "Uptime",
+    "question": "node uptime based boot",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
+    ]
+  },
+  {
+    "id": "d5e06b3d-1ecf-4075-937e-2051efa0c085",
+    "name": "Total RAM",
+    "question": "ram",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "d90f734a-339c-4317-a1b9-99b4bb1572d8",
+    "name": "Total RAM",
+    "question": "cumulative memory",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "3f943dd0-9b9d-4fe6-827d-5ab5d8663bf7",
+    "name": "Total RAM",
+    "question": "memory capacity",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "d8877688-1620-43f4-b5a5-90eb70b9b78c",
+    "name": "Total Network Traffic",
+    "question": "network traffic statistics",
+    "query": "(sum(node_network_transmit_bytes_total) + sum(node_network_receive_bytes_total))",
+    "metrics": [
+      "node_network_receive_bytes_total",
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "ebfbcbe5-432b-43cc-ab11-6476ebccd0c9",
+    "name": "Total Network Traffic",
+    "question": "network data transmission reception",
+    "query": "(sum(node_network_transmit_bytes_total) + sum(node_network_receive_bytes_total))",
+    "metrics": [
+      "node_network_receive_bytes_total",
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "43932601-c70e-4fb3-9535-5593ebecc14e",
+    "name": "Total Network Traffic",
+    "question": "transmitted received network",
+    "query": "(sum(node_network_transmit_bytes_total) + sum(node_network_receive_bytes_total))",
+    "metrics": [
+      "node_network_receive_bytes_total",
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "a104e3f7-d662-48d5-8ca9-d1b0b19d0fc5",
+    "name": "Total SWAP",
+    "question": "system swap memory",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "838e34c8-2f24-406c-9179-3b04f0b2a095",
+    "name": "Total SWAP",
+    "question": "swap memory",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "c7324ce5-4350-4055-a95b-bf18051c06bd",
+    "name": "Total SWAP",
+    "question": "node swap memory",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "0ba9a2fb-35a5-42ed-ae22-574cd5915399",
+    "name": "Total RootFS",
+    "question": "rootfs filesystem",
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "3beffcbd-9cf1-4404-ba2a-53bba36ace2f",
+    "name": "Total RootFS",
+    "question": "rootfs filesystem",
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "cefac503-8a3d-4e87-ba04-26745576dcc3",
+    "name": "Total RootFS",
+    "question": "rootfs filesystem sizes",
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "643f333d-6d1d-47d0-a396-fe41a4b3d19b",
+    "name": "Transmit Bytes Total",
+    "question": "transmitted openwrt routers",
+    "query": "node_network_transmit_bytes_total/1024/1024",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "a0258f32-077a-4d3e-8ccd-71047d0b6039",
+    "name": "Transmit Bytes Total",
+    "question": "network transmit luaenabled routers",
+    "query": "node_network_transmit_bytes_total/1024/1024",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "984812fb-6e57-45ba-a1b5-a689a5c470a9",
+    "name": "Transmit Bytes Total",
+    "question": "transmitted data mb openwrt devices",
+    "query": "node_network_transmit_bytes_total/1024/1024",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "94e25af3-27ba-4421-b9e2-beafa97c53ae",
+    "name": "Receive Bytes Total",
+    "question": "router network receive",
+    "query": "node_network_receive_bytes_total/1024/1024",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "010466ac-393e-469b-bd1b-bd682b048c8e",
+    "name": "Receive Bytes Total",
+    "question": "received openwrt routers",
+    "query": "node_network_receive_bytes_total/1024/1024",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "85f346ff-9f84-4a70-bb06-fe509f2b7530",
+    "name": "Receive Bytes Total",
+    "question": "network receive lua scripts",
+    "query": "node_network_receive_bytes_total/1024/1024",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "388e5dcc-d1b1-43e4-bf67-620d6284321f",
+    "name": "Network Traffic by Bytes",
+    "question": "network traffic",
+    "query": "irate(node_network_receive_bytes_total[5m])/1024",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "fea0d778-13eb-4f77-91ba-0fc685dc49a8",
+    "name": "Network Traffic by Bytes",
+    "question": "incoming network traffic kilobytes",
+    "query": "irate(node_network_receive_bytes_total[5m])/1024",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "117ed7a2-794f-4231-8e07-a181571e2006",
+    "name": "Network Traffic by Bytes",
+    "question": "received openwrt routers",
+    "query": "irate(node_network_receive_bytes_total[5m])/1024",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "61f30ff7-66e5-4b11-9e43-3d06f73640d0",
+    "name": "Network Traffic by Bytes",
+    "question": "network traffic kilobytes",
+    "query": "irate(node_network_transmit_bytes_total[5m])/1024",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "7cad8e54-350e-498c-9701-400104ad8d72",
+    "name": "Network Traffic by Bytes",
+    "question": "transmitted node",
+    "query": "irate(node_network_transmit_bytes_total[5m])/1024",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "15578a14-abad-4d79-bdff-b5f6f03680f6",
+    "name": "Network Traffic by Bytes",
+    "question": "network traffic openwrt routers",
+    "query": "irate(node_network_transmit_bytes_total[5m])/1024",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "331d17d8-ca37-4edc-b97a-0bb00d9f745b",
+    "name": "Network Traffic by Packets",
+    "question": "network transmit packets",
+    "query": "irate(node_network_transmit_packets_total[5m])",
+    "metrics": [
+      "node_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "e396e816-272b-4746-9d0c-95f06c4b3770",
+    "name": "Network Traffic by Packets",
+    "question": "network packets transmitted",
+    "query": "irate(node_network_transmit_packets_total[5m])",
+    "metrics": [
+      "node_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "677e64e0-c8b1-411c-8f36-95ed188eb4d3",
+    "name": "Network Traffic by Packets",
+    "question": "packets sent network interfaces",
+    "query": "irate(node_network_transmit_packets_total[5m])",
+    "metrics": [
+      "node_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "31c886a0-d858-4189-a7b5-5bb49e9b18f0",
+    "name": "Network Traffic by Packets",
+    "question": "received network packets",
+    "query": "irate(node_network_receive_packets_total[5m])",
+    "metrics": [
+      "node_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "2d1ef7d3-86b2-425e-af88-a04da5812dc8",
+    "name": "Network Traffic by Packets",
+    "question": "incoming network packets",
+    "query": "irate(node_network_receive_packets_total[5m])",
+    "metrics": [
+      "node_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "5341ebc6-e3a6-474e-832f-70959339ea20",
+    "name": "Network Traffic by Packets",
+    "question": "network packets received 5 minutes",
+    "query": "irate(node_network_receive_packets_total[5m])",
+    "metrics": [
+      "node_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "830a5006-d643-4fc2-9f5c-c1c6cb9b67a8",
+    "name": "Transmit Packets Total",
+    "question": "transmitted network packets",
+    "query": "node_network_transmit_packets_total",
+    "metrics": [
+      "node_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "3f0b9c38-1d40-4f3e-9998-51044c16e272",
+    "name": "Transmit Packets Total",
+    "question": "network packets sent",
+    "query": "node_network_transmit_packets_total",
+    "metrics": [
+      "node_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "b4d8a2ee-f6da-4115-b76e-67e3849f8ffe",
+    "name": "Transmit Packets Total",
+    "question": "network packets transmitted",
+    "query": "node_network_transmit_packets_total",
+    "metrics": [
+      "node_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "99960bf6-b1e4-402d-a4a3-d67576891b96",
+    "name": "Receive Packets Total",
+    "question": "received packets openwrt routers",
+    "query": "node_network_receive_packets_total",
+    "metrics": [
+      "node_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "8426b020-63bc-4c79-8a57-37ea33fa626e",
+    "name": "Receive Packets Total",
+    "question": "network packets received",
+    "query": "node_network_receive_packets_total",
+    "metrics": [
+      "node_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "ed29efc4-30dc-4621-99fc-6afa8b95966e",
+    "name": "Receive Packets Total",
+    "question": "received packets luascripted routers",
+    "query": "node_network_receive_packets_total",
+    "metrics": [
+      "node_network_receive_packets_total"
+    ]
+  }
+]

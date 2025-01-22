@@ -1,0 +1,110 @@
+[
+  {
+    "id": "dd651486-2d4a-4d6b-ae40-70081fa3f1ad",
+    "name": "CPU",
+    "question": "cpu usage pod name",
+    "query": "avg(irate(container_cpu_usage_seconds_total[5m]) * 100) by (pod_name)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "9a34c2e5-572e-4468-af74-9db5bfd63f72",
+    "name": "CPU",
+    "question": "container cpu pod",
+    "query": "avg(irate(container_cpu_usage_seconds_total[5m]) * 100) by (pod_name)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "55250aec-3b41-488b-b2d6-31f2f29ce03f",
+    "name": "CPU",
+    "question": "cpu consumption pod",
+    "query": "avg(irate(container_cpu_usage_seconds_total[5m]) * 100) by (pod_name)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "4dc7bd07-a2ee-4e48-bf66-b9fdc50db426",
+    "name": "Memory",
+    "question": "memory usage pod names",
+    "query": "sum (container_memory_working_set_bytes) by (pod_name)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "50f5686a-a54e-468c-986b-b76012289cd0",
+    "name": "Memory",
+    "question": "memory working set pod",
+    "query": "sum (container_memory_working_set_bytes) by (pod_name)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "13c6dbd8-2c69-4c93-a263-94a4d6138f2b",
+    "name": "Memory",
+    "question": "memory consumption pod",
+    "query": "sum (container_memory_working_set_bytes) by (pod_name)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "d8d8cea6-e0fa-4ceb-af14-b1252ec11da5",
+    "name": "Network RX",
+    "question": "network receive pod",
+    "query": "avg(irate(container_network_receive_bytes_total[5m])) by (pod_name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "0ae3e88b-e91c-43e9-a28d-bd239bed0fef",
+    "name": "Network RX",
+    "question": "podlevel network rx",
+    "query": "avg(irate(container_network_receive_bytes_total[5m])) by (pod_name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "5920e9e9-e1fe-4f1b-9ede-a143835b1c2a",
+    "name": "Network RX",
+    "question": "pod network receive",
+    "query": "avg(irate(container_network_receive_bytes_total[5m])) by (pod_name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "d0e2c48c-603c-407c-a5ee-a920791d9bdb",
+    "name": "Network TX",
+    "question": "network transmit pod",
+    "query": "avg(irate(container_network_transmit_bytes_total[5m])) by (pod_name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "d4f4f5cc-1c21-4bdb-aa08-9d60476dca25",
+    "name": "Network TX",
+    "question": "podlevel network transmit",
+    "query": "avg(irate(container_network_transmit_bytes_total[5m])) by (pod_name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "774dd139-dbcb-42dd-ac96-2b129ba502ab",
+    "name": "Network TX",
+    "question": "transmit pod",
+    "query": "avg(irate(container_network_transmit_bytes_total[5m])) by (pod_name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  }
+]

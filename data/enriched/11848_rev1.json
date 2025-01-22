@@ -1,0 +1,56 @@
+[
+  {
+    "id": "6d7e7284-f7b5-43e5-ac03-39a2c0f8042b",
+    "name": "CPU Usage vs Throttling Percent",
+    "question": "cpu usage containers",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "44b4fe10-d7f2-4e7d-8848-034ab2e00309",
+    "name": "CPU Usage vs Throttling Percent",
+    "question": "detection cpu throttling containers",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "03ca4788-3749-4e9c-871f-81431b99cf50",
+    "name": "CPU Usage vs Throttling Percent",
+    "question": "diagnosing cpu throttling containers",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "abb33148-4943-43ce-9f5d-6d6fa4425963",
+    "name": "CPU Usage vs Throttling Percent",
+    "question": "container cpu usage past minute",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "f280ba55-100b-4a0d-89b9-3480d3ed4075",
+    "name": "CPU Usage vs Throttling Percent",
+    "question": "cpu containers",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "ca65fbfd-06cb-4d0b-9573-772eb0b1d7a8",
+    "name": "CPU Usage vs Throttling Percent",
+    "question": "cpu usage detecting throttling containers",
+    "query": "rate(container_cpu_usage_seconds_total[1m])",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  }
+]

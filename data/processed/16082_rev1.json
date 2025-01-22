@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Available Bytes",
+    "description": "Prometheus monitoring for MSK cluster",
+    "query": "node_filesystem_avail_bytes",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  }
+]

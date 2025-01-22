@@ -1,0 +1,34 @@
+[
+  {
+    "name": "CPU",
+    "description": "A dashboard to view pod metrics by namespace and pod names.\r\n\r\nUse this Helm chart to launch Grafana into a Kubernetes cluster. It will include this dashboard and many more dashboards to give you visibility into the Kubernetes Cluster. (https://github.com/sekka1/cloud-public/tree/master/kubernetes/pods/grafana-helm)",
+    "query": "avg(irate(container_cpu_usage_seconds_total[5m]) * 100) by (pod_name)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "A dashboard to view pod metrics by namespace and pod names.\r\n\r\nUse this Helm chart to launch Grafana into a Kubernetes cluster. It will include this dashboard and many more dashboards to give you visibility into the Kubernetes Cluster. (https://github.com/sekka1/cloud-public/tree/master/kubernetes/pods/grafana-helm)",
+    "query": "sum (container_memory_working_set_bytes) by (pod_name)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Network RX",
+    "description": "A dashboard to view pod metrics by namespace and pod names.\r\n\r\nUse this Helm chart to launch Grafana into a Kubernetes cluster. It will include this dashboard and many more dashboards to give you visibility into the Kubernetes Cluster. (https://github.com/sekka1/cloud-public/tree/master/kubernetes/pods/grafana-helm)",
+    "query": "avg(irate(container_network_receive_bytes_total[5m])) by (pod_name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network TX",
+    "description": "A dashboard to view pod metrics by namespace and pod names.\r\n\r\nUse this Helm chart to launch Grafana into a Kubernetes cluster. It will include this dashboard and many more dashboards to give you visibility into the Kubernetes Cluster. (https://github.com/sekka1/cloud-public/tree/master/kubernetes/pods/grafana-helm)",
+    "query": "avg(irate(container_network_transmit_bytes_total[5m])) by (pod_name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  }
+]

@@ -1,53 +1,53 @@
 [
   {
-    "id": "8910788a-597a-4040-a5c4-0584af762ffe",
+    "id": "f35dd9df-5fb5-4f89-b96c-367c989351ac",
     "name": "Heap",
-    "question": "memory used by jvm heap",
+    "question": "memory used jvm heap",
     "query": "jvm_memory_committed_bytes",
     "metrics": [
       "jvm_memory_committed_bytes"
     ]
   },
   {
-    "id": "429645d3-31e1-4368-9451-4f5dedf035a9",
+    "id": "03ca8380-4b0d-4510-a64b-ec6057c26590",
     "name": "Heap",
-    "question": "jvm heap memory committed bytes",
+    "question": "committed memory jvm heap",
     "query": "jvm_memory_committed_bytes",
     "metrics": [
       "jvm_memory_committed_bytes"
     ]
   },
   {
-    "id": "4f2736e8-1a43-42bd-94be-2d2ceb7f6500",
+    "id": "8fcb2d30-d0e2-4632-804b-a8fc420b82ad",
     "name": "Heap",
-    "question": "amount of memory allocated to jvm heap",
+    "question": "tracking jvm heap memory consumption",
     "query": "jvm_memory_committed_bytes",
     "metrics": [
       "jvm_memory_committed_bytes"
     ]
   },
   {
-    "id": "875bfab1-9803-4d2f-92d4-e83f174eb422",
+    "id": "f035e88d-c304-4ac6-af53-2c1f5665af79",
     "name": "Off-Heap",
-    "question": "memory used outside jvm heap",
+    "question": "jvm memory committed outside heap",
     "query": "jvm_memory_committed_bytes",
     "metrics": [
       "jvm_memory_committed_bytes"
     ]
   },
   {
-    "id": "e41d3469-351b-4c86-94a7-7cd16f1aee45",
+    "id": "fd562791-919b-4087-9298-74b3f8efd051",
     "name": "Off-Heap",
-    "question": "jvm offheap memory consumption",
+    "question": "memory used jvm offheap",
     "query": "jvm_memory_committed_bytes",
     "metrics": [
       "jvm_memory_committed_bytes"
     ]
   },
   {
-    "id": "0e6d784b-99a1-473c-b3f8-b54299ea0cc7",
+    "id": "ae951dbb-f8d4-482b-858c-1b01db65caa6",
     "name": "Off-Heap",
-    "question": "amount of memory not in jvm heap",
+    "question": "memory usage jvm excluding heap",
     "query": "jvm_memory_committed_bytes",
     "metrics": [
       "jvm_memory_committed_bytes"

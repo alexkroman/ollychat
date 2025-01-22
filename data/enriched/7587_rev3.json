@@ -1,0 +1,245 @@
+[
+  {
+    "id": "710a8880-5429-4d47-9e12-914b6492eba9",
+    "name": "Global Probe Duration",
+    "question": "global overview probe",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "dccb5ef0-74e2-457e-bf3c-007f4d27db5b",
+    "name": "Global Probe Duration",
+    "question": "blackbox exporter probes",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "0d5ef77b-1c58-4927-9e47-7b6dd439a357",
+    "name": "Global Probe Duration",
+    "question": "probe durations information",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "cfe3e456-3c1c-4b2f-ae6d-ae4d32c9b385",
+    "name": "Status",
+    "question": "success prometheus blackbox exporter probes",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "e5275319-3536-4f10-9fc4-17cc04053c2e",
+    "name": "Status",
+    "question": "overview blackbox probe results",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "de2908a8-e748-4bcd-a899-1cce3f38dbaf",
+    "name": "Status",
+    "question": "aggregate blackbox monitoring probes",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "8efeb4ec-a17f-4a29-ae67-b8c4f215f7bb",
+    "name": "HTTP Duration",
+    "question": "overall http probe",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "9aa8f4c4-7550-4579-a4fe-cd8c6441d758",
+    "name": "HTTP Duration",
+    "question": "blackbox exporter http summary",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "2584cbb5-789e-4890-b37f-8138360326ac",
+    "name": "HTTP Duration",
+    "question": "http prometheus blackbox exporter",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "f89ee904-d06e-4ce6-9485-7f0aaa854941",
+    "name": "Probe Duration",
+    "question": "probes",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "615441b9-ec08-441c-b413-388463c7f0cc",
+    "name": "Probe Duration",
+    "question": "overview blackbox exporter probe",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "599ffd37-f832-4d3d-8dfa-3d6989263eb2",
+    "name": "Probe Duration",
+    "question": "blackbox exporters probe metric",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "2c471af2-794f-4710-bb4a-5d9d732a8853",
+    "name": "HTTP Status Code",
+    "question": "aggregate http status codes blackbox exporter",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "8089e123-bcac-4c48-aba7-b7f7ce6d5cfd",
+    "name": "HTTP Status Code",
+    "question": "retrieve http status code data blackbox exporter",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "0ef58a5f-2f6b-47e5-977b-60dde0c1136e",
+    "name": "HTTP Status Code",
+    "question": "summary http status codes blackbox exporter",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "6ce20c2a-2bd2-445f-a653-4c910f261a70",
+    "name": "HTTP Version",
+    "question": "retrieve http version blackbox exporter",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "c69ea74b-6869-480d-a908-9e8e52982738",
+    "name": "HTTP Version",
+    "question": "get http version data using blackbox exporter",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "d9a4fa20-0f61-49b1-8a4f-004dca7a1516",
+    "name": "HTTP Version",
+    "question": "probe http version blackbox exporter",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "id": "be7fe7a0-fc95-499b-9136-9b9d2affa42f",
+    "name": "SSL",
+    "question": "retrieve ssl status blackbox exporter",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "52be3a9d-b1a1-46cc-81b1-e1e8b2cc61f3",
+    "name": "SSL",
+    "question": "query http ssl information",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "64711a9b-cf85-42d2-95e9-75b2c983d537",
+    "name": "SSL",
+    "question": "get http ssl details using blackbox exporter",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "4774e2e7-4fab-4293-8087-6bae616fee21",
+    "name": "Average Probe Duration",
+    "question": "probes",
+    "query": "avg(probe_duration_seconds)",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "b48dcfc7-48e6-4e5e-9dbf-f52ea7e68eef",
+    "name": "Average Probe Duration",
+    "question": "probe",
+    "query": "avg(probe_duration_seconds)",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "4eebc309-b86f-4884-adda-60f6ff84ec93",
+    "name": "Average Probe Duration",
+    "question": "taken probes",
+    "query": "avg(probe_duration_seconds)",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "58d315a5-d9ab-4b62-9435-9d0672461235",
+    "name": "Average DNS Lookup",
+    "question": "dns lookup",
+    "query": "avg(probe_dns_lookup_time_seconds)",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "236e06c1-779f-4324-a494-73c2880e16da",
+    "name": "Average DNS Lookup",
+    "question": "dns resolution",
+    "query": "avg(probe_dns_lookup_time_seconds)",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "322c04c4-d14e-4669-abdc-876296fb181c",
+    "name": "Average DNS Lookup",
+    "question": "dns lookup",
+    "query": "avg(probe_dns_lookup_time_seconds)",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  }
+]

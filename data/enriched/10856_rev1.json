@@ -1,0 +1,434 @@
+[
+  {
+    "id": "0fc3347e-115f-4905-a4bf-03776a49c1b1",
+    "name": "CPU usage (5m avg)",
+    "question": "cpu usage across nodes",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "0c53133c-d9c6-4381-8eed-11e3ae70b491",
+    "name": "CPU usage (5m avg)",
+    "question": "ratio container cpu usage machine cores",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "ad266880-c6d8-4adb-9288-1c0a0581ef8c",
+    "name": "CPU usage (5m avg)",
+    "question": "cluster cpu consumption cores",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "2e38b282-8708-4dbc-9724-ad13c0c9b701",
+    "name": "Memory usage",
+    "question": "memory used kubernetes cluster",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "a5455fac-3b59-4b03-96f7-8fe8c036c978",
+    "name": "Memory usage",
+    "question": "ratio container memory usage machine memory",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "4b3ae2db-bb8b-4d6d-adbf-eec4789db928",
+    "name": "Memory usage",
+    "question": "overall memory kubernetes environment",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "3bebb728-0705-465f-8360-0b10f50715a8",
+    "name": "Filesystem usage",
+    "question": "filesystem usage relative",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "6c828e50-ddaa-4f37-b071-978e17989481",
+    "name": "Filesystem usage",
+    "question": "container filesystem usage",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "49f255d6-174f-451a-9a30-4e19e5708cda",
+    "name": "Filesystem usage",
+    "question": "container filesystem usage",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "76b57366-543a-4153-b66b-fd0d2d03e779",
+    "name": "Used",
+    "question": "container cpu usage",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "8ed2970b-1e0b-4d44-a3d6-1c18a3ffba58",
+    "name": "Used",
+    "question": "cpu usage containers",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "973c971d-e695-4dc2-978e-984a32b38936",
+    "name": "Used",
+    "question": "cpu usage across containers",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "a54a802b-3e40-4a67-853f-2e1e69c424e2",
+    "name": "Total",
+    "question": "machine cpu cores",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "bf80ce46-175d-469d-b722-cd8ba2c24976",
+    "name": "Total",
+    "question": "overall cluster cpu usage",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "e4d8d324-c151-4b99-9317-12e74c5f2c35",
+    "name": "Total",
+    "question": "cpu cores cluster",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "4688aa50-bd93-4425-aeba-553328bdbd29",
+    "name": "Used",
+    "question": "container memory working set",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "bc90a5a7-a7e3-4bba-91bc-36214ce9a195",
+    "name": "Used",
+    "question": "memory working set containers",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "afa3c40f-a33b-4cec-8d2e-61fb285e3637",
+    "name": "Used",
+    "question": "aggregate container memory usage",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "6cbbd1a7-c584-4fb3-a3d9-9db10e374208",
+    "name": "Total",
+    "question": "machine memory",
+    "query": "sum (machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "824cfbca-2fa4-4044-92a0-403d628f43f2",
+    "name": "Total",
+    "question": "memory usage kubernetes cluster",
+    "query": "sum (machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "d2dd104c-49e1-4647-bf51-56fb2f858e11",
+    "name": "Total",
+    "question": "combined machine memory consumption",
+    "query": "sum (machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "476d060d-8c5c-4a0e-ba91-25944df24d3c",
+    "name": "Used",
+    "question": "container filesystem usage",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "271682af-99fc-4e29-a1b4-5a12e0351cea",
+    "name": "Used",
+    "question": "container filesystem consumption",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "3eed16c5-762c-4ebe-9221-dd1e6c1aec5c",
+    "name": "Used",
+    "question": "summed filesystem usage across containers",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "3b7fb20d-f163-4c9a-9e2f-3b076d258e06",
+    "name": "Total",
+    "question": "filesystem across containers",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "b654e551-448f-4c81-a513-33f7d1ec088a",
+    "name": "Total",
+    "question": "container filesystem",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "09e5c81c-15cf-474c-974c-4aac531565dd",
+    "name": "Total",
+    "question": "summed filesystem limits containers",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "7c20c8dc-17ab-43b0-87d9-1e1ba44745ab",
+    "name": "CPU usage (5m avg)",
+    "question": "cpu usage across containers",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "5409dbf4-471f-4d9a-9b31-1306821bce45",
+    "name": "CPU usage (5m avg)",
+    "question": "cpu usage divided machine cpu cores",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "99846438-0075-4eea-ab90-2f90141d6114",
+    "name": "CPU usage (5m avg)",
+    "question": "cluster cpu 5 minutes",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "c29dfe94-7749-42b8-b5f5-78cd5af6ee9f",
+    "name": "CPU usage (5m avg)",
+    "question": "cpu usage node",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) by (node) / sum (machine_cpu_cores) by (node)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "9b4c9bdc-a136-4043-b7e3-b5a0430fc203",
+    "name": "CPU usage (5m avg)",
+    "question": "ratio cpu usage machine cpu cores",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) by (node) / sum (machine_cpu_cores) by (node)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "98ad1c9f-a438-43a1-a92f-916bded33550",
+    "name": "CPU usage (5m avg)",
+    "question": "clusterwide cpu usage distribution node",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) by (node) / sum (machine_cpu_cores) by (node)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "b3d7bc8e-112a-40f1-9071-356fc0e156ea",
+    "name": "Memory usage",
+    "question": "container memory machine memory",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "6a148c8e-c905-40e1-8578-24dc64295fac",
+    "name": "Memory usage",
+    "question": "overall memory usage relation machine memory",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "68f5467b-968d-483e-afe6-6ac23bdb7052",
+    "name": "Memory usage",
+    "question": "ratio container memory machine memory",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "c3de1a6e-de0a-4298-999f-6ddb713feb33",
+    "name": "Memory usage",
+    "question": "memory used nodes",
+    "query": "sum (container_memory_working_set_bytes) by (node) / sum (machine_memory_bytes) by (node) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "4070b8aa-2117-464b-b069-0cc6212f1970",
+    "name": "Memory usage",
+    "question": "node memory",
+    "query": "sum (container_memory_working_set_bytes) by (node) / sum (machine_memory_bytes) by (node) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "398f2b6a-9e4f-460c-9ccc-3aa412fe5fe9",
+    "name": "Memory usage",
+    "question": "node memory containers",
+    "query": "sum (container_memory_working_set_bytes) by (node) / sum (machine_memory_bytes) by (node) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "5ab44ea4-df36-4968-9a3a-702cafdce09c",
+    "name": "Filesystem usage",
+    "question": "container filesystem usage",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "073d3d01-e56f-446f-bf3e-886a26748fc0",
+    "name": "Filesystem usage",
+    "question": "ratio used container filesystem space",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "2f16b32d-2dc9-4e9c-91e2-c60be0145896",
+    "name": "Filesystem usage",
+    "question": "filesystem containers",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "3f4b22fc-1247-423e-b023-9ed1941576cc",
+    "name": "Filesystem usage",
+    "question": "filesystem usage node",
+    "query": "sum (container_fs_usage_bytes) by (node) / sum (container_fs_limit_bytes) by (node) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "d8e3050b-c514-4a37-af22-a9f25b6d2a40",
+    "name": "Filesystem usage",
+    "question": "overall filesystem usage node",
+    "query": "sum (container_fs_usage_bytes) by (node) / sum (container_fs_limit_bytes) by (node) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "9ebd22aa-c075-4b46-adb6-891128045f61",
+    "name": "Filesystem usage",
+    "question": "proportional filesystem across nodes",
+    "query": "sum (container_fs_usage_bytes) by (node) / sum (container_fs_limit_bytes) by (node) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  }
+]

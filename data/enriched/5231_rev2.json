@@ -1,80 +1,80 @@
 [
   {
-    "id": "1ebaaf90-9540-4ddf-b3af-1d7bc6265af2",
+    "id": "597f152c-319b-4dde-b9e9-1741f04f65d1",
     "name": "Control Plane UP",
-    "question": "total control plane instances not up",
+    "question": "aggregate control plane availability",
     "query": "sum(up == 0)",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "0ff3ce2c-1448-4fd4-9eb0-9f590bf831f4",
+    "id": "493f0f30-489f-4012-8c74-7d96962d0c44",
     "name": "Control Plane UP",
-    "question": "aggregate of control plane nodes down",
+    "question": "control plane instances down",
     "query": "sum(up == 0)",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "6cf8f834-126c-4bc6-9341-c0c456f636dd",
+    "id": "57f26023-e838-4743-adec-ba230ed889d1",
     "name": "Control Plane UP",
-    "question": "sum of control plane components not up",
+    "question": "control plane unavailability",
     "query": "sum(up == 0)",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "7cb5a680-54f2-4655-a4b5-263331cf813d",
+    "id": "db230cb7-47b3-4031-8edd-b8bcdb4c8e4f",
     "name": "API Servers UP",
-    "question": "percentage of api servers up",
+    "question": "healthy api servers",
     "query": "(sum(up == 1) / count(up)) * 100",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "8ed8f789-6f60-4097-a0db-2f9b7252c180",
+    "id": "fa57d206-a829-4e2a-9d99-9d6014e594cc",
     "name": "API Servers UP",
-    "question": "ratio of healthy api servers",
+    "question": "ratio operational api servers",
     "query": "(sum(up == 1) / count(up)) * 100",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "d3181745-7d73-444a-ada8-a054af624077",
+    "id": "dbff7cb1-6c30-4981-bbd1-d7e19340bd26",
     "name": "API Servers UP",
-    "question": "overall availability of api servers",
+    "question": "proportion online api servers",
     "query": "(sum(up == 1) / count(up)) * 100",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "21594ca3-c2ea-4aaa-b7ad-1d9bc6113553",
+    "id": "bd034ff1-1ec7-4a17-b196-b8df7114fb98",
     "name": "Nodes UP",
-    "question": "percentage of nodes with up status",
+    "question": "operational nodes",
     "query": "(sum(up == 1) / count(up)) * 100",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "cb59cc51-4cef-4f63-82fa-f131dcc5fce5",
+    "id": "df3d486d-a24a-4a77-974d-0ec2d59e1339",
     "name": "Nodes UP",
-    "question": "ratio of up nodes to total nodes",
+    "question": "ratio healthy nodes nodes",
     "query": "(sum(up == 1) / count(up)) * 100",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "2cd23362-e4cb-440e-b2b9-ea861f7e7041",
+    "id": "006ac666-263c-4a9c-8ad1-ac137bdde00a",
     "name": "Nodes UP",
-    "question": "proportion of operational nodes",
+    "question": "proportion nodes status up",
     "query": "(sum(up == 1) / count(up)) * 100",
     "metrics": [
       "up"

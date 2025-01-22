@@ -1,56 +1,110 @@
 [
   {
-    "id": "1d8cf536-0b04-4c5a-8b01-ffd551cb4198",
-    "name": "Status",
-    "question": "checks status of targets",
-    "query": "up",
+    "id": "f4062b71-bc29-42fd-b659-8abed34c1226",
+    "name": "Cpu Time",
+    "question": "cumulative process cpu",
+    "query": "process_cpu_seconds_total",
     "metrics": [
-      "up"
+      "process_cpu_seconds_total"
     ]
   },
   {
-    "id": "6dffd67c-a126-4b74-8194-58ad83bf7eb5",
-    "name": "Status",
-    "question": "returns availability status of targets",
-    "query": "up",
+    "id": "1092698e-7d31-49fc-9f4c-fa288657055e",
+    "name": "Cpu Time",
+    "question": "jmx exporter monitor cpu usage",
+    "query": "process_cpu_seconds_total",
     "metrics": [
-      "up"
+      "process_cpu_seconds_total"
     ]
   },
   {
-    "id": "b972c6e7-873d-42a5-9e68-b7a2c91a2ad4",
-    "name": "Status",
-    "question": "indicates if targets are up",
-    "query": "up",
+    "id": "13eff4ed-37c8-4a30-ae56-445d000becd2",
+    "name": "Cpu Time",
+    "question": "cpu used processes",
+    "query": "process_cpu_seconds_total",
     "metrics": [
-      "up"
+      "process_cpu_seconds_total"
     ]
   },
   {
-    "id": "165d7082-626a-4a64-af25-fd6bab841aed",
-    "name": "State",
-    "question": "retrieve current state of targets",
-    "query": "up",
+    "id": "df0b3be4-b066-4863-9e49-4d8582e5de81",
+    "name": "Open File Descriptors",
+    "question": "monitor open file descriptors jmx exporter",
+    "query": "process_open_fds",
     "metrics": [
-      "up"
+      "process_open_fds"
     ]
   },
   {
-    "id": "65bab5bc-d730-4deb-8589-f52838c04b66",
-    "name": "State",
-    "question": "check if targets are up",
-    "query": "up",
+    "id": "e281f23a-3ed7-47ad-9210-86ec551ae75b",
+    "name": "Open File Descriptors",
+    "question": "retrieve process open file descriptors metric",
+    "query": "process_open_fds",
     "metrics": [
-      "up"
+      "process_open_fds"
     ]
   },
   {
-    "id": "a0b251ff-98ed-4f19-a0cd-815707229f42",
-    "name": "State",
-    "question": "query for active target status",
-    "query": "up",
+    "id": "9838354a-098e-49fc-8dea-6074c079ca0d",
+    "name": "Open File Descriptors",
+    "question": "check open file descriptors via jmx exporter",
+    "query": "process_open_fds",
     "metrics": [
-      "up"
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "289e0bf5-ba22-4558-b0ec-d0633823bf18",
+    "name": "Process Memory",
+    "question": "process resident memory usage",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "87b0409c-183e-4862-af88-e1d4fc507f63",
+    "name": "Process Memory",
+    "question": "monitoring process memory consumption",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "1b19f54b-9fe5-4572-8abd-e33aa460d5e3",
+    "name": "Process Memory",
+    "question": "jmx exporter tracking memory usage",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "004fb441-7ee3-43e9-9497-a15b1cb55f40",
+    "name": "Process Memory",
+    "question": "virtual memory usage process",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "43dca478-3b02-47a6-8d21-06b27e4f0f39",
+    "name": "Process Memory",
+    "question": "virtual memory consumption process",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "6e3694af-ff49-4e6b-bb32-ed44cd8a0299",
+    "name": "Process Memory",
+    "question": "virtual memory process monitoring",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
     ]
   }
 ]

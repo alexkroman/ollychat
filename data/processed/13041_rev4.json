@@ -1,0 +1,122 @@
+[
+  {
+    "name": "HTTP status code",
+    "description": "",
+    "query": "probe_http_status_code",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "SSL",
+    "description": "",
+    "query": "probe_http_ssl",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "name": "DNS lookup time",
+    "description": "",
+    "query": "probe_dns_lookup_time_seconds",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "name": "HTTP version",
+    "description": "",
+    "query": "probe_http_version",
+    "metrics": [
+      "probe_http_version"
+    ]
+  },
+  {
+    "name": "Redirect(s)",
+    "description": "",
+    "query": "probe_http_redirects",
+    "metrics": [
+      "probe_http_redirects"
+    ]
+  },
+  {
+    "name": "ICMP",
+    "description": "",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "Availability",
+    "description": "",
+    "query": "avg_over_time(probe_success[$__interval]) * 100",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "Availability",
+    "description": "",
+    "query": "avg_over_time(probe_success[$__interval]) * 100",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "Availability",
+    "description": "",
+    "query": "avg_over_time(probe_success[$__interval]) * 100",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "HTTP probe duration / status code",
+    "description": "",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "name": "HTTP probe duration / status code",
+    "description": "",
+    "query": "probe_http_status_code == 200",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "HTTP probe duration / status code",
+    "description": "",
+    "query": "probe_http_status_code != 200",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "name": "ICMP probe duration / failure",
+    "description": "Display only ICMP failures",
+    "query": "probe_duration_seconds",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "name": "ICMP probe duration / failure",
+    "description": "Display only ICMP failures",
+    "query": "probe_success == 0",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "name": "HTTP probe (by phase)",
+    "description": "",
+    "query": "probe_http_duration_seconds",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  }
+]

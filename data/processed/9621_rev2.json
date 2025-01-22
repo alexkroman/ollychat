@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Start Time",
+    "description": "start time of the process",
+    "query": "process_start_time_seconds * 1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "name": "Resident Memory Usage",
+    "description": "Process Resident Memory Usage",
+    "query": "avg(process_resident_memory_bytes)",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "name": "Average CPU Usage",
+    "description": "Average user and system CPU time spent in seconds.",
+    "query": "avg(rate(process_cpu_seconds_total[5m]))",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Average Memory Usage",
+    "description": "Virtual and Resident memory size in bytes, averages over 5 min interval",
+    "query": "avg(rate(process_resident_memory_bytes[5m]))",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "name": "Average Memory Usage",
+    "description": "Virtual and Resident memory size in bytes, averages over 5 min interval",
+    "query": "avg(rate(process_virtual_memory_bytes[5m]))",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "name": "Open File Descriptors",
+    "description": "Number of open file descriptors",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  }
+]

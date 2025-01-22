@@ -1,29 +1,56 @@
 [
   {
-    "id": "b957bf87-17fb-4122-b2be-cd7fe5583011",
-    "name": "API Server - Health Status",
-    "question": "retrieve health status of api server",
-    "query": "up",
+    "id": "3d384d1b-db78-499c-ae3c-3f8e6a958a14",
+    "name": "API Server - CPU Usage by instance",
+    "question": "api server cpu usage 30 minutes",
+    "query": "rate(process_cpu_seconds_total[30m])",
     "metrics": [
-      "up"
+      "process_cpu_seconds_total"
     ]
   },
   {
-    "id": "ac5ff0ef-e64b-40e1-b4e6-7264d53a372a",
-    "name": "API Server - Health Status",
-    "question": "check api server health status",
-    "query": "up",
+    "id": "202a2f4b-997e-4d45-88c7-8134df905ebc",
+    "name": "API Server - CPU Usage by instance",
+    "question": "cpu consumption api server instance",
+    "query": "rate(process_cpu_seconds_total[30m])",
     "metrics": [
-      "up"
+      "process_cpu_seconds_total"
     ]
   },
   {
-    "id": "57031ed9-ac28-44ff-b216-8a5aba910c50",
-    "name": "API Server - Health Status",
-    "question": "get status of api server health",
-    "query": "up",
+    "id": "e5a97790-7add-4815-b00d-42870b5a1bb7",
+    "name": "API Server - CPU Usage by instance",
+    "question": "cpu used api server",
+    "query": "rate(process_cpu_seconds_total[30m])",
     "metrics": [
-      "up"
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "be461c5c-ca71-4606-bfcc-7445dda166d6",
+    "name": "API Server - Memory Usage by instance",
+    "question": "memory usage api server instances",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "deb0a7d2-1a9b-4b1b-ba7e-b9d2392a37bc",
+    "name": "API Server - Memory Usage by instance",
+    "question": "resident memory api server",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "14dc12e9-544a-4fb5-8a82-48e8d079d6dc",
+    "name": "API Server - Memory Usage by instance",
+    "question": "api server memory consumption instance",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
     ]
   }
 ]

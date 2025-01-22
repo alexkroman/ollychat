@@ -1,26 +1,26 @@
 [
   {
-    "id": "216c7a07-557b-4199-b835-abcacf357e18",
+    "id": "fbe9fbe5-a469-4083-8f29-fdf238eaf891",
     "name": "Healthy Status",
-    "question": "shows the status of healthy targets",
+    "question": "healthy targets",
     "query": "up",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "172216ca-930c-4b89-8387-24d8b8c324cc",
+    "id": "703a30bb-01d0-4f65-ac19-d4778f9afc41",
     "name": "Healthy Status",
-    "question": "checks the availability of healthy instances",
+    "question": "status hashicorp vault",
     "query": "up",
     "metrics": [
       "up"
     ]
   },
   {
-    "id": "64e415c7-0680-4aec-bea6-768d02c05f61",
+    "id": "85e9f978-98c8-4919-bd75-e38116d9d130",
     "name": "Healthy Status",
-    "question": "indicates the up status of targets",
+    "question": "metric healthy vault instances",
     "query": "up",
     "metrics": [
       "up"

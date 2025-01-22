@@ -1,0 +1,29 @@
+[
+  {
+    "id": "0c23b11d-8b8c-40c3-8328-eb3f411d81ba",
+    "name": "Uptime",
+    "question": "process start difference",
+    "query": "time() - max(process_start_time_seconds)",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "39941cbf-a6e9-4034-a4be-b3fffac0cc8c",
+    "name": "Uptime",
+    "question": "uptime calculated process start",
+    "query": "time() - max(process_start_time_seconds)",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "3eded34d-6925-462c-9833-56b18a9df68f",
+    "name": "Uptime",
+    "question": "highest process start",
+    "query": "time() - max(process_start_time_seconds)",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  }
+]

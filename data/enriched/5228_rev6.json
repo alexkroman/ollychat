@@ -1,0 +1,428 @@
+[
+  {
+    "id": "4edb0315-b050-4b1c-b289-f0dc33420e3f",
+    "name": "Idle CPU",
+    "question": "cpu 2 minutes",
+    "query": "sum(rate(node_cpu_seconds_total[2m])) * 100 / count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "d68ebca9-3dd5-429b-b186-f1cfe070ecfc",
+    "name": "Idle CPU",
+    "question": "cpu usage cpu core",
+    "query": "sum(rate(node_cpu_seconds_total[2m])) * 100 / count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "4615c534-d15e-435c-8f25-d5fee9b2bec2",
+    "name": "Idle CPU",
+    "question": "cpu idle across all cores",
+    "query": "sum(rate(node_cpu_seconds_total[2m])) * 100 / count(node_cpu_seconds_total)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "bdc28f41-a6d4-4f06-8b8f-21485908de8a",
+    "name": "System Load",
+    "question": "system load across nodes",
+    "query": "sum(node_load1)",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "fc64cab3-b218-4dbb-a3f1-f64d6cd162c1",
+    "name": "System Load",
+    "question": "node system load",
+    "query": "sum(node_load1)",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "be8882e2-21d5-4be8-b801-13cbb3dd8abf",
+    "name": "System Load",
+    "question": "system loads nodes",
+    "query": "sum(node_load1)",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "e7ad0271-ddf0-4b8a-b9ca-13413068a011",
+    "name": "System Load",
+    "question": "node load 5 minutes",
+    "query": "sum(node_load5)",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "c8fada2c-6725-4db3-8508-5f3d39f015ff",
+    "name": "System Load",
+    "question": "system load node metrics",
+    "query": "sum(node_load5)",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "3ef2d33c-e826-4bd2-b0be-83389e04ae1c",
+    "name": "System Load",
+    "question": "node load5 across all instances",
+    "query": "sum(node_load5)",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "d9c6bc7f-63a6-410a-8d94-13694b1efc8b",
+    "name": "System Load",
+    "question": "system load nodes",
+    "query": "sum(node_load15)",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "66a03565-8e13-4045-aedd-fe40f126e9f1",
+    "name": "System Load",
+    "question": "load across nodes",
+    "query": "sum(node_load15)",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "612bd3d3-3770-4803-96ff-c029dd8547b0",
+    "name": "System Load",
+    "question": "node load averages",
+    "query": "sum(node_load15)",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "6412c330-e732-4747-b9ae-34bdb5565326",
+    "name": "Memory Free",
+    "question": "free memory available",
+    "query": "1 - ((sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)) / sum(node_memory_MemTotal_bytes))",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "07e2c412-e9bb-4234-a65a-bd2d3d4e3261",
+    "name": "Memory Free",
+    "question": "memory fraction",
+    "query": "1 - ((sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)) / sum(node_memory_MemTotal_bytes))",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "1259802b-840d-4b6f-b6ad-176d69d07e38",
+    "name": "Memory Free",
+    "question": "proportion used memory memory",
+    "query": "1 - ((sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)) / sum(node_memory_MemTotal_bytes))",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "f46815fc-06df-4ced-b9a4-e472f76f741b",
+    "name": "Memory Usage",
+    "question": "memory usage excluding free buffers cached",
+    "query": "sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "a0bdaf95-60dc-4b79-9685-81a90576e63b",
+    "name": "Memory Usage",
+    "question": "used memory across nodes",
+    "query": "sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "21b0aa61-f056-4e76-ac03-42a97b3d2e8b",
+    "name": "Memory Usage",
+    "question": "summed nonfree memory assess",
+    "query": "sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes) - sum(node_memory_Buffers_bytes) - sum(node_memory_Cached_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "441a3324-76b4-4b73-bdc7-f0dac8cd762d",
+    "name": "Memory Usage",
+    "question": "memory usage buffers",
+    "query": "sum(node_memory_Buffers_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "id": "8f4d4c71-5ea8-4dd2-b0e1-758c5fbd14fa",
+    "name": "Memory Usage",
+    "question": "buffer memory consumption",
+    "query": "sum(node_memory_Buffers_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "id": "aa92672a-9be9-4f79-96df-d1fad5c66a1e",
+    "name": "Memory Usage",
+    "question": "memory used buffers",
+    "query": "sum(node_memory_Buffers_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "id": "04222611-6f26-4b7a-9672-91fff26af0bd",
+    "name": "Memory Usage",
+    "question": "cached memory across nodes",
+    "query": "sum(node_memory_Cached_bytes)",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "0f2c99fb-1b60-4d56-b90a-d17c025beb45",
+    "name": "Memory Usage",
+    "question": "node memory usage cache",
+    "query": "sum(node_memory_Cached_bytes)",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "3d6c80a9-5ca9-452f-a63d-9dd8e22df702",
+    "name": "Memory Usage",
+    "question": "memory cached node",
+    "query": "sum(node_memory_Cached_bytes)",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "f09b2e9d-f770-48ed-b795-4d01904a52a3",
+    "name": "Memory Usage",
+    "question": "memory free across nodes",
+    "query": "sum(node_memory_MemFree_bytes)",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "05bd8fcc-97d0-418a-884a-4ffd460d3e95",
+    "name": "Memory Usage",
+    "question": "node memory free",
+    "query": "sum(node_memory_MemFree_bytes)",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "1c392d40-ca4b-4a5a-a956-daf3997e7398",
+    "name": "Memory Usage",
+    "question": "summed free memory nodes",
+    "query": "sum(node_memory_MemFree_bytes)",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "f667ed77-5ead-4e66-81b6-c4c70bd5bbf8",
+    "name": "Disk Space Usage",
+    "question": "disk space",
+    "query": "(sum(node_filesystem_size_bytes) - sum(node_filesystem_free_bytes)) / sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "6383dc65-714c-45d2-bb95-333cb5edfb70",
+    "name": "Disk Space Usage",
+    "question": "calculated filesystem space usage ratio",
+    "query": "(sum(node_filesystem_size_bytes) - sum(node_filesystem_free_bytes)) / sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "f4bc7c44-37a1-4bfa-a8a4-4ba8878c0dcd",
+    "name": "Disk Space Usage",
+    "question": "disk storage",
+    "query": "(sum(node_filesystem_size_bytes) - sum(node_filesystem_free_bytes)) / sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_free_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "49490a70-5673-45d3-8de9-252cb521e25d",
+    "name": "Disk I/O",
+    "question": "disk read",
+    "query": "sum(rate(node_disk_read_bytes_total[5m]))",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "99ca6d80-8b57-4bb8-902c-4562eff2cc77",
+    "name": "Disk I/O",
+    "question": "disk read",
+    "query": "sum(rate(node_disk_read_bytes_total[5m]))",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "535ed8b5-7535-4691-b219-61e376eb14b3",
+    "name": "Disk I/O",
+    "question": "summed disk read 5 minutes",
+    "query": "sum(rate(node_disk_read_bytes_total[5m]))",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "20fbbc96-9dff-4227-8e1f-55c3acbd3fc3",
+    "name": "Disk I/O",
+    "question": "disk write nodes",
+    "query": "sum(rate(node_disk_written_bytes_total[5m]))",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "27df113e-6d56-4b73-ae6d-a25ec3d1e323",
+    "name": "Disk I/O",
+    "question": "disk write activity nodes",
+    "query": "sum(rate(node_disk_written_bytes_total[5m]))",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "56324a15-2e09-4ad4-90d3-453b17d13aad",
+    "name": "Disk I/O",
+    "question": "disk write nodes",
+    "query": "sum(rate(node_disk_written_bytes_total[5m]))",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "47040c4e-a896-4487-890b-9149a59acaa7",
+    "name": "Disk I/O",
+    "question": "disk io 5 minutes",
+    "query": "sum(rate(node_disk_io_time_seconds_total[5m]))",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "id": "d05a8d6c-8b60-4bbf-bd5a-9083777de37d",
+    "name": "Disk I/O",
+    "question": "disk io last 5 minutes",
+    "query": "sum(rate(node_disk_io_time_seconds_total[5m]))",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "id": "8e7221e7-7c12-4c83-abe7-cb02f54bb204",
+    "name": "Disk I/O",
+    "question": "disk io 5minute interval",
+    "query": "sum(rate(node_disk_io_time_seconds_total[5m]))",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "id": "8b5b2dba-8cbb-4a86-a065-8c2c28d3db5a",
+    "name": "Network Received",
+    "question": "network received",
+    "query": "sum(rate(node_network_receive_bytes_total[5m]))",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "c4c58a6b-b85f-4e6d-9242-d1525f2d03db",
+    "name": "Network Received",
+    "question": "incoming network traffic",
+    "query": "sum(rate(node_network_receive_bytes_total[5m]))",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "924eab78-897e-485e-a33e-fc99566b537c",
+    "name": "Network Received",
+    "question": "received network",
+    "query": "sum(rate(node_network_receive_bytes_total[5m]))",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "62d8d3ac-9bf4-4a5d-9ec0-bd2e9b0cc81d",
+    "name": "Network Transmitted",
+    "question": "transmitted network nodes",
+    "query": "sum(rate(node_network_transmit_bytes_total[5m]))",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "01e05407-a937-4f27-8e97-b7717184f2b0",
+    "name": "Network Transmitted",
+    "question": "network data sent nodes",
+    "query": "sum(rate(node_network_transmit_bytes_total[5m]))",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "736f51ad-ed10-41ec-8b65-aa5e6eefcd71",
+    "name": "Network Transmitted",
+    "question": "network transmission nodes",
+    "query": "sum(rate(node_network_transmit_bytes_total[5m]))",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  }
+]

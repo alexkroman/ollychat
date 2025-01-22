@@ -1,0 +1,611 @@
+[
+  {
+    "id": "6919a62f-5fae-4ddf-91b4-8afd2106b82c",
+    "name": "RAM Used",
+    "question": "used ram ram",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / (node_memory_MemTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "b5492c56-fae4-415f-abf2-89f93dc847b3",
+    "name": "RAM Used",
+    "question": "proportion utilized ram ram",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / (node_memory_MemTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "f6f070cf-88b7-47d9-9a53-ba3774796022",
+    "name": "RAM Used",
+    "question": "ram excluding free memory",
+    "query": "((node_memory_MemTotal_bytes - node_memory_MemFree_bytes) / (node_memory_MemTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "8e7428f2-7525-410d-954d-04f4593ac629",
+    "name": "RAM Used",
+    "question": "used ram memory",
+    "query": "100 - ((node_memory_MemAvailable_bytes * 100) / node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "501fc265-ea81-4207-a737-067b04267918",
+    "name": "RAM Used",
+    "question": "proportion nonavailable ram",
+    "query": "100 - ((node_memory_MemAvailable_bytes * 100) / node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "990e6cde-3fcc-48b2-96e1-065ff5e5e95a",
+    "name": "RAM Used",
+    "question": "ram ratio excluding available memory",
+    "query": "100 - ((node_memory_MemAvailable_bytes * 100) / node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "375ff9c5-ea30-48e7-a092-f44e059a1f9a",
+    "name": "SWAP Used",
+    "question": "used swap memory",
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "eb188da3-79f2-420d-91c9-74435b54e4ed",
+    "name": "SWAP Used",
+    "question": "swap memory",
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "df6113a0-4de6-4276-a678-ccd7e8b42997",
+    "name": "SWAP Used",
+    "question": "proportion swap memory use",
+    "query": "((node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes) / (node_memory_SwapTotal_bytes )) * 100",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "7946c0b0-d893-475d-b2de-5d94b9a21e57",
+    "name": "Root FS Used",
+    "question": "used root fs",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "07fa39ce-1047-4081-ab43-c5c2e9606f87",
+    "name": "Root FS Used",
+    "question": "root fs",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "32eca68c-d047-46d9-b692-f83562fcb62b",
+    "name": "Root FS Used",
+    "question": "root fs space consumption",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "45f17955-fc95-496b-8800-d1e1fc0afa0b",
+    "name": "Uptime",
+    "question": "difference between boot",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
+    ]
+  },
+  {
+    "id": "15d3abd9-616d-424f-a5c0-022efd2726c2",
+    "name": "Uptime",
+    "question": "system uptime calculation",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
+    ]
+  },
+  {
+    "id": "1bf94b53-02be-4827-b3c5-72672f1badce",
+    "name": "Uptime",
+    "question": "last boot",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
+    ]
+  },
+  {
+    "id": "3ac89926-6ae5-4ccf-9689-4f3bc714569b",
+    "name": "RootFS Total",
+    "question": "rootfs",
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "9085c71c-e77b-4230-8ea3-c14a247dd79b",
+    "name": "RootFS Total",
+    "question": "aggregate rootfs",
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "e3acc895-e508-48fd-9cba-2bf3d7870426",
+    "name": "RootFS Total",
+    "question": "rootfs",
+    "query": "node_filesystem_size_bytes",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "2dc87473-c82d-4bb7-b0a2-1cc99f03dcd2",
+    "name": "RAM Total",
+    "question": "ram system",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "b57c5782-11f2-4489-b475-8934279495a0",
+    "name": "RAM Total",
+    "question": "cumulative ram capacity",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "82c14b9b-1b5f-41c0-895f-0ce42db61367",
+    "name": "RAM Total",
+    "question": "overall system ram",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "6316a03f-912b-4e21-8549-71e578b576e6",
+    "name": "SWAP Total",
+    "question": "swap memory",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "42193d55-7709-40e7-bcd3-2e514dbf62e8",
+    "name": "SWAP Total",
+    "question": "aggregate swap memory",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "7cde4d85-6a74-49a8-82c4-c9efe9c95809",
+    "name": "SWAP Total",
+    "question": "cumulative swap memory allocation",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "0cfdd799-49cd-405b-a145-7bd6c6627142",
+    "name": "Disk IOps Completed",
+    "question": "completed disk iops",
+    "query": "irate(node_disk_reads_completed_total[5m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "id": "9156c484-668b-4750-a120-4957d86a13dd",
+    "name": "Disk IOps Completed",
+    "question": "disk read completions",
+    "query": "irate(node_disk_reads_completed_total[5m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "id": "929a261e-252d-4ab5-baa8-ed502e5053d8",
+    "name": "Disk IOps Completed",
+    "question": "disk reads completed",
+    "query": "irate(node_disk_reads_completed_total[5m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "id": "9acf89fc-a711-438e-9fb7-561308c59ee9",
+    "name": "Disk IOps Completed",
+    "question": "disk writes completed",
+    "query": "irate(node_disk_writes_completed_total[5m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "id": "330403c3-f542-4c0f-80fe-7a9e20d517c7",
+    "name": "Disk IOps Completed",
+    "question": "disk write completed",
+    "query": "irate(node_disk_writes_completed_total[5m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "id": "0135da6c-b463-43a0-9470-5250bbd2d487",
+    "name": "Disk IOps Completed",
+    "question": "completed disk write",
+    "query": "irate(node_disk_writes_completed_total[5m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "id": "3788f12a-999a-4479-b4ac-ebfe78387326",
+    "name": "Disk R/W Data",
+    "question": "disk read data 5 minutes",
+    "query": "irate(node_disk_read_bytes_total[5m])",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "320ebb85-a8ba-4c2e-a600-1c1d4cc3c76b",
+    "name": "Disk R/W Data",
+    "question": "disk read data",
+    "query": "irate(node_disk_read_bytes_total[5m])",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "4fc39097-a957-4835-af74-f4e92e9cc81b",
+    "name": "Disk R/W Data",
+    "question": "disk read data prometheus node",
+    "query": "irate(node_disk_read_bytes_total[5m])",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "553fed24-2316-4c7e-9562-d1f3c9a113dd",
+    "name": "Disk R/W Data",
+    "question": "disk data written",
+    "query": "irate(node_disk_written_bytes_total[5m])",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "e300f3cf-4f47-4633-8409-9b7f485dc48d",
+    "name": "Disk R/W Data",
+    "question": "disk write data",
+    "query": "irate(node_disk_written_bytes_total[5m])",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "2f36b867-f482-4a38-bdec-890ee019f6ca",
+    "name": "Disk R/W Data",
+    "question": "disk write 5 minutes",
+    "query": "irate(node_disk_written_bytes_total[5m])",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "d134463d-07fd-4617-876f-8506d743b803",
+    "name": "Disk R/W Time",
+    "question": "disk read 5 minutes",
+    "query": "irate(node_disk_read_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_read_time_seconds_total"
+    ]
+  },
+  {
+    "id": "ef2ed873-567a-491b-8e6f-9a69fc46bf09",
+    "name": "Disk R/W Time",
+    "question": "disk read metric",
+    "query": "irate(node_disk_read_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_read_time_seconds_total"
+    ]
+  },
+  {
+    "id": "bf48efa4-91c0-4d0a-8b63-71b005210451",
+    "name": "Disk R/W Time",
+    "question": "disk read",
+    "query": "irate(node_disk_read_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_read_time_seconds_total"
+    ]
+  },
+  {
+    "id": "a2081e6c-bf01-479e-bcc4-c7364c7fff24",
+    "name": "Disk R/W Time",
+    "question": "disk write",
+    "query": "irate(node_disk_write_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_write_time_seconds_total"
+    ]
+  },
+  {
+    "id": "9b76f8b4-e094-495a-b769-3a9d360deec8",
+    "name": "Disk R/W Time",
+    "question": "node level disk write",
+    "query": "irate(node_disk_write_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_write_time_seconds_total"
+    ]
+  },
+  {
+    "id": "9f87c3e7-35b6-429f-978f-14b2c5ac2cbc",
+    "name": "Disk R/W Time",
+    "question": "disk write node",
+    "query": "irate(node_disk_write_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_write_time_seconds_total"
+    ]
+  },
+  {
+    "id": "09072157-6e06-45c6-8e0b-a9e4c58bf377",
+    "name": "Disk IOs Weighted",
+    "question": "weighted disk io",
+    "query": "irate(node_disk_io_time_weighted_seconds_total[5m])",
+    "metrics": [
+      "node_disk_io_time_weighted_seconds_total"
+    ]
+  },
+  {
+    "id": "8d464d77-7882-4811-86b2-6e409c1c731d",
+    "name": "Disk IOs Weighted",
+    "question": "weighted disk io activity",
+    "query": "irate(node_disk_io_time_weighted_seconds_total[5m])",
+    "metrics": [
+      "node_disk_io_time_weighted_seconds_total"
+    ]
+  },
+  {
+    "id": "c99255f1-62d7-4894-947a-dcde99ff3e61",
+    "name": "Disk IOs Weighted",
+    "question": "weighted disk io 5 minutes",
+    "query": "irate(node_disk_io_time_weighted_seconds_total[5m])",
+    "metrics": [
+      "node_disk_io_time_weighted_seconds_total"
+    ]
+  },
+  {
+    "id": "453fe0bc-6c64-43b6-aa31-310942dbe139",
+    "name": "Disk R/W Merged",
+    "question": "disk reads merged",
+    "query": "irate(node_disk_reads_merged_total[5m])",
+    "metrics": [
+      "node_disk_reads_merged_total"
+    ]
+  },
+  {
+    "id": "9ce86583-9d1f-4dcc-b472-6707a1bb6096",
+    "name": "Disk R/W Merged",
+    "question": "disk reads merged",
+    "query": "irate(node_disk_reads_merged_total[5m])",
+    "metrics": [
+      "node_disk_reads_merged_total"
+    ]
+  },
+  {
+    "id": "3dbd74f3-dd4b-4daf-8677-e22e5a0d9376",
+    "name": "Disk R/W Merged",
+    "question": "merged disk reads",
+    "query": "irate(node_disk_reads_merged_total[5m])",
+    "metrics": [
+      "node_disk_reads_merged_total"
+    ]
+  },
+  {
+    "id": "f4363451-7e25-477b-b82c-3054b5eadb49",
+    "name": "Disk R/W Merged",
+    "question": "disk writes merged",
+    "query": "irate(node_disk_writes_merged_total[5m])",
+    "metrics": [
+      "node_disk_writes_merged_total"
+    ]
+  },
+  {
+    "id": "5426fc9f-57ad-4278-8872-4f9cb36e23ae",
+    "name": "Disk R/W Merged",
+    "question": "disk writes merging",
+    "query": "irate(node_disk_writes_merged_total[5m])",
+    "metrics": [
+      "node_disk_writes_merged_total"
+    ]
+  },
+  {
+    "id": "34163657-9150-464d-a266-96d2bded4139",
+    "name": "Disk R/W Merged",
+    "question": "summed disk writes merging",
+    "query": "irate(node_disk_writes_merged_total[5m])",
+    "metrics": [
+      "node_disk_writes_merged_total"
+    ]
+  },
+  {
+    "id": "d4766668-fe55-4890-a50d-afa6d9c2e9e6",
+    "name": "Time Spent Doing I/Os",
+    "question": "node io spent 5 minutes",
+    "query": "irate(node_disk_io_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "id": "37bfe228-701c-4248-81cc-9a98c82d3f7a",
+    "name": "Time Spent Doing I/Os",
+    "question": "disk io node",
+    "query": "irate(node_disk_io_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "id": "ccb3de9e-2cab-4471-b6de-cef44aef7a69",
+    "name": "Time Spent Doing I/Os",
+    "question": "node disk io",
+    "query": "irate(node_disk_io_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "id": "c3f8076b-7a1e-464f-b1ec-d982a5aba0fb",
+    "name": "Time Spent Doing I/Os",
+    "question": "spent disk discards",
+    "query": "irate(node_disk_discard_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_discard_time_seconds_total"
+    ]
+  },
+  {
+    "id": "12db1be8-d78e-462c-8bc9-db7a478854bf",
+    "name": "Time Spent Doing I/Os",
+    "question": "node disk discard",
+    "query": "irate(node_disk_discard_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_discard_time_seconds_total"
+    ]
+  },
+  {
+    "id": "748ac18c-106d-4bc4-843e-7af0790bf9b8",
+    "name": "Time Spent Doing I/Os",
+    "question": "disk discard",
+    "query": "irate(node_disk_discard_time_seconds_total[5m])",
+    "metrics": [
+      "node_disk_discard_time_seconds_total"
+    ]
+  },
+  {
+    "id": "1fafb7b0-6679-41b8-aa02-94da855339df",
+    "name": "Disk IOs Current in Progress",
+    "question": "disk io progress",
+    "query": "node_disk_io_now",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  },
+  {
+    "id": "4d95edf2-a9ad-4917-8277-0d5d00e22961",
+    "name": "Disk IOs Current in Progress",
+    "question": "ongoing disk io",
+    "query": "node_disk_io_now",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  },
+  {
+    "id": "49f84a23-7b05-410c-9270-87a261fc52d2",
+    "name": "Disk IOs Current in Progress",
+    "question": "count disk io",
+    "query": "node_disk_io_now",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  },
+  {
+    "id": "65dd391b-8943-46f7-84c0-32d102a21d8a",
+    "name": "Disk IOps Discards completed / merged",
+    "question": "disk iops discards completedmerged",
+    "query": "irate(node_disk_discards_completed_total[5m])",
+    "metrics": [
+      "node_disk_discards_completed_total"
+    ]
+  },
+  {
+    "id": "242ca8e0-23e3-4498-84fd-6944525210ae",
+    "name": "Disk IOps Discards completed / merged",
+    "question": "disk discard",
+    "query": "irate(node_disk_discards_completed_total[5m])",
+    "metrics": [
+      "node_disk_discards_completed_total"
+    ]
+  },
+  {
+    "id": "775abd98-c211-4e2e-98f9-35c2e448657c",
+    "name": "Disk IOps Discards completed / merged",
+    "question": "discard completedmerged",
+    "query": "irate(node_disk_discards_completed_total[5m])",
+    "metrics": [
+      "node_disk_discards_completed_total"
+    ]
+  },
+  {
+    "id": "5993ac15-0ecc-4ee0-beea-e5f840082adf",
+    "name": "Disk IOps Discards completed / merged",
+    "question": "completed disk iops discards",
+    "query": "irate(node_disk_discards_merged_total[5m])",
+    "metrics": [
+      "node_disk_discards_merged_total"
+    ]
+  },
+  {
+    "id": "fd9f7082-8558-4186-a472-ab9c8a2e23a3",
+    "name": "Disk IOps Discards completed / merged",
+    "question": "merged disk iops discards",
+    "query": "irate(node_disk_discards_merged_total[5m])",
+    "metrics": [
+      "node_disk_discards_merged_total"
+    ]
+  },
+  {
+    "id": "ad58eb82-d778-478e-b771-2b82fe32f6d1",
+    "name": "Disk IOps Discards completed / merged",
+    "question": "discarded merged disk iops 5 minutes",
+    "query": "irate(node_disk_discards_merged_total[5m])",
+    "metrics": [
+      "node_disk_discards_merged_total"
+    ]
+  }
+]

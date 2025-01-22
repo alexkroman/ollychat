@@ -149,6 +149,10 @@ fs.readdir(inputDir, (err, files) => {
 
     // Process only .json files
     if (path.extname(file).toLowerCase() === '.json') {
+      if (fs.existsSync(outputFilePath)) {
+        console.log(`Skipping existing file: ${outputFilePath}`);
+        return;
+      }
       try {
         transformFile(inputFilePath, outputFilePath);
       } catch (error) {

@@ -1,0 +1,386 @@
+[
+  {
+    "id": "6a0df4f5-2dca-40a6-b86d-845f730472b8",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "question": "aggregate network receive",
+    "query": "sum (rate(container_network_receive_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "2139ed90-d063-40d1-8fd3-3e2ae2be1200",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "question": "inbound network traffic",
+    "query": "sum (rate(container_network_receive_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "13da7651-cbe8-40e1-9c82-e96efd5c8229",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "question": "container network receive",
+    "query": "sum (rate(container_network_receive_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "1f6426bf-0496-4e18-b733-1ba00f86df29",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "question": "aggregate network transmit containers",
+    "query": "sum (rate(container_network_transmit_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "8be2a35a-4e2b-4596-8214-9c00e7a3ad80",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "question": "network bandwidth usage containers",
+    "query": "sum (rate(container_network_transmit_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "f73efeac-9667-4f78-8698-b3ce4dd5e0db",
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "question": "container network transmit",
+    "query": "sum (rate(container_network_transmit_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "7d4989a0-5be8-477d-b270-d578f1c3cd3b",
+    "name": " Resource comprehensive display ",
+    "question": "container memory working set",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "9c0282b6-555b-4282-889a-9f311c7742e4",
+    "name": " Resource comprehensive display ",
+    "question": "memory usage containers",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "88ef7227-6bbc-4bbb-ab41-25c26c827f3a",
+    "name": " Resource comprehensive display ",
+    "question": "container memory working set",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "29b5cefa-f53b-4322-a77e-992088ab53b6",
+    "name": " container CPU node ",
+    "question": "container cpu usage",
+    "query": "sum (irate(container_cpu_usage_seconds_total[2m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "6593541a-1bce-4e4d-be21-43f2c5257da3",
+    "name": " container CPU node ",
+    "question": "cpu usage containers",
+    "query": "sum (irate(container_cpu_usage_seconds_total[2m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "6d9e8a0b-b445-4681-bde5-47b828694f0b",
+    "name": " container CPU node ",
+    "question": "cpu consumption containers",
+    "query": "sum (irate(container_cpu_usage_seconds_total[2m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "cdda0c0c-8be5-4016-ae04-516579aa2533",
+    "name": " Node memory ratio ",
+    "question": "ratio used node memory",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "5d1c7ca3-107e-4930-9248-37407f014cc0",
+    "name": " Node memory ratio ",
+    "question": "node memory usage ratio",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "8a5166ba-d655-4bb8-b3eb-10f9be22508c",
+    "name": " Node memory ratio ",
+    "question": "container memory usage ratio",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "11e8deb0-d3e4-4248-9263-e48e57d9d3c3",
+    "name": " Node memory ratio ",
+    "question": "container file system usage",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "4e3bf832-5e52-47c1-9606-4604852419f8",
+    "name": " Node memory ratio ",
+    "question": "container file system usage",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "a53b1e14-c4e5-4911-8b22-0f0377f3fe9e",
+    "name": " Node memory ratio ",
+    "question": "container file system storage",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "015fa401-3bb0-407a-986d-c3de5b2b1746",
+    "name": " Node memory ratio ",
+    "question": "container file system limits",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "88c6ad5a-0482-40e8-a482-842cb8102429",
+    "name": " Node memory ratio ",
+    "question": "container file system",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "07619803-5abd-4641-8444-f1e3838788d6",
+    "name": " Node memory ratio ",
+    "question": "all container file system limits",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "5e37ea84-3058-4f71-b8d0-fa1605291ec1",
+    "name": "$Node： Node memory details ",
+    "question": "cumulative cpu usage node",
+    "query": "sum (irate(container_cpu_usage_seconds_total[2m])) by (node)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "e24d48d9-4319-4817-b620-147e71881677",
+    "name": "$Node： Node memory details ",
+    "question": "cpu usage node",
+    "query": "sum (irate(container_cpu_usage_seconds_total[2m])) by (node)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "062e586d-3955-4363-a798-4692b59fb2a7",
+    "name": "$Node： Node memory details ",
+    "question": "cpu usage 2 minutes node",
+    "query": "sum (irate(container_cpu_usage_seconds_total[2m])) by (node)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "fe0f223c-f3f0-4ede-8313-f8c04a55b9f4",
+    "name": "$Node： Node memory details ",
+    "question": "memory working set node",
+    "query": "sum (container_memory_working_set_bytes) by (node)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "d5e4139a-50d7-4192-8e59-dde5cf9ff260",
+    "name": "$Node： Node memory details ",
+    "question": "memory usage node",
+    "query": "sum (container_memory_working_set_bytes) by (node)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "ddb3b4ba-62b6-410f-b08e-fb7b37675964",
+    "name": "$Node： Node memory details ",
+    "question": "memory working set across nodes",
+    "query": "sum (container_memory_working_set_bytes) by (node)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "086a825c-a2d3-490e-92f4-dbe3424716b2",
+    "name": "$Node： Node memory details ",
+    "question": "aggregate container filesystem usage node",
+    "query": "sum (container_fs_usage_bytes) by (node)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "d72aa77c-e226-43aa-8093-df268876169c",
+    "name": "$Node： Node memory details ",
+    "question": "filesystem usage node",
+    "query": "sum (container_fs_usage_bytes) by (node)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "035419dd-131f-4044-8e2e-8bde621c0ef0",
+    "name": "$Node： Node memory details ",
+    "question": "filesystem usage node",
+    "query": "sum (container_fs_usage_bytes) by (node)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "3b23b73d-949d-42f4-b134-25ed9f696d53",
+    "name": "$Node： Node memory details ",
+    "question": "container filesystem limits node",
+    "query": "sum (container_fs_limit_bytes) by (node)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "e5cd5ef2-0e17-4a53-8178-44fd2f3f3533",
+    "name": "$Node： Node memory details ",
+    "question": "node memory containers",
+    "query": "sum (container_fs_limit_bytes) by (node)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "fa84de6f-fbde-491a-868e-8e30946e4d2c",
+    "name": "$Node： Node memory details ",
+    "question": "memory limits node",
+    "query": "sum (container_fs_limit_bytes) by (node)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "4f3f8ed6-9952-40df-a3f1-08375eeeff51",
+    "name": "$Node： Node memory details ",
+    "question": "container file system usage node",
+    "query": "sum (container_fs_usage_bytes)by (node) / sum (container_fs_limit_bytes)by (node)",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "2feb0290-41c6-4067-b44e-dccf45aa02b9",
+    "name": "$Node： Node memory details ",
+    "question": "ratio container file system usage node",
+    "query": "sum (container_fs_usage_bytes)by (node) / sum (container_fs_limit_bytes)by (node)",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "8ae483fa-4017-4eac-95a3-ee3d957d8ac6",
+    "name": "$Node： Node memory details ",
+    "question": "nodelevel container file system usage",
+    "query": "sum (container_fs_usage_bytes)by (node) / sum (container_fs_limit_bytes)by (node)",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "250358f8-128b-4737-892b-e3cba236dff3",
+    "name": "$Node： Overall resource overview ",
+    "question": "network bandwidth node",
+    "query": "sum (irate(container_network_receive_bytes_total[2m]))by (node) *8",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "2509a9db-17ee-4314-b3bb-5be5f31d506b",
+    "name": "$Node： Overall resource overview ",
+    "question": "network receive node",
+    "query": "sum (irate(container_network_receive_bytes_total[2m]))by (node) *8",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "e623bdd8-25fc-487f-9a79-172c5b6928dc",
+    "name": "$Node： Overall resource overview ",
+    "question": "network receive node",
+    "query": "sum (irate(container_network_receive_bytes_total[2m]))by (node) *8",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "31ff6f04-76d8-45ee-a507-c7c3a9fb7c74",
+    "name": "$Node： Overall resource overview ",
+    "question": "network bandwidth node",
+    "query": "sum (irate(container_network_transmit_bytes_total[2m]))by (node) *8",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "2e13c026-08e2-494b-b46e-344125ea8647",
+    "name": "$Node： Overall resource overview ",
+    "question": "network transmit node",
+    "query": "sum (irate(container_network_transmit_bytes_total[2m]))by (node) *8",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "22203b86-fb8b-4cae-9edf-c35cb5f7c80f",
+    "name": "$Node： Overall resource overview ",
+    "question": "network data transfer node",
+    "query": "sum (irate(container_network_transmit_bytes_total[2m]))by (node) *8",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  }
+]

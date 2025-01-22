@@ -15,8 +15,18 @@ Ollychat is an open-source tool that allows you to interact with your observabil
 - [Node.js](https://nodejs.org/) (latest LTS version recommended)
 - Slack workspace (if using Slack integration)
 
-### Install & Run ChromaDB
-ChromaDB is used for embedding storage. To install and run it using Docker:
+### Install & Run ChromaDB (command line)
+
+ChromaDB is used for embedding storage. To install and run it using pip:
+
+```sh
+pip install chromadb 
+chroma run 
+```
+
+### Install & Run ChromaDB (command line)
+
+To install and run it using Docker:
 ```sh
 # Pull the ChromaDB Docker image
 docker pull chromadb/chroma

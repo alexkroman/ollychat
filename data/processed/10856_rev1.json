@@ -1,0 +1,131 @@
+[
+  {
+    "name": "CPU usage (5m avg)",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "name": "Memory usage",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Filesystem usage",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "name": "CPU usage (5m avg)",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "name": "CPU usage (5m avg)",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) by (node) / sum (machine_cpu_cores) by (node)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "name": "Memory usage",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Memory usage",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (container_memory_working_set_bytes) by (node) / sum (machine_memory_bytes) by (node) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Filesystem usage",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "name": "Filesystem usage",
+    "description": "Monitors Kubernetes cluster using Prometheus. Shows overall cluster or Node CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.",
+    "query": "sum (container_fs_usage_bytes) by (node) / sum (container_fs_limit_bytes) by (node) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  }
+]

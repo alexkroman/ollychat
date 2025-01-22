@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Network I/O",
+    "description": "Network Activity by Namespaces",
+    "query": "sum(rate(container_network_receive_bytes_total[2m])) by (namespace)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "Network Activity by Namespaces",
+    "query": "- sum (rate (container_network_transmit_bytes_total[2m])) by (namespace)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "Use Ram memory Cluster",
+    "description": "Use Ram memory Cluster",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Ram memory Use of node",
+    "description": "Ram memory Use of node by namespace",
+    "query": "sum(container_memory_usage_bytes) by (namespace,container_name)",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "name": "Cluster Ram memory Capacity",
+    "description": "Cluster Ram memory capacity in real time",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  }
+]

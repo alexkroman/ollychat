@@ -1,0 +1,56 @@
+[
+  {
+    "id": "2ae05c9f-b03b-49cb-820c-b1becd4efcf0",
+    "name": "Process Restart Times",
+    "question": "process restart occurrences nodejs",
+    "query": "sum(changes(process_start_time_seconds[1m]))",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "fb023546-6bc3-42a3-83d9-59b0c8f7f832",
+    "name": "Process Restart Times",
+    "question": "changes process start times",
+    "query": "sum(changes(process_start_time_seconds[1m]))",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "7a3754c4-6b72-40f1-ab0f-28b924ef3869",
+    "name": "Process Restart Times",
+    "question": "process restarts within minute",
+    "query": "sum(changes(process_start_time_seconds[1m]))",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "f24105c0-a400-4fd9-b0f1-a05467c67553",
+    "name": "Process Memory Usage",
+    "question": "resident memory usage nodejs process",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "ed6dd46d-7598-4417-aded-4ed85a59b774",
+    "name": "Process Memory Usage",
+    "question": "basic metrics nodejs memory consumption",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "697b2a4b-9be0-40a7-b50b-6532f4d71c5b",
+    "name": "Process Memory Usage",
+    "question": "querying nodejs process memory usage",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  }
+]

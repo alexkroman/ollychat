@@ -1,0 +1,29 @@
+[
+  {
+    "id": "e8621662-f387-4b70-8e92-863033c6d706",
+    "name": "Memory Usage (w/o cache)",
+    "question": "memory usage pod excluding cache",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "c2ba2d73-a993-4a94-a3ce-1a4df37c999d",
+    "name": "Memory Usage (w/o cache)",
+    "question": "working set memory pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "36cb9a4a-f871-41d7-a680-1969abb3334b",
+    "name": "Memory Usage (w/o cache)",
+    "question": "memory usage without cache grouped pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  }
+]

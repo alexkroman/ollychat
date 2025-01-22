@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Least CPU Idle",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "sort_desc(min(avg(rate(node_cpu_seconds_total[2m])) by (instance)))",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Min Space",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "min(node_filesystem_avail_bytes/node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "Min Mem",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "min(node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Load 1m",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "node_memory_MemFree_bytes + node_memory_Buffers_bytes + node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "name": "CPU Idle Avg",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "avg(rate(node_cpu_seconds_total[2m])) by (instance)",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Disk IO s",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "rate(node_disk_io_time_seconds_total[2m])",
+    "metrics": [
+      "node_disk_io_time_seconds_total"
+    ]
+  },
+  {
+    "name": "Top 5 Memory Intense Pods",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "topk(5,sum(container_memory_usage_bytes) by (pod_name))",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "name": "TOP CPU Containers",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "topk(5, sum(rate(container_cpu_usage_seconds_total[2m])) by (pod_name, container_name))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  }
+]

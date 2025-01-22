@@ -1,0 +1,122 @@
+[
+  {
+    "name": "CPU",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "name": "Disk",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "name": "RAM",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "name": "Uptime",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "time()-node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "name": "Disk Space",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "sum(node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "name": "Disk Space",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "sum(node_filesystem_avail_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes"
+    ]
+  },
+  {
+    "name": "Network",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "sum(rate(container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "Network",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "-sum(rate(container_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Disk I/O",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "sum(-rate(node_disk_written_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "name": "Disk I/O",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "sum(rate(node_disk_read_bytes_total[30m]))",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "name": "CPU Load",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "name": "CPU Load",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "name": "CPU Load",
+    "description": "Dashboard for ethereum home staking with eth-docker",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  }
+]

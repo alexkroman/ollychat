@@ -1,0 +1,29 @@
+[
+  {
+    "id": "d27f1aa5-8edc-4e90-b6e4-18133bbcddfa",
+    "name": "CPU",
+    "question": "cpu usage teku nodes",
+    "query": "irate(process_cpu_seconds_total[1m])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "7f4a6ec4-ab75-40ca-befb-3f4c7de17a81",
+    "name": "CPU",
+    "question": "cpu consumption teku nodes",
+    "query": "irate(process_cpu_seconds_total[1m])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "6689f141-9b7f-4a29-a466-a8cc21a09fa6",
+    "name": "CPU",
+    "question": "overview cpu teku nodes",
+    "query": "irate(process_cpu_seconds_total[1m])",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  }
+]

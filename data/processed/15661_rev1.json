@@ -1,0 +1,116 @@
+[
+  {
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (rate(container_network_receive_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "$NameSpace： selected nodes （ Associating nodes and namespaces ）",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (rate(container_network_transmit_bytes_total[2m]))*8",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": " Resource comprehensive display ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": " container CPU node ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (irate(container_cpu_usage_seconds_total[2m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": " Node memory ratio ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "name": " Node memory ratio ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "name": " Node memory ratio ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "name": "$Node： Node memory details ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (irate(container_cpu_usage_seconds_total[2m])) by (node)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "$Node： Node memory details ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (container_memory_working_set_bytes) by (node)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "$Node： Node memory details ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (container_fs_usage_bytes) by (node)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "name": "$Node： Node memory details ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (container_fs_limit_bytes) by (node)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "name": "$Node： Node memory details ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (container_fs_usage_bytes)by (node) / sum (container_fs_limit_bytes)by (node)",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "name": "$Node： Overall resource overview ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (irate(container_network_receive_bytes_total[2m]))by (node) *8",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "$Node： Overall resource overview ",
+    "description": "【 resource overview 】2021.10.10 detail ，kubernetes Node information details ！ outflow K8S Node resource overview 、 Network bandwidth per second 、Pod Resource details K8S Network overview ， Optimizing important metrics display 。https://github.com/starsliao/Prometheus",
+    "query": "sum (irate(container_network_transmit_bytes_total[2m]))by (node) *8",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  }
+]

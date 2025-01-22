@@ -1,0 +1,416 @@
+[
+  {
+    "id": "db8ade2f-fc60-4a41-8b34-46e28f59ec8f",
+    "name": "Cluster memory usage",
+    "question": "cluster memory used",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "efb4dfa2-befa-4340-acbc-9916c9f9886a",
+    "name": "Cluster memory usage",
+    "question": "ratio container memory machine memory",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "b444160e-ce5c-48e8-97ba-9c27f328e255",
+    "name": "Cluster memory usage",
+    "question": "cluster memory consumption",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "022e21a9-b349-48a4-80bf-083ff7582c6c",
+    "name": "Cluster CPU usage ($interval avg)",
+    "question": "combined container cpu usage",
+    "query": "sum (rate (container_cpu_usage_seconds_total[$interval])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "2d53cc90-ce41-4ae4-a6a6-281a8ab90316",
+    "name": "Cluster CPU usage ($interval avg)",
+    "question": "ratio container cpu usage machine cpu cores",
+    "query": "sum (rate (container_cpu_usage_seconds_total[$interval])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "7e3d6af9-048e-4f39-b758-f89038563422",
+    "name": "Cluster CPU usage ($interval avg)",
+    "question": "clusterwide cpu usage machine cpu cores",
+    "query": "sum (rate (container_cpu_usage_seconds_total[$interval])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "992bd627-49ca-4b14-8511-ab692ef75776",
+    "name": "Cluster filesystem usage",
+    "question": "cluster filesystem usage",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "46cecffa-8e69-4d70-95e1-d9d7f56be71b",
+    "name": "Cluster filesystem usage",
+    "question": "ratio cluster filesystem",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "acd91840-d7f8-40cc-888b-65f4c484e339",
+    "name": "Cluster filesystem usage",
+    "question": "cluster filesystem capacity",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "79fbfd84-b8fc-4e71-82ef-ebdd9620080c",
+    "name": "Used",
+    "question": "container memory working set",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "61a15f34-17fb-43d9-8175-6777900d0176",
+    "name": "Used",
+    "question": "memory usage containers",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "fad80295-869f-4616-8a9a-99afea1c829b",
+    "name": "Used",
+    "question": "container memory working set",
+    "query": "sum (container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "f23a520a-6cc5-4cc8-a62f-d1972a3f4361",
+    "name": "Total",
+    "question": "machine memory",
+    "query": "sum (machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "cd483cf2-fcab-42b2-b27c-e93680ad1323",
+    "name": "Total",
+    "question": "machine memory consumption",
+    "query": "sum (machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "4c365b0e-0669-4c40-b2bb-34f5b2f519cb",
+    "name": "Total",
+    "question": "machine memory usage",
+    "query": "sum (machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "2629c184-b1ff-41b5-961a-79ebcbb68d3a",
+    "name": "Used",
+    "question": "container cpu usage",
+    "query": "sum (rate (container_cpu_usage_seconds_total[$interval]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "a9959de7-6277-4918-97dc-88f75a346989",
+    "name": "Used",
+    "question": "container cpu consumption",
+    "query": "sum (rate (container_cpu_usage_seconds_total[$interval]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "ab4b4152-d357-4130-871a-4ca6560c3d02",
+    "name": "Used",
+    "question": "cpu usage containers",
+    "query": "sum (rate (container_cpu_usage_seconds_total[$interval]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "f1b2534c-fec5-4feb-b2e0-6b63fc0b1975",
+    "name": "Total",
+    "question": "machine cpu cores",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "41f51498-765a-4996-bb3d-528d2310fcc1",
+    "name": "Total",
+    "question": "machine cpu core",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "ad5f2c5e-a90a-4a36-9b3d-7c731891a684",
+    "name": "Total",
+    "question": "machine cpu core values",
+    "query": "sum (machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "a7576c71-7224-4518-b40c-366e6edc2c54",
+    "name": "Used",
+    "question": "container filesystem usage",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "6a49d8f5-ba68-43e7-b13b-5bb2867c1352",
+    "name": "Used",
+    "question": "container filesystem usage",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "1f5e7b5f-c64b-4f46-b5fe-548a56dcc0ad",
+    "name": "Used",
+    "question": "container filesystem usage",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "id": "ba8e0674-03d8-41a2-b56c-dca3e1d29efd",
+    "name": "Total",
+    "question": "container filesystem",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "9b6e653c-20fc-48cb-be19-875a4a0272bc",
+    "name": "Total",
+    "question": "container filesystem",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "3be23a01-11d0-4048-97fc-b80cf58bbf31",
+    "name": "Total",
+    "question": "container filesystem capacity",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "id": "084e81f8-bb60-48bf-90e3-977ddd06f11d",
+    "name": "Pods memory usage",
+    "question": "memory usage pod",
+    "query": "sum (container_memory_working_set_bytes) by (pod_name)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "75283561-1162-4362-b3da-1c5c3bf64f57",
+    "name": "Pods memory usage",
+    "question": "pod memory consumption",
+    "query": "sum (container_memory_working_set_bytes) by (pod_name)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "e42679be-8ddf-422e-a4a7-bbe0cfacf849",
+    "name": "Pods memory usage",
+    "question": "memory usage pod",
+    "query": "sum (container_memory_working_set_bytes) by (pod_name)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "17e555db-f626-412b-bfe9-cc6c56c447b3",
+    "name": "Pods CPU usage ($interval avg)",
+    "question": "aggregate pods cpu usage pod",
+    "query": "sum (rate (container_cpu_usage_seconds_total[$interval])) by (pod_name)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "2f9b39f6-1449-4b92-92b7-8ec615ac314f",
+    "name": "Pods CPU usage ($interval avg)",
+    "question": "cpu usage pod name",
+    "query": "sum (rate (container_cpu_usage_seconds_total[$interval])) by (pod_name)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "32a83e0c-5a0f-47eb-8556-86fe90669e03",
+    "name": "Pods CPU usage ($interval avg)",
+    "question": "cpu usage among pods",
+    "query": "sum (rate (container_cpu_usage_seconds_total[$interval])) by (pod_name)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "bca755c6-cec3-448b-819d-fa983ffddadd",
+    "name": "Network I/O pressure",
+    "question": "network receive containers",
+    "query": "sum (rate (container_network_receive_bytes_total[$interval]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "e17bd835-a60e-4b50-85bc-7d3ee7e725e0",
+    "name": "Network I/O pressure",
+    "question": "container network receive",
+    "query": "sum (rate (container_network_receive_bytes_total[$interval]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "0916c957-7d57-4f4e-98f0-68156eb6509d",
+    "name": "Network I/O pressure",
+    "question": "summed network io pressure containers",
+    "query": "sum (rate (container_network_receive_bytes_total[$interval]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "17ec2bf5-5f3c-452e-91c6-b96811ab11b0",
+    "name": "Network I/O pressure",
+    "question": "network transmit",
+    "query": "- sum (rate (container_network_transmit_bytes_total[$interval]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "074b606e-3bcb-4340-a827-00d506503254",
+    "name": "Network I/O pressure",
+    "question": "network transmit container",
+    "query": "- sum (rate (container_network_transmit_bytes_total[$interval]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "af3f63e1-f778-4b30-bee4-d2d905d9a1a3",
+    "name": "Network I/O pressure",
+    "question": "network transmit across containers",
+    "query": "- sum (rate (container_network_transmit_bytes_total[$interval]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "2cd8da7c-c1d9-4f4e-9623-308ac73e6533",
+    "name": "Pods network I/O ($interval avg)",
+    "question": "network receive pod",
+    "query": "sum (rate (container_network_receive_bytes_total[$interval])) by (pod_name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "428c62db-6194-4fe7-9f2c-d68cc1207cfa",
+    "name": "Pods network I/O ($interval avg)",
+    "question": "network io pod",
+    "query": "sum (rate (container_network_receive_bytes_total[$interval])) by (pod_name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "aaa42a37-8dd2-46bb-bc58-b2b8f8d39d65",
+    "name": "Pods network I/O ($interval avg)",
+    "question": "pod network traffic",
+    "query": "sum (rate (container_network_receive_bytes_total[$interval])) by (pod_name)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "7b44d48c-1f48-48f3-83ce-bb7210311ffe",
+    "name": "Pods network I/O ($interval avg)",
+    "question": "network transmit pod",
+    "query": "- sum (rate (container_network_transmit_bytes_total[$interval])) by (pod_name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "69a5c9bb-1c5f-45e9-9ddb-f541474b7e46",
+    "name": "Pods network I/O ($interval avg)",
+    "question": "network transmit pod",
+    "query": "- sum (rate (container_network_transmit_bytes_total[$interval])) by (pod_name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "7e76219e-ffe0-4f06-af91-1234438b703f",
+    "name": "Pods network I/O ($interval avg)",
+    "question": "network transmit grouped pod",
+    "query": "- sum (rate (container_network_transmit_bytes_total[$interval])) by (pod_name)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  }
+]

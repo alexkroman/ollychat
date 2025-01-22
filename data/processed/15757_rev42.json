@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Global RAM Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "CPU Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(rate(node_cpu_seconds_total[30m]))",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "name": "RAM Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "RAM Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Cluster Memory Utilization",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "Memory Utilization by instance",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) by (instance)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "name": "OOM Events by namespace",
+    "description": "No data is generally a good thing here.",
+    "query": "sum(increase(container_oom_events_total[30m])) by (namespace) > 0",
+    "metrics": [
+      "container_oom_events_total"
+    ]
+  },
+  {
+    "name": "Network Saturation - Packets dropped",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(rate(node_network_receive_drop_total[30m]))",
+    "metrics": [
+      "node_network_receive_drop_total"
+    ]
+  },
+  {
+    "name": "Network Saturation - Packets dropped",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "- sum(rate(node_network_transmit_drop_total[30m]))",
+    "metrics": [
+      "node_network_transmit_drop_total"
+    ]
+  },
+  {
+    "name": "Total Network Received (with all virtual devices) by instance",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(rate(node_network_receive_bytes_total[30m])) by (instance)",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Total Network Received (with all virtual devices) by instance",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "- sum(rate(node_network_transmit_bytes_total[30m])) by (instance)",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "Network Received (without loopback)  by instance",
+    "description": "Dropped noisy virtual devices for readability.",
+    "query": "sum(rate(node_network_receive_bytes_total[30m])) by (instance)",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network Received (without loopback)  by instance",
+    "description": "Dropped noisy virtual devices for readability.",
+    "query": "- sum(rate(node_network_transmit_bytes_total[30m])) by (instance)",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "Network Received (loopback only) by instance",
+    "description": "Dropped noisy virtual devices for readability.",
+    "query": "sum(rate(node_network_receive_bytes_total[30m])) by (instance)",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network Received (loopback only) by instance",
+    "description": "Dropped noisy virtual devices for readability.",
+    "query": "- sum(rate(node_network_transmit_bytes_total[30m])) by (instance)",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  }
+]

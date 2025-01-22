@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Disk I/O (Bytes)",
+    "description": "Watch performance, errors, latency, and infrastructure metrics for your workload",
+    "query": "sum by (cluster) (rate (container_fs_reads_bytes_total[30m])) ",
+    "metrics": [
+      "container_fs_reads_bytes_total"
+    ]
+  },
+  {
+    "name": "Disk I/O (Bytes)",
+    "description": "Watch performance, errors, latency, and infrastructure metrics for your workload",
+    "query": "-sum by (cluster)(rate (container_fs_writes_bytes_total[30m]))",
+    "metrics": [
+      "container_fs_writes_bytes_total"
+    ]
+  },
+  {
+    "name": "Disk I/O (IOPS)",
+    "description": "Watch performance, errors, latency, and infrastructure metrics for your workload",
+    "query": "sum by (cluster)(rate (container_fs_reads_total[30m])) ",
+    "metrics": [
+      "container_fs_reads_total"
+    ]
+  },
+  {
+    "name": "Disk I/O (IOPS)",
+    "description": "Watch performance, errors, latency, and infrastructure metrics for your workload",
+    "query": "-sum by (cluster)(rate (container_fs_writes_total[30m]))",
+    "metrics": [
+      "container_fs_writes_total"
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "Watch performance, errors, latency, and infrastructure metrics for your workload",
+    "query": "sum by (cluster)(rate (container_network_receive_bytes_total[30m])) ",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network I/O",
+    "description": "Watch performance, errors, latency, and infrastructure metrics for your workload",
+    "query": "-sum by (cluster)(rate (container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "OOM Kills",
+    "description": "Watch performance, errors, latency, and infrastructure metrics for your workload",
+    "query": "sum by (cluster)(node_vmstat_oom_kill)",
+    "metrics": [
+      "node_vmstat_oom_kill"
+    ]
+  }
+]

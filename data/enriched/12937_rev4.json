@@ -1,0 +1,299 @@
+[
+  {
+    "id": "9c4d33fd-533c-440b-a172-3fab3ce84647",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "acbc8f53-cc4f-4687-945c-148bc9c30714",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu usage pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "0fc2ab2d-f80a-4584-a682-7085bca35cd6",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu resource usage pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "7228b52e-e875-4de5-8f87-bb8446791b71",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu usage pod",
+    "query": "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "5daa2017-c8ba-4b73-a5a6-987ac23eef39",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu usage pod",
+    "query": "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "8d2516c9-c76f-4bf5-8318-2f3fef08a02e",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu usage pod",
+    "query": "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "a0f2a6fc-4c14-4f54-be9a-adca3a18970a",
+    "name": "Memory Usage v. Limit",
+    "question": "memory pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "3e788f1d-8584-4ffa-acee-0f76ef2bdd5c",
+    "name": "Memory Usage v. Limit",
+    "question": "largest memory pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "dfea1de2-e6e6-4f66-89f2-876ec3e590bc",
+    "name": "Memory Usage v. Limit",
+    "question": "top memory pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "0eb4f62d-6e47-48d5-9369-1c5ec6abdf55",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "b3006d90-4515-4f50-941e-20a720ef7f1c",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "9effb980-e101-426d-920b-8c4f0163f827",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares divided 1000 pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "29e8f073-5cbe-479a-be2e-3f45e687ebce",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu usage pod",
+    "query": "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "eb0c04cd-86a1-49de-9f02-f409b6cc1504",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "aggregate cpu usage pod",
+    "query": "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "ffb89c3d-3fbd-4e6a-afc5-8aec1be52270",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu usage grouped pod",
+    "query": "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "ac2313fe-de85-45ad-9593-94354da51506",
+    "name": "Memory Usage v. Limit",
+    "question": "memory pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "0f2106aa-8d71-49f0-bafd-9528ff38f107",
+    "name": "Memory Usage v. Limit",
+    "question": "peak memory allocation pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "e67970b0-4b11-4c32-b97e-43833c6b7888",
+    "name": "Memory Usage v. Limit",
+    "question": "largest memory capacity pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "71fcc26b-31cb-4692-a55b-cba1b160bf78",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "12f298c9-3df0-4839-a3fb-c1c40208388c",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "479231e9-d437-4397-93f6-da28d860e1ab",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares distribution pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "3624a0bf-af66-4d50-a257-a40b81efb89d",
+    "name": "Memory Usage v. Limit",
+    "question": "memory pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "405fa744-a6a7-4480-bf5a-5430f2b38609",
+    "name": "Memory Usage v. Limit",
+    "question": "largest memory allocation pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "454e191c-5f24-4727-a1f2-474fb90d698b",
+    "name": "Memory Usage v. Limit",
+    "question": "pod highest memory",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "f5d6bd6a-2cd5-4126-96f3-7a7788deba8a",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "b5c32f46-1a49-40af-bd97-687c9c6f424a",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares pod",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "ba58d54f-3be3-4a50-92fe-36c75a5ee9e0",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu shares across pods",
+    "query": "sum(container_spec_cpu_shares) by (pod) / 1000",
+    "metrics": [
+      "container_spec_cpu_shares"
+    ]
+  },
+  {
+    "id": "956cd957-0fe4-4044-8140-68c15e6b90b9",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu usage pod",
+    "query": "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "17f49730-2509-4f12-97b1-0e77d7a9992d",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu usage pod",
+    "query": "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "42124118-0976-4bd2-be7c-c649c95921b8",
+    "name": "CPU Core Usage vs. Requested",
+    "question": "cpu consumption pod",
+    "query": "sum(irate(container_cpu_usage_seconds_total[$__interval])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "5e324378-690e-44d5-a27e-4b2e7d722c39",
+    "name": "Memory Usage v. Limit",
+    "question": "memory pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "32a99c45-c567-4cf3-a1dc-a86506c4a31a",
+    "name": "Memory Usage v. Limit",
+    "question": "largest memory pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  },
+  {
+    "id": "82c371bd-dfac-4201-a109-9aad6bf9186d",
+    "name": "Memory Usage v. Limit",
+    "question": "peak memory pod",
+    "query": "max(container_spec_memory_limit_bytes) by (pod)",
+    "metrics": [
+      "container_spec_memory_limit_bytes"
+    ]
+  }
+]

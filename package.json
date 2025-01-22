@@ -19,6 +19,7 @@
     "@slack/bolt": "^4.2.0",
     "chalk": "^5.4.1",
     "chromadb": "^1.10.3",
+    "chromadb-default-embed": "^2.13.2",
     "dotenv": "^16.4.7",
     "fs": "^0.0.1-security",
     "langchain": "^0.3.11",
@@ -35,8 +36,9 @@
   },
   "scripts": {
     "build": "tsc && npm run copy-txt",
-    "install-data": "npm run refresh-metrics && npm run examples:load",
+    "install-data": "npm run refresh-metrics && npm run refresh-examples",
     "refresh-metrics": "npm run metrics:import && npm run metrics:load",
+    "refresh-examples": "npm run dashboards:import && npm run data:enrich && npm run examples:load",
     "copy-txt": "mkdir -p dist/templates && cp -R src/templates/*.txt dist/templates/",
     "dev:cli": "node --watch --loader ts-node/esm src/interfaces/commandLineInterface.ts",
     "start:cli": "npm run build && node --no-warnings dist/interfaces/commandLineInterface.js",

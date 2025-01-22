@@ -1,0 +1,164 @@
+[
+  {
+    "id": "a7350861-7f91-4dfe-9398-e5de266efa4b",
+    "name": "Start Time",
+    "question": "process start",
+    "query": "process_start_time_seconds * 1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "e279aedb-21ec-4bbb-9e85-bc7bdef2b71e",
+    "name": "Start Time",
+    "question": "process start",
+    "query": "process_start_time_seconds * 1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "7813e848-d249-4f86-b2be-64ed2ae03b0e",
+    "name": "Start Time",
+    "question": "summed start processes",
+    "query": "process_start_time_seconds * 1000",
+    "metrics": [
+      "process_start_time_seconds"
+    ]
+  },
+  {
+    "id": "5317e1f9-e411-454c-94b0-47449546df52",
+    "name": "Resident Memory Usage",
+    "question": "resident memory usage processes",
+    "query": "avg(process_resident_memory_bytes)",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "8d599b40-5598-4138-9cac-bc91e68a818e",
+    "name": "Resident Memory Usage",
+    "question": "process resident memory usage averaged",
+    "query": "avg(process_resident_memory_bytes)",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "9539917f-9c5f-43b7-92a2-23b74fcab76a",
+    "name": "Resident Memory Usage",
+    "question": "process resident memory",
+    "query": "avg(process_resident_memory_bytes)",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "3f6fd073-bbc4-4a0f-9db4-6b22cb312df2",
+    "name": "Average CPU Usage",
+    "question": "user system cpu",
+    "query": "avg(rate(process_cpu_seconds_total[5m]))",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "12e13f54-eec1-4a36-ba80-9b5cc70fe893",
+    "name": "Average CPU Usage",
+    "question": "cpu usage 5 minutes",
+    "query": "avg(rate(process_cpu_seconds_total[5m]))",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "5c35cf1b-e2cf-4fce-a7ba-fc7cabd6c5a0",
+    "name": "Average CPU Usage",
+    "question": "cpu spent processes",
+    "query": "avg(rate(process_cpu_seconds_total[5m]))",
+    "metrics": [
+      "process_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "6f3b7caa-c308-4155-a3c8-7bbfdc985837",
+    "name": "Average Memory Usage",
+    "question": "virtual memory usage 5 minutes",
+    "query": "avg(rate(process_resident_memory_bytes[5m]))",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "a084ce47-710c-4e44-bf09-cdf214389737",
+    "name": "Average Memory Usage",
+    "question": "resident memory consumption 5 minutes",
+    "query": "avg(rate(process_resident_memory_bytes[5m]))",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "e5df59c0-5753-41bc-9273-d94bce1591cb",
+    "name": "Average Memory Usage",
+    "question": "memory virtual resident",
+    "query": "avg(rate(process_resident_memory_bytes[5m]))",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "id": "b7c46e31-6063-4641-95f9-7bef57585e9c",
+    "name": "Average Memory Usage",
+    "question": "virtual memory",
+    "query": "avg(rate(process_virtual_memory_bytes[5m]))",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "62ba8ad7-9e74-4e60-94e3-101f7916c715",
+    "name": "Average Memory Usage",
+    "question": "virtual memory usage",
+    "query": "avg(rate(process_virtual_memory_bytes[5m]))",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "2fcda3ef-a6b5-47fb-aa82-293398b22ae1",
+    "name": "Average Memory Usage",
+    "question": "resident memory interval",
+    "query": "avg(rate(process_virtual_memory_bytes[5m]))",
+    "metrics": [
+      "process_virtual_memory_bytes"
+    ]
+  },
+  {
+    "id": "8d6320e5-5f31-45a7-bb76-07c25b97dbf6",
+    "name": "Open File Descriptors",
+    "question": "count open file descriptors",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "a3301bcc-94ff-4d14-b956-ea035de8a0ff",
+    "name": "Open File Descriptors",
+    "question": "file descriptors",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  },
+  {
+    "id": "63f75b35-901f-4051-a75d-11e38fbe5c4c",
+    "name": "Open File Descriptors",
+    "question": "open file descriptor count",
+    "query": "process_open_fds",
+    "metrics": [
+      "process_open_fds"
+    ]
+  }
+]

@@ -1,0 +1,164 @@
+[
+  {
+    "id": "2ea921b0-6afd-4837-86ab-c7d76e0260da",
+    "name": "HTTP Probe Overview",
+    "question": "overall success http probes",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "590820cd-72ea-472c-af2f-d095942458c6",
+    "name": "HTTP Probe Overview",
+    "question": "success blackbox http prober",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "44bbad2c-8c0d-40ba-a4bd-2f3f0d2bcf41",
+    "name": "HTTP Probe Overview",
+    "question": "http probe success overview",
+    "query": "probe_success",
+    "metrics": [
+      "probe_success"
+    ]
+  },
+  {
+    "id": "ff634819-fc9e-4121-ad75-33e98fa09277",
+    "name": "HTTP Probe Overview",
+    "question": "http ssl probes greater than zero",
+    "query": "probe_http_ssl > 0",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "718ae04b-c0c8-484c-8dbd-2d72de4b12c6",
+    "name": "HTTP Probe Overview",
+    "question": "blackbox exporter ssl probe results overview",
+    "query": "probe_http_ssl > 0",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "9db8a529-3382-48ef-b64c-39426c4ffac8",
+    "name": "HTTP Probe Overview",
+    "question": "http prober ssl checks positive values",
+    "query": "probe_http_ssl > 0",
+    "metrics": [
+      "probe_http_ssl"
+    ]
+  },
+  {
+    "id": "006955d5-6bfc-4a1e-82d2-7067ef422bc4",
+    "name": "HTTP Probe Overview",
+    "question": "retrieve http probe status codes greater than zero",
+    "query": "probe_http_status_code > 0",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "a53c572a-dd91-41d2-b486-96a011dd5412",
+    "name": "HTTP Probe Overview",
+    "question": "obtain nonzero http probe status codes",
+    "query": "probe_http_status_code > 0",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "ee8d2299-39a0-4d5c-835a-28f138a37af0",
+    "name": "HTTP Probe Overview",
+    "question": "get http probe status codes above zero",
+    "query": "probe_http_status_code > 0",
+    "metrics": [
+      "probe_http_status_code"
+    ]
+  },
+  {
+    "id": "f1bae9e0-5438-4a81-8c90-c434879b3f1a",
+    "name": "HTTP Probe Overview",
+    "question": "http probe last minute",
+    "query": "avg_over_time(probe_duration_seconds[1m])",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "68ba50fb-1f99-47d7-b35c-130f11d5fcbe",
+    "name": "HTTP Probe Overview",
+    "question": "http probe one minute",
+    "query": "avg_over_time(probe_duration_seconds[1m])",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "7f24df1e-02e9-4e01-8cf8-1a0c8c096e5e",
+    "name": "HTTP Probe Overview",
+    "question": "probe http checks",
+    "query": "avg_over_time(probe_duration_seconds[1m])",
+    "metrics": [
+      "probe_duration_seconds"
+    ]
+  },
+  {
+    "id": "bb5bfb0e-4a96-4f83-a5bb-a27c73405ae0",
+    "name": "HTTP Probe Overview",
+    "question": "dns lookup http probes",
+    "query": "avg_over_time(probe_dns_lookup_time_seconds[1m])",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "877204a4-113d-48c0-8f48-ffae3594abff",
+    "name": "HTTP Probe Overview",
+    "question": "dns lookup http prober",
+    "query": "avg_over_time(probe_dns_lookup_time_seconds[1m])",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "37e42730-bf30-4a44-a077-7917a893ffb2",
+    "name": "HTTP Probe Overview",
+    "question": "dns resolution http probing",
+    "query": "avg_over_time(probe_dns_lookup_time_seconds[1m])",
+    "metrics": [
+      "probe_dns_lookup_time_seconds"
+    ]
+  },
+  {
+    "id": "2015c33b-1c0e-4ecf-a0ac-156b010a8fed",
+    "name": "HTTP Probe Duration",
+    "question": "http probe instance",
+    "query": "sum(probe_http_duration_seconds) by (instance)",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "d3b71d29-e498-42aa-8c34-d5bbd7b90914",
+    "name": "HTTP Probe Duration",
+    "question": "http probe completion instance",
+    "query": "sum(probe_http_duration_seconds) by (instance)",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  },
+  {
+    "id": "b307a29f-4160-4fd9-94d3-6cc7b4931f24",
+    "name": "HTTP Probe Duration",
+    "question": "probe durations http instance",
+    "query": "sum(probe_http_duration_seconds) by (instance)",
+    "metrics": [
+      "probe_http_duration_seconds"
+    ]
+  }
+]

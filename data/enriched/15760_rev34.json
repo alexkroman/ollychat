@@ -1,0 +1,218 @@
+[
+  {
+    "id": "98388f39-bd56-4d01-afcd-1d2cc71b4a28",
+    "name": "Network - Bandwidth",
+    "question": "network receive",
+    "query": "sum(rate(container_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "7211c8f8-e4e4-4df7-b5bd-a2da76efff96",
+    "name": "Network - Bandwidth",
+    "question": "container network data receive",
+    "query": "sum(rate(container_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "54769b63-c1d5-42cf-84e6-cefbc3018081",
+    "name": "Network - Bandwidth",
+    "question": "network received containers",
+    "query": "sum(rate(container_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "95b3569d-b344-4f05-af0c-3169c68f1ca5",
+    "name": "Network - Bandwidth",
+    "question": "transmitted network containers",
+    "query": "- sum(rate(container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "329b6ea2-8c3a-467d-a106-b1034e741200",
+    "name": "Network - Bandwidth",
+    "question": "network bandwidth usage containers",
+    "query": "- sum(rate(container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "515921b8-acbe-4f1f-8b7d-bab5a1c71d57",
+    "name": "Network - Bandwidth",
+    "question": "container network transmit",
+    "query": "- sum(rate(container_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "5da49f8b-b493-4abb-8d90-d8b34cce9c28",
+    "name": "Network - Packets Rate",
+    "question": "packets received containers",
+    "query": "sum(rate(container_network_receive_packets_total[30m]))",
+    "metrics": [
+      "container_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "ed4e4537-36d2-4332-903e-1675ed9e091b",
+    "name": "Network - Packets Rate",
+    "question": "network packets received",
+    "query": "sum(rate(container_network_receive_packets_total[30m]))",
+    "metrics": [
+      "container_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "3cfc9c8b-be21-4022-b6b7-4983d2e55d0a",
+    "name": "Network - Packets Rate",
+    "question": "receive packets containers",
+    "query": "sum(rate(container_network_receive_packets_total[30m]))",
+    "metrics": [
+      "container_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "9856423d-e6fe-4c11-87e5-f73cc2ef3acb",
+    "name": "Network - Packets Rate",
+    "question": "network transmit packets",
+    "query": "- sum(rate(container_network_transmit_packets_total[30m]))",
+    "metrics": [
+      "container_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "56c6862c-f155-4963-b630-2363cba1f72a",
+    "name": "Network - Packets Rate",
+    "question": "transmit packets",
+    "query": "- sum(rate(container_network_transmit_packets_total[30m]))",
+    "metrics": [
+      "container_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "2725d207-20ff-44ba-bbff-4b943b52fb1f",
+    "name": "Network - Packets Rate",
+    "question": "transmit packets",
+    "query": "- sum(rate(container_network_transmit_packets_total[30m]))",
+    "metrics": [
+      "container_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "4e14485d-88bc-4993-bc71-46cef5d148cb",
+    "name": "Network - Packets Dropped",
+    "question": "dropped network packets",
+    "query": "sum(rate(container_network_receive_packets_dropped_total[30m]))",
+    "metrics": [
+      "container_network_receive_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "7fb4dc8c-a73d-4e85-8dde-969b04d7d91c",
+    "name": "Network - Packets Dropped",
+    "question": "dropped packets network",
+    "query": "sum(rate(container_network_receive_packets_dropped_total[30m]))",
+    "metrics": [
+      "container_network_receive_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "44eb2b34-ab99-4780-9bc1-645eb15bee00",
+    "name": "Network - Packets Dropped",
+    "question": "dropped packets network traffic",
+    "query": "sum(rate(container_network_receive_packets_dropped_total[30m]))",
+    "metrics": [
+      "container_network_receive_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "437fbd64-3b0d-4e82-bd69-32c12125dc36",
+    "name": "Network - Packets Dropped",
+    "question": "dropped network packets",
+    "query": "- sum(rate(container_network_transmit_packets_dropped_total[30m]))",
+    "metrics": [
+      "container_network_transmit_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "7bcfb6ed-6e71-4657-911e-42d7c066fc38",
+    "name": "Network - Packets Dropped",
+    "question": "dropped network packets",
+    "query": "- sum(rate(container_network_transmit_packets_dropped_total[30m]))",
+    "metrics": [
+      "container_network_transmit_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "3137c34c-d266-42d2-892d-e62eee1881ed",
+    "name": "Network - Packets Dropped",
+    "question": "network packets dropped",
+    "query": "- sum(rate(container_network_transmit_packets_dropped_total[30m]))",
+    "metrics": [
+      "container_network_transmit_packets_dropped_total"
+    ]
+  },
+  {
+    "id": "9e550d0d-3389-4333-a544-7caccba8b2f8",
+    "name": "Network - Errors",
+    "question": "network receive errors containers",
+    "query": "sum(rate(container_network_receive_errors_total[30m]))",
+    "metrics": [
+      "container_network_receive_errors_total"
+    ]
+  },
+  {
+    "id": "02c3dc84-ec6e-4887-bf0b-9574a90be90f",
+    "name": "Network - Errors",
+    "question": "errors container network traffic",
+    "query": "sum(rate(container_network_receive_errors_total[30m]))",
+    "metrics": [
+      "container_network_receive_errors_total"
+    ]
+  },
+  {
+    "id": "c49e3484-2eba-437d-bee8-90eeff48f15f",
+    "name": "Network - Errors",
+    "question": "container network error count",
+    "query": "sum(rate(container_network_receive_errors_total[30m]))",
+    "metrics": [
+      "container_network_receive_errors_total"
+    ]
+  },
+  {
+    "id": "2a7262e9-3a4b-47bb-9eec-80a07fddb482",
+    "name": "Network - Errors",
+    "question": "network transmit errors",
+    "query": "- sum(rate(container_network_transmit_errors_total[30m]))",
+    "metrics": [
+      "container_network_transmit_errors_total"
+    ]
+  },
+  {
+    "id": "66786c2f-8acd-4f89-a8bb-bd031c773400",
+    "name": "Network - Errors",
+    "question": "network errors count",
+    "query": "- sum(rate(container_network_transmit_errors_total[30m]))",
+    "metrics": [
+      "container_network_transmit_errors_total"
+    ]
+  },
+  {
+    "id": "4fb2035b-7e83-4c24-b991-fc9f138ec20a",
+    "name": "Network - Errors",
+    "question": "network transmit errors",
+    "query": "- sum(rate(container_network_transmit_errors_total[30m]))",
+    "metrics": [
+      "container_network_transmit_errors_total"
+    ]
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "id": "17ac96b4-146a-4165-a279-c8bf76e78480",
+    "name": "Memory",
+    "question": "aggregate available memory cluster nodes",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "f8b25584-089c-4547-927f-47665d8ca353",
+    "name": "Memory",
+    "question": "available memory kubernetes cluster",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "41bdc57b-07e1-462c-b75d-82ef7e5123ca",
+    "name": "Memory",
+    "question": "memory available cluster node",
+    "query": "sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "9b611154-3475-405b-9324-a5c4bdcd9076",
+    "name": "Memory",
+    "question": "memory consumption across cluster nodes",
+    "query": "sum(node_memory_MemTotal_bytes)-sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "7a3223c2-dd5a-47c9-bddf-d5da94c6ae8e",
+    "name": "Memory",
+    "question": "memory usage entire kubernetes cluster",
+    "query": "sum(node_memory_MemTotal_bytes)-sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "bcb69bef-e73f-49f4-aa37-5a2b8b5afc10",
+    "name": "Memory",
+    "question": "difference between memory available memory",
+    "query": "sum(node_memory_MemTotal_bytes)-sum(node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "36efd380-d114-44bb-8998-b0ef4d87e054",
+    "name": "Memory",
+    "question": "memory consumption across nodes",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "dcb9431e-e5f1-4a79-986f-8d414f4663d2",
+    "name": "Memory",
+    "question": "memory usage cluster node",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "fc399f25-f93f-4726-a9ca-87cf054942ef",
+    "name": "Memory",
+    "question": "summed memory consumption kubernetes cluster",
+    "query": "sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "a0879447-387f-4579-8c68-0a6f6f14f306",
+    "name": "Memory",
+    "question": "available memory kubernetes node",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "23b5a6f2-3c38-4601-b72a-850cb84f8acc",
+    "name": "Memory",
+    "question": "resource consumption charts cluster nodes",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "640e6395-4718-4438-b0e2-b7f69cf8ca78",
+    "name": "Memory",
+    "question": "memory consumption entire kubernetes cluster",
+    "query": "node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes"
+    ]
+  },
+  {
+    "id": "c1ab049e-b7e5-4d09-ae44-629d75e44c3b",
+    "name": "Memory",
+    "question": "calculate memory consumption kubernetes cluster",
+    "query": "node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "c52cd345-b026-45c8-b87d-026fb9d5d576",
+    "name": "Memory",
+    "question": "derive available memory memory",
+    "query": "node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "eea950df-e57e-4460-ac41-a6bbbed98709",
+    "name": "Memory",
+    "question": "resource difference memory available memory",
+    "query": "node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "3b895657-c67a-4c92-87e2-30818673b548",
+    "name": "Memory",
+    "question": "memory consumption kubernetes cluster",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "0cf30d31-1287-46a5-8e29-2f194a1687bc",
+    "name": "Memory",
+    "question": "resource usage charts all cluster nodes",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "a81a5f64-515a-41f8-b4af-2f90822b5f52",
+    "name": "Memory",
+    "question": "memory consumption split cluster node",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  }
+]

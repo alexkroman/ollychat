@@ -1,0 +1,137 @@
+[
+  {
+    "id": "51b38267-fa28-4f6e-b6a5-4a4d15f377e0",
+    "name": "Network I/O",
+    "question": "network receive namespace",
+    "query": "sum(rate(container_network_receive_bytes_total[2m])) by (namespace)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "d7280141-4e1e-4249-b2ca-c763f316e11f",
+    "name": "Network I/O",
+    "question": "network traffic received namespace",
+    "query": "sum(rate(container_network_receive_bytes_total[2m])) by (namespace)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "547b3a68-6531-4ad7-8211-0d7941030dcf",
+    "name": "Network I/O",
+    "question": "network data received grouped namespace",
+    "query": "sum(rate(container_network_receive_bytes_total[2m])) by (namespace)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "fa067ed0-3b83-409e-a925-c0b22d7e3853",
+    "name": "Network I/O",
+    "question": "network transmit namespace",
+    "query": "- sum (rate (container_network_transmit_bytes_total[2m])) by (namespace)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "0918fb52-70ba-43a1-be29-00576c48c2b8",
+    "name": "Network I/O",
+    "question": "network transmission namespace",
+    "query": "- sum (rate (container_network_transmit_bytes_total[2m])) by (namespace)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "dab0eccc-d936-4a26-a64b-d16d342b5c3b",
+    "name": "Network I/O",
+    "question": "network activity categorized namespace",
+    "query": "- sum (rate (container_network_transmit_bytes_total[2m])) by (namespace)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "fcfaab35-29a9-4d7c-9feb-5dbac0537228",
+    "name": "Use Ram memory Cluster",
+    "question": "aggregate working set memory usage containers",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "b39d87c3-0f3e-4759-81ba-bfd74c19d986",
+    "name": "Use Ram memory Cluster",
+    "question": "container memory working set cluster",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "af8c575d-249c-47a1-9876-d344d1117010",
+    "name": "Use Ram memory Cluster",
+    "question": "container memory working set",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "26fe5e09-df49-4444-b3e0-77f1e0feb5e7",
+    "name": "Ram memory Use of node",
+    "question": "ram memory usage namespace container",
+    "query": "sum(container_memory_usage_bytes) by (namespace,container_name)",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "a19abe8a-1460-41be-82cb-2ba1c018debc",
+    "name": "Ram memory Use of node",
+    "question": "ram memory consumption namespace container",
+    "query": "sum(container_memory_usage_bytes) by (namespace,container_name)",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "d7075955-80a9-470f-a1cc-aa7f9ad02bb3",
+    "name": "Ram memory Use of node",
+    "question": "ram memory namespace container",
+    "query": "sum(container_memory_usage_bytes) by (namespace,container_name)",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "id": "0bf08294-c2d0-4ad2-8269-d20669a4e50e",
+    "name": "Cluster Ram memory Capacity",
+    "question": "working set memory across containers",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "048dc6f7-9816-4c9f-8606-3175d512b481",
+    "name": "Cluster Ram memory Capacity",
+    "question": "working set memory containers",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "c7b2398c-8fbf-4460-9f99-afa1e0c742ea",
+    "name": "Cluster Ram memory Capacity",
+    "question": "container memory working set",
+    "query": "sum(container_memory_working_set_bytes)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  }
+]

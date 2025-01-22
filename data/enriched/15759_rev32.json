@@ -1,0 +1,1163 @@
+[
+  {
+    "id": "8d6bcbb0-042a-43fa-815d-ffd38b306ed7",
+    "name": "RAM Usage",
+    "question": "ram usage across nodes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "eb533858-2161-4414-a103-265136359d59",
+    "name": "RAM Usage",
+    "question": "node memory",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "211bf71e-9196-4ad4-8ad1-ccd93574fc0a",
+    "name": "RAM Usage",
+    "question": "summed ram consumption ratio nodes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "7211b79b-5974-4682-a556-18575808f2c4",
+    "name": "CPU Used",
+    "question": "cpu usage nodes",
+    "query": "sum(rate(node_cpu_seconds_total[30m]))",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "ec4f5c10-a05c-4c3d-86c3-c5524451b383",
+    "name": "CPU Used",
+    "question": "node cpu consumption",
+    "query": "sum(rate(node_cpu_seconds_total[30m]))",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "dce50a61-4242-458e-9281-6fc7aa76ff26",
+    "name": "CPU Used",
+    "question": "node cpu usage",
+    "query": "sum(rate(node_cpu_seconds_total[30m]))",
+    "metrics": [
+      "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "id": "7867757e-63be-4a68-a3cb-41fe0daeb52c",
+    "name": "CPU Total",
+    "question": "machine cpu cores",
+    "query": "sum(machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "aeb20488-8f61-4504-9ca8-27e37a18939c",
+    "name": "CPU Total",
+    "question": "machine cpu core count",
+    "query": "sum(machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "c9256e4e-4dbd-42be-917c-b195ebb5498a",
+    "name": "CPU Total",
+    "question": "combined machine cpu cores count",
+    "query": "sum(machine_cpu_cores)",
+    "metrics": [
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "id": "88e3720c-7de0-443f-a949-314faa3a176f",
+    "name": "RAM Used",
+    "question": "used ram across nodes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "6220539e-c7fa-4990-b26a-ca168014e049",
+    "name": "RAM Used",
+    "question": "ram usage nodes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "1ecd259d-7164-4010-be7f-039c07793ce3",
+    "name": "RAM Used",
+    "question": "ram utilized nodes",
+    "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)",
+    "metrics": [
+      "node_memory_MemAvailable_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "43b09977-e4aa-42be-b208-5c27a8ff5456",
+    "name": "RAM Total",
+    "question": "machine memory",
+    "query": "machine_memory_bytes",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "2da9a5a2-05fe-4b37-b1fc-12bf1c9fd13d",
+    "name": "RAM Total",
+    "question": "memory usage across nodes",
+    "query": "machine_memory_bytes",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "e5d9e77d-ab27-4720-8514-af5dcd3bb213",
+    "name": "RAM Total",
+    "question": "memory all machines",
+    "query": "machine_memory_bytes",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "id": "f0f1ad44-0b97-4e1e-a3ce-8a0af74b1a20",
+    "name": "uptime",
+    "question": "difference between node boot",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
+    ]
+  },
+  {
+    "id": "d45d9dcb-b9f3-443f-98f9-eab7dbcc4425",
+    "name": "uptime",
+    "question": "metric representing node uptime",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
+    ]
+  },
+  {
+    "id": "227389d1-7b79-4e2f-a2b5-bb71532c50de",
+    "name": "uptime",
+    "question": "node operational without boot",
+    "query": "node_time_seconds - node_boot_time_seconds",
+    "metrics": [
+      "node_boot_time_seconds",
+      "node_time_seconds"
+    ]
+  },
+  {
+    "id": "8b1d92a3-0c95-4f36-85fe-4a89dbb27518",
+    "name": "Memory Usage",
+    "question": "calculated memory usage excluding cache buffers",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "226ea88f-cccf-48ca-add6-70ce29c2a5ad",
+    "name": "Memory Usage",
+    "question": "memory without cache buffers",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "8da19215-c916-4d46-bbd7-6d491241798b",
+    "name": "Memory Usage",
+    "question": "memory usage minus cache buffers",
+    "query": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - (node_memory_Cached_bytes + node_memory_Buffers_bytes)",
+    "metrics": [
+      "node_memory_Buffers_bytes",
+      "node_memory_Cached_bytes",
+      "node_memory_MemFree_bytes",
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "532db011-25fc-4796-b920-bd483d3d4b3c",
+    "name": "Memory Usage",
+    "question": "memory usage across nodes",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "bb9da666-ca69-4e23-a201-0181e31daab0",
+    "name": "Memory Usage",
+    "question": "node memory consumption",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "7b213b9f-61cf-407d-8eb8-1676580fdfe5",
+    "name": "Memory Usage",
+    "question": "summed memory usage nodes",
+    "query": "node_memory_MemTotal_bytes",
+    "metrics": [
+      "node_memory_MemTotal_bytes"
+    ]
+  },
+  {
+    "id": "4beebd1c-9132-4ada-bb22-bbb24911049d",
+    "name": "Memory Usage",
+    "question": "cached memory nodes",
+    "query": "node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "24928470-d8a4-48a9-b0eb-b55bbe1099a7",
+    "name": "Memory Usage",
+    "question": "retrieves node memory usage cache",
+    "query": "node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "f9bc7eac-ecd3-441b-9dea-172a3dadc9fe",
+    "name": "Memory Usage",
+    "question": "cached memory",
+    "query": "node_memory_Cached_bytes",
+    "metrics": [
+      "node_memory_Cached_bytes"
+    ]
+  },
+  {
+    "id": "d10dcfb2-4fc4-415f-8fd0-5410512309d5",
+    "name": "Memory Usage",
+    "question": "buffer memory usage node",
+    "query": "node_memory_Buffers_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "id": "322ad40f-e04e-4eb8-a7c1-d2b957798646",
+    "name": "Memory Usage",
+    "question": "node buffer memory",
+    "query": "node_memory_Buffers_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "id": "3b1e61be-d578-4e85-97dd-57a6d9d837af",
+    "name": "Memory Usage",
+    "question": "memory used buffers node",
+    "query": "node_memory_Buffers_bytes",
+    "metrics": [
+      "node_memory_Buffers_bytes"
+    ]
+  },
+  {
+    "id": "5d6baa20-61a8-4d13-8841-6752883f7986",
+    "name": "Memory Usage",
+    "question": "available memory nodes",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "cda7d26d-d3d0-4996-8b86-05d932cc8351",
+    "name": "Memory Usage",
+    "question": "free memory nodes",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "9adf9bee-d9c6-41a3-b713-02f75d4ac824",
+    "name": "Memory Usage",
+    "question": "nodes available memory metric",
+    "query": "node_memory_MemFree_bytes",
+    "metrics": [
+      "node_memory_MemFree_bytes"
+    ]
+  },
+  {
+    "id": "ee4f4d45-931e-4011-bc6c-f6ed91a91792",
+    "name": "Memory Usage",
+    "question": "difference between swap memory free swap memory",
+    "query": "node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "59dc223b-66b5-4389-bce6-50cf0b55f136",
+    "name": "Memory Usage",
+    "question": "swap memory minus available swap memory",
+    "query": "node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "ae068b9d-dd63-49a7-8c29-282ce9904cb2",
+    "name": "Memory Usage",
+    "question": "calculation used swap memory nodes",
+    "query": "node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes",
+    "metrics": [
+      "node_memory_SwapFree_bytes",
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "a2b37a7f-9371-4436-b376-669eedbbc159",
+    "name": "Memory Usage",
+    "question": "swap memory nodes",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "49776192-9282-41b4-b70e-9f2a6b5959a1",
+    "name": "Memory Usage",
+    "question": "aggregate swap memory capacity node",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "d567b8bf-8ced-49a2-9822-e80b01bc2b0f",
+    "name": "Memory Usage",
+    "question": "swap memory available nodes",
+    "query": "node_memory_SwapTotal_bytes",
+    "metrics": [
+      "node_memory_SwapTotal_bytes"
+    ]
+  },
+  {
+    "id": "19f30241-bf13-4dfa-ab93-3c50aeeb932f",
+    "name": "CPU usage by Pod",
+    "question": "cpu usage individual pods",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "879823dc-4820-4d41-b93c-90207c991c80",
+    "name": "CPU usage by Pod",
+    "question": "cpu usage pod",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "c779cf76-f01f-47cd-8ff1-3a81c3d66ae4",
+    "name": "CPU usage by Pod",
+    "question": "cpu across pods",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "id": "99d0938f-f2e1-480f-907f-144d4f130d03",
+    "name": "Memory usage by Pod",
+    "question": "aggregate memory usage pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "56cdd2e2-885d-44e8-96db-1881eec76f62",
+    "name": "Memory usage by Pod",
+    "question": "memory working set pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "ff357d18-60c6-4d3e-b93a-0d3a6476fecb",
+    "name": "Memory usage by Pod",
+    "question": "memory used pod",
+    "query": "sum(container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "id": "935daeec-b880-4fcf-a868-79036f33c2d6",
+    "name": "System Load",
+    "question": "system load nodes",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "d78877fb-0b41-4743-9aa7-630ee302b062",
+    "name": "System Load",
+    "question": "node load metric retrieval",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "72f6cb54-f715-4c10-bd29-7dd0b2edec87",
+    "name": "System Load",
+    "question": "query node load",
+    "query": "node_load1",
+    "metrics": [
+      "node_load1"
+    ]
+  },
+  {
+    "id": "ee630cf1-ca7b-4a19-b91d-8251ada323b7",
+    "name": "System Load",
+    "question": "system load 5 minutes",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "4a620008-7c73-40ff-a54b-f69753da3c78",
+    "name": "System Load",
+    "question": "node load 5minute period",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "d4dcdceb-71a0-493f-ad33-851b4dd97f2c",
+    "name": "System Load",
+    "question": "load nodes past 5 minutes",
+    "query": "node_load5",
+    "metrics": [
+      "node_load5"
+    ]
+  },
+  {
+    "id": "0b5881a0-0ef9-466f-a3a3-f41209b4dc0c",
+    "name": "System Load",
+    "question": "15minute load nodes",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "ef685064-cd4d-4337-9234-9dddd41618b7",
+    "name": "System Load",
+    "question": "load 15 minutes",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "5e82d0ca-3cd9-461a-bfbc-6ebcc9ce93b9",
+    "name": "System Load",
+    "question": "node load metric 15 minutes",
+    "query": "node_load15",
+    "metrics": [
+      "node_load15"
+    ]
+  },
+  {
+    "id": "719f1157-2ba4-4041-ac13-561c874cb2ef",
+    "name": "Context Switches & Interrupts",
+    "question": "context switches nodes",
+    "query": "rate(node_context_switches_total[30m])",
+    "metrics": [
+      "node_context_switches_total"
+    ]
+  },
+  {
+    "id": "256fb219-c771-49a4-a417-6110076d13eb",
+    "name": "Context Switches & Interrupts",
+    "question": "context switches nodes",
+    "query": "rate(node_context_switches_total[30m])",
+    "metrics": [
+      "node_context_switches_total"
+    ]
+  },
+  {
+    "id": "21b78047-e7cb-4608-8029-b94b2e421ff4",
+    "name": "Context Switches & Interrupts",
+    "question": "node context switches",
+    "query": "rate(node_context_switches_total[30m])",
+    "metrics": [
+      "node_context_switches_total"
+    ]
+  },
+  {
+    "id": "24bb6cbb-25f0-4832-a4ba-137de39bace9",
+    "name": "Context Switches & Interrupts",
+    "question": "interrupts nodes",
+    "query": "rate(node_intr_total[30m])",
+    "metrics": [
+      "node_intr_total"
+    ]
+  },
+  {
+    "id": "0f6d3af8-266e-4bae-bbad-15a2b58a52db",
+    "name": "Context Switches & Interrupts",
+    "question": "node context switches",
+    "query": "rate(node_intr_total[30m])",
+    "metrics": [
+      "node_intr_total"
+    ]
+  },
+  {
+    "id": "02a11e33-adca-4ffb-bb60-9926dd536a08",
+    "name": "Context Switches & Interrupts",
+    "question": "interrupts node cluster",
+    "query": "rate(node_intr_total[30m])",
+    "metrics": [
+      "node_intr_total"
+    ]
+  },
+  {
+    "id": "6cba6778-b7c1-437d-8c64-b978fc14588a",
+    "name": "File Descriptors",
+    "question": "file descriptors node",
+    "query": "node_filefd_maximum",
+    "metrics": [
+      "node_filefd_maximum"
+    ]
+  },
+  {
+    "id": "05ee425e-d625-4f36-8e49-4b06bcc63e63",
+    "name": "File Descriptors",
+    "question": "peak file descriptor count node",
+    "query": "node_filefd_maximum",
+    "metrics": [
+      "node_filefd_maximum"
+    ]
+  },
+  {
+    "id": "ff88ea80-7b47-4268-a9c4-2e83b1d4c4fe",
+    "name": "File Descriptors",
+    "question": "largest open file descriptors node",
+    "query": "node_filefd_maximum",
+    "metrics": [
+      "node_filefd_maximum"
+    ]
+  },
+  {
+    "id": "6903e44b-4fd4-40af-9274-07facf91281c",
+    "name": "File Descriptors",
+    "question": "allocated file descriptors node",
+    "query": "node_filefd_allocated",
+    "metrics": [
+      "node_filefd_allocated"
+    ]
+  },
+  {
+    "id": "22dc6c17-6180-4bb8-8c68-e5bb720aebef",
+    "name": "File Descriptors",
+    "question": "node file descriptor allocation",
+    "query": "node_filefd_allocated",
+    "metrics": [
+      "node_filefd_allocated"
+    ]
+  },
+  {
+    "id": "e7f7a7e1-0614-4bcb-96b5-3f4b35ef0b84",
+    "name": "File Descriptors",
+    "question": "file descriptors allocated node",
+    "query": "node_filefd_allocated",
+    "metrics": [
+      "node_filefd_allocated"
+    ]
+  },
+  {
+    "id": "3e2a3427-c177-4865-bc60-738b6aa02af3",
+    "name": "Time Sync",
+    "question": "estimated error node synchronization",
+    "query": "node_timex_estimated_error_seconds",
+    "metrics": [
+      "node_timex_estimated_error_seconds"
+    ]
+  },
+  {
+    "id": "dbf5c079-01f4-4578-ad44-1c9b9a61f436",
+    "name": "Time Sync",
+    "question": "node synchronization error estimation",
+    "query": "node_timex_estimated_error_seconds",
+    "metrics": [
+      "node_timex_estimated_error_seconds"
+    ]
+  },
+  {
+    "id": "172e1187-5931-475f-8363-da736392c781",
+    "name": "Time Sync",
+    "question": "estimated synchronization error nodes",
+    "query": "node_timex_estimated_error_seconds",
+    "metrics": [
+      "node_timex_estimated_error_seconds"
+    ]
+  },
+  {
+    "id": "8b587585-0935-47df-8381-a713617e11d8",
+    "name": "Time Sync",
+    "question": "error node synchronization",
+    "query": "node_timex_maxerror_seconds",
+    "metrics": [
+      "node_timex_maxerror_seconds"
+    ]
+  },
+  {
+    "id": "74e80c77-fb1e-4d6d-bd56-774812aa4818",
+    "name": "Time Sync",
+    "question": "largest sync error node",
+    "query": "node_timex_maxerror_seconds",
+    "metrics": [
+      "node_timex_maxerror_seconds"
+    ]
+  },
+  {
+    "id": "96b5530f-1c90-46ee-9f94-0dcdabf38ce0",
+    "name": "Time Sync",
+    "question": "peak error node synchronization",
+    "query": "node_timex_maxerror_seconds",
+    "metrics": [
+      "node_timex_maxerror_seconds"
+    ]
+  },
+  {
+    "id": "aa40a0ea-571b-4ece-a41f-a332260c92ac",
+    "name": "Network usage (bytes/s)",
+    "question": "network receive",
+    "query": "sum(rate(node_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "a421f3af-92f0-4a9d-a8f0-863483435598",
+    "name": "Network usage (bytes/s)",
+    "question": "received network",
+    "query": "sum(rate(node_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "8581cf80-1a05-45f1-92a9-2f408a9b10f0",
+    "name": "Network usage (bytes/s)",
+    "question": "received network",
+    "query": "sum(rate(node_network_receive_bytes_total[30m]))",
+    "metrics": [
+      "node_network_receive_bytes_total"
+    ]
+  },
+  {
+    "id": "d5d808a2-5731-4cbd-879e-77012e7968de",
+    "name": "Network usage (bytes/s)",
+    "question": "aggregate network transmit",
+    "query": "- sum(rate(node_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "11bb72e9-c45c-47c4-9e63-e7511332e9f2",
+    "name": "Network usage (bytes/s)",
+    "question": "network transmit",
+    "query": "- sum(rate(node_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "07cbd283-9db3-43a6-9fef-949312b8042b",
+    "name": "Network usage (bytes/s)",
+    "question": "network transmit",
+    "query": "- sum(rate(node_network_transmit_bytes_total[30m]))",
+    "metrics": [
+      "node_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "id": "1ba4fb70-2802-4e18-8ae3-4eed8a2de2c3",
+    "name": "Network errors",
+    "question": "network receive errors nodes",
+    "query": "sum(rate(node_network_receive_errs_total[30m]))",
+    "metrics": [
+      "node_network_receive_errs_total"
+    ]
+  },
+  {
+    "id": "a81700be-be2e-4869-8bcd-68917550386b",
+    "name": "Network errors",
+    "question": "node network receive errors",
+    "query": "sum(rate(node_network_receive_errs_total[30m]))",
+    "metrics": [
+      "node_network_receive_errs_total"
+    ]
+  },
+  {
+    "id": "e97efac0-bbf5-4974-9850-aa830face822",
+    "name": "Network errors",
+    "question": "network errors nodes",
+    "query": "sum(rate(node_network_receive_errs_total[30m]))",
+    "metrics": [
+      "node_network_receive_errs_total"
+    ]
+  },
+  {
+    "id": "f0060670-19a9-41b8-af17-d140d12aef8e",
+    "name": "Network errors",
+    "question": "network transmit errors nodes",
+    "query": "- sum(rate(node_network_transmit_errs_total[30m]))",
+    "metrics": [
+      "node_network_transmit_errs_total"
+    ]
+  },
+  {
+    "id": "ecd50303-33a6-4b15-a5c1-b3b64f797dce",
+    "name": "Network errors",
+    "question": "network errors nodes",
+    "query": "- sum(rate(node_network_transmit_errs_total[30m]))",
+    "metrics": [
+      "node_network_transmit_errs_total"
+    ]
+  },
+  {
+    "id": "124d9baa-e2c0-4cc7-bed7-baf37c18af6e",
+    "name": "Network errors",
+    "question": "network transmit errors nodes",
+    "query": "- sum(rate(node_network_transmit_errs_total[30m]))",
+    "metrics": [
+      "node_network_transmit_errs_total"
+    ]
+  },
+  {
+    "id": "8f35a926-4c83-4ef6-86c2-6d36e9181e9b",
+    "name": "Network usage (packet/s)",
+    "question": "network receive packets node",
+    "query": "sum(rate(node_network_receive_packets_total[30m]))",
+    "metrics": [
+      "node_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "560b8243-a63b-4d7f-ab1f-2a351ace479c",
+    "name": "Network usage (packet/s)",
+    "question": "node network receive packet",
+    "query": "sum(rate(node_network_receive_packets_total[30m]))",
+    "metrics": [
+      "node_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "7522169d-f0c4-4d3c-8dac-2c00a0f58ad3",
+    "name": "Network usage (packet/s)",
+    "question": "network receive packet nodes",
+    "query": "sum(rate(node_network_receive_packets_total[30m]))",
+    "metrics": [
+      "node_network_receive_packets_total"
+    ]
+  },
+  {
+    "id": "03497307-fb34-4379-b8d4-7d1280d1d75d",
+    "name": "Network usage (packet/s)",
+    "question": "network transmit packets",
+    "query": "- sum(rate(node_network_transmit_packets_total[30m]))",
+    "metrics": [
+      "node_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "77c50b9e-ecc5-4363-ae58-58967d2b338d",
+    "name": "Network usage (packet/s)",
+    "question": "network transmit packets 30 minutes",
+    "query": "- sum(rate(node_network_transmit_packets_total[30m]))",
+    "metrics": [
+      "node_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "759d9c1b-481f-4da6-8d86-116cebd121b4",
+    "name": "Network usage (packet/s)",
+    "question": "combined transmit packet nodes",
+    "query": "- sum(rate(node_network_transmit_packets_total[30m]))",
+    "metrics": [
+      "node_network_transmit_packets_total"
+    ]
+  },
+  {
+    "id": "ddb693e7-3bd4-488c-81f3-83d468b4a4b2",
+    "name": "Network total drops",
+    "question": "network drop nodes",
+    "query": "sum(rate(node_network_receive_drop_total[30m]))",
+    "metrics": [
+      "node_network_receive_drop_total"
+    ]
+  },
+  {
+    "id": "93e87da0-4370-4884-a203-4fcbe2a76c89",
+    "name": "Network total drops",
+    "question": "network drop count nodes",
+    "query": "sum(rate(node_network_receive_drop_total[30m]))",
+    "metrics": [
+      "node_network_receive_drop_total"
+    ]
+  },
+  {
+    "id": "0f42867a-457d-4212-8d99-ea2f8b9d299d",
+    "name": "Network total drops",
+    "question": "network receive drops nodes",
+    "query": "sum(rate(node_network_receive_drop_total[30m]))",
+    "metrics": [
+      "node_network_receive_drop_total"
+    ]
+  },
+  {
+    "id": "0bc64d15-4888-40cf-bdd0-076833f3e176",
+    "name": "Network total drops",
+    "question": "network transmit drops across nodes",
+    "query": "- sum(rate(node_network_transmit_drop_total[30m]))",
+    "metrics": [
+      "node_network_transmit_drop_total"
+    ]
+  },
+  {
+    "id": "db86abd0-4722-4f01-be2d-df4cec91233a",
+    "name": "Network total drops",
+    "question": "network drop count nodes",
+    "query": "- sum(rate(node_network_transmit_drop_total[30m]))",
+    "metrics": [
+      "node_network_transmit_drop_total"
+    ]
+  },
+  {
+    "id": "6595487b-c59e-4be1-a3fc-f3287a1fb159",
+    "name": "Network total drops",
+    "question": "summed network drop nodes",
+    "query": "- sum(rate(node_network_transmit_drop_total[30m]))",
+    "metrics": [
+      "node_network_transmit_drop_total"
+    ]
+  },
+  {
+    "id": "14e36a1c-24d1-4fa1-a72b-bce10902a9c6",
+    "name": "TCP Currently Established",
+    "question": "established tcp connections",
+    "query": "node_netstat_Tcp_CurrEstab",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "id": "407970ae-9d3d-4053-a7e0-7430b8ca6885",
+    "name": "TCP Currently Established",
+    "question": "count tcp connections use",
+    "query": "node_netstat_Tcp_CurrEstab",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "id": "eaf7b0ea-7204-45de-9f08-2f34efe91376",
+    "name": "TCP Currently Established",
+    "question": "quantity tcp connections",
+    "query": "node_netstat_Tcp_CurrEstab",
+    "metrics": [
+      "node_netstat_Tcp_CurrEstab"
+    ]
+  },
+  {
+    "id": "eb6072f3-665f-4941-8cb9-857bae90fb08",
+    "name": "NF Conntrack",
+    "question": "conntrack entries node",
+    "query": "node_nf_conntrack_entries",
+    "metrics": [
+      "node_nf_conntrack_entries"
+    ]
+  },
+  {
+    "id": "3c132b37-44ea-4397-9d3a-81ebff56d524",
+    "name": "NF Conntrack",
+    "question": "conntrack entries node",
+    "query": "node_nf_conntrack_entries",
+    "metrics": [
+      "node_nf_conntrack_entries"
+    ]
+  },
+  {
+    "id": "67682885-85e2-450f-8ae9-ea5297841b62",
+    "name": "NF Conntrack",
+    "question": "count conntrack entries node",
+    "query": "node_nf_conntrack_entries",
+    "metrics": [
+      "node_nf_conntrack_entries"
+    ]
+  },
+  {
+    "id": "d871deb1-40ee-43d9-9880-58c3bee73dd2",
+    "name": "NF Conntrack",
+    "question": "nf conntrack entries node",
+    "query": "node_nf_conntrack_entries_limit",
+    "metrics": [
+      "node_nf_conntrack_entries_limit"
+    ]
+  },
+  {
+    "id": "188835ab-5246-4bee-9ebc-809af06ea25b",
+    "name": "NF Conntrack",
+    "question": "nf conntrack entries node",
+    "query": "node_nf_conntrack_entries_limit",
+    "metrics": [
+      "node_nf_conntrack_entries_limit"
+    ]
+  },
+  {
+    "id": "a2cc3cb1-a8f4-499b-82e4-fe9b5f33d1f8",
+    "name": "NF Conntrack",
+    "question": "nf conntrack entries node",
+    "query": "node_nf_conntrack_entries_limit",
+    "metrics": [
+      "node_nf_conntrack_entries_limit"
+    ]
+  },
+  {
+    "id": "13e5205c-4bbc-4eb6-a7e2-912d6848a328",
+    "name": "FS usage in %",
+    "question": "filesystem usage",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "35f9c2ba-e8f3-4e16-b25d-45c1e77f9348",
+    "name": "FS usage in %",
+    "question": "filesystem space",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "d08f0087-43fa-44cb-b7e0-828deae17f37",
+    "name": "FS usage in %",
+    "question": "filesystem storage consumption",
+    "query": "100 - ((node_filesystem_avail_bytes * 100) / node_filesystem_size_bytes)",
+    "metrics": [
+      "node_filesystem_avail_bytes",
+      "node_filesystem_size_bytes"
+    ]
+  },
+  {
+    "id": "bef24373-16c9-4e15-81ce-5781b2dc7c00",
+    "name": "FS inode usage in %",
+    "question": "used fs inodes",
+    "query": "100 - (node_filesystem_files_free / node_filesystem_files * 100)",
+    "metrics": [
+      "node_filesystem_files",
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "id": "d54f4147-8cf1-42c2-b368-d8c377b828f8",
+    "name": "FS inode usage in %",
+    "question": "fs inode",
+    "query": "100 - (node_filesystem_files_free / node_filesystem_files * 100)",
+    "metrics": [
+      "node_filesystem_files",
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "id": "af30cebd-d3cf-436b-a24e-d66aaf40237c",
+    "name": "FS inode usage in %",
+    "question": "free fs inodes",
+    "query": "100 - (node_filesystem_files_free / node_filesystem_files * 100)",
+    "metrics": [
+      "node_filesystem_files",
+      "node_filesystem_files_free"
+    ]
+  },
+  {
+    "id": "d701b632-318e-4e0f-92c6-b85923a3ec3c",
+    "name": "Reads by disk (bytes)",
+    "question": "disk reads",
+    "query": "rate(node_disk_read_bytes_total[30m])",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "e6cac1b9-8425-469d-b60b-4ef8cee04096",
+    "name": "Reads by disk (bytes)",
+    "question": "read disks",
+    "query": "rate(node_disk_read_bytes_total[30m])",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "c2d6d9db-55a7-46c7-ac75-82be89ebecfb",
+    "name": "Reads by disk (bytes)",
+    "question": "disk read activity",
+    "query": "rate(node_disk_read_bytes_total[30m])",
+    "metrics": [
+      "node_disk_read_bytes_total"
+    ]
+  },
+  {
+    "id": "d775f51b-3320-4ee9-8c21-3f0651438d40",
+    "name": "Writes by disk (bytes)",
+    "question": "disk writes nodes",
+    "query": "rate(node_disk_written_bytes_total[30m])",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "bb69f8f0-2d4f-40ac-8a70-a91679adc2ce",
+    "name": "Writes by disk (bytes)",
+    "question": "node disk write",
+    "query": "rate(node_disk_written_bytes_total[30m])",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "91f4977d-fcb5-4974-ba02-20c94cacc0d5",
+    "name": "Writes by disk (bytes)",
+    "question": "written disk nodes",
+    "query": "rate(node_disk_written_bytes_total[30m])",
+    "metrics": [
+      "node_disk_written_bytes_total"
+    ]
+  },
+  {
+    "id": "fb280658-d4e9-4f6e-87ad-c40b810b7ab5",
+    "name": "Completed reads by disk",
+    "question": "completed disk reads node",
+    "query": "rate(node_disk_reads_completed_total[30m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "id": "aa44834a-45d2-485e-8495-98715044dbc6",
+    "name": "Completed reads by disk",
+    "question": "disk read completions node",
+    "query": "rate(node_disk_reads_completed_total[30m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "id": "74b1d1f0-d454-4e79-840d-401fda6686a8",
+    "name": "Completed reads by disk",
+    "question": "completed reads disk nodes",
+    "query": "rate(node_disk_reads_completed_total[30m])",
+    "metrics": [
+      "node_disk_reads_completed_total"
+    ]
+  },
+  {
+    "id": "085ed579-f972-4edf-915d-06b35bc979d6",
+    "name": "Completed writes by disk",
+    "question": "completed disk writes",
+    "query": "rate(node_disk_writes_completed_total[30m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "id": "ac7a1a52-1623-4712-8d8b-cc09bc9ecb71",
+    "name": "Completed writes by disk",
+    "question": "disk write completion",
+    "query": "rate(node_disk_writes_completed_total[30m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "id": "97d8334e-1c57-4e13-abc6-a0d4a8aead5e",
+    "name": "Completed writes by disk",
+    "question": "completed writes disk",
+    "query": "rate(node_disk_writes_completed_total[30m])",
+    "metrics": [
+      "node_disk_writes_completed_total"
+    ]
+  },
+  {
+    "id": "1e945a41-ba49-437b-9543-bf57e7c6debe",
+    "name": "Disk(s) io/s",
+    "question": "disk io node",
+    "query": "rate(node_disk_io_now[30m]) ",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  },
+  {
+    "id": "d2b56053-dae7-467c-b7d4-450379f689e3",
+    "name": "Disk(s) io/s",
+    "question": "disk io currently",
+    "query": "rate(node_disk_io_now[30m]) ",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  },
+  {
+    "id": "1eae81cc-8e81-4d0d-8822-2ff24c9bf96e",
+    "name": "Disk(s) io/s",
+    "question": "disk io within last 30 minutes",
+    "query": "rate(node_disk_io_now[30m]) ",
+    "metrics": [
+      "node_disk_io_now"
+    ]
+  }
+]

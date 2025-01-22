@@ -1,0 +1,173 @@
+[
+  {
+    "name": "Cluster memory usage",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (container_memory_working_set_bytes) / sum (machine_memory_bytes) * 100",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Cluster CPU usage (5m avg)",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) / sum (machine_cpu_cores) * 100",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "name": "Cluster filesystem usage",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (container_fs_usage_bytes) / sum (container_fs_limit_bytes) * 100",
+    "metrics": [
+      "container_fs_limit_bytes",
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "container_memory_usage_bytes",
+    "metrics": [
+      "container_memory_usage_bytes"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "(machine_memory_bytes)",
+    "metrics": [
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m]))",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "machine_cpu_physical_cores",
+    "metrics": [
+      "machine_cpu_physical_cores"
+    ]
+  },
+  {
+    "name": "Used",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (container_fs_usage_bytes)",
+    "metrics": [
+      "container_fs_usage_bytes"
+    ]
+  },
+  {
+    "name": "Total",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (container_fs_limit_bytes)",
+    "metrics": [
+      "container_fs_limit_bytes"
+    ]
+  },
+  {
+    "name": "Network I/O pressure",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (rate (container_network_receive_bytes_total[5m]))",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Network I/O pressure",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "- sum (rate (container_network_transmit_bytes_total[5m]))",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "CPU use by namespace",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) by (namespace)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Memory use by namespace",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (container_memory_working_set_bytes) by (namespace)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Pods CPU usage (5m avg)",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) by (pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Containers CPU usage (5m avg)",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (rate (container_cpu_usage_seconds_total[5m])) by (container_name, pod)",
+    "metrics": [
+      "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Pods memory usage",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (container_memory_working_set_bytes) by (pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Containers memory usage",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (container_memory_working_set_bytes) by (container_name, pod)",
+    "metrics": [
+      "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Pods network I/O (5m avg)",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (rate (container_network_receive_bytes_total[5m])) by (pod)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Pods network I/O (5m avg)",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "- sum (rate (container_network_transmit_bytes_total[5m])) by (pod)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  },
+  {
+    "name": "Containers network I/O (5m avg)",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "sum (rate (container_network_receive_bytes_total[5m])) by (container_name, pod)",
+    "metrics": [
+      "container_network_receive_bytes_total"
+    ]
+  },
+  {
+    "name": "Containers network I/O (5m avg)",
+    "description": "Monitors K3s cluster using Kube-Prometheus. Shows overall cluster CPU / Memory / Filesystem usage as well as individual pod, containers, systemd services statistics. Uses cAdvisor metrics only.\n\nOrigin from  dashboard: 8721(K8s RKE cluster monitoring) and will be compatible with k3s",
+    "query": "- sum (rate (container_network_transmit_bytes_total[5m])) by (container_name, pod)",
+    "metrics": [
+      "container_network_transmit_bytes_total"
+    ]
+  }
+]
