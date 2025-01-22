@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import figlet from 'figlet';
 import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
 import { answerQuestion } from "../agents/ollychat.js";
@@ -9,6 +10,14 @@ interface Command {
     description: string;
     execute: (...args: string[]) => Promise<void>;
 }
+
+// Generate ASCII Art for "OLLYCHAT"
+const asciiTitle = figlet.textSync('Olly', {
+    font: 'Colossal', // You can experiment with different fonts
+    horizontalLayout: 'default',
+    verticalLayout: 'default',
+    whitespaceBreak: true
+});
 
 export class CLI {
     private rl: Interface;
@@ -52,11 +61,10 @@ export class CLI {
 
     public async start() {
 // ASCII Art Title
-console.log(chalk.cyan('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
-console.log(chalk.bold.rgb(255, 165, 0)('💬🤖  Welcome to OLLYCHAT 🚀✨'));
-console.log(chalk.green('- Just type your questions and hit enter.'));
-console.log(chalk.green('- type exit to exit'));
-console.log(chalk.cyan('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'));
+console.log('\n')
+console.log(chalk.cyan(asciiTitle));
+console.log(chalk.bold('\nRunning Ollychat\n'));
+console.log(chalk.bold('Getting started guide: ') + chalk.green('http://github.com/alexkroman/ollychat\n\n'));
 
         this.rl.prompt();
 

@@ -21,6 +21,7 @@
     "chromadb": "^1.10.3",
     "chromadb-default-embed": "^2.13.2",
     "dotenv": "^16.4.7",
+    "figlet": "^1.8.0",
     "fs": "^0.0.1-security",
     "langchain": "^0.3.11",
     "openai": "^4.78.1",
@@ -31,6 +32,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "@types/figlet": "^1.7.0",
     "@types/node": "^22.10.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
