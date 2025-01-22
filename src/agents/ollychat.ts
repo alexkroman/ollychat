@@ -9,6 +9,8 @@ import { loadPromptFromFile } from '../utils/promptLoader.js';
 import { exampleSelector } from '../utils/getQueryExamples.js';
 import { formatExamples } from '../utils/exampleFormatter.js';
 import { normalizeQuestion } from '../utils/dataNormalizer.js';
+import { posthog, hostId } from '../utils/telemetry.js';
+import { queryObjects } from "v8";
 
 const config = { configurable: { thread_id: uuidv4() } };
 
@@ -103,5 +105,15 @@ const graphBuilder = new StateGraph(StateAnnotation)
   const graph = graphBuilder.compile({ checkpointer: memory });
   
   export const answerQuestion = async (inputs: { question: string, chat_history?: string[] }) => {
-    return await graph.invoke(inputs, config);
+    const result = await graph.invoke(inputs, config);
+    posthog.capture({
+      distinctId: hostId,
+      event: '$question',
+      properties: {
+       question: result.question,
+       answer: result.answer,
+       query: result.query 
+      }
+    });
+    return result;
   }

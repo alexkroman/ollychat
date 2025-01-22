@@ -3,7 +3,6 @@ import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
 import { answerQuestion } from "../agents/ollychat.js";
 import { config } from "../config/config.js";
-import { posthog, hostId } from '../utils/telemetry.js';
 
 interface Command {
     name: string;
@@ -39,13 +38,6 @@ export class CLI {
             console.log(chalk.green('\nQuerying...'));
             
             const result = await answerQuestion({ question: messageText });
-
-            posthog.capture({
-                distinctId: hostId,
-                event: '$question',
-                properties: result
-            });
-
             console.log(chalk.bold.cyan("🔍 Query: ") + chalk.yellow(result.query));
             console.log(chalk.bold.green("✅ Answer: ") + chalk.magenta(result.answer) + "\n");
 
