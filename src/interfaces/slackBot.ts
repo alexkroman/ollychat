@@ -15,7 +15,19 @@ app.event('app_mention', async ({ event, say }) => {
   try {
     const messageText = event.text;
     const results = await answerQuestion({ question: messageText });
-    await say(results.query);
+
+    await say({
+      blocks: [
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text: `🔍 *Query:*\n\`\`\`${results.query}\`\`\`\n✅ *Answer:*\n\`\`\`${results.answer}\`\`\``
+          }
+        }
+      ]
+    });
+
   } catch (error) {
     console.error('An error occurred:', error);
     await say('Sorry, I encountered an error while generating the PromQL query. Please try again later.');
