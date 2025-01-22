@@ -1,4 +1,5 @@
 .DS_Store
+chroma_data
 # Logs
 logs
 *.log
