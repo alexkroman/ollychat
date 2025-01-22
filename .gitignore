@@ -1,5 +1,4 @@
 .DS_Store
-chroma_data
 # Logs
 logs
 *.log
@@ -92,6 +91,9 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+
+chroma_data/
+
 
 # Gatsby files
 .cache/
