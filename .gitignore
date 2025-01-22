@@ -93,6 +93,7 @@ out
 dist
 
 chroma_data/
+data/metrics/metrics.json
 
 
 # Gatsby files

@@ -497,11 +497,11 @@
   },
   {
     "name": "go_gc_duration_seconds",
-    "help": "A summary of the pause duration of garbage collection cycles."
+    "help": "A summary of the wall-time pause (stop-the-world) duration in garbage collection cycles."
   },
   {
     "name": "go_gc_duration_seconds",
-    "help": "A summary of the wall-time pause (stop-the-world) duration in garbage collection cycles."
+    "help": "A summary of the pause duration of garbage collection cycles."
   },
   {
     "name": "go_gc_gogc_percent",
@@ -797,11 +797,11 @@
   },
   {
     "name": "go_memstats_alloc_bytes",
-    "help": "Total number of bytes allocated in heap until now, even if released already. Equals to /gc/heap/allocs:bytes."
+    "help": "Number of bytes allocated in heap and currently in use. Equals to /memory/classes/heap/objects:bytes."
   },
   {
     "name": "go_memstats_alloc_bytes",
-    "help": "Number of bytes allocated in heap and currently in use. Equals to /memory/classes/heap/objects:bytes."
+    "help": "Total number of bytes allocated in heap until now, even if released already. Equals to /gc/heap/allocs:bytes."
   },
   {
     "name": "go_memstats_alloc_bytes_total",
@@ -849,11 +849,11 @@
   },
   {
     "name": "go_memstats_heap_idle_bytes",
-    "help": "Number of heap bytes waiting to be used."
+    "help": "Number of heap bytes waiting to be used. Equals to /memory/classes/heap/released:bytes + /memory/classes/heap/free:bytes."
   },
   {
     "name": "go_memstats_heap_idle_bytes",
-    "help": "Number of heap bytes waiting to be used. Equals to /memory/classes/heap/released:bytes + /memory/classes/heap/free:bytes."
+    "help": "Number of heap bytes waiting to be used."
   },
   {
     "name": "go_memstats_heap_inuse_bytes",
@@ -865,11 +865,11 @@
   },
   {
     "name": "go_memstats_heap_objects",
-    "help": "Number of currently allocated objects. Equals to /gc/heap/objects:objects."
+    "help": "Number of allocated objects."
   },
   {
     "name": "go_memstats_heap_objects",
-    "help": "Number of allocated objects."
+    "help": "Number of currently allocated objects. Equals to /gc/heap/objects:objects."
   },
   {
     "name": "go_memstats_heap_released_bytes",
@@ -909,19 +909,19 @@
   },
   {
     "name": "go_memstats_mcache_inuse_bytes",
-    "help": "Number of bytes in use by mcache structures. Equals to /memory/classes/metadata/mcache/inuse:bytes."
-  },
-  {
-    "name": "go_memstats_mcache_inuse_bytes",
     "help": "Number of bytes in use by mcache structures."
   },
   {
-    "name": "go_memstats_mcache_sys_bytes",
-    "help": "Number of bytes used for mcache structures obtained from system."
+    "name": "go_memstats_mcache_inuse_bytes",
+    "help": "Number of bytes in use by mcache structures. Equals to /memory/classes/metadata/mcache/inuse:bytes."
   },
   {
     "name": "go_memstats_mcache_sys_bytes",
     "help": "Number of bytes used for mcache structures obtained from system. Equals to /memory/classes/metadata/mcache/inuse:bytes + /memory/classes/metadata/mcache/free:bytes."
+  },
+  {
+    "name": "go_memstats_mcache_sys_bytes",
+    "help": "Number of bytes used for mcache structures obtained from system."
   },
   {
     "name": "go_memstats_mspan_inuse_bytes",
@@ -973,11 +973,11 @@
   },
   {
     "name": "go_memstats_sys_bytes",
-    "help": "Number of bytes obtained from system."
+    "help": "Number of bytes obtained from system. Equals to /memory/classes/total:byte."
   },
   {
     "name": "go_memstats_sys_bytes",
-    "help": "Number of bytes obtained from system. Equals to /memory/classes/total:byte."
+    "help": "Number of bytes obtained from system."
   },
   {
     "name": "go_sched_gomaxprocs_threads",
