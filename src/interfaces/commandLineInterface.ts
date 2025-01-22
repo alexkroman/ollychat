@@ -59,10 +59,6 @@ export class CLI {
     }
 
     public async start() {
-        posthog.capture({
-            distinctId: hostId,
-            event: '$start'
-        });
 // ASCII Art Title
 console.log(chalk.cyan('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
 console.log(chalk.bold.rgb(255, 165, 0)('💬🤖  Welcome to OLLYCHAT 🚀✨'));
