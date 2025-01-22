@@ -1,20 +1,17 @@
-import { posthog } from 'posthog-js'
+import { PostHog } from 'posthog-node'
 import * as os from 'os'
 
-function getStableHostId(): string | undefined {
-    return Object.values(os.networkInterfaces())
+function getStableHostId(): string  {
+    const macAddress = Object.values(os.networkInterfaces())
         .flat()
-        .find(config => config && !config.internal && config.mac !== '00:00:00:00:00:00')
-        ?.mac || undefined;
+        .find(config => config && !config.internal && config.mac && config.mac !== '00:00:00:00:00:00')
+        ?.mac;
+    return macAddress || 'unknown';
 }
 
-posthog.init('phc_ATkdmfJutLNoQvXMXCGLKDHXQYMXV00diQ8RUDdfe52',
-    {
-        api_host: 'https://us.i.posthog.com',
-        person_profiles: 'always'
-    }
-)
+export const hostId = getStableHostId();
 
-posthog.identify(getStableHostId());
-
-export { posthog }
+export const posthog = new PostHog(
+    'phc_ATkdmfJutLNoQvXMXCGLKDHXQYMXV00diQ8RUDdfe52', {
+    host: 'https://us.i.posthog.com',
+});

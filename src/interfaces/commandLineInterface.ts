@@ -3,7 +3,7 @@ import { createInterface } from 'node:readline';
 import type { Interface } from 'node:readline';
 import { answerQuestion } from "../agents/ollychat.js";
 import { config } from "../config/config.js";
-import { posthog } from '../utils/telemetry.js';
+import { posthog, hostId } from '../utils/telemetry.js';
 
 interface Command {
     name: string;
@@ -39,6 +39,13 @@ export class CLI {
             console.log(chalk.green('\nQuerying...'));
             
             const result = await answerQuestion({ question: messageText });
+
+            posthog.capture({
+                distinctId: hostId,
+                event: '$question',
+                properties: result
+            });
+
             console.log(chalk.bold.cyan("🔍 Query: ") + chalk.yellow(result.query));
             console.log(chalk.bold.green("✅ Answer: ") + chalk.magenta(result.answer) + "\n");
 
@@ -52,7 +59,10 @@ export class CLI {
     }
 
     public async start() {
-
+        posthog.capture({
+            distinctId: hostId,
+            event: '$start'
+        });
 // ASCII Art Title
 console.log(chalk.cyan('\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'));
 console.log(chalk.bold.rgb(255, 165, 0)('💬🤖  Welcome to OLLYCHAT 🚀✨'));
@@ -78,7 +88,6 @@ console.log(chalk.cyan('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public stop() {
         this.isRunning = false;
         this.rl.close();
-        posthog.reset()
         console.log(chalk.blue('\nGoodbye!'));
         process.exit(0);
     }
