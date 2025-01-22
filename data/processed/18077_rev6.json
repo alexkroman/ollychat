@@ -1,15 +1,15 @@
 [
   {
-    "name": "",
-    "description": "",
+    "name": "undefined",
+    "description": "Unbound metrics & logs dashboard using Prometheus and Loki",
     "query": "up",
     "metrics": [
       "up"
     ]
   },
   {
-    "name": "",
-    "description": "",
+    "name": "undefined",
+    "description": "Unbound metrics & logs dashboard using Prometheus and Loki",
     "query": "scrape_duration_seconds",
     "metrics": [
       "scrape_duration_seconds"

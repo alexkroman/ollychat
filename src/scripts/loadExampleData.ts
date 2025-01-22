@@ -20,11 +20,15 @@ async function processFile(filePath: string) {
 
     if (!Array.isArray(inputData)) throw new Error(`Invalid data format in ${filePath}`);
 
-    const documents = inputData.map((item: any) => ({
-      id: item.id,
-      pageContent: normalizeQuestion(item.question),
-      metadata: { question: item.question, metrics: item.metrics.join(', '), query: item.query },
-    }));
+
+    const documents = inputData.map((item: any) => {
+      console.log(normalizeQuestion(item.question)); 
+      return {
+        id: item.id,
+        pageContent: normalizeQuestion(item.question),
+        metadata: { question: item.question, metrics: item.metrics.join(', '), query: item.query },
+      };
+    });
 
     await vectorStore.addDocuments(documents);
     console.log(`Added documents from ${filePath}`);

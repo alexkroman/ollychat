@@ -1,7 +1,7 @@
 [
   {
     "name": "Commands Executed / sec",
-    "description": "",
+    "description": "Redis Dashboard for Prometheus Redis Exporter 1.x, it works with helm stable/redis-ha exporter.\r\n\r\nIf you missing redis memory utilization, please modify \"maxmemory\" value in values.yaml",
     "query": "rate(redis_commands_processed_total[1m])",
     "metrics": [
       "redis_commands_processed_total"
@@ -9,7 +9,7 @@
   },
   {
     "name": "Hits / Misses per Sec",
-    "description": "",
+    "description": "Redis Dashboard for Prometheus Redis Exporter 1.x, it works with helm stable/redis-ha exporter.\r\n\r\nIf you missing redis memory utilization, please modify \"maxmemory\" value in values.yaml",
     "query": "irate(redis_keyspace_hits_total[5m])",
     "metrics": [
       "redis_keyspace_hits_total"
@@ -17,7 +17,7 @@
   },
   {
     "name": "Hits / Misses per Sec",
-    "description": "",
+    "description": "Redis Dashboard for Prometheus Redis Exporter 1.x, it works with helm stable/redis-ha exporter.\r\n\r\nIf you missing redis memory utilization, please modify \"maxmemory\" value in values.yaml",
     "query": "irate(redis_keyspace_misses_total[5m])",
     "metrics": [
       "redis_keyspace_misses_total"
@@ -25,7 +25,7 @@
   },
   {
     "name": "Total Memory Usage",
-    "description": "",
+    "description": "Redis Dashboard for Prometheus Redis Exporter 1.x, it works with helm stable/redis-ha exporter.\r\n\r\nIf you missing redis memory utilization, please modify \"maxmemory\" value in values.yaml",
     "query": "redis_memory_used_bytes ",
     "metrics": [
       "redis_memory_used_bytes"
@@ -33,7 +33,7 @@
   },
   {
     "name": "Network I/O",
-    "description": "",
+    "description": "Redis Dashboard for Prometheus Redis Exporter 1.x, it works with helm stable/redis-ha exporter.\r\n\r\nIf you missing redis memory utilization, please modify \"maxmemory\" value in values.yaml",
     "query": "rate(redis_net_input_bytes_total[5m])",
     "metrics": [
       "redis_net_input_bytes_total"
@@ -41,7 +41,7 @@
   },
   {
     "name": "Network I/O",
-    "description": "",
+    "description": "Redis Dashboard for Prometheus Redis Exporter 1.x, it works with helm stable/redis-ha exporter.\r\n\r\nIf you missing redis memory utilization, please modify \"maxmemory\" value in values.yaml",
     "query": "rate(redis_net_output_bytes_total[5m])",
     "metrics": [
       "redis_net_output_bytes_total"

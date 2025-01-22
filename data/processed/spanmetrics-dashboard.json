@@ -1,7 +1,7 @@
 [
   {
     "name": "Top 7 Services Mean Rate over Range",
-    "description": "",
+    "description": "Spanmetrics way of demo application view.",
     "query": "topk(7,sum by (service_name) (rate(traces_span_metrics_calls_total[$__range])))",
     "metrics": [
       "traces_span_metrics_calls_total"
@@ -9,7 +9,7 @@
   },
   {
     "name": "Top 7 Services Mean ERROR Rate over Range",
-    "description": "",
+    "description": "Spanmetrics way of demo application view.",
     "query": "topk(7,sum(rate(traces_span_metrics_calls_total[$__range])) by (service_name))",
     "metrics": [
       "traces_span_metrics_calls_total"

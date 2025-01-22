@@ -1,7 +1,7 @@
 [
   {
     "name": "Memory",
-    "description": "",
+    "description": "Spring Cloud Data Flow (SCDF) Streams monitoring dashboard for Prometheus.",
     "query": "sum(jvm_memory_used_bytes)",
     "metrics": [
       "jvm_memory_used_bytes"

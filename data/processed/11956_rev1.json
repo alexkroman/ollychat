@@ -1,7 +1,7 @@
 [
   {
     "name": "$service Metrics scrape duration",
-    "description": "",
+    "description": "Nodejs runtime metrics",
     "query": "scrape_duration_seconds",
     "metrics": [
       "scrape_duration_seconds"

@@ -1,7 +1,7 @@
 [
   {
     "name": "Uptime",
-    "description": "",
+    "description": "Overview for VictoriaMetrics vmagent v1.102.0 or higher",
     "query": "sum(up) by (job)",
     "metrics": [
       "up"

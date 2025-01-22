@@ -20,7 +20,7 @@ if (!Array.isArray(inputData)) {
 // Transform the data into the desired format
 const transformedData: Document[] = inputData.map((item: any) => ({
   id: item.id,
-  pageContent: `${normalizeQuestion(item.name)}: ${normalizeQuestion(item.help)}`,
+  pageContent: `${normalizeQuestion(item.name)} ${normalizeQuestion(item.help)}`,
   metadata: {
     name: item.name,
     help: item.help

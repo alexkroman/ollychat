@@ -1,7 +1,7 @@
 [
   {
     "name": "Instance Down",
-    "description": "",
+    "description": "This is a modern 'Prometheus' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
     "query": "up < 1",
     "metrics": [
       "up"
@@ -9,7 +9,7 @@
   },
   {
     "name": "Liveness by pod",
-    "description": "",
+    "description": "This is a modern 'Prometheus' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
     "query": "up",
     "metrics": [
       "up"

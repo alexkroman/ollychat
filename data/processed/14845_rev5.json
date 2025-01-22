@@ -1,7 +1,7 @@
 [
   {
     "name": "Status",
-    "description": "",
+    "description": "jmx exporter monitor",
     "query": "up",
     "metrics": [
       "up"
@@ -9,7 +9,7 @@
   },
   {
     "name": "State",
-    "description": "",
+    "description": "jmx exporter monitor",
     "query": "up",
     "metrics": [
       "up"
