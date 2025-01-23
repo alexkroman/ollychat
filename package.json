@@ -34,6 +34,8 @@
   "devDependencies": {
     "@types/figlet": "^1.7.0",
     "@types/node": "^22.10.6",
+    "@types/shelljs": "^0.8.15",
+    "shelljs": "^0.8.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
@@ -55,6 +57,9 @@
     "metrics:import": "node --loader ts-node/esm src/scripts/importMetrics.ts",
     "examples:load": "node --loader ts-node/esm src/scripts/loadExampleData.ts",
     "metrics:load": "node --loader ts-node/esm src/scripts/loadMetricData.ts",
-    "docker:run": "docker-compose -f deploy/slack/docker-compose.yml up --build"
+    "docker:run": "docker-compose -f deploy/slack/docker-compose.yml up --build",
+    "create-online-boutique-cluster": "node --loader ts-node/esm demos/create-cluster.ts",
+    "helm-upgrade": "node --loader ts-node/esm demos/helm-upgrade.ts"
+
   }
 }

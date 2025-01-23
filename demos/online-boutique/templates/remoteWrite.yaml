@@ -1,3 +1,4 @@
+{{- if .Values.remoteWrite.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -8,6 +9,7 @@ data:
     global:
       scrape_interval: 15s
     remote_write:
-      - url: https://monitoring.googleapis.com/v1/projects/YOUR_PROJECT_ID/location/global/write
+      - url: {{ .Values.remoteWrite.url }}
         headers:
-          Authorization: Bearer <YOUR_ACCESS_TOKEN>
+          Authorization: {{ .Values.remoteWrite.headers.Authorization }}
+{{- end }}
