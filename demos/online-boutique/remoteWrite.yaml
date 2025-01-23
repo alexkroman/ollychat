@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: monitoring
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 15s
+    remote_write:
+      - url: https://monitoring.googleapis.com/v1/projects/YOUR_PROJECT_ID/location/global/write
+        headers:
+          Authorization: Bearer <YOUR_ACCESS_TOKEN>
