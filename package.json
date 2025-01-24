@@ -22,7 +22,6 @@
     "chromadb-default-embed": "^2.13.2",
     "d3-format": "^3.1.0",
     "d3-time-format": "^4.1.0",
-    "danfojs-node": "^1.1.2",
     "dotenv": "^16.4.7",
     "figlet": "^1.8.0",
     "fs": "^0.0.1-security",
