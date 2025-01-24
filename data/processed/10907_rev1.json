@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Current Inflight Requests",
+    "description": "Metrics for API Server, Controller and Scheduler.",
+    "query": "sum(apiserver_current_inflight_requests) by (requestKind)",
+    "metrics": [
+      "apiserver_current_inflight_requests"
+    ]
+  }
+]

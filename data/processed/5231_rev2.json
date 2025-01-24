@@ -1,26 +1,34 @@
 [
   {
-    "name": "Control Plane UP",
+    "name": "Node Disk Pressure",
     "description": "",
-    "query": "sum(up == 0)",
+    "query": "sum(kube_node_status_condition)",
     "metrics": [
-      "up"
+      "kube_node_status_condition"
     ]
   },
   {
-    "name": "API Servers UP",
+    "name": "Node Memory Pressure",
     "description": "",
-    "query": "(sum(up == 1) / count(up)) * 100",
+    "query": "sum(kube_node_status_condition)",
     "metrics": [
-      "up"
+      "kube_node_status_condition"
     ]
   },
   {
-    "name": "Nodes UP",
+    "name": "Node Not Ready",
     "description": "",
-    "query": "(sum(up == 1) / count(up)) * 100",
+    "query": "sum(kube_node_status_condition)",
     "metrics": [
-      "up"
+      "kube_node_status_condition"
+    ]
+  },
+  {
+    "name": "Nodes Unschedulable",
+    "description": "",
+    "query": "sum(kube_node_spec_unschedulable)",
+    "metrics": [
+      "kube_node_spec_unschedulable"
     ]
   }
 ]

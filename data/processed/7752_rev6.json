@@ -1,10 +1,42 @@
 [
   {
+    "name": "Fluent-bit",
+    "description": "This is a simple dashboard for: https://github.com/banzaicloud/logging-operator utilising Fluent-bit and Fluentd",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "Fluentd",
+    "description": "This is a simple dashboard for: https://github.com/banzaicloud/logging-operator utilising Fluent-bit and Fluentd",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
     "name": "CPU Utilisation",
     "description": "This is a simple dashboard for: https://github.com/banzaicloud/logging-operator utilising Fluent-bit and Fluentd",
     "query": "1 - avg(rate(node_cpu_seconds_total[1m]))",
     "metrics": [
       "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "Ready Nodes",
+    "description": "This is a simple dashboard for: https://github.com/banzaicloud/logging-operator utilising Fluent-bit and Fluentd",
+    "query": "sum(kube_node_status_condition)",
+    "metrics": [
+      "kube_node_status_condition"
+    ]
+  },
+  {
+    "name": "Bad Nodes",
+    "description": "This is a simple dashboard for: https://github.com/banzaicloud/logging-operator utilising Fluent-bit and Fluentd",
+    "query": "sum(kube_node_status_condition)",
+    "metrics": [
+      "kube_node_status_condition"
     ]
   },
   {

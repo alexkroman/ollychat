@@ -10,9 +10,27 @@
   {
     "name": "CPU Usage vs Throttling Percent",
     "description": "Detect/Diagnose CPU throttling for containers",
+    "query": "sum by (namespace,pod_name, container_name) ((container_cpu_cfs_throttled_periods_total / container_cpu_cfs_periods_total) * 100)",
+    "metrics": [
+      "container_cpu_cfs_periods_total",
+      "container_cpu_cfs_throttled_periods_total"
+    ]
+  },
+  {
+    "name": "CPU Usage vs Throttling Percent",
+    "description": "Detect/Diagnose CPU throttling for containers",
     "query": "rate(container_cpu_usage_seconds_total[1m])",
     "metrics": [
       "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage vs Throttling Percent",
+    "description": "Detect/Diagnose CPU throttling for containers",
+    "query": "sum by (namespace,pod_name, container_name) ((container_cpu_cfs_throttled_periods_total / container_cpu_cfs_periods_total) * 100)",
+    "metrics": [
+      "container_cpu_cfs_periods_total",
+      "container_cpu_cfs_throttled_periods_total"
     ]
   }
 ]

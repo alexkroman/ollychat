@@ -1,10 +1,116 @@
 [
   {
+    "name": "Memory Utilisation",
+    "description": "Memory Utilisation from Requests",
+    "query": "sum(container_memory_working_set_bytes) / sum(max by(pod) (kube_pod_container_resource_requests))",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "name": "undefined",
+    "description": "High resource usage (CPU, Memory, DB Connections)",
+    "query": "(sum(container_memory_working_set_bytes) / sum(max by(pod) (kube_pod_container_resource_requests)))",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
     "name": "undefined",
     "description": "Excluding cache",
     "query": "sum(container_memory_working_set_bytes)",
     "metrics": [
       "container_memory_working_set_bytes"
+    ]
+  },
+  {
+    "name": "Instance",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "Status",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "Clustering / replicas",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "Zone",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "Connections",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "Max Connections",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "Wraparound",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "Started",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "Version",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "undefined",
+    "description": "",
+    "query": "kube_pod_container_status_ready",
+    "metrics": [
+      "kube_pod_container_status_ready"
+    ]
+  },
+  {
+    "name": "undefined",
+    "description": "",
+    "query": "min(kube_pod_container_status_ready)",
+    "metrics": [
+      "kube_pod_container_status_ready"
     ]
   },
   {

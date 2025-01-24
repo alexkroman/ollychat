@@ -1,5 +1,97 @@
 [
   {
+    "name": "Created by",
+    "description": "Panel only works when a single pod is selected.",
+    "query": "kube_pod_info",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "Running on",
+    "description": "Panel only works when a single pod is selected.",
+    "query": "kube_pod_info",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "Pod IP",
+    "description": "Panel only works when a single pod is selected.",
+    "query": "kube_pod_info",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "Priority Class",
+    "description": "Panel only works when a single pod is selected.",
+    "query": "kube_pod_info",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "QOS Class",
+    "description": "Panel only works when a single pod is selected.",
+    "query": "kube_pod_status_qos_class > 0",
+    "metrics": [
+      "kube_pod_status_qos_class"
+    ]
+  },
+  {
+    "name": "Last Terminated Reason",
+    "description": "Panel only works when a single pod is selected.",
+    "query": "kube_pod_container_status_last_terminated_reason",
+    "metrics": [
+      "kube_pod_container_status_last_terminated_reason"
+    ]
+  },
+  {
+    "name": "Last Terminated Exit Code",
+    "description": "Panel only works when a single pod is selected.",
+    "query": "kube_pod_container_status_last_terminated_exitcode",
+    "metrics": [
+      "kube_pod_container_status_last_terminated_exitcode"
+    ]
+  },
+  {
+    "name": "Total pod CPU Requests usage",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m])) / sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "name": "Total pod CPU Limits usage",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(rate(container_cpu_usage_seconds_total[30m])) / sum(kube_pod_container_resource_limits)",
+    "metrics": [
+      "container_cpu_usage_seconds_total",
+      "kube_pod_container_resource_limits"
+    ]
+  },
+  {
+    "name": "Total pod RAM Requests usage",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(container_memory_working_set_bytes) / sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "name": "Total pod RAM Limits usage",
+    "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(container_memory_working_set_bytes) / sum(kube_pod_container_resource_limits) ",
+    "metrics": [
+      "container_memory_working_set_bytes",
+      "kube_pod_container_resource_limits"
+    ]
+  },
+  {
     "name": "Network - Bandwidth",
     "description": "This is a modern 'Pods View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
     "query": "sum(rate(container_network_receive_bytes_total[30m]))",

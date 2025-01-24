@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1714133e-784f-41cc-98ae-d8f127bb25e0",
+    "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
+    "question": "count full infrastructure namespace volumes",
+    "query": "(\n  count (\n    (kubelet_volume_stats_available_bytes )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes [1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)",
+    "metrics": [
+      "kubelet_volume_stats_available_bytes"
+    ]
+  },
+  {
+    "id": "d1f1a52a-3dfb-4c81-ada2-8d857a66e528",
+    "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
+    "question": "predicted full volumes based daily use",
+    "query": "(\n  count (\n    (kubelet_volume_stats_available_bytes )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes [1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)",
+    "metrics": [
+      "kubelet_volume_stats_available_bytes"
+    ]
+  },
+  {
+    "id": "a6f326f1-a2c7-42da-86ad-444c6b7e698e",
+    "name": "Infrastructure Namespace Volumes Full in Week Based on Daily Use Rate",
+    "question": "dashboard kubernetes volume information at cluster level",
+    "query": "(\n  count (\n    (kubelet_volume_stats_available_bytes )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes [1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)",
+    "metrics": [
+      "kubelet_volume_stats_available_bytes"
+    ]
+  },
+  {
+    "id": "5c40d0ab-f2f0-413a-9ad6-7f55c6afec90",
+    "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
+    "question": "count full user namespace volumes",
+    "query": "(\n  count (\n    (\n      (kubelet_volume_stats_available_bytes )\n    )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes[1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)",
+    "metrics": [
+      "kubelet_volume_stats_available_bytes"
+    ]
+  },
+  {
+    "id": "640e2168-fd22-435b-8b8c-7fa48f9a2b6a",
+    "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
+    "question": "volume full prediction based daily",
+    "query": "(\n  count (\n    (\n      (kubelet_volume_stats_available_bytes )\n    )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes[1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)",
+    "metrics": [
+      "kubelet_volume_stats_available_bytes"
+    ]
+  },
+  {
+    "id": "c78ae893-3342-4c11-819f-965b046ce357",
+    "name": "User Namespace Volumes Full in Week Based on Daily Use Rate",
+    "question": "clusterlevel user namespace volume status",
+    "query": "(\n  count (\n    (\n      (kubelet_volume_stats_available_bytes )\n    )\n    and\n    (predict_linear(kubelet_volume_stats_available_bytes[1d], 7 * 24 * 60 * 60) < 0)\n  )\n)\nor\nvector(0)",
+    "metrics": [
+      "kubelet_volume_stats_available_bytes"
+    ]
+  }
+]

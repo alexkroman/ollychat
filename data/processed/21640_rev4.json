@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Depth $controller",
+    "description": "Prometheus metrics for External Secrets",
+    "query": "workqueue_depth",
+    "metrics": [
+      "workqueue_depth"
+    ]
+  },
+  {
+    "name": "Adds Rate $controller",
+    "description": "Prometheus metrics for External Secrets",
+    "query": "sum by (name) (rate(workqueue_adds_total[2m]))",
+    "metrics": [
+      "workqueue_adds_total"
+    ]
+  },
+  {
+    "name": "Longest Running Processor $controller",
+    "description": "Prometheus metrics for External Secrets",
+    "query": "workqueue_longest_running_processor_seconds",
+    "metrics": [
+      "workqueue_longest_running_processor_seconds"
+    ]
+  },
+  {
+    "name": "Retries Rate $controller",
+    "description": "Prometheus metrics for External Secrets",
+    "query": "sum by (name) (rate(workqueue_retries_total[2m]))",
+    "metrics": [
+      "workqueue_retries_total"
+    ]
+  },
+  {
+    "name": "Unfinished Work $controller",
+    "description": "Prometheus metrics for External Secrets",
+    "query": "workqueue_unfinished_work_seconds",
+    "metrics": [
+      "workqueue_unfinished_work_seconds"
+    ]
+  }
+]

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "e5c2c687-6642-46b0-b8ec-dbd9808ca788",
+    "name": "CNI Pods",
+    "question": "kube node labels",
+    "query": "sum(kube_node_labels)",
+    "metrics": [
+      "kube_node_labels"
+    ]
+  },
+  {
+    "id": "840a8b12-211a-40cc-a9fa-01b7efe3b6a9",
+    "name": "CNI Pods",
+    "question": "count assigned ip addresses",
+    "query": "sum(kube_node_labels)",
+    "metrics": [
+      "kube_node_labels"
+    ]
+  },
+  {
+    "id": "60523674-c30c-470b-99b3-9a004a753e1c",
+    "name": "CNI Pods",
+    "question": "aggregate matching agents nodes",
+    "query": "sum(kube_node_labels)",
+    "metrics": [
+      "kube_node_labels"
+    ]
+  },
+  {
+    "id": "b7372d43-a843-4d09-bf3a-fb52e2eee453",
+    "name": "CNI Pods",
+    "question": "kube pod info cni pods",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "f7999217-3465-49bd-b678-f739299fc903",
+    "name": "CNI Pods",
+    "question": "count assigned ip addresses pods",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "449f35bb-8e5e-4fb6-8996-cf193ace215c",
+    "name": "CNI Pods",
+    "question": "count pods not using host network",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "a01d8b77-a2a0-414c-a6b9-fdaada395d5b",
+    "name": "CNI Pods",
+    "question": "all kubernetes pods",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "4f05c435-9b4a-4dba-80da-b7ad2b0a14ba",
+    "name": "CNI Pods",
+    "question": "count kubernetes pod ips",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "aa82579f-1bd3-4e59-85fe-8303599285bc",
+    "name": "CNI Pods",
+    "question": "aggregate kubernetes pod information",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  }
+]

@@ -111,6 +111,14 @@
     ]
   },
   {
+    "name": "Cluster Pod Utilization",
+    "description": "",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
     "name": "Network Received",
     "description": "",
     "query": "sum(rate(node_network_receive_bytes_total[5m]))",

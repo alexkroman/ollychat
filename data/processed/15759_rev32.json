@@ -9,6 +9,22 @@
     ]
   },
   {
+    "name": "Pods on node",
+    "description": "This is a modern 'Nodes View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "List of pods on node ($node)",
+    "description": "This is a modern 'Nodes View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "kube_pod_info",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
     "name": "CPU Used",
     "description": "This is a modern 'Nodes View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
     "query": "sum(rate(node_cpu_seconds_total[30m]))",

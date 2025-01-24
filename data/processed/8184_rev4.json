@@ -1,10 +1,58 @@
 [
   {
+    "name": "Project $Namespace Quotas - CPU Requests & Limits",
+    "description": "Displays Namespace utilization",
+    "query": "sum (kube_resourcequota) * 1000",
+    "metrics": [
+      "kube_resourcequota"
+    ]
+  },
+  {
+    "name": "Project $Namespace Quotas - CPU Requests & Limits",
+    "description": "Displays Namespace utilization",
+    "query": "sum (kube_resourcequota) * 1000",
+    "metrics": [
+      "kube_resourcequota"
+    ]
+  },
+  {
+    "name": "Project $Namespace Quotas - CPU Requests & Limits",
+    "description": "Displays Namespace utilization",
+    "query": "sum (kube_resourcequota) * 1000",
+    "metrics": [
+      "kube_resourcequota"
+    ]
+  },
+  {
     "name": "Pods CPU usage for $Namespace",
     "description": "Displays Namespace utilization",
     "query": "sum (rate (container_cpu_usage_seconds_total[2m]))",
     "metrics": [
       "container_cpu_usage_seconds_total"
+    ]
+  },
+  {
+    "name": "Project $Namespace Quotas - Memory Requests & Limits",
+    "description": "Displays Namespace utilization",
+    "query": "sum (kube_resourcequota) ",
+    "metrics": [
+      "kube_resourcequota"
+    ]
+  },
+  {
+    "name": "Project $Namespace Quotas - Memory Requests & Limits",
+    "description": "Displays Namespace utilization",
+    "query": "sum (kube_resourcequota) ",
+    "metrics": [
+      "kube_resourcequota"
+    ]
+  },
+  {
+    "name": "Project $Namespace Quotas - Memory Requests & Limits",
+    "description": "Displays Namespace utilization",
+    "query": "sum (kube_resourcequota) ",
+    "metrics": [
+      "kube_resourcequota"
     ]
   },
   {

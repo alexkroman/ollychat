@@ -9,6 +9,19 @@
     ]
   },
   {
+    "name": "Unavailable Replicas",
+    "description": "Monitors Kubernetes deployments in cluster using Prometheus. Shows overall cluster CPU / Memory of deployments, replicas in each deployment. Uses Kube state metrics and cAdvisor metrics (741)",
+    "query": "(((sum(kube_deployment_status_replicas) or vector(0)) + (sum(kube_statefulset_replicas) or vector(0)) + (sum(kube_daemonset_status_desired_number_scheduled) or vector(0))) - ((sum(kube_deployment_status_replicas_available) or vector(0)) + (sum(kube_statefulset_status_replicas) or vector(0)) + (sum(kube_daemonset_status_number_ready) or vector(0)))) / ((sum(kube_deployment_status_replicas) or vector(0)) + (sum(kube_statefulset_replicas) or vector(0)) + (sum(kube_daemonset_status_desired_number_scheduled) or vector(0))) * 100",
+    "metrics": [
+      "kube_daemonset_status_desired_number_scheduled",
+      "kube_daemonset_status_number_ready",
+      "kube_deployment_status_replicas",
+      "kube_deployment_status_replicas_available",
+      "kube_statefulset_replicas",
+      "kube_statefulset_status_replicas"
+    ]
+  },
+  {
     "name": "Used",
     "description": "Monitors Kubernetes deployments in cluster using Prometheus. Shows overall cluster CPU / Memory of deployments, replicas in each deployment. Uses Kube state metrics and cAdvisor metrics (741)",
     "query": "sum (container_memory_working_set_bytes)",
@@ -30,6 +43,35 @@
     "query": "sum (machine_cpu_cores)",
     "metrics": [
       "machine_cpu_cores"
+    ]
+  },
+  {
+    "name": "Available (cluster)",
+    "description": "Monitors Kubernetes deployments in cluster using Prometheus. Shows overall cluster CPU / Memory of deployments, replicas in each deployment. Uses Kube state metrics and cAdvisor metrics (741)",
+    "query": "(sum(kube_deployment_status_replicas_available) or vector(0)) + (sum(kube_statefulset_status_replicas) or vector(0)) + (sum(kube_daemonset_status_number_ready) or vector(0))",
+    "metrics": [
+      "kube_daemonset_status_number_ready",
+      "kube_deployment_status_replicas_available",
+      "kube_statefulset_status_replicas"
+    ]
+  },
+  {
+    "name": "Total (cluster)",
+    "description": "Monitors Kubernetes deployments in cluster using Prometheus. Shows overall cluster CPU / Memory of deployments, replicas in each deployment. Uses Kube state metrics and cAdvisor metrics (741)",
+    "query": "(sum(kube_deployment_status_replicas) or vector(0)) + (sum(kube_statefulset_replicas) or vector(0)) + (sum(kube_daemonset_status_desired_number_scheduled) or vector(0))",
+    "metrics": [
+      "kube_daemonset_status_desired_number_scheduled",
+      "kube_deployment_status_replicas",
+      "kube_statefulset_replicas"
+    ]
+  },
+  {
+    "name": "Disk Usage",
+    "description": "Monitors Kubernetes deployments in cluster using Prometheus. Shows overall cluster CPU / Memory of deployments, replicas in each deployment. Uses Kube state metrics and cAdvisor metrics (741)",
+    "query": "100 * (kubelet_volume_stats_used_bytes / kubelet_volume_stats_capacity_bytes)",
+    "metrics": [
+      "kubelet_volume_stats_capacity_bytes",
+      "kubelet_volume_stats_used_bytes"
     ]
   }
 ]

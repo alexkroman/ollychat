@@ -1,18 +1,34 @@
 [
   {
-    "name": "Status",
+    "name": "Cpu Time",
     "description": "jmx exporter monitor",
-    "query": "up",
+    "query": "process_cpu_seconds_total",
     "metrics": [
-      "up"
+      "process_cpu_seconds_total"
     ]
   },
   {
-    "name": "State",
+    "name": "Open File Descriptors",
     "description": "jmx exporter monitor",
-    "query": "up",
+    "query": "process_open_fds",
     "metrics": [
-      "up"
+      "process_open_fds"
+    ]
+  },
+  {
+    "name": "Process Memory",
+    "description": "jmx exporter monitor",
+    "query": "process_resident_memory_bytes",
+    "metrics": [
+      "process_resident_memory_bytes"
+    ]
+  },
+  {
+    "name": "Process Memory",
+    "description": "jmx exporter monitor",
+    "query": "process_virtual_memory_bytes",
+    "metrics": [
+      "process_virtual_memory_bytes"
     ]
   }
 ]

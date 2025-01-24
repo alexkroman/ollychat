@@ -26,6 +26,22 @@
     ]
   },
   {
+    "name": "Pod Restarts",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "count(sum by (pod)(delta(kube_pod_container_status_restarts_total[15m]) > 0))",
+    "metrics": [
+      "kube_pod_container_status_restarts_total"
+    ]
+  },
+  {
+    "name": "Pods Restarted",
+    "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
+    "query": "sum by (pod)(delta(kube_pod_container_status_restarts_total[15m]) > 0)",
+    "metrics": [
+      "kube_pod_container_status_restarts_total"
+    ]
+  },
+  {
     "name": "Load 1m",
     "description": "Cluster level overview of workloads deployed, based on prometheus metrics exposed by kubelet, node-exporter, nginx ingress controller",
     "query": "node_load1",

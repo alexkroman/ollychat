@@ -1,0 +1,138 @@
+[
+  {
+    "name": "Cluster Pod Capacity",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "Deployment Replicas - Up To Date",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "kube_deployment_status_replicas",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "name": "Deployment Replicas",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_deployment_status_replicas)",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "name": "Deployment Replicas - Updated",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_deployment_status_replicas_updated)",
+    "metrics": [
+      "kube_deployment_status_replicas_updated"
+    ]
+  },
+  {
+    "name": "Deployment Replicas - Unavailable",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_deployment_status_replicas_unavailable)",
+    "metrics": [
+      "kube_deployment_status_replicas_unavailable"
+    ]
+  },
+  {
+    "name": "Number Of Nodes",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_node_info)",
+    "metrics": [
+      "kube_node_info"
+    ]
+  },
+  {
+    "name": "Nodes Out of Disk",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_node_status_condition)",
+    "metrics": [
+      "kube_node_status_condition"
+    ]
+  },
+  {
+    "name": "Nodes Unavailable",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_node_spec_unschedulable)",
+    "metrics": [
+      "kube_node_spec_unschedulable"
+    ]
+  },
+  {
+    "name": "Pods Running",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Pods Pending",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Pods Failed",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Pods Succeeded",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Pods Unknown",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Containers Running",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_pod_container_status_running)",
+    "metrics": [
+      "kube_pod_container_status_running"
+    ]
+  },
+  {
+    "name": "Containers Waiting",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_pod_container_status_waiting)",
+    "metrics": [
+      "kube_pod_container_status_waiting"
+    ]
+  },
+  {
+    "name": "Containers Terminated",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(kube_pod_container_status_terminated)",
+    "metrics": [
+      "kube_pod_container_status_terminated"
+    ]
+  },
+  {
+    "name": "Containers Restarts (Last 30 Minutes)",
+    "description": "Summary metrics about containers running on Kubernetes nodes and mainline kubernetes statistics",
+    "query": "sum(delta(kube_pod_container_status_restarts_total[30m]))",
+    "metrics": [
+      "kube_pod_container_status_restarts_total"
+    ]
+  }
+]

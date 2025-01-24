@@ -1,0 +1,362 @@
+[
+  {
+    "id": "78fefb25-0331-48a4-8fe9-5029f600eafe",
+    "name": "Cluster Pod Requested",
+    "question": "ratio pod info node allocatable resources",
+    "query": "sum(kube_pod_info) / sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable",
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "1b6c71b3-cb80-4bd9-b47e-247a503db362",
+    "name": "Cluster Pod Requested",
+    "question": "summary pod information divided node allocatable",
+    "query": "sum(kube_pod_info) / sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable",
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "757ef65e-801a-4fd7-9ca4-9be3c6ebe3e2",
+    "name": "Cluster Pod Requested",
+    "question": "metrics pods node allocation",
+    "query": "sum(kube_pod_info) / sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable",
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "eb9eb845-a2a5-4c22-9584-6289611b3ccd",
+    "name": "Cluster CPU Requested",
+    "question": "cpu pod",
+    "query": "sum(kube_pod_container_resource_requests)/ sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "e21519c1-b4a8-4060-a33d-4d9c2a04cdf3",
+    "name": "Cluster CPU Requested",
+    "question": "cpu node",
+    "query": "sum(kube_pod_container_resource_requests)/ sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "db2138dd-10f4-4199-b63f-8eec4080221b",
+    "name": "Cluster CPU Requested",
+    "question": "clusterwide cpu request summary",
+    "query": "sum(kube_pod_container_resource_requests)/ sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "12b7a69f-1b01-4cb1-a85c-a6976cb7bd31",
+    "name": "Cluster Memory  Requested",
+    "question": "ratio requested memory node allocatable memory",
+    "query": "sum(kube_pod_container_resource_requests) / sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "92ac37dd-0fc7-4b06-8af5-7161fc16d01e",
+    "name": "Cluster Memory  Requested",
+    "question": "summary memory requested available node memory",
+    "query": "sum(kube_pod_container_resource_requests) / sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "43edbbce-d005-47d3-bd7e-63f3d1617d8a",
+    "name": "Cluster Memory  Requested",
+    "question": "memory request node allocation",
+    "query": "sum(kube_pod_container_resource_requests) / sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable",
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "da2d21e0-098e-45ae-a2d8-1b997e497f48",
+    "name": "Cluster Pod Capacity",
+    "question": "allocatable resources kube nodes",
+    "query": "sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable"
+    ]
+  },
+  {
+    "id": "c1c87332-f5f5-4c0f-9903-29eb25155092",
+    "name": "Cluster Pod Capacity",
+    "question": "combined allocation capacity node",
+    "query": "sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable"
+    ]
+  },
+  {
+    "id": "35bf771d-e47b-4833-a516-a902d625fba9",
+    "name": "Cluster Pod Capacity",
+    "question": "node allocatable metrics",
+    "query": "sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable"
+    ]
+  },
+  {
+    "id": "3ef3a3e1-6a32-4519-9203-bc42ba4c52e1",
+    "name": "Cluster Pod Capacity",
+    "question": "pod count cluster",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "c619f971-a9ed-45e0-b16b-26fa10f367aa",
+    "name": "Cluster Pod Capacity",
+    "question": "pod information across cluster",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "37ad0ed7-2858-4351-be88-08e517305e0f",
+    "name": "Cluster Pod Capacity",
+    "question": "summed pod metrics cluster capacity",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "722cddf9-39cc-4d0b-ac6f-6a4544a8c90b",
+    "name": "Cluster CPU Capacity",
+    "question": "cluster cpu capacity",
+    "query": "sum(kube_node_status_capacity)",
+    "metrics": [
+      "kube_node_status_capacity"
+    ]
+  },
+  {
+    "id": "b27dedba-96d8-4342-95dd-975d005bf5bf",
+    "name": "Cluster CPU Capacity",
+    "question": "aggregate kube node capacity metrics",
+    "query": "sum(kube_node_status_capacity)",
+    "metrics": [
+      "kube_node_status_capacity"
+    ]
+  },
+  {
+    "id": "2b3ab491-6417-45ac-861d-fc9bbda7b583",
+    "name": "Cluster CPU Capacity",
+    "question": "cpu capacity across cluster nodes",
+    "query": "sum(kube_node_status_capacity)",
+    "metrics": [
+      "kube_node_status_capacity"
+    ]
+  },
+  {
+    "id": "102d701e-571f-42ac-9dd1-d653d0955c66",
+    "name": "Cluster CPU Capacity",
+    "question": "aggregate available node cpu capacity",
+    "query": "sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable"
+    ]
+  },
+  {
+    "id": "92e5c08a-c1ef-44e7-978d-aef1bb5beb46",
+    "name": "Cluster CPU Capacity",
+    "question": "cpu allocatable kube nodes",
+    "query": "sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable"
+    ]
+  },
+  {
+    "id": "91feaf50-17fd-47bf-bf20-b24212c6ec48",
+    "name": "Cluster CPU Capacity",
+    "question": "cpu resources available nodes",
+    "query": "sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable"
+    ]
+  },
+  {
+    "id": "833568d3-fd91-4ba5-8815-6726e4d0b996",
+    "name": "Cluster CPU Capacity",
+    "question": "cpu resource pod",
+    "query": "sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "db8415dd-abe7-4ead-8805-8f6b74cdceda",
+    "name": "Cluster CPU Capacity",
+    "question": "aggregate container resource",
+    "query": "sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "6a91c936-06ef-4c0b-9285-a0224f2868f2",
+    "name": "Cluster CPU Capacity",
+    "question": "cpu capacity requested containers",
+    "query": "sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "a8d18115-aa9f-4bf6-bdbb-f049ee3d5f7e",
+    "name": "Cluster CPU Capacity",
+    "question": "container cpu resource limits",
+    "query": "sum(kube_pod_container_resource_limits)",
+    "metrics": [
+      "kube_pod_container_resource_limits"
+    ]
+  },
+  {
+    "id": "327caeb4-2171-47eb-97df-754ee0732931",
+    "name": "Cluster CPU Capacity",
+    "question": "limits pod containers",
+    "query": "sum(kube_pod_container_resource_limits)",
+    "metrics": [
+      "kube_pod_container_resource_limits"
+    ]
+  },
+  {
+    "id": "d2bc150d-26b7-4511-a28c-1bfb660d9c34",
+    "name": "Cluster CPU Capacity",
+    "question": "cpu capacity pod containers",
+    "query": "sum(kube_pod_container_resource_limits)",
+    "metrics": [
+      "kube_pod_container_resource_limits"
+    ]
+  },
+  {
+    "id": "a4f3055e-74da-4bce-980b-cb7480b7d76c",
+    "name": "Cluster Mem Capacity",
+    "question": "allocatable memory kube nodes",
+    "query": "sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable"
+    ]
+  },
+  {
+    "id": "1be63927-1357-45d1-9d09-1ae7a36c150e",
+    "name": "Cluster Mem Capacity",
+    "question": "kube node allocatable memory",
+    "query": "sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable"
+    ]
+  },
+  {
+    "id": "6a87baf3-5d09-43ca-86f8-1c5e6aa8ad58",
+    "name": "Cluster Mem Capacity",
+    "question": "summed allocatable memory kube nodes",
+    "query": "sum(kube_node_status_allocatable)",
+    "metrics": [
+      "kube_node_status_allocatable"
+    ]
+  },
+  {
+    "id": "4c52da98-b2c0-4825-9d51-9aa9b1b5b327",
+    "name": "Cluster Mem Capacity",
+    "question": "node memory capacity",
+    "query": "sum(kube_node_status_capacity)",
+    "metrics": [
+      "kube_node_status_capacity"
+    ]
+  },
+  {
+    "id": "72c1bc05-f2b2-4955-8d66-f62651ce3d0d",
+    "name": "Cluster Mem Capacity",
+    "question": "memory capacity nodes",
+    "query": "sum(kube_node_status_capacity)",
+    "metrics": [
+      "kube_node_status_capacity"
+    ]
+  },
+  {
+    "id": "9dec4e3f-ec1a-472b-a6c4-1b775c301f65",
+    "name": "Cluster Mem Capacity",
+    "question": "summed node memory capacity",
+    "query": "sum(kube_node_status_capacity)",
+    "metrics": [
+      "kube_node_status_capacity"
+    ]
+  },
+  {
+    "id": "2eb7f850-491a-4759-96ee-dd75bdc97375",
+    "name": "Cluster Mem Capacity",
+    "question": "memory capacity kube pod containers",
+    "query": "sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "63f5f881-1e9d-49a4-8a03-78a0d98d1960",
+    "name": "Cluster Mem Capacity",
+    "question": "combined memory kube pod containers",
+    "query": "sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "1342250b-6603-492d-8335-40cb40a80b07",
+    "name": "Cluster Mem Capacity",
+    "question": "memory resource pods",
+    "query": "sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "id": "6926474f-ddd1-4b16-98e5-da6614b74277",
+    "name": "Cluster Mem Capacity",
+    "question": "container resource limits kubestatemetrics",
+    "query": "sum(kube_pod_container_resource_limits)",
+    "metrics": [
+      "kube_pod_container_resource_limits"
+    ]
+  },
+  {
+    "id": "6ed93f52-27d5-409c-8ffb-3a025a1e5846",
+    "name": "Cluster Mem Capacity",
+    "question": "aggregate kube_pod_container_resource_limits metric",
+    "query": "sum(kube_pod_container_resource_limits)",
+    "metrics": [
+      "kube_pod_container_resource_limits"
+    ]
+  },
+  {
+    "id": "80329112-77fc-46dd-b0ac-f378e312ff5c",
+    "name": "Cluster Mem Capacity",
+    "question": "resource limits kubestatemetrics v2 version",
+    "query": "sum(kube_pod_container_resource_limits)",
+    "metrics": [
+      "kube_pod_container_resource_limits"
+    ]
+  }
+]

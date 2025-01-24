@@ -1,10 +1,10 @@
 [
   {
-    "name": "Controller State",
+    "name": "Rest Client Request Rate",
     "description": "",
-    "query": "up",
+    "query": "sum by (method, code) (rate(rest_client_requests_total[5m]))",
     "metrics": [
-      "up"
+      "rest_client_requests_total"
     ]
   }
 ]

@@ -1,0 +1,245 @@
+[
+  {
+    "id": "c7da9979-ae92-4e69-9591-0e33af479688",
+    "name": "Target Metric ($hpa)",
+    "question": "kubernetes hpa target metric",
+    "query": "kube_horizontalpodautoscaler_spec_target_metric",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_target_metric"
+    ]
+  },
+  {
+    "id": "8f1694c8-759a-42d3-90ae-b96642a495ec",
+    "name": "Target Metric ($hpa)",
+    "question": "horizontal pod autoscaler target metric",
+    "query": "kube_horizontalpodautoscaler_spec_target_metric",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_target_metric"
+    ]
+  },
+  {
+    "id": "3c2fe9da-7cd3-4fd0-a879-835596e5e847",
+    "name": "Target Metric ($hpa)",
+    "question": "target metric hpa kubernetes",
+    "query": "kube_horizontalpodautoscaler_spec_target_metric",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_target_metric"
+    ]
+  },
+  {
+    "id": "cbb56aa8-caec-400b-8928-83f86423e8f9",
+    "name": "Replicas ($hpa)",
+    "question": "replicas specified hpa",
+    "query": "kube_horizontalpodautoscaler_spec_max_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_max_replicas"
+    ]
+  },
+  {
+    "id": "2c22b140-6695-465c-97e8-d21f9cdad228",
+    "name": "Replicas ($hpa)",
+    "question": "largest replica set hpa",
+    "query": "kube_horizontalpodautoscaler_spec_max_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_max_replicas"
+    ]
+  },
+  {
+    "id": "2ba8fa21-e42e-4c78-bdce-35274e17d861",
+    "name": "Replicas ($hpa)",
+    "question": "peak replicas defined hpa settings",
+    "query": "kube_horizontalpodautoscaler_spec_max_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_max_replicas"
+    ]
+  },
+  {
+    "id": "0b036593-9e00-4e3a-bfb6-8ce3072a1447",
+    "name": "Replicas ($hpa)",
+    "question": "desired replicas horizontal pod autoscaler",
+    "query": "kube_horizontalpodautoscaler_status_desired_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_desired_replicas"
+    ]
+  },
+  {
+    "id": "4bd3ad8e-1816-481f-a80f-3a7e1d21cf69",
+    "name": "Replicas ($hpa)",
+    "question": "replicas set kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_status_desired_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_desired_replicas"
+    ]
+  },
+  {
+    "id": "45a1b961-1a11-4dde-944f-72f3e74faa26",
+    "name": "Replicas ($hpa)",
+    "question": "desired pod replicas kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_status_desired_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_desired_replicas"
+    ]
+  },
+  {
+    "id": "5756a46b-eb6b-4bd2-966b-18155f94ca8d",
+    "name": "Replicas ($hpa)",
+    "question": "replicas managed kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_status_current_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_current_replicas"
+    ]
+  },
+  {
+    "id": "4767efcd-ae16-489a-81c2-137c714b4f62",
+    "name": "Replicas ($hpa)",
+    "question": "replicas controlled hpa",
+    "query": "kube_horizontalpodautoscaler_status_current_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_current_replicas"
+    ]
+  },
+  {
+    "id": "2b258982-54a4-4029-986c-06fef4b09b5f",
+    "name": "Replicas ($hpa)",
+    "question": "count replicas hpa",
+    "query": "kube_horizontalpodautoscaler_status_current_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_current_replicas"
+    ]
+  },
+  {
+    "id": "bd1c0b1f-80e4-481b-b6ce-fc33d3e2eebc",
+    "name": "Replicas ($hpa)",
+    "question": "replicas specified hpa",
+    "query": "kube_horizontalpodautoscaler_spec_min_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_min_replicas"
+    ]
+  },
+  {
+    "id": "eddd0246-9576-487a-9664-a4d80f0c5014",
+    "name": "Replicas ($hpa)",
+    "question": "smallest required replicas hpa",
+    "query": "kube_horizontalpodautoscaler_spec_min_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_min_replicas"
+    ]
+  },
+  {
+    "id": "28fc3a4c-1f12-45a9-82b9-b49e20d0b2bf",
+    "name": "Replicas ($hpa)",
+    "question": "pod replicas set hpa",
+    "query": "kube_horizontalpodautoscaler_spec_min_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_min_replicas"
+    ]
+  },
+  {
+    "id": "439d65b0-d260-45db-8cb7-c32fef089046",
+    "name": "Max Replicas",
+    "question": "max replicas specified kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_spec_max_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_max_replicas"
+    ]
+  },
+  {
+    "id": "ed5a782f-2ea9-4ab2-a80f-e3ca15e4c2c1",
+    "name": "Max Replicas",
+    "question": "largest allowed replicas kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_spec_max_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_max_replicas"
+    ]
+  },
+  {
+    "id": "0112ab54-07e8-489e-a216-32e5903017f8",
+    "name": "Max Replicas",
+    "question": "replicas defined kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_spec_max_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_max_replicas"
+    ]
+  },
+  {
+    "id": "6210921c-792f-48c8-8a23-b31cce754384",
+    "name": "Current Replicas",
+    "question": "replicas managed kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_status_current_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_current_replicas"
+    ]
+  },
+  {
+    "id": "ef7a5b39-c10b-43a2-803e-caf00cbfac4e",
+    "name": "Current Replicas",
+    "question": "replicas kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_status_current_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_current_replicas"
+    ]
+  },
+  {
+    "id": "052feb8e-f169-4d1d-b4b6-9d6094c5a047",
+    "name": "Current Replicas",
+    "question": "horizontal pod autoscalers replica count",
+    "query": "kube_horizontalpodautoscaler_status_current_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_current_replicas"
+    ]
+  },
+  {
+    "id": "54721c61-8e65-4820-af34-a76dd71126ba",
+    "name": "Min Replicas",
+    "question": "retrieve replicas specified hpa",
+    "query": "kube_horizontalpodautoscaler_spec_min_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_min_replicas"
+    ]
+  },
+  {
+    "id": "6622b80f-e918-4d24-8e04-f23bf6924a36",
+    "name": "Min Replicas",
+    "question": "identify replicas kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_spec_min_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_min_replicas"
+    ]
+  },
+  {
+    "id": "0c6e6057-292f-4eae-9377-38af39e30927",
+    "name": "Min Replicas",
+    "question": "query required replicas hpa",
+    "query": "kube_horizontalpodautoscaler_spec_min_replicas",
+    "metrics": [
+      "kube_horizontalpodautoscaler_spec_min_replicas"
+    ]
+  },
+  {
+    "id": "1d3cb701-791c-4ed5-9863-6e4441c8340f",
+    "name": "Status Condition",
+    "question": "status condition kubernetes hpa",
+    "query": "kube_horizontalpodautoscaler_status_condition",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_condition"
+    ]
+  },
+  {
+    "id": "3471e333-28a3-4327-b97f-6c4efc98ca2d",
+    "name": "Status Condition",
+    "question": "status condition k8s hpa",
+    "query": "kube_horizontalpodautoscaler_status_condition",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_condition"
+    ]
+  },
+  {
+    "id": "da694ce5-a6aa-48d9-8655-306c8b2bc851",
+    "name": "Status Condition",
+    "question": "horizontal pod autoscaler status condition",
+    "query": "kube_horizontalpodautoscaler_status_condition",
+    "metrics": [
+      "kube_horizontalpodautoscaler_status_condition"
+    ]
+  }
+]

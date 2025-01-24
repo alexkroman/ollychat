@@ -1,0 +1,10 @@
+[
+  {
+    "name": "apiserver request rate",
+    "description": "Latency and cache hit graphs for Kubernetes apiserver.  Useful for observing performance of Amazon EKS clusters.",
+    "query": "sum(rate(apiserver_request_total[5m])) by (verb)",
+    "metrics": [
+      "apiserver_request_total"
+    ]
+  }
+]

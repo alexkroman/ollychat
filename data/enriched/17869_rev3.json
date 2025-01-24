@@ -1,0 +1,56 @@
+[
+  {
+    "id": "76c3b8cd-49e6-4641-8774-3d3ab2215b24",
+    "name": "Wokring queue depth",
+    "question": "queue depth object name",
+    "query": "max(workqueue_depth) by (name)",
+    "metrics": [
+      "workqueue_depth"
+    ]
+  },
+  {
+    "id": "9a8a7b27-93dc-47d4-a004-ac884e857dd0",
+    "name": "Wokring queue depth",
+    "question": "largest waiting objects reconciliation queue",
+    "query": "max(workqueue_depth) by (name)",
+    "metrics": [
+      "workqueue_depth"
+    ]
+  },
+  {
+    "id": "b28c551f-a5f5-4687-a15e-5e6406e1350e",
+    "name": "Wokring queue depth",
+    "question": "peak objects awaiting processing resource",
+    "query": "max(workqueue_depth) by (name)",
+    "metrics": [
+      "workqueue_depth"
+    ]
+  },
+  {
+    "id": "0d505d46-030e-4efd-b94c-840565a87898",
+    "name": "Rest client requests",
+    "question": "rest client code method",
+    "query": "sum(rate(rest_client_requests_total[$__interval])) by (method,code)",
+    "metrics": [
+      "rest_client_requests_total"
+    ]
+  },
+  {
+    "id": "08b88df1-d65e-4e88-98fc-bf18d2f0db3d",
+    "name": "Rest client requests",
+    "question": "http kubernetes api server categorized",
+    "query": "sum(rate(rest_client_requests_total[$__interval])) by (method,code)",
+    "metrics": [
+      "rest_client_requests_total"
+    ]
+  },
+  {
+    "id": "c6ac3fb4-4824-4fe0-8e35-8d1e579bddea",
+    "name": "Rest client requests",
+    "question": "http api server code",
+    "query": "sum(rate(rest_client_requests_total[$__interval])) by (method,code)",
+    "metrics": [
+      "rest_client_requests_total"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "937f1f28-1600-45e3-b5ce-2ae3586f10e7",
+    "name": "Current Inflight Requests",
+    "question": "inflight api server",
+    "query": "sum(apiserver_current_inflight_requests) by (requestKind)",
+    "metrics": [
+      "apiserver_current_inflight_requests"
+    ]
+  },
+  {
+    "id": "159b8044-8f8e-49bf-81bd-37e49a39986f",
+    "name": "Current Inflight Requests",
+    "question": "inflight controller",
+    "query": "sum(apiserver_current_inflight_requests) by (requestKind)",
+    "metrics": [
+      "apiserver_current_inflight_requests"
+    ]
+  },
+  {
+    "id": "ee05cf25-f7c5-4bfd-943e-577fbb94e7f7",
+    "name": "Current Inflight Requests",
+    "question": "inflight scheduler",
+    "query": "sum(apiserver_current_inflight_requests) by (requestKind)",
+    "metrics": [
+      "apiserver_current_inflight_requests"
+    ]
+  }
+]

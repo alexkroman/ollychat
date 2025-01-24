@@ -1,5 +1,141 @@
 [
   {
+    "name": "Containers Running",
+    "description": "Numbers of containers of cluster in state Running",
+    "query": "sum(kube_pod_container_status_running)",
+    "metrics": [
+      "kube_pod_container_status_running"
+    ]
+  },
+  {
+    "name": "Containers Terminated",
+    "description": "Numbers of containers of cluster in state Terminated",
+    "query": "sum(kube_pod_container_status_terminated)",
+    "metrics": [
+      "kube_pod_container_status_terminated"
+    ]
+  },
+  {
+    "name": "Containers Waiting",
+    "description": "Numbers of containers of cluster in state Waiting",
+    "query": "sum(kube_pod_container_status_waiting)",
+    "metrics": [
+      "kube_pod_container_status_waiting"
+    ]
+  },
+  {
+    "name": "Containers Restarts (Last 30 Minutes)",
+    "description": "Numbers of containers of cluster that restarts in the last 30 minutes",
+    "query": "sum(delta(kube_pod_container_status_restarts_total[30m]))",
+    "metrics": [
+      "kube_pod_container_status_restarts_total"
+    ]
+  },
+  {
+    "name": "Cluster Pod Capacity",
+    "description": "Graph of Pods use in the cluster",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "name": "Pods Running",
+    "description": "Number of Pods in state Running",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Pods Pending",
+    "description": "Number of Pods in state Pending",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Pods Failed",
+    "description": "Number of Pods in state Failed",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Pods Succeeded",
+    "description": "Number of Pods in state Succeeded",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Pods Unknown",
+    "description": "Number of Pods in state Unknown",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Deployment Replicas - Up To Date",
+    "description": "List of Deployment with it number of replicas",
+    "query": "kube_deployment_status_replicas",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "name": "Deployment Replicas",
+    "description": "Number replicas of Deployment with state Available",
+    "query": "sum(kube_deployment_status_replicas)",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "name": "Deployment Replicas - Unavailable",
+    "description": "Number replicas of Deployment with state Unavailable",
+    "query": "sum(kube_deployment_status_replicas_unavailable)",
+    "metrics": [
+      "kube_deployment_status_replicas_unavailable"
+    ]
+  },
+  {
+    "name": "Deployment Replicas - Total",
+    "description": "Total number replicas of Deployment",
+    "query": "sum(kube_deployment_spec_replicas)",
+    "metrics": [
+      "kube_deployment_spec_replicas"
+    ]
+  },
+  {
+    "name": "Nodes Out of Disk",
+    "description": "Nodes with Out of Disk",
+    "query": "sum(kube_node_status_condition)",
+    "metrics": [
+      "kube_node_status_condition"
+    ]
+  },
+  {
+    "name": "Number Of Nodes",
+    "description": "Number of Nodes Available",
+    "query": "sum(kube_node_info)",
+    "metrics": [
+      "kube_node_info"
+    ]
+  },
+  {
+    "name": "Nodes Unavailable",
+    "description": "Number of Nodes Unavailable",
+    "query": "sum(kube_node_spec_unschedulable)",
+    "metrics": [
+      "kube_node_spec_unschedulable"
+    ]
+  },
+  {
     "name": "Network I/O",
     "description": "Network Activity by Namespaces",
     "query": "sum(rate(container_network_receive_bytes_total[2m])) by (namespace)",

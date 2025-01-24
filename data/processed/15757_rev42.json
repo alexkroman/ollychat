@@ -1,5 +1,23 @@
 [
   {
+    "name": "Global CPU  Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_container_resource_requests) / sum(machine_cpu_cores)",
+    "metrics": [
+      "kube_pod_container_resource_requests",
+      "machine_cpu_cores"
+    ]
+  },
+  {
+    "name": "Global CPU  Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_container_resource_limits) / sum(machine_cpu_cores)",
+    "metrics": [
+      "kube_pod_container_resource_limits",
+      "machine_cpu_cores"
+    ]
+  },
+  {
     "name": "Global RAM Usage",
     "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
     "query": "sum(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / sum(node_memory_MemTotal_bytes)",
@@ -9,11 +27,157 @@
     ]
   },
   {
+    "name": "Global RAM Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_container_resource_requests) / sum(machine_memory_bytes)",
+    "metrics": [
+      "kube_pod_container_resource_requests",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Global RAM Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_container_resource_limits) / sum(machine_memory_bytes)",
+    "metrics": [
+      "kube_pod_container_resource_limits",
+      "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Nodes",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "count(count by (node) (kube_node_info))",
+    "metrics": [
+      "kube_node_info"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_namespace_labels)",
+    "metrics": [
+      "kube_namespace_labels"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_container_status_running)",
+    "metrics": [
+      "kube_pod_container_status_running"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_service_info)",
+    "metrics": [
+      "kube_service_info"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_endpoint_info)",
+    "metrics": [
+      "kube_endpoint_info"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_deployment_labels)",
+    "metrics": [
+      "kube_deployment_labels"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_statefulset_labels)",
+    "metrics": [
+      "kube_statefulset_labels"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_daemonset_labels)",
+    "metrics": [
+      "kube_daemonset_labels"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_persistentvolumeclaim_info)",
+    "metrics": [
+      "kube_persistentvolumeclaim_info"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_configmap_info)",
+    "metrics": [
+      "kube_configmap_info"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_secret_info)",
+    "metrics": [
+      "kube_secret_info"
+    ]
+  },
+  {
+    "name": "Kubernetes Resource Count",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "count(count by (node) (kube_node_info))",
+    "metrics": [
+      "kube_node_info"
+    ]
+  },
+  {
+    "name": "Namespaces",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "count(kube_namespace_created)",
+    "metrics": [
+      "kube_namespace_created"
+    ]
+  },
+  {
     "name": "CPU Usage",
     "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
     "query": "sum(rate(node_cpu_seconds_total[30m]))",
     "metrics": [
       "node_cpu_seconds_total"
+    ]
+  },
+  {
+    "name": "CPU Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "name": "CPU Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_container_resource_limits)",
+    "metrics": [
+      "kube_pod_container_resource_limits"
     ]
   },
   {
@@ -36,9 +200,33 @@
   {
     "name": "RAM Usage",
     "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_container_resource_requests)",
+    "metrics": [
+      "kube_pod_container_resource_requests"
+    ]
+  },
+  {
+    "name": "RAM Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_container_resource_limits)",
+    "metrics": [
+      "kube_pod_container_resource_limits"
+    ]
+  },
+  {
+    "name": "RAM Usage",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
     "query": "sum(machine_memory_bytes)",
     "metrics": [
       "machine_memory_bytes"
+    ]
+  },
+  {
+    "name": "Running Pods",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
     ]
   },
   {
@@ -60,11 +248,35 @@
     ]
   },
   {
+    "name": "CPU Throttled seconds by namespace",
+    "description": "No data is generally a good thing here.",
+    "query": "sum(rate(container_cpu_cfs_throttled_seconds_total[30m])) by (namespace) > 0",
+    "metrics": [
+      "container_cpu_cfs_throttled_seconds_total"
+    ]
+  },
+  {
+    "name": "Kubernetes Pods QoS classes",
+    "description": "This is a modern 'Global View' dashboard for your Kubernetes cluster(s). Made for kube-prometheus-stack and take advantage of the latest Grafana features. GitHub repository: https://github.com/dotdc/grafana-dashboards-kubernetes",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
     "name": "OOM Events by namespace",
     "description": "No data is generally a good thing here.",
     "query": "sum(increase(container_oom_events_total[30m])) by (namespace) > 0",
     "metrics": [
       "container_oom_events_total"
+    ]
+  },
+  {
+    "name": "Container Restarts by namespace",
+    "description": "No data is generally a good thing here.",
+    "query": "sum(increase(kube_pod_container_status_restarts_total[30m])) by (namespace) > 0",
+    "metrics": [
+      "kube_pod_container_status_restarts_total"
     ]
   },
   {

@@ -1,0 +1,461 @@
+[
+  {
+    "id": "19b93df9-3955-46bc-a9a9-1133fe3bb6df",
+    "name": "Cluster Pod Capacity",
+    "question": "pod information across clusters",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "0a5f659f-efde-4b96-b2c2-0d0e2adb3b79",
+    "name": "Cluster Pod Capacity",
+    "question": "count pods cluster",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "2ef123d8-c8ae-4983-ac9b-54f7a7ba394d",
+    "name": "Cluster Pod Capacity",
+    "question": "summary kubernetes pod statistics",
+    "query": "sum(kube_pod_info)",
+    "metrics": [
+      "kube_pod_info"
+    ]
+  },
+  {
+    "id": "dcabc793-334d-4157-b7b5-10bda72552ba",
+    "name": "Deployment Replicas - Up To Date",
+    "question": "summary uptodate deployment replicas",
+    "query": "kube_deployment_status_replicas",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "id": "366eb9a2-e352-40f2-9973-50dfcfb9659e",
+    "name": "Deployment Replicas - Up To Date",
+    "question": "metrics kubernetes nodes container status",
+    "query": "kube_deployment_status_replicas",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "id": "aabb603b-96f7-469c-b345-591a49a0648f",
+    "name": "Deployment Replicas - Up To Date",
+    "question": "mainline kubernetes statistics deployment replicas",
+    "query": "kube_deployment_status_replicas",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "id": "428ee171-84a0-4234-9ffb-f8213e1065e5",
+    "name": "Deployment Replicas",
+    "question": "count deployment replicas",
+    "query": "sum(kube_deployment_status_replicas)",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "id": "3c19ba0d-d11f-492f-834f-c88b39306375",
+    "name": "Deployment Replicas",
+    "question": "deployment replica status",
+    "query": "sum(kube_deployment_status_replicas)",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "id": "7158ab3f-afc3-46a0-bbf3-71686b0e97c4",
+    "name": "Deployment Replicas",
+    "question": "summed deployment replica status",
+    "query": "sum(kube_deployment_status_replicas)",
+    "metrics": [
+      "kube_deployment_status_replicas"
+    ]
+  },
+  {
+    "id": "a1b43714-7720-4009-b8bd-3725f38e2884",
+    "name": "Deployment Replicas - Updated",
+    "question": "updated replicas kubernetes deployments",
+    "query": "sum(kube_deployment_status_replicas_updated)",
+    "metrics": [
+      "kube_deployment_status_replicas_updated"
+    ]
+  },
+  {
+    "id": "491782ce-8802-43fb-9e70-988596c597f4",
+    "name": "Deployment Replicas - Updated",
+    "question": "count updated deployment replicas",
+    "query": "sum(kube_deployment_status_replicas_updated)",
+    "metrics": [
+      "kube_deployment_status_replicas_updated"
+    ]
+  },
+  {
+    "id": "b4f3e893-d64b-4380-b657-36f602de2fe4",
+    "name": "Deployment Replicas - Updated",
+    "question": "updated replicas kubernetes deployments",
+    "query": "sum(kube_deployment_status_replicas_updated)",
+    "metrics": [
+      "kube_deployment_status_replicas_updated"
+    ]
+  },
+  {
+    "id": "a9b13ba7-9ea0-4005-9938-3890a863136c",
+    "name": "Deployment Replicas - Unavailable",
+    "question": "unavailable replicas kubernetes deployments",
+    "query": "sum(kube_deployment_status_replicas_unavailable)",
+    "metrics": [
+      "kube_deployment_status_replicas_unavailable"
+    ]
+  },
+  {
+    "id": "3d991ec6-735d-4cf5-b989-19064d3bbe38",
+    "name": "Deployment Replicas - Unavailable",
+    "question": "count unresponsive replicas deployments",
+    "query": "sum(kube_deployment_status_replicas_unavailable)",
+    "metrics": [
+      "kube_deployment_status_replicas_unavailable"
+    ]
+  },
+  {
+    "id": "58f17876-d14c-4545-9284-7ae8efef353f",
+    "name": "Deployment Replicas - Unavailable",
+    "question": "unavailable replicas kubernetes deployments",
+    "query": "sum(kube_deployment_status_replicas_unavailable)",
+    "metrics": [
+      "kube_deployment_status_replicas_unavailable"
+    ]
+  },
+  {
+    "id": "db00c228-f54e-4f7f-be96-643ca70c7392",
+    "name": "Number Of Nodes",
+    "question": "count kubernetes nodes",
+    "query": "sum(kube_node_info)",
+    "metrics": [
+      "kube_node_info"
+    ]
+  },
+  {
+    "id": "2dd91157-1d18-41cb-b2ab-7f702f266429",
+    "name": "Number Of Nodes",
+    "question": "information about kubernetes nodes",
+    "query": "sum(kube_node_info)",
+    "metrics": [
+      "kube_node_info"
+    ]
+  },
+  {
+    "id": "d61281c1-d11e-4d77-898f-77176f8737c3",
+    "name": "Number Of Nodes",
+    "question": "kubernetes node metrics",
+    "query": "sum(kube_node_info)",
+    "metrics": [
+      "kube_node_info"
+    ]
+  },
+  {
+    "id": "b48cea1d-ff16-4e22-8492-8408b6ac754b",
+    "name": "Nodes Out of Disk",
+    "question": "kubernetes nodes outofdisk condition",
+    "query": "sum(kube_node_status_condition)",
+    "metrics": [
+      "kube_node_status_condition"
+    ]
+  },
+  {
+    "id": "d9f657c7-29a4-4c29-89c2-018c0e348ba2",
+    "name": "Nodes Out of Disk",
+    "question": "nodes experiencing outofdisk issues",
+    "query": "sum(kube_node_status_condition)",
+    "metrics": [
+      "kube_node_status_condition"
+    ]
+  },
+  {
+    "id": "092dec14-b637-46a1-82ee-b665b3bef970",
+    "name": "Nodes Out of Disk",
+    "question": "count nodes disk space problems",
+    "query": "sum(kube_node_status_condition)",
+    "metrics": [
+      "kube_node_status_condition"
+    ]
+  },
+  {
+    "id": "71f602be-735a-4ee8-8935-ae539587a9f3",
+    "name": "Nodes Unavailable",
+    "question": "count unschedulable kubernetes nodes",
+    "query": "sum(kube_node_spec_unschedulable)",
+    "metrics": [
+      "kube_node_spec_unschedulable"
+    ]
+  },
+  {
+    "id": "01ac8bcf-cd2b-4821-aa75-ea7f666a08af",
+    "name": "Nodes Unavailable",
+    "question": "summary kubernetes nodes marked unschedulable",
+    "query": "sum(kube_node_spec_unschedulable)",
+    "metrics": [
+      "kube_node_spec_unschedulable"
+    ]
+  },
+  {
+    "id": "1a6f731d-11a9-4a84-ac80-e99fd6e09075",
+    "name": "Nodes Unavailable",
+    "question": "nodes unavailable scheduling",
+    "query": "sum(kube_node_spec_unschedulable)",
+    "metrics": [
+      "kube_node_spec_unschedulable"
+    ]
+  },
+  {
+    "id": "f807340a-8f86-4778-a2ab-df1eeee1992f",
+    "name": "Pods Running",
+    "question": "aggregate kubernetes pod statuses",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "aeba876f-cf10-4c1f-b764-5ea76ebd655f",
+    "name": "Pods Running",
+    "question": "running kubernetes pods",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "703a1fc9-870c-4070-b3af-e61ffadefbb6",
+    "name": "Pods Running",
+    "question": "summary kubernetes pod phase metrics",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "0e1bc04b-dcb6-4d5e-915f-f3401b7c6c66",
+    "name": "Pods Pending",
+    "question": "count pods",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "828e858a-1edb-4f72-a8d8-e883930a4167",
+    "name": "Pods Pending",
+    "question": "pods",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "dac97616-9eec-4c59-8317-e06df8e6c38f",
+    "name": "Pods Pending",
+    "question": "summed count pods state",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "cae92785-b931-456d-9cf3-d9a29da61e7a",
+    "name": "Pods Failed",
+    "question": "pod statuses",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "e94f0047-b9b7-487f-88ef-a2824931e39c",
+    "name": "Pods Failed",
+    "question": "pod status summary",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "66e5ccdd-d982-462a-9f27-be53d33b9397",
+    "name": "Pods Failed",
+    "question": "pod status metrics",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "9319bdff-1332-4712-862a-eb4e924d0cbe",
+    "name": "Pods Succeeded",
+    "question": "aggregate pod success statuses",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "4b3ffcd7-3c14-4ff1-8477-c16599b76843",
+    "name": "Pods Succeeded",
+    "question": "count pods",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "fb23eaee-0323-4b08-bb47-38586a18c116",
+    "name": "Pods Succeeded",
+    "question": "kubernetes pods succeeded phase",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "a12c58c0-e03c-481d-9092-ebda062bf231",
+    "name": "Pods Unknown",
+    "question": "count kubernetes pods unknown phase",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "971df193-e8ad-457f-9101-ccf20e75246c",
+    "name": "Pods Unknown",
+    "question": "summary kubernetes pods unknown status",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "c818d1af-d686-4db3-88a9-52b267be494c",
+    "name": "Pods Unknown",
+    "question": "status pods unknown phase",
+    "query": "sum(kube_pod_status_phase)",
+    "metrics": [
+      "kube_pod_status_phase"
+    ]
+  },
+  {
+    "id": "d4f7ef32-1835-4860-96a7-49d2b6a43ed0",
+    "name": "Containers Running",
+    "question": "count running kubernetes containers",
+    "query": "sum(kube_pod_container_status_running)",
+    "metrics": [
+      "kube_pod_container_status_running"
+    ]
+  },
+  {
+    "id": "9788b95f-e816-4658-9b87-2594b0ef5b20",
+    "name": "Containers Running",
+    "question": "aggregate running container statuses",
+    "query": "sum(kube_pod_container_status_running)",
+    "metrics": [
+      "kube_pod_container_status_running"
+    ]
+  },
+  {
+    "id": "8651e3ed-ba79-418e-b897-73d2d82a9589",
+    "name": "Containers Running",
+    "question": "kubernetes pods running containers",
+    "query": "sum(kube_pod_container_status_running)",
+    "metrics": [
+      "kube_pod_container_status_running"
+    ]
+  },
+  {
+    "id": "b7dad9e8-4512-4d97-806c-f3677a3d4311",
+    "name": "Containers Waiting",
+    "question": "count containers waiting",
+    "query": "sum(kube_pod_container_status_waiting)",
+    "metrics": [
+      "kube_pod_container_status_waiting"
+    ]
+  },
+  {
+    "id": "cfbcaee5-b84f-485c-8181-1cc844a1032c",
+    "name": "Containers Waiting",
+    "question": "waiting containers metrics",
+    "query": "sum(kube_pod_container_status_waiting)",
+    "metrics": [
+      "kube_pod_container_status_waiting"
+    ]
+  },
+  {
+    "id": "c9d6f9f4-ab3b-4737-95d9-893ecd1af29b",
+    "name": "Containers Waiting",
+    "question": "waiting containers nodes",
+    "query": "sum(kube_pod_container_status_waiting)",
+    "metrics": [
+      "kube_pod_container_status_waiting"
+    ]
+  },
+  {
+    "id": "98a80651-c3e5-49b1-9421-475f0281043a",
+    "name": "Containers Terminated",
+    "question": "terminated kubernetes pod containers",
+    "query": "sum(kube_pod_container_status_terminated)",
+    "metrics": [
+      "kube_pod_container_status_terminated"
+    ]
+  },
+  {
+    "id": "fa40dcb4-0e93-4e78-81e9-a4413da49940",
+    "name": "Containers Terminated",
+    "question": "count terminated pod containers",
+    "query": "sum(kube_pod_container_status_terminated)",
+    "metrics": [
+      "kube_pod_container_status_terminated"
+    ]
+  },
+  {
+    "id": "e98e2be7-44fb-4277-a629-70a8c1ada72a",
+    "name": "Containers Terminated",
+    "question": "metrics terminated containers",
+    "query": "sum(kube_pod_container_status_terminated)",
+    "metrics": [
+      "kube_pod_container_status_terminated"
+    ]
+  },
+  {
+    "id": "b762ac21-0944-4de1-95c1-8c413d0d5cdf",
+    "name": "Containers Restarts (Last 30 Minutes)",
+    "question": "container restarts count",
+    "query": "sum(delta(kube_pod_container_status_restarts_total[30m]))",
+    "metrics": [
+      "kube_pod_container_status_restarts_total"
+    ]
+  },
+  {
+    "id": "2808a06a-d2d2-41a9-b3f2-4e1fa0c774c1",
+    "name": "Containers Restarts (Last 30 Minutes)",
+    "question": "container restarts",
+    "query": "sum(delta(kube_pod_container_status_restarts_total[30m]))",
+    "metrics": [
+      "kube_pod_container_status_restarts_total"
+    ]
+  },
+  {
+    "id": "85191f26-1287-4e9d-9a2c-34ecd4c2b97d",
+    "name": "Containers Restarts (Last 30 Minutes)",
+    "question": "summed container restarts within 30 minutes",
+    "query": "sum(delta(kube_pod_container_status_restarts_total[30m]))",
+    "metrics": [
+      "kube_pod_container_status_restarts_total"
+    ]
+  }
+]
