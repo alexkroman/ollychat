@@ -1,6 +1,5 @@
 import fs from "fs/promises";
-import { createMetricsFetcher } from "../integrations/prometheus.js";
-import { config } from "../config/config.js";
+import { fetchPrometheusMetrics } from "../integrations/prometheus.js";
 
 interface RawMetric {
   metricName: string;
@@ -29,13 +28,10 @@ interface OutputData {
   }>;
 }
 
-const prometheusUrl: string = config.prometheusUrl;
-
 async function fetchAndSaveMetrics(): Promise<void> {
   try {
     // 1) Fetch the metrics from Prometheus
-    const metricsFetcher = createMetricsFetcher(prometheusUrl);
-    const rawData: RawMetric[] = JSON.parse(await metricsFetcher());
+    const rawData: RawMetric[] = JSON.parse(await fetchPrometheusMetrics());
 
     // 2) Transform data into desired format
     //    - Flatten out each `metadata` entry.

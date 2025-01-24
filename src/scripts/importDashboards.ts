@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { allMetricNames } from "../integrations/vectorStore.js";
-import { extractPromQLMetrics } from "../integrations/prometheus.js";
+import { extractMetrics } from "../integrations/prometheus.js";
 
 const allMetrics = allMetricNames;
 
@@ -52,7 +52,7 @@ function transformFile(inputPath: string, outputPath: string): void {
       (panel.targets || []).forEach((target: { expr: string }) => {
         if (typeof target.expr === "string") {
           const query = modifyPromQLQuery(target.expr);
-          const metrics = extractPromQLMetrics(query);
+          const metrics = extractMetrics(query);
 
           const missingMetrics = metrics.filter(
             (metric) => !allMetrics.includes(metric),
