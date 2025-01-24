@@ -10,7 +10,6 @@ import { exampleSelector } from '../utils/getQueryExamples.js';
 import { formatExamples } from '../utils/exampleFormatter.js';
 import { normalizeQuestion } from '../utils/dataNormalizer.js';
 import { posthog, hostId } from '../utils/telemetry.js';
-import { queryObjects } from "v8";
 
 const config = { configurable: { thread_id: uuidv4() } };
 
