@@ -6,7 +6,7 @@ export function normalizeQuestion(text: string): string {
         "consumed", "counted", "measured", "requests", "messages", "events", "samples", "operations", "records", 
         "attempts", "executed", "performed", "size", "duration", "time", "latency", "seconds", "milliseconds", 
         "nanoseconds", "successful", "failed", "pending", "utilization", "limit", "percentage", "percent", "bytes", 
-        "value", "maximum", "minimum", "mean", "stddev", "over", "since", "each", "are"
+        "value", "maximum", "minimum", "mean", "stddev", "over", "since", "each", "are","$interval"
     ]);
 
     return text

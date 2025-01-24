@@ -1,7 +1,7 @@
 import { MetricsVectorStore } from '../utils/chroma.js';
 
 export const metricsExampleSelector = MetricsVectorStore.asRetriever({
-  k: 10
+  k: 5
 });
 
 const getAllMetricsSelector = MetricsVectorStore.asRetriever({

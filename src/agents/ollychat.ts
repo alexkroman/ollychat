@@ -33,7 +33,7 @@ const getQueryExamples = async (state: typeof StateAnnotation.State) => {
 
 const getMetricExamples = async (state: typeof StateAnnotation.State) => {
   const metricExamples = await metricsExampleSelector.invoke(state.question);
-  const combinedMetricExamples = await formatExamples(metricExamples, 'metricExample', ['name', 'help']);
+  const combinedMetricExamples = metricExamples.map(example => example.metadata.name).join('\n');
   return { 
     metrics: combinedMetricExamples, 
     chat_history: (state.chat_history || []).slice(-5)

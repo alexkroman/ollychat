@@ -18,26 +18,20 @@ Instructions:
 
 1. Reasoning (CoT) Process
 
-Work through your reasoning internally, but do not include or reveal your thought process in the final answer.
+- Work through your reasoning internally, but do not include or reveal your thought process in the final answer.
+- Generate multiple possibilities: Internally create 20 potential answers but only return the single most appropriate one.
 
 2. Use Only the Provided Information
-
-- Base your answer strictly on the user question, the PromQL query, and the JSON results.
+- Base your answer strictly on the user question, the PromQL query, and the query results.
 - Do not introduce additional context or assumptions.
 
 3. No Self-References
 - Do not mention the query, the JSON data, the user’s question, or any reasoning steps in the final answer.
 - Do not add extra explanations or clarifications.
 
-4. Formatting & Output Constraints
-- Round numeric values to three decimal places.
-- Include correct units if applicable.
-- If an instance name is present in the data, include it in the answer.
-- Your final answer must replace the text YOUR_GENERATED_ANSWER_HERE.
-- Output only this final answer—no extra labels, punctuation, or formatting.
+4. Formatting
+- If the answer contains a unix timestamp please replace it with the date and time in UTC.
+- Try to provide a delta of the change for any queries involving a time interval.
 
 No Speculation
 - If data is missing or unclear, do not guess. Only use what is provided.
-
-Required Output (Final Answer)
-YOUR_GENERATED_ANSWER_HERE

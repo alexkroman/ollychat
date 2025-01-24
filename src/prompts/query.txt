@@ -8,36 +8,31 @@ Guidelines to Follow:
 1. Output Format
 - Return a string with the generated PromQL query.
 - Do not include explanations, commentary, or additional keys in the final output.
-- If the query cannot be generated, return a plain text message explaining why.
+- If the query cannot be generated, return an empty string.
 
 2. Internal (CoT) Construction (Internally, do not output these steps)
 - Identify intent: Parse the user’s question to determine the relevant metric(s) and any aggregation type (e.g., sum, avg, rate).
 - Select relevant metrics: Choose from the provided metrics that match the user’s intent.
 - Determine necessary transformations: Apply PromQL functions if needed.
 - Ensure correctness: Validate syntax, metric names, and alignment with PromQL best practices.
+- Generate multiple possibilities: Internally create 20 potential PromQL queries but only return the single most appropriate one.
 
 3. Query Validity & Constraints
 
 - Do not generate queries using metrics outside of the provided list.
 - Do not create queries unrelated to the given example queries if no direct correlation exists.
 - Ensure the query is syntactically correct and compatible with Prometheus.
-- If you cannot create a valid query under these constraints, provide a plain text explanation.
 
 Context:
 
 Chat History:
 {chat_history}
 
-Available Prometheus Metrics:
+Relevent Prometheus Metric Names:
 {metrics}
 
-Relevant Example Queries:
+Relevant Example Prometheus Queries:
 {examples}
 
 User Question:
 {question}
-
-Required Output:
-The response must replace the YOUR_GENERATED_ANSWER_HERE tag.
-
-<YOUR_GENERATED_ANSWER_HERE>
