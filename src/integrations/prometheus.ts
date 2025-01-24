@@ -21,16 +21,6 @@ interface PrometheusQueryResponse {
   };
 }
 
-interface PrometheusMetadataResponse {
-  status: string;
-  data: Record<string, Array<{ type: string; help: string; unit?: string }>>;
-}
-
-interface PrometheusSeriesResponse {
-  status: string;
-  data: Array<Record<string, string>>;
-}
-
 export const prometheusQueryTool = new DynamicStructuredTool({
   name: "prometheus_query",
   description: "Query Prometheus and return the result",
@@ -60,13 +50,6 @@ function formatMetrics(data: PrometheusMetric[], query: string): object[] {
 
   const formatTime = timeFormat("%Y-%m-%d %H:%M:%S");
   const formatter = format(",.3f");
-  const values = data.map(({ value }) => parseFloat(value[1]));
-
-  const stats = {
-    min: Math.min(...values),
-    max: Math.max(...values),
-    avg: values.reduce((sum, val) => sum + val, 0) / values.length,
-  };
 
   const formattedData = data.map(({ metric, value }) => ({
     metric: extractMetrics(query)[0],
@@ -75,14 +58,6 @@ function formatMetrics(data: PrometheusMetric[], query: string): object[] {
     value: formatter(parseFloat(value[1])),
     timestamp: formatTime(new Date(value[0] * 1000)),
   }));
-
-  formattedData.push({
-    metric: "Aggregations",
-    node: "",
-    pod: "",
-    value: `Min: ${formatter(stats.min)}, Max: ${formatter(stats.max)}, Average: ${formatter(stats.avg)}`,
-    timestamp: "",
-  });
 
   return formattedData;
 }
@@ -126,62 +101,73 @@ export function extractMetrics(query: string): string[] {
     .sort();
 }
 
-export async function fetchPrometheusMetrics(): Promise<string> {
+export async function fetchPrometheusMetrics(): Promise<string[]> {
   try {
-    const metadataResponse = await axios.get<PrometheusMetadataResponse>(
+    const response = await axios.get<{ data: string[] }>(
       `${PROMETHEUS_URL}/api/v1/metadata`,
       { timeout: QUERY_TIMEOUT },
     );
-    const seriesResponse = await axios.get<PrometheusSeriesResponse>(
-      `${PROMETHEUS_URL}/api/v1/series`,
-      { timeout: QUERY_TIMEOUT, params: { "match[]": '{__name__=~".+"}' } },
-    );
-
-    return JSON.stringify(
-      combineMetadataAndSeries(
-        metadataResponse.data.data,
-        seriesResponse.data.data,
-      ),
-      null,
-      2,
-    );
+    return Object.keys(response.data.data);
   } catch (error) {
     logger.error("Error fetching Prometheus metrics:", error);
-    return JSON.stringify({ error: "Failed to fetch metrics" });
+    return [];
   }
 }
 
-function combineMetadataAndSeries(
-  metadata: Record<
-    string,
-    Array<{ type: string; help: string; unit?: string }>
-  >,
-  series: Array<Record<string, string>>,
-): object[] {
-  const metricLabelsMap: Record<string, Record<string, Set<string>>> = {};
+export async function fetchPrometheusLabels(): Promise<string[]> {
+  try {
+    const response = await axios.get<{ data: string[] }>(
+      `${PROMETHEUS_URL}/api/v1/labels`,
+      { timeout: QUERY_TIMEOUT },
+    );
 
-  series.forEach((item) => {
-    const metricName = item["__name__"];
-    if (!metricName) return;
+    return response.data.data;
+  } catch (error) {
+    logger.error("Error fetching Prometheus labels:", error);
+    return [];
+  }
+}
 
-    metricLabelsMap[metricName] = metricLabelsMap[metricName] || {};
-    Object.entries(item).forEach(([labelKey, labelValue]) => {
-      if (labelKey !== "__name__") {
-        metricLabelsMap[metricName][labelKey] =
-          metricLabelsMap[metricName][labelKey] || new Set();
-        metricLabelsMap[metricName][labelKey].add(labelValue);
-      }
-    });
-  });
+export async function fetchAllPrometheusLabelValues(): Promise<
+  { label: string; value: string }[]
+> {
+  try {
+    // Fetch all label names
+    const labels = await fetchPrometheusLabels();
+    const result = (
+      await Promise.all(
+        labels.map(async (label) => {
+          try {
+            return (await fetchPrometheusLabelValues(label)).map((value) => ({
+              value,
+              label,
+            }));
+          } catch (error) {
+            logger.error(`Error fetching values for label ${label}:`, error);
+            return []; // Return an empty array to avoid breaking Promise.all
+          }
+        }),
+      )
+    ).flat();
+    return result;
+  } catch (error) {
+    logger.error("Error fetching all Prometheus label values:", error);
+    return [];
+  }
+}
 
-  return Object.keys(metadata).map((metricName) => ({
-    metricName,
-    metadata: metadata[metricName] || [],
-    labels: Object.entries(metricLabelsMap[metricName] || {}).map(
-      ([labelKey, values]) => ({
-        labelKey,
-        values: Array.from(values),
-      }),
-    ),
-  }));
+export async function fetchPrometheusLabelValues(
+  label: string,
+): Promise<string[]> {
+  try {
+    const response = await axios.get<{ data: string[] }>(
+      `${PROMETHEUS_URL}/api/v1/label/${label}/values`,
+      { timeout: QUERY_TIMEOUT },
+    );
+
+    return response.data.data;
+  } catch (error) {
+    logger.error(`Error fetching values for label ${label}:`, error);
+    return [];
+  }
 }

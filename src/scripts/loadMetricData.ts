@@ -1,106 +1,109 @@
-// Import required modules
 import fs from "fs";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { Document } from "@langchain/core/documents";
 import { ChromaClient } from "chromadb";
-import { normalizeQuestion } from "../utils/dataNormalizer.js";
 import { config } from "../config/config.js";
+import { exit } from "process";
 
-// Read and parse the JSON file
-const rawData = fs.readFileSync("./data/metrics/metrics.json", "utf-8");
-const inputData: MetricItem[] = JSON.parse(rawData);
+// Read and parse the JSON files
+const metricsData: MetricItem[] = JSON.parse(
+  fs.readFileSync("./data/metrics/metrics.json", "utf-8"),
+);
+const labelsData: string[] = JSON.parse(
+  fs.readFileSync("./data/metrics/labels.json", "utf-8"),
+);
+const labelValuesData: LabelValueItem[] = JSON.parse(
+  fs.readFileSync("./data/metrics/values.json", "utf-8"),
+);
 
-// Ensure the data is an array of documents
-if (!Array.isArray(inputData)) {
-  throw new Error("Parsed JSON data is not an array of documents");
+// Ensure data integrity
+if (
+  !Array.isArray(metricsData) ||
+  !Array.isArray(labelsData) ||
+  !Array.isArray(labelValuesData)
+) {
+  throw new Error("One or more JSON data files do not contain an array.");
 }
 
+console.log(metricsData);
+exit(0);
+
+// Define TypeScript interfaces
 interface MetricItem {
   id: string;
   name: string;
-  help: string;
-  labels: { labelKey: string; values: string[] }[];
 }
 
-const transformedData: Document[] = inputData.map((item: MetricItem) => {
-  const labelObj: Record<string, string[]> = {};
+interface LabelValueItem {
+  label: string;
+  value: string;
+}
 
-  item.labels.forEach((label: { labelKey: string; values: string[] }) => {
-    labelObj[label.labelKey] = label.values;
-  });
+const transformedMetrics: Document[] = metricsData.map((metric, index) => ({
+  id: `metric-${index}`,
+  pageContent: JSON.stringify(metric),
+  metadata: { metric },
+}));
 
-  const labelLines: string[] = [];
+const transformedLabels: Document[] = labelsData.map((label, index) => ({
+  id: `label-${index}`,
+  pageContent: label,
+  metadata: { label },
+}));
 
-  for (const [key, values] of Object.entries(labelObj)) {
-    labelLines.push(`  ${key} => ${values.join(", ")}`);
-  }
-
-  const pageContentRaw = [
-    `Metric Name: ${normalizeQuestion(item.name)}`,
-    `Help: ${normalizeQuestion(item.help)}`,
-    `Labels:`,
-    ...labelLines,
-  ].join("\n");
-
-  const maxLength = 8000;
-  const pageContent =
-    pageContentRaw.length > maxLength
-      ? pageContentRaw.slice(0, maxLength - 3) + "..."
-      : pageContentRaw;
-
-  return {
-    id: item.id,
-    pageContent: pageContent,
-    metadata: {
-      name: item.name,
-      help: item.help,
-      labels: labelObj,
-    },
-  };
-});
+const transformedLabelValues: Document[] = labelValuesData.map(
+  (item, index) => ({
+    id: `labelValue-${index}`,
+    pageContent: item.label,
+    metadata: { label: item.label, value: item.value },
+  }),
+);
 
 const embeddings = new OpenAIEmbeddings({
   model: config.openAIEmbeddings,
 });
 
-const vectorStore = new Chroma(embeddings, {
-  collectionName: config.chromaMetricsIndex,
-  url: config.chromaUrl,
-});
+// Function to handle vector storage
+async function storeData(collectionName: string, documents: Document[]) {
+  const client = new ChromaClient();
+  const existingCollections = await client.listCollections();
+  const collectionExists = existingCollections.some(
+    (col) => col === collectionName,
+  );
 
-// Add documents to vector store
+  if (collectionExists) {
+    console.log(
+      `Collection '${collectionName}' already exists. Skipping creation.`,
+    );
+  } else {
+    console.log(`Creating collection '${collectionName}'...`);
+    await client.createCollection({ name: collectionName });
+  }
+
+  console.log(`Clearing existing data in '${collectionName}'...`);
+  await client.deleteCollection({ name: collectionName });
+
+  console.log(`Adding documents to '${collectionName}'...`);
+  const vectorStore = new Chroma(embeddings, {
+    collectionName,
+    url: config.chromaUrl,
+  });
+
+  await vectorStore.addDocuments(documents);
+  console.log(`Successfully added documents to '${collectionName}'.`);
+}
+
+// Execute storage operations for metrics, labels, and label values
 (async () => {
   try {
-    const client = new ChromaClient();
-    const metricsIndex = config.chromaMetricsIndex;
-
-    const collections: string[] = await client.listCollections();
-    const collectionExists = collections.some(
-      (col: string) => col === metricsIndex,
-    );
-
-    if (collectionExists) {
-      console.log(
-        `Collection '${metricsIndex}' already exists. Skipping creation.`,
-      );
-    } else {
-      console.log(
-        `Collection '${metricsIndex}' does not exist. Creating it now.`,
-      );
-      await client.createCollection({ name: metricsIndex });
-    }
-
-    await client.deleteCollection({ name: metricsIndex });
-
-    console.log("Transformed Data Page Contents:");
-    transformedData.forEach((doc, index) => {
-      console.log(`${index + 1}: ${doc.pageContent}`);
-    });
-
-    await vectorStore.addDocuments(transformedData);
-    console.log("Documents successfully added to the vector store.");
+    await Promise.all([
+      storeData(config.chromaMetricsIndex, transformedMetrics),
+      storeData(config.chromaLabelsIndex, transformedLabels),
+      storeData(config.chromaLabelValuesIndex, transformedLabelValues),
+    ]);
+    console.log("All data successfully stored.");
   } catch (error) {
-    console.error("Error adding documents to the vector store:", error);
+    console.error("Error storing data:", error);
   }
 })();

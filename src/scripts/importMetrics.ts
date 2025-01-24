@@ -1,70 +1,65 @@
 import fs from "fs/promises";
-import { fetchPrometheusMetrics } from "../integrations/prometheus.js";
-
-interface RawMetric {
-  metricName: string;
-  metadata: Array<{
-    type: string;
-    help: string;
-    unit?: string;
-  }>;
-  labels: Array<{
-    labelKey: string;
-    values: string[];
-  }>;
-}
-
-// Our final output shape.
-// We still flatten each entry in `metadata` into a separate record.
-// Now, `labels` is preserved as an array of objects with key/values.
-interface OutputData {
-  name: string;
-  help: string;
-  type: string;
-  unit: string;
-  labels: Array<{
-    labelKey: string;
-    values: string[];
-  }>;
-}
+import {
+  fetchPrometheusMetrics,
+  fetchPrometheusLabels,
+  fetchAllPrometheusLabelValues,
+} from "../integrations/prometheus.js";
 
 async function fetchAndSaveMetrics(): Promise<void> {
   try {
-    // 1) Fetch the metrics from Prometheus
-    const rawData: RawMetric[] = JSON.parse(await fetchPrometheusMetrics());
-
-    // 2) Transform data into desired format
-    //    - Flatten out each `metadata` entry.
-    //    - Carry over the full labels array (labelKey => values).
-    const formattedMetrics: OutputData[] = rawData.flatMap((rm) => {
-      return rm.metadata.map((m) => ({
-        name: rm.metricName,
-        help: m.help,
-        type: m.type,
-        unit: m.unit ?? "",
-        labels: rm.labels,
-      }));
-    });
-
-    // 3) Ensure directory exists
-    const dirPath = "data/metrics";
-    await fs.mkdir(dirPath, { recursive: true });
-
-    // 4) Write data to metrics.json
-    const filePath = `${dirPath}/metrics.json`;
-    await fs.writeFile(filePath, JSON.stringify(formattedMetrics, null, 2));
-
-    console.log(`Metrics successfully saved to ${filePath}`);
+    const metrics: string[] = await fetchPrometheusMetrics();
+    await saveToFile("metrics.json", metrics);
   } catch (error) {
-    const errorMessage =
-      error instanceof Error ? error.message : "An unknown error occurred";
-    console.error("Failed to fetch and save metrics:", errorMessage);
-    throw error; // Re-throw if you want to handle it further up
+    console.error("Failed to fetch and save metrics:", getErrorMessage(error));
   }
 }
 
-// Execute with proper error handling
-fetchAndSaveMetrics().catch((error) => {
-  console.error("Script execution failed:", error);
-  process.exit(1);
-});
+async function fetchAndSaveLabels(): Promise<void> {
+  try {
+    const labels: string[] = await fetchPrometheusLabels();
+    await saveToFile("labels.json", labels);
+  } catch (error) {
+    console.error("Failed to fetch and save labels:", getErrorMessage(error));
+  }
+}
+
+async function fetchAndSaveLabelValues(): Promise<void> {
+  try {
+    const labelValues = await fetchAllPrometheusLabelValues();
+    await saveToFile("values.json", labelValues);
+  } catch (error) {
+    console.error(
+      "Failed to fetch and save label values:",
+      getErrorMessage(error),
+    );
+    throw error;
+  }
+}
+
+async function saveToFile(fileName: string, data: unknown): Promise<void> {
+  const dirPath = "data/metrics";
+  await fs.mkdir(dirPath, { recursive: true });
+
+  const filePath = `${dirPath}/${fileName}`;
+  await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+
+  console.log(`${fileName} successfully saved to ${filePath}`);
+}
+
+function getErrorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : "An unknown error occurred";
+}
+
+// Execute all fetch-and-save operations in parallel
+(async () => {
+  try {
+    await Promise.all([
+      fetchAndSaveMetrics(),
+      fetchAndSaveLabels(),
+      fetchAndSaveLabelValues(),
+    ]);
+  } catch (error) {
+    console.error("Script execution failed:", getErrorMessage(error));
+    process.exit(1);
+  }
+})();
