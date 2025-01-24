@@ -1,7 +1,6 @@
-import fs from 'fs/promises';
-import { createMetricsFetcher } from '../integrations/prometheusIntegration.js';
-import { config } from '../config/config.js';
-
+import fs from "fs/promises";
+import { createMetricsFetcher } from "../integrations/prometheusIntegration.js";
+import { config } from "../config/config.js";
 
 interface RawMetric {
   metricName: string;
@@ -46,13 +45,13 @@ async function fetchAndSaveMetrics(): Promise<void> {
         name: rm.metricName,
         help: m.help,
         type: m.type,
-        unit: m.unit ?? '',
+        unit: m.unit ?? "",
         labels: rm.labels,
       }));
     });
 
     // 3) Ensure directory exists
-    const dirPath = 'data/metrics';
+    const dirPath = "data/metrics";
     await fs.mkdir(dirPath, { recursive: true });
 
     // 4) Write data to metrics.json
@@ -61,14 +60,15 @@ async function fetchAndSaveMetrics(): Promise<void> {
 
     console.log(`Metrics successfully saved to ${filePath}`);
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-    console.error('Failed to fetch and save metrics:', errorMessage);
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred";
+    console.error("Failed to fetch and save metrics:", errorMessage);
     throw error; // Re-throw if you want to handle it further up
   }
 }
 
 // Execute with proper error handling
 fetchAndSaveMetrics().catch((error) => {
-  console.error('Script execution failed:', error);
+  console.error("Script execution failed:", error);
   process.exit(1);
 });

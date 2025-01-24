@@ -1,8 +1,10 @@
 import { z } from "zod";
-import { model } from '../models/openai.js';
+import { model } from "../models/openai.js";
 
 const queryOutput = z.object({
-  explanation: z.string().describe("Description of what the PromQL query does."),
+  explanation: z
+    .string()
+    .describe("Description of what the PromQL query does."),
   query: z.string().describe("Syntactically valid PromQL query."),
 });
 

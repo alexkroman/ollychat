@@ -1,13 +1,15 @@
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { ChromaClient } from "chromadb";
-import { normalizeQuestion } from '../utils/dataNormalizer.js';
+import { normalizeQuestion } from "../utils/dataNormalizer.js";
 import { config } from "../config/config.js";
 
-const enrichedDir = './data/enriched';
-const embeddings = new OpenAIEmbeddings({ model: process.env.OPENAI_EMBEDDINGS });
+const enrichedDir = "./data/enriched";
+const embeddings = new OpenAIEmbeddings({
+  model: process.env.OPENAI_EMBEDDINGS,
+});
 const vectorStore = new Chroma(embeddings, {
   collectionName: config.chromaIndex,
   url: config.chromaUrl,
@@ -15,11 +17,11 @@ const vectorStore = new Chroma(embeddings, {
 
 async function processFile(filePath: string) {
   try {
-    const rawData = fs.readFileSync(filePath, 'utf-8');
+    const rawData = fs.readFileSync(filePath, "utf-8");
     const inputData = JSON.parse(rawData);
 
-    if (!Array.isArray(inputData)) throw new Error(`Invalid data format in ${filePath}`);
-
+    if (!Array.isArray(inputData))
+      throw new Error(`Invalid data format in ${filePath}`);
 
     interface InputDataItem {
       id: string;
@@ -29,11 +31,15 @@ async function processFile(filePath: string) {
     }
 
     const documents = inputData.map((item: InputDataItem) => {
-      console.log(normalizeQuestion(item.question)); 
+      console.log(normalizeQuestion(item.question));
       return {
         id: item.id,
         pageContent: normalizeQuestion(item.question),
-        metadata: { question: item.question, metrics: item.metrics.join(', '), query: item.query },
+        metadata: {
+          question: item.question,
+          metrics: item.metrics.join(", "),
+          query: item.query,
+        },
       };
     });
 
@@ -49,7 +55,9 @@ async function processFile(filePath: string) {
 }
 
 async function processAllFiles() {
-  const files = fs.readdirSync(enrichedDir).filter(file => file.endsWith('.json'));
+  const files = fs
+    .readdirSync(enrichedDir)
+    .filter((file) => file.endsWith(".json"));
   for (const file of files) {
     console.log(`Processing ${file}...`);
     await processFile(path.join(enrichedDir, file));
@@ -63,12 +71,18 @@ async function processAllFiles() {
     const client = new ChromaClient();
     const chromaIndex = config.chromaIndex;
     const collections: string[] = await client.listCollections();
-    const collectionExists = collections.some((col: string) => col === chromaIndex);
+    const collectionExists = collections.some(
+      (col: string) => col === chromaIndex,
+    );
 
     if (collectionExists) {
-      console.log(`Collection '${chromaIndex}' already exists. Skipping creation.`);
+      console.log(
+        `Collection '${chromaIndex}' already exists. Skipping creation.`,
+      );
     } else {
-      console.log(`Collection '${chromaIndex}' does not exist. Creating it now.`);
+      console.log(
+        `Collection '${chromaIndex}' does not exist. Creating it now.`,
+      );
       await client.createCollection({ name: chromaIndex });
     }
 

@@ -38,4 +38,4 @@
   "incremental": true,
   "tsBuildInfoFile": "./.tsbuildinfo",
   "exclude": ["node_modules", "dist"]         // Exclude build and dependency directories
-}
+} 

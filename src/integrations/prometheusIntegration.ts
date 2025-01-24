@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { timeFormat } from 'd3-time-format';
-import { format } from 'd3-format';
+import axios from "axios";
+import { timeFormat } from "d3-time-format";
+import { format } from "d3-format";
 
-import { extractPromQLMetrics } from '../utils/extractPromMetrics.js';
+import { extractPromQLMetrics } from "../utils/extractPromMetrics.js";
 
 interface PrometheusMetadataResponse {
   status: string;
@@ -35,7 +35,10 @@ interface PrometheusSeriesResponse {
 
 export type QueryExecutor = (query: string) => Promise<string>;
 
-export function metricsToJSON(data: PrometheusMetric[], query: string): object[] {
+export function metricsToJSON(
+  data: PrometheusMetric[],
+  query: string,
+): object[] {
   if (data.length === 0) {
     return [];
   }
@@ -57,21 +60,24 @@ export function metricsToJSON(data: PrometheusMetric[], query: string): object[]
   }));
 
   table.push({
-    metric: 'Aggregations',
-    node: '',
+    metric: "Aggregations",
+    node: "",
     value: `Min: ${formatter(min)}, Max: ${formatter(max)}, Average: ${formatter(avg)}`,
-    timestamp: '',
-    pod: ''
+    timestamp: "",
+    pod: "",
   });
 
   return table;
 }
 
-export function createQueryExecutor(prometheusUrl: string, timeout: number = 5000): QueryExecutor {
+export function createQueryExecutor(
+  prometheusUrl: string,
+  timeout: number = 5000,
+): QueryExecutor {
   return async function executeQuery(query: string): Promise<string> {
     const response = await axios.get<PrometheusQueryResponse>(
       `${prometheusUrl}/api/v1/query`,
-      { params: { query }, timeout }
+      { params: { query }, timeout },
     );
     const result = response.data.data.result;
     const table = metricsToJSON(result, query);
@@ -81,7 +87,7 @@ export function createQueryExecutor(prometheusUrl: string, timeout: number = 500
 
 export function createMetricsFetcher(
   prometheusUrl: string,
-  timeout: number = 5000
+  timeout: number = 5000,
 ): () => Promise<string> {
   return async function getMetrics(): Promise<string> {
     // 1. Fetch metadata
@@ -89,7 +95,7 @@ export function createMetricsFetcher(
       `${prometheusUrl}/api/v1/metadata`,
       {
         timeout,
-      }
+      },
     );
     const metadata = metadataResponse.data.data;
 
@@ -98,20 +104,16 @@ export function createMetricsFetcher(
       `${prometheusUrl}/api/v1/series`,
       {
         timeout,
-        params: { 'match[]': '{__name__=~".+"}' },
-      }
+        params: { "match[]": '{__name__=~".+"}' },
+      },
     );
     const allSeries = seriesResponse.data.data;
 
-
-    const metricLabelsMap: Record<
-      string,
-      Record<string, Set<string>>
-    > = {};
+    const metricLabelsMap: Record<string, Record<string, Set<string>>> = {};
 
     // 3. Build up the label key/value sets per metric
     for (const series of allSeries) {
-      const metricName = series['__name__'];
+      const metricName = series["__name__"];
       if (!metricName) continue;
 
       if (!metricLabelsMap[metricName]) {
@@ -121,7 +123,7 @@ export function createMetricsFetcher(
       // For each label key-value in this series, track them
       for (const [labelKey, labelValue] of Object.entries(series)) {
         // Skip __name__ if you don't want to treat it as a normal label
-        if (labelKey === '__name__') continue;
+        if (labelKey === "__name__") continue;
 
         if (!metricLabelsMap[metricName][labelKey]) {
           metricLabelsMap[metricName][labelKey] = new Set<string>();
@@ -142,7 +144,7 @@ export function createMetricsFetcher(
         ([labelKey, labelValuesSet]) => ({
           labelKey,
           values: Array.from(labelValuesSet),
-        })
+        }),
       );
 
       return {

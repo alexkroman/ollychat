@@ -8,11 +8,10 @@ const customHandler = {
     }
   },
 };
- 
+
 export const model = new ChatOpenAI({
   openAIApiKey: config.openAIApiKey,
   model: config.openAIModel,
   temperature: 0,
-  callbacks: [customHandler]
+  callbacks: [customHandler],
 });
-

@@ -3,15 +3,15 @@ import { OpenAIEmbeddings } from "@langchain/openai";
 import { config } from "../config/config.js";
 
 const embeddings = new OpenAIEmbeddings({
-    model: config.openAIEmbeddings,
+  model: config.openAIEmbeddings,
 });
 
 export const vectorStore = new Chroma(embeddings, {
-    collectionName: config.chromaIndex,
-    url: config.chromaUrl
+  collectionName: config.chromaIndex,
+  url: config.chromaUrl,
 });
-  
+
 export const MetricsVectorStore = new Chroma(embeddings, {
-    collectionName: config.chromaMetricsIndex,
-    url: config.chromaUrl
+  collectionName: config.chromaMetricsIndex,
+  url: config.chromaUrl,
 });

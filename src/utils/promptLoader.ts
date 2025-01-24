@@ -7,9 +7,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 function loadFile(filePath: string) {
-    return readFileSync(join(__dirname, "../prompts/" + filePath + ".txt"), "utf-8");
+  return readFileSync(
+    join(__dirname, "../prompts/" + filePath + ".txt"),
+    "utf-8",
+  );
 }
 
 export function loadPromptFromFile(filePath: string): PromptTemplate {
-    return PromptTemplate.fromTemplate(loadFile(filePath));
+  return PromptTemplate.fromTemplate(loadFile(filePath));
 }

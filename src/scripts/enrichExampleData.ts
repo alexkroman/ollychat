@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import { OpenAI } from 'openai';
-import { v4 as uuidv4 } from 'uuid';
+import fs from "fs";
+import path from "path";
+import { OpenAI } from "openai";
+import { v4 as uuidv4 } from "uuid";
 import { config } from "../config/config.js";
 import { normalizeQuestion } from "../utils/dataNormalizer.js";
 
@@ -11,8 +11,8 @@ const openai = new OpenAI({
 });
 
 // Directories
-const inputDir = 'data/processed'; // Directory containing JSON files
-const outputDir = 'data/enriched'; // Directory to save processed files
+const inputDir = "data/processed"; // Directory containing JSON files
+const outputDir = "data/enriched"; // Directory to save processed files
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
@@ -36,7 +36,7 @@ interface EnrichmentResponse {
 async function enrichMetricData(
   name: string,
   currentDescription: string,
-  query: string
+  query: string,
 ): Promise<EnrichmentResponse> {
   const prompt = `
 You are a world-class prompt generator. Given the following information about a PromQL query:
@@ -76,44 +76,51 @@ Now generate your output in the same JSON format, following all of the above rul
     messages: [
       {
         role: "system",
-        content: "You are a helpful assistant that creates statements describing PromQL queries. Always respond with valid JSON."
+        content:
+          "You are a helpful assistant that creates statements describing PromQL queries. Always respond with valid JSON.",
       },
-      { role: "user", content: prompt }
+      { role: "user", content: prompt },
     ],
     response_format: { type: "json_object" },
-    temperature: 0.7
+    temperature: 0.7,
   });
 
   try {
     const content = response.choices[0].message.content;
     if (!content) {
-      throw new Error('No content in response');
+      throw new Error("No content in response");
     }
     const parsedResponse = JSON.parse(content) as EnrichmentResponse;
 
     // Validate response format
     if (!Array.isArray(parsedResponse.questions)) {
-      throw new Error('Invalid response format');
+      throw new Error("Invalid response format");
     }
     return parsedResponse;
   } catch (error) {
-    console.error('Error parsing OpenAI response:', error);
+    console.error("Error parsing OpenAI response:", error);
     return {
       questions: [],
-
     };
   }
 }
 
-async function transformFile(inputPath: string, outputPath: string): Promise<void> {
-  const rawData = fs.readFileSync(inputPath, 'utf-8');
+async function transformFile(
+  inputPath: string,
+  outputPath: string,
+): Promise<void> {
+  const rawData = fs.readFileSync(inputPath, "utf-8");
   const inputData = JSON.parse(rawData);
 
   const vectorData: EnrichedEntry[] = [];
 
   for (const entry of inputData) {
     try {
-      const enriched = await enrichMetricData(entry.name, entry.description, entry.query);
+      const enriched = await enrichMetricData(
+        entry.name,
+        entry.description,
+        entry.query,
+      );
 
       for (const question of enriched.questions) {
         vectorData.push({
@@ -125,21 +132,20 @@ async function transformFile(inputPath: string, outputPath: string): Promise<voi
         });
       }
 
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
+      await new Promise((resolve) => setTimeout(resolve, 500));
     } catch (error) {
       console.error(`Error processing entry "${entry.name}":`, error);
     }
   }
 
-  fs.writeFileSync(outputPath, JSON.stringify(vectorData, null, 2), 'utf-8');
+  fs.writeFileSync(outputPath, JSON.stringify(vectorData, null, 2), "utf-8");
   console.log(`Processed: ${inputPath} -> ${outputPath}`);
-  await new Promise(resolve => setTimeout(resolve, 500)); 
+  await new Promise((resolve) => setTimeout(resolve, 500));
 }
 
 fs.readdir(inputDir, (err, files) => {
   if (err) {
-    console.error('Error reading input directory:', err);
+    console.error("Error reading input directory:", err);
     return;
   }
 
@@ -148,7 +154,7 @@ fs.readdir(inputDir, (err, files) => {
     const outputFilePath = path.join(outputDir, file);
 
     // Process only .json files
-    if (path.extname(file).toLowerCase() === '.json') {
+    if (path.extname(file).toLowerCase() === ".json") {
       if (fs.existsSync(outputFilePath)) {
         console.log(`Skipping existing file: ${outputFilePath}`);
         return;

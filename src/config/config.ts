@@ -5,7 +5,6 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 export const config = {
-  
   // OpenAI API Configuration
   openAIApiKey: requireEnv("OPENAI_API_KEY"),
   openAIModel: requireEnv("OPENAI_MODEL"),
