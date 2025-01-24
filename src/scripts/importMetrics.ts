@@ -1,5 +1,5 @@
 import fs from "fs/promises";
-import { createMetricsFetcher } from "../integrations/prometheus/prometheus.js";
+import { createMetricsFetcher } from "../integrations/prometheus.js";
 import { config } from "../config/config.js";
 
 interface RawMetric {

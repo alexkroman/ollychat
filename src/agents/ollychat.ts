@@ -2,7 +2,7 @@ import { Annotation, StateGraph, MemorySaver } from "@langchain/langgraph";
 import { v4 as uuidv4 } from "uuid";
 
 import { queryModel, answerModel } from "../integrations/model.js";
-import { prometheusQueryTool } from "../integrations/prometheus/prometheus.js";
+import { prometheusQueryTool } from "../integrations/prometheus.js";
 import {
   metricsExampleSelector,
   exampleSelector,
