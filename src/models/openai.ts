@@ -1,10 +1,12 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { config } from "../config/config.js";
+import { logger } from "../utils/logger.js";
 
 const customHandler = {
   handleLLMStart: async (llm: unknown, prompts: string[]) => {
     if (config.logging) {
-      console.log("Prompt sent to LLM:", prompts.join("\n---\n"));
+      logger.debug("Sending prompt");
+      logger.debug(prompts.join("\n---\n"));
     }
   },
 };

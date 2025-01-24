@@ -1,11 +1,10 @@
-console.log("test");
-
 import chalk from "chalk";
 import figlet from "figlet";
 import { createInterface } from "node:readline";
 import type { Interface } from "node:readline";
+
+import { logger } from "../utils/logger.js";
 import { answerQuestion } from "../agents/ollychat.js";
-import { config } from "../config/config.js";
 
 // Generate ASCII Art for "OLLYCHAT"
 const asciiTitle = figlet.textSync("Olly", {
@@ -48,11 +47,8 @@ export class CLI {
         chalk.bold.green("✅ Answer: ") + chalk.magenta(result.answer) + "\n",
       );
     } catch (error) {
-      if (config.logging === true) {
-        console.error(chalk.red("Error processing input:"), error);
-      } else {
-        console.log(chalk.red("Sorry I ran into an issue."));
-      }
+      logger.error(chalk.red("Error processing input:"), error);
+      console.log(chalk.red("Sorry I ran into an issue"));
     }
   }
 

@@ -1,8 +1,8 @@
 import { Annotation, StateGraph, MemorySaver } from "@langchain/langgraph";
 import { v4 as uuidv4 } from "uuid";
+
 import { model } from "../models/openai.js";
 import { promModel } from "../models/prom.js";
-
 import { prometheusQueryTool } from "../utils/prometheus.js";
 import { metricsExampleSelector } from "../utils/metricsFetcher.js";
 import { loadPromptFromFile } from "../utils/promptLoader.js";

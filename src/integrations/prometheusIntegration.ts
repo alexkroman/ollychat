@@ -2,6 +2,7 @@ import axios from "axios";
 import { timeFormat } from "d3-time-format";
 import { format } from "d3-format";
 
+import { logger } from "../utils/logger.js";
 import { extractPromQLMetrics } from "../utils/extractPromMetrics.js";
 
 interface PrometheusMetadataResponse {
@@ -75,13 +76,18 @@ export function createQueryExecutor(
   timeout: number = 5000,
 ): QueryExecutor {
   return async function executeQuery(query: string): Promise<string> {
-    const response = await axios.get<PrometheusQueryResponse>(
-      `${prometheusUrl}/api/v1/query`,
-      { params: { query }, timeout },
-    );
-    const result = response.data.data.result;
-    const table = metricsToJSON(result, query);
-    return JSON.stringify(table, null, 2);
+    try {
+      const response = await axios.get<PrometheusQueryResponse>(
+        `${prometheusUrl}/api/v1/query`,
+        { params: { query }, timeout },
+      );
+      const result = response.data.data.result;
+      const table = metricsToJSON(result, query);
+      return JSON.stringify(table, null, 2);
+    } catch (error) {
+      logger.error("Error executing Prometheus query:", error);
+      return JSON.stringify({ error: "Error executing query" });
+    }
   };
 }
 
