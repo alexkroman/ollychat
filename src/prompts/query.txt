@@ -36,7 +36,7 @@ Chat History:
 Relevent Prometheus Metric Names:
 {metrics}
 
-Relevant Example Prometheus Queries:
+Relevant Example Queries:
 {examples}
 
 User Question:

@@ -20,6 +20,9 @@
     "chalk": "^5.4.1",
     "chromadb": "^1.10.3",
     "chromadb-default-embed": "^2.13.2",
+    "d3-format": "^3.1.0",
+    "d3-time-format": "^4.1.0",
+    "danfojs-node": "^1.1.2",
     "dotenv": "^16.4.7",
     "figlet": "^1.8.0",
     "fs": "^0.0.1-security",
@@ -32,6 +35,8 @@
   },
   "type": "module",
   "devDependencies": {
+    "@types/d3-format": "^3.0.4",
+    "@types/d3-time-format": "^4.0.3",
     "@types/figlet": "^1.7.0",
     "@types/node": "^22.10.6",
     "@types/shelljs": "^0.8.15",
@@ -62,6 +67,5 @@
     "install-online-boutique-demo": "node --loader ts-node/esm demos/install-online-boutique.ts",
     "install-prometheus-demo": "node --loader ts-node/esm demos/install-prometheus.ts",
     "install-prometheus-load-balancer-demo": "node --loader ts-node/esm demos/install-prometheus-external.ts"
-
   }
 }

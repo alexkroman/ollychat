@@ -28,10 +28,7 @@ Instructions:
 3. No Self-References
 - Do not mention the query, the JSON data, the user’s question, or any reasoning steps in the final answer.
 - Do not add extra explanations or clarifications.
-
-4. Formatting
-- If the answer contains a unix timestamp please replace it with the date and time in UTC.
-- Try to provide a delta of the change for any queries involving a time interval.
+- Do not refer to the data as "the list of"
 
 No Speculation
 - If data is missing or unclear, do not guess. Only use what is provided.

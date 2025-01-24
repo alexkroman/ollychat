@@ -1,4 +1,8 @@
 import axios from 'axios';
+import { timeFormat } from 'd3-time-format';
+import { format } from 'd3-format';
+
+import { extractPromQLMetrics } from '../utils/extractPromMetrics.js';
 
 interface PrometheusMetadataResponse {
   status: string;
@@ -24,17 +28,6 @@ interface PrometheusMetric {
   value: [number, string];
 }
 
-type PrometheusMetricFormatted = {
-  metric: {
-    __name__: string;
-    env: string;
-    id: string;
-    instance: string;
-    job: string;
-  };
-  value: [number, string];
-};
-
 interface PrometheusSeriesResponse {
   status: string;
   data: Array<Record<string, string>>;
@@ -42,37 +35,47 @@ interface PrometheusSeriesResponse {
 
 export type QueryExecutor = (query: string) => Promise<string>;
 
-export function metricsToStructuredJSON(data: PrometheusMetricFormatted[]): object {
-  if (data.length === 0) return [];
-
-  return data.map(({ metric, value }) => ({
-    metricName: metric.__name__,
-    serviceId: metric.id,
-    instance: metric.instance,
-    job: metric.job,
-    timestamp: value[0],
-    value: parseFloat(value[1])
-    }));
+export function metricsToJSON(data: PrometheusMetric[], query: string): object[] {
+  if (data.length === 0) {
+    return [];
   }
 
-export function createQueryExecutor(
-  prometheusUrl: string,
-  timeout: number = 5000): QueryExecutor {
+  const formatTime = timeFormat("%Y-%m-%d %H:%M:%S"); // Adjust format as needed
+  const formatter = format(",.3f");
+
+  const values = data.map(({ value }) => parseFloat(value[1]));
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const avg = values.reduce((sum, val) => sum + val, 0) / values.length;
+
+  const table = data.map(({ metric, value }) => ({
+    metric: extractPromQLMetrics(query)[0],
+    node: metric.node,
+    pod: metric.pod,
+    value: formatter(parseFloat(value[1])),
+    timestamp: formatTime(new Date(value[0] * 1000)),
+  }));
+
+  table.push({
+    metric: 'Aggregations',
+    node: '',
+    value: `Min: ${formatter(min)}, Max: ${formatter(max)}, Average: ${formatter(avg)}`,
+    timestamp: '',
+    pod: ''
+  });
+
+  return table;
+}
+
+export function createQueryExecutor(prometheusUrl: string, timeout: number = 5000): QueryExecutor {
   return async function executeQuery(query: string): Promise<string> {
     const response = await axios.get<PrometheusQueryResponse>(
       `${prometheusUrl}/api/v1/query`,
-      {
-        params: { query },
-        timeout,
-      }
+      { params: { query }, timeout }
     );
     const result = response.data.data.result;
-    
-    if (Array.isArray(result) && result.length > 0 && 'metric' in result[0]) {
-      return JSON.stringify(metricsToStructuredJSON(result as PrometheusMetricFormatted[]));
-    }
-    
-    return JSON.stringify(result);
+    const table = metricsToJSON(result, query);
+    return JSON.stringify(table, null, 2);
   };
 }
 

@@ -7,7 +7,6 @@ import { prometheusQueryTool } from '../utils/prometheus.js';
 import { metricsExampleSelector } from '../utils/metricsFetcher.js';
 import { loadPromptFromFile } from '../utils/promptLoader.js';
 import { exampleSelector } from '../utils/getQueryExamples.js';
-import { formatExamples } from '../utils/exampleFormatter.js';
 import { normalizeQuestion } from '../utils/dataNormalizer.js';
 import { posthog, hostId } from '../utils/telemetry.js';
 
@@ -25,7 +24,7 @@ const StateAnnotation = Annotation.Root({
 
 const getQueryExamples = async (state: typeof StateAnnotation.State) => {
   const examples = await exampleSelector.invoke(normalizeQuestion(state.question));
-  const combinedExamples = await formatExamples(examples, 'example', ['question', 'query']);
+  const combinedExamples = examples.map(example => `${example.metadata.query}`).join('\n');
   return { 
     examples: combinedExamples,
     chat_history: (state.chat_history || []).slice(-3)
@@ -33,7 +32,7 @@ const getQueryExamples = async (state: typeof StateAnnotation.State) => {
 
 const getMetricExamples = async (state: typeof StateAnnotation.State) => {
   const metricExamples = await metricsExampleSelector.invoke(state.question);
-  const combinedMetricExamples = metricExamples.map(example => example.metadata.name).join('\n');
+  const combinedMetricExamples = metricExamples.map(example => example.metadata.name).join(', ');
   return { 
     metrics: combinedMetricExamples, 
     chat_history: (state.chat_history || []).slice(-3)
@@ -77,7 +76,7 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
 
   const updatedHistory = [
     ...(state.chat_history || []), 
-    `- Question: ${state.question} Query ${state.query} Answer: ${result.content}`
+    `- Question: ${state.question} Query: ${state.query} Answer: ${result.content}`
   ].slice(-3);
 
   return { 
