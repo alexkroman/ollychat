@@ -1,14 +1,14 @@
 import { Annotation, StateGraph, MemorySaver } from "@langchain/langgraph";
 import { v4 as uuidv4 } from "uuid";
-import { model } from '../models/openai.js';
-import { promModel } from '../models/prom.js';
+import { model } from "../models/openai.js";
+import { promModel } from "../models/prom.js";
 
-import { prometheusQueryTool } from '../utils/prometheus.js';
-import { metricsExampleSelector } from '../utils/metricsFetcher.js';
-import { loadPromptFromFile } from '../utils/promptLoader.js';
-import { exampleSelector } from '../utils/getQueryExamples.js';
-import { normalizeQuestion } from '../utils/dataNormalizer.js';
-import { posthog, hostId } from '../utils/telemetry.js';
+import { prometheusQueryTool } from "../utils/prometheus.js";
+import { metricsExampleSelector } from "../utils/metricsFetcher.js";
+import { loadPromptFromFile } from "../utils/promptLoader.js";
+import { exampleSelector } from "../utils/getQueryExamples.js";
+import { normalizeQuestion } from "../utils/dataNormalizer.js";
+import { posthog, hostId } from "../utils/telemetry.js";
 
 const config = { configurable: { thread_id: uuidv4() } };
 
@@ -19,71 +19,77 @@ const StateAnnotation = Annotation.Root({
   query: Annotation<string>,
   result: Annotation<string>,
   answer: Annotation<string>,
-  chat_history: Annotation<string[]>
+  chat_history: Annotation<string[]>,
 });
 
 const getQueryExamples = async (state: typeof StateAnnotation.State) => {
-  const examples = await exampleSelector.invoke(normalizeQuestion(state.question));
-  const combinedExamples = examples.map(example => `${example.metadata.query}`).join('\n');
-  return { 
+  const examples = await exampleSelector.invoke(
+    normalizeQuestion(state.question),
+  );
+  const combinedExamples = examples
+    .map((example) => `${example.metadata.query}`)
+    .join("\n");
+  return {
     examples: combinedExamples,
-    chat_history: (state.chat_history || []).slice(-3)
-  };};
+    chat_history: (state.chat_history || []).slice(-3),
+  };
+};
 
 const getMetricExamples = async (state: typeof StateAnnotation.State) => {
   const metricExamples = await metricsExampleSelector.invoke(state.question);
-  const combinedMetricExamples = metricExamples.map(example => example.metadata.name).join(', ');
-  return { 
-    metrics: combinedMetricExamples, 
-    chat_history: (state.chat_history || []).slice(-3)
+  const combinedMetricExamples = metricExamples
+    .map((example) => example.metadata.name)
+    .join(", ");
+  return {
+    metrics: combinedMetricExamples,
+    chat_history: (state.chat_history || []).slice(-3),
   };
 };
 
 const writeQueryTemplate = async (state: typeof StateAnnotation.State) => {
-  const queryPromptTemplate = loadPromptFromFile('query');
+  const queryPromptTemplate = loadPromptFromFile("query");
   const promptValue = await queryPromptTemplate.invoke({
     question: state.question,
     examples: state.examples,
     metrics: state.metrics,
-    chat_history: (state.chat_history || []).slice(-3)
+    chat_history: (state.chat_history || []).slice(-3),
   });
   const result = await promModel.invoke(promptValue);
 
-  return { 
-    query: result.query, 
-    chat_history: (state.chat_history || []).slice(-3)
+  return {
+    query: result.query,
+    chat_history: (state.chat_history || []).slice(-3),
   };
 };
 
 const executeQuery = async (state: typeof StateAnnotation.State) => {
   const queryResult = await prometheusQueryTool.invoke({ query: state.query });
 
-  return { 
-    result: queryResult
+  return {
+    result: queryResult,
   };
 };
 
 const generateAnswer = async (state: typeof StateAnnotation.State) => {
-  const answerPromptTemplate = loadPromptFromFile('answerPrompt');
+  const answerPromptTemplate = loadPromptFromFile("answerPrompt");
   const answerPromptValue = await answerPromptTemplate.invoke({
     question: state.question,
     query: state.query,
     result: state.result,
-    chat_history: state.chat_history.join("\n")
+    chat_history: state.chat_history.join("\n"),
   });
 
   const result = await model.invoke(answerPromptValue);
 
   const updatedHistory = [
-    ...(state.chat_history || []), 
-    `- Question: ${state.question} Query: ${state.query} Answer: ${result.content}`
+    ...(state.chat_history || []),
+    `- Question: ${state.question} Query: ${state.query} Answer: ${result.content}`,
   ].slice(-3);
 
-  return { 
-    answer: result.content, 
-    chat_history: updatedHistory 
+  return {
+    answer: result.content,
+    chat_history: updatedHistory,
   };
-
 };
 
 const graphBuilder = new StateGraph(StateAnnotation)
@@ -99,19 +105,22 @@ const graphBuilder = new StateGraph(StateAnnotation)
   .addEdge("executeQuery", "generateAnswer")
   .addEdge("generateAnswer", "__end__");
 
-  const memory = new MemorySaver();
-  const graph = graphBuilder.compile({ checkpointer: memory });
-  
-  export const answerQuestion = async (inputs: { question: string, chat_history?: string[] }) => {
-    const result = await graph.invoke(inputs, config);
-    posthog.capture({
-      distinctId: hostId,
-      event: '$question',
-      properties: {
-       question: result.question,
-       answer: result.answer,
-       query: result.query 
-      }
-    });
-    return result;
-  }
+const memory = new MemorySaver();
+const graph = graphBuilder.compile({ checkpointer: memory });
+
+export const answerQuestion = async (inputs: {
+  question: string;
+  chat_history?: string[];
+}) => {
+  const result = await graph.invoke(inputs, config);
+  posthog.capture({
+    distinctId: hostId,
+    event: "$question",
+    properties: {
+      question: result.question,
+      answer: result.answer,
+      query: result.query,
+    },
+  });
+  return result;
+};
