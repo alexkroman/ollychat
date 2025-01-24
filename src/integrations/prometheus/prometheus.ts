@@ -3,8 +3,8 @@ import { timeFormat } from "d3-time-format";
 import { format } from "d3-format";
 import { DynamicStructuredTool } from "@langchain/core/tools";
 import { z } from "zod";
-import { config } from "../config/config.js";
-import { logger } from "../utils/logger.js";
+import { config } from "../../config/config.js";
+import { logger } from "../../utils/logger.js";
 
 const prometheusUrl = config.prometheusUrl;
 const queryPrometheus = createQueryExecutor(prometheusUrl);
