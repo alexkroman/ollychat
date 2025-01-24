@@ -1,4 +1,4 @@
-import { Annotation, StateGraph, MemorySaver, MessagesAnnotation } from "@langchain/langgraph";
+import { Annotation, StateGraph, MemorySaver } from "@langchain/langgraph";
 import { v4 as uuidv4 } from "uuid";
 import { model } from '../models/openai.js';
 import { promModel } from '../models/prom.js';
@@ -28,7 +28,7 @@ const getQueryExamples = async (state: typeof StateAnnotation.State) => {
   const combinedExamples = await formatExamples(examples, 'example', ['question', 'query']);
   return { 
     examples: combinedExamples,
-    chat_history: (state.chat_history || []).slice(-5)
+    chat_history: (state.chat_history || []).slice(-3)
   };};
 
 const getMetricExamples = async (state: typeof StateAnnotation.State) => {
@@ -36,7 +36,7 @@ const getMetricExamples = async (state: typeof StateAnnotation.State) => {
   const combinedMetricExamples = metricExamples.map(example => example.metadata.name).join('\n');
   return { 
     metrics: combinedMetricExamples, 
-    chat_history: (state.chat_history || []).slice(-5)
+    chat_history: (state.chat_history || []).slice(-3)
   };
 };
 
@@ -46,13 +46,13 @@ const writeQueryTemplate = async (state: typeof StateAnnotation.State) => {
     question: state.question,
     examples: state.examples,
     metrics: state.metrics,
-    chat_history: (state.chat_history || []).slice(-5)
+    chat_history: (state.chat_history || []).slice(-3)
   });
   const result = await promModel.invoke(promptValue);
 
   return { 
     query: result.query, 
-    chat_history: (state.chat_history || []).slice(-5)
+    chat_history: (state.chat_history || []).slice(-3)
   };
 };
 
@@ -78,7 +78,7 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
   const updatedHistory = [
     ...(state.chat_history || []), 
     `- Question: ${state.question} Query ${state.query} Answer: ${result.content}`
-  ].slice(-5);
+  ].slice(-3);
 
   return { 
     answer: result.content, 
