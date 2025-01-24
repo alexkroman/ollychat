@@ -47,6 +47,7 @@
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
     "prettier": "3.4.2",
     "shelljs": "^0.8.5",
     "ts-node": "^10.9.2",
@@ -76,6 +77,7 @@
     "create-online-boutique-cluster": "node --loader ts-node/esm demos/create-cluster.ts",
     "install-online-boutique-demo": "node --loader ts-node/esm demos/install-online-boutique.ts",
     "install-prometheus-demo": "node --loader ts-node/esm demos/install-prometheus.ts",
-    "install-prometheus-load-balancer-demo": "node --loader ts-node/esm demos/install-prometheus-external.ts"
+    "install-prometheus-load-balancer-demo": "node --loader ts-node/esm demos/install-prometheus-external.ts",
+    "prepare": "husky"
   }
 }
