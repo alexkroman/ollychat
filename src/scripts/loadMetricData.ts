@@ -10,14 +10,21 @@ import { config } from "../config/config.js";
 
 // Read and parse the JSON file
 const rawData = fs.readFileSync('./data/metrics/metrics.json', 'utf-8');
-const inputData: Document[] = JSON.parse(rawData);
+const inputData: MetricItem[] = JSON.parse(rawData);
 
 // Ensure the data is an array of documents
 if (!Array.isArray(inputData)) {
   throw new Error("Parsed JSON data is not an array of documents");
 }
 
-const transformedData: Document[] = inputData.map((item: any) => {
+interface MetricItem {
+  id: string;
+  name: string;
+  help: string;
+  labels: { labelKey: string; values: string[] }[];
+}
+
+const transformedData: Document[] = inputData.map((item: MetricItem) => {
   
   const labelObj: Record<string, string[]> = {};
   

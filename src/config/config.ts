@@ -1,4 +1,3 @@
-import { ChromaClient } from "chromadb";
 import { requireEnv } from "../utils/config.js";
 
 import * as dotenv from "dotenv";

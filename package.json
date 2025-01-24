@@ -34,17 +34,24 @@
   },
   "type": "module",
   "devDependencies": {
+    "@eslint/js": "^9.18.0",
     "@types/d3-format": "^3.0.4",
     "@types/d3-time-format": "^4.0.3",
     "@types/figlet": "^1.7.0",
     "@types/node": "^22.10.6",
     "@types/shelljs": "^0.8.15",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.18.0",
+    "globals": "^15.14.0",
     "shelljs": "^0.8.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0"
   },
   "scripts": {
     "build": "tsc && npm run copy-txt",
+    "lint": "eslint 'src/**/*.ts'",
     "start-chroma": "chroma run > /dev/null 2>&1 & echo $! > .chroma_pid",
     "stop-chroma": "kill $(cat .chroma_pid) && rm -f .chroma_pid",
     "load-data": "npm run start-chroma && npm run refresh-metrics && npm run examples:load && npm run stop-chroma",

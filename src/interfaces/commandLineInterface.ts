@@ -7,12 +7,6 @@ import type { Interface } from 'node:readline';
 import { answerQuestion } from "../agents/ollychat.js";
 import { config } from "../config/config.js";
 
-interface Command {
-    name: string;
-    description: string;
-    execute: (...args: string[]) => Promise<void>;
-}
-
 // Generate ASCII Art for "OLLYCHAT"
 const asciiTitle = figlet.textSync('Olly', {
     font: 'Colossal', // You can experiment with different fonts

@@ -21,7 +21,14 @@ async function processFile(filePath: string) {
     if (!Array.isArray(inputData)) throw new Error(`Invalid data format in ${filePath}`);
 
 
-    const documents = inputData.map((item: any) => {
+    interface InputDataItem {
+      id: string;
+      question: string;
+      metrics: string[];
+      query: string;
+    }
+
+    const documents = inputData.map((item: InputDataItem) => {
       console.log(normalizeQuestion(item.question)); 
       return {
         id: item.id,

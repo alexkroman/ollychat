@@ -42,11 +42,11 @@ function transformFile(inputPath: string, outputPath: string): void {
 
   const queryData: QueryEntry[] = [];
 
-  (grafanaData.panels || []).forEach((panel: any) => {
+  (grafanaData.panels || []).forEach((panel: { title: string; description?: string; targets?: { expr: string }[] }) => {
     const name = panel.title + '';
     const description = panel.description || dashboardDescription ||''; 
 
-    (panel.targets || []).forEach((target: any) => {
+    (panel.targets || []).forEach((target: { expr: string }) => {
       if (typeof target.expr === 'string') {
         const query = modifyPromQLQuery(target.expr);
         const metrics = extractPromQLMetrics(query);
