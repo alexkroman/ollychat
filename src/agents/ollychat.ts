@@ -1,14 +1,15 @@
 import { Annotation, StateGraph, MemorySaver } from "@langchain/langgraph";
 import { v4 as uuidv4 } from "uuid";
 
-import { model } from "../models/openai.js";
-import { promModel } from "../models/prom.js";
-import { prometheusQueryTool } from "../utils/prometheus.js";
-import { metricsExampleSelector } from "../utils/metricsFetcher.js";
+import { queryModel, answerModel } from "../integrations/model.js";
+import { prometheusQueryTool } from "../integrations/prometheus.js";
+import {
+  metricsExampleSelector,
+  exampleSelector,
+} from "../integrations/vectorStore.js";
 import { loadPromptFromFile } from "../utils/promptLoader.js";
-import { exampleSelector } from "../utils/getQueryExamples.js";
 import { normalizeQuestion } from "../utils/dataNormalizer.js";
-import { posthog, hostId } from "../utils/telemetry.js";
+import { posthog, hostId } from "../integrations/telemetry.js";
 
 const config = { configurable: { thread_id: uuidv4() } };
 
@@ -54,7 +55,7 @@ const writeQueryTemplate = async (state: typeof StateAnnotation.State) => {
     metrics: state.metrics,
     chat_history: (state.chat_history || []).slice(-3),
   });
-  const result = await promModel.invoke(promptValue);
+  const result = await queryModel.invoke(promptValue);
 
   return {
     query: result.query,
@@ -79,15 +80,15 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
     chat_history: state.chat_history.join("\n"),
   });
 
-  const result = await model.invoke(answerPromptValue);
+  const result = await answerModel.invoke(answerPromptValue);
 
   const updatedHistory = [
     ...(state.chat_history || []),
-    `- Question: ${state.question} Query: ${state.query} Answer: ${result.content}`,
+    `- Question: ${state.question} Query: ${state.query} Answer: ${result.answer}`,
   ].slice(-3);
 
   return {
-    answer: result.content,
+    answer: result.answer,
     chat_history: updatedHistory,
   };
 };

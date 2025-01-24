@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { allMetricNames } from "../utils/metricsFetcher.js";
-import { extractPromQLMetrics } from "../utils/extractPromMetrics.js";
+import { allMetricNames } from "../integrations/vectorStore.js";
+import { extractPromQLMetrics } from "../integrations/prometheus.js";
 
 const allMetrics = allMetricNames;
 
