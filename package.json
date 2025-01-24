@@ -59,7 +59,9 @@
     "metrics:load": "node --loader ts-node/esm src/scripts/loadMetricData.ts",
     "docker:run": "docker-compose -f deploy/slack/docker-compose.yml up --build",
     "create-online-boutique-cluster": "node --loader ts-node/esm demos/create-cluster.ts",
-    "helm-upgrade": "node --loader ts-node/esm demos/helm-upgrade.ts"
+    "install-online-boutique-demo": "node --loader ts-node/esm demos/install-online-boutique.ts",
+    "install-prometheus-demo": "node --loader ts-node/esm demos/install-prometheus.ts",
+    "install-prometheus-load-balancer-demo": "node --loader ts-node/esm demos/install-prometheus-external.ts"
 
   }
 }

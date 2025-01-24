@@ -1,0 +1,47 @@
+# Global settings
+global:
+  rbac:
+    create: true
+
+# Namespace for Prometheus deployment
+namespaceOverride: "monitoring"
+
+# Prometheus server settings
+server:
+  service:
+    type: LoadBalancer
+    annotations:
+      cloud.google.com/load-balancer-type: "External"
+    port: 80
+    targetPort: 80
+    loadBalancerIP: "" # Optional: specify a static IP if desired
+  labels:
+    app: prometheus-server
+  nodeSelector: {}
+
+# Prometheus operator settings
+prometheusOperator:
+  admissionWebhooks:
+    enabled: false
+
+# Kube-state-metrics
+kube-state-metrics:
+  enabled: true
+
+# Node Exporter (optional for GKE Autopilot, which doesn't support privileged DaemonSets)
+nodeExporter:
+  enabled: false
+
+# Other monitoring components (example: kubelet, API server)
+kubeApiServer:
+  enabled: true
+kubelet:
+  enabled: true
+kubeControllerManager:
+  enabled: true
+kubeScheduler:
+  enabled: true
+
+# Default rules
+defaultRules:
+  create: true
