@@ -47,7 +47,7 @@ export class CLI {
         chalk.bold.green("✅ Answer: ") + chalk.magenta(result.answer) + "\n",
       );
     } catch (error) {
-      logger.error(chalk.red("Error processing input:"), error);
+      logger.debug(chalk.red("Error processing input:"), error);
       console.log(chalk.red("Sorry I ran into an issue"));
     }
   }
@@ -89,7 +89,7 @@ const main = async () => {
     const cli = new CLI();
     await cli.start();
   } catch (error) {
-    console.error(chalk.red("Failed to start CLI:"), error);
+    logger.error("Failed to start CLI:", error);
     process.exit(1);
   }
 };
