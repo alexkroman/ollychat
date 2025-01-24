@@ -17,15 +17,43 @@ if (!Array.isArray(inputData)) {
   throw new Error("Parsed JSON data is not an array of documents");
 }
 
-// Transform the data into the desired format
-const transformedData: Document[] = inputData.map((item: any) => ({
-  id: item.id,
-  pageContent: `${normalizeQuestion(item.name)} ${normalizeQuestion(item.help)}`,
-  metadata: {
-    name: item.name,
-    help: item.help
-  },
-}));
+const transformedData: Document[] = inputData.map((item: any) => {
+  
+  const labelObj: Record<string, string[]> = {};
+  
+  item.labels.forEach((label: { labelKey: string; values: string[] }) => {
+    labelObj[label.labelKey] = label.values;
+  });
+
+  const labelLines: string[] = [];
+  
+  for (const [key, values] of Object.entries(labelObj)) {
+    labelLines.push(`  ${key} => ${values.join(", ")}`);
+  }
+
+  const pageContentRaw = [
+    `Metric Name: ${normalizeQuestion(item.name)}`,
+    `Help: ${normalizeQuestion(item.help)}`,
+    `Labels:`,
+    ...labelLines
+  ].join("\n");
+
+  const maxLength = 8000;
+  const pageContent =
+    pageContentRaw.length > maxLength
+      ? pageContentRaw.slice(0, maxLength - 3) + "..."
+      : pageContentRaw;
+
+  return {
+    id: item.id,
+    pageContent: pageContent,
+    metadata: {
+      name: item.name,
+      help: item.help,
+      labels: labelObj,
+    },
+  };
+});
 
 const embeddings = new OpenAIEmbeddings({
   model: config.openAIEmbeddings,
