@@ -23,6 +23,11 @@ Guidelines to Follow:
 - Do not create queries unrelated to the given example queries if no direct correlation exists.
 - Ensure the query is syntactically correct and compatible with Prometheus.
 
+4. Interactive Follow-Up Handling:
+
+- If the user asks a question that logically follows from a previous query in the chat history, use that context to refine the new query.
+- If the user’s question is unrelated to past queries, generate a response normally without using history.
+
 Context:
 
 Chat History:
