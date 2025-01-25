@@ -1,5 +1,6 @@
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { OpenAIEmbeddings } from "@langchain/openai";
+import { ScoreThresholdRetriever } from "langchain/retrievers/score_threshold";
 import { config } from "../config/config.js";
 
 const embeddings = new OpenAIEmbeddings({
@@ -21,17 +22,29 @@ export const ValuesVectorStore = new Chroma(embeddings, {
   url: config.chromaUrl,
 });
 
-export const metricsExampleSelector = MetricsVectorStore.asRetriever({
-  k: 10,
-});
+export const metricsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
+  MetricsVectorStore,
+  {
+    minSimilarityScore: 0.35,
+    maxK: 5,
+  },
+);
 
-export const labelsExampleSelector = LabelsVectorStore.asRetriever({
-  k: 5,
-});
+export const labelsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
+  LabelsVectorStore,
+  {
+    minSimilarityScore: 0.5,
+    maxK: 5,
+  },
+);
 
-export const valuesExampleSelector = ValuesVectorStore.asRetriever({
-  k: 5,
-});
+export const valuesExampleSelector = ScoreThresholdRetriever.fromVectorStore(
+  ValuesVectorStore,
+  {
+    minSimilarityScore: 0.6,
+    maxK: 5,
+  },
+);
 
 const getAllMetricsSelector = MetricsVectorStore.asRetriever({
   k: 2000,
@@ -47,7 +60,11 @@ export const vectorStore = new Chroma(embeddings, {
   url: config.chromaUrl,
 });
 
-export const exampleSelector = vectorStore.asRetriever({
-  filter: { metrics: { $in: allMetricNames } },
-  k: 10,
-});
+export const exampleSelector = ScoreThresholdRetriever.fromVectorStore(
+  vectorStore,
+  {
+    minSimilarityScore: 0.2,
+    maxK: 5,
+    filter: { metrics: { $in: allMetricNames } },
+  },
+);
