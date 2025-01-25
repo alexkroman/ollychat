@@ -18,7 +18,7 @@ export const config = {
   chromaIndex: requireEnv("CHROMA_INDEX"),
   chromaMetricsIndex: requireEnv("CHROMA_METRICS_INDEX"),
   chromaLabelsIndex: requireEnv("CHROMA_LABELS_INDEX"),
-  chromaLabelValuesIndex: requireEnv("CHROMA_VALUES_INDEX"),
+  chromaValuesIndex: requireEnv("CHROMA_VALUES_INDEX"),
 
   // Logging Configuration
   logging: !process.execArgv.includes("--no-warnings"),

@@ -3,7 +3,6 @@ import path from "path";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { ChromaClient } from "chromadb";
-import { normalizeQuestion } from "../utils/dataNormalizer.js";
 import { config } from "../config/config.js";
 
 const enrichedDir = "./data/enriched";
@@ -31,10 +30,10 @@ async function processFile(filePath: string) {
     }
 
     const documents = inputData.map((item: InputDataItem) => {
-      console.log(normalizeQuestion(item.question));
+      console.log(item.question);
       return {
         id: item.id,
-        pageContent: normalizeQuestion(item.question),
+        pageContent: item.question,
         metadata: {
           question: item.question,
           metrics: item.metrics.join(", "),

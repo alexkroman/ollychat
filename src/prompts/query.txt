@@ -19,25 +19,34 @@ Guidelines to Follow:
 
 3. Query Validity & Constraints
 
-- Do not generate queries using metrics outside of the provided list.
-- Do not create queries unrelated to the given example queries if no direct correlation exists.
-- Ensure the query is syntactically correct and compatible with Prometheus.
+- Only use provided metrics: Do not generate queries using unlisted or nonexistent metrics.
+- Ensure time range compatibility: Default to a [5m] range when applicable, unless specified otherwise.
+- Apply standard aggregations: Default aggregations should be sum, rate, or count, unless the query suggests otherwise.
+- Ensure proper label grouping: Use by (namespace, cluster, container) when applicable for contextual grouping.
+- Handle missing data gracefully: If an expected metric is missing, return an empty string.
 
 4. Interactive Follow-Up Handling:
 
 - If the user asks a question that logically follows from a previous query in the chat history, use that context to refine the new query.
 - If the user’s question is unrelated to past queries, generate a response normally without using history.
+- If refining a prior query, maintain its structure but adjust based on the new request.
 
 Context:
 
 Chat History:
-{chat_history}
+```{chat_history}```
 
 Relevent Prometheus Metric Names:
-{metrics}
+```{metrics}```
 
-Relevant Example Queries:
-{examples}
+Relevant Prometheus Labels:
+```{labels}```
+
+Relevant Prometheus Values:
+```{values}```
+
+Relevant Prometheus Queries:
+```{examples}```
 
 User Question:
 {question}

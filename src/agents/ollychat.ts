@@ -5,10 +5,11 @@ import { queryModel, answerModel } from "../integrations/model.js";
 import { prometheusQueryTool } from "../integrations/prometheus.js";
 import {
   metricsExampleSelector,
+  labelsExampleSelector,
+  valuesExampleSelector,
   exampleSelector,
 } from "../integrations/vectorStore.js";
 import { loadPromptFromFile } from "../utils/promptLoader.js";
-import { normalizeQuestion } from "../utils/dataNormalizer.js";
 import { posthog, hostId } from "../integrations/telemetry.js";
 
 const config = { configurable: { thread_id: uuidv4() } };
@@ -17,6 +18,8 @@ const StateAnnotation = Annotation.Root({
   question: Annotation<string>,
   examples: Annotation<string>,
   metrics: Annotation<string>,
+  labels: Annotation<string>,
+  values: Annotation<string>,
   query: Annotation<string>,
   result: Annotation<string>,
   answer: Annotation<string>,
@@ -24,26 +27,46 @@ const StateAnnotation = Annotation.Root({
 });
 
 const getQueryExamples = async (state: typeof StateAnnotation.State) => {
-  const examples = await exampleSelector.invoke(
-    normalizeQuestion(state.question),
-  );
-  const combinedExamples = examples
-    .map((example) => `${example.metadata.query}`)
-    .join("\n");
+  const examples = await exampleSelector.invoke(state.question);
+
+  const filteredExamples = examples.map((example) => ({
+    question: example?.metadata.question,
+    promql_query: example?.metadata.query,
+  }));
+
   return {
-    examples: combinedExamples,
-    chat_history: (state.chat_history || []).slice(-3),
+    examples: filteredExamples,
   };
 };
 
 const getMetricExamples = async (state: typeof StateAnnotation.State) => {
   const metricExamples = await metricsExampleSelector.invoke(state.question);
-  const combinedMetricExamples = metricExamples
-    .map((example) => example.metadata.name)
-    .join(", ");
+  const filteredExamples = metricExamples.map((example) => ({
+    metric: example?.metadata.metric,
+  }));
   return {
-    metrics: combinedMetricExamples,
-    chat_history: (state.chat_history || []).slice(-3),
+    metrics: filteredExamples,
+  };
+};
+
+const getLabelExamples = async (state: typeof StateAnnotation.State) => {
+  const labelExamples = await labelsExampleSelector.invoke(state.question);
+  const filteredExamples = labelExamples.map((example) => ({
+    label: example?.metadata.label,
+  }));
+  return {
+    labels: filteredExamples,
+  };
+};
+
+const getValueExamples = async (state: typeof StateAnnotation.State) => {
+  const valueExamples = await valuesExampleSelector.invoke(state.question);
+  const filteredExamples = valueExamples.map((example) => ({
+    label: example?.metadata.label,
+    value: example?.metadata.value,
+  }));
+  return {
+    values: filteredExamples,
   };
 };
 
@@ -53,6 +76,8 @@ const writeQueryTemplate = async (state: typeof StateAnnotation.State) => {
     question: state.question,
     examples: state.examples,
     metrics: state.metrics,
+    labels: state.labels,
+    values: state.values,
     chat_history: (state.chat_history || []).slice(-3),
   });
   const result = await queryModel.invoke(promptValue);
@@ -96,12 +121,16 @@ const generateAnswer = async (state: typeof StateAnnotation.State) => {
 const graphBuilder = new StateGraph(StateAnnotation)
   .addNode("getQueryExamples", getQueryExamples)
   .addNode("getMetricExamples", getMetricExamples)
+  .addNode("getLabelExamples", getLabelExamples)
+  .addNode("getValueExamples", getValueExamples)
   .addNode("writeQueryTemplate", writeQueryTemplate)
   .addNode("executeQuery", executeQuery)
   .addNode("generateAnswer", generateAnswer)
   .addEdge("__start__", "getQueryExamples")
   .addEdge("getQueryExamples", "getMetricExamples")
-  .addEdge("getMetricExamples", "writeQueryTemplate")
+  .addEdge("getMetricExamples", "getLabelExamples")
+  .addEdge("getLabelExamples", "getValueExamples")
+  .addEdge("getValueExamples", "writeQueryTemplate")
   .addEdge("writeQueryTemplate", "executeQuery")
   .addEdge("executeQuery", "generateAnswer")
   .addEdge("generateAnswer", "__end__");

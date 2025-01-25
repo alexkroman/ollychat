@@ -11,7 +11,25 @@ export const MetricsVectorStore = new Chroma(embeddings, {
   url: config.chromaUrl,
 });
 
+export const LabelsVectorStore = new Chroma(embeddings, {
+  collectionName: config.chromaLabelsIndex,
+  url: config.chromaUrl,
+});
+
+export const ValuesVectorStore = new Chroma(embeddings, {
+  collectionName: config.chromaValuesIndex,
+  url: config.chromaUrl,
+});
+
 export const metricsExampleSelector = MetricsVectorStore.asRetriever({
+  k: 10,
+});
+
+export const labelsExampleSelector = LabelsVectorStore.asRetriever({
+  k: 5,
+});
+
+export const valuesExampleSelector = ValuesVectorStore.asRetriever({
   k: 5,
 });
 
@@ -20,8 +38,9 @@ const getAllMetricsSelector = MetricsVectorStore.asRetriever({
 });
 
 const allMetrics = await getAllMetricsSelector.invoke("");
-
-export const allMetricNames = allMetrics.map((metric) => metric.metadata.name);
+export const allMetricNames = allMetrics.map(
+  (metric) => metric.metadata.metric,
+);
 
 export const vectorStore = new Chroma(embeddings, {
   collectionName: config.chromaIndex,

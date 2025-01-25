@@ -96,7 +96,7 @@ async function storeData(collectionName: string, documents: Document[]) {
     await Promise.all([
       storeData(config.chromaMetricsIndex, transformedMetrics),
       storeData(config.chromaLabelsIndex, transformedLabels),
-      storeData(config.chromaLabelValuesIndex, transformedLabelValues),
+      storeData(config.chromaValuesIndex, transformedLabelValues),
     ]);
     console.log("All data successfully stored.");
   } catch (error) {

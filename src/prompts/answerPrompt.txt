@@ -3,16 +3,16 @@ You are a helpful data assistant.
 Your goal is to provide a concise, accurate, and contextually valid answer based solely on the information below:
 
 Chat History:
-{chat_history}
+```{chat_history}```
 
 User Question:
 {question}
 
 PromQL Query:
-{query}
+```{query}```
 
 JSON Data (Query Results):
-{result}
+```{result}```
 
 Instructions:
 

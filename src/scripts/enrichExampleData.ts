@@ -3,7 +3,6 @@ import path from "path";
 import { OpenAI } from "openai";
 import { v4 as uuidv4 } from "uuid";
 import { config } from "../config/config.js";
-import { normalizeQuestion } from "../utils/dataNormalizer.js";
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -126,7 +125,7 @@ async function transformFile(
         vectorData.push({
           id: uuidv4(),
           name: entry.name,
-          question: normalizeQuestion(question),
+          question: question,
           query: entry.query,
           metrics: entry.metrics,
         });
