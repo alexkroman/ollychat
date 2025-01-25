@@ -4,7 +4,7 @@ import { createInterface } from "node:readline";
 import type { Interface } from "node:readline";
 
 import { logger } from "../utils/logger.js";
-import { answerQuestion } from "../agents/ollychat.js";
+import { answerQuestion } from "../ollychat.js";
 
 // Generate ASCII Art for "OLLYCHAT"
 const asciiTitle = figlet.textSync("Olly", {

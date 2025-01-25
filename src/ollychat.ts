@@ -1,16 +1,16 @@
 import { Annotation, StateGraph, MemorySaver } from "@langchain/langgraph";
 import { v4 as uuidv4 } from "uuid";
 
-import { queryModel, answerModel } from "../integrations/model.js";
-import { prometheusQueryTool } from "../integrations/prometheus.js";
+import { queryModel, answerModel } from "./integrations/model.js";
+import { prometheusQueryTool } from "./integrations/prometheus.js";
 import {
   metricsExampleSelector,
   labelsExampleSelector,
   valuesExampleSelector,
   exampleSelector,
-} from "../integrations/vectorStore.js";
-import { loadPromptFromFile } from "../utils/promptLoader.js";
-import { posthog, hostId } from "../integrations/telemetry.js";
+} from "./integrations/vectorStore.js";
+import { loadPromptFromFile } from "./utils/promptLoader.js";
+import { posthog, hostId } from "./integrations/telemetry.js";
 
 const config = { configurable: { thread_id: uuidv4() } };
 

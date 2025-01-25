@@ -1,5 +1,5 @@
 import slack from "@slack/bolt";
-import { answerQuestion } from "../agents/ollychat.js";
+import { answerQuestion } from "../ollychat.js";
 import { slackConfig } from "../config/slackConfig.js";
 
 const { App } = slack;
