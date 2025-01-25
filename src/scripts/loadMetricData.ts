@@ -4,7 +4,6 @@ import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { Document } from "@langchain/core/documents";
 import { ChromaClient } from "chromadb";
 import { config } from "../config/config.js";
-import { exit } from "process";
 
 // Read and parse the JSON files
 const metricsData: MetricItem[] = JSON.parse(
@@ -25,9 +24,6 @@ if (
 ) {
   throw new Error("One or more JSON data files do not contain an array.");
 }
-
-console.log(metricsData);
-exit(0);
 
 // Define TypeScript interfaces
 interface MetricItem {

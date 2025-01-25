@@ -37,6 +37,8 @@ pip install chromadb
 
 2. Edit the `.env` file with your specific values (such as Prometheus URL, authentication tokens, etc.).
 
+NPM INSTALL
+
 ### Load training data before first run
 
 Run the following command to load the training data:
