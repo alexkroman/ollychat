@@ -55,7 +55,7 @@ export const vectorStore = new Chroma(embeddings, {
   url: config.chromaUrl,
 });
 
-const allMetrics = await getAllMetricsSelector.invoke("");
+export const allMetrics = await getAllMetricsSelector.invoke("");
 
 export const exampleSelector = ScoreThresholdRetriever.fromVectorStore(
   vectorStore,

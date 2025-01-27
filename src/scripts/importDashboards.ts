@@ -1,9 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { allMetricNames } from "../integrations/vectorStore.js";
+import { allMetrics } from "../integrations/vectorStore.js";
 import { extractMetrics } from "../integrations/prometheus.js";
-
-const allMetrics = allMetricNames;
 
 allMetrics.forEach((name, index) => {
   console.log(`${index + 1}: ${name}`);
@@ -54,8 +52,12 @@ function transformFile(inputPath: string, outputPath: string): void {
           const query = modifyPromQLQuery(target.expr);
           const metrics = extractMetrics(query);
 
+          const allMetricNames = allMetrics.map(
+            (metric) => metric.metadata.metric,
+          );
+
           const missingMetrics = metrics.filter(
-            (metric) => !allMetrics.includes(metric),
+            (metric) => !allMetricNames.includes(metric),
           );
           if (missingMetrics.length > 0) {
             //console.warn(`Skipping because metrics don't exist in installation: ${missingMetrics.join(', ')}`);
