@@ -1,0 +1,10 @@
+Solve the following task or problem. To solve the problem, we have made step-by-step Plan and
+retrieved corresponding Evidence to each Plan. Use them with caution since long evidence might
+contain irrelevant information.
+
+{plan}
+
+Now solve the question or task according to provided Evidence above. 
+
+Task: {task}
+Response:
