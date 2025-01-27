@@ -25,7 +25,7 @@ export const ValuesVectorStore = new Chroma(embeddings, {
 export const metricsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
   MetricsVectorStore,
   {
-    minSimilarityScore: 0.35,
+    minSimilarityScore: 0.2,
     maxK: 5,
   },
 );
@@ -33,7 +33,7 @@ export const metricsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
 export const labelsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
   LabelsVectorStore,
   {
-    minSimilarityScore: 0.5,
+    minSimilarityScore: 0.2,
     maxK: 5,
   },
 );
@@ -41,7 +41,7 @@ export const labelsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
 export const valuesExampleSelector = ScoreThresholdRetriever.fromVectorStore(
   ValuesVectorStore,
   {
-    minSimilarityScore: 0.6,
+    minSimilarityScore: 0.2,
     maxK: 5,
   },
 );
@@ -50,21 +50,20 @@ const getAllMetricsSelector = MetricsVectorStore.asRetriever({
   k: 2000,
 });
 
-const allMetrics = await getAllMetricsSelector.invoke("");
-export const allMetricNames = allMetrics.map(
-  (metric) => metric.metadata.metric,
-);
-
 export const vectorStore = new Chroma(embeddings, {
   collectionName: config.chromaIndex,
   url: config.chromaUrl,
 });
+
+const allMetrics = await getAllMetricsSelector.invoke("");
 
 export const exampleSelector = ScoreThresholdRetriever.fromVectorStore(
   vectorStore,
   {
     minSimilarityScore: 0.2,
     maxK: 5,
-    filter: { metrics: { $in: allMetricNames } },
+    filter: {
+      metrics: { $in: allMetrics.map((metric) => metric.metadata.metric) },
+    },
   },
 );

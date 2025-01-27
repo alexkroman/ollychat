@@ -11,6 +11,7 @@ import {
 } from "./integrations/vectorStore.js";
 import { loadPromptFromFile } from "./utils/promptLoader.js";
 import { posthog, hostId } from "./integrations/telemetry.js";
+import { logger } from "./utils/logger.js";
 
 const config = { configurable: { thread_id: uuidv4() } };
 
@@ -27,16 +28,16 @@ const StateAnnotation = Annotation.Root({
 });
 
 const getQueryExamples = async (state: typeof StateAnnotation.State) => {
-  const examples = await exampleSelector.invoke(state.question);
+  try {
+    const examples = await exampleSelector.invoke(state.question);
 
-  const filteredExamples = examples.map((example) => ({
-    question: example?.metadata.question,
-    promql_query: example?.metadata.query,
-  }));
-
-  return {
-    examples: filteredExamples,
-  };
+    return {
+      examples: examples,
+    };
+  } catch (error) {
+    logger.error("Error fetching query examples:", error);
+    return { examples: [] };
+  }
 };
 
 const getMetricExamples = async (state: typeof StateAnnotation.State) => {
