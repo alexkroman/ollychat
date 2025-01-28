@@ -30,26 +30,21 @@ export class CLI {
   }
 
   private async handleInput(input: string) {
-    try {
-      const messageText = input.trim();
-      if (!messageText) return;
+    const messageText = input.trim();
+    if (!messageText) return;
 
-      if (messageText.toLowerCase() === "exit") {
-        this.stop();
-        return;
-      }
-
-      console.log(chalk.green("\nQuerying..."));
-
-      const result = await answerQuestion({ question: messageText });
-      console.log(chalk.bold.cyan("🔍 Query: ") + chalk.yellow(result.query));
-      console.log(
-        chalk.bold.green("✅ Answer: ") + chalk.magenta(result.answer) + "\n",
-      );
-    } catch (error) {
-      logger.debug(chalk.red("Error processing input:"), error);
-      console.log(chalk.red("Sorry I ran into an issue"));
+    if (messageText.toLowerCase() === "exit") {
+      this.stop();
+      return;
     }
+
+    console.log(chalk.green("\nQuerying..."));
+
+    const result = await answerQuestion({ question: messageText });
+
+    console.log(
+      chalk.bold.green("✅ Answer: ") + chalk.magenta(result.result) + "\n",
+    );
   }
 
   public async start() {

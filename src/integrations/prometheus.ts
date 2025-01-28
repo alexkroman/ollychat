@@ -30,6 +30,7 @@ export const prometheusQueryTool = new DynamicStructuredTool({
 
 async function queryPrometheus(query: string): Promise<string> {
   try {
+    console.log("Executing Query: " + query);
     const response = await axios.get<PrometheusQueryResponse>(
       `${PROMETHEUS_URL}/api/v1/query`,
       { params: { query }, timeout: QUERY_TIMEOUT },
@@ -40,8 +41,7 @@ async function queryPrometheus(query: string): Promise<string> {
       2,
     );
   } catch (error) {
-    logger.error("Error executing Prometheus query:", error);
-    return JSON.stringify({ error: "Error executing query" });
+    return JSON.stringify({ error: "Error executing query" + error });
   }
 }
 

@@ -22,7 +22,7 @@ app.event("app_mention", async ({ event, say }) => {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: `🔍 *Query:*\n\`\`\`${results.query}\`\`\`\n✅ *Answer:*\n\`\`\`${results.answer}\`\`\``,
+            text: `✅ *Answer:*\n\`\`\`${results.result}\`\`\``,
           },
         },
       ],

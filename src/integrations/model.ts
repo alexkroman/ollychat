@@ -30,3 +30,10 @@ const answerOutput = z.object({
 });
 
 export const answerModel = model.withStructuredOutput(answerOutput);
+
+const plannerOutput = z.object({
+  Plan: z.string().describe("Plan to answer a user question"),
+  "#E": z.record(z.string()).describe("Dynamic evidence fields"),
+});
+
+export const plannerModel = model.withStructuredOutput(plannerOutput);
