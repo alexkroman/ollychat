@@ -33,20 +33,5 @@ Guidelines to Follow:
 
 Context:
 
-Chat History:
-```{chat_history}```
-
-Relevent Prometheus Metric Names:
-```{metrics}```
-
-Relevant Prometheus Labels:
-```{labels}```
-
-Relevant Prometheus Values:
-```{values}```
-
-Relevant Prometheus Queries:
-```{examples}```
-
 User Question:
-{question}
+{input}

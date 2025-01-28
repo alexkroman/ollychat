@@ -13,6 +13,8 @@ import { model } from "./integrations/model.js";
 import { prometheusQueryTool } from "./integrations/prometheus.js";
 import { loadPromptFromFile } from "./utils/promptLoader.js";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
+import { queryModel } from "./integrations/model.js";
+
 import { z } from "zod";
 
 const search = new TavilySearchResults();
@@ -92,7 +94,12 @@ async function toolExecution(
       return response.content;
     },
     PromQL: async (input) => {
-      return prometheusQueryTool.invoke({ query: input });
+      const queryPromptTemplate = loadPromptFromFile("query");
+      const promptValue = await queryPromptTemplate.invoke({
+        input: input,
+      });
+      const result = await queryModel.invoke(promptValue, config);
+      return prometheusQueryTool.invoke({ query: result.query });
     },
   };
 
