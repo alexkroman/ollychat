@@ -13,15 +13,11 @@ import { model } from "./integrations/model.js";
 import { prometheusQueryTool } from "./integrations/prometheus.js";
 import { loadPromptFromFile } from "./utils/promptLoader.js";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
+import { z } from "zod";
 
 const search = new TavilySearchResults();
 
 const config = { configurable: { thread_id: uuidv4() } };
-
-const regexPattern = new RegExp(
-  "Plan\\s*\\d*:\\s*([^#]+)\\s*(#E\\d+)\\s*=\\s*(\\w+)\\s*\\<(.*?)\\>",
-  "g",
-);
 
 async function getPlan(
   state: typeof GraphState.State,
@@ -31,74 +27,46 @@ async function getPlan(
   const task = state.task;
   const plannerTemplate = loadPromptFromFile("plan");
 
-  const planner = plannerTemplate.pipe(model);
+  const stepSchema = z.object({
+    plan: z.string(),
+    step_id: z.string(),
+    variable: z.string(),
+    tool: z.string(),
+    command: z.string(),
+  });
 
-  let result;
-  const steps: string[][] = [];
+  const dataSchema = z.object({
+    plan_steps: z.array(stepSchema),
+  });
 
-  try {
-    result = await planner.invoke({ task }, config);
-    if (!result || !result.content) {
-      throw new Error(
-        "Planner invocation failed: result or content is undefined.",
-      );
-    }
+  const plannerModel = model.withStructuredOutput(dataSchema);
 
-    const matches = result.content.toString().matchAll(regexPattern);
+  const planner = plannerTemplate.pipe(plannerModel);
 
-    for (const match of matches) {
-      if (!match || match.length < 5) {
-        console.warn("Skipping invalid match:", match);
-        continue;
-      }
+  const result = await planner.invoke({ task }, config);
 
-      const item = [match[1], match[2], match[3], match[4], match[0]];
-      console.log("ITEM: " + item);
-      if (item.some((i) => i === undefined)) {
-        console.warn("Skipping incomplete match:", item);
-        continue;
-      }
-
-      steps.push(item as string[]);
-    }
-  } catch (error) {
-    console.error("Error in getPlan:", error);
-    return { steps: [], planString: "" };
-  }
+  const steps = result.plan_steps.map((step) => [
+    step.plan,
+    step.step_id,
+    step.variable,
+    step.tool,
+    step.command,
+  ]);
 
   return {
-    steps,
-    planString: result?.content?.toString() || "",
+    steps: steps,
   };
 }
 
 const _getCurrentTask = (state: typeof GraphState.State) => {
-  console.log("_getCurrentTask", state);
   if (!state.results) {
     return 1;
   }
+
   if (Object.entries(state.results).length === state.steps.length) {
     return null;
   }
   return Object.entries(state.results).length + 1;
-};
-
-const _parseResult = (input: unknown): string => {
-  if (typeof input === "string") {
-    const parsedInput = JSON.parse(input);
-    if (
-      Array.isArray(parsedInput) &&
-      parsedInput.every(
-        (item) =>
-          typeof item === "object" && item !== null && "content" in item,
-      )
-    ) {
-      return parsedInput.map(({ content }) => String(content)).join("\n");
-    }
-  } else if (input && typeof input === "object" && "content" in input) {
-    return String((input as { content: unknown }).content);
-  }
-  return String(input);
 };
 
 async function toolExecution(
@@ -107,51 +75,64 @@ async function toolExecution(
 ) {
   console.log("---EXECUTE TOOL---");
 
-  const stepIndex = _getCurrentTask(state);
-  if (stepIndex === null) throw new Error("No current task found");
+  const stepIndex = _getCurrentTask(state) || 0;
 
-  const steps = state.steps;
-  if (!Array.isArray(steps) || stepIndex > steps.length) {
-    throw new Error("Invalid step index or malformed steps");
-  }
-
-  const [, stepName, tool, toolInputTemplate] = steps[stepIndex - 1];
-  if (!stepName || !tool || !toolInputTemplate) {
-    throw new Error("Malformed step data: missing required fields");
-  }
-
-  let toolInput = toolInputTemplate;
-  const results = state.results || {};
-
-  Object.entries(results).forEach(([key, value]) => {
-    toolInput = toolInput.replace(key, String(value));
-  });
+  const [, , stepName, tool, toolInputTemplate] = state.steps[stepIndex - 1];
 
   const toolExecutors: Record<
     string,
     (input: string, config?: RunnableConfig) => Promise<unknown>
   > = {
     Google: async (input, config) => {
-      console.log("---EXECUTE GOOGLE---");
-      return search.invoke(input, config);
+      const response = await search.invoke(input, config);
+      return response;
     },
     LLM: async (input, config) => {
-      console.log("---EXECUTE LLM---");
-      return model.invoke(input, config);
+      const response = await model.invoke(input, config);
+      return response.content;
     },
     PromQL: async (input) => {
-      console.log("---EXECUTE PromQL---");
       return prometheusQueryTool.invoke({ query: input });
     },
   };
 
-  if (!(tool in toolExecutors)) console.log(`Invalid tool specified: ${tool}`);
+  if (!(tool in toolExecutors)) {
+    throw new Error(`Invalid tool specified: ${tool}`);
+  }
 
-  const result = await toolExecutors[tool](toolInput, config);
-  if (!result) throw new Error(`Execution failed for tool: ${tool}`);
+  try {
+    const parsedInput = await parseToolInput(state, toolInputTemplate);
 
-  results[stepName] = JSON.stringify(_parseResult(result), null, 2);
-  return { results };
+    const result = await toolExecutors[tool](parsedInput, config);
+
+    if (!result) {
+      throw new Error(`Execution failed for tool: ${tool}`);
+    }
+
+    const updatedResults = {
+      ...state.results, // Preserve previous results
+      [stepName]: JSON.stringify(result, null, 2), // Store new result
+    };
+
+    console.log(updatedResults);
+
+    return { results: updatedResults }; // Merge into state via the reducer
+  } catch (error) {
+    console.error(`Error executing tool ${tool}:`, error);
+    throw error;
+  }
+}
+
+async function parseToolInput(
+  state: typeof GraphState.State,
+  input: string,
+): Promise<string> {
+  if (!state?.results || typeof state.results !== "object") return input; // Ensure state.results is defined and is an object
+
+  return input.replace(/#E(\d+)/g, (match: string): string => {
+    const result = (state.results as Record<string, string>)[match];
+    return typeof result === "string" ? result : match; // Fallback to original placeholder if not found
+  });
 }
 
 const solvePrompt = loadPromptFromFile("solve");
@@ -159,19 +140,20 @@ const solvePrompt = loadPromptFromFile("solve");
 async function solve(state: typeof GraphState.State, config?: RunnableConfig) {
   console.log("---SOLVE---");
   const _results = state.results || {};
+
   let plan = "";
 
   // Iterate through steps and generate the plan
-  for (const [toolInput, key] of state.steps) {
-    let value = _results[key]; // Retrieve the result for the key (e.g., #E1, #E2)
+  for (const [planDesc, , stepName, ,] of state.steps) {
+    let value = _results[stepName]; // Retrieve the result for the key (e.g., #E1, #E2)
 
     // If no result found for the key, find the matching step
     if (!value) {
-      const matchingStep = state.steps.find((step) => step.includes(key));
+      const matchingStep = state.steps.find((step) => step.includes(stepName));
       value = matchingStep ? matchingStep[0] : null; // Replace #E1 with the first element of the matching step, if any
     }
 
-    plan += `Plan: ${toolInput}\n`;
+    plan += `Plan: ${planDesc}\n`;
 
     if (value) {
       plan += `Evidence: ${value}\n`;
@@ -207,10 +189,6 @@ const GraphState = Annotation.Root({
     reducer: (x, y) => y ?? x,
     default: () => "",
   }),
-  planString: Annotation<string>({
-    reducer: (x, y) => y ?? x,
-    default: () => "",
-  }),
   steps: Annotation<string[][]>({
     reducer: (x, y) => x.concat(y),
     default: () => [],
@@ -234,7 +212,9 @@ const workflow = new StateGraph(GraphState)
   .addConditionalEdges("tool", _route)
   .addEdge(START, "plan");
 
-const app = workflow.compile({ checkpointer: new MemorySaver() });
+const app = workflow.compile({
+  checkpointer: new MemorySaver(),
+});
 
 export const answerQuestion = async (inputs: {
   question: string;
