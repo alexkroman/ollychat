@@ -19,7 +19,7 @@ const search = new TavilySearchResults();
 const config = { configurable: { thread_id: uuidv4() } };
 
 const regexPattern = new RegExp(
-  "Plan\\s*\\d*:\\s*([^#]+)\\s*(#E\\d+)\\s*=\\s*(\\w+)\\s*\\[([^\\]]+)\\]",
+  "Plan\\s*\\d*:\\s*([^#]+)\\s*(#E\\d+)\\s*=\\s*(\\w+)\\s*\\<(.*?)\\>",
   "g",
 );
 
