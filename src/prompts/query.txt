@@ -54,9 +54,7 @@ You are an expert PromQL query generator, specializing in diagnosing server issu
 ---
 
 ## Task
-- **User’s Request**: `{task}`
-- **Plan (from AI)**: `{plan}`
-- **Guessed PromQL Query (from AI)**: `{guessed_query}`
+- **User’s Input**: `{input}`
 
 ---
 

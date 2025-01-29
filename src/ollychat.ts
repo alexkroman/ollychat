@@ -58,9 +58,7 @@ const promQLTool = new DynamicTool({
     const values = await getExamples(_input, valuesExampleSelector, "value");
 
     const promptValue = await queryPromptTemplate.invoke({
-      guessed_query: _input,
-      plan: "my plan",
-      task: "some task",
+      input: _input,
       metrics,
       queries,
       values,
