@@ -121,8 +121,9 @@ async function toolExecution(
 
   const stepIndex = _getCurrentTask(state) || 0;
 
-  const [plan, , stepName, tool, toolInputTemplate] =
-    state.steps[stepIndex - 1];
+  const step = state.steps[stepIndex - 1];
+  const [plan /* stepId (unused) */, , stepName, tool, toolInputTemplate] =
+    step;
 
   const toolExecutors: Record<
     string,
