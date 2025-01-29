@@ -14,7 +14,7 @@ const app = new App({
 app.event("app_mention", async ({ event, say }) => {
   try {
     const messageText = event.text;
-    const results = await answerQuestion({ question: messageText });
+    const result = await answerQuestion({ question: messageText });
 
     await say({
       blocks: [
@@ -22,7 +22,7 @@ app.event("app_mention", async ({ event, say }) => {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: `✅ *Answer:*\n\`\`\`${results.result}\`\`\``,
+            text: `✅ *Answer:*\n\`\`\`${result.messages[result.messages.length - 1]}\`\`\``,
           },
         },
       ],

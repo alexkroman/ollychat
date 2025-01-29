@@ -43,7 +43,9 @@ export class CLI {
     const result = await answerQuestion({ question: messageText });
 
     console.log(
-      chalk.bold.green("✅ Answer: ") + chalk.magenta(result.result) + "\n",
+      chalk.bold.green("✅ Answer: ") +
+        chalk.magenta(result.messages[result.messages.length - 1].content) +
+        "\n",
     );
   }
 
