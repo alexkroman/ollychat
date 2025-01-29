@@ -33,5 +33,17 @@ Guidelines to Follow:
 
 Context:
 
+Relevent Prometheus Metric Names:
+```{metrics}```
+
+Relevant Prometheus Labels:
+```{labels}```
+
+Relevant Prometheus Values:
+```{values}```
+
+Relevant Prometheus Queries:
+```{queries}```
+
 User Question:
 {input}

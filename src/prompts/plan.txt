@@ -47,4 +47,18 @@ After you are finished describing the plans output the final result in JSON that
 ```
 Anytime a variable is listed as a command it must be listed directly, no ranges like #E1-E10 are allowed.
 
+Context:
+
+Relevent Prometheus Metric Names:
+```{metrics}```
+
+Relevant Prometheus Labels:
+```{labels}```
+
+Relevant Prometheus Values:
+```{values}```
+
+Relevant Prometheus Queries:
+```{queries}```
+
 Task: {task}

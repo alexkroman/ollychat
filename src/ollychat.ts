@@ -15,11 +15,50 @@ import { loadPromptFromFile } from "./utils/promptLoader.js";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { queryModel } from "./integrations/model.js";
 
+import {
+  metricsExampleSelector,
+  labelsExampleSelector,
+  valuesExampleSelector,
+  exampleSelector,
+} from "./integrations/vectorStore.js";
+
 import { z } from "zod";
 
 const search = new TavilySearchResults();
 
 const config = { configurable: { thread_id: uuidv4() } };
+
+async function getMetrics(input: string): Promise<{ metric?: string }[]> {
+  const metricExamples = await metricsExampleSelector.invoke(input);
+
+  return metricExamples.map((example) => ({
+    metric: example.metadata.metric,
+  }));
+}
+
+async function getLabels(input: string): Promise<{ label?: string }[]> {
+  const labelExamples = await labelsExampleSelector.invoke(input);
+  const filteredExamples = labelExamples.map((example) => ({
+    label: example?.metadata?.label,
+  }));
+  return filteredExamples;
+}
+
+async function getQueryExamples(input: string): Promise<{ query?: string }[]> {
+  const queryExamples = await exampleSelector.invoke(input);
+  const filteredExamples = queryExamples.map((example) => ({
+    query: example?.metadata?.query,
+  }));
+  return filteredExamples;
+}
+
+async function getValuesExamples(input: string): Promise<{ query?: string }[]> {
+  const valuesExamples = await valuesExampleSelector.invoke(input);
+  const filteredExamples = valuesExamples.map((example) => ({
+    query: example?.metadata?.value,
+  }));
+  return filteredExamples;
+}
 
 async function getPlan(
   state: typeof GraphState.State,
@@ -27,7 +66,16 @@ async function getPlan(
 ) {
   console.log("---GET PLAN---");
   const task = state.task;
+
   const plannerTemplate = loadPromptFromFile("plan");
+
+  const promptValue = await plannerTemplate.invoke({
+    task: task,
+    metrics: await getMetrics(task),
+    queries: await getQueryExamples(task),
+    values: await getValuesExamples(task),
+    labels: await getLabels(task),
+  });
 
   const stepSchema = z.object({
     plan: z.string(),
@@ -43,9 +91,7 @@ async function getPlan(
 
   const plannerModel = model.withStructuredOutput(dataSchema);
 
-  const planner = plannerTemplate.pipe(plannerModel);
-
-  const result = await planner.invoke({ task }, config);
+  const result = await plannerModel.invoke(promptValue, config);
 
   const steps = result.plan_steps.map((step) => [
     step.plan,
@@ -97,6 +143,10 @@ async function toolExecution(
       const queryPromptTemplate = loadPromptFromFile("query");
       const promptValue = await queryPromptTemplate.invoke({
         input: input,
+        metrics: await getMetrics(input),
+        queries: await getQueryExamples(input),
+        values: await getValuesExamples(input),
+        labels: await getLabels(input),
       });
       const result = await queryModel.invoke(promptValue, config);
       return prometheusQueryTool.invoke({ query: result.query });
@@ -163,7 +213,7 @@ async function solve(state: typeof GraphState.State, config?: RunnableConfig) {
     plan += `Plan: ${planDesc}\n`;
 
     if (value) {
-      plan += `Evidence: ${value}\n`;
+      plan += `Results: ${value}\n`;
     }
   }
 
