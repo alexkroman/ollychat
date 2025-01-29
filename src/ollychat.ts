@@ -109,7 +109,6 @@ const shouldContinue = (state: typeof MessagesAnnotation.State) => {
 const toolNodeForGraph = new ToolNode(tools);
 
 const workflow = new StateGraph(MessagesAnnotation)
-  // Define the two nodes we will cycle between
   .addNode("agent", getPlan)
   .addNode("tools", toolNodeForGraph)
   .addEdge(START, "agent")
