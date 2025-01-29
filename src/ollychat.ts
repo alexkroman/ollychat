@@ -71,10 +71,6 @@ async function getPlan(
 
   const promptValue = await plannerTemplate.invoke({
     task: task,
-    metrics: await getMetrics(task),
-    queries: await getQueryExamples(task),
-    values: await getValuesExamples(task),
-    labels: await getLabels(task),
   });
 
   const stepSchema = z.object({
@@ -125,7 +121,8 @@ async function toolExecution(
 
   const stepIndex = _getCurrentTask(state) || 0;
 
-  const [, , stepName, tool, toolInputTemplate] = state.steps[stepIndex - 1];
+  const [plan, , stepName, tool, toolInputTemplate] =
+    state.steps[stepIndex - 1];
 
   const toolExecutors: Record<
     string,
@@ -142,7 +139,9 @@ async function toolExecution(
     PromQL: async (input) => {
       const queryPromptTemplate = loadPromptFromFile("query");
       const promptValue = await queryPromptTemplate.invoke({
-        input: input,
+        guessed_query: input,
+        plan: plan,
+        task: state.task,
         metrics: await getMetrics(input),
         queries: await getQueryExamples(input),
         values: await getValuesExamples(input),
@@ -196,38 +195,25 @@ const solvePrompt = loadPromptFromFile("solve");
 
 async function solve(state: typeof GraphState.State, config?: RunnableConfig) {
   console.log("---SOLVE---");
-  const _results = state.results || {};
 
-  let plan = "";
+  const results = state.results || {};
+  const plan = state.steps.map(([planDesc, , stepName]) => {
+    const value =
+      results[stepName] ||
+      state.steps.find((step) => step.includes(stepName))?.[0] ||
+      null;
+    return value ? { plan: planDesc, results: value } : { plan: planDesc };
+  });
 
-  // Iterate through steps and generate the plan
-  for (const [planDesc, , stepName, ,] of state.steps) {
-    let value = _results[stepName]; // Retrieve the result for the key (e.g., #E1, #E2)
+  const planJSON = JSON.stringify(plan, null, 2);
 
-    // If no result found for the key, find the matching step
-    if (!value) {
-      const matchingStep = state.steps.find((step) => step.includes(stepName));
-      value = matchingStep ? matchingStep[0] : null; // Replace #E1 with the first element of the matching step, if any
-    }
-
-    plan += `Plan: ${planDesc}\n`;
-
-    if (value) {
-      plan += `Results: ${value}\n`;
-    }
-  }
-
-  // Invoke the prompt and get the result
-  const result = await solvePrompt
+  const { content } = await solvePrompt
     .pipe(model)
-    .invoke({ plan, task: state.task }, config);
+    .invoke({ plan: planJSON, task: state.task }, config);
 
-  // Store the result in state
-  state.result = JSON.stringify(result.content);
+  state.result = JSON.stringify(content);
 
-  return {
-    result: result.content.toString(),
-  };
+  return { result: content.toString() };
 }
 
 const _route = (state: typeof GraphState.State) => {

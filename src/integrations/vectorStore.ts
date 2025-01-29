@@ -25,7 +25,7 @@ export const ValuesVectorStore = new Chroma(embeddings, {
 export const metricsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
   MetricsVectorStore,
   {
-    minSimilarityScore: 0.4,
+    minSimilarityScore: 0.2,
     maxK: 5,
   },
 );
@@ -33,7 +33,7 @@ export const metricsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
 export const labelsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
   LabelsVectorStore,
   {
-    minSimilarityScore: 0.4,
+    minSimilarityScore: 0.2,
     maxK: 5,
   },
 );
@@ -41,7 +41,7 @@ export const labelsExampleSelector = ScoreThresholdRetriever.fromVectorStore(
 export const valuesExampleSelector = ScoreThresholdRetriever.fromVectorStore(
   ValuesVectorStore,
   {
-    minSimilarityScore: 0.4,
+    minSimilarityScore: 0.2,
     maxK: 5,
   },
 );

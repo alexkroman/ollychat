@@ -15,7 +15,7 @@ const customHandler = {
 export const model = new ChatOpenAI({
   openAIApiKey: config.openAIApiKey,
   model: config.openAIModel,
-  temperature: 0,
+  temperature: 0.7,
   callbacks: [customHandler],
 });
 
