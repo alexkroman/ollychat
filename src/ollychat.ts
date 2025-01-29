@@ -5,7 +5,7 @@ import {
   StateGraph,
   MemorySaver,
 } from "@langchain/langgraph";
-import { RunnableConfig } from "@langchain/core/runnables";
+import { Runnable, RunnableConfig } from "@langchain/core/runnables";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -28,36 +28,19 @@ const search = new TavilySearchResults();
 
 const config = { configurable: { thread_id: uuidv4() } };
 
-async function getMetrics(input: string): Promise<{ metric?: string }[]> {
-  const metricExamples = await metricsExampleSelector.invoke(input);
-
-  return metricExamples.map((example) => ({
-    metric: example.metadata.metric,
-  }));
+interface ExampleItem {
+  metadata?: Record<string, string | undefined>;
 }
 
-async function getLabels(input: string): Promise<{ label?: string }[]> {
-  const labelExamples = await labelsExampleSelector.invoke(input);
-  const filteredExamples = labelExamples.map((example) => ({
-    label: example?.metadata?.label,
+export async function getExamples(
+  input: string,
+  selector: Runnable<string, ExampleItem[]>,
+  key: string,
+): Promise<Array<Record<string, string | undefined>>> {
+  const examples = await selector.invoke(input);
+  return examples.map((ex) => ({
+    [key]: ex.metadata?.[key],
   }));
-  return filteredExamples;
-}
-
-async function getQueryExamples(input: string): Promise<{ query?: string }[]> {
-  const queryExamples = await exampleSelector.invoke(input);
-  const filteredExamples = queryExamples.map((example) => ({
-    query: example?.metadata?.query,
-  }));
-  return filteredExamples;
-}
-
-async function getValuesExamples(input: string): Promise<{ query?: string }[]> {
-  const valuesExamples = await valuesExampleSelector.invoke(input);
-  const filteredExamples = valuesExamples.map((example) => ({
-    query: example?.metadata?.value,
-  }));
-  return filteredExamples;
 }
 
 async function getPlan(
@@ -139,14 +122,18 @@ async function toolExecution(
     },
     PromQL: async (input) => {
       const queryPromptTemplate = loadPromptFromFile("query");
+      const metrics = getExamples(input, metricsExampleSelector, "metric");
+      const labels = getExamples(input, labelsExampleSelector, "label");
+      const queries = getExamples(input, exampleSelector, "query");
+      const values = getExamples(input, valuesExampleSelector, "value");
       const promptValue = await queryPromptTemplate.invoke({
         guessed_query: input,
         plan: plan,
         task: state.task,
-        metrics: await getMetrics(input),
-        queries: await getQueryExamples(input),
-        values: await getValuesExamples(input),
-        labels: await getLabels(input),
+        metrics: metrics,
+        queries: queries,
+        values: values,
+        labels: labels,
       });
       const result = await queryModel.invoke(promptValue, config);
       return prometheusQueryTool.invoke({ query: result.query });
