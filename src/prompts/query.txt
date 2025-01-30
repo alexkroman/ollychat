@@ -38,16 +38,19 @@ Avoid adding or removing metrics arbitrarily; only adjust based on newly clarifi
 Context
 
 Example Prometheus Metric Names:
-{metrics}
+```{metrics}```
 
 Example Prometheus Labels:
-{labels}
+```{labels}```
 
 Example Prometheus Values:
-{values}
+```{values}```
 
 Example Prometheus Queries:
-{queries}
+```{queries}```
+
+Google Search Context:
+```{searchContext}```
 
 User’s Input: {input}
 

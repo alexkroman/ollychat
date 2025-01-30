@@ -23,5 +23,5 @@ export const config = {
   // Logging Configuration
   logging: !process.execArgv.includes("--no-warnings"),
 
-  configurable: { thread_id: uuidv4() },
+  configurable: { thread_id: uuidv4(), recursion_limit: 5 },
 };

@@ -69,16 +69,21 @@ export async function getExamples(
   }));
 }
 
-const promQLTool = new DynamicTool({
-  name: "PromQL",
+const prometheusQueryAssistant = new DynamicTool({
+  name: "prometheusQueryAssistant",
   description:
-    "A tool for querying Prometheus. This is helpful whenever a user is asking for information about their infrastructure or services.",
+    "A tool that queries Prometheus with natural language input. This is helpful whenever a user is asking a question that a an engineer who can effectively query Prometheus could answer",
   func: async (_input: string) => {
     const queryPromptTemplate = loadPromptFromFile("query");
-    const metrics = getExamples(_input, metricsExampleSelector, "metric");
-    const labels = getExamples(_input, labelsExampleSelector, "label");
-    const queries = getExamples(_input, exampleSelector, "query");
-    const values = getExamples(_input, valuesExampleSelector, "value");
+    const [metrics, labels, queries, values, searchContext] = await Promise.all(
+      [
+        getExamples(_input, metricsExampleSelector, "metric"),
+        getExamples(_input, labelsExampleSelector, "label"),
+        getExamples(_input, exampleSelector, "query"),
+        getExamples(_input, valuesExampleSelector, "value"),
+        searchTool.invoke("PromQL syntax to: " + _input),
+      ],
+    );
 
     const promptValue = await queryPromptTemplate.invoke({
       input: _input,
@@ -86,23 +91,25 @@ const promQLTool = new DynamicTool({
       queries,
       values,
       labels,
+      searchContext, // Add search context
     });
-
-    const result = await queryModel.invoke(promptValue, config);
-    return prometheusQueryTool.invoke({ query: result.query });
+    console.log(promptValue);
+    const promQL = await queryModel.invoke(promptValue, config);
+    return prometheusQueryTool.invoke({ query: promQL.query });
   },
 });
 
-const LLMTool = new DynamicTool({
-  name: "LLM",
-  description: "A tool for querying the language model.",
+const llmReasoningTool = new DynamicTool({
+  name: "llmReasoningTool",
+  description:
+    "A general-purpose reasoning tool that queries an advanced language model to generate insights, analyze data, or assist with open-ended questions.",
   func: async (_input: string) => {
     const result = await model.invoke(_input, config);
     return result.content;
   },
 });
 
-const tools = [LLMTool, promQLTool, searchTool];
+const tools = [llmReasoningTool, prometheusQueryAssistant, searchTool];
 
 const agent = await createReactAgent({
   llm: model,

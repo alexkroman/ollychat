@@ -30,6 +30,7 @@ export const prometheusQueryTool = new DynamicStructuredTool({
 
 async function queryPrometheus(query: string): Promise<string> {
   try {
+    console.log("Prometheus Query: " + query);
     const response = await axios.get<PrometheusQueryResponse>(
       `${PROMETHEUS_URL}/api/v1/query`,
       { params: { query }, timeout: QUERY_TIMEOUT },
