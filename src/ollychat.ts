@@ -7,7 +7,6 @@ import {
 } from "@langchain/langgraph";
 import { Runnable } from "@langchain/core/runnables";
 
-import { prometheusQueryTool } from "./integrations/prometheus.js";
 import { loadPromptFromFile } from "./utils/promptLoader.js";
 import { DynamicTool } from "@langchain/core/tools";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
@@ -24,6 +23,13 @@ import {
   valuesExampleSelector,
   exampleSelector,
 } from "./integrations/vectorStore.js";
+
+import { PrometheusDriver } from "prometheus-query";
+
+const prom = new PrometheusDriver({
+  endpoint: config.prometheusUrl,
+  baseURL: "/api/v1",
+});
 
 export const model = new ChatOpenAI({
   openAIApiKey: config.openAIApiKey,
@@ -95,7 +101,7 @@ const prometheusQueryAssistant = new DynamicTool({
     });
     console.log(promptValue);
     const promQL = await queryModel.invoke(promptValue, config);
-    return prometheusQueryTool.invoke({ query: promQL.query });
+    return prom.instantQuery(promQL.query);
   },
 });
 
