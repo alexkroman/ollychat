@@ -7,16 +7,15 @@ import {
 } from "@langchain/langgraph";
 import { Runnable } from "@langchain/core/runnables";
 
-import { v4 as uuidv4 } from "uuid";
-
-import { model } from "./integrations/model.js";
 import { prometheusQueryTool } from "./integrations/prometheus.js";
 import { loadPromptFromFile } from "./utils/promptLoader.js";
-//import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
-import { queryModel } from "./integrations/model.js";
 import { DynamicTool } from "@langchain/core/tools";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { createReactAgent } from "@langchain/langgraph/prebuilt";
+import { config } from "./config/config.js";
+import { z } from "zod";
+import { ChatOpenAI } from "@langchain/openai";
+import { parser } from "@prometheus-io/lezer-promql";
 
 import {
   metricsExampleSelector,
@@ -25,11 +24,30 @@ import {
   exampleSelector,
 } from "./integrations/vectorStore.js";
 
-//const searchTool = new TavilySearchResults().asTool;
+export const model = new ChatOpenAI({
+  openAIApiKey: config.openAIApiKey,
+  model: config.openAIModel,
+  temperature: 0.7,
+});
+
+const queryOutput = z.object({
+  query: z
+    .string()
+    .min(1, "PromQL query cannot be empty.")
+    .refine((query) => {
+      try {
+        const tree = parser.parse(query);
+        return tree?.length > 0; // Ensure there's a valid parse tree
+      } catch {
+        return false;
+      }
+    }, "Invalid PromQL syntax.")
+    .describe("Syntactically valid PromQL (Prometheus) query."),
+});
+
+export const queryModel = model.withStructuredOutput(queryOutput);
 
 const agentCheckpointer = new MemorySaver();
-
-const config = { configurable: { thread_id: uuidv4() } };
 
 interface ExampleItem {
   metadata?: Record<string, string | undefined>;
@@ -81,16 +99,14 @@ const LLMTool = new DynamicTool({
 
 const tools = [LLMTool, promQLTool];
 
+const agent = await createReactAgent({
+  llm: model,
+  tools,
+  checkpointSaver: agentCheckpointer,
+});
+
 const getPlan = async (state: typeof MessagesAnnotation.State) => {
-  const agent = await createReactAgent({
-    llm: model,
-    tools,
-    checkpointSaver: agentCheckpointer,
-  });
-
-  const result = await agent.invoke({ messages: state.messages }, config);
-
-  return result;
+  return agent.invoke({ messages: state.messages }, config);
 };
 
 const shouldContinue = (state: typeof MessagesAnnotation.State) => {

@@ -1,5 +1,5 @@
 import { requireEnv } from "../utils/config.js";
-
+import { v4 as uuidv4 } from "uuid";
 import * as dotenv from "dotenv";
 
 dotenv.config();
@@ -22,4 +22,6 @@ export const config = {
 
   // Logging Configuration
   logging: !process.execArgv.includes("--no-warnings"),
+
+  configurable: { thread_id: uuidv4() },
 };

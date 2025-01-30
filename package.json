@@ -16,6 +16,7 @@
   "dependencies": {
     "@langchain/community": "^0.3.24",
     "@langchain/langgraph": "^0.2.40",
+    "@prometheus-io/lezer-promql": "^0.301.0",
     "@slack/bolt": "^4.2.0",
     "chalk": "^5.4.1",
     "chromadb": "^1.10.3",

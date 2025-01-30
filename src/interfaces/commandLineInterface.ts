@@ -41,10 +41,11 @@ export class CLI {
     console.log(chalk.green("\nQuerying..."));
 
     const result = await answerQuestion({ question: messageText });
+    const lastMessage = result.messages[result.messages.length - 1];
 
     console.log(
       chalk.bold.green("✅ Answer: ") +
-        chalk.magenta(result.messages[result.messages.length - 1].content) +
+        chalk.magenta(lastMessage.content) +
         "\n",
     );
   }
