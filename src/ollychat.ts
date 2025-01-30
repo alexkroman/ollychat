@@ -10,6 +10,7 @@ import { Runnable } from "@langchain/core/runnables";
 import { prometheusQueryTool } from "./integrations/prometheus.js";
 import { loadPromptFromFile } from "./utils/promptLoader.js";
 import { DynamicTool } from "@langchain/core/tools";
+import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { config } from "./config/config.js";
@@ -28,6 +29,10 @@ export const model = new ChatOpenAI({
   openAIApiKey: config.openAIApiKey,
   model: config.openAIModel,
   temperature: 0.7,
+});
+
+const searchTool = new TavilySearchResults({
+  maxResults: 1,
 });
 
 const queryOutput = z.object({
@@ -66,14 +71,14 @@ export async function getExamples(
 
 const promQLTool = new DynamicTool({
   name: "PromQL",
-  description: "A tool for querying Prometheus.",
+  description:
+    "A tool for querying Prometheus. This is helpful whenever a user is asking for information about their infrastructure or services.",
   func: async (_input: string) => {
     const queryPromptTemplate = loadPromptFromFile("query");
-
-    const metrics = await getExamples(_input, metricsExampleSelector, "metric");
-    const labels = await getExamples(_input, labelsExampleSelector, "label");
-    const queries = await getExamples(_input, exampleSelector, "query");
-    const values = await getExamples(_input, valuesExampleSelector, "value");
+    const metrics = getExamples(_input, metricsExampleSelector, "metric");
+    const labels = getExamples(_input, labelsExampleSelector, "label");
+    const queries = getExamples(_input, exampleSelector, "query");
+    const values = getExamples(_input, valuesExampleSelector, "value");
 
     const promptValue = await queryPromptTemplate.invoke({
       input: _input,
@@ -97,7 +102,7 @@ const LLMTool = new DynamicTool({
   },
 });
 
-const tools = [LLMTool, promQLTool];
+const tools = [LLMTool, promQLTool, searchTool];
 
 const agent = await createReactAgent({
   llm: model,

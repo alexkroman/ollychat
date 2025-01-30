@@ -38,7 +38,7 @@ export class CLI {
       return;
     }
 
-    console.log(chalk.green("\nQuerying..."));
+    console.log(chalk.green("\nQuerying...\n"));
 
     const result = await answerQuestion({ question: messageText });
     const lastMessage = result.messages[result.messages.length - 1];
