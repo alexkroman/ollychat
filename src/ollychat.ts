@@ -75,6 +75,14 @@ const queriesModel = model.withStructuredOutput(queriesOutput);
 
 const agentCheckpointer = new MemorySaver();
 
+const metricQuery = await prom.instantQuery(
+  'group by(__name__) ({__name__!=""})',
+);
+
+const metricNames = metricQuery.result
+  .map((entry: { metric: { name: string } }) => entry.metric.name)
+  .join(", ");
+
 const prometheusQueryAssistant = new DynamicTool({
   name: "systemAssistant",
   description:
@@ -82,14 +90,6 @@ const prometheusQueryAssistant = new DynamicTool({
   func: async (_input: string): Promise<Record<string, unknown>> => {
     try {
       const getMetricsPromptTemplate = loadPromptFromFile("getMetrics");
-
-      const metricQuery = await prom.instantQuery(
-        'group by(__name__) ({__name__!=""})',
-      );
-
-      const metricNames = metricQuery.result
-        .map((entry: { metric: { name: string } }) => entry.metric.name)
-        .join(", ");
 
       const promptValue = await getMetricsPromptTemplate.invoke({
         input: _input,
