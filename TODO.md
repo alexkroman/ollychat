@@ -21,7 +21,7 @@ Please add to this file interesting questions that get answers for you as well a
 - restart count by pod
 - is docker working?
 
-## Questions that give wrong answers
+## Questions that give wrong answers (need to fix)
 
 - what is my total memory
 - how many node pools do I have?
@@ -29,7 +29,7 @@ Please add to this file interesting questions that get answers for you as well a
 - storage requested
 - storage allocatable
 
-## Questions that don't get answers
+## Questions that don't get answers (need to fix)
 
 - How many pods are running in us-central1
   

@@ -20,6 +20,9 @@ export const config = {
   chromaLabelsIndex: requireEnv("CHROMA_LABELS_INDEX"),
   chromaValuesIndex: requireEnv("CHROMA_VALUES_INDEX"),
 
+  langSmithApiUrl: requireEnv("LANGSMITH_API_URL"),
+  langSmithApiKey: requireEnv("LANGSMITH_API_KEY"),
+
   // Logging Configuration
   logging: !process.execArgv.includes("--no-warnings"),
 
