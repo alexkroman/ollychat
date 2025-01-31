@@ -1,4 +1,5 @@
 export default {
+    preset: "ts-jest/presets/default-esm",
     transform: {
       "^.+\\.(ts|tsx)$": ["babel-jest", { configFile: "./babel.config.js" }],
     },

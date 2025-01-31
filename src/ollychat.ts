@@ -98,7 +98,7 @@ const prometheusQueryAssistant = new DynamicTool({
 
       const promptValue = await getMetricsPromptTemplate.invoke({
         input: _input,
-        getMetricNames,
+        metricNames: getMetricNames,
       });
 
       const metricResults = (await metricModel.invoke(promptValue, config))
@@ -207,5 +207,5 @@ export const answerQuestion = async (inputs: { question: string }) => {
 
   const result = await app.invoke({ messages: input }, config);
   const lastMessage = result.messages[result.messages.length - 1];
-  return lastMessage;
+  return lastMessage.content;
 };
