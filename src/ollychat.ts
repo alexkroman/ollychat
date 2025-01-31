@@ -15,6 +15,7 @@ import { config } from "./config/config.js";
 import { z } from "zod";
 import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
+import { parser } from "@prometheus-io/lezer-promql";
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
@@ -32,9 +33,13 @@ const searchTool = new TavilySearchResults({
 });
 
 const metricSchema = z.object({
-  name: z.string().describe("The name of the PromQL Metric"),
+  name: z
+    .string()
+    .describe("The name of the PromQL Metric")
+    .min(1, "PromQL metric can not be empty"),
   description: z
     .string()
+    .min(1, "PromQL description can not be empty")
     .describe(
       "A description of the PromQL metric that an LLM can use to determine how to best create a promQL query",
     ),
@@ -47,7 +52,18 @@ const metricOutput = z.object({
 const metricModel = model.withStructuredOutput(metricOutput);
 
 const queriesSchema = z.object({
-  query: z.string().describe("A snytatically valid PromQL query"),
+  query: z
+    .string()
+    .describe("Syntactically valid PromQL query")
+    .min(1, "PromQL query cannot be empty.")
+    .refine((query) => {
+      try {
+        const tree = parser.parse(query);
+        return tree?.length > 0; // Ensure there's a valid parse tree
+      } catch {
+        return false;
+      }
+    }, "Invalid PromQL syntax."),
   description: z.string().describe("A description of the PromQL query"),
 });
 
@@ -120,7 +136,6 @@ const prometheusQueryAssistant = new DynamicTool({
         results[index] = { query, description, result };
       });
 
-      console.log("Final results: ", results);
       return results;
     } catch (error) {
       console.error("Error in systemAssistant tool:", error);
