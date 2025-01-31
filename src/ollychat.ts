@@ -116,8 +116,8 @@ const prometheusQueryAssistant = new DynamicTool({
       const results: Record<string, unknown> = {};
       const resolvedQueries = await Promise.all(queryPromises);
 
-      resolvedQueries.forEach(({ query, description, result }) => {
-        results[query] = { query, description, result };
+      resolvedQueries.forEach(({ query, description, result }, index) => {
+        results[index] = { query, description, result };
       });
 
       console.log("Final results: ", results);

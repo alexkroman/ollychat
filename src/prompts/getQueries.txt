@@ -1,5 +1,24 @@
-Create the PromQL queries for each of the available metrics below whose results can be passed back to an LLM to answer the question: {input}
+You have a user question: {input}
+You also have a list of available metrics: {metricResults}
 
-Metrics to Create PromQL queries for:
-{metricResults}
+For each metric in {metricResults}:
+
+# Explain the user question
+- Briefly summarize the user's question in your own words. 
+- Clarify what the user is trying to understand or achieve.
+
+# Explain the metric
+- Briefly describe what the metric measures.
+- Clarify why it might help answer the user’s question.
+
+# Provide PromQL query/queries
+- Include valid PromQL query(ies) that retrieve the most relevant data for {input}.
+- Make sure the queries are specific, efficient, and directly aligned with the user’s question.
+
+# Justify any filters or parameters
+- Explain how you apply filters (labels, time ranges, etc.).
+- Describe any aggregations or other parameters that refine the results.
+
+Your overall goal is to produce a set of PromQL queries that will help an LLM give a meaningful, data-informed response to {input}.
+
 
