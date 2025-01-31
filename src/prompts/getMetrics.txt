@@ -1,0 +1,5 @@
+Select the metrics most likely needed to answer the user question: "{input}" in Prometheus out of the list available metrics below.
+
+Available Metrics:
+
+{metricNames}

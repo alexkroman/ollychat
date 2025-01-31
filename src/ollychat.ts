@@ -5,7 +5,6 @@ import {
   MemorySaver,
   MessagesAnnotation,
 } from "@langchain/langgraph";
-import { Runnable } from "@langchain/core/runnables";
 
 import { loadPromptFromFile } from "./utils/promptLoader.js";
 import { DynamicTool } from "@langchain/core/tools";
@@ -15,15 +14,6 @@ import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { config } from "./config/config.js";
 import { z } from "zod";
 import { ChatOpenAI } from "@langchain/openai";
-import { parser } from "@prometheus-io/lezer-promql";
-
-import {
-  metricsExampleSelector,
-  labelsExampleSelector,
-  valuesExampleSelector,
-  exampleSelector,
-} from "./integrations/vectorStore.js";
-
 import { PrometheusDriver } from "prometheus-query";
 
 const prom = new PrometheusDriver({
@@ -41,67 +31,101 @@ const searchTool = new TavilySearchResults({
   maxResults: 1,
 });
 
-const queryOutput = z.object({
-  query: z
+const metricSchema = z.object({
+  name: z.string().describe("The name of the PromQL Metric"),
+  description: z
     .string()
-    .min(1, "PromQL query cannot be empty.")
-    .refine((query) => {
-      try {
-        const tree = parser.parse(query);
-        return tree?.length > 0; // Ensure there's a valid parse tree
-      } catch {
-        return false;
-      }
-    }, "Invalid PromQL syntax.")
-    .describe("Syntactically valid PromQL (Prometheus) query."),
+    .describe(
+      "A description of the PromQL metric that an LLM can use to determine how to best create a promQL query",
+    ),
 });
 
-export const queryModel = model.withStructuredOutput(queryOutput);
+const metricOutput = z.object({
+  metrics: z.array(metricSchema),
+});
+
+const metricModel = model.withStructuredOutput(metricOutput);
+
+const queriesSchema = z.object({
+  query: z.string().describe("A snytatically valid PromQL query"),
+  description: z.string().describe("A description of the PromQL query"),
+});
+
+const queriesOutput = z.object({
+  queries: z.array(queriesSchema),
+});
+
+const queriesModel = model.withStructuredOutput(queriesOutput);
 
 const agentCheckpointer = new MemorySaver();
 
-interface ExampleItem {
-  metadata?: Record<string, string | undefined>;
-}
-
-export async function getExamples(
-  input: string,
-  selector: Runnable<string, ExampleItem[]>,
-  key: string,
-): Promise<Array<Record<string, string | undefined>>> {
-  const examples = await selector.invoke(input, config);
-  return examples.map((ex) => ({
-    [key]: ex.metadata?.[key],
-  }));
-}
-
 const prometheusQueryAssistant = new DynamicTool({
-  name: "prometheusQueryAssistant",
+  name: "systemAssistant",
   description:
-    "A tool that queries Prometheus with natural language input. This is helpful whenever a user is asking a question that a an engineer who can effectively query Prometheus could answer",
-  func: async (_input: string) => {
-    const queryPromptTemplate = loadPromptFromFile("query");
-    const [metrics, labels, queries, values, searchContext] = await Promise.all(
-      [
-        getExamples(_input, metricsExampleSelector, "metric"),
-        getExamples(_input, labelsExampleSelector, "label"),
-        getExamples(_input, exampleSelector, "query"),
-        getExamples(_input, valuesExampleSelector, "value"),
-        searchTool.invoke("PromQL syntax to: " + _input),
-      ],
-    );
+    "A tool that turns user input into prometheus results about infrastructure and services. Use this whenever a user has input that an AI who knows everything about a system, infrastructure, and services could answer.",
+  func: async (_input: string): Promise<Record<string, unknown>> => {
+    try {
+      const getMetricsPromptTemplate = loadPromptFromFile("getMetrics");
 
-    const promptValue = await queryPromptTemplate.invoke({
-      input: _input,
-      metrics,
-      queries,
-      values,
-      labels,
-      searchContext, // Add search context
-    });
-    console.log(promptValue);
-    const promQL = await queryModel.invoke(promptValue, config);
-    return prom.instantQuery(promQL.query);
+      const metricQuery = await prom.instantQuery(
+        'group by(__name__) ({__name__!=""})',
+      );
+
+      const metricNames = metricQuery.result
+        .map((entry: { metric: { name: string } }) => entry.metric.name)
+        .join(", ");
+
+      const promptValue = await getMetricsPromptTemplate.invoke({
+        input: _input,
+        metricNames,
+      });
+
+      const metricResults = (await metricModel.invoke(promptValue, config))
+        .metrics;
+
+      const getQueriesPromptTemplate = loadPromptFromFile("getQueries");
+
+      const queryPromptValue = await getQueriesPromptTemplate.invoke({
+        input: _input,
+        metricResults,
+      });
+
+      const queryResults = await queriesModel.invoke(queryPromptValue, config);
+
+      const queryPromises = queryResults.queries.map(
+        async ({
+          query,
+          description,
+        }: {
+          query: string;
+          description: string;
+        }) => {
+          let result = "";
+          await prom.instantQuery(query).then((res) => {
+            const series = res.result;
+            series.forEach((serie) => {
+              result += "Metric:" + serie.metric.toString() + "\n";
+              result += "Timestamp:" + serie.value.time + "\n";
+              result += "Value:" + serie.value.value + "\n";
+            });
+          });
+          return { query, description, result };
+        },
+      );
+
+      const results: Record<string, unknown> = {};
+      const resolvedQueries = await Promise.all(queryPromises);
+
+      resolvedQueries.forEach(({ query, description, result }) => {
+        results[query] = { description, result };
+      });
+
+      console.log("Final results:", results);
+      return results;
+    } catch (error) {
+      console.error("Error in systemAssistant tool:", error);
+      return { error: (error as Error).message || "An unknown error occurred" };
+    }
   },
 });
 

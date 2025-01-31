@@ -1,0 +1,5 @@
+Create the PromQL queries for each of the available metrics below whose results can be passed back to an LLM to answer the question: {input}
+
+Metrics to Create PromQL queries for:
+{metricResults}
+

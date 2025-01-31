@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "command": "npm start:cli",
+        "name": "Start CLI",
+        "request": "launch",
+        "type": "node-terminal"
+      },
+        
+      {
+        "name": "Debug CLI",
+        "type": "node",
+        "request": "attach",
+        "restart": true,
+        "port": 9229
+      }
+    ]
+  }
