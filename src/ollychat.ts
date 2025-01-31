@@ -104,9 +104,9 @@ const prometheusQueryAssistant = new DynamicTool({
           await prom.instantQuery(query).then((res) => {
             const series = res.result;
             series.forEach((serie) => {
-              result += "Metric:" + serie.metric.toString() + "\n";
-              result += "Timestamp:" + serie.value.time + "\n";
-              result += "Value:" + serie.value.value + "\n";
+              result += "Metric: " + serie.metric.toString() + "\n";
+              result += "Timestamp: " + serie.value.time + "\n";
+              result += "Value: " + serie.value.value + "\n";
             });
           });
           return { query, description, result };
@@ -117,10 +117,10 @@ const prometheusQueryAssistant = new DynamicTool({
       const resolvedQueries = await Promise.all(queryPromises);
 
       resolvedQueries.forEach(({ query, description, result }) => {
-        results[query] = { description, result };
+        results[query] = { query, description, result };
       });
 
-      console.log("Final results:", results);
+      console.log("Final results: ", results);
       return results;
     } catch (error) {
       console.error("Error in systemAssistant tool:", error);
