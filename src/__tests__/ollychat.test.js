@@ -1,4 +1,3 @@
-// __tests__/ollychat.test.mjs
 import { jest } from "@jest/globals";
 import { describe, test, expect, beforeEach } from "@jest/globals";
 
