@@ -75,13 +75,18 @@ const queriesModel = model.withStructuredOutput(queriesOutput);
 
 const agentCheckpointer = new MemorySaver();
 
-const metricQuery = await prom.instantQuery(
-  'group by(__name__) ({__name__!=""})',
-);
-
-const metricNames = metricQuery.result
-  .map((entry: { metric: { name: string } }) => entry.metric.name)
-  .join(", ");
+let metricNamesCache: string | null = null;
+const getMetricNames = async () => {
+  if (!metricNamesCache) {
+    const metricQuery = await prom.instantQuery(
+      'group by(__name__) ({__name__!=""})',
+    );
+    metricNamesCache = metricQuery.result
+      .map((entry: { metric: { name: string } }) => entry.metric.name)
+      .join(", ");
+  }
+  return metricNamesCache;
+};
 
 const prometheusQueryAssistant = new DynamicTool({
   name: "systemAssistant",
@@ -93,7 +98,7 @@ const prometheusQueryAssistant = new DynamicTool({
 
       const promptValue = await getMetricsPromptTemplate.invoke({
         input: _input,
-        metricNames,
+        getMetricNames,
       });
 
       const metricResults = (await metricModel.invoke(promptValue, config))
@@ -199,5 +204,8 @@ export const answerQuestion = async (inputs: { question: string }) => {
       content: inputs.question,
     },
   ];
-  return await app.invoke({ messages: input }, config);
+
+  const result = await app.invoke({ messages: input }, config);
+  const lastMessage = result.messages[result.messages.length - 1];
+  return lastMessage;
 };
