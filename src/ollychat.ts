@@ -11,6 +11,7 @@ import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { config } from "./config/config.js";
+import { logger } from "./utils/logger.js";
 import { z } from "zod";
 import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
@@ -145,7 +146,7 @@ const prometheusQueryAssistant = new DynamicTool({
 
       return results;
     } catch (error) {
-      console.error("Error in systemAssistant tool:", error);
+      logger.error("Error in systemAssistant tool:", error);
       return { error: (error as Error).message || "An unknown error occurred" };
     }
   },
