@@ -1,5 +1,4 @@
-import { type Example, Run } from "langsmith";
-import { evaluate, EvaluationResult } from "langsmith/evaluation";
+import { evaluate } from "langsmith/evaluation";
 import { config } from "../config/config.js";
 import { app } from "../ollychat.js";
 
@@ -23,26 +22,9 @@ const runGraph = async (
   return await app.invoke(formattedInput, config);
 };
 
-const evaluatePost = (run: Run, example?: Example): EvaluationResult => {
-  if (!example) {
-    throw new Error("No example provided");
-  }
-  if (!example.outputs) {
-    throw new Error("No example outputs provided");
-  }
-  if (!run.outputs) {
-    throw new Error("No run outputs provided");
-  }
-
-  // TODO: Implement evaluation logic
-  throw new Error("Evaluation logic not implemented");
-};
-
 async function runEval() {
-  const datasetName = "Sample dataset";
   await evaluate(runGraph, {
-    data: datasetName,
-    evaluators: [evaluatePost],
+    data: "Dataset update",
     experimentPrefix: "Ask Ollychat question",
   });
 }
