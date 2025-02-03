@@ -193,7 +193,7 @@ const workflow = new StateGraph(MessagesAnnotation)
   .addConditionalEdges("agent", shouldContinue, ["tools", END])
   .addEdge("tools", "agent");
 
-const app = workflow.compile({
+export const app = workflow.compile({
   checkpointer: agentCheckpointer,
 });
 

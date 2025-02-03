@@ -1,74 +1,50 @@
-import { z } from "zod";
-import { zodResponseFormat } from "openai/helpers/zod";
-import type { EvaluationResult } from "langsmith/evaluation";
-import { evaluate } from "langsmith/evaluation";
-import OpenAI from "openai";
+import { type Example, Run } from "langsmith";
+import { evaluate, EvaluationResult } from "langsmith/evaluation";
 import { config } from "../config/config.js";
-import { answerQuestion } from "../ollychat.js";
+import { app } from "../ollychat.js";
 
-const openai = new OpenAI({ apiKey: config.openAIApiKey });
-
-// Define instructions for the LLM judge evaluator
-const instructions = `Evaluate Student Answer against Ground Truth for conceptual similarity and classify true or false: 
-- False: No conceptual match and similarity
-- True: Most or full conceptual match and similarity
-- Key criteria: Concept should match, not exact wording.
-`;
-
-// Define context for the LLM judge evaluator
-const context = `Ground Truth answer: {reference}; Student's Answer: {prediction}`;
-
-// Define output schema for the LLM judge
-const ResponseSchema = z.object({
-  score: z
-    .boolean()
-    .describe(
-      "Boolean that indicates whether the response is accurate relative to the reference answer",
-    ),
-});
-
-// Define LLM judge that grades the accuracy of the response relative to reference output
-async function accuracy({
-  outputs,
-  referenceOutputs,
-}: {
-  outputs?: Record<string, string>;
-  referenceOutputs?: Record<string, string>;
-}): Promise<EvaluationResult> {
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+const runGraph = async (
+  input: Record<string, unknown>,
+): Promise<Record<string, unknown>> => {
+  if (!input.question || typeof input.question !== "string") {
+    throw new Error(
+      "Invalid input: 'question' field is required and must be a string.",
+    );
+  }
+  const formattedInput = {
     messages: [
-      { role: "system", content: instructions },
       {
         role: "user",
-        content: context
-          .replace("{prediction}", outputs?.answer || "")
-          .replace("{reference}", referenceOutputs?.answer || ""),
+        content: input.question,
       },
     ],
-    response_format: zodResponseFormat(ResponseSchema, "response"),
-  });
-
-  return {
-    key: "accuracy",
-    score: ResponseSchema.parse(
-      JSON.parse(response.choices[0].message.content || ""),
-    ).score,
   };
+
+  return await app.invoke(formattedInput, config);
+};
+
+const evaluatePost = (run: Run, example?: Example): EvaluationResult => {
+  if (!example) {
+    throw new Error("No example provided");
+  }
+  if (!example.outputs) {
+    throw new Error("No example outputs provided");
+  }
+  if (!run.outputs) {
+    throw new Error("No run outputs provided");
+  }
+
+  // TODO: Implement evaluation logic
+  throw new Error("Evaluation logic not implemented");
+};
+
+async function runEval() {
+  const datasetName = "Sample dataset";
+  await evaluate(runGraph, {
+    data: datasetName,
+    evaluators: [evaluatePost],
+    experimentPrefix: "Ask Ollychat question",
+  });
 }
 
-// After running the evaluation, a link will be provided to view the results in langsmith
-await evaluate(
-  (exampleInput) => {
-    return answerQuestion(exampleInput.question);
-  },
-  {
-    data: "Sample dataset",
-    evaluators: [
-      accuracy,
-      // can add multiple evaluators here
-    ],
-    experimentPrefix: "first-eval-in-langsmith",
-    maxConcurrency: 2,
-  },
-);
+runEval().catch(console.error);
