@@ -1,3 +1,4 @@
+export const getQueries: string = `
 User input: {input}
 Metrics: {metricResults}
 
@@ -6,3 +7,5 @@ Generate a list of PromQL queries for every metric that will help an LLM give a 
 Task:
 - Briefly summarize the user's question in your own words.
 - Generate several queries from each metric in the above list
+
+`;

@@ -6,7 +6,6 @@ import {
   MessagesAnnotation,
 } from "@langchain/langgraph";
 
-import { loadPromptFromFile } from "./utils/promptLoader.js";
 import { DynamicTool } from "@langchain/core/tools";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
@@ -16,6 +15,9 @@ import { z } from "zod";
 import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
 import { parser } from "@prometheus-io/lezer-promql";
+import { getMetrics } from "./prompts/getMetrics.js";
+import { getQueries } from "./prompts/getQueries.js";
+import { PromptTemplate } from "@langchain/core/prompts.js";
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
@@ -94,7 +96,7 @@ const prometheusQueryAssistant = new DynamicTool({
     "A tool that turns user input into prometheus results about infrastructure and services. Use this whenever a user has input that an AI who knows everything about a system, infrastructure, and services could answer.",
   func: async (_input: string): Promise<Record<string, unknown>> => {
     try {
-      const getMetricsPromptTemplate = loadPromptFromFile("getMetrics");
+      const getMetricsPromptTemplate = PromptTemplate.fromTemplate(getMetrics);
 
       const promptValue = await getMetricsPromptTemplate.invoke({
         input: _input,
@@ -104,7 +106,7 @@ const prometheusQueryAssistant = new DynamicTool({
       const metricResults = (await metricModel.invoke(promptValue, config))
         .metrics;
 
-      const getQueriesPromptTemplate = loadPromptFromFile("getQueries");
+      const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
 
       const queryPromptValue = await getQueriesPromptTemplate.invoke({
         input: _input,

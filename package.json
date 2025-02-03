@@ -65,7 +65,8 @@
     "typescript-eslint": "^8.21.0"
   },
   "scripts": {
-    "build": "tsc && npm run copy-txt",
+    "build": "tsc",
+    "clean": "rm -rf dist",
     "lint": "eslint 'src/**/*.ts'",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "start-chroma": "chroma run > /dev/null 2>&1 & echo $! > .chroma_pid",
@@ -74,7 +75,6 @@
     "rebuild-training-data": "npm run start-chroma && npm run refresh-metrics && npm run refresh-examples",
     "refresh-metrics": "npm run metrics:import && npm run metrics:load",
     "refresh-examples": "npm run dashboards:import && npm run data:enrich && npm run examples:load",
-    "copy-txt": "mkdir -p dist/prompts && cp -R src/prompts/*.txt dist/prompts/",
     "debug:cli": "node --inspect-brk -r ts-node/register --loader ts-node/esm src/interfaces/commandLineInterface.ts",
     "start:cli": "npm run build && node --no-warnings dist/interfaces/commandLineInterface.js",
     "load:evals": "npm run build && node --no-warnings dist/evals/createInputs.js",
