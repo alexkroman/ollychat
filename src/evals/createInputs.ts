@@ -1,7 +1,30 @@
 import { Client } from "langsmith";
 import { config } from "../config/config.js";
 
-const examples = [["is my k8 cluster too small?", "yes"]];
+const examples = [
+  ["is my k8 cluster too small?", "yes"],
+  ["what region is my infra running in?", "yes"],
+  ["how many alerts?", "yes"],
+  ["how many unhealthy nodes?", "yes"],
+  ["how many pods are unschedulable?", "yes"],
+  ["how many nodes do I have?", "yes"],
+  ["what are my vCPUs?", "yes"],
+  ["what is my machine type?", "yes"],
+  ["is autoscaling on?", "yes"],
+  ["cpu requested of node gke-ollychat-demo-default-pool-7d2e27be-utyo", "yes"],
+  ["what is cpu requested of all nodes?", "yes"],
+  ["what is cpu requested of all nodes as mCPU", "yes"],
+  ["memory requested by node", "yes"],
+  ["memory allocatable by node", "yes"],
+  ["restart count by pod", "yes"],
+  ["is docker working?", "yes"],
+  ["what is my total memory", "yes"],
+  ["how many node pools do I have?", "yes"],
+  ["what is the pod ip range", "yes"],
+  ["storage requested", "yes"],
+  ["storage allocatable", "yes"],
+  ["How many pods are running in us-central1", "yes"],
+];
 
 const client = new Client({
   apiKey: config.langSmithApiKey,
