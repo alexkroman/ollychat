@@ -14,10 +14,10 @@ import { config } from "./config/config.js";
 import { z } from "zod";
 import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
+import { PromptTemplate } from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
 import { getMetrics } from "./prompts/getMetrics.js";
 import { getQueries } from "./prompts/getQueries.js";
-import { PromptTemplate } from "@langchain/core/prompts.js";
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,

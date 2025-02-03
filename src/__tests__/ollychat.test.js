@@ -111,20 +111,6 @@ jest.unstable_mockModule("@langchain/openai", () => {
     };
   });
   
-  // Mock the local util that loads prompt templates from files
-  jest.unstable_mockModule("../utils/promptLoader.js", () => {
-    return {
-      // The code calls e.g. `loadPromptFromFile("getMetrics").invoke({ ... })`
-      loadPromptFromFile: jest.fn().mockImplementation((/* fileName */) => {
-        // Return an object with an .invoke() method that returns a "prompt" string or object
-        return {
-          invoke: jest.fn().mockResolvedValue("Mocked Prompt"),
-        };
-      }),
-    };
-  });
-  
-
 // Now we can actually import the modules under test AFTER declaring mocks:
 const { answerQuestion } = await import("../ollychat.ts");
 const { ChatOpenAI } = await import("@langchain/openai");
