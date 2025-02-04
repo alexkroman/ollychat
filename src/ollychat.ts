@@ -96,7 +96,7 @@ const prometheusQueryAssistant = new DynamicTool({
             const series = res.result;
             series.forEach((serie) => {
               result.push({
-                metric: serie.metric,
+                metric: serie.metric.name,
                 timestamp: serie.value.time,
                 value: serie.value.value,
               });
