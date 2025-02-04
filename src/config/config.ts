@@ -23,7 +23,6 @@ export const config = {
   langSmithApiUrl: requireEnv("LANGSMITH_API_URL"),
   langSmithApiKey: requireEnv("LANGSMITH_API_KEY"),
 
-  // Logging Configuration
   logging: !process.execArgv.includes("--no-warnings"),
 
   configurable: { thread_id: uuidv4(), recursion_limit: 5 },
