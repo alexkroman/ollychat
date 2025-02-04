@@ -15,36 +15,22 @@ Ollychat is an open-source tool that allows you to interact with your observabil
 
 ### Prerequisites
 
-- [Docker](https://www.docker.com/) installed and running
-- [Node.js](https://nodejs.org/) (latest LTS version recommended)
 - Slack workspace (if using Slack integration)
-
-### Install ChromaDB
-
-ChromaDB is used for embedding storage. To install and run it using pip:
-
-```sh
-pip install chromadb 
-```
 
 ### Set Up the CLI
 
 1. Copy the example environment configuration:
 
    ```sh
-   mv config/env-example.example .env
+   cp config/example.env .env
    ```
 
 2. Edit the `.env` file with your specific values (such as Prometheus URL, authentication tokens, etc.).
 
-NPM INSTALL
-
-### Load training data before first run
-
-Run the following command to load the training data:
+3. Install dependencies 
 
 ```sh
-npm run load-data
+npm install
 ```
 
 ### Start the CLI
@@ -52,7 +38,7 @@ npm run load-data
 Run the following command to start the CLI mode:
 
 ```sh
-npm run start:cli
+npm run cli:start
 ```
 
 ### Set Up a Slack Bot (Optional)
@@ -73,15 +59,6 @@ To integrate Ollychat with Slack, follow these steps:
    - Import the manifest to configure the bot.
    - Install the app in your workspace and add it to a channel.
 
-## Configuration
-
-Ollychat requires environment variables to function properly. Below are some key configurations:
-
-- **PROMETHEUS_URL**: The URL of your Prometheus server.
-- **CHROMA_DB_HOST**: The host URL for ChromaDB.
-- **SLACK_BOT_TOKEN**: Authentication token for Slack integration.
-- **SLACK_SIGNING_SECRET**: Secret for verifying Slack requests.
-
 ## Development
 
 ### Running Locally
@@ -89,7 +66,7 @@ Ollychat requires environment variables to function properly. Below are some key
 For development purposes, you can run Ollychat locally with the following steps:
 
 ```sh
-npm run dev:cli
+npm run cli:dev
 ```
 
 ### Contributing

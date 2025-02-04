@@ -65,6 +65,7 @@
     "lint": "eslint 'src/**/*.ts'",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "cli:debug": "node --inspect-brk -r ts-node/register --loader ts-node/esm src/interfaces/commandLineInterface.ts",
+    "cli:dev": "npm run build && node dist/interfaces/commandLineInterface.js",
     "cli:start": "npm run build && node --no-warnings dist/interfaces/commandLineInterface.js",
     "evals:load": "npm run build && node --no-warnings dist/evals/createInputs.js",
     "evals:start": "npm run build && node --no-warnings dist/evals/evaluatorChain.js",
