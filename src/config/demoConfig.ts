@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-export const slackConfig = {
+export const config = {
   demoEmail: requireEnv("DEMO_EMAIL"),
   clusterName: requireEnv("CLUSTER_NAME"),
   region: requireEnv("REGION"),
