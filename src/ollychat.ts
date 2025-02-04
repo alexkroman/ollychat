@@ -40,12 +40,6 @@ const metricSchema = z.object({
     .string()
     .describe("The name of the PromQL Metric")
     .min(1, "PromQL metric can not be empty"),
-  description: z
-    .string()
-    .min(1, "PromQL description can not be empty")
-    .describe(
-      "A description of the PromQL metric that an LLM can use to determine how to best create a promQL query",
-    ),
 });
 
 const metricOutput = z.object({
@@ -67,7 +61,6 @@ const queriesSchema = z.object({
         return false;
       }
     }, "Invalid PromQL syntax."),
-  description: z.string().describe("A description of the PromQL query"),
 });
 
 const queriesOutput = z.object({
@@ -101,7 +94,7 @@ const prometheusQueryAssistant = new DynamicTool({
 
       const promptValue = await getMetricsPromptTemplate.invoke({
         input: _input,
-        metricNames: getMetricNames,
+        metricNames: await getMetricNames(),
       });
 
       const metricResults = (await metricModel.invoke(promptValue, config))
@@ -117,13 +110,7 @@ const prometheusQueryAssistant = new DynamicTool({
       const queryResults = await queriesModel.invoke(queryPromptValue, config);
 
       const queryPromises = queryResults.queries.map(
-        async ({
-          query,
-          description,
-        }: {
-          query: string;
-          description: string;
-        }) => {
+        async ({ query }: { query: string }) => {
           let result = "";
           await prom.instantQuery(query).then((res) => {
             const series = res.result;
@@ -133,15 +120,15 @@ const prometheusQueryAssistant = new DynamicTool({
               result += "Value: " + serie.value.value + "\n";
             });
           });
-          return { query, description, result };
+          return { query, result };
         },
       );
 
       const results: Record<string, unknown> = {};
       const resolvedQueries = await Promise.all(queryPromises);
 
-      resolvedQueries.forEach(({ query, description, result }, index) => {
-        results[index] = { query, description, result };
+      resolvedQueries.forEach(({ query, result }, index) => {
+        results[index] = { query, result };
       });
 
       return results;
@@ -164,7 +151,7 @@ const llmReasoningTool = new DynamicTool({
 
 const tools = [llmReasoningTool, prometheusQueryAssistant, searchTool];
 
-const agent = await createReactAgent({
+const agent = createReactAgent({
   llm: model,
   tools,
   checkpointSaver: agentCheckpointer,
