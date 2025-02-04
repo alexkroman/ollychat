@@ -73,6 +73,7 @@
     "create-demo-cluster": "node --loader ts-node/esm deploy/demos/create-cluster.ts",
     "install-online-boutique-demo": "node --loader ts-node/esm deploy/demos/install-online-boutique.ts",
     "install-prometheus-demo": "node --loader ts-node/esm deploy/demos/install-prometheus.ts",
+    "install-grafana-demo": "node --loader ts-node/esm deploy/demos/install-grafana.ts",
     "install-prometheus-load-balancer-demo": "node --loader ts-node/esm deploy/demos/install-prometheus-external.ts",
     "prepare": "husky"
   }
