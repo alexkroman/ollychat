@@ -1,13 +1,13 @@
 import slack from "@slack/bolt";
 import { answerQuestion } from "../ollychat.js";
-import { slackConfig } from "../config/slackConfig.js";
+import { config } from "../config/slackConfig.js";
 
 const { App } = slack;
 
 const app = new App({
-  token: slackConfig.slackBotToken,
-  signingSecret: slackConfig.slackSigningSecret,
-  appToken: slackConfig.slackAppToken,
+  token: config.slackBotToken,
+  signingSecret: config.slackSigningSecret,
+  appToken: config.slackAppToken,
   socketMode: true,
 });
 
@@ -37,8 +37,8 @@ app.event("app_mention", async ({ event, say }) => {
 
 const main = async () => {
   try {
-    await app.start(slackConfig.port);
-    console.log(`⚡️ Slack app is running on port ${slackConfig.port}!`);
+    await app.start(config.port);
+    console.log(`⚡️ Slack app is running on port ${config.port}!`);
   } catch (error) {
     console.error("Failed to start Slack app", error);
     process.exit(1);
