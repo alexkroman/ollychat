@@ -19,6 +19,7 @@ import { PromptTemplate } from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
 import { getMetrics } from "./prompts/getMetrics.js";
 import { getQueries } from "./prompts/getQueries.js";
+import { trimMessages } from "@langchain/core/messages";
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
@@ -157,7 +158,13 @@ const agent = createReactAgent({
 });
 
 const getPlan = async (state: typeof MessagesAnnotation.State) => {
-  return agent.invoke({ messages: state.messages }, config);
+  const trimmedMessages = await trimMessages(state.messages, {
+    maxTokens: 4096,
+    tokenCounter: model,
+    strategy: "last",
+    includeSystem: true,
+  });
+  return agent.invoke({ messages: trimmedMessages }, config);
 };
 
 const shouldContinue = (state: typeof MessagesAnnotation.State) => {
