@@ -79,10 +79,7 @@ async function runEval() {
   await evaluate(runGraph, {
     data: "Dataset update",
     experimentPrefix: "Ask Ollychat question",
-    evaluators: [
-      accuracy,
-      // can add multiple evaluators here
-    ],
+    evaluators: [accuracy],
   });
 }
 
