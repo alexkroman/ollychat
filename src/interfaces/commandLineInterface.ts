@@ -1,14 +1,23 @@
-import chalk from "chalk";
 import figlet from "figlet";
 import { createInterface } from "node:readline";
 import type { Interface } from "node:readline";
-
 import { logger } from "../utils/logger.js";
 import { answerQuestion } from "../ollychat.js";
+import { marked } from "marked";
+import { markedTerminal } from "marked-terminal";
+import chalk from "chalk";
 
-// Generate ASCII Art for "OLLYCHAT"
+const mkOptions = {
+  tab: 2,
+  reflowText: false,
+  showSectionPrefix: false,
+  listitem: (text: string) => text.trim(),
+};
+
+marked.use(markedTerminal(mkOptions) as never);
+
 const asciiTitle = figlet.textSync("Olly", {
-  font: "Colossal", // You can experiment with different fonts
+  font: "Colossal",
   horizontalLayout: "default",
   verticalLayout: "default",
   whitespaceBreak: true,
@@ -41,8 +50,8 @@ export class CLI {
     console.log(chalk.green("\nQuerying...\n"));
 
     const result = await answerQuestion({ question: messageText });
-
-    console.log(chalk.bold.green("✅ Answer: ") + chalk.magenta(result) + "\n");
+    console.log(chalk.bold.cyanBright(`✅ Answer:\n`));
+    console.log(marked(`${result}`));
   }
 
   public async start() {
