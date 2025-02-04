@@ -26,6 +26,7 @@ async function runEval() {
   await evaluate(runGraph, {
     data: "Dataset update",
     experimentPrefix: "Ask Ollychat question",
+    maxConcurrency: 1,
   });
 }
 
