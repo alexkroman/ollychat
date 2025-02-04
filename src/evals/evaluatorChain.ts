@@ -24,7 +24,7 @@ const runGraph = async (
 
 async function runEval() {
   await evaluate(runGraph, {
-    data: "Dataset update",
+    data: "Ollychat",
     experimentPrefix: "Ask Ollychat question",
     maxConcurrency: 1,
   });

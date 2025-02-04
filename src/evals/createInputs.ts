@@ -88,10 +88,10 @@ These values reflect the memory available for pod allocation on each node.`,
 
 const client = new Client({
   apiKey: config.langSmithApiKey,
-  apiUrl: config.langSmithApiUrl,
+  apiUrl: config.langSmithEndpoint,
 });
 
-const datasetName = "Dataset update";
+const datasetName = "Ollychat";
 
 // Fetch existing datasets and delete if one with the same name exists
 const existingDatasets = [];
