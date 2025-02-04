@@ -36,10 +36,7 @@ const searchTool = new TavilySearchResults({
 });
 
 const metricSchema = z.object({
-  name: z
-    .string()
-    .describe("The name of the PromQL Metric")
-    .min(1, "PromQL metric can not be empty"),
+  name: z.string().describe("The name of the PromQL Metric"),
 });
 
 const metricOutput = z.object({
@@ -52,7 +49,6 @@ const queriesSchema = z.object({
   query: z
     .string()
     .describe("Syntactically valid PromQL query")
-    .min(1, "PromQL query cannot be empty.")
     .refine((query) => {
       try {
         const tree = parser.parse(query);
