@@ -97,8 +97,11 @@ const prometheusQueryAssistant = new DynamicTool({
         metricNames: await getMetricNames(),
       });
 
-      const metricResults = (await metricModel.invoke(promptValue, config))
-        .metrics;
+      const metricResults = (
+        await metricModel.invoke(promptValue, config)
+      ).metrics
+        .map((m) => m.name)
+        .join(", ");
 
       const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
 
