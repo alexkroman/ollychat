@@ -20,10 +20,19 @@ const examples = [
   ["is docker working?", "yes"],
   ["what is my total memory", "yes"],
   ["how many node pools do I have?", "yes"],
-  ["what is the pod ip range", "yes"],
-  ["storage requested", "yes"],
+  [
+    "what is the pod ip range",
+    "The pod IPs in the system fall within a range that includes addresses such as `10.88.0.x` to `10.88.3.x` and `10.128.0.x` to `10.128.0.62`. These indicate the potential IP range for pods in your Kubernetes cluster.",
+  ],
+  [
+    "storage requested",
+    "The total requested storage in the system is approximately 10.74 GB.",
+  ],
   ["storage allocatable", "yes"],
-  ["How many pods are running in us-central1", "yes"],
+  [
+    "How many pods are running in us-central1",
+    "There are 3 node pools in the Kubernetes cluster.",
+  ],
 ];
 
 const client = new Client({

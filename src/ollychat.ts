@@ -88,12 +88,12 @@ const prometheusQueryAssistant = new DynamicTool({
   name: "systemAssistant",
   description:
     "A tool that turns user input into prometheus results about infrastructure and services. Use this whenever a user has input that an AI who knows everything about a system, infrastructure, and services could answer.",
-  func: async (_input: string): Promise<Record<string, unknown>> => {
+  func: async (input: string): Promise<Record<string, unknown>> => {
     try {
       const getMetricsPromptTemplate = PromptTemplate.fromTemplate(getMetrics);
 
       const promptValue = await getMetricsPromptTemplate.invoke({
-        input: _input,
+        input,
         metricNames: await getMetricNames(),
       });
 
@@ -106,7 +106,7 @@ const prometheusQueryAssistant = new DynamicTool({
       const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
 
       const queryPromptValue = await getQueriesPromptTemplate.invoke({
-        input: _input,
+        input,
         metricResults,
       });
 
