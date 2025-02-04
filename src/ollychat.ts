@@ -17,7 +17,6 @@ import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
-import { getMetrics } from "./prompts/getMetrics.js";
 import { getQueries } from "./prompts/getQueries.js";
 import { trimMessages } from "@langchain/core/messages";
 
@@ -35,16 +34,6 @@ export const model = new ChatOpenAI({
 const searchTool = new TavilySearchResults({
   maxResults: 1,
 });
-
-const metricSchema = z.object({
-  name: z.string().describe("The name of the PromQL Metric"),
-});
-
-const metricOutput = z.object({
-  metrics: z.array(metricSchema),
-});
-
-const metricModel = model.withStructuredOutput(metricOutput);
 
 const queriesSchema = z.object({
   query: z
@@ -72,7 +61,7 @@ let metricNamesCache: string | null = null;
 const getMetricNames = async () => {
   if (!metricNamesCache) {
     const metricQuery = await prom.instantQuery(
-      'group by(__name__) ({__name__!=""})',
+      'count by (__name__)({__name__!=""}) > 100',
     );
     metricNamesCache = metricQuery.result
       .map((entry: { metric: { name: string } }) => entry.metric.name)
@@ -87,37 +76,30 @@ const prometheusQueryAssistant = new DynamicTool({
     "A tool that turns user input into prometheus results about infrastructure and services. Use this whenever a user has input that an AI who knows everything about a system, infrastructure, and services could answer.",
   func: async (input: string): Promise<Record<string, unknown>> => {
     try {
-      const getMetricsPromptTemplate = PromptTemplate.fromTemplate(getMetrics);
-
-      const promptValue = await getMetricsPromptTemplate.invoke({
-        input,
-        metricNames: await getMetricNames(),
-      });
-
-      const metricResults = (
-        await metricModel.invoke(promptValue, config)
-      ).metrics
-        .map((m) => m.name)
-        .join(", ");
-
       const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
 
       const queryPromptValue = await getQueriesPromptTemplate.invoke({
         input,
-        metricResults,
+        metricResults: await getMetricNames(),
       });
 
       const queryResults = await queriesModel.invoke(queryPromptValue, config);
 
       const queryPromises = queryResults.queries.map(
         async ({ query }: { query: string }) => {
-          let result = "";
+          const result: {
+            metric: string;
+            timestamp: number;
+            value: string;
+          }[] = [];
           await prom.instantQuery(query).then((res) => {
             const series = res.result;
             series.forEach((serie) => {
-              result += "Metric: " + serie.metric.toString() + "\n";
-              result += "Timestamp: " + serie.value.time + "\n";
-              result += "Value: " + serie.value.value + "\n";
+              result.push({
+                metric: serie.metric,
+                timestamp: serie.value.time,
+                value: serie.value.value,
+              });
             });
           });
           return { query, result };
@@ -133,8 +115,10 @@ const prometheusQueryAssistant = new DynamicTool({
 
       return results;
     } catch (error) {
-      logger.error("Error in systemAssistant tool:", error);
-      return { error: (error as Error).message || "An unknown error occurred" };
+      const message =
+        error instanceof Error ? error.stack : JSON.stringify(error);
+      logger.error("Error in systemAssistant tool:", message);
+      return { error: message || "An unknown error occurred" };
     }
   },
 });
