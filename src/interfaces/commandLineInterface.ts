@@ -6,22 +6,35 @@ import { answerQuestion } from "../ollychat.js";
 import { marked } from "marked";
 import { markedTerminal } from "marked-terminal";
 import chalk from "chalk";
+import { config } from "../config/config.js";
 
 const mkOptions = {
   tab: 2,
   reflowText: false,
   showSectionPrefix: false,
-  listitem: (text: string) => text.trim(),
+  firstHeading: chalk.bold.underline,
+  heading: chalk.bold,
+  strong: chalk.bold.whiteBright,
+  em: chalk.italic.cyanBright,
+  codespan: (text: string) => chalk.bgBlackBright.white(` ${text} `),
+  blockquote: (text: string) => chalk.gray.italic(`\n> ${text}\n`),
+  listitem: (text: string) =>
+    chalk.green(
+      `• ${text
+        .replace(/\*\s*$/, "")
+        .replace(/\*\s*/g, "\n")
+        .trim()}`,
+    ), // Convert * to newlines
+  paragraph: (text: string) => text.trim(),
+  list: (body: string) =>
+    body
+      .replace(/\*\s*/g, "")
+      .replace(/\n+/g, "") // Convert all newlines to spaces
+      .split("• ")
+      .join("\n• "), // Ensure lists stay on new lines
 };
 
 marked.use(markedTerminal(mkOptions) as never);
-
-const asciiTitle = figlet.textSync("Olly", {
-  font: "Colossal",
-  horizontalLayout: "default",
-  verticalLayout: "default",
-  whitespaceBreak: true,
-});
 
 export class CLI {
   private rl: Interface;
@@ -47,22 +60,37 @@ export class CLI {
       return;
     }
 
-    console.log(chalk.green("\nQuerying...\n"));
-
+    console.log(chalk.green.bold("\n🔍 Querying...\n"));
     const result = await answerQuestion({ question: messageText });
-    console.log(chalk.bold.cyanBright(`✅ Answer:\n`));
+    console.log(chalk.bold.cyanBright("\n✅ Answer:\n"));
     console.log(marked(`${result}`));
   }
 
   public async start() {
-    // ASCII Art Title
-    console.log("\n");
-    console.log(chalk.cyan(asciiTitle));
-    console.log(chalk.bold("\nRunning Ollychat\n"));
+    console.clear();
     console.log(
-      chalk.bold("Getting started guide: ") +
-        chalk.green("http://github.com/alexkroman/ollychat\n\n"),
+      chalk.cyan(figlet.textSync("Ollychat", { horizontalLayout: "full" })),
     );
+
+    console.log(chalk.bold("\n🚀 Running Ollychat\n"));
+
+    console.log(
+      chalk.bold("📖 Getting started guide: ") +
+        chalk.green.underline("http://github.com/alexkroman/ollychat\n"),
+    );
+
+    console.log(
+      chalk.bold("🔗 Connected to Prometheus at: ") +
+        chalk.green.underline(config.prometheusUrl),
+    );
+
+    console.log(chalk.gray("\n" + "-".repeat(50) + "\n"));
+
+    console.log(chalk.bold("💡 Here are some questions you can ask:\n"));
+    console.log(chalk.green("✅ What is the memory usage of my nodes?"));
+    console.log(chalk.green("✅ Is my cluster healthy?"));
+
+    console.log(chalk.gray("\n" + "-".repeat(50) + "\n"));
 
     this.rl.prompt();
 

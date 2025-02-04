@@ -28,7 +28,7 @@ const prom = new PrometheusDriver({
 export const model = new ChatOpenAI({
   openAIApiKey: config.openAIApiKey,
   model: config.openAIModel,
-  temperature: 0.7,
+  temperature: 0.3,
 });
 
 const searchTool = new TavilySearchResults({
