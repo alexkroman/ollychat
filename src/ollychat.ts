@@ -5,22 +5,19 @@ import {
   MemorySaver,
   MessagesAnnotation,
 } from "@langchain/langgraph";
-
+import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { DynamicTool } from "@langchain/core/tools";
 import { BufferMemory } from "langchain/memory";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
-import { AgentExecutor, createReactAgent } from "langchain/agents";
 import { config } from "./config/config.js";
-import { AIMessage } from "@langchain/core/messages";
 import { logger } from "./utils/logger.js";
 import { z } from "zod";
 import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
-import { ChatPromptTemplate, PromptTemplate } from "@langchain/core/prompts";
+import { PromptTemplate } from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
 import { getQueries } from "./prompts/getQueries.js";
-import { reactPrompt } from "./prompts/reactPrompt.js";
 import { trimMessages } from "@langchain/core/messages";
 
 const memory = new BufferMemory({
@@ -81,9 +78,9 @@ const getMetricNames = async () => {
 };
 
 const prometheusQueryAssistant = new DynamicTool({
-  name: "systemAssistant",
+  name: "queryPrometheus",
   description:
-    "A tool that turns user input into prometheus results about infrastructure and services. Use this whenever a user has input that an AI who knows everything about a system, infrastructure, and services could answer.",
+    "This tool transforms user input into Prometheus queries and results about infrastructure, services, and system performance. It is invoked when a user asks a question answerable by an engineer or observability tool, such as queries about CPU usage, storage, disk, error rates, latency, or other metrics. By leveraging Prometheus data, it provides real-time, actionable insights into system health and performance.",
   func: async (input: string): Promise<string> => {
     try {
       const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
@@ -144,34 +141,10 @@ const llmReasoningTool = new DynamicTool({
 
 const tools = [llmReasoningTool, prometheusQueryAssistant, searchTool];
 
-async function createReactAgentWithTool(
-  tools: (DynamicTool | TavilySearchResults)[],
-) {
-  const prompt = ChatPromptTemplate.fromMessages([
-    ["system", reactPrompt],
-    ["human", "{input}"],
-    ["assistant", "{agent_scratchpad}"],
-  ]);
-
-  const agent = await createReactAgent({
-    llm: model,
-    tools,
-    prompt,
-  });
-
-  const agentExecutor = new AgentExecutor({
-    agent,
-    tools,
-    verbose: false,
-    maxIterations: 5,
-    memory,
-    returnIntermediateSteps: true,
-  });
-
-  return agentExecutor;
-}
-
-const agent = await createReactAgentWithTool(tools);
+const agent = createReactAgent({
+  llm: model,
+  tools,
+});
 
 const getPlan = async (state: typeof MessagesAnnotation.State) => {
   const trimmedMessages = await trimMessages(state.messages, {
@@ -180,20 +153,14 @@ const getPlan = async (state: typeof MessagesAnnotation.State) => {
     strategy: "last",
     includeSystem: true,
   });
-  const lastMessage = state.messages[state.messages.length - 1];
-  const result = await agent.invoke(
-    { input: lastMessage.content, chat_history: trimmedMessages },
-    config,
-  );
-
-  state.messages.push(new AIMessage({ content: result.output }));
-
+  const result = await agent.invoke({ messages: trimmedMessages }, config);
   return result;
 };
 
 const shouldContinue = (state: typeof MessagesAnnotation.State) => {
   const { messages } = state;
   const lastMessage = messages[messages.length - 1];
+
   if (
     "tool_calls" in lastMessage &&
     Array.isArray(lastMessage.tool_calls) &&

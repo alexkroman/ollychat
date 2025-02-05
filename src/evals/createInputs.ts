@@ -73,11 +73,11 @@ These values reflect the memory available for pod allocation on each node.`,
     "The pod IPs in the system fall within a range that includes addresses such as `10.88.0.x` to `10.88.3.x` and `10.128.0.x` to `10.128.0.62`. These indicate the potential IP range for pods in your Kubernetes cluster.",
   ],
   [
-    "storage requested",
+    "storage requested?",
     "It appears that there is currently no storage requested by the pods in the Kubernetes cluster",
   ],
   [
-    "storage allocatable",
+    "what is my allocatable storage?",
     "The allocatable storage in the Kubernetes cluster is approximately **3.77 TB** (3,773,265,195,008 bytes) available for use.",
   ],
   [

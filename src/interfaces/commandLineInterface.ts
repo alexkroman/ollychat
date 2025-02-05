@@ -12,26 +12,6 @@ const mkOptions = {
   tab: 2,
   reflowText: false,
   showSectionPrefix: false,
-  firstHeading: chalk.bold.underline,
-  heading: chalk.bold,
-  strong: chalk.bold.whiteBright,
-  em: chalk.italic.cyanBright,
-  codespan: (text: string) => chalk.bgBlackBright.white(` ${text} `),
-  blockquote: (text: string) => chalk.gray.italic(`\n> ${text}\n`),
-  listitem: (text: string) =>
-    chalk.green(
-      `• ${text
-        .replace(/\*\s*$/, "")
-        .replace(/\*\s*/g, "\n")
-        .trim()}`,
-    ), // Convert * to newlines
-  paragraph: (text: string) => text.trim(),
-  list: (body: string) =>
-    body
-      .replace(/\*\s*/g, "")
-      .replace(/\n+/g, "") // Convert all newlines to spaces
-      .split("• ")
-      .join("\n• "), // Ensure lists stay on new lines
 };
 
 marked.use(markedTerminal(mkOptions) as never);
