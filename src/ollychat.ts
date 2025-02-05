@@ -65,17 +65,56 @@ const queriesModel = model.withStructuredOutput(queriesOutput);
 const agentCheckpointer = new MemorySaver();
 
 let metricNamesCache: string | null = null;
-const getMetricNames = async () => {
-  if (!metricNamesCache) {
-    const metricQuery = await prom.instantQuery(
-      'count by (__name__)({__name__!=""}) > 100',
+
+const getMetricNamesTool = new DynamicTool({
+  name: "getMetricNames",
+  description: "Fetches and caches the list of metric names from Prometheus.",
+  func: async (): Promise<string> => {
+    if (!metricNamesCache) {
+      const metricQuery = await prom.instantQuery(
+        'count by (__name__)({__name__!=""}) > 100',
+      );
+      metricNamesCache = metricQuery.result
+        .map((entry: { metric: { name: string } }) => entry.metric.name)
+        .join(", ");
+    }
+    return metricNamesCache;
+  },
+});
+
+const queryGeneratorTool = new DynamicTool({
+  name: "generatePromQLQueries",
+  description:
+    "Generates PromQL queries based on user input and available metric names.",
+  func: async (input: string): Promise<string> => {
+    const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
+    const queryPromptValue = await getQueriesPromptTemplate.invoke({
+      input,
+      metricResults: await getMetricNamesTool.func(""),
+    });
+    const queryResults = await queriesModel.invoke(queryPromptValue, config);
+    return JSON.stringify(queryResults.queries);
+  },
+});
+
+const queryExecutorTool = new DynamicTool({
+  name: "executePromQLQueries",
+  description: "Executes a PromQL query and returns the results.",
+  func: async (input: string): Promise<string> => {
+    const response = await prom.instantQuery(input);
+    const result = response.result?.map(
+      (item: {
+        metric: Record<string, string>;
+        values?: [number, string][];
+        value?: [number, string];
+      }) => ({
+        metric: item.metric, // PromQL query result metric
+        values: item.values || item.value, // Time series data points
+      }),
     );
-    metricNamesCache = metricQuery.result
-      .map((entry: { metric: { name: string } }) => entry.metric.name)
-      .join(", ");
-  }
-  return metricNamesCache;
-};
+    return JSON.stringify(result);
+  },
+});
 
 const prometheusQueryAssistant = new DynamicTool({
   name: "queryPrometheus",
@@ -83,44 +122,9 @@ const prometheusQueryAssistant = new DynamicTool({
     "This tool transforms user input into Prometheus queries and results about infrastructure, services, and system performance. It is invoked when a user asks a question answerable by an engineer or observability tool, such as queries about CPU usage, storage, disk, error rates, latency, or other metrics. By leveraging Prometheus data, it provides real-time, actionable insights into system health and performance.",
   func: async (input: string): Promise<string> => {
     try {
-      const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
-
-      const queryPromptValue = await getQueriesPromptTemplate.invoke({
-        input,
-        metricResults: await getMetricNames(),
-      });
-
-      const queryResults = await queriesModel.invoke(queryPromptValue, config);
-
-      const queryPromises = queryResults.queries.map(
-        async ({ query }: { query: string }) => {
-          const result: {
-            metric: string;
-            timestamp: number;
-            value: string;
-          }[] = [];
-          await prom.instantQuery(query).then((res) => {
-            const series = res.result;
-            series.forEach((serie) => {
-              result.push({
-                metric: serie.metric.name,
-                timestamp: serie.value.time,
-                value: serie.value.value,
-              });
-            });
-          });
-          return { query, result };
-        },
-      );
-
-      const results: Record<string, unknown> = {};
-      const resolvedQueries = await Promise.all(queryPromises);
-
-      resolvedQueries.forEach(({ query, result }, index) => {
-        results[index] = { query, result };
-      });
-
-      return JSON.stringify(results);
+      const queries = await queryGeneratorTool.func(input);
+      const results = await queryExecutorTool.func(queries);
+      return results;
     } catch (error) {
       const message = "Error in systemAssistant tool:" + JSON.stringify(error);
       logger.error(message);
@@ -139,7 +143,14 @@ const llmReasoningTool = new DynamicTool({
   },
 });
 
-const tools = [llmReasoningTool, prometheusQueryAssistant, searchTool];
+const tools = [
+  llmReasoningTool,
+  prometheusQueryAssistant,
+  searchTool,
+  getMetricNamesTool,
+  queryGeneratorTool,
+  queryExecutorTool,
+];
 
 const agent = createReactAgent({
   llm: model,
