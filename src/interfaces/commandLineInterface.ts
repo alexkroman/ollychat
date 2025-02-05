@@ -62,7 +62,7 @@ export class CLI {
 
     console.log(chalk.green.bold("\n🔍 Querying...\n"));
     const result = await answerQuestion({ question: messageText });
-    console.log(chalk.bold.cyanBright("\n✅ Answer:\n"));
+    console.log(chalk.bold.cyanBright("\n✅ Answer...\n"));
     console.log(marked(`${result}`));
   }
 

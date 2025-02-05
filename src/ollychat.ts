@@ -9,7 +9,7 @@ import {
 import { DynamicTool } from "@langchain/core/tools";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
-import { createReactAgent } from "@langchain/langgraph/prebuilt";
+import { AgentExecutor, createReactAgent } from "langchain/agents";
 import { config } from "./config/config.js";
 import { logger } from "./utils/logger.js";
 import { z } from "zod";
@@ -19,6 +19,7 @@ import { PromptTemplate } from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
 import { getQueries } from "./prompts/getQueries.js";
 import { trimMessages } from "@langchain/core/messages";
+import { pull } from "langchain/hub";
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
@@ -28,7 +29,7 @@ const prom = new PrometheusDriver({
 export const model = new ChatOpenAI({
   openAIApiKey: config.openAIApiKey,
   model: config.openAIModel,
-  temperature: 0.3,
+  temperature: 0,
 });
 
 const searchTool = new TavilySearchResults({
@@ -135,11 +136,26 @@ const llmReasoningTool = new DynamicTool({
 
 const tools = [llmReasoningTool, prometheusQueryAssistant, searchTool];
 
-const agent = createReactAgent({
-  llm: model,
-  tools,
-  checkpointSaver: agentCheckpointer,
-});
+async function createReactAgentWithTool(
+  tools: (DynamicTool | TavilySearchResults)[],
+) {
+  const prompt = await pull<PromptTemplate>("hwchase17/react");
+
+  const agent = await createReactAgent({
+    llm: model,
+    tools,
+    prompt,
+  });
+
+  const agentExecutor = new AgentExecutor({
+    agent,
+    tools,
+  });
+
+  return agentExecutor;
+}
+
+const agent = await createReactAgentWithTool(tools);
 
 const getPlan = async (state: typeof MessagesAnnotation.State) => {
   const trimmedMessages = await trimMessages(state.messages, {
@@ -148,7 +164,11 @@ const getPlan = async (state: typeof MessagesAnnotation.State) => {
     strategy: "last",
     includeSystem: true,
   });
-  return agent.invoke({ messages: trimmedMessages }, config);
+  const lastMessage = state.messages[state.messages.length - 1];
+  return agent.invoke(
+    { input: lastMessage, messages: trimmedMessages },
+    config,
+  );
 };
 
 const shouldContinue = (state: typeof MessagesAnnotation.State) => {
