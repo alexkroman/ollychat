@@ -8,7 +8,6 @@ Ollychat is an open-source tool that allows you to interact with your observabil
 
 - **Natural Language Queries:** Ask questions and receive results from Prometheus.
 - **Multi-Mode Operation:** Run as a command-line interface (CLI) or a Slack bot.
-- **ChromaDB Integration:** Uses ChromaDB for efficient data storage and retrieval.
 - **Configurable & Extendable:** Easily configurable via environment variables.
 
 ## Quickstart

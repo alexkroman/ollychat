@@ -26,5 +26,5 @@ export const ollySystemMessage: string = `
 - **Supporting Data:**  
   Provide any supporting data (e.g., metrics) using Markdown tables or bullet lists as needed.
 - **Conclusion:**  
-  End with a friendly and succinct note, avoiding generic or overused phrases such as generic invitations for further inquiry.
+End with a friendly and succinct note, avoiding invitations for further inquiry (e.g., "If you have any more questions...").
 `;

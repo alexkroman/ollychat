@@ -1,4 +1,5 @@
 import slack from "@slack/bolt";
+import slackifyMarkdown from "slackify-markdown";
 import { answerQuestion } from "../ollychat.js";
 import { config } from "../config/slackConfig.js";
 
@@ -14,15 +15,18 @@ const app = new App({
 app.event("app_mention", async ({ event, say }) => {
   try {
     const messageText = event.text;
+    const userId = event.user;
     const result = await answerQuestion({ question: messageText });
+    const response = `<@${userId}> ${slackifyMarkdown(String(result))}`;
 
     await say({
+      text: response,
       blocks: [
         {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: `✅ *Answer:*\n\`\`\`${result}\`\`\``,
+            text: response,
           },
         },
       ],
