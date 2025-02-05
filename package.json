@@ -19,6 +19,7 @@
     "@prometheus-io/lezer-promql": "^0.301.0",
     "@slack/bolt": "^4.2.0",
     "chalk": "^5.4.1",
+    "chrono-node": "^2.7.8",
     "dotenv": "^16.4.7",
     "figlet": "^1.8.0",
     "fs": "^0.0.1-security",

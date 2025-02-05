@@ -3,6 +3,13 @@ import { config } from "../config/config.js";
 
 const examples = [
   ["is my k8 cluster too small?", "yes"],
+  ["2+2", "4"],
+  ["What is the weather in Cleveland, Ohio", "Shows the weather"],
+  ["Look up PromQL in StackOverflow", "Searches StackOverflow"],
+  [
+    "how was apiserver_flowcontrol_demand_seats_bucket over the last 24 hours?",
+    "Creates a ranged query",
+  ],
   ["what region is my infra running in?", "yes"],
   ["how many alerts?", "yes"],
   ["how many unhealthy nodes?", "yes"],

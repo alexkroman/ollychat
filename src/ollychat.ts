@@ -18,9 +18,11 @@ import { PromptTemplate } from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
 import { getQueries } from "./prompts/getQueries.js";
 import { ollySystemMessage } from "./prompts/systemMessage.js";
-
+import * as chrono from "chrono-node";
 import { trimMessages } from "@langchain/core/messages";
 import { SystemMessage, HumanMessage } from "@langchain/core/messages";
+import { StackExchangeAPI } from "@langchain/community/tools/stackexchange";
+import { Calculator } from "@langchain/community/tools/calculator";
 
 const memory = new BufferMemory({
   inputKey: "input",
@@ -43,6 +45,10 @@ export const model = new ChatOpenAI({
 const searchTool = new TavilySearchResults({
   maxResults: 1,
 });
+
+const stackExchangeTool = new StackExchangeAPI();
+
+const calculatorTool = new Calculator();
 
 const queriesSchema = z.object({
   query: z
@@ -109,20 +115,6 @@ const queryGeneratorTool = new DynamicTool({
   },
 });
 
-/* const trendAnalysisTool = new DynamicTool({
-  name: "trendAnalysisTool",
-  description: "Analyzes historical data for a given metric over a specified time range to identify trends or anomalies. Expected input format: metricName, startTimestamp, endTimestamp, step",
-  func: async (input: string): Promise<string> => {
-    const [metricName, start, end, step] = input.split(',').map((s) => s.trim());
-    const response = await prom.rangeQuery(metricName, {
-      start: Number(start),
-      end: Number(end),
-      step: Number(step),
-    });
-    return JSON.stringify(response.result, null, 2);
-  },
-}); */
-
 const metricDetailsTool = new DynamicTool({
   name: "metricDetailsTool",
   description:
@@ -141,17 +133,44 @@ const metricDetailsTool = new DynamicTool({
   },
 });
 
-const queryExecutorTool = new DynamicTool({
-  name: "queryExecutorTool",
-  description: "Executes a PromQL query and returns the results.",
+const instantQueryExecutorTool = new DynamicTool({
+  name: "instantQueryExecutorTool",
+  description:
+    "Executes a PromQL instant query (no from and to timestamps) and returns the results.",
   func: async (input: string): Promise<string> => {
     let result = "";
     const response = await prom.instantQuery(input);
     const series = response.result;
     series.forEach((serie) => {
-      result += "Metric: " + serie.metric + "\n";
+      result += "Metric: " + serie.metric.toString() + "\n";
       result += "Timestamp: " + serie.value.time + "\n";
       result += "Value: " + serie.value.value + "\n";
+    });
+    return result;
+  },
+});
+
+const rangeQueryExecutorTool = new DynamicTool({
+  name: "rangeQueryExecutorTool",
+  description:
+    "Executes a PromQL ranged query. Requires query, from time (as text parseable by chrono-time), and to time (as text parseable by chrono-time).",
+  func: async (input: string): Promise<string> => {
+    const [query, startString, endString] = input
+      .split(",")
+      .map((s) => s.trim());
+    const start: Date =
+      chrono.parseDate(startString) ||
+      chrono.parseDate("30 minutes ago") ||
+      new Date();
+    const end: Date = chrono.parseDate(endString) || new Date();
+
+    const step: number = 6 * 60 * 60;
+    const response = await prom.rangeQuery(query, start, end, step);
+
+    let result = "";
+    response.result.forEach((serie) => {
+      result += "Serie:" + serie.metric.toString();
+      result += "Values:\n" + serie.values.join("\n");
     });
     return result;
   },
@@ -172,9 +191,13 @@ const tools = [
   searchTool,
   getMetricNamesTool,
   queryGeneratorTool,
-  queryExecutorTool,
+  instantQueryExecutorTool,
+  rangeQueryExecutorTool,
   alertsFetcherTool,
   metricDetailsTool,
+  instantQueryExecutorTool,
+  stackExchangeTool,
+  calculatorTool,
 ];
 
 const agent = createReactAgent({
