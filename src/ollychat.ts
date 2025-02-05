@@ -17,7 +17,10 @@ import { PrometheusDriver } from "prometheus-query";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
 import { getQueries } from "./prompts/getQueries.js";
+import { ollySystemMessage } from "./prompts/systemMessage.js";
+
 import { trimMessages } from "@langchain/core/messages";
+import { SystemMessage, HumanMessage } from "@langchain/core/messages";
 
 const memory = new BufferMemory({
   inputKey: "input",
@@ -81,6 +84,16 @@ const getMetricNamesTool = new DynamicTool({
   },
 });
 
+const alertsFetcherTool = new DynamicTool({
+  name: "alertsFetcherTool",
+  description:
+    "Fetches current active alerts from Prometheus to provide insights on ongoing incidents.",
+  func: async (): Promise<string> => {
+    const response = await prom.alerts();
+    return JSON.stringify(response);
+  },
+});
+
 const queryGeneratorTool = new DynamicTool({
   name: "queryGeneratorTool",
   description:
@@ -93,6 +106,38 @@ const queryGeneratorTool = new DynamicTool({
     });
     const queryResults = await queriesModel.invoke(queryPromptValue, config);
     return JSON.stringify(queryResults.queries);
+  },
+});
+
+/* const trendAnalysisTool = new DynamicTool({
+  name: "trendAnalysisTool",
+  description: "Analyzes historical data for a given metric over a specified time range to identify trends or anomalies. Expected input format: metricName, startTimestamp, endTimestamp, step",
+  func: async (input: string): Promise<string> => {
+    const [metricName, start, end, step] = input.split(',').map((s) => s.trim());
+    const response = await prom.rangeQuery(metricName, {
+      start: Number(start),
+      end: Number(end),
+      step: Number(step),
+    });
+    return JSON.stringify(response.result, null, 2);
+  },
+}); */
+
+const metricDetailsTool = new DynamicTool({
+  name: "metricDetailsTool",
+  description:
+    "Retrieves detailed information for a specified metric, including its labels and recent data points. The input should be a Prometheus Metric Name",
+  func: async (input: string): Promise<string> => {
+    const query = `group by (__name__) ({__name__="${input}"})`;
+    const response = await prom.instantQuery(query);
+    const series = response.result;
+    let result = "";
+    series.forEach((serie) => {
+      result += "Metric: " + serie.metric + "\n";
+      result += "Timestamp: " + serie.value.time + "\n";
+      result += "Value: " + serie.value.value + "\n";
+    });
+    return result;
   },
 });
 
@@ -128,11 +173,16 @@ const tools = [
   getMetricNamesTool,
   queryGeneratorTool,
   queryExecutorTool,
+  alertsFetcherTool,
+  metricDetailsTool,
 ];
 
 const agent = createReactAgent({
   llm: model,
   tools,
+  stateModifier: async (state: typeof MessagesAnnotation.State) => {
+    return [new SystemMessage(ollySystemMessage)].concat(state.messages);
+  },
 });
 
 const getPlan = async (state: typeof MessagesAnnotation.State) => {
@@ -174,14 +224,8 @@ export const app = workflow.compile({
 });
 
 export const answerQuestion = async (inputs: { question: string }) => {
-  const input = [
-    {
-      role: "user",
-      content: inputs.question,
-    },
-  ];
-
-  const result = await app.invoke({ messages: input }, config);
+  const messages = [new HumanMessage({ content: inputs.question })];
+  const result = await app.invoke({ messages }, config);
   const lastMessage = result.messages[result.messages.length - 1];
   return lastMessage.content;
 };
