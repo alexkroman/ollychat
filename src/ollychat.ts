@@ -84,7 +84,7 @@ const getMetricNamesTool = new DynamicTool({
 const queryGeneratorTool = new DynamicTool({
   name: "queryGeneratorTool",
   description:
-    "Generates PromQL queries based on user input and available metric names.",
+    "This tool transforms user input into Prometheus queries and results about infrastructure, services, and system performance. It is invoked when a user asks a question answerable by an engineer or observability tool, such as queries about CPU usage, storage, disk, error rates, latency, or other metrics. By leveraging Prometheus data, it provides real-time, actionable insights into system health and performance.",
   func: async (input: string): Promise<string> => {
     const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
     const queryPromptValue = await getQueriesPromptTemplate.invoke({
@@ -112,17 +112,6 @@ const queryExecutorTool = new DynamicTool({
   },
 });
 
-const prometheusQueryAssistant = new DynamicTool({
-  name: "prometheusQueryAssistant",
-  description:
-    "This tool transforms user input into Prometheus queries and results about infrastructure, services, and system performance. It is invoked when a user asks a question answerable by an engineer or observability tool, such as queries about CPU usage, storage, disk, error rates, latency, or other metrics. By leveraging Prometheus data, it provides real-time, actionable insights into system health and performance.",
-  func: async (input: string): Promise<string> => {
-    const queries = await queryGeneratorTool.func(input);
-    const results = await queryExecutorTool.func(queries);
-    return results;
-  },
-});
-
 const llmReasoningTool = new DynamicTool({
   name: "llmReasoningTool",
   description:
@@ -135,7 +124,6 @@ const llmReasoningTool = new DynamicTool({
 
 const tools = [
   llmReasoningTool,
-  prometheusQueryAssistant,
   searchTool,
   getMetricNamesTool,
   queryGeneratorTool,
