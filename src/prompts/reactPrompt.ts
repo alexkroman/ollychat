@@ -30,8 +30,8 @@ Final Answer: [your response here]
 
 Begin!
 
-{chat_history}
-
 New input: {input}
+
+Agent Scratchpad:
 {agent_scratchpad}
 `;

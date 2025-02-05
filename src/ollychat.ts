@@ -17,10 +17,7 @@ import { logger } from "./utils/logger.js";
 import { z } from "zod";
 import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
-import {
-  ChatPromptTemplate,
-  MessagesPlaceholder,
-} from "@langchain/core/prompts";
+import { ChatPromptTemplate, PromptTemplate } from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
 import { getQueries } from "./prompts/getQueries.js";
 import { reactPrompt } from "./prompts/reactPrompt.js";
@@ -30,6 +27,8 @@ const memory = new BufferMemory({
   inputKey: "input",
   outputKey: "output",
 });
+
+memory.clear();
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
@@ -87,8 +86,7 @@ const prometheusQueryAssistant = new DynamicTool({
     "A tool that turns user input into prometheus results about infrastructure and services. Use this whenever a user has input that an AI who knows everything about a system, infrastructure, and services could answer.",
   func: async (input: string): Promise<string> => {
     try {
-      const getQueriesPromptTemplate =
-        ChatPromptTemplate.fromTemplate(getQueries);
+      const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
 
       const queryPromptValue = await getQueriesPromptTemplate.invoke({
         input,
@@ -151,7 +149,6 @@ async function createReactAgentWithTool(
 ) {
   const prompt = ChatPromptTemplate.fromMessages([
     ["system", reactPrompt],
-    new MessagesPlaceholder("chat_history"),
     ["human", "{input}"],
     ["assistant", "{agent_scratchpad}"],
   ]);
