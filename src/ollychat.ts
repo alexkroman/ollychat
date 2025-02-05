@@ -11,7 +11,6 @@ import { BufferMemory } from "langchain/memory";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { config } from "./config/config.js";
-import { logger } from "./utils/logger.js";
 import { z } from "zod";
 import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
@@ -83,7 +82,7 @@ const getMetricNamesTool = new DynamicTool({
 });
 
 const queryGeneratorTool = new DynamicTool({
-  name: "generatePromQLQueries",
+  name: "queryGeneratorTool",
   description:
     "Generates PromQL queries based on user input and available metric names.",
   func: async (input: string): Promise<string> => {
@@ -98,38 +97,29 @@ const queryGeneratorTool = new DynamicTool({
 });
 
 const queryExecutorTool = new DynamicTool({
-  name: "executePromQLQueries",
+  name: "queryExecutorTool",
   description: "Executes a PromQL query and returns the results.",
   func: async (input: string): Promise<string> => {
+    let result = "";
     const response = await prom.instantQuery(input);
-    const result = response.result?.map(
-      (item: {
-        metric: Record<string, string>;
-        values?: [number, string][];
-        value?: [number, string];
-      }) => ({
-        metric: item.metric, // PromQL query result metric
-        values: item.values || item.value, // Time series data points
-      }),
-    );
-    return JSON.stringify(result);
+    const series = response.result;
+    series.forEach((serie) => {
+      result += "Metric: " + serie.metric + "\n";
+      result += "Timestamp: " + serie.value.time + "\n";
+      result += "Value: " + serie.value.value + "\n";
+    });
+    return result;
   },
 });
 
 const prometheusQueryAssistant = new DynamicTool({
-  name: "queryPrometheus",
+  name: "prometheusQueryAssistant",
   description:
     "This tool transforms user input into Prometheus queries and results about infrastructure, services, and system performance. It is invoked when a user asks a question answerable by an engineer or observability tool, such as queries about CPU usage, storage, disk, error rates, latency, or other metrics. By leveraging Prometheus data, it provides real-time, actionable insights into system health and performance.",
   func: async (input: string): Promise<string> => {
-    try {
-      const queries = await queryGeneratorTool.func(input);
-      const results = await queryExecutorTool.func(queries);
-      return results;
-    } catch (error) {
-      const message = "Error in systemAssistant tool:" + JSON.stringify(error);
-      logger.error(message);
-      return message;
-    }
+    const queries = await queryGeneratorTool.func(input);
+    const results = await queryExecutorTool.func(queries);
+    return results;
   },
 });
 
