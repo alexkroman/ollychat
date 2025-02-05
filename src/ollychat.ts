@@ -7,19 +7,29 @@ import {
 } from "@langchain/langgraph";
 
 import { DynamicTool } from "@langchain/core/tools";
+import { BufferMemory } from "langchain/memory";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { AgentExecutor, createReactAgent } from "langchain/agents";
 import { config } from "./config/config.js";
+import { AIMessage } from "@langchain/core/messages";
 import { logger } from "./utils/logger.js";
 import { z } from "zod";
 import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
-import { PromptTemplate } from "@langchain/core/prompts";
+import {
+  ChatPromptTemplate,
+  MessagesPlaceholder,
+} from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
 import { getQueries } from "./prompts/getQueries.js";
+import { reactPrompt } from "./prompts/reactPrompt.js";
 import { trimMessages } from "@langchain/core/messages";
-import { pull } from "langchain/hub";
+
+const memory = new BufferMemory({
+  inputKey: "input",
+  outputKey: "output",
+});
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
@@ -75,9 +85,10 @@ const prometheusQueryAssistant = new DynamicTool({
   name: "systemAssistant",
   description:
     "A tool that turns user input into prometheus results about infrastructure and services. Use this whenever a user has input that an AI who knows everything about a system, infrastructure, and services could answer.",
-  func: async (input: string): Promise<Record<string, unknown>> => {
+  func: async (input: string): Promise<string> => {
     try {
-      const getQueriesPromptTemplate = PromptTemplate.fromTemplate(getQueries);
+      const getQueriesPromptTemplate =
+        ChatPromptTemplate.fromTemplate(getQueries);
 
       const queryPromptValue = await getQueriesPromptTemplate.invoke({
         input,
@@ -114,12 +125,11 @@ const prometheusQueryAssistant = new DynamicTool({
         results[index] = { query, result };
       });
 
-      return results;
+      return JSON.stringify(results);
     } catch (error) {
-      const message =
-        error instanceof Error ? error.stack : JSON.stringify(error);
-      logger.error("Error in systemAssistant tool:", message);
-      return { error: message || "An unknown error occurred" };
+      const message = "Error in systemAssistant tool:" + JSON.stringify(error);
+      logger.error(message);
+      return message;
     }
   },
 });
@@ -139,7 +149,12 @@ const tools = [llmReasoningTool, prometheusQueryAssistant, searchTool];
 async function createReactAgentWithTool(
   tools: (DynamicTool | TavilySearchResults)[],
 ) {
-  const prompt = await pull<PromptTemplate>("hwchase17/react");
+  const prompt = ChatPromptTemplate.fromMessages([
+    ["system", reactPrompt],
+    new MessagesPlaceholder("chat_history"),
+    ["human", "{input}"],
+    ["assistant", "{agent_scratchpad}"],
+  ]);
 
   const agent = await createReactAgent({
     llm: model,
@@ -150,6 +165,10 @@ async function createReactAgentWithTool(
   const agentExecutor = new AgentExecutor({
     agent,
     tools,
+    verbose: false,
+    maxIterations: 5,
+    memory,
+    returnIntermediateSteps: true,
   });
 
   return agentExecutor;
@@ -159,16 +178,20 @@ const agent = await createReactAgentWithTool(tools);
 
 const getPlan = async (state: typeof MessagesAnnotation.State) => {
   const trimmedMessages = await trimMessages(state.messages, {
-    maxTokens: 4096,
+    maxTokens: 1000,
     tokenCounter: model,
     strategy: "last",
     includeSystem: true,
   });
   const lastMessage = state.messages[state.messages.length - 1];
-  return agent.invoke(
-    { input: lastMessage, messages: trimmedMessages },
+  const result = await agent.invoke(
+    { input: lastMessage.content, chat_history: trimmedMessages },
     config,
   );
+
+  state.messages.push(new AIMessage({ content: result.output }));
+
+  return result;
 };
 
 const shouldContinue = (state: typeof MessagesAnnotation.State) => {

@@ -24,7 +24,7 @@ jest.unstable_mockModule("@langchain/openai", () => {
           withStructuredOutput: jest.fn().mockReturnValue(structuredOutputModel),
   
           // 'bindTools' is called inside createReactAgent
-          bindTools: jest.fn().mockImplementation(() => ({
+          bind: jest.fn().mockImplementation(() => ({
             invoke: jest.fn(),
           })),
         };
