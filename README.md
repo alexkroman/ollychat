@@ -26,7 +26,7 @@ Ollychat is an open-source tool that allows you to interact with your observabil
 
 2. Edit the `.env` file with your specific values (such as Prometheus URL, authentication tokens, etc.).
 
-3. Install dependencies 
+3. Install dependencies
 
 ```sh
 npm install
