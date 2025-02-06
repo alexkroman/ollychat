@@ -17,7 +17,10 @@ app.event("app_mention", async ({ event, say }) => {
     const messageText = event.text;
     const userId = event.user;
     const result = await answerQuestion({ question: messageText });
-    const response = `<@${userId}> ${slackifyMarkdown(String(result))}`;
+    const response = `<@${userId}> ${slackifyMarkdown(String(result))}`.slice(
+      0,
+      3000,
+    );
 
     await say({
       text: response,
