@@ -18,6 +18,7 @@ export const ollySystemMessage: string = `
 ## Formatting
 - Use **Markdown formatting** to present data clearly.
 - Use **Markdown tables** when displaying multiple data points or metrics to improve readability.
+- Markdown tables MUST be surrounded by triple backticks.
 - Keep responses **concise** and to the point, avoiding unnecessary technical jargon.
 
 ## Answer Structure
