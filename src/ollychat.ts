@@ -10,9 +10,8 @@ import { DynamicTool } from "@langchain/core/tools";
 import { BufferMemory } from "langchain/memory";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
-import { config } from "./config/config.js";
+import { config, model } from "./config/config.js";
 import { z } from "zod";
-import { ChatOpenAI } from "@langchain/openai";
 import { PrometheusDriver } from "prometheus-query";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { parser } from "@prometheus-io/lezer-promql";
@@ -34,12 +33,6 @@ memory.clear();
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
   baseURL: "/api/v1",
-});
-
-export const model = new ChatOpenAI({
-  openAIApiKey: config.openAIApiKey,
-  model: config.openAIModel,
-  temperature: 0,
 });
 
 const searchTool = new TavilySearchResults({
@@ -191,7 +184,6 @@ const tools = [
   searchTool,
   getMetricNamesTool,
   queryGeneratorTool,
-  instantQueryExecutorTool,
   rangeQueryExecutorTool,
   alertsFetcherTool,
   metricDetailsTool,
@@ -211,7 +203,7 @@ const agent = createReactAgent({
 const getPlan = async (state: typeof MessagesAnnotation.State) => {
   const trimmedMessages = await trimMessages(state.messages, {
     maxTokens: 1000,
-    tokenCounter: model,
+    tokenCounter: (msgs) => msgs.length,
     strategy: "last",
     includeSystem: true,
   });
