@@ -1,6 +1,4 @@
 import { requireEnv } from "../utils/config.js";
-import { ChatOpenAI } from "@langchain/openai";
-import { ChatAnthropic } from "@langchain/anthropic";
 
 import { v4 as uuidv4 } from "uuid";
 import * as dotenv from "dotenv";
@@ -17,17 +15,3 @@ export const config = {
   logging: !process.execArgv.includes("--no-warnings"),
   configurable: { thread_id: uuidv4(), recursion_limit: 5 },
 };
-
-export const model =
-  config.AIModel.startsWith("claude") ||
-  config.AIApiKey === process.env.CLAUDE_API_KEY
-    ? new ChatAnthropic({
-        anthropicApiKey: config.AIApiKey,
-        model: config.AIModel,
-        temperature: 0,
-      })
-    : new ChatOpenAI({
-        openAIApiKey: config.AIApiKey,
-        model: config.AIModel,
-        temperature: 0,
-      });

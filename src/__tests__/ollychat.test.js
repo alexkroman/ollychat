@@ -103,17 +103,22 @@ jest.unstable_mockModule("@langchain/openai", () => {
   jest.unstable_mockModule("../config/config.js", () => {
     return {
       config: {
-        openAIApiKey: "MOCKED_OPENAI_KEY",
-        openAIModel: "gpt-3.5-turbo",
+        AIApiKey: "MOCKED_OPENAI_KEY",
+        AIModel: "gpt-3.5-turbo",
         temperature: 0.7,
         prometheusUrl: "http://mock-prometheus",
       },
+      model: {
+        someModelProperty: "Mocked Model Value",
+    },
     };
   });
   
 // Now we can actually import the modules under test AFTER declaring mocks:
 const { answerQuestion } = await import("../ollychat.ts");
+
 const { ChatOpenAI } = await import("@langchain/openai");
+
 const { PrometheusDriver } = await import("prometheus-query");
 const { TavilySearchResults } = await import("@langchain/community/tools/tavily_search");
 

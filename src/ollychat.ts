@@ -10,7 +10,9 @@ import { DynamicTool } from "@langchain/core/tools";
 import { BufferMemory } from "langchain/memory";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
-import { config, model } from "./config/config.js";
+import { config } from "./config/config.js";
+import { ChatOpenAI } from "@langchain/openai";
+import { ChatAnthropic } from "@langchain/anthropic";
 import { z } from "zod";
 import { PrometheusDriver } from "prometheus-query";
 import { PromptTemplate } from "@langchain/core/prompts";
@@ -29,6 +31,20 @@ const memory = new BufferMemory({
 });
 
 memory.clear();
+
+export const model =
+  config.AIModel.startsWith("claude") ||
+  config.AIApiKey === process.env.CLAUDE_API_KEY
+    ? new ChatAnthropic({
+        anthropicApiKey: config.AIApiKey,
+        model: config.AIModel,
+        temperature: 0,
+      })
+    : new ChatOpenAI({
+        openAIApiKey: config.AIApiKey,
+        model: config.AIModel,
+        temperature: 0,
+      });
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
