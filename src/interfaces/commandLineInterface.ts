@@ -7,6 +7,7 @@ import { marked } from "marked";
 import { markedTerminal } from "marked-terminal";
 import chalk from "chalk";
 import { config } from "../config/config.js";
+import readline from "readline";
 
 const mkOptions = {
   tab: 2,
@@ -40,9 +41,10 @@ export class CLI {
       return;
     }
 
-    console.log(chalk.green.bold("\n🔍 Querying...\n"));
+    console.log(chalk.green.bold("\n🔍 Querying..."));
     const result = await answerQuestion({ question: messageText });
-    console.log(chalk.bold.cyanBright("\n✅ Answer...\n"));
+    readline.moveCursor(process.stdout, 0, -1);
+    readline.clearLine(process.stdout, 0);
     console.log(marked(`${result}`));
   }
 
