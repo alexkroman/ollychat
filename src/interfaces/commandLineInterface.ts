@@ -67,10 +67,10 @@ export class CLI {
     );
 
     console.log(chalk.gray("\n" + "-".repeat(50) + "\n"));
-
     console.log(chalk.bold("💡 Here are some questions you can ask:\n"));
-    console.log(chalk.green("✅ What is the memory usage of my nodes?"));
-    console.log(chalk.green("✅ Is my cluster healthy?"));
+    console.log(chalk.green("✅ what's the health of my cluster?"));
+    console.log(chalk.green("✅ which pods are consuming the most memory?"));
+    console.log(chalk.green("✅ are there any open alerts?"));
 
     console.log(chalk.gray("\n" + "-".repeat(50) + "\n"));
 

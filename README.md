@@ -46,9 +46,9 @@ Edit `.env` with your settings
 npm run cli:start
 
 # Example queries
-> What's the CPU usage across all nodes?
-> Show me high-latency requests in the last hour
-> Graph memory usage trending for the api service
+> what's the health status of my cluster?
+> any alerts?
+> which pods are consuming the most memory?
 ```
 
 ### Slack Integration
