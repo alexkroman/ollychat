@@ -1,85 +1,87 @@
-# Ollychat
+# OllyChat
 
-## Overview
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-Ollychat is an open-source tool that allows you to interact with your observability data through natural language queries. It supports querying Prometheus and can be used as a CLI tool or integrated as a Slack bot for team collaboration.
+Ollychat allows you to chat with your observability data. Ask questions in plain English and get instant insights, whether through the CLI or Slack.
 
-## Features
+## 🌟 Key Features
 
-- **Natural Language Queries:** Ask questions and receive results from Prometheus.
-- **Multi-Mode Operation:** Run as a command-line interface (CLI) or a Slack bot.
-- **Configurable & Extendable:** Easily configurable via environment variables.
+- Natural language processing of metrics queries
+- Intelligent query translation to PromQL
+- Seamless Slack integration for team collaboration
 
-## Quickstart
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- Slack workspace (if using Slack integration)
+- Node.js 16.x or higher
+- npm 7.x or higher
+- Slack workspace (optional, for Slack integration)
 
-### Set Up the CLI
+### Installation
 
-1. Copy the example environment configuration:
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/ollychat.git
+cd ollychat
 
-   ```sh
-   cp config/example.env .env
-   ```
-
-2. Edit the `.env` file with your specific values (such as Prometheus URL, authentication tokens, etc.).
-
-3. Install dependencies
-
-```sh
+# Install dependencies
 npm install
+
+# Set up configuration
+cp example.env .env
 ```
 
-### Start the CLI
+### Configuration
 
-Run the following command to start the CLI mode:
+Edit `.env` with your settings
 
-```sh
+### Usage
+
+#### CLI Mode
+
+```bash
+# Start the CLI
 npm run cli:start
+
+# Example queries
+> What's the CPU usage across all nodes?
+> Show me high-latency requests in the last hour
+> Graph memory usage trending for the api service
 ```
 
-### Set Up a Slack Bot (Optional)
+### Slack Integration
 
-To integrate Ollychat with Slack, follow these steps:
+1. Create a Slack App:
+   - Visit [Slack API](https://api.slack.com/apps)
+   - Click "Create New App" → "From an app manifest"
+   - Select your workspace
+   - Copy content from `config/slack-manifest.json`
 
-1. Add the following credentials to your .env file:
+2. Install the app to your workspace:
+   - Navigate to "Install App" in your Slack App settings
+   - Click "Install to Workspace"
+   - Grant requested permissions
 
-   ```sh
-   SLACK_BOT_TOKEN=<your-slack-bot-token>
-   SLACK_SIGNING_SECRET=<your-slack-signing-secret>
-   SLACK_APP_TOKEN=<your-slack-app-token>
+3. Start the Slack bot:
+  
+   ```bash
+   npm run slack:start
    ```
 
-2. Create a Slack App in your workspace:
-   - Use the provided manifest file located at `config/slack-manifest.json`.
-   - Go to [Slack API](https://api.slack.com/apps) and create a new app.
-   - Import the manifest to configure the bot.
-   - Install the app in your workspace and add it to a channel.
+## Run tests
 
-## Development
-
-### Running Locally
-
-For development purposes, you can run Ollychat locally with the following steps:
-
-```sh
-npm run cli:dev
+```bash
+npm test
 ```
 
-### Contributing
+## Run linter
 
-We welcome contributions! To contribute:
+```bash
+npm run lint
+```
 
-1. Fork the repository.
-2. Create a feature branch.
-3. Open a pull request with a detailed description of changes.
+## 📄 License
 
-## License
-
-Ollychat is open-source software licensed under the MIT License.
-
-## Contact
-
-For issues, feature requests, or discussions, open an issue on GitHub.
+Ollychat is MIT licensed. See [LICENSE](LICENSE) for details.
