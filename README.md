@@ -23,7 +23,7 @@ Ollychat allows you to chat with your observability data. Ask questions in plain
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ollychat.git
+git clone https://github.com/alexkroman/ollychat.git
 cd ollychat
 
 # Install dependencies
