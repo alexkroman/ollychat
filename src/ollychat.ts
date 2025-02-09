@@ -33,16 +33,15 @@ const memory = new BufferMemory({
 memory.clear();
 
 export const model =
-  config.AIModel.startsWith("claude") ||
-  config.AIApiKey === process.env.CLAUDE_API_KEY
+  config.modelProvider == "anthropic"
     ? new ChatAnthropic({
-        anthropicApiKey: config.AIApiKey,
-        model: config.AIModel,
+        anthropicApiKey: config.modelApiKey,
+        model: config.model,
         temperature: 0,
       })
     : new ChatOpenAI({
-        openAIApiKey: config.AIApiKey,
-        model: config.AIModel,
+        openAIApiKey: config.modelApiKey,
+        model: config.model,
         temperature: 0,
       });
 
@@ -51,9 +50,12 @@ const prom = new PrometheusDriver({
   baseURL: "/api/v1",
 });
 
-const searchTool = new TavilySearchResults({
-  maxResults: 1,
-});
+const searchTool = config.tavilyEnabled
+  ? new TavilySearchResults({
+      maxResults: 1,
+      apiKey: config.tavilyApiKey ?? "",
+    })
+  : null;
 
 const stackExchangeTool = new StackExchangeAPI();
 
@@ -197,7 +199,6 @@ const llmReasoningTool = new DynamicTool({
 
 const tools = [
   llmReasoningTool,
-  searchTool,
   getMetricNamesTool,
   queryGeneratorTool,
   rangeQueryExecutorTool,
@@ -206,7 +207,8 @@ const tools = [
   instantQueryExecutorTool,
   stackExchangeTool,
   calculatorTool,
-];
+  searchTool,
+].filter((tool) => tool !== null);
 
 const agent = createReactAgent({
   llm: model,
