@@ -7,7 +7,6 @@ import {
 } from "@langchain/langgraph";
 import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { DynamicTool } from "@langchain/core/tools";
-import { BufferMemory } from "langchain/memory";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { config } from "./config/config.js";
@@ -24,13 +23,6 @@ import { trimMessages } from "@langchain/core/messages";
 import { SystemMessage, HumanMessage } from "@langchain/core/messages";
 import { StackExchangeAPI } from "@langchain/community/tools/stackexchange";
 import { Calculator } from "@langchain/community/tools/calculator";
-
-const memory = new BufferMemory({
-  inputKey: "input",
-  outputKey: "output",
-});
-
-memory.clear();
 
 export const model =
   config.modelProvider == "anthropic"
