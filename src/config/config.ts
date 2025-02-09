@@ -16,6 +16,7 @@ export const config = {
   model: requireEnv("MODEL"),
   prometheusUrl: requireEnv("PROMETHEUS_URL"),
   tavilyApiKey,
+  telemetry: requireEnv("TELEMETRY"),
   tavilyEnabled,
   langsmithTracing,
   langSmithEndpoint: langsmithTracing

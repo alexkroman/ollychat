@@ -1,7 +1,7 @@
-import { posthog } from "posthog-js";
+import { PostHog } from "posthog-node";
 import * as os from "os";
 
-function getStableHostId(): string | undefined {
+export function getStableHostId(): string | undefined {
   return (
     Object.values(os.networkInterfaces())
       .flat()
@@ -12,11 +12,8 @@ function getStableHostId(): string | undefined {
   );
 }
 
-posthog.init("phc_ATkdmfJutLNoQvXMXCGLKDHXQYMXV00diQ8RUDdfe52", {
-  api_host: "https://us.i.posthog.com",
-  person_profiles: "always",
+const posthog = new PostHog("phc_ATkdmfJutLNoQvXMXCGLKDHXQYMXV00diQ8RUDdfe52", {
+  host: "https://us.i.posthog.com",
 });
-
-posthog.identify(getStableHostId());
 
 export { posthog };

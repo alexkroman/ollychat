@@ -27,6 +27,9 @@ SLACK_SIGNING_SECRET=
 SLACK_APP_TOKEN=
 PORT=3000
 
+# Sends basic telemetry to Posthog so I can improve the product - set to false to disable
+TELEMETRY=true
+
 # Only needed for deploying a demo instance of Prometheus for testing purposes
 DEMO_EMAIL=
 CLUSTER_NAME=ollychat-demo

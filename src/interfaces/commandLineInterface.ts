@@ -7,6 +7,7 @@ import { marked } from "marked";
 import { markedTerminal } from "marked-terminal";
 import chalk from "chalk";
 import { config } from "../config/config.js";
+import { posthog, getStableHostId } from "../utils/telemetry.js";
 import readline from "readline";
 
 const mkOptions = {
@@ -42,6 +43,12 @@ export class CLI {
     }
 
     console.log(chalk.green.bold("\n🔍 Querying..."));
+    if (config.telemetry == "true") {
+      posthog.capture({
+        distinctId: getStableHostId() || "",
+        event: "$question",
+      });
+    }
     const result = await answerQuestion({ question: messageText });
     readline.moveCursor(process.stdout, 0, -1);
     readline.clearLine(process.stdout, 0);
