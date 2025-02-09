@@ -10,8 +10,6 @@ import { DynamicTool } from "@langchain/core/tools";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { config } from "./config/config.js";
-import { ChatOpenAI } from "@langchain/openai";
-import { ChatAnthropic } from "@langchain/anthropic";
 import { z } from "zod";
 import { PrometheusDriver } from "prometheus-query";
 import { PromptTemplate } from "@langchain/core/prompts";
@@ -23,19 +21,7 @@ import { trimMessages } from "@langchain/core/messages";
 import { SystemMessage, HumanMessage } from "@langchain/core/messages";
 import { StackExchangeAPI } from "@langchain/community/tools/stackexchange";
 import { Calculator } from "@langchain/community/tools/calculator";
-
-export const model =
-  config.modelProvider == "anthropic"
-    ? new ChatAnthropic({
-        anthropicApiKey: config.modelApiKey,
-        model: config.model,
-        temperature: 0,
-      })
-    : new ChatOpenAI({
-        openAIApiKey: config.modelApiKey,
-        model: config.model,
-        temperature: 0,
-      });
+import { model } from "./model/index.js";
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
