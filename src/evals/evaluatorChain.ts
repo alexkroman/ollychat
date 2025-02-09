@@ -1,6 +1,6 @@
 import { evaluate } from "langsmith/evaluation";
 import { config } from "../config/config.js";
-import { app } from "../ollychat.js";
+import { app } from "../workflow/index.js";
 
 const runGraph = async (
   input: Record<string, unknown>,
