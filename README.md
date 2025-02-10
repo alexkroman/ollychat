@@ -30,6 +30,7 @@ You can try OllyChat by pointing it at our demo Prometheus server: <http://34.12
 
 - OpenAI
 - Anthropic
+- Ollama (coming soon)
 
 ## Getting Started
 
