@@ -73,7 +73,7 @@ npm run cli:start
    - Visit [Slack API](https://api.slack.com/apps)
    - Click "Create New App" → "From an app manifest"
    - Select your workspace
-   - Copy content from `slack-manifest.json`
+   - Copy JSON in `deploy/slack/slack-manifest.json`
 
 2. Install the app to your workspace:
    - Navigate to "Install App" in your Slack App settings
@@ -85,6 +85,15 @@ npm run cli:start
    ```bash
    # Start the Slack backend
    npm run slack:start
+   ```
+
+### Building Slack app with Docker
+
+You can use Docker to deploy the Slack app:
+
+   ```bash
+   # Start the Slack backend
+   npm run docker:compose:up
    ```
 
 ### Asking Questions in Slack

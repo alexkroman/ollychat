@@ -1,5 +1,4 @@
 import shell from "shelljs";
-import { config } from "../../src/config/demoConfig.js";
 
 if (shell.exec(`npm run docker:build`).code !== 0) {
   console.error("❌ Failed to build container");

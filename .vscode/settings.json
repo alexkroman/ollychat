@@ -1,10 +1,14 @@
 {
     "cSpell.words": [
+        "chrono",
         "evals",
         "LANGCHAIN",
+        "langgraph",
         "LANGSMITH",
+        "lezer",
         "Olly",
         "ollychat",
+        "slackify",
         "Tavily"
     ]
 }
