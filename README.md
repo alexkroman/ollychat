@@ -28,7 +28,7 @@ You can try OllyChat without having any observability data by pointing it at our
 
 - OpenAI
 - Anthropic
-- Ollama (coming soon)
+- Any tool supporting open source model via Ollama: <https://ollama.com/search?c=tools>
 
 ## Getting Started
 
