@@ -2,7 +2,7 @@
 
 OllyChat is an open source AI tool to chat with your observability data and run devops tasks.
 
-You can try OllyChat easily by pointing it at our demo Prometheus server: <http://34.123.158.139:9090>
+You can try OllyChat by pointing it at our demo Prometheus server: <http://34.123.158.139:9090>
 
 ## Features
 
