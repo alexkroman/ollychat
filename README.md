@@ -1,6 +1,8 @@
 # OllyChat
 
-Ollychat allows you to chat with your observability data. Ask questions and get fast answers without.  Use OllyChat to build AI Agents for DevOps.
+- Chat with your observability data
+- Build custom AI agents for DevOps
+- [See a few questions you can ask](DEMO.md)
 
 ## OllyChat in CLI
 
@@ -10,23 +12,30 @@ Ollychat allows you to chat with your observability data. Ask questions and get 
 
 ![Slack Demo](https://github.com/alexkroman/ollychat/blob/main/public/slack-demo.gif?raw=true)
 
-## 🌟 Integrations
+## Supported Observability Platforms
 
-- Currently only support Prometheus but more integrations comign soon!
+- Prometheus
+- New Relic (coming soon)
+- DataDog (coming soon)
 
-## 🚀 Quick Start
+## Supported LLM's
+
+- OpenAI
+- Anthropic
+
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 16.x or higher
-- npm 7.x or higher
-- Slack workspace (optional, for Slack integration)
+- Node.js
+- npm
 
 ### Installation
 
 ```bash
 # Clone the repository
 git clone https://github.com/alexkroman/ollychat.git
+
 cd ollychat
 
 # Install dependencies
@@ -40,27 +49,25 @@ cp example.env .env
 
 Edit `.env` with your settings
 
-### Usage
-
-#### CLI Mode
+### Asking Questions in the CLI
 
 ```bash
 # Start the CLI
 npm run cli:start
 
-# Example queries
+# Example questions
 > what's the health status of my cluster?
 > any alerts?
 > which pods are consuming the most memory?
 ```
 
-### Slack Integration
+### Optional Slack Integration
 
 1. Create a Slack App:
    - Visit [Slack API](https://api.slack.com/apps)
    - Click "Create New App" → "From an app manifest"
    - Select your workspace
-   - Copy content from `config/slack-manifest.json`
+   - Copy content from `slack-manifest.json`
 
 2. Install the app to your workspace:
    - Navigate to "Install App" in your Slack App settings
@@ -70,19 +77,40 @@ npm run cli:start
 3. Start the Slack bot:
   
    ```bash
+   # Start the Slack backend
    npm run slack:start
    ```
 
-## Run tests
+### Asking Questions in Slack
+
+- @olly what's the health status of my cluster?
+- @olly any alerts?
+- @olly which pods are consuming the most memory?
+
+## Contriburting
+
+### Run tests
 
 ```bash
 npm test
 ```
 
-## Run linter
+### Run linter
 
 ```bash
 npm run lint
+```
+
+### Generate evaluation run
+
+When you make changes to the app you should generate an evaluation run to test your change against ground truths.
+
+```bash
+# Load the latest version of the evaluation data
+npm run evals:load
+
+# Run the evaluations
+npm run evals:start
 ```
 
 ## 📄 License

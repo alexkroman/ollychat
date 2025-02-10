@@ -1,4 +1,6 @@
-# Demo script
+# Demo Scripts (Feel free to add)
+
+## Basic Demo
 
 - any alerts?
 - what's the health of my cluster?
