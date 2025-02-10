@@ -116,6 +116,7 @@ We <3 contributions big and small:
 - You can use src/tools/prometheus.ts as a template to get started
 
 ```bash
+   # Use prometheus agent as a template
    cp src/tools/prometheus.ts src/tools/newTool.ts
 ```
 
