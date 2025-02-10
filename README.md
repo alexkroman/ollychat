@@ -6,7 +6,7 @@ You can try OllyChat without any observability data by pointing your config at o
 
 ## Features
 
-- [Chat with your observability data - see a few questions you can ask](DEMO.md)
+- [Chat with your observability data](DEMO.md)
 - [Build your own DevOps AI Agent](#building-your-own-devops-ai-agent-with-ollychat)
 
 ## OllyChat in CLI
@@ -28,7 +28,7 @@ You can try OllyChat without any observability data by pointing your config at o
 
 - OpenAI
 - Anthropic
-- Any tool supporting open source model via Ollama: <https://ollama.com/search?c=tools>
+- [Ollama (tool supporting)](https://ollama.com/search?c=tools)
 
 ## Getting Started
 
