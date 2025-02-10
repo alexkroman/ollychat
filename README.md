@@ -87,6 +87,8 @@ npm run cli:start
 
 ### Asking Questions in Slack
 
+Invite @olly to your team or incident channel. 
+
 - @olly what's the health status of my cluster?
 - @olly any alerts?
 - @olly which pods are consuming the most memory?
