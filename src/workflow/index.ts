@@ -11,16 +11,19 @@ import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { tools } from "../tools/index.js";
 import { trimMessages } from "@langchain/core/messages";
 import { config } from "../config/config.js";
+import { ChatOpenAI } from "@langchain/openai";
+import { ChatAnthropic } from "@langchain/anthropic";
 
 const agentCheckpointer = new MemorySaver();
-
 const toolNodeForGraph = new ToolNode(tools);
 
 const getPlan = async (state: typeof MessagesAnnotation.State) => {
   const trimmedMessages = await trimMessages(state.messages, {
     maxTokens: 500,
-    tokenCounter: (msgs) => msgs.length,
+    tokenCounter:
+      config.model == "anthropic" ? new ChatAnthropic() : new ChatOpenAI(),
     strategy: "last",
+    startOn: "human",
     includeSystem: true,
   });
   const result = await agent.invoke({ messages: trimmedMessages }, config);
