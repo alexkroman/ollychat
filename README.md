@@ -1,20 +1,18 @@
 # OllyChat
 
-Ollychat allows you to chat with your observability data. Ask questions in plain English and get instant insights, whether through the CLI or Slack.
+Ollychat allows you to chat with your observability data. Ask questions and get fast answers without.  Use OllyChat to build AI Agents for DevOps.
 
-# CLI Demo
+## OllyChat in CLI
 
 ![CLI Demo](https://raw.githubusercontent.com/alexkroman/ollychat/refs/heads/main/public/cli-demo-2.gif)
 
-# Slack Demo
+## OllyChat in Slack
 
+![Slack Demo](https://github.com/alexkroman/ollychat/blob/main/public/slack-demo.gif?raw=true)
 
+## 🌟 Integrations
 
-## 🌟 Key Features
-
-- Natural language processing of metrics queries
-- Intelligent query translation to PromQL
-- Seamless Slack integration for team collaboration
+- Currently only support Prometheus but more integrations comign soon!
 
 ## 🚀 Quick Start
 
