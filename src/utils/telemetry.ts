@@ -12,8 +12,7 @@ export function getStableHostId(): string | undefined {
   );
 }
 
-const posthog = new PostHog("phc_ATkdmfJutLNoQvXMXCGLKDHXQYMXV00diQ8RUDdfe52", {
-  host: "https://us.i.posthog.com",
-});
-
-export { posthog };
+export const posthog = new PostHog(
+  "phc_ATkdmfJutLNoQvXMXCGLKDHXQYMXV00diQ8RUDdfe52",
+  { host: "https://us.i.posthog.com" },
+);
