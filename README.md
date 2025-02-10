@@ -1,5 +1,9 @@
 # OllyChat
 
+OllyChat is an open source AI tool to chat with your observability data.
+
+## Features
+
 - Chat with your observability data
 - Build custom AI agents for DevOps
 - [See a few questions you can ask](DEMO.md)
