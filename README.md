@@ -88,7 +88,7 @@ npm run cli:start
    npm run slack:start
    ```
 
-### Building Slack app with Docker
+### Building Slack App With Docker
 
 You can use Docker to deploy the Slack app:
 
@@ -97,7 +97,7 @@ You can use Docker to deploy the Slack app:
    npm run docker:compose:up
    ```
 
-### Asking Questions in Slack
+### Using OllyChat in Slack
 
 Invite @olly to your team or incident channel.
 
@@ -123,19 +123,19 @@ We <3 contributions big and small:
 
 - Add your tool as an import and to the tools array in src/tools/index.ts
 
-### Run tests
+### Run Tests
 
 ```bash
 npm test
 ```
 
-### Run linter
+### Run Linter
 
 ```bash
 npm run lint
 ```
 
-### Generate evaluation run
+### Generate Evaluation Run
 
 When you make changes to the app you should generate an evaluation run to test your change against ground truths.
 
