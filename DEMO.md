@@ -1,8 +1,8 @@
 # Demo script
 
-- what's the health status of my cluster?
 - any alerts?
+- what's the health of my cluster?
 - which pods are consuming the most memory?
-- show memory usage trend for prometheus-server for the past 24 hours
-- show the memory usage trend for prometheus-server for the past 1 hour
+- show memory usage trend for prometheus for the past 1 hour
+- is my k8 cluster too small?
   
