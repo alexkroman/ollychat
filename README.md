@@ -6,9 +6,8 @@ You can try OllyChat by pointing it at our demo Prometheus server: <http://34.12
 
 ## Features
 
-- Chat with your observability data
-- Build custom AI agents for DevOps
-- [See a few questions you can ask](DEMO.md)
+- [Chat with your observability data - see a few questions you can ask](DEMO.md)
+- [Build your own DevOps AI Agent](#building-your-own-devops-ai-agent-with-ollychat)
 
 ## OllyChat in CLI
 
@@ -106,6 +105,11 @@ Invite @olly to your team or incident channel.
 - @olly which pods are consuming the most memory?
 
 ## Contributing
+
+We <3 contributions big and small:
+
+- Open a PR
+- Submit a [feature request](https://github.com/alexkroman/ollychat/issues/new) or [bug report](https://github.com/alexkroman/ollychat/issues/new)
 
 ### Building your own DevOps AI Agent with OllyChat
 
