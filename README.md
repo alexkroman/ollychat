@@ -1,9 +1,14 @@
 # OllyChat
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-
 Ollychat allows you to chat with your observability data. Ask questions in plain English and get instant insights, whether through the CLI or Slack.
+
+# CLI Demo
+
+![CLI Demo](https://raw.githubusercontent.com/alexkroman/ollychat/refs/heads/main/public/cli-demo-2.gif)
+
+# Slack Demo
+
+
 
 ## 🌟 Key Features
 
