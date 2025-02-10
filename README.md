@@ -1,6 +1,6 @@
 # OllyChat
 
-OllyChat allows you to create custom DevOps AI agents to understand and manage your infrastructure.
+OllyChat allows you to create custom DevOps AI agents to better understand and manage your infrastructure.
 
 You can try OllyChat without any observability data by pointing your config at our demo Prometheus server: <http://34.123.158.139:9090>
 
