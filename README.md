@@ -119,6 +119,6 @@ npm run evals:load
 npm run evals:start
 ```
 
-## 📄 License
+## License
 
 Ollychat is MIT licensed. See [LICENSE](LICENSE) for details.
