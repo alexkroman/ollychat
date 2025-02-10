@@ -7,12 +7,15 @@ dotenv.config();
 
 const langsmithTracing = requireEnv("LANGSMITH_TRACING") === "true";
 const graphRecursionLimit = requireEnv("GRAPH_RECURSION_LIMIT");
+const modelProvider = requireEnv("MODEL_PROVIDER");
+const modelApiKey =
+  modelProvider != "ollama" ? requireEnv("MODEl_API_KEY") : "";
 const tavilyApiKey = process.env.TAVILY_API_KEY || null;
 const tavilyEnabled = !!tavilyApiKey;
 
 export const config = {
-  modelProvider: requireEnv("MODEL_PROVIDER"),
-  modelApiKey: requireEnv("MODEL_API_KEY"),
+  modelProvider,
+  modelApiKey,
   model: requireEnv("MODEL"),
   prometheusUrl: requireEnv("PROMETHEUS_URL"),
   tavilyApiKey,

@@ -17,6 +17,7 @@
     "@langchain/anthropic": "^0.3.13",
     "@langchain/community": "^0.3.24",
     "@langchain/langgraph": "^0.2.40",
+    "@langchain/ollama": "^0.1.6",
     "@prometheus-io/lezer-promql": "^0.301.0",
     "@slack/bolt": "^4.2.0",
     "chalk": "^5.4.1",
