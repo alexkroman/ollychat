@@ -5,7 +5,7 @@ PROVIDER=openai
 MODEL_API_KEY=
 MODEL=gpt-4o-mini
 
-# This is a demo Prometheus server that I am paying for so you can quickly try out Ollybot without connecting to yours first
+# This is a demo Prometheus server that I am paying for so you can quickly try out OllyChat without connecting to yours first
 PROMETHEUS_URL=http://34.123.158.139:9090
 
 # Get a Tavily API key here: https://app.tavily.com/ or leave it empty to disable the Tavily tool

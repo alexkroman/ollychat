@@ -2,7 +2,7 @@
 
 OllyChat is an open source AI tool to chat with your observability data and run devops tasks.
 
-You can try OllyChat easily by pointing it at our demo Prometheus server: http://34.123.158.139:9090
+You can try OllyChat easily by pointing it at our demo Prometheus server: <http://34.123.158.139:9090>
 
 ## Features
 
@@ -48,7 +48,7 @@ cd ollychat
 npm install
 
 # Set up configuration
-cp example.env .env
+cp env-example.sh .env
 ```
 
 ### Configuration
@@ -89,7 +89,7 @@ npm run cli:start
 
 ### Asking Questions in Slack
 
-Invite @olly to your team or incident channel. 
+Invite @olly to your team or incident channel.
 
 - @olly what's the health status of my cluster?
 - @olly any alerts?
