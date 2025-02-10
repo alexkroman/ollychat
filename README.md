@@ -23,6 +23,7 @@ You can try OllyChat by pointing it at our demo Prometheus server: <http://34.12
 - Prometheus
 - New Relic (coming soon)
 - DataDog (coming soon)
+- Elastic (coming soon)
 
 ## Supported LLM's
 
