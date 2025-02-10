@@ -93,7 +93,7 @@ Invite @olly to your team or incident channel.
 - @olly any alerts?
 - @olly which pods are consuming the most memory?
 
-## Contriburting
+## Contributing
 
 ### Run tests
 
