@@ -107,6 +107,16 @@ Invite @olly to your team or incident channel.
 
 ## Contributing
 
+### Building your own DevOps AI Agent with OllyChat
+
+- You can use src/tools/prometheus.ts as a template to get started
+
+```bash
+   cp src/tools/prometheus.ts src/tools/newTool.ts
+```
+
+- Add your tool as an import and to the tools array in src/tools/index.ts
+
 ### Run tests
 
 ```bash
