@@ -166,4 +166,4 @@ npm run evals:start
 
 ## 📜 License
 
-Ollychat is MIT licensed. See [LICENSE](LICENSE) for details.
+Ollychat is MIT licensed. See [LICENSE](LICENSE.txt) for details.
