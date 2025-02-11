@@ -3,9 +3,7 @@ import { DynamicTool } from "@langchain/core/tools";
 import { PrometheusDriver } from "prometheus-query";
 import { config } from "../config/config.js";
 import { model } from "../model/index.js";
-import { z } from "zod";
 import { PromptTemplate } from "@langchain/core/prompts";
-import { parser } from "@prometheus-io/lezer-promql";
 import { getQueries } from "../prompts/getQueries.js";
 
 const prom = new PrometheusDriver({
@@ -14,26 +12,6 @@ const prom = new PrometheusDriver({
 });
 
 let metricNamesCache: string | null = null;
-
-const queriesSchema = z.object({
-  query: z
-    .string()
-    .describe("Syntactically valid PromQL query")
-    .refine((query) => {
-      try {
-        const tree = parser.parse(query);
-        return tree?.length > 0; // Ensure there's a valid parse tree
-      } catch {
-        return false;
-      }
-    }, "Invalid PromQL syntax."),
-});
-
-const queriesOutput = z.object({
-  queries: z.array(queriesSchema),
-});
-
-export const queriesModel = model.withStructuredOutput(queriesOutput);
 
 export const getMetricNamesTool = new DynamicTool({
   name: "getMetricNames",
@@ -71,8 +49,8 @@ export const queryGeneratorTool = new DynamicTool({
       input,
       metricResults: await getMetricNamesTool.func(""),
     });
-    const queryResults = await queriesModel.invoke(queryPromptValue, config);
-    return JSON.stringify(queryResults.queries);
+    const queryResults = await model.invoke(queryPromptValue, config);
+    return JSON.stringify(queryResults.content);
   },
 });
 

@@ -8,7 +8,6 @@ export const getQueries: string = `
 ## Objective
 - **Summarize the Request:** Provide a concise, clear summary of the user's query.
 - **Generate PromQL Queries:** Develop a list of valid and meaningful PromQL queries that address the user's request using the available metrics.
-- **Explain Your Reasoning:** For each query, briefly explain the logic behind its construction to demonstrate how it addresses the user's input and leverages the provided metrics.
 
 ## Guidelines for Query Construction
 - **Specificity:**  
@@ -23,10 +22,6 @@ export const getQueries: string = `
   - Provide brief and clear explanations for each query to ensure transparency in your reasoning.
 
 ## Output Format
-- **Summary:**  
-  - Start with a short summary of the user's input.
 - **Queries:**  
-  - List the generated PromQL queries in a numbered format.
-- **Explanations:**  
-  - Under each query, include a brief explanation of the rationale behind it.
+  - List the generated PromQL queries.
 `;
