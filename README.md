@@ -30,14 +30,14 @@ You can try OllyChat without any observability data by pointing your config at o
 - Anthropic
 - [Ollama (tool supporting)](https://ollama.com/search?c=tools)
 
-## Getting Started
+## Getting Started Without Docker
 
 ### Prerequisites
 
 - node.js
 - npm
 
-### Installation
+### Install
 
 ```bash
 # Clone the repository
@@ -88,15 +88,6 @@ npm run cli:start
    npm run slack:start
    ```
 
-### Building Slack App With Docker
-
-You can use Docker to deploy the Slack app:
-
-   ```bash
-   # Start the Slack backend
-   npm run docker:compose:up
-   ```
-
 ### Using OllyChat in Slack
 
 Invite @olly to your team or incident channel.
@@ -104,6 +95,35 @@ Invite @olly to your team or incident channel.
 - @olly what's the health status of my cluster?
 - @olly any alerts?
 - @olly which pods are consuming the most memory?
+
+## Getting Started With Docker
+
+You can use Docker to deploy both the Slack app and CLI app
+
+### Make sure your environment variables are set
+
+Edit `.env` with your settings
+
+### Build the container
+
+   ```bash
+   # Build the docker container
+   npm run docker:build
+   ```
+
+### Run the CLI
+
+   ```bash
+   # Build the docker container
+   npm run docker:run:cli
+   ```
+
+### Run the Slack App
+
+   ```bash
+   # Build the docker container
+   npm run docker:run:slack
+   ```
 
 ## Contributing
 

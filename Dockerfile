@@ -16,5 +16,7 @@ COPY . .
 # Expose the port your app runs on (if applicable)
 EXPOSE 3000
 
+ENV APP_MODE="cli"
+
 # Define the command to run your app
-CMD ["npm", "run", "slack:start"]
+CMD ["sh", "-c", "if [ \"$APP_MODE\" = 'cli' ]; then npm run cli:start; else npm run slack:start; fi"]
