@@ -3,7 +3,7 @@
 # Some model options I've tested: gpt-4o, gpt-4o-mini, claude-3-5-sonnet-20241022, llama3.1
 PROVIDER=openai
 MODEL_API_KEY=
-MODEL=gpt-4o-mini
+MODEL=gpt-4o
 
 # This is a demo Prometheus server that I am paying for so you can quickly try out OllyChat without connecting to yours first
 PROMETHEUS_URL=http://34.123.158.139:9090
