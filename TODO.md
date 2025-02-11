@@ -6,3 +6,8 @@
 - Multiple .env configs
 - Much better eval test setup
 - Investigate dspy
+- add automated changelog
+- brew install
+- curl install
+- localhost web chat?
+- host demo web chat?
