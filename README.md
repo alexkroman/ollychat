@@ -56,19 +56,14 @@ cp env-example.sh .env
 
 Edit `.env` with your settings
 
-### Asking Questions in the CLI
+### Running the CLI
 
 ```bash
 # Start the CLI
 npm run cli:start
-
-# Example questions
-> what's the health status of my cluster?
-> any alerts?
-> which pods are consuming the most memory?
 ```
 
-### Optional Slack Integration
+### Installing Optional Slack Integration
 
 1. Create a Slack App:
    - Visit [Slack API](https://api.slack.com/apps)
