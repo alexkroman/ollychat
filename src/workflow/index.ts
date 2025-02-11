@@ -18,7 +18,7 @@ const toolNodeForGraph = new ToolNode(tools);
 
 const getPlan = async (state: typeof MessagesAnnotation.State) => {
   const trimmedMessages = await trimMessages(state.messages, {
-    maxTokens: 500,
+    maxTokens: 100,
     tokenCounter: model,
     strategy: "last",
     startOn: "human",
