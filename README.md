@@ -125,8 +125,6 @@ npm run docker:run:slack
 
 ## ❤️ Contributing
 
-We ❤️ contributions big and small:
-
 - Submit a [feature request](https://github.com/alexkroman/ollychat/issues/new) or [bug report](https://github.com/alexkroman/ollychat/issues/new)
 
 ### Building your own DevOps AI Agent with OllyChat
