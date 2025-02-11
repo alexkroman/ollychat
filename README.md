@@ -9,7 +9,7 @@ You can try OllyChat without any observability data by pointing your config at o
 ## ✨ Features
 
 - [Chat with your observability data](DEMO.md)
-- [Build your own DevOps AI Agent](#building-your-own-devops-ai-agent-with-ollychat)
+- [Create your own DevOps AI Agent](#building-your-own-devops-ai-agent-with-ollychat)
 
 ## 🖥️ OllyChat in CLI
 
