@@ -1,4 +1,4 @@
-# 🚀 OllyChat
+![ OllyChat](https://raw.githubusercontent.com/alexkroman/ollychat/refs/heads/main/public/ollychat.jpeg)
 
 OllyChat allows you to create custom DevOps AI agents to better understand and manage your infrastructure.
 
