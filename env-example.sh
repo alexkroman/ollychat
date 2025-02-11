@@ -4,6 +4,8 @@
 PROVIDER=openai
 MODEL_API_KEY=
 MODEL=gpt-4o
+# If using Ollama not on localhost
+#MODEL_BASE_URL=localhost
 
 # This is a demo Prometheus server that I am paying for so you can quickly try out OllyChat without connecting to yours first
 PROMETHEUS_URL=http://34.123.158.139:9090

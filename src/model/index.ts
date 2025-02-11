@@ -13,6 +13,7 @@ export const model =
     : config.modelProvider === "ollama"
       ? new ChatOllama({
           model: config.model,
+          baseUrl: config.modelBaseUrl,
           temperature: 0,
         })
       : new ChatOpenAI({

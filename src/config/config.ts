@@ -11,6 +11,8 @@ const modelProvider = requireEnv("MODEL_PROVIDER");
 const modelApiKey =
   modelProvider != "ollama" ? requireEnv("MODEL_API_KEY") : "";
 const tavilyApiKey = process.env.TAVILY_API_KEY || null;
+const modelBaseUrl = process.env.MODEL_BASE_URL || "http://localhost:11434";
+
 const tavilyEnabled = !!tavilyApiKey;
 
 export const config = {
@@ -21,6 +23,7 @@ export const config = {
   tavilyApiKey,
   telemetry: requireEnv("TELEMETRY"),
   tavilyEnabled,
+  modelBaseUrl,
   langsmithTracing,
   langSmithEndpoint: langsmithTracing
     ? requireEnv("LANGSMITH_ENDPOINT")
