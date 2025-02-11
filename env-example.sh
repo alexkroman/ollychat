@@ -1,7 +1,7 @@
 # Get an OpenAI API key here: https://platform.openai.com
 # Provider options: openai, anthropic, ollama (only tool calling models supported like llama 3.1)
 # Some model options I've tested: gpt-4o, gpt-4o-mini, claude-3-5-sonnet-20241022, llama3.1
-PROVIDER=openai
+MODEL_PROVIDER=openai
 MODEL_API_KEY=
 MODEL=gpt-4o
 # If using Ollama not on localhost
