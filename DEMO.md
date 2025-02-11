@@ -1,4 +1,4 @@
-# Demo Scripts (Feel free to add)
+# Demo Scripts (feel free to add)
 
 ## Basic Demo
 
