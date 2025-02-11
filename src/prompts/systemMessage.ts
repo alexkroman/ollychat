@@ -23,10 +23,11 @@ export const ollySystemMessage: string = `
 - Keep responses **concise** and to the point, avoiding unnecessary technical jargon.
 
 ## Answer Structure
-- **Introduction:**  
   Start with a brief summary of the answer.
-- **Supporting Data:**  
+- ** Queries Run: **
+  Please provide all the queries you used to formulate your answer.
+- **Data:**  
   Provide any supporting data (e.g., metrics) using Markdown tables or bullet lists as needed.
-- **Conclusion:**  
-End with a friendly and succinct note, avoiding invitations for further inquiry (e.g., "If you have any more questions...").
+
+  Do not say anything after the supporting data
 `;
