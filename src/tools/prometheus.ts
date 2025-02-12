@@ -1,10 +1,12 @@
 import * as chrono from "chrono-node";
-import { DynamicTool } from "@langchain/core/tools";
+import { DynamicTool, tool } from "@langchain/core/tools";
 import { PrometheusDriver } from "prometheus-query";
+import { z } from "zod";
 import { config } from "../config/config.js";
 import { model } from "../model/index.js";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { getQueries } from "../prompts/getQueries.js";
+import { parser } from "@prometheus-io/lezer-promql";
 
 const prom = new PrometheusDriver({
   endpoint: config.prometheusUrl,
@@ -72,22 +74,42 @@ export const metricDetailsTool = new DynamicTool({
   },
 });
 
-export const instantQueryExecutorTool = new DynamicTool({
-  name: "instantQueryExecutorTool",
-  description:
-    "Executes a PromQL instant query (no from and to timestamps) and returns the results.",
-  func: async (input: string): Promise<string> => {
+function validatePromQLQuery(query: string): boolean {
+  const tree = parser.parse(query);
+  return tree.cursor().node.type.isError === false;
+}
+
+const instantQueryExecutorSchema = z.object({
+  query: z
+    .string()
+    .describe("Single Syntatically valid PromQL query")
+    .min(1, "Query cannot be empty")
+    .max(1000, "Query is too long")
+    .refine((query) => validatePromQLQuery(query), {
+      message: "Invalid PromQL syntax",
+    }),
+});
+
+export const instantQueryExecutorTool = tool(
+  async ({ query }) => {
     let result = "";
-    const response = await prom.instantQuery(input);
+    const response = await prom.instantQuery(query);
     const series = response.result;
     series.forEach((serie) => {
       result += "Metric: " + serie.metric.toString() + "\n";
       result += "Timestamp: " + serie.value.time + "\n";
       result += "Value: " + serie.value.value + "\n";
     });
-    return result;
+    return [result, { query: query }];
   },
-});
+  {
+    name: "instantQueryExecutorTool",
+    schema: instantQueryExecutorSchema,
+    responseFormat: "content_and_artifact",
+    description:
+      "Executes a PromQL instant query (no from and to timestamps) and returns the results.",
+  },
+);
 
 export const rangeQueryExecutorTool = new DynamicTool({
   name: "rangeQueryExecutorTool",
