@@ -111,14 +111,29 @@ export const instantQueryExecutorTool = tool(
   },
 );
 
-export const rangeQueryExecutorTool = new DynamicTool({
-  name: "rangeQueryExecutorTool",
-  description:
-    "Executes a PromQL ranged query. Requires query, from time (as text parseable by chrono-time), and to time (as text parseable by chrono-time).",
-  func: async (input: string): Promise<string> => {
-    const [query, startString, endString] = input
-      .split(",")
-      .map((s) => s.trim());
+const rangeQueryExecutorSchema = z.object({
+  query: z
+    .string()
+    .describe("Single Syntatically valid PromQL query")
+    .min(1, "Query cannot be empty")
+    .max(1000, "Query is too long")
+    .refine((query) => validatePromQLQuery(query), {
+      message: "Invalid PromQL syntax",
+    }),
+  startString: z.string().describe("Text describing start date and time"),
+  endString: z.string().describe("Text describing end date and time"),
+});
+
+export const rangeQueryExecutorTool = tool(
+  async ({
+    query,
+    startString,
+    endString,
+  }: {
+    query: string;
+    startString: string;
+    endString: string;
+  }) => {
     const start: Date =
       chrono.parseDate(startString) ||
       chrono.parseDate("30 minutes ago") ||
@@ -130,9 +145,16 @@ export const rangeQueryExecutorTool = new DynamicTool({
 
     let result = "";
     response.result.forEach((serie) => {
-      result += "Serie:" + serie.metric.toString();
+      result += "Serie:" + serie.metric.toString() + "\n";
       result += "Values:\n" + serie.values.join("\n");
     });
-    return result;
+    return { result, query };
   },
-});
+  {
+    name: "rangeQueryExecutorTool",
+    description:
+      "Executes a PromQL ranged query. Requires query, from time (as text parseable by chrono-time), and to time (as text parseable by chrono-time).",
+    schema: rangeQueryExecutorSchema,
+    responseFormat: "content_and_artifact",
+  },
+);
