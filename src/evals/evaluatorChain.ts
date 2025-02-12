@@ -24,13 +24,11 @@ const runGraph = async (
 
 async function runEval() {
   try {
-    const results = await evaluate(runGraph, {
+    await evaluate(runGraph, {
       data: "Ollychat",
       experimentPrefix: "Ask Ollychat question",
       maxConcurrency: 1,
     });
-
-    console.log("Evaluation Results:", JSON.stringify(results, null, 2));
   } catch (error) {
     console.error("Error during evaluation:", error);
   }

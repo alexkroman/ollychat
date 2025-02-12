@@ -100,7 +100,6 @@ const client = new Client({
 
 const datasetName = "Ollychat";
 
-// Fetch existing datasets and delete if one with the same name exists
 const existingDatasets = [];
 for await (const dataset of client.listDatasets()) {
   existingDatasets.push(dataset);
@@ -114,7 +113,6 @@ if (datasetToDelete) {
   console.log(`Deleted existing dataset: ${datasetName}`);
 }
 
-// Create new dataset
 const dataset = await client.createDataset(datasetName, {
   description: "A sample dataset in LangSmith.",
 });

@@ -1,23 +1,14 @@
 export const getQueries: string = `
-# Task: Generate PromQL Queries Based on User Input and Available Metrics
+Generate a list of valid, meaningful PromQL queries based on:
 
-## Inputs
-- **User Input:** \`{input}\`
-- **Available Prometheus Metrics:** \`{metricResults}\`
+User Input: {input}
+Available Metrics: {metricResults}
+Each query should:
 
-## Objective
-- **Generate PromQL Queries:** Develop a list of valid and meaningful PromQL queries that address the user's request using the available metrics.
+Be specific, returning relevant identifiers (e.g., instances, services, labels).
+Incorporate filters if the user specifies servers, instances, or labels.
+Provide actionable insights or directly answer listing/summary requests with exact identifiers.
+Output:
 
-## Guidelines for Query Construction
-- **Specificity:**  
-  - Ensure queries return specific identifiers (e.g., instance names, service names, labels) whenever applicable.
-- **List or Summary Requests:**  
-  - When the user's request involves listing or summarizing items, format queries to return exact identifiers.
-- **Filtering:**  
-  - If the user specifies a server, instance, or label, incorporate these as filters in the relevant queries.
-- **Relevance and Actionability:**  
-  - Prioritize queries that yield actionable insights and directly answer the user's question.
-
-## Output Format
-  - Return a list of plain text PromQL queries do not use any other formatting
+Return only plain-text PromQL queries (no additional formatting).
 `;
