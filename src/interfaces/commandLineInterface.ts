@@ -8,7 +8,6 @@ import { markedTerminal } from "marked-terminal";
 import chalk from "chalk";
 import { config } from "../config/config.js";
 import { posthog, getStableHostId } from "../utils/telemetry.js";
-import readline from "readline";
 
 const mkOptions = {
   tab: 2,
@@ -42,7 +41,7 @@ export class CLI {
       return;
     }
 
-    console.log(chalk.green.bold("\n🔍 Querying..."));
+    console.log(chalk.green.bold("\nQuerying...\n"));
     if (config.telemetry == "true") {
       posthog.capture({
         distinctId: getStableHostId() || "",
@@ -50,8 +49,6 @@ export class CLI {
       });
     }
     const result = await answerQuestion({ question: messageText });
-    readline.moveCursor(process.stdout, 0, -1);
-    readline.clearLine(process.stdout, 0);
     console.log(marked(`${result}`));
   }
 
@@ -75,9 +72,9 @@ export class CLI {
 
     console.log(chalk.gray("\n" + "-".repeat(50) + "\n"));
     console.log(chalk.bold("💡 Here are some questions you can ask:\n"));
-    console.log(chalk.green("✅ what's the health of my cluster?"));
-    console.log(chalk.green("✅ which pods are consuming the most memory?"));
-    console.log(chalk.green("✅ are there any open alerts?"));
+    console.log(chalk.green("- what's the health of my cluster?"));
+    console.log(chalk.green("- which pods are consuming the most memory?"));
+    console.log(chalk.green("- are there any open alerts?"));
 
     console.log(chalk.gray("\n" + "-".repeat(50) + "\n"));
 

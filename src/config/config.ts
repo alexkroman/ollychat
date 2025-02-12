@@ -35,5 +35,5 @@ export const config = {
     ? requireEnv("LANGSMITH_PROJECT")
     : "Ollychat",
   logging: !process.execArgv.includes("--no-warnings"),
-  configurable: { thread_id: uuidv4(), recursion_limit: graphRecursionLimit },
+  configurable: { thread_id: uuidv4(), recursionLimit: graphRecursionLimit },
 };

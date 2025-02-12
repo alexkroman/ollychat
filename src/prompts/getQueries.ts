@@ -19,5 +19,5 @@ export const getQueries: string = `
   - Prioritize queries that yield actionable insights and directly answer the user's question.
 
 ## Output Format
-  - List the generated PromQL queries in JSON format do not use markdown
+  - Return a list of plain text PromQL queries do not use any other formatting
 `;
