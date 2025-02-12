@@ -2,6 +2,7 @@ import { Client } from "langsmith";
 import { config } from "../config/config.js";
 
 const examples = [
+  // Existing examples
   ["is my k8 cluster too small?", "yes"],
   ["2+2", "4"],
   ["What is the weather in Cleveland, Ohio", "Shows the weather"],
@@ -32,7 +33,7 @@ const examples = [
   ],
   [
     "memory requested by node",
-    `ai: The memory requested by each node in the Kubernetes cluster is as follows:
+    `The memory requested by each node in the Kubernetes cluster is as follows:
 
 1. **Node 1**: Approximately **1,191 MB** (1,191,530,752 bytes)
 2. **Node 2**: Approximately **1,189 MB** (1,189,219,200 bytes)
@@ -66,10 +67,9 @@ These values reflect the memory available for pod allocation on each node.`,
     "restart count by pod",
     "It appears that there are no recorded restart counts for the pods in the Kubernetes cluster, as the query returned no results.",
   ],
-  ["is docker working?", "yes"],
   [
     "what is my total memory",
-    "The total memory available in the Kubernetes cluster is approximately **43.13 GB** (43,127,729,920 bytes). ",
+    "The total memory available in the Kubernetes cluster is approximately **43.13 GB** (43,127,729,920 bytes).",
   ],
   [
     "how many node pools do I have?",
@@ -89,7 +89,47 @@ These values reflect the memory available for pod allocation on each node.`,
   ],
   [
     "How many pods are running in us-central1",
-    "ai: In the us-central1 region, there are currently **46 pods** running.",
+    "In the us-central1 region, there are currently **46 pods** running.",
+  ],
+  [
+    "Which are the top 5 pods by CPU usage in the last 6 hours?",
+    "Lists the pods with highest CPU usage in the last 6 hours.",
+  ],
+  [
+    "What is the 95th percentile of request latency for the ingress controller over the past 4 hours?",
+    "Generates a PromQL query for 95th percentile latency in the specified time range.",
+  ],
+  [
+    "How many times did the cluster autoscaler scale up in the last 48 hours?",
+    "Displays the number of autoscaler scale-up events for the time period.",
+  ],
+  [
+    "Which pods have the highest restart count in the production namespace?",
+    "Shows pods sorted by restart count, filtered by the production namespace.",
+  ],
+  [
+    "Are there any pods stuck in CrashLoopBackOff state?",
+    "Checks for pods in CrashLoopBackOff and reports the count.",
+  ],
+  [
+    "What is the average memory usage across all pods in the last hour?",
+    "Returns a single metric representing average memory usage in the last hour.",
+  ],
+  [
+    "How many distinct services are running in my cluster?",
+    "Reports the total number of unique services detected in the cluster.",
+  ],
+  [
+    "Which node is using the most ephemeral storage?",
+    "Lists the node(s) with highest ephemeral storage usage.",
+  ],
+  [
+    "How many network errors per second are we seeing on each node over the last 30 minutes?",
+    "Returns a time-series query showing network errors per node over 30 minutes.",
+  ],
+  [
+    "What are the top 3 namespaces by CPU usage in the last 24 hours?",
+    "Shows a ranked list of namespaces by total CPU usage for the day.",
   ],
 ];
 
