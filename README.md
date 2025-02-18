@@ -33,12 +33,6 @@ OllyChat flips the script. It's an AI-first platform that:
 - Automates remediation with AI-driven agents you control
 - Learns from your unique infrastructure and workflows over time
 
-## Why Now?
-
-- Companies are ditching legacy observability tools for open source and self-hosted solutions but are still trapped in the legacy dashboard-and-alert paradigm
-- AI models are now capable of automating a subset of DevOps tasks – especially those spent searching for the right data
-- AI agents are entering the labor market, requiring AI-first tools and platforms
-
 ## Get Started With Our Demo Prometheus Server
 
 You can try OllyChat without any observability data by pointing your config at our demo Prometheus server: <http://34.123.158.139:9090>
