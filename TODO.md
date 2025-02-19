@@ -14,3 +14,4 @@
 - curl install
 - localhost web chat?
 - host demo web chat?
+- message user about upcoming alerts
