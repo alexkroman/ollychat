@@ -1,5 +1,6 @@
 # OllyChat TODO
 
+- Link to run query
 - Set up public Slack
 - Deploy Slack bot to public Slack
 - Grafana Loki integration
