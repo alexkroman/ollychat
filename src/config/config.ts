@@ -9,9 +9,15 @@ const langsmithTracing = requireEnv("LANGSMITH_TRACING") === "true";
 const graphRecursionLimit = requireEnv("GRAPH_RECURSION_LIMIT");
 const modelProvider = requireEnv("MODEL_PROVIDER");
 const modelApiKey =
-  modelProvider != "ollama" ? requireEnv("MODEL_API_KEY") : "";
+  (modelProvider != "ollama"  && modelProvider !="azureOpenAi" )? requireEnv("MODEL_API_KEY") : "";
 const tavilyApiKey = process.env.TAVILY_API_KEY || null;
 const modelBaseUrl = process.env.MODEL_BASE_URL || "http://localhost:11434";
+
+const azureOpenAiEndpoint = process.env.AZURE_OPENAI_ENDPOINT || undefined;
+const azureOpenAiDeploymentName =  process.env.AZURE_OPENAI_DEPLOYMENT_NAME || undefined;
+const azureOpenAiApiVersion = process.env.AZURE_OPENAI_API_VERSION || undefined;
+const azureOpenAiApiKey = process.env.AZURE_OPENAI_API_KEY || undefined;
+const azureOpenAiModel = process.env.AZURE_OPENAI_MODEL || undefined;
 
 const tavilyEnabled = !!tavilyApiKey;
 
@@ -25,6 +31,11 @@ export const config = {
   tavilyEnabled,
   modelBaseUrl,
   langsmithTracing,
+  azureOpenAiEndpoint,
+  azureOpenAiDeploymentName,
+  azureOpenAiApiVersion,
+  azureOpenAiApiKey,
+  azureOpenAiModel,
   langSmithEndpoint: langsmithTracing
     ? requireEnv("LANGSMITH_ENDPOINT")
     : "https://api.smith.langchain.com",
