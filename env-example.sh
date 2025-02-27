@@ -4,6 +4,15 @@
 MODEL_PROVIDER=openai
 MODEL_API_KEY=
 MODEL=gpt-4o
+
+# If using Azure OpenAI
+AZURE_OPENAI_ENDPOINT=https://XXXX.openai.azure.com
+AZURE_OPENAI_DEPLOYMENT_NAME=
+AZURE_OPENAI_API_VERSION=
+AZURE_OPENAI_API_KEY=
+AZURE_OPENAI_MODEL=
+
+
 # If using Ollama not on localhost
 #MODEL_BASE_URL=localhost
 
