@@ -1,8 +1,10 @@
 import { jest } from "@jest/globals";
 import { describe, test, expect, beforeEach } from "@jest/globals";
+import { AzureChatOpenAI } from "@langchain/openai";
 
 jest.unstable_mockModule("@langchain/openai", () => {
     return {
+      AzureChatOpenAI:  jest.fn().mockImplementation(() => {}),
       ChatOpenAI: jest.fn().mockImplementation(() => {
         // The object returned by "new ChatOpenAI(...)"
         // Make sure we also mock out `withStructuredOutput` because
